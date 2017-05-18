@@ -1,6 +1,6 @@
 ﻿//**************************************************************
 // Class Name  :  TestReport  
-// Purpose     :  This class methods to generate Test Report for the Test function executed.
+// Purpose     :  This class is used to generate Test Report for the Test function executed.
 // Modification History:
 //  Ver #        Date         Author/Modified By       Remarks
 //--------------------------------------------------------------
@@ -24,14 +24,20 @@ namespace SeleniumProject
         private StringBuilder reportcsv;
         private string filePath;
         private string fileName;
-        public TestReport(string BrowserType, string url)
+        public TestReport()
         {
-            this.BrowserType = BrowserType;
-            this.url = url;
             date = DateTime.Now;
             fileName = date.Date.Date.ToShortDateString() + date.TimeOfDay.Hours.ToString() + date.TimeOfDay.Minutes.ToString();
             reportcsv = new StringBuilder();
-            filePath = @"C:\TestResult\" + fileName + ".csv";
+            if (Directory.Exists(Directory.GetCurrentDirectory()+@"\TestResult"))
+            {
+            filePath =  Directory.GetCurrentDirectory()+ fileName + ".csv";
+            }
+            else
+            {
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\TestResult");
+                filePath = Directory.GetCurrentDirectory() +@"\TestResult\"+ fileName +".csv";
+            }
             createCsvFile();
         }
         private void createCsvFile()
