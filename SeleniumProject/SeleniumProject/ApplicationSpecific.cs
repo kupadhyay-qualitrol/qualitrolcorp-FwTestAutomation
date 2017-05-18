@@ -541,7 +541,7 @@ namespace SeleniumProject
                 Thread.Sleep(2000);
                 SendKeys.SendWait(@"{Enter}");
 
-                while (!File.Exists(Directory.GetCurrentDirectory() + @"\TestDownload\DFRRecord" + (Record_num + 1) + ".CFG")
+                while (!File.Exists(Directory.GetCurrentDirectory() + @"\TestDownload\DFRRecord" + (Record_num + 1) + ".CFG"))
                 {
                     Thread.Sleep(5000);
                 }

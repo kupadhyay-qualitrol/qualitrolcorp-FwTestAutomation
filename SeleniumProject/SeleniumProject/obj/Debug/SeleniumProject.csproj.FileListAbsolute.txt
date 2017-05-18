@@ -27,3 +27,11 @@ C:\My Documents\Selenium_Project\SeleniumProject\SeleniumProject\bin\Debug\Micro
 C:\My Documents\Selenium_Project\SeleniumProject\SeleniumProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\My Documents\Selenium_Project\SeleniumProject\SeleniumProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\My Documents\Selenium_Project\SeleniumProject\SeleniumProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\bin\Debug\SeleniumProject.exe.config
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.csproj.ResolveComReference.cache
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.exe
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.pdb
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.csprojResolveAssemblyReference.cache
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.Form1.resources
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.Properties.Resources.resources
+C:\My Documents\SeleniumRepository\FwTestAutomation\SeleniumProject\SeleniumProject\obj\Debug\SeleniumProject.csproj.GenerateResource.Cache
