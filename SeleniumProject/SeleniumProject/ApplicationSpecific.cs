@@ -39,7 +39,7 @@ namespace SeleniumProject
     {
         //Variables Declarations
 
-        string deviceIP = ""; //variable to assign the IP address 
+        string deviceIP = "192.168.1.20"; //variable to assign the IP address 
         string userName = "qualitrol"; //device login username
         string password_upgrade = "qualcorp_Upgrade10"; //device loginpassword for upgrade
         string password__mfg_tabindex = "qualcorp_techSupport10"; //device loginpassword for tabindex,mfgindex
@@ -68,6 +68,7 @@ namespace SeleniumProject
         DataTable AnalogData = new DataTable(); // to store the RMS,Instantaneous,Phase Angle
         Dictionary<int, float[]> InstantaneousValue_Channel = new Dictionary<int, float[]>(); //to stroe the instantaneous values of voltage or current
         Dictionary<int,string> ChannelType=new Dictionary<int,string>();
+        Dictionary <string,string> CPUVer=new Dictionary<string,string>();
         //Class Declarations
         
         internal class ValuePair
@@ -139,7 +140,19 @@ namespace SeleniumProject
             if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\TestDownload"))
             {
                 Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\TestDownload");                
-            }            
+            }
+            string path = "\\\\" + "qbeleng11\\Builds\\IDM_PLUS_CPU_FW\\04.13\\CPU\\";
+            foreach (string s in Directory.GetDirectories(path))
+            {
+                CPUVer.Add((s.Remove(0, path.Length)).Split('_')[1], s);
+            }
+            var temp = CPUVer.Keys.Max();
+            firmwareBinpathCPU = "\\\\" + "qbeleng11\\Builds\\IDM_PLUS_CPU_FW\\04.13\\CPU\\04.13_" + temp + "\\01-CPU-04.13_" + temp + "-crc.bin";
+            firmwareBinpathFPGA = Directory.GetFiles(@"\\qbeleng11\Builds\IDM_PLUS_CPU_FW\04.13\FPGA_TX").Last();
+            firmwareBinpathFPGA = Path.GetFileName(firmwareBinpathFPGA);
+            firmwareBinpathDSP = Directory.GetFiles(@"\\qbeleng11\Builds\IDM_PLUS_CPU_FW\04.13\DSP").Last();
+            firmwareBinpathPIC = Directory.GetFiles(@"\\qbeleng11\Builds\IDM_PLUS_CPU_FW\04.13\PIC").Last();
+            firmwareBinpathMMI = Directory.GetFiles(@"\\qbeleng11\Builds\IDM_PLUS_CPU_FW\04.13\MMI").Last();
         }
         
         //Methods
@@ -148,7 +161,7 @@ namespace SeleniumProject
         /// This function will execute all the Test function which are called inside it.
         /// </summary>
         public void TestcaseRun()
-        {
+        {            
            // UpgradeCPUApplication();
           //  fn_upgrade_devices();    
             fn_ValidateDFR();       
@@ -195,7 +208,7 @@ namespace SeleniumProject
         
         public void LaunchBrowser()
         {
-            testReport.addLine("Method LaunchBrowser Called", "", "");
+           // testReport.addLine("Method LaunchBrowser Called", "", "");
                 //Changing the chrome settings as per requirement before launching the chrome browser.
                 options.AddUserProfilePreference("download.prompt_for_download", true);
                 options.AddUserProfilePreference("browser.helperApps.neverAsksaveToDisk", "wwwserver/shellcgi");
@@ -482,25 +495,25 @@ namespace SeleniumProject
         {           
             try
             {
-                testReport.addLine("Method fn_ValidateDFR called", "", "");
+                //testReport.addLine("Method fn_ValidateDFR called", "", "");
                 IJavaScriptExecutor js = (IJavaScriptExecutor)Chromedriver;
 
                 LaunchBrowser();
 
-                if (Chromedriver.FindElement(By.XPath(ObjectRepository.tab_Data)).Displayed)
-                {
-                    testReport.addLine("Launching the Google Chrome Browser", "Pass", "");
-                }
-                else
-                {
+                //if (Chromedriver.FindElement(By.XPath(ObjectRepository.tab_Data)).Displayed)
+                //{
+                //    testReport.addLine("Launching the Google Chrome Browser", "Pass", "");
+                //}
+                //else
+                //{
 
-                    PingReply Device_Reply = PingDevice.Send("192.168.1.19");
-                    testReport.addLine("Unable to connect to device", "Fail", Device_Reply.ToString());
-                    goto Finish;
+                //    PingReply Device_Reply = PingDevice.Send("192.168.1.19");
+                //    testReport.addLine("Unable to connect to device", "Fail", Device_Reply.ToString());
+                //    goto Finish;
 
-                }                
+                //}                
 
-                OpenURL("http://"+userName+":"+password__mfg_tabindex+"@"+deviceIP+"/tabindex");
+                OpenURL(@"http://"+userName+":"+password__mfg_tabindex+"@"+deviceIP+"/tabindex");
 
                 Chromedriver.FindElement(By.XPath(ObjectRepository.tab_Data)).Click();
                 Chromedriver.SwitchTo().Frame(Chromedriver.FindElement(By.XPath(ObjectRepository.Frame_LDLicense)));
@@ -517,7 +530,7 @@ namespace SeleniumProject
                 Chromedriver.FindElement(By.XPath(ObjectRepository.Manual_Trigger)).Click();  //Expand Manual Trigger
 
                 Chromedriver.SwitchTo().ParentFrame();
-                js.ExecuteScript("arguments[0].value='dfr:dfr/control/manual_trigger/no_triggers=1';", Chromedriver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td[1]/form/input[2]")));
+                js.ExecuteScript("arguments[0].value='dfr:dfr/control/manual_trigger/no_triggers=1';", Chromedriver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td[1]/form/input[2]")));///html/body/div/table/tbody/tr/td[1]/form/input[2]
                 Thread.Sleep(2000);
                 Chromedriver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td[1]/form/input[1]")).Click();
 
@@ -1055,8 +1068,7 @@ namespace SeleniumProject
         {
             try
             {
-                testReport.addLine("Method UpgradeCPUApplication called", "", "");
-                UploadMultipart("application/octet-stream", "http://"+deviceIP+"/cgi-bin/upgrade.cgi?cmd=TOGGLE_ALL_FW&TOGGLE_CPU_APP&TOGGLE_DSP_FW&TOGGLE_FPGA_FW&TOGGLE_PIC_FW&TOGGLE_MMI_FW&");
+                testReport.addLine("Method UpgradeCPUApplication called", "", "");                
 
                 UploadMultipart(File.ReadAllBytes(firmwareBinpathCPU),
                 CPUFileName, "application/octet-stream",
@@ -1078,6 +1090,8 @@ namespace SeleniumProject
                 UploadMultipart(File.ReadAllBytes(@"C:\My Documents\FW_Binaries\4.12\MMI\01-MMI-04.11_05-crc.bin"),
                 MMIFileName, "application/octet-stream",
                 "http://" + deviceIP + "/cgi-bin/upgrade.cgi?cmd=UPGRADE_MMI_FW");
+
+                UploadMultipart("application/octet-stream", "http://" + deviceIP + "/cgi-bin/upgrade.cgi?cmd=TOGGLE_ALL_FW&TOGGLE_CPU_APP&TOGGLE_DSP_FW&TOGGLE_FPGA_FW&TOGGLE_PIC_FW&TOGGLE_MMI_FW&");
                 testReport.addLine("Method UpgradeCPUApplication Ends", "", "");
             }
             catch (Exception ex)
