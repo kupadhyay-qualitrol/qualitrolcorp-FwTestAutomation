@@ -9,7 +9,6 @@ using Tabindex_Data.pmp;
 using Tabindex_Data.soh;
 using Mfgindex.Calibration;
 using CashelFirmware.Utility;
-using System.IO;
 
 namespace CashelFirmware.NunitTests
 {
