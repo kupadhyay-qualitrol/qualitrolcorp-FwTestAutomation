@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EXCELDATA_Channel_Number_DSP1" xml:space="preserve">
+    <value>Channel_Number_DSP1</value>
+  </data>
+  <data name="EXCELDATA_Channel_Number_DSP2" xml:space="preserve">
+    <value>Channel_Number_DSP2</value>
+  </data>
   <data name="EXCELDATA_FRCABLING" xml:space="preserve">
     <value>PMP_FR_Cabling</value>
   </data>
@@ -126,6 +132,9 @@
   <data name="EXCELDATA_SHEETNAME_CABLING" xml:space="preserve">
     <value>Cabling</value>
   </data>
+  <data name="EXCELDATA_SHEETNAME_DSPCHANNEL" xml:space="preserve">
+    <value>DSPChannelMap</value>
+  </data>
   <data name="XPATH_BUSBAR" xml:space="preserve">
     <value>"/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[{0}]/tbody/tr/td[2]/div/table[5]/tbody/tr/td[3]/span/a/select"</value>
     <comment>Bubar Select XPath</comment>
@@ -133,6 +142,12 @@
   <data name="XPATH_CHANNELNUMBER" xml:space="preserve">
     <value>"/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[{0}]/tbody/tr/td[2]/a"</value>
     <comment>Channel Number XPath</comment>
+  </data>
+  <data name="XPATH_dsp1_channels_map_dsp_channel" xml:space="preserve">
+    <value>"/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[5]/tbody/tr/td[2]/div/table[{0}]/tbody/tr/td[3]/span/a/input"</value>
+  </data>
+  <data name="XPATH_dsp2_channels_map_dsp_channel" xml:space="preserve">
+    <value>"/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[6]/tbody/tr/td[2]/div/table[{0}]/tbody/tr/td[3]/span/a/input"</value>
   </data>
   <data name="XPATH_FEEDER" xml:space="preserve">
     <value>"/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[{0}]/tbody/tr/td[2]/div/table[4]/tbody/tr/td[3]/span/a/select"</value>

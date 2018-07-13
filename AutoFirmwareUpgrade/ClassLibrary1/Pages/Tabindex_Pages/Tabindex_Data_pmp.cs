@@ -85,6 +85,39 @@ namespace Tabindex_Data.pmp
                 return webDriver.FindElement(By.Name("pmp:pmp/data/fr_cabling_config"));
             }
         }
+
+        private IWebElement Item_pmp_data_dsp1_channels_map
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[5]/tbody/tr/td[2]/a"));
+            }
+        }
+
+        private IWebElement Item_pmp_data_dsp2_channels_map
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[6]/tbody/tr/td[2]/a"));
+            }
+        }
+
+        private string Item_pmp_data_dsp1_channels_map_dsp_channel
+        {
+            get
+            {
+                return resourceManager.GetString("XPATH_dsp1_channels_map_dsp_channel").ToString();
+            }
+        }
+
+        private string Item_pmp_data_dsp2_channels_map_dsp_channel
+        {
+            get
+            {
+                return resourceManager.GetString("XPATH_dsp2_channels_map_dsp_channel").ToString();
+            }
+        }
+
         #endregion
 
         public bool Item_pmp_Click()
@@ -122,6 +155,30 @@ namespace Tabindex_Data.pmp
         {
             var PMP_FRCabling = new SelectElement(Item_pmp_data_FRCabling);
             return PMP_FRCabling.SelectedOption.Text.ToString();
+        }
+
+        public bool Item_dsp1_channels_map_Click()
+        {
+            Item_pmp_data_dsp1_channels_map.Click();
+            return true;
+        }
+
+        public bool Item_dsp2_channels_map_Click()
+        {
+            Item_pmp_data_dsp2_channels_map.Click();
+            return true;
+        }
+
+        public string Get_DSP1_channel_map(int dspchannelnumber)
+        {
+            return webDriver.FindElement(By.XPath(string.Format(Item_pmp_data_dsp1_channels_map_dsp_channel, dspchannelnumber + 1).Replace("\"", ""))).GetAttribute("value");
+            
+        }
+
+        public string Get_DSP2_channel_map(int dspchannelnumber)
+        {
+            return webDriver.FindElement(By.XPath(string.Format(Item_pmp_data_dsp2_channels_map_dsp_channel, dspchannelnumber + 1).Replace("\"", ""))).GetAttribute("value");
+
         }
     }
 }

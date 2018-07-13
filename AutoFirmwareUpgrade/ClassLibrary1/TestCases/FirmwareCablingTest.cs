@@ -64,11 +64,11 @@ namespace CashelFirmware.NunitTests
         /// c) Reboot the device
         /// d) Validate pmp_PQ/FR_Cabling
         /// </summary>
-        [Test]       
+        [Test]
         public void Cabling3U()
         {
             DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\3U_Standalone.xlsx";
-            string deviceIP = rdexcel.ReadExcel(DataSetFileNameWithPath, "DeviceInfo",0,"DeviceIP");
+            string deviceIP = rdexcel.ReadExcel(DataSetFileNameWithPath, "DeviceInfo", 0, "DeviceIP");
 
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
@@ -76,7 +76,7 @@ namespace CashelFirmware.NunitTests
 
             Assert.IsTrue(UploadCalbirationFile_3U_15I(deviceIP));
 
-            Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP),"Device is up/responding");
+            Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
             Assert.IsTrue(Tabindex_Configuration_dfr.Item_Configuration_Click(), "Clicked on Configuration button on webpage");
             Assert.IsTrue(Tabindex_Configuration_dfr.SwitchFrame_FromParent_Todfr_item(), "Switched Frame from Default to dfr topology");
             Assert.IsTrue(Tabindex_Configuration_dfr.Item_Dfr_Click(), "Clicked dfr option under tabindex_configuration page");
@@ -85,13 +85,13 @@ namespace CashelFirmware.NunitTests
 
             for (int i = 0; i < 18; i++)
             {
-                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i+1), "Clicked on Channel[" + i +"] option");
-                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_busbar_Select((i), DataSetFileNameWithPath),"Set the busbar number for iteration "+i);
-                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_feeder_Click((i), DataSetFileNameWithPath),"Set the feeder number for iteration " + i);
+                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i + 1), "Clicked on Channel[" + i + "] option");
+                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_busbar_Select((i), DataSetFileNameWithPath), "Set the busbar number for iteration " + i);
+                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_feeder_Click((i), DataSetFileNameWithPath), "Set the feeder number for iteration " + i);
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_phase_Click((i), DataSetFileNameWithPath), "Set the phase name for iteration " + i);
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_usage_Click((i), DataSetFileNameWithPath), "Set the usage name for iteration " + i);
             }
-            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToParentFrame(),"Successfully switched to parent frame");
+            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToParentFrame(), "Successfully switched to parent frame");
             Assert.IsTrue(Tabindex_Configuration_dfr.Commit_Click(), "Clicked on Commit");
             Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToDefaultContent(), "Successfully switched to default frame/main window");
             Assert.IsTrue(Tabindex_Data_soh.Item_Data_Click(), "Clicked on Data button");
@@ -103,9 +103,8 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_soh.Edtbx_soh_control_reset_cashel_SendKeys("1"), "Send 1 int the edit box");
             Assert.IsTrue(Tabindex_Data_soh.Item_soh_data_Click(), "Expanded Data item under soh");
             Assert.IsTrue(Tabindex_Data_soh.SwitchToParentFrame(), "Switch from current frame to parent to click on commit");
-            Assert.IsTrue(Tabindex_Data_soh.Commit_RebootDevice(),"Successfully inserted javascript to reboot device");
-            //Assert.IsTrue(Tabindex_Data_soh.Commit_Click(), "Clicked on commit button");
-
+            Assert.IsTrue(Tabindex_Data_soh.Commit_RebootDevice(), "Successfully inserted javascript to reboot device");
+            
             Thread.Sleep(40000); //this wait is required so that system is up and running after reboot
 
             do
@@ -113,6 +112,8 @@ namespace CashelFirmware.NunitTests
                 GetDevicePingReplySuccess = pinger.Send(deviceIP);
             }
             while (!GetDevicePingReplySuccess.Status.ToString().Equals("Success"));
+
+            Thread.Sleep(40000); //this wait is required so that system is up and running after reboot
 
             Assert.AreEqual("Data", Tabindex_Data_soh.OpenTabIndexPage(deviceIP));
             Assert.IsTrue(Tabindex_Data_soh.Item_Data_Click(), "Click on data button");
@@ -122,6 +123,19 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_Click(), "Clicked on pmp data");
             Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
             Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
+            Assert.IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click());
+
+            for (int dspchannelmap1 = 0; dspchannelmap1 < 12; dspchannelmap1++)
+            {
+                Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath,resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap1, resourceManager.GetString("EXCELDATA_Channel_Number_DSP1").ToString()),Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
+            }
+
+            Assert.IsTrue(Tabindex_Data_pmp.Item_dsp2_channels_map_Click());
+
+            for (int dspchannelmap2 = 0; dspchannelmap2 < 12; dspchannelmap2++)
+            {
+                Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap2, resourceManager.GetString("EXCELDATA_Channel_Number_DSP2").ToString()), Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
+            }
         }
 
         
