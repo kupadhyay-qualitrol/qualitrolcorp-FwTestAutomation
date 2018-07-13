@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 
-namespace Tabindex.Pages
+namespace CashelFirmware.NunitTests
 {
     class Tabindex_Configuration_LDLicense
     {
