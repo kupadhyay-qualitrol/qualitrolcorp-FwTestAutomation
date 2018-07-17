@@ -9,13 +9,20 @@ using Tabindex_Data.pmp;
 using Tabindex_Data.soh;
 using Mfgindex.Calibration;
 using CashelFirmware.Utility;
+using RelevantCodes.ExtentReports;
+using NUnit.Framework.Interfaces;
 
 namespace CashelFirmware.NunitTests
 {
+    
     [TestFixture]
     public class FirmwareCablingTest
+     
     {
-       IWebDriver webdriver;
+        public ExtentReports extent;
+        public ExtentTest test;
+        // private static ReportingTasks reportingTasks; 
+        IWebDriver webdriver;
        Ping pinger = new Ping();
        PingReply GetDevicePingReplySuccess;
        Read_WriteExcel rdexcel;
@@ -30,12 +37,29 @@ namespace CashelFirmware.NunitTests
             resourceManager = new System.Resources.ResourceManager("ClassLibrary1.Resource", this.GetType().Assembly);
         }
 
+        [OneTimeSetUp]
+        public void StartReport()
+        {
+            string path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+            string actualPath = path.Substring(0, path.LastIndexOf("bin"));
+            string projectPath = new Uri(actualPath).LocalPath;
+            string reportPath = projectPath + "Reports\\CashelFirmwareReport.html";
+
+            extent = new ExtentReports(reportPath, true);
+            extent
+            .AddSystemInfo("Host Name", "QTRL-FLTHQ72")
+            .AddSystemInfo("Environment", "Windows")
+            .AddSystemInfo("User Name", "Rahuldev Gupta");
+            extent.LoadConfig(projectPath + "extent-config.xml");
+        }
+
         /// <summary>
         /// This method is used to initiate the selenium webdriver instance so that google chrome can be launched.
         /// </summary>
         [SetUp]
         public void TestSetup()
         {
+       
             ChromeOptions options = new ChromeOptions();
             options.AddArguments(new[] {
                 "start-maximized",
@@ -46,7 +70,7 @@ namespace CashelFirmware.NunitTests
 
             webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(25)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
-            //deviceIP = "10.75.58.51";
+            
         }
         /// <summary>
         /// This method is called at the end of all the test so that google Chrome can be closed.
@@ -54,21 +78,47 @@ namespace CashelFirmware.NunitTests
         [TearDown]
         public void TearDown()
         {
+            var status = TestContext.CurrentContext.Result.Outcome.Status;
+            var stackTrace = "<pre>" + TestContext.CurrentContext.Result.StackTrace + "</pre>";
+            var errorMessage = TestContext.CurrentContext.Result.Message;
+
+            if (status == TestStatus.Failed)
+            {
+                test.Log(LogStatus.Fail, stackTrace + errorMessage);
+            }
+            extent.EndTest(test);
             webdriver.Close();
         }
+
+        [OneTimeTearDown]
+        public void EndReport()
+        {
+            extent.Flush();
+            extent.Close();
+        }
+
+        [Test]
+        public void DemoReportPass()
+        {
+            test = extent.StartTest("DemoReportPass");
+            Assert.IsTrue(true);
+            test.Log(LogStatus.Pass, "Assert Pass as condition is True");
+        }
+
         /// <summary>
         /// This method is used to test 3U cabling in the Firmware.
         /// a) Load the customized Calibration file
         /// b) Configure Cabling 3U
         /// c) Reboot the device
         /// d) Validate pmp_PQ/FR_Cabling
+        /// e)Validate DSP Channel Mapping
         /// </summary>
         [Test]
         public void Cabling3U()
         {
             DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\3U_Standalone.xlsx";
             string deviceIP = rdexcel.ReadExcel(DataSetFileNameWithPath, "DeviceInfo", 0, "DeviceIP");
-
+         
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
             Tabindex_Data_soh Tabindex_Data_soh = new Tabindex_Data_soh(webdriver);
