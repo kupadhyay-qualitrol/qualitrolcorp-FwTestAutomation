@@ -116,7 +116,7 @@ namespace CashelFirmware.NunitTests
         [Test]
         public void Cabling3U()
         {
-            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\3U_Standalone.xlsx";
+            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\3U.xlsx";
             string deviceIP = rdexcel.ReadExcel(DataSetFileNameWithPath, "DeviceInfo", 0, "DeviceIP");
          
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
