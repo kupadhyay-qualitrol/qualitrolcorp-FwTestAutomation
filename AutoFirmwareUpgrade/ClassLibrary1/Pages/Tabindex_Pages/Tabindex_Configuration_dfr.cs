@@ -79,6 +79,13 @@ namespace Tabindex_Configuration.dfr
             }
         }
 
+        private string Item_dfr_analog_channel_si_unit
+        {
+            get
+            {
+                return resourceManager.GetString("XPATH_SI_UNIT").ToString();
+            }
+        }
         private string Item_dfr_analog_channel_busbar
         {
             get
@@ -169,6 +176,12 @@ namespace Tabindex_Configuration.dfr
             return true;
         }
 
+        public bool Item_dfr_analog_channel_si_unit_Select(int i, string DataSheetFilenamewithExtension)
+        {
+            var SI_Unit_Select = new SelectElement(webDriver.FindElement(By.XPath(string.Format(Item_dfr_analog_channel_si_unit, i + 1).Replace("\"", ""))));
+            SI_Unit_Select.SelectByText(rdexcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "si_units"));
+            return true;
+        }
 
         public bool Item_dfr_analog_channel_busbar_Select(int i,string DataSheetFilenamewithExtension)
         {
