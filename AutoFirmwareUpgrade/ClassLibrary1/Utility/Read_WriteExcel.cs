@@ -20,6 +20,15 @@ namespace CashelFirmware.Utility
         public string Pmp_PQcabling { get => pmp_PQcabling; set => pmp_PQcabling = value; }
         public string Pmp_FRcabling { get => pmp_FRcabling; set => pmp_FRcabling = value; }
 
+        public int GetUsedRowCount(string filename, string Sheetname)
+        {
+                wb = xlapp.Workbooks.Open(filename);
+                Sheet = wb.Sheets[Sheetname];
+                xlrange = Sheet.UsedRange;
+                int rowcount = xlrange.Rows.Count;
+                return rowcount;
+        }
+
         public string ReadExcel(string filename,string Sheetname,int i,string InputColumn)
         {
             try
@@ -76,6 +85,7 @@ namespace CashelFirmware.Utility
         
             {
                 xlapp.Quit();
+                
             }
             }
 
@@ -97,6 +107,7 @@ namespace CashelFirmware.Utility
             finally
             {
                 xlapp.Quit();
+                
             }
         }
 
