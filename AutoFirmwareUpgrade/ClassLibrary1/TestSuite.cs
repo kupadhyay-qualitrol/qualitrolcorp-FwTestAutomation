@@ -56,55 +56,275 @@ namespace CashelFirmware.TestSuite
             ExtentReport.EndTestCaseReport(InfovarStartTest);
             webdriver.Quit();
         }
-        [Test,Order(1)]
-        public void DemoTest()
-        {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start Demo Testing");
-            CablingTest.DemoReportPass(InfovarStartTest);
-        }
-        [Test, Order(2)]
+
+        [Test, Order(1)]
         public void TestCabling3U()
         {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start 3U Cabling Testing");
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U Cabling");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver,deviceIP, InfovarStartTest,"3U");
         }
-        [Test,Order(3)]
+        [Test,Order(2)]
         public void TestCabling3U3I()
         {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start 3U3I Cabling Testing");
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U3I Cabling");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I");
         }
 
-        [Test,Order(4)]
+        [Test, Order(3)]
+        public void TestCabling3U3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I");
+        }
+
+        [Test, Order(4)]
+        public void TestCabling3U3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I");
+        }
+
+        [Test, Order(5)]
+        public void TestCabling3U3I3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U3I3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I");
+        }
+
+        [Test,Order(6)]
         public void TestCabling2M3U()
         {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start 2M3U Cabling Testing");
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M3U Cabling");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U");
         }
 
-        [Test,Order(5)]
+        [Test, Order(7)]
+        public void TestCabling2M3U3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M3U3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I");
+        }
+
+        [Test, Order(8)]
+        public void TestCabling2M3U3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M3U3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I");
+        }
+
+        [Test, Order(9)]
+        public void TestCabling2M3U3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M3U3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I");
+        }
+
+        [Test, Order(10)]
+        public void TestCabling2M3U3I3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M3U3I3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
+        }
+
+        [Test,Order(11)]
         public void TestCabling4U()
         {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start 4U Cabling Testing");
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U Cabling");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U");
         }
 
-        [Test,Order(6)]
+        [Test, Order(12)]
+        public void TestCabling4U3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I");
+        }
+
+        [Test, Order(13)]
+        public void TestCabling4U3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I");
+        }
+
+        [Test, Order(14)]
+        public void TestCabling4U3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I");
+        }
+
+        [Test, Order(15)]
+        public void TestCabling4U3I3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3I3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I");
+        }
+
+        [Test, Order(16)]
+        public void TestCabling4U4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I");
+        }
+
+        [Test, Order(17)]
+        public void TestCabling4U4I4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U4I4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I");
+        }
+
+        [Test, Order(18)]
+        public void TestCabling4U4I4I4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U4I4I4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I");
+        }
+
+        [Test,Order(19)]
         public void TestCabling2M4U()
         {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start 2M4U Cabling Testing");
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M4U Cabling Testing");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U");
         }
-        [Test,Order(7)]
+
+        [Test, Order(20)]
+        public void TestCabling2M4U3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M4U3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I");
+        }
+
+        [Test, Order(21)]
+        public void TestCabling2M4U3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M4U3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I");
+        }
+
+        [Test, Order(22)]
+        public void TestCabling2M4U3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M4U3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I");
+        }
+
+        [Test, Order(23)]
+        public void TestCabling2M4U4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M4U4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I");
+        }
+
+        [Test, Order(24)]
+        public void TestCabling2M4U4I4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 2M4U4I4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I");
+        }
+
+        [Test,Order(25)]
         public void TestCabling4U3U()
         {
-            InfovarStartTest = ExtentReport.extent.StartTest("Start 4U3U Cabling Testing");
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U Cabling");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U");
+        }
+
+        [Test, Order(26)]
+        public void TestCabling4U3U3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I");
+        }
+
+        [Test, Order(27)]
+        public void TestCabling4U3U3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I");
+        }
+
+        [Test, Order(28)]
+        public void TestCabling4U3U3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I");
+        }
+
+        [Test, Order(29)]
+        public void TestCabling3U4U()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U4U Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U");
+        }
+
+        [Test, Order(30)]
+        public void TestCabling3U4U3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U4U3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I");
+        }
+
+        [Test, Order(31)]
+        public void TestCabling3U4U3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U4U3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I");
+        }
+
+        [Test, Order(31)]
+        public void TestCabling3U4U3I3I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U4U3I3I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I");
+        }
+
+        [Test, Order(32)]
+        public void TestCabling4U3U4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I");
+        }
+
+        [Test, Order(33)]
+        public void TestCabling4U3U4I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U4I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I");
+        }
+
+        [Test, Order(34)]
+        public void TestCabling4U3U4I4I3I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 4U3U4I4I3I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I");
+        }
+
+        [Test, Order(35)]
+        public void TestCabling3U4U3I4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U4U3I4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I");
+        }
+
+        [Test, Order(36)]
+        public void TestCabling3U4U3I3I4I()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test 3U4U3I3I4I Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I");
+        }
+
+        [Test, Order(37)]
+        public void TestCablingNOCIRCUIT()
+        {
+            InfovarStartTest = ExtentReport.extent.StartTest("Test NOCIRCUIT Cabling");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
         }
     }
 }
