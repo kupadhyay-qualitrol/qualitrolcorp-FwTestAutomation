@@ -221,7 +221,7 @@ namespace CashelFirmware.NunitTests
                 }
                 TestLog.Log(LogStatus.Pass, "Success:-Validated dsp2 channel mapping and it is correct");
 
-                TestLog.Log(LogStatus.Info, "Ended Executing 3U Cabling Test");
+                TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test");
 
         }
 
