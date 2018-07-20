@@ -5,6 +5,8 @@ using CashelFirmware.Reporting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using RelevantCodes.ExtentReports;
+using Microsoft.Office.Interop.Excel;
+using CashelFirmware.Utility;
 
 namespace CashelFirmware.TestSuite
 {
@@ -15,10 +17,13 @@ namespace CashelFirmware.TestSuite
         FirmwareCablingTest CablingTest;
         IWebDriver webdriver;
         public string deviceIP = string.Empty;
+
+
         public TestSuite()
         {
             ExtentReport = new ReportGeneration();
             CablingTest = new FirmwareCablingTest();
+            Read_WriteExcel.xlapp = new Application();
         }
 
         [SetUp]
@@ -35,7 +40,6 @@ namespace CashelFirmware.TestSuite
             webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(25)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
             deviceIP = "10.75.58.51";
-            //ExtentReport.StartReport();
         }
 
         [OneTimeSetUp]
@@ -48,6 +52,17 @@ namespace CashelFirmware.TestSuite
         public void EndReprot()
         {
             ExtentReport.EndReprot();
+
+            System.Diagnostics.Process[] AllProcesses = System.Diagnostics.Process.GetProcessesByName("excel");
+
+            // check to kill the right process
+            foreach (System.Diagnostics.Process ExcelProcess in AllProcesses)
+            {
+                if (ExcelProcess.ProcessName.Equals("EXCEL"))
+                    ExcelProcess.Kill();
+            }
+            AllProcesses = null;
+
         }
 
         [TearDown]

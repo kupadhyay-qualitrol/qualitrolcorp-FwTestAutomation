@@ -18,14 +18,13 @@ namespace CashelFirmware.NunitTests
     {
        Ping pinger = new Ping();
        PingReply GetDevicePingReplySuccess;
-       Read_WriteExcel rdexcel;
+      // Read_WriteExcel rdexcel;
        string DataSetFileNameWithPath;
-       ResourceManager resourceManager;
-      // public string deviceIP=string.Empty;
+       ResourceManager resourceManager;      
 
         public FirmwareCablingTest()
         {
-            rdexcel = new Read_WriteExcel();
+           // rdexcel = new Read_WriteExcel();
             resourceManager = new System.Resources.ResourceManager("ClassLibrary1.Resource", this.GetType().Assembly);
         }
 
@@ -91,7 +90,7 @@ namespace CashelFirmware.NunitTests
                     break;
             }
 
-
+            
                 Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
                 TestLog.Log(LogStatus.Pass, "Device is up/responding");
 
@@ -115,7 +114,7 @@ namespace CashelFirmware.NunitTests
                     Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i + 1), "Clicked on Channel[" + i + "] option");
                     TestLog.Log(LogStatus.Pass, "Success:-Clicked on Channel[" + i + "] option");
 
-                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_si_unit_Select((i), DataSetFileNameWithPath), "Set the si_unit for iteration "+ i);
+                    Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_si_unit_Select((i), DataSetFileNameWithPath), "Set the si_unit for iteration "+ i);
                
 
                     Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_busbar_Select((i), DataSetFileNameWithPath), "Set the busbar number for iteration " + i);
@@ -197,18 +196,15 @@ namespace CashelFirmware.NunitTests
                 Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_Click(), "Clicked on pmp data");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on pmp data");
 
-                Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
-                TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct");
+            Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
+            TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct");
 
-                Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
-                TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct");
-
-                Assert.IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click());
+            Assert.IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click());
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 channel map");
 
                 for (int dspchannelmap1 = 0; dspchannelmap1 < 12; dspchannelmap1++)
                 {
-                    Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap1, resourceManager.GetString("EXCELDATA_Channel_Number_DSP1").ToString()), Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
+                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap1, resourceManager.GetString("EXCELDATA_Channel_Number_DSP1").ToString()), Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
                 }
                 TestLog.Log(LogStatus.Pass, "Success:-Validated dsp1 channel mapping and it is correct");
 
@@ -217,11 +213,14 @@ namespace CashelFirmware.NunitTests
 
                 for (int dspchannelmap2 = 0; dspchannelmap2 < 12; dspchannelmap2++)
                 {
-                    Assert.AreEqual(rdexcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap2, resourceManager.GetString("EXCELDATA_Channel_Number_DSP2").ToString()), Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
+                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap2, resourceManager.GetString("EXCELDATA_Channel_Number_DSP2").ToString()), Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
                 }
                 TestLog.Log(LogStatus.Pass, "Success:-Validated dsp2 channel mapping and it is correct");
 
-                TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test");
+            Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
+            TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct");
+
+            TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test");
 
         }
 
