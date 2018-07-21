@@ -8,13 +8,13 @@ namespace Tabindex_Data.pmp
     {
         IWebDriver webDriver;
         System.Resources.ResourceManager resourceManager;
-        Read_WriteExcel rdexcel;
+      //  Read_WriteExcel rdexcel;
 
         public Tabindex_Data_pmp(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("ClassLibrary1.Resource", this.GetType().Assembly);
-            rdexcel = new Read_WriteExcel();
+            //rdexcel = new Read_WriteExcel();
         }
 
         #region Object Repository

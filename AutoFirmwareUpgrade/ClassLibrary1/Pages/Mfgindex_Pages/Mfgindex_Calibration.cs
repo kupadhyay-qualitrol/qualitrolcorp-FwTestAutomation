@@ -13,13 +13,13 @@ namespace Mfgindex.Calibration
     {
         IWebDriver webDriver;
         System.Resources.ResourceManager resourceManager;
-        Read_WriteExcel rdexcel;
+        //Read_WriteExcel rdexcel;
 
         public Mfgindex_Calibration(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("ClassLibrary1.Resource", this.GetType().Assembly);
-            rdexcel = new Read_WriteExcel();
+           // rdexcel = new Read_WriteExcel();
         }
 
         #region ObjectRepository
@@ -51,7 +51,7 @@ namespace Mfgindex.Calibration
         {
             get
             {
-                return webDriver.FindElement(By.CssSelector("input[type='button'][value='Load Calibration']"));
+                return webDriver.FindElement(By.Id("load"));
             }
         }
 

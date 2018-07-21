@@ -10,13 +10,13 @@ namespace Tabindex_Configuration.dfr
     {
         IWebDriver webDriver;
         System.Resources.ResourceManager resourceManager;
-        Read_WriteExcel rdexcel;
+       // Read_WriteExcel rdexcel;
         public Tabindex_Configuration_dfr(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("ClassLibrary1.Resource", this.GetType().Assembly);
            // resourceManager = new System.Resources.ResourceManager("ClassLibrary1.Resource",Assembly.GetExecutingAssembly());
-            rdexcel = new Read_WriteExcel();            
+          //  rdexcel = new Read_WriteExcel();            
         }
 
         #region ObjectRepository
@@ -179,14 +179,14 @@ namespace Tabindex_Configuration.dfr
         public bool Item_dfr_analog_channel_si_unit_Select(int i, string DataSheetFilenamewithExtension)
         {
             var SI_Unit_Select = new SelectElement(webDriver.FindElement(By.XPath(string.Format(Item_dfr_analog_channel_si_unit, i + 1).Replace("\"", ""))));
-            SI_Unit_Select.SelectByText(rdexcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "si_units"));
+            SI_Unit_Select.SelectByText(Read_WriteExcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "si_units"));
             return true;
         }
 
         public bool Item_dfr_analog_channel_busbar_Select(int i,string DataSheetFilenamewithExtension)
         {
             var BusbarSelect= new SelectElement(webDriver.FindElement(By.XPath(string.Format(Item_dfr_analog_channel_busbar, i+1).Replace("\"", ""))));
-            BusbarSelect.SelectByText(rdexcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling",i,"busbar"));
+            BusbarSelect.SelectByText(Read_WriteExcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling",i,"busbar"));
             return true;
         }
 
@@ -194,21 +194,21 @@ namespace Tabindex_Configuration.dfr
         public bool Item_dfr_analog_channel_feeder_Click(int i,string DataSheetFilenamewithExtension)
         {
             var FeederSelect = new SelectElement(webDriver.FindElement(By.XPath(string.Format(Item_dfr_analog_channel_feeder, i+1).Replace("\"", ""))));
-            FeederSelect.SelectByText(rdexcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "feeder_number"));
+            FeederSelect.SelectByText(Read_WriteExcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "feeder_number"));
             return true;
         }
 
         public bool Item_dfr_analog_channel_phase_Click(int i,string DataSheetFilenamewithExtension)
         {
             var PahseSelect = new SelectElement(webDriver.FindElement(By.XPath(string.Format(Item_dfr_analog_channel_phase, i+1).Replace("\"", ""))));
-            PahseSelect.SelectByText(rdexcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "phase"));
+            PahseSelect.SelectByText(Read_WriteExcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "phase"));
             return true;
         }
 
         public bool Item_dfr_analog_channel_usage_Click(int i, string DataSheetFilenamewithExtension)
         {
             var UsageSelect = new SelectElement(webDriver.FindElement(By.XPath(string.Format(Item_dfr_analog_channel_usage, i+1).Replace("\"", ""))));
-            UsageSelect.SelectByText(rdexcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "usage"));
+            UsageSelect.SelectByText(Read_WriteExcel.ReadExcel(DataSheetFilenamewithExtension, "Cabling", i, "usage"));
             return true;
         }
 
