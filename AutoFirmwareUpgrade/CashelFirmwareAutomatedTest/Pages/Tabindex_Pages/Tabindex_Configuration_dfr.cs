@@ -1,7 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿/*This file contains object repository for Webelements and method to perform action on them.
+ * This is basically based on concept of Page Object Model(POM).
+ * This file will contains objects related to Tabindex_configuration_dfr page.
+ */
+
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using CashelFirmware.Utility;
-using System.Threading;
 using System;
 
 namespace Tabindex_Configuration.dfr
@@ -14,8 +18,7 @@ namespace Tabindex_Configuration.dfr
         public Tabindex_Configuration_dfr(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
-            resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
-          
+            resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);          
         }
 
         #region ObjectRepository

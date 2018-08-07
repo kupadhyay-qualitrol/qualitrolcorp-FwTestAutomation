@@ -203,4 +203,7 @@
   <data name="LOCATOR_XPATH_FEEDER" xml:space="preserve">
     <value>"//a[text()='feeder[{0}]']"</value>
   </data>
+  <data name="XPATh_pqp_b2_calcno_config" xml:space="preserve">
+    <value>"/html/body/form/table/tbody/tr/td/table[3]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/div/table[1]/tbody/tr/td[2]/div/table[{0}]/tbody/tr/td[3]/span/a/input"</value>
+  </data>
 </root>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*This file contains all the test cases as per Nunit Framework
+ */
+
+using System;
 using CashelFirmware.NunitTests;
 using NUnit.Framework;
 using CashelFirmware.Reporting;
@@ -68,9 +71,16 @@ namespace CashelFirmware.TestSuite
         [TearDown]
         public void TearDown()
         {
-            ReportGeneration.EndTestCaseReport(InfovarStartTest);
+            ReportGeneration.EndTestCaseReport(InfovarStartTest,webdriver);
             webdriver.Quit();
         }
+        [Test]
+        public void demo()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Demo");
+            Assert.AreEqual(1, 2);
+        }
+
 
         [Test, Order(1)]
         public void TestCabling3U()

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿/*This file contains object repository for Webelements and method to perform action on them.
+ * This is basically based on concept of Page Object Model(POM).
+ * This file will contains objects related to Tabindex_Configuration_LDLicense page.
+ */
+
+ using OpenQA.Selenium;
+
 
 
 namespace CashelFirmware.NunitTests

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*This file contains methods related to Cabling.
+ * This is basically based on concept of Page Object Model(POM).
+ */
+using System;
 using System.Threading;
 using System.Net.NetworkInformation;
 using NUnit.Framework;
@@ -22,7 +25,11 @@ namespace CashelFirmware.NunitTests
        PingReply GetDevicePingReplySuccess;
        string DataSetFileNameWithPath;
        ResourceManager resourceManager;
-        public bool isCalibrationNeeded = true;
+       public bool isCalibrationNeeded = true;
+
+        /// <summary>
+        /// This enum contains the data related to busbar and feeder map from DataSet in excel.
+        /// </summary>
         enum busbarfeedermap
         {
             bb0_chnl_strt=0,
@@ -40,12 +47,6 @@ namespace CashelFirmware.NunitTests
             resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
         }
 
-        public void DemoReportPass(ExtentTest TestLog)
-        {
-            Assert.IsTrue(true);
-            TestLog.Log(LogStatus.Pass, "Assert Pass as condition is True");
-        }
-
         /// <summary>
         /// This method is used to test 3U cabling in the Firmware.
         /// a) Load the customized Calibration file
@@ -53,6 +54,10 @@ namespace CashelFirmware.NunitTests
         /// c) Reboot the device
         /// d) Validate pmp_PQ/FR_Cabling
         /// e)Validate DSP Channel Mapping
+        /// <param name="Cabling"> Cabling to be configured in device</param>
+        /// <param name="deviceIP">Device IP Address under test</param>
+        /// <param name="TestLog">Object of Extent Report for log info</param>
+        /// <param name="webdriver"></param>
         /// </summary>
         public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling,bool isCalibrationNeeded=true)
         {
@@ -104,7 +109,6 @@ namespace CashelFirmware.NunitTests
                         break;
                 }
             }
-
             
                 Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
                 TestLog.Log(LogStatus.Pass, "Device is up/responding");
@@ -193,6 +197,7 @@ namespace CashelFirmware.NunitTests
 
                 Thread.Sleep(40000); //this wait is required so that system is up and running after reboot
                 TestLog.Log(LogStatus.Info, "Device is up");
+
                 Assert.AreEqual("Data", Tabindex_Data_soh.OpenTabIndexPage(deviceIP));
                 TestLog.Log(LogStatus.Pass, "Success:-Device is up.Opened Tabindex page");
 
@@ -320,7 +325,16 @@ namespace CashelFirmware.NunitTests
             return true;
         }
 
-        public void ConfigurePQData(string deviceIP,IWebDriver webdriver, ExtentTest TestLog,string Cabling)
+        /// <summary>
+        /// This method is used to Configure PQ 10min and PQ Free Interval Parameters
+        /// </summary>
+        /// <param name="deviceIP">IP Address of the device</param>
+        /// <param name="webdriver">Selenium driver for chrome execution</param>
+        /// <param name="TestLog">Object of Extent Report for log info</param>
+        /// <param name="Cabling">Cabling to be configured</param>
+        /// <param name="PQDuration">PQ Free interval time duration</param>
+        /// <param name="PQDurationUnit">PQ Free interval duration unit</param>
+        public void ConfigurePQData(string deviceIP,IWebDriver webdriver, ExtentTest TestLog,string Cabling,string PQDuration,string PQDurationUnit)
         {
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Configuration_pqp Tabindex_Configuration_pqp = new Tabindex_Configuration_pqp(webdriver);
@@ -374,8 +388,88 @@ namespace CashelFirmware.NunitTests
 
             Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq 10 min param");
             TestLog.Log(LogStatus.Pass, "Success:-Configured pq 10 min param");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.SwitchFrame_FromCommit_Tob1_config(), "Switched frame from Commit button to b2_config");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched frame from Commit button to b2_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_config_Click(), "Clicked on b2_config");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_record_config_click(), "Clicked on b2_record_config");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_record_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Item_pqp_b2_config_sec_min_flag_Select(PQDurationUnit), "Selected unit as "+ PQDurationUnit);
+            TestLog.Log(LogStatus.Pass, "Success:- Selected unit as " + PQDurationUnit);
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
+            TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq free interval param");
+            TestLog.Log(LogStatus.Pass, "Success:-Configured pq free interval param");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.SwitchFrame_FromCommit_Tob1_config(), "Switched frame from Commit button to b2_config");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched frame from Commit button to b2_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_config_Click(), "Clicked on b2_config");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_record_config_click(), "Clicked on b2_record_config");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_record_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
+            TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Insertpqp_param_javascript("pqp:pqp/config/b2_config/record_config/duration="+PQDuration), "Inserted PQ Free Interval Duration");
+            TestLog.Log(LogStatus.Pass, "Success:- Inserted PQ Free Interval Duration");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq free interval duration");
+            TestLog.Log(LogStatus.Pass, "Success:-Configured pq free interval duration");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.SwitchFrame_FromCommit_Tob1_config(), "Switched frame from Commit button to b2_config");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched frame from Commit button to b2_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_config_Click(), "Clicked on b2_config");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_record_config_click(), "Clicked on b2_record_config");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_record_config");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.b2_param_id_list_Click(), "Clicked on b2 param_id_list");
+            TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2 param_id_list");
+
+            string pq_param_b2 = string.Empty;
+            for (int paramindex = 0; paramindex < 1189; paramindex++)
+            {
+                if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                {
+                    pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                    break;
+                }
+                else
+                {
+                    pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                }
+            }
+            TestLog.Log(LogStatus.Pass, "Success:- Configured PQ param in string");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
+            TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Insertpqp_param_javascript(pq_param_b2), "Inserted pq_b2 parameters");
+            TestLog.Log(LogStatus.Pass, "Success:- Inserted pq_b2 parameters");
+
+            Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq free interval param");
+            TestLog.Log(LogStatus.Pass, "Success:-Configured pq free interval param");
         }
 
+        /// <summary>
+        /// Mehtod to download PQ Data from Record tab
+        /// </summary>
+        /// <param name="deviceIP">Device IP address under test</param>
+        /// <param name="webdriver">Selenium driver instance</param>
+        /// <param name="TestLog">Extent report Log object for reporting</param>
+        /// <param name="Cabling">Cabling to be configured</param>
+        /// <param name="RecordDownloadTime">Time to download 10 minute PQ record</param>
         public void DownloadPQData(string deviceIP, IWebDriver webdriver, ExtentTest TestLog, string Cabling,string RecordDownloadTime)
         {
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);

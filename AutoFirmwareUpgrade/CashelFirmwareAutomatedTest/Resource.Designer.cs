@@ -286,6 +286,15 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;/html/body/form/table/tbody/tr/td/table[3]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/div/table[1]/tbody/tr/td[2]/div/table[{0}]/tbody/tr/td[3]/span/a/input&quot;.
+        /// </summary>
+        internal static string XPATh_pqp_b2_calcno_config {
+            get {
+                return ResourceManager.GetString("XPATh_pqp_b2_calcno_config", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/div/table[1]/tbody/tr/td[2]/div/table[{0}]/tbody/tr/td[3]/span/a/input.
         /// </summary>
         internal static string XPATH_pqp_calcno_config {

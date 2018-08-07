@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*This file contains object repository for Webelements and method to perform action on them.
+ * This is basically based on concept of Page Object Model(POM).
+ * This file will contains objects related to Tabindex_Record page.
+ */
+
 using OpenQA.Selenium;
 
 namespace Tabindex.Record

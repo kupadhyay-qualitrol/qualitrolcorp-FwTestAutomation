@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*This file contains object repository for Webelements and method to perform action on them.
+ * This is basically based on concept of Page Object Model(POM).
+ * This file will contains objects related to Mfgindex_Calibration page.
+ */
+
 using OpenQA.Selenium;
-using CashelFirmware.Utility;
 
 
 namespace Mfgindex.Calibration
@@ -13,13 +12,11 @@ namespace Mfgindex.Calibration
     {
         IWebDriver webDriver;
         System.Resources.ResourceManager resourceManager;
-        //Read_WriteExcel rdexcel;
 
         public Mfgindex_Calibration(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
-           // rdexcel = new Read_WriteExcel();
         }
 
         #region ObjectRepository

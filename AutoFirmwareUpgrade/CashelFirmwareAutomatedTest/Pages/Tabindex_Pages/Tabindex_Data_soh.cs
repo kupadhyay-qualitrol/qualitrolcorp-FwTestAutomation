@@ -1,5 +1,8 @@
-﻿using OpenQA.Selenium;
-using CashelFirmware.Utility;
+﻿/*This file contains object repository for Webelements and method to perform action on them.
+ * This is basically based on concept of Page Object Model(POM).
+ * This file will contains objects related to Tabindex_Data_soh page.
+ */
+using OpenQA.Selenium;
 
 namespace Tabindex_Data.soh
 {
@@ -7,13 +10,11 @@ namespace Tabindex_Data.soh
     {
         IWebDriver webDriver;
         System.Resources.ResourceManager resourceManager;
-        //Read_WriteExcel rdexcel;
 
         public Tabindex_Data_soh(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
-           // rdexcel = new Read_WriteExcel();
         }
 
         #region ObjectRepository
