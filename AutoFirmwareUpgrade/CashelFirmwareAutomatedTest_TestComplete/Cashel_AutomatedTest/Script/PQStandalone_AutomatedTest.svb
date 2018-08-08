@@ -1,0 +1,86 @@
+﻿'USEUNIT Startup
+
+Option Explicit
+'TestCase No.- BTC-xxxx
+'Description:-This method is used to test Test PQ Standalone Cabling by configuring :-
+'             a) Cabling
+'             b) PQ parameters configure
+'             c) Download PQ Data File-10 min and FreeInterval
+Function LaunchPQStandaloneApp()
+  TestedApps.PQStandalone.Run()
+End Function
+
+Function ClosePQStandaloneApp()
+  TestedApps.PQStandalone.Terminate()
+End Function
+
+Function PQStandalone_Test()
+ On Error Resume Next  
+  Dim DataSetFileName
+  Dim Start_Time
+  
+  DataSetFileName="C:\TestDataTC\PQStandalone.xlsx"
+  
+  Omicron_HarmonicInjection(Startup.fn_DataSheet(DataSetFileName,"OmicronFilePath"))
+  
+  Aliases.PQStandalone.PQStandaloneData.Edtbx_DeviceIP.SetText(Startup.fn_DataSheet(DataSetFileName,"DeviceIP")) 'Sets the IP in the exe
+  
+  Aliases.PQStandalone.PQStandaloneData.Edtbx_CablingType.SetText(Startup.fn_DataSheet(DataSetFileName,"Cabling")) 'Sets the cabling in the exe
+  
+  Aliases.PQStandalone.PQStandaloneData.Edtbx_PQDuration.SetText(Startup.fn_DataSheet(DataSetFileName,"PQFreeRecordDuration")) 'Sets the PQ Free Interval duration
+  
+  Aliases.PQStandalone.PQStandaloneData.Edtbx_PQDurUnit.SetText(Startup.fn_DataSheet(DataSetFileName,"PQFreeDurationUnit")) 'Sets the PQ Free Interval unit
+  
+  Aliases.PQStandalone.PQStandaloneData.btn_ConfigureCabling.Click()
+  
+  
+  Do Until (Aliases.PQStandalone.PQStandaloneData.btn_ConfigureCabling.Enabled)
+  
+     aqUtils.Delay 1000
+     
+  Loop
+
+  Do Until((aqDateTime.GetMinutes(aqDateTime.Now) Mod 10) = 0)
+   
+    aqUtils.Delay 1000
+ 
+  Loop
+
+  Start_Time = aqDateTime.AddTime(aqDateTime.Now,0,-5,-30,0)
+  Start_Time=aqDateTime.AddTime(Start_Time,0,0,0,0)
+  Start_Time= DateTimeToFormatStr(Start_Time,"%d/%m/%Y %H:%M")
+  
+  aqUtils.Delay (StrToInt64(Startup.fn_DataSheet(DataSetFileName,"RecordDuration")))  'Wait Time to record PQ Data 
+  
+  Aliases.PQStandalone.PQStandaloneData.Edtbx_RecordStartTime.SetText(Start_Time)
+
+ Aliases.PQStandalone.PQStandaloneData.btn_DownloadPQData.Click()
+  
+  Do Until (Aliases.PQStandalone.PQStandaloneData.btn_DownloadPQData.Enabled)
+  
+     aqUtils.Delay 1000
+     
+  Loop 
+  
+  StopOmicronInjection()
+ 
+End Function 
+
+Function Omicron_HarmonicInjection(OmicronFilePath)
+
+TestedApps.Harmonics.Run()
+
+Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonOpen.ClickButton
+
+Aliases.Harmonics.dlgOpen.cbxFileName.SetText(OmicronFilePath)
+
+Aliases.Harmonics.dlgOpen.btnOpen.ClickButton
+
+Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonStaticOutput.ClickButton
+
+End Function
+
+Function StopOmicronInjection()
+  TestedApps.Harmonics.Terminate()
+End Function
+
