@@ -15,7 +15,6 @@ namespace CashelFirmware.TestSuite
 {
     public class TestSuite
     {
-        //ReportGeneration ReportGeneration;
         public ExtentTest InfovarStartTest;
         FirmwareCablingTest CablingTest;
         IWebDriver webdriver;
@@ -24,7 +23,6 @@ namespace CashelFirmware.TestSuite
 
         public TestSuite()
         {
-            //ReportGeneration = new ReportGeneration();
             CablingTest = new FirmwareCablingTest();
             Read_WriteExcel.xlapp = new Application();
         }
@@ -74,13 +72,6 @@ namespace CashelFirmware.TestSuite
             ReportGeneration.EndTestCaseReport(InfovarStartTest,webdriver);
             webdriver.Quit();
         }
-        [Test]
-        public void demo()
-        {
-            InfovarStartTest = ReportGeneration.extent.StartTest("Demo");
-            Assert.AreEqual(1, 2);
-        }
-
 
         [Test, Order(1)]
         public void TestCabling3U()
