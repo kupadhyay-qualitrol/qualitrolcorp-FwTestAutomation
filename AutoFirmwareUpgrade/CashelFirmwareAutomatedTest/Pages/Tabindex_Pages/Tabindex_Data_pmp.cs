@@ -285,12 +285,12 @@ namespace Tabindex_Data.pmp
 
         public string Get_busbar_feeder_map_busbar(int bb_feed_num,int channelnum)
         {
-            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_busbar_channel, bb_feed_num, channelnum).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_busbar_channel, bb_feed_num, channelnum).Replace("\"", ""))).GetAttribute("value");
         }
 
         public string Get_busbar_feeder_map_feeder(int bb_feed_num, int channelnum)
         {
-            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_feeder_channel, bb_feed_num + 1, channelnum + 1).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_feeder_channel, bb_feed_num, channelnum).Replace("\"", ""))).GetAttribute("value");
         }
 
         public bool Item_pmp_data_busbar_feeder_map_Click()
@@ -325,27 +325,27 @@ namespace Tabindex_Data.pmp
 
         public string Get_pmp_data_dsp1_feeder_map_dsp(int dspfeedernum)
         {
-            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_dsp1_feeder_map_dsp_feeder, dspfeedernum).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_dsp1_feeder_map_dsp_feeder, dspfeedernum+1).Replace("\"", ""))).GetAttribute("value");
         }
 
         public string Get_pmp_data_dsp2_feeder_map_dsp(int dspfeedernum)
         {
-            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_dsp2_feeder_map_dsp_feeder, dspfeedernum).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_dsp2_feeder_map_dsp_feeder, dspfeedernum+1).Replace("\"", ""))).GetAttribute("value");
         }
 
         public string Get_pmp_data_busbar_channel_count(int busbarnum)
         {
-            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_busbar_channel_cnt, busbarnum).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_busbar_channel_cnt, busbarnum).Replace("\"", ""))).GetAttribute("value");
         }
 
         public string Get_pmp_data_feeder_channel_count(int feedernum)
         {
-            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_feeder_channel_cnt, feedernum).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_feeder_channel_cnt, feedernum).Replace("\"", ""))).GetAttribute("value");
         }
 
         public string Get_pmp_data_feeder_assoc_busbar(int feedernum)
         {
-            return webDriver.FindElement(By.XPath(string.Format(Edtbx_pmp_data_feeder_channel_associated_busbar, feedernum).Replace("\"", ""))).Text;
+            return webDriver.FindElement(By.Name(string.Format(Edtbx_pmp_data_feeder_channel_associated_busbar, feedernum).Replace("\"", ""))).GetAttribute("value");
         }
         #endregion
     }
