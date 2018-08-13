@@ -205,7 +205,7 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to //a[text()=&apos;dsp1_feeder_map&apos;]/following-sibling::div/table[{0}]/tbody/tr/td[2]/a.
+        ///   Looks up a localized string similar to //a[text()=&apos;dsp1_feeder_map&apos;]/following-sibling::div/table[{0}]/tbody/tr/td[3]/span/a/input.
         /// </summary>
         internal static string LOCATOR_XPATH_DSP1_FEEDERMAP_DSP_FEEDER {
             get {
@@ -214,7 +214,7 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to //a[text()=&apos;dsp2_feeder_map&apos;]/following-sibling::div/table[{0}]/tbody/tr/td[2]/a.
+        ///   Looks up a localized string similar to //a[text()=&apos;dsp2_feeder_map&apos;]/following-sibling::div/table[{0}]/tbody/tr/td[3]/span/a/input.
         /// </summary>
         internal static string LOCATOR_XPATH_DSP2_FEEDERMAP_DSP_FEEDER {
             get {

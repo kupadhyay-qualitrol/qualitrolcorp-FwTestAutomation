@@ -195,10 +195,10 @@
     <value>"//a[text()='busbar[{0}]']"</value>
   </data>
   <data name="LOCATOR_XPATH_DSP1_FEEDERMAP_DSP_FEEDER" xml:space="preserve">
-    <value>//a[text()='dsp1_feeder_map']/following-sibling::div/table[{0}]/tbody/tr/td[2]/a</value>
+    <value>//a[text()='dsp1_feeder_map']/following-sibling::div/table[{0}]/tbody/tr/td[3]/span/a/input</value>
   </data>
   <data name="LOCATOR_XPATH_DSP2_FEEDERMAP_DSP_FEEDER" xml:space="preserve">
-    <value>//a[text()='dsp2_feeder_map']/following-sibling::div/table[{0}]/tbody/tr/td[2]/a</value>
+    <value>//a[text()='dsp2_feeder_map']/following-sibling::div/table[{0}]/tbody/tr/td[3]/span/a/input</value>
   </data>
   <data name="LOCATOR_XPATH_FEEDER" xml:space="preserve">
     <value>"//a[text()='feeder[{0}]']"</value>
