@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" version="11.40">
+	<children>
+		<child name="PQStandalone_AutomatedTest" key="{945D175E-39EC-4CA6-827D-6C14403DF63B}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="PQStandalone_AutomatedTest.svb" />
+		</child>
+		<child name="Startup" key="{A301776E-275F-4346-9DC7-5C6076DD431A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="..\..\Carrick_AutomatedTest\Script\Startup.svb" />
+		</child>
+	</children>
+	<folders>
+		<folder caption="General" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{A301776E-275F-4346-9DC7-5C6076DD431A}" />
+			</references>
+		</folder>
+		<folder caption="PQStandalone" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{945D175E-39EC-4CA6-827D-6C14403DF63B}" />
+			</references>
+		</folder>
+	</folders>
+</Root>

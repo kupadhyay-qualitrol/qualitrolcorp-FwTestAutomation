@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="data">
+			<Node name="{15f17e4f-6fed-4e2c-9a95-5651e1e832bd}">
+				<Prp name="relpath" type="S" value="Carrick_AutomatedTest\Carrick_AutomatedTest.mds.tcLS"/>
+			</Node>
+			<Node name="{24b6fa0b-0143-461a-9758-aeb9e9a9428b}">
+				<Prp name="default project" type="S" value="{B085ACA4-B8C9-4BC6-B87A-01A164634A82}"/>
+			</Node>
+			<Node name="{766e3e93-7477-4d1b-a088-fb9e588a5119}">
+				<Prp name="relpath" type="S" value="..\..\..\..\..\My_Documents\GitHub_SourceCode\FwTestAutomation\AutoFirmwareUpgrade\CashelFirmwareAutomatedTest_TestComplete\CashelFirmwareAutomatedTest_TC\CashelFirmwareAutomatedTest_TC.mds.tcLS"/>
+			</Node>
+			<Node name="{b085aca4-b8c9-4bc6-b87a-01a164634a82}">
+				<Prp name="relpath" type="S" value="Cashel_AutomatedTest\Cashel_AutomatedTest.mds.tcLS"/>
+			</Node>
+			<Node name="{ecaebbab-e8be-49e0-b62a-1cdd06353b57}">
+				<Prp name="relpath" type="S" value="TestProject1\TestProject1.mds.tcLS"/>
+			</Node>
+			<Node name="logs">
+				<Prp name="key" type="S" value="{B9974A96-BA19-4854-B976-91FEA6AA6BD9}"/>
+				<Prp name="relpath" type="S" value="Log"/>
+			</Node>
+			<Node name="variables"/>
+		</Node>
+		<Prp name="signature" type="S" value="{71078212-FAEB-4856-A901-B237C89E6B5C}"/>
+	</Node>
+</Nodes>
