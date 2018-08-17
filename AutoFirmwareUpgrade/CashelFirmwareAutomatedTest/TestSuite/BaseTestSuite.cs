@@ -40,7 +40,7 @@ namespace CashelFirmware.TestSuite
         [OneTimeSetUp]
         public void StartReport()
         {
-            ReportGeneration.StartReport("CablingTest");
+            ReportGeneration.StartReport("Firmware_TestResult");
         }
 
         [OneTimeTearDown]
