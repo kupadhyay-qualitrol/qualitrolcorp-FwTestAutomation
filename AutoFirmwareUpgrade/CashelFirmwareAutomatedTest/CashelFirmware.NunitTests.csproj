@@ -76,6 +76,7 @@
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_dfr.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_pqp.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_pmp.cs" />
+    <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_pqp.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_soh.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Record.cs" />
     <Compile Include="ReportingClass\ReportGeneration.cs" />
@@ -84,10 +85,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="TestCases\FirmwareCablingTest.cs" />
+    <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
+    <Compile Include="TestSuite\BaseTestSuite.cs" />
+    <Compile Include="TestCode\FirmwareCablingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_LDLicense.cs" />
-    <Compile Include="TestSuite.cs" />
+    <Compile Include="TestSuite\CablingSuite.cs" />
+    <Compile Include="TestSuite\PQPDynamicCalculationMap.cs" />
     <Compile Include="Utility\Read_WriteExcel.cs" />
     <Compile Include="Utility\ScreenShotCapture.cs" />
   </ItemGroup>
