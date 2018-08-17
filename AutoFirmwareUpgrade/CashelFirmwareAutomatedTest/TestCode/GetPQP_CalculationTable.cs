@@ -46,8 +46,7 @@ namespace CashelFirmware.NunitTests
                 string harmonicrank = string.Empty;
                 string busbarfeeder_type = string.Empty;
 
-                Assert.IsTrue(Tabindex_Data_Pqp.Item_Calc_type_num_Click(calcindex), "Clicked on Calc num[" + calcindex + "]");
-                TestLog.Log(LogStatus.Pass, "Clicked on Calc num[" + calcindex + "]");
+                //Assert.IsTrue(Tabindex_Data_Pqp.Item_Calc_type_num_Click(calcindex), "Clicked on Calc num[" + calcindex + "]");
 
                 paramtype = Tabindex_Data_Pqp.Get_paramtype(calcindex);
                 harmonicrank = Tabindex_Data_Pqp.Get_harmonicrank(calcindex);
@@ -88,6 +87,7 @@ namespace CashelFirmware.NunitTests
                     Filewrite.WriteLine("{" + paramtype + "," + phase + "," + harmonicrank + "," + busbarfeeder_type + "},");
                 }
             }
+            TestLog.Log(LogStatus.Pass, "Created File Successfully for :-" + Cabling);
         }
 
     }
