@@ -181,9 +181,7 @@ namespace Tabindex_Data.pqp
 
         public string Get_phase(int calcnumindex)
         {
-            var phase = new SelectElement(webDriver.FindElement(By.Name(String.Format(Item_pqp_data_calculation_calctype_phase, calcnumindex).Replace("\"", ""))));
-            return phase.SelectedOption.Text.ToString();
-            
+            return webDriver.FindElement(By.Name(String.Format(Item_pqp_data_calculation_calctype_phase, calcnumindex).Replace("\"", ""))).GetAttribute("value").ToString();     
         }
 
         public string Get_harmonicrank(int calcnumindex)
