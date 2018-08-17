@@ -85,7 +85,7 @@ namespace CashelFirmware.NunitTests
 
                 using (StreamWriter Filewrite = File.AppendText(Filepath))
                 {
-                    Filewrite.WriteLine("{" + paramtype + "," + phase + "," + harmonicrank + "," + busbarfeeder_type + "}");
+                    Filewrite.WriteLine("{" + paramtype + "," + phase + "," + harmonicrank + "," + busbarfeeder_type + "},");
                 }
             }
         }
