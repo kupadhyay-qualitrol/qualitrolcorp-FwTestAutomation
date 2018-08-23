@@ -7,7 +7,7 @@ using CashelFirmware.NunitTests;
 
 namespace CashelFirmware.TestSuite
 {
-    public class CablingSuite:BaseTestSuite
+    public class CablingSuite : BaseTestSuite
     {
         public FirmwareCablingTest CablingTest;
 
@@ -484,5 +484,4 @@ namespace CashelFirmware.TestSuite
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
         }
     }
-    
 }
