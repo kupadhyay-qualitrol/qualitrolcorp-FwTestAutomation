@@ -1,6 +1,5 @@
 ﻿using System;
 using RelevantCodes.ExtentReports;
-using CashelFirmware.NunitTests;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Microsoft.Office.Interop.Excel;
@@ -33,14 +32,14 @@ namespace CashelFirmware.TestSuite
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
 
             webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
-            webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(25)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
+            webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
             deviceIP = "10.75.58.51";
         }
 
         [OneTimeSetUp]
         public void StartReport()
         {
-            ReportGeneration.StartReport("Firmware_TestResult");
+            ReportGeneration.StartReport("Firmware_TestReport_"+ DateTime.Now.ToString("dd_MM_yyy_hh_mm_ss"));
         }
 
         [OneTimeTearDown]
