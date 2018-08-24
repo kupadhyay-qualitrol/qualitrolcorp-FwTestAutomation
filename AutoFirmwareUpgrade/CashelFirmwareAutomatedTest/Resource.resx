@@ -221,4 +221,10 @@
   <data name="LOCATOR_XPATH_pqp_data_calculation_type_calcno" xml:space="preserve">
     <value>"//a[contains(text(),'calc_type[{0}]')]"</value>
   </data>
+  <data name="LOCATOR_XPATH_SCALEFACTOR_SC_Scalingfactor_Tag" xml:space="preserve">
+    <value>"//*[contains(text(),'scale_factor_standalone_channels')]/following-sibling::div/table[{0}]/tbody/tr/td[2]/a/following-sibling::div/table/tbody/tr/td[2]/a"</value>
+  </data>
+  <data name="LOCATOR_XPATH_SCALEFACTOR_SC_TAG" xml:space="preserve">
+    <value>"//*[contains(text(),'scale_factor_standalone_channels')]/following-sibling::div/table[{0}]/tbody/tr/td[2]/a"</value>
+  </data>
 </root>
