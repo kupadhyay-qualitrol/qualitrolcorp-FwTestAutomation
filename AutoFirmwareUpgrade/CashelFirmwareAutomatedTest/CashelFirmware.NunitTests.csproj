@@ -85,8 +85,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="TestCode\A.cs" />
-    <Compile Include="TestCode\B.cs" />
     <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
     <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
     <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
@@ -359,6 +357,204 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Reports\CashelFirmwareReport.html" />
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U1U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U1U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U1U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I3I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U4I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U1U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U1U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I3I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U4I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U4I4I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U4I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U4I4I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U4I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U4I4I4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\NOCIRCUIT.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S1U1U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S1U3U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S3U1U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
