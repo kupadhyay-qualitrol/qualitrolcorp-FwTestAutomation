@@ -8,7 +8,7 @@ namespace CashelFirmware.NunitTests
 {
     class ScalingFactorTag61850_ForPQStandalone
     {
-        public void ValidateScalingfactorTag_PQStandalone(IWebDriver webDriver,string deviceIP,ExtentTest TestLog)
+        public void ValidateScalingfactorTag_PQStandalone(IWebDriver webDriver,string deviceIP,ExtentTest TestLog,string Cabling)
         {
             Tabindex_Configuration_dfr Tabindex_Configuration_Dfr = new Tabindex_Configuration_dfr(webDriver);
 
@@ -44,6 +44,7 @@ namespace CashelFirmware.NunitTests
                 Assert.AreEqual("scaling_factor", Tabindex_Configuration_Dfr.Get_Scale_factor_SC_channels_scalingfactor_Tag(channelnum));
                 TestLog.Log(LogStatus.Info, "Success:-scaling_factor for Channel " + channelnum + " under scale factor standalone channel exists");
             }
+            TestLog.Log(LogStatus.Info, "Success:-Tested Scale factor Tag for cabling:- " + Cabling);
         }
     }
 }

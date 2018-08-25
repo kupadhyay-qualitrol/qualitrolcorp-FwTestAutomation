@@ -85,7 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestCode\A.cs" />
+    <Compile Include="TestCode\B.cs" />
     <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
+    <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
+    <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
     <Compile Include="TestSuite\BaseTestSuite.cs" />
     <Compile Include="TestCode\FirmwareCablingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
