@@ -6,12 +6,12 @@ namespace CashelFirmware.TestSuite
 {
     public class PQPDynamicCalculationMap:BaseTestSuite
     {
-        GetPQP_CalculationTable PQP_CalculationTable;
+        ValidatePQP_CalculationTable validatePQP_CalculationTable;
         FirmwareCablingTest CablingTest;
 
         public PQPDynamicCalculationMap()
         {
-            PQP_CalculationTable = new GetPQP_CalculationTable();
+            validatePQP_CalculationTable = new ValidatePQP_CalculationTable();
             CablingTest = new FirmwareCablingTest();
         }
         [Test, Order(1)]
@@ -20,7 +20,7 @@ namespace CashelFirmware.TestSuite
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U");            
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U");            
         }
 
         [Test, Order(2)]
@@ -28,7 +28,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U3I");
         }
 
         [Test, Order(3)]
@@ -36,7 +36,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I");
         }
 
         [Test, Order(4)]
@@ -44,7 +44,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I");
         }
 
         [Test, Order(5)]
@@ -52,7 +52,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I");
         }
 
         [Test, Order(6)]
@@ -60,7 +60,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U3I3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I3I");
         }
 
         [Test, Order(7)]
@@ -68,7 +68,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3I");
         }
 
         [Test, Order(8)]
@@ -76,7 +76,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I");
         }
 
         [Test, Order(9)]
@@ -84,7 +84,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I");
         }
 
         [Test, Order(10)]
@@ -92,7 +92,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I");
         }
 
         [Test, Order(11)]
@@ -100,7 +100,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3I3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I3I");
         }
 
 
@@ -110,7 +110,7 @@ namespace CashelFirmware.TestSuite
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M3U pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M3U");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M3U");
         }
 
         [Test, Order(13)]
@@ -118,7 +118,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U3U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U3U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U3U3I3I3I3I");
         }
 
         [Test, Order(14)]
@@ -126,7 +126,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M3U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I");
         }
 
         [Test, Order(15)]
@@ -134,7 +134,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M3U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I");
         }
 
         [Test, Order(16)]
@@ -142,7 +142,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M3U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I");
         }
 
         [Test, Order(17)]
@@ -150,7 +150,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M3U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
         }
 
         [Test, Order(18)]
@@ -158,7 +158,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
         }
 
         [Test, Order(19)]
@@ -166,7 +166,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I");
         }
 
         [Test, Order(20)]
@@ -174,7 +174,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I");
         }
 
         [Test, Order(21)]
@@ -182,7 +182,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I3I");
         }
 
         [Test, Order(22)]
@@ -190,7 +190,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U1U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I");
         }
 
         [Test, Order(23)]
@@ -198,7 +198,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U1U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I3I");
         }
 
         [Test, Order(24)]
@@ -206,7 +206,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U1U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I");
         }
 
         [Test, Order(25)]
@@ -214,7 +214,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U1U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I");
         }
 
         [Test, Order(26)]
@@ -222,7 +222,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U1U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I3I");
         }
 
         [Test, Order(27)]
@@ -230,7 +230,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get S1U1U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S1U1U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "S1U1U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "S1U1U3I3I3I3I");
         }
 
         [Test, Order(28)]
@@ -238,7 +238,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get S1U3U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S1U3U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "S1U3U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "S1U3U3I3I3I3I");
         }
 
         [Test, Order(29)]
@@ -246,7 +246,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get S3U1U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S3U1U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "S3U1U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "S3U1U3I3I3I3I");
         }
 
         [Test, Order(30)]
@@ -255,7 +255,7 @@ namespace CashelFirmware.TestSuite
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U");
         }
 
         [Test, Order(31)]
@@ -263,7 +263,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3I");
         }
 
         [Test, Order(32)]
@@ -271,7 +271,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3I3I");
         }
 
         [Test, Order(33)]
@@ -279,7 +279,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I");
         }
 
         [Test, Order(34)]
@@ -287,7 +287,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3I3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I");
         }
 
         [Test, Order(35)]
@@ -295,7 +295,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U4I");
         }
 
         [Test, Order(36)]
@@ -303,7 +303,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U4I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U4I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U4I4I");
         }
 
         [Test, Order(37)]
@@ -311,7 +311,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U4I4I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I");
         }
 
         [Test, Order(38)]
@@ -320,7 +320,7 @@ namespace CashelFirmware.TestSuite
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M4U Cabling Testing");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M4U");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M4U");
         }
 
         [Test, Order(39)]
@@ -328,7 +328,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M4U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M4U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M4U3I");
         }
 
         [Test, Order(40)]
@@ -336,7 +336,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M4U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I");
         }
 
         [Test, Order(41)]
@@ -344,7 +344,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M4U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I");
         }
 
         [Test, Order(42)]
@@ -352,7 +352,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M4U4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M4U4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M4U4I");
         }
 
         [Test, Order(43)]
@@ -360,7 +360,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 2M4U4I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I");
         }
 
         [Test, Order(44)]
@@ -369,7 +369,7 @@ namespace CashelFirmware.TestSuite
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U");
         }
 
         [Test, Order(45)]
@@ -377,7 +377,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U3I");
         }
 
         [Test, Order(46)]
@@ -385,7 +385,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I");
         }
 
         [Test, Order(47)]
@@ -393,7 +393,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I");
         }
 
         [Test, Order(48)]
@@ -401,7 +401,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U4U pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U4U");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U4U");
         }
 
         [Test, Order(49)]
@@ -409,7 +409,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U4U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I");
         }
 
         [Test, Order(50)]
@@ -417,7 +417,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U4U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I");
         }
 
         [Test, Order(51)]
@@ -425,7 +425,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U4U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I");
         }
 
         [Test, Order(52)]
@@ -433,7 +433,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U4I");
         }
 
         [Test, Order(53)]
@@ -441,7 +441,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U4I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I");
         }
 
         [Test, Order(54)]
@@ -449,7 +449,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U3U4I4I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I");
         }
 
         [Test, Order(55)]
@@ -457,7 +457,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U4U3I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I");
         }
 
         [Test, Order(56)]
@@ -465,7 +465,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 3U4U3I3I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I");
         }
 
         [Test, Order(57)]
@@ -473,7 +473,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U1U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I");
         }
 
         [Test, Order(58)]
@@ -481,7 +481,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U1U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
         }
 
         [Test, Order(59)]
@@ -489,7 +489,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
         }
 
         [Test, Order(60)]
@@ -497,7 +497,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I");
         }
 
         [Test, Order(61)]
@@ -505,7 +505,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I3I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I3I");
         }
 
         [Test, Order(62)]
@@ -513,7 +513,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U1U4I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U4I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U1U4I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U1U4I3I");
         }
 
         [Test, Order(63)]
@@ -521,7 +521,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 4U1U4I4I3I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U4I4I3I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "4U1U4I4I3I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U1U4I4I3I");
         }
 
         [Test, Order(64)]
@@ -529,7 +529,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I4I");
         }
 
         [Test, Order(65)]
@@ -537,7 +537,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I3I4I pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I4I");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I4I");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I4I");
         }
 
         [Test, Order(66)]
@@ -545,7 +545,7 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Get NOCIRCUIT pqp Calculation Table");
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
-            PQP_CalculationTable.GetPQPDynamicTable(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
+            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
         }
     }
 }

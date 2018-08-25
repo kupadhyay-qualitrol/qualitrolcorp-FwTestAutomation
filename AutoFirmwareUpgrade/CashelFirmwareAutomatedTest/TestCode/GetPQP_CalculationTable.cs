@@ -1,22 +1,19 @@
-﻿/* This file is used to fetch dynamic pqp table from tabindex and store in a .txt file
+﻿/* This file is used to compare dynamic pqp table from tabindex with dataset .txt file
  */
 
 using System;
-using Tabindex_Data.pqp;
 using OpenQA.Selenium;
-using NUnit.Framework;
 using RelevantCodes.ExtentReports;
 using System.IO;
 using System.Text;
 using System.Xml;
-using System.Collections.Generic;
+
 
 namespace CashelFirmware.NunitTests
 {
-    public class GetPQP_CalculationTable
-    {
-
-        public void GetPQPDynamicTable(IWebDriver webDriver,string deviceIP, ExtentTest TestLog,string Cabling)
+    public class ValidatePQP_CalculationTable
+    {          
+        public void PQP_CalculationTable(IWebDriver webDriver,string deviceIP, ExtentTest TestLog,string Cabling)
         {
             string paramtype = string.Empty;
             string phase = string.Empty;
