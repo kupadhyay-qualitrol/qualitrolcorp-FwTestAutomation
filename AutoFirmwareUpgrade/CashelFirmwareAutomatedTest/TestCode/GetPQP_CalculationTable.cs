@@ -68,12 +68,6 @@ namespace CashelFirmware.NunitTests
             {
                 TestLog.Log(LogStatus.Pass, "Dynamic PQP Calculation Parameters are not correct");
             }
-            
-            //StreamWriter Filewrite = new StreamWriter(Filepath);            
-            //Filewrite.WriteLine(pqpdataActual.ToString());
-            //Filewrite.Close();
-            
-            //TestLog.Log(LogStatus.Pass, "Created File Successfully for :-" + Cabling); 
         }
     }
 }
