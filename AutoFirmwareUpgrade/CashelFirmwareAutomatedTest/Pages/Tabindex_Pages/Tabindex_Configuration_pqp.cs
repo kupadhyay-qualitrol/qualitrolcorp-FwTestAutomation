@@ -1,6 +1,7 @@
 ﻿/*This file contains object repository for Webelements and method to perform action on them.
  * This is basically based on concept of Page Object Model(POM).
  * This file will contains objects related to Tabindex_Configuration_pqp page.
+ *This file is not used right now as instead of using Webelements we are using xml for getting data.
  */
 
 using System;
