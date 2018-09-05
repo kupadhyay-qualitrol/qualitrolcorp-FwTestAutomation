@@ -152,8 +152,6 @@ namespace Tabindex_Configuration.dfr
                 return resourceManager.GetString("LOCATOR_XPATH_SCALEFACTOR_SC_Scalingfactor_Tag").ToString();
             }
         }
-
-        //*[contains(text(),'scale_factor_standalone_channels')]/following-sibling::div/table[2]/tbody/tr/td[2]/a/following-sibling::div/table/tbody/tr/td[2]/a
         #endregion
 
         #region Methods
