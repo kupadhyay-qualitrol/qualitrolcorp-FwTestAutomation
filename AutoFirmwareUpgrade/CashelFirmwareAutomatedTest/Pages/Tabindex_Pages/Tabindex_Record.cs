@@ -49,11 +49,27 @@ namespace Tabindex.Record
             }
         }
 
+        private IWebElement Item_PQFreeInterval
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/table[1]/tbody/tr/td/table[2]/tbody/tr/td/a"));
+            }
+        }
+
         private IWebElement Item_PQ10min_Record
         {
             get
             {
                 return webDriver.FindElement(By.XPath("/html/body/table[1]/tbody/tr/td/table[1]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/a[3]"));
+            }
+        }
+
+        private IWebElement Item_PQFreeInterval_Record
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/table[1]/tbody/tr/td/table[2]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/a[3]"));
             }
         }
 
@@ -88,7 +104,8 @@ namespace Tabindex.Record
                 return webDriver.FindElements(By.XPath("//*[@id='Cancel']"))[2];
               
             }
-        }
+        }   
+
         #endregion
 
         #region Methods
@@ -115,6 +132,18 @@ namespace Tabindex.Record
         public bool Item_PQ10minRecord_Click()
         {
             Item_PQ10min_Record.Click();
+            return true;
+        }
+
+        public bool Item_PQFreeInterval_Click()
+        {
+            Item_PQFreeInterval.Click();
+            return true;
+        }
+
+        public bool Item_PQFreeIntervalRecord_Click()
+        {
+            Item_PQFreeInterval_Record.Click();
             return true;
         }
 

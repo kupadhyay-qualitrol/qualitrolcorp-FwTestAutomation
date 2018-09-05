@@ -128,6 +128,32 @@ namespace Tabindex_Configuration.dfr
             }
             
         }
+
+        private IWebElement Scale_factor_standalone_channels
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("//*[contains(text(),'scale_factor_standalone_channels')]"));
+            }
+        }
+
+        private string Scale_factor_SC_channels_tag
+        {
+            get
+            {
+                return resourceManager.GetString("LOCATOR_XPATH_SCALEFACTOR_SC_TAG").ToString();
+            }
+        }
+
+        private string Scale_factor_SC_channels_scalingfactor_tag
+        {
+            get
+            {
+                return resourceManager.GetString("LOCATOR_XPATH_SCALEFACTOR_SC_Scalingfactor_Tag").ToString();
+            }
+        }
+
+        //*[contains(text(),'scale_factor_standalone_channels')]/following-sibling::div/table[2]/tbody/tr/td[2]/a/following-sibling::div/table/tbody/tr/td[2]/a
         #endregion
 
         #region Methods
@@ -230,6 +256,33 @@ namespace Tabindex_Configuration.dfr
         {
                 CommitChanges.Click();
                 return true;
+        }
+
+        public bool Scale_factor_standalone_channels_Click()
+        {
+            Scale_factor_standalone_channels.Click();
+            return true;
+        }
+
+        public string Get_Scale_factor_standalone_channels_Tag()
+        {
+            return Scale_factor_standalone_channels.Text;
+        }
+
+        public string Get_Scale_factor_SC_channels_Tag(int channelnum)
+        {
+            return webDriver.FindElement(By.XPath(String.Format(Scale_factor_SC_channels_tag, channelnum+1).Replace("\"", ""))).Text; 
+        }
+
+        public bool Scale_factor_SC_channels_Click(int channelnum)
+        {
+            webDriver.FindElement(By.XPath(String.Format(Scale_factor_SC_channels_tag, channelnum + 1).Replace("\"", ""))).Click();
+            return true;
+        }
+
+        public string Get_Scale_factor_SC_channels_scalingfactor_Tag(int channelnum)
+        {
+            return webDriver.FindElement(By.XPath(String.Format(Scale_factor_SC_channels_scalingfactor_tag, channelnum + 1).Replace("\"", ""))).Text;
         }
 
 

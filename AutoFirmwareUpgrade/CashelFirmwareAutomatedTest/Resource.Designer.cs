@@ -277,6 +277,24 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;//*[contains(text(),&apos;scale_factor_standalone_channels&apos;)]/following-sibling::div/table[{0}]/tbody/tr/td[2]/a/following-sibling::div/table/tbody/tr/td[2]/a&quot;.
+        /// </summary>
+        internal static string LOCATOR_XPATH_SCALEFACTOR_SC_Scalingfactor_Tag {
+            get {
+                return ResourceManager.GetString("LOCATOR_XPATH_SCALEFACTOR_SC_Scalingfactor_Tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;//*[contains(text(),&apos;scale_factor_standalone_channels&apos;)]/following-sibling::div/table[{0}]/tbody/tr/td[2]/a&quot;.
+        /// </summary>
+        internal static string LOCATOR_XPATH_SCALEFACTOR_SC_TAG {
+            get {
+                return ResourceManager.GetString("LOCATOR_XPATH_SCALEFACTOR_SC_TAG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[{0}]/tbody/tr/td[2]/div/table[5]/tbody/tr/td[3]/span/a/select&quot;.
         /// </summary>
         internal static string XPATH_BUSBAR {
