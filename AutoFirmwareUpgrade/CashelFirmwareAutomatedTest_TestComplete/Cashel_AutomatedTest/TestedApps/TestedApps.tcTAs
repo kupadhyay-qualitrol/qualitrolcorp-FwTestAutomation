@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" version="1140" key="{2869684D-A2B2-4ED0-9304-36C7BDA7CE3D}" type="Tested Applications" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}">
+	<config nodeName="TestedApps" />
+	<testData />
+	<data />
+	<children>
+		<child key="{7B3C1429-3004-4DF1-9DF0-FF6AB8FBF293}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+			<config nodeName="PQStandalone" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
+				<runModeParams activeRunMode="Simple">
+					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
+					<param name="Debug" parameters="" workFolder="" />
+					<param name="Simple" fileName="PQStandalone.exe" filePath="C:\My_Documents\GitHub_SourceCode\FwTestAutomation\AutoFirmwareUpgrade\PQStandalone\bin\Release\" parameters="" workFolder="" />
+				</runModeParams>
+			</config>
+			<testData />
+			<data />
+		</child>
+		<child key="{5EABE4A3-6FDC-4897-B978-C0C643CADA2A}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+			<config nodeName="Harmonics" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
+				<runModeParams activeRunMode="Simple">
+					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
+					<param name="Debug" parameters="" workFolder="" />
+					<param name="Simple" fileName="Harmonics.exe" filePath="C:\Program Files (x86)\OMICRON\Test Universe\Apps\" parameters="" workFolder="" />
+				</runModeParams>
+			</config>
+			<testData />
+			<data />
+		</child>
+	</children>
+	<folders />
+</Root>
