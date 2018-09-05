@@ -12,7 +12,7 @@ namespace CashelFirmware.NunitTests
         {
             Tabindex_Configuration_dfr Tabindex_Configuration_Dfr = new Tabindex_Configuration_dfr(webDriver);
 
-            Assert.AreEqual("Confniguration", Tabindex_Configuration_Dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
+            Assert.AreEqual("Configuration", Tabindex_Configuration_Dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
             TestLog.Log(LogStatus.Pass, "Device is up/responding");
 
             Assert.IsTrue(Tabindex_Configuration_Dfr.Item_Configuration_Click(), "Clicked on Configuration button on webpage");
