@@ -196,6 +196,42 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;pqp:pqp/data/calculation_types/calc_type[{0}]/busbarfeeder_type&quot;.
+        /// </summary>
+        internal static string LOCATOR_NAME_pqp_data_calculation_type_calcno_busbarfeedertype {
+            get {
+                return ResourceManager.GetString("LOCATOR_NAME_pqp_data_calculation_type_calcno_busbarfeedertype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;pqp:pqp/data/calculation_types/calc_type[{0}]/harmonicrank&quot;.
+        /// </summary>
+        internal static string LOCATOR_NAME_pqp_data_calculation_type_calcno_harmonicrank {
+            get {
+                return ResourceManager.GetString("LOCATOR_NAME_pqp_data_calculation_type_calcno_harmonicrank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;pqp:pqp/data/calculation_types/calc_type[{0}]/paramtype&quot;.
+        /// </summary>
+        internal static string LOCATOR_NAME_pqp_data_calculation_type_calcno_paramtype {
+            get {
+                return ResourceManager.GetString("LOCATOR_NAME_pqp_data_calculation_type_calcno_paramtype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;pqp:pqp/data/calculation_types/calc_type[{0}]/phase&quot;.
+        /// </summary>
+        internal static string LOCATOR_NAME_pqp_data_calculation_type_calcno_phase {
+            get {
+                return ResourceManager.GetString("LOCATOR_NAME_pqp_data_calculation_type_calcno_phase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;//a[text()=&apos;busbar[{0}]&apos;]&quot;.
         /// </summary>
         internal static string LOCATOR_XPATH_BUSBAR {
@@ -228,6 +264,15 @@ namespace CashelFirmwareAutomatedTest {
         internal static string LOCATOR_XPATH_FEEDER {
             get {
                 return ResourceManager.GetString("LOCATOR_XPATH_FEEDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;//a[contains(text(),&apos;calc_type[{0}]&apos;)]&quot;.
+        /// </summary>
+        internal static string LOCATOR_XPATH_pqp_data_calculation_type_calcno {
+            get {
+                return ResourceManager.GetString("LOCATOR_XPATH_pqp_data_calculation_type_calcno", resourceCulture);
             }
         }
         

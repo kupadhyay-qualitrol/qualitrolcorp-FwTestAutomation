@@ -206,4 +206,19 @@
   <data name="XPATh_pqp_b2_calcno_config" xml:space="preserve">
     <value>"/html/body/form/table/tbody/tr/td/table[3]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/div/table[1]/tbody/tr/td[2]/div/table[{0}]/tbody/tr/td[3]/span/a/input"</value>
   </data>
+  <data name="LOCATOR_NAME_pqp_data_calculation_type_calcno_busbarfeedertype" xml:space="preserve">
+    <value>"pqp:pqp/data/calculation_types/calc_type[{0}]/busbarfeeder_type"</value>
+  </data>
+  <data name="LOCATOR_NAME_pqp_data_calculation_type_calcno_harmonicrank" xml:space="preserve">
+    <value>"pqp:pqp/data/calculation_types/calc_type[{0}]/harmonicrank"</value>
+  </data>
+  <data name="LOCATOR_NAME_pqp_data_calculation_type_calcno_paramtype" xml:space="preserve">
+    <value>"pqp:pqp/data/calculation_types/calc_type[{0}]/paramtype"</value>
+  </data>
+  <data name="LOCATOR_NAME_pqp_data_calculation_type_calcno_phase" xml:space="preserve">
+    <value>"pqp:pqp/data/calculation_types/calc_type[{0}]/phase"</value>
+  </data>
+  <data name="LOCATOR_XPATH_pqp_data_calculation_type_calcno" xml:space="preserve">
+    <value>"//a[contains(text(),'calc_type[{0}]')]"</value>
+  </data>
 </root>
