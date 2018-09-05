@@ -106,7 +106,7 @@
 								<Image FileName="-384927186" Left="-8" Top="-8" Right="1374" Bottom="736" />
 								<Properties>
 									<Property Name="WndClass">
-										<Value PropertyType="0" Value="Afx:010C0000:8*" Type="5" />
+										<Value PropertyType="0" Value="*" Type="5" />
 									</Property>
 								</Properties>
 								<Children>
