@@ -75,6 +75,7 @@
     <Compile Include="Pages\Mfgindex_Pages\Mfgindex_Calibration.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_dfr.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_pqp.cs" />
+    <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_dispatch.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_pmp.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_pqp.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Data_soh.cs" />
@@ -85,8 +86,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestCode\FR_Dispatch_Data.cs" />
     <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
     <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
+    <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite.cs" />
     <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
     <Compile Include="TestSuite\BaseTestSuite.cs" />
     <Compile Include="TestCode\FirmwareCablingTest.cs" />
@@ -324,6 +327,147 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\CablingDataSet\sn409026540_8U_10I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U1U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I3I4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U1U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I1U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I3I4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U1U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U1U4I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U3I3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U4I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U4I4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
