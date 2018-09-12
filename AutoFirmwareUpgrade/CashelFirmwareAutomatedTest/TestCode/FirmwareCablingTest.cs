@@ -15,6 +15,7 @@ using Mfgindex.Calibration;
 using CashelFirmware.Utility;
 using RelevantCodes.ExtentReports;
 using System.Resources;
+using System.Xml;
 
 namespace CashelFirmware.NunitTests
 {
@@ -61,14 +62,24 @@ namespace CashelFirmware.NunitTests
         /// <param name="TestLog">Object of Extent Report for log info</param>
         /// <param name="webdriver"></param>
         /// </summary>
-        public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling,bool isCalibrationNeeded=true)
-        {
+        public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling,bool isCalibrationNeeded=true,string IsFolderPath=null)
+        {  
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
             Tabindex_Data_soh Tabindex_Data_soh = new Tabindex_Data_soh(webdriver);
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
+            
+            //created this so that shared Data Set can be used for Test Cases with no injection and injection
 
-            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\"+Cabling+".xlsx";
+            if (IsFolderPath == null)
+            {
+                DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\" + Cabling + ".xlsx";
+            }
+            else
+            {
+                DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + IsFolderPath + Cabling + ".xlsx";
+            }
+
             if (isCalibrationNeeded)
             {
                 switch (Cabling)
@@ -110,8 +121,8 @@ namespace CashelFirmware.NunitTests
                         break;
                 }
             }
-            
-                Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
+
+            Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
                 TestLog.Log(LogStatus.Pass, "Device is up/responding");
 
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_Configuration_Click(), "Clicked on Configuration button on webpage");
@@ -218,93 +229,97 @@ namespace CashelFirmware.NunitTests
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on pmp data");
 
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
-            TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " +Tabindex_Data_pmp.Get_FRCabling());
-
-            Assert.IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click());
-                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 channel map");
-
-                for (int dspchannelmap1 = 0; dspchannelmap1 < 12; dspchannelmap1++)
-                {
-                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap1, resourceManager.GetString("EXCELDATA_Channel_Number_DSP1").ToString()), Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1), "DSP 1 Channel Map for Channel:- " + dspchannelmap1 + " is " + Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
-                    TestLog.Log(LogStatus.Info, "DSP 1 Channel Map for Channel:- " + dspchannelmap1 + " is " + Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
-                }
-                TestLog.Log(LogStatus.Pass, "Success:-Validated dsp1 channel mapping and it is correct");
-
-                Assert.IsTrue(Tabindex_Data_pmp.Item_dsp2_channels_map_Click());
-                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp2 channel map");
-
-                for (int dspchannelmap2 = 0; dspchannelmap2 < 12; dspchannelmap2++)
-                {
-                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap2, resourceManager.GetString("EXCELDATA_Channel_Number_DSP2").ToString()), Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2), "DSP 2 Channel Map for Channel:- " + dspchannelmap2 + " is " + Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
-                    TestLog.Log(LogStatus.Info, "DSP 2 Channel Map for Channel:- " + dspchannelmap2 + " is " + Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
-                }
-                TestLog.Log(LogStatus.Pass, "Success:-Validated dsp2 channel mapping and it is correct");
+            TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
 
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
-            TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- "+ Tabindex_Data_pmp.Get_PQCabling());
+            TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- " + Tabindex_Data_pmp.Get_PQCabling());
 
-            //Validate Busbar Feeder map
-
-            Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_busbar_feeder_map_Click(), "Clicked on Busbar Feeder map");
-            TestLog.Log(LogStatus.Pass, "Success:-Clicked on Busbar Feeder Map");
-
-            int[] busbar_map = new int[] {(int)busbarfeedermap.bb0_chnl_strt,(int)busbarfeedermap.bb1_chnl_strt };
-            int[] feeder_map = new int[] { (int)busbarfeedermap.F0_chnl_strt, (int)busbarfeedermap.F1_chnl_strt, (int)busbarfeedermap.F2_chnl_strt, (int)busbarfeedermap.F3_chnl_strt, (int)busbarfeedermap.F4_chnl_strt };
-
-            for (int busbarmap = 0; busbarmap < 2; busbarmap++)
+            if (IsFolderPath == null)
             {
-                Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_busbar_Click(busbarmap), "Clicked on busbar_"+busbarmap);
-                TestLog.Log(LogStatus.Pass, "Success:-Clicked on busbar_"+busbarmap);
+                Assert.Multiple(() =>
+                {
+                    Assert.IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click());
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 channel map");
 
-                    for (int channel = 0; channel < 4; channel++)
+                    for (int dspchannelmap1 = 0; dspchannelmap1 < 12; dspchannelmap1++)
                     {
-                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), channel+ busbar_map[busbarmap], resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel),"Checking busbar:- "+busbarmap+" channel :-"+ channel+" value is "+ Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel));
-                        TestLog.Log(LogStatus.Pass, "Success:-Checking busbar: -"+busbarmap+" channel: -"+ channel+" value is "+ Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel));
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap1, resourceManager.GetString("EXCELDATA_Channel_Number_DSP1").ToString()), Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1), "DSP 1 Channel Map for Channel:- " + dspchannelmap1 + " is " + Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
+                        TestLog.Log(LogStatus.Info, "DSP 1 Channel Map for Channel:- " + dspchannelmap1 + " is " + Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
                     }
-                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), busbar_map[busbarmap] +4, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap), "Checking the busbar "+busbarmap+" channel count" + Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap));
-                    TestLog.Log(LogStatus.Pass, "Success:-The busbar "+busbarmap+" channel count is "+ Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap));
-            }
+                    TestLog.Log(LogStatus.Pass, "Success:-Validated dsp1 channel mapping and it is correct");
 
-            for (int feedermap = 0; feedermap < 5; feedermap++)
-            {
-                Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_feeder_Click(feedermap), "Clicked on Feeder_" + feedermap);
-                TestLog.Log(LogStatus.Pass, "Success:-Clicked on Feeder_" + feedermap);
+                    Assert.IsTrue(Tabindex_Data_pmp.Item_dsp2_channels_map_Click());
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp2 channel map");
 
-                    for (int channel = 0; channel < 4; channel++)
+                    for (int dspchannelmap2 = 0; dspchannelmap2 < 12; dspchannelmap2++)
                     {
-                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(),channel+feeder_map[feedermap], resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel), "Checking feeder:- " + feedermap + " channel :-" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel));
-                        TestLog.Log(LogStatus.Pass, "Success:-Checking feeder: -" + feedermap + " channel: -" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel));
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap2, resourceManager.GetString("EXCELDATA_Channel_Number_DSP2").ToString()), Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2), "DSP 2 Channel Map for Channel:- " + dspchannelmap2 + " is " + Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
+                        TestLog.Log(LogStatus.Info, "DSP 2 Channel Map for Channel:- " + dspchannelmap2 + " is " + Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
                     }
-                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), feeder_map[feedermap]+4, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap), "Checking the feeder " + feedermap + " channel count" + Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap));
-                    TestLog.Log(LogStatus.Pass, "Success:-The feeder " + feedermap + " channel count is " + Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap));
+                    TestLog.Log(LogStatus.Pass, "Success:-Validated dsp2 channel mapping and it is correct");
 
-                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), feeder_map[feedermap] + 5, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap), "Checking the feeder " + feedermap + " associated busbar is " + Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap));
-                    TestLog.Log(LogStatus.Pass, "Success:-The feeder " + feedermap + " associated busbar is " + Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap));
+                    //Validate Busbar Feeder map
 
-            }
+                    Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_busbar_feeder_map_Click(), "Clicked on Busbar Feeder map");
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on Busbar Feeder Map");
 
-            //Validate DSP_FEEDER_MAP
+                    int[] busbar_map = new int[] { (int)busbarfeedermap.bb0_chnl_strt, (int)busbarfeedermap.bb1_chnl_strt };
+                    int[] feeder_map = new int[] { (int)busbarfeedermap.F0_chnl_strt, (int)busbarfeedermap.F1_chnl_strt, (int)busbarfeedermap.F2_chnl_strt, (int)busbarfeedermap.F3_chnl_strt, (int)busbarfeedermap.F4_chnl_strt };
+
+                    for (int busbarmap = 0; busbarmap < 2; busbarmap++)
+                    {
+                        Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_busbar_Click(busbarmap), "Clicked on busbar_" + busbarmap);
+                        TestLog.Log(LogStatus.Pass, "Success:-Clicked on busbar_" + busbarmap);
+
+                        for (int channel = 0; channel < 4; channel++)
+                        {
+                            Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), channel + busbar_map[busbarmap], resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel), "Checking busbar:- " + busbarmap + " channel :-" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel));
+                            TestLog.Log(LogStatus.Pass, "Success:-Checking busbar: -" + busbarmap + " channel: -" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel));
+                        }
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), busbar_map[busbarmap] + 4, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap), "Checking the busbar " + busbarmap + " channel count" + Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap));
+                        TestLog.Log(LogStatus.Pass, "Success:-The busbar " + busbarmap + " channel count is " + Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap));
+                    }
+
+                    for (int feedermap = 0; feedermap < 5; feedermap++)
+                    {
+                        Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_feeder_Click(feedermap), "Clicked on Feeder_" + feedermap);
+                        TestLog.Log(LogStatus.Pass, "Success:-Clicked on Feeder_" + feedermap);
+
+                        for (int channel = 0; channel < 4; channel++)
+                        {
+                            Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), channel + feeder_map[feedermap], resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel), "Checking feeder:- " + feedermap + " channel :-" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel));
+                            TestLog.Log(LogStatus.Pass, "Success:-Checking feeder: -" + feedermap + " channel: -" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel));
+                        }
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), feeder_map[feedermap] + 4, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap), "Checking the feeder " + feedermap + " channel count" + Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap));
+                        TestLog.Log(LogStatus.Pass, "Success:-The feeder " + feedermap + " channel count is " + Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap));
+
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), feeder_map[feedermap] + 5, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap), "Checking the feeder " + feedermap + " associated busbar is " + Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap));
+                        TestLog.Log(LogStatus.Pass, "Success:-The feeder " + feedermap + " associated busbar is " + Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap));
+
+                    }
+
+                    //Validate DSP_FEEDER_MAP
 
                 Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_dsp1_feeder_map_Click(), "Clicked on dsp1 feeder map");
-                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 feeder map");
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 feeder map");
 
-                for (int dspfeeder = 0; dspfeeder < 3; dspfeeder++)
-                {
-                    Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath,resourceManager.GetString("EXCELDATA_SHEETNAME_DSP_FEEDER_MAP").ToString(),dspfeeder,resourceManager.GetString("EXCELDATA_DSP_FEEDER_NUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder), "Checking dsp1 feeder :-"+ Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder));
-                    TestLog.Log(LogStatus.Pass, "Success:-Dsp1 feeder number:- "+dspfeeder+": "+Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder));
-                }
+                    for (int dspfeeder = 0; dspfeeder < 3; dspfeeder++)
+                    {
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSP_FEEDER_MAP").ToString(), dspfeeder, resourceManager.GetString("EXCELDATA_DSP_FEEDER_NUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder), "Checking dsp1 feeder :-" + Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder));
+                        TestLog.Log(LogStatus.Pass, "Success:-Dsp1 feeder number:- " + dspfeeder + ": " + Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder));
+                    }
 
-            Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_dsp2_feeder_map_Click(), "Clicked on dsp2 feeder map");
-            TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp2 feeder map");
+                    Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_dsp2_feeder_map_Click(), "Clicked on dsp2 feeder map");
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp2 feeder map");
 
-            for (int dspfeeder = 0; dspfeeder < 3; dspfeeder++)
-            {
-                Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSP_FEEDER_MAP").ToString(), dspfeeder+3, resourceManager.GetString("EXCELDATA_DSP_FEEDER_NUMBER").ToString()),Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder), "Checking dsp2 feeder :-" + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
-                TestLog.Log(LogStatus.Pass, "Success:-Dsp2 feeder number:- "+dspfeeder+": " + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
+                    for (int dspfeeder = 0; dspfeeder < 3; dspfeeder++)
+                    {
+                        Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSP_FEEDER_MAP").ToString(), dspfeeder + 3, resourceManager.GetString("EXCELDATA_DSP_FEEDER_NUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder), "Checking dsp2 feeder :-" + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
+                        TestLog.Log(LogStatus.Pass, "Success:-Dsp2 feeder number:- " + dspfeeder + ": " + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
+                    }
+                });
             }
-            
-            TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test");
-
+            TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test"); 
         }
 
         /// <summary>
@@ -343,7 +358,7 @@ namespace CashelFirmware.NunitTests
             Tabindex_Configuration_pqp Tabindex_Configuration_pqp = new Tabindex_Configuration_pqp(webdriver);
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
 
-            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\" + Cabling + ".xlsx";
+            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestData\PQStandalone_Ckt_ParamOnly\" + Cabling + ".xlsx";
 
             Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
             TestLog.Log(LogStatus.Pass, "Device is up/responding");
@@ -369,16 +384,55 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Configuration_pqp.param_id_list_Click(), "Clicked on param_id_list");
             TestLog.Log(LogStatus.Pass, "Success:- Clicked on param_id_list");
             string pq_param = string.Empty;
+            int cnt = 0;
             for (int paramindex = 0; paramindex < 1189; paramindex++)
             {
-                if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                if (cnt <= 99)
                 {
-                    pq_param += Tabindex_Configuration_pqp.Configure_b1ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"),pq_param);
-                    break;
+                    if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                    {
+                        cnt++;
+                        pq_param += Tabindex_Configuration_pqp.Configure_b1ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param);
+                        break;
+                    }
+                    else
+                    {
+                        cnt++;
+                        pq_param += Tabindex_Configuration_pqp.Configure_b1ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param);
+                    }
                 }
                 else
                 {
-                    pq_param += Tabindex_Configuration_pqp.Configure_b1ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"),pq_param);
+                    if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                    {                           
+                        pq_param += Tabindex_Configuration_pqp.Configure_b1ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param);
+                        break;
+                    }
+                    else
+                    {                         
+                        pq_param += Tabindex_Configuration_pqp.Configure_b1ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param);
+                    }
+                    Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
+                    TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.Insertpqp_param_javascript(pq_param), "Inserted pq parameters");
+                    TestLog.Log(LogStatus.Pass, "Success:- Inserted pq parameters");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq 10 min param");
+                    TestLog.Log(LogStatus.Pass, "Success:-Configured pq 10 min param");
+                    pq_param = string.Empty;
+                    Assert.IsTrue(Tabindex_Configuration_pqp.SwitchFrame_FromCommit_Tob1_config(), "Switched Frame from pqp to b1_config");
+                    TestLog.Log(LogStatus.Pass, "Success:-Switched Frame from pqp to b1_config");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.b1_config_Click(), "Clicked on b1_config");
+                    TestLog.Log(LogStatus.Pass, "Success:- Clicked on b1_config");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.record_config_Click(), "Clicked on record_config");
+                    TestLog.Log(LogStatus.Pass, "Success:- Clicked on record_config");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.param_id_list_Click(), "Clicked on param_id_list");
+                    TestLog.Log(LogStatus.Pass, "Success:- Clicked on param_id_list");
+                    cnt = 0;                      
                 }
             }
             TestLog.Log(LogStatus.Pass, "Success:- Configured PQ param in string");
@@ -401,7 +455,7 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Configuration_pqp.b2_record_config_click(), "Clicked on b2_record_config");
             TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_record_config");
 
-            Assert.IsTrue(Tabindex_Configuration_pqp.Item_pqp_b2_config_sec_min_flag_Select(PQDurationUnit), "Selected unit as "+ PQDurationUnit);
+            Assert.IsTrue(Tabindex_Configuration_pqp.Item_pqp_b2_config_sec_min_flag_Select(PQDurationUnit), "Selected unit as " + PQDurationUnit);
             TestLog.Log(LogStatus.Pass, "Success:- Selected unit as " + PQDurationUnit);
 
             Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
@@ -422,7 +476,7 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
             TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
 
-            Assert.IsTrue(Tabindex_Configuration_pqp.Insertpqp_param_javascript("pqp:pqp/config/b2_config/record_config/duration="+PQDuration), "Inserted PQ Free Interval Duration");
+            Assert.IsTrue(Tabindex_Configuration_pqp.Insertpqp_param_javascript("pqp:pqp/config/b2_config/record_config/duration=" + PQDuration), "Inserted PQ Free Interval Duration");
             TestLog.Log(LogStatus.Pass, "Success:- Inserted PQ Free Interval Duration");
 
             Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq free interval duration");
@@ -439,18 +493,57 @@ namespace CashelFirmware.NunitTests
 
             Assert.IsTrue(Tabindex_Configuration_pqp.b2_param_id_list_Click(), "Clicked on b2 param_id_list");
             TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2 param_id_list");
-
+            cnt = 0;
             string pq_param_b2 = string.Empty;
-            for (int paramindex = 0; paramindex < 1189; paramindex++)
+            for (int paramindex = 0; paramindex < 257; paramindex++)
             {
-                if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                if (cnt <= 49)
                 {
-                    pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
-                    break;
+                    if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                    {
+                        pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                        break;
+                    }
+                    else
+                    {
+                        cnt++;
+                        pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                    }
                 }
                 else
                 {
-                    pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                    if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo") == "16777215")
+                    {
+                        pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                        break;
+                    }
+                    else
+                    {
+                        pq_param_b2 += Tabindex_Configuration_pqp.Configure_b2ConfigParam(paramindex, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, "StandaloneParameters", paramindex, "CalcNo"), pq_param_b2);
+                    }
+                    Assert.IsTrue(Tabindex_Configuration_pqp.Switch_ToParentFrame(), "Switched to Parent Frame");
+                    TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.Insertpqp_param_javascript(pq_param_b2), "Inserted pq parameters");
+                    TestLog.Log(LogStatus.Pass, "Success:- Inserted pq parameters");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq Free interval param");
+                    TestLog.Log(LogStatus.Pass, "Success:-Configured pq 10 min param");
+
+                    pq_param_b2 = string.Empty;
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.SwitchFrame_FromCommit_Tob1_config(), "Switched frame from Commit button to b2_config");
+                    TestLog.Log(LogStatus.Pass, "Success:-Switched frame from Commit button to b2_config");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.b2_config_Click(), "Clicked on b2_config");
+                    TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_config");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.b2_record_config_click(), "Clicked on b2_record_config");
+                    TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2_record_config");
+
+                    Assert.IsTrue(Tabindex_Configuration_pqp.b2_param_id_list_Click(), "Clicked on b2 param_id_list");
+                    TestLog.Log(LogStatus.Pass, "Success:- Clicked on b2 param_id_list");
+                    cnt = 0;
                 }
             }
             TestLog.Log(LogStatus.Pass, "Success:- Configured PQ param in string");
@@ -462,7 +555,7 @@ namespace CashelFirmware.NunitTests
             TestLog.Log(LogStatus.Pass, "Success:- Inserted pq_b2 parameters");
 
             Assert.IsTrue(Tabindex_Configuration_pqp.Commit_Click(), "Configured pq free interval param");
-            TestLog.Log(LogStatus.Pass, "Success:-Configured pq free interval param");
+            TestLog.Log(LogStatus.Pass, "Success:-Configured pq free interval param");                      
         }
 
         /// <summary>
@@ -504,7 +597,25 @@ namespace CashelFirmware.NunitTests
 
             Assert.IsTrue(Tabindex_Record.Item_DonwloadPQ10minReturn_Click(), "Clicked on Return button");
             TestLog.Log(LogStatus.Pass, "Clicked on Return button");
-        }
 
+            Assert.IsTrue(Tabindex_Record.Item_PQFreeInterval_Click(), "Clicked on PQ FreeInterval Record Head");
+            TestLog.Log(LogStatus.Pass, "Clicked on PQ FreeInterval Record Head");
+
+            Assert.IsTrue(Tabindex_Record.Item_PQFreeIntervalRecord_Click(), "Clicked on PQ FreeInterval Record");
+            TestLog.Log(LogStatus.Pass, "Clicked on PQ FreeInterval Record");
+
+            Assert.IsTrue(Tabindex_Record.Item_StartTime_Edit(RecordDownloadTime), "Send Record Start time to be downloaded");
+            TestLog.Log(LogStatus.Pass, "Send Record Start time to be downloaded");
+
+            Assert.IsTrue(Tabindex_Record.Item_EndTime_Edit(RecordDownloadTime), "Send Record End time to be downloaded");
+            TestLog.Log(LogStatus.Pass, "Send Record End time to be downloaded");
+
+            Assert.IsTrue(Tabindex_Record.Item_DonwloadPQ10minRecord_Click(), "Clicked on Data to download record file");
+            TestLog.Log(LogStatus.Pass, "Clicked on Data to download record");
+
+            Assert.IsTrue(Tabindex_Record.Item_DonwloadPQ10minReturn_Click(), "Clicked on Return button");
+            TestLog.Log(LogStatus.Pass, "Clicked on Return button");
+            Thread.Sleep(5000); //wait time added to download record
+        }                                                               
     }
 }
