@@ -325,6 +325,6 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>XCOPY /Y/H $(ProjectDir)\..\Dependencies\Driver\chromedriver.exe $(ProjectDir)\bin\$(Configuration)</PostBuildEvent>
+    <PostBuildEvent>XCOPY /Y/H "$(ProjectDir)\..\Dependencies\Driver\chromedriver.exe" "$(ProjectDir)\bin\$(Configuration)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
