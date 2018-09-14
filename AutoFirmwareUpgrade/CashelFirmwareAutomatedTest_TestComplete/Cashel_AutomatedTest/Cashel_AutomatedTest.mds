@@ -4,11 +4,11 @@
 		<child name="Script" key="{FEFF1416-F6F9-43A9-95EE-34A95EBFB03D}" type="Script" typeId="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" pluginName="Script">
 			<data path="Script\Script.tcScript" />
 		</child>
-		<child name="PQStandalone" key="{98999C26-55BA-4301-B160-4D69FED71FD0}" type="Tested Applications" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" pluginName="">
-			<data path="..\..\PQStandalone\bin\Release\PQStandalone\PQStandalone.tcTAs" />
-		</child>
 		<child name="NameMapping" key="{28029FC5-C01D-4AAF-B6FF-80BAB142FDF4}" type="Name Mapping" typeId="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" pluginName="NameMapping">
 			<data path="NameMapping\NameMapping.tcNM" />
+		</child>
+		<child name="TestedApps" key="{2869684D-A2B2-4ED0-9304-36C7BDA7CE3D}" type="Tested Applications" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" pluginName="">
+			<data path="TestedApps\TestedApps.tcTAs" />
 		</child>
 	</children>
 	<folders>
@@ -25,7 +25,7 @@
 				<testParameters />
 				<children />
 			</testItem>
-			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="3" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="23" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>

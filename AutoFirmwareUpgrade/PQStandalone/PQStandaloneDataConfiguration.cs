@@ -69,7 +69,7 @@ namespace PQStandalone
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
 
             webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
-            webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(25)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.            
+            webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.            
             return true;
         }
 
