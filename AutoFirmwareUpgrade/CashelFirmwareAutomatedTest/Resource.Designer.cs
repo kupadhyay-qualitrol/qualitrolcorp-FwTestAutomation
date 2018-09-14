@@ -70,6 +70,51 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to busbar.
+        /// </summary>
+        internal static string EXCELDATA_CABLING_busbar {
+            get {
+                return ResourceManager.GetString("EXCELDATA_CABLING_busbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to feeder_number.
+        /// </summary>
+        internal static string EXCELDATA_CABLING_feeder_number {
+            get {
+                return ResourceManager.GetString("EXCELDATA_CABLING_feeder_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to label.
+        /// </summary>
+        internal static string EXCELDATA_CABLING_label {
+            get {
+                return ResourceManager.GetString("EXCELDATA_CABLING_label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to si_units.
+        /// </summary>
+        internal static string EXCELDATA_CABLING_si_units {
+            get {
+                return ResourceManager.GetString("EXCELDATA_CABLING_si_units", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to usage.
+        /// </summary>
+        internal static string EXCELDATA_CABLING_usage {
+            get {
+                return ResourceManager.GetString("EXCELDATA_CABLING_usage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Channel_Number_DSP1.
         /// </summary>
         internal static string EXCELDATA_Channel_Number_DSP1 {
@@ -174,6 +219,15 @@ namespace CashelFirmwareAutomatedTest {
         internal static string LOCATOR_NAME_BUSBAR_MAP_FEEDER_CHANNEL {
             get {
                 return ResourceManager.GetString("LOCATOR_NAME_BUSBAR_MAP_FEEDER_CHANNEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;dis:dis/data/fr_data/fundamental/rms/magnitude[{0}]&quot;.
+        /// </summary>
+        internal static string LOCATOR_NAME_Dispatch_Data_Fr_Data_Fundamental_RMS_Magnitude {
+            get {
+                return ResourceManager.GetString("LOCATOR_NAME_Dispatch_Data_Fr_Data_Fundamental_RMS_Magnitude", resourceCulture);
             }
         }
         
