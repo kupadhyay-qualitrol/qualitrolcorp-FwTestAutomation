@@ -86,6 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestCode\Calibration.cs" />
     <Compile Include="TestCode\FR_Dispatch_Data.cs" />
     <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
     <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
@@ -329,6 +330,9 @@
     <None Include="TestDataFiles\CablingDataSet\sn409026540_8U_10I.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\CablingDataSet\sn409026540_DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -468,6 +472,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\NOCIRCUIT.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\sn409026540_DefaultCalibration.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

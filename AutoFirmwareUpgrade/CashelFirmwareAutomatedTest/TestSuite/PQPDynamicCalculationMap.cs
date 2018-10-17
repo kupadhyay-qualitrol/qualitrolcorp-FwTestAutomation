@@ -153,13 +153,13 @@ namespace CashelFirmware.TestSuite
             validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
         }
 
-        [Test, Order(18)]
-        public void pqp_Dynamic_Calculation_1U3U3I()
-        {
-            InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3U3I pqp Calculation Table");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
-            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
-        }
+        //[Test, Order(18)]
+        //public void pqp_Dynamic_Calculation_1U3U3I()
+        //{
+        //    InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U3U3I pqp Calculation Table");
+        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
+        //    validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
+        //}
 
         [Test, Order(19)]
         public void pqp_Dynamic_Calculation_1U3U3I3I()
@@ -484,13 +484,13 @@ namespace CashelFirmware.TestSuite
             validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
         }
 
-        [Test, Order(59)]
-        public void pqp_Dynamic_Calculation_1U4U3I()
-        {
-            InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I pqp Calculation Table");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
-            validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
-        }
+        //[Test, Order(59)]
+        //public void pqp_Dynamic_Calculation_1U4U3I()
+        //{
+        //    InfovarStartTest = ReportGeneration.extent.StartTest("Get 1U4U3I pqp Calculation Table");
+        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
+        //    validatePQP_CalculationTable.PQP_CalculationTable(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
+        //}
 
         [Test, Order(60)]
         public void pqp_Dynamic_Calculation_1U4U3I3I()

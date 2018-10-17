@@ -7,6 +7,7 @@ using RelevantCodes.ExtentReports;
 using System.IO;
 using System.Text;
 using System.Xml;
+using NUnit.Framework;
 
 
 namespace CashelFirmware.NunitTests
@@ -52,11 +53,12 @@ namespace CashelFirmware.NunitTests
             }
 
             StreamReader streamReader = new StreamReader(DataSetFileName);
-
+            
             while (!streamReader.EndOfStream)
             {
                 pqpdataExpected.AppendLine(streamReader.ReadLine()); 
             }
+
             if (pqpdataExpected.Equals(pqpdataActual))
             {
                 TestLog.Log(LogStatus.Pass, "Dynamic PQP Calculation Parameters are correct");
@@ -65,6 +67,9 @@ namespace CashelFirmware.NunitTests
             {
                 TestLog.Log(LogStatus.Pass, "Dynamic PQP Calculation Parameters are not correct");
             }
+
+            Assert.IsTrue(pqpdataExpected.Equals(pqpdataActual), "Checking Dynamic PQP Calculation Parameters");
+            TestLog.Log(LogStatus.Pass, "Dynamic PQP Calculation Parameters are correct");
         }
     }
 }

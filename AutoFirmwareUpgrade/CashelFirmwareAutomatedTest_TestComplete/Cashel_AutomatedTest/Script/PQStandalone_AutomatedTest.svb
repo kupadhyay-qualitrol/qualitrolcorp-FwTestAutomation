@@ -11,7 +11,7 @@ Function LaunchPQStandaloneApp()
 End Function
 
 Function ClosePQStandaloneApp()
-  TestedApps.PQStandalone.Terminate()
+  TestedApps.PQStandalone.Close()
 End Function
 
 Function PQStandalone_Test()
@@ -65,19 +65,20 @@ End Function
 
 Function Omicron_HarmonicInjection(OmicronFilePath)
 TestedApps.Harmonics.Run()
-aqUtils.Delay(5000)
+aqUtils.Delay(10000)
 Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonOpen.ClickButton
-aqUtils.Delay(5000)
+aqUtils.Delay(10000)
 Aliases.Harmonics.dlgOpen.cbxFileName.SetText(OmicronFilePath)
-aqUtils.Delay(5000)
+aqUtils.Delay(10000)
 Aliases.Harmonics.dlgOpen.btnOpen.ClickButton
-
+aqUtils.Delay(10000)
 Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonStaticOutput.ClickButton
 
 End Function
 
 Function StopOmicronInjection()
   Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonStaticOutput.ClickButton
-  TestedApps.Harmonics.Terminate()
+  aqUtils.Delay(10000)
+  TestedApps.Harmonics.Close()
 End Function
 

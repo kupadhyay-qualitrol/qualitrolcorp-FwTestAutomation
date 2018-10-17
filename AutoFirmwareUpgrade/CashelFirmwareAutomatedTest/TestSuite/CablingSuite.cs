@@ -138,12 +138,12 @@ namespace CashelFirmware.TestSuite
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
         }
 
-        [Test, Order(18)]
-        public void TestCabling1U3U3I()
-        {
-            InfovarStartTest = ReportGeneration.extent.StartTest("Test 1U3U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
-        }
+        //[Test, Order(18)]
+        //public void TestCabling1U3U3I()
+        //{
+        //    InfovarStartTest = ReportGeneration.extent.StartTest("Test 1U3U3I Cabling");
+        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
+        //}
 
         [Test, Order(19)]
         public void TestCabling1U3U3I3I()
@@ -450,12 +450,12 @@ namespace CashelFirmware.TestSuite
             CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
         }
 
-        [Test, Order(62)]
-        public void TestCabling1U4U3I()
-        {
-            InfovarStartTest = ReportGeneration.extent.StartTest("Test 1U4U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
-        }
+        //[Test, Order(62)]
+        //public void TestCabling1U4U3I()
+        //{
+        //    InfovarStartTest = ReportGeneration.extent.StartTest("Test 1U4U3I Cabling");
+        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
+        //}
 
         [Test, Order(63)]
         public void TestCabling1U4U3I3I()
