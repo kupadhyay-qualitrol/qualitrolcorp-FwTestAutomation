@@ -23,10 +23,10 @@ namespace CashelFirmware.TestSuite
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U Cabling");
             firmwareCablingTest.SetTXRationum(deviceIP, webdriver, InfovarStartTest, NoTXRatio);
-           // firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT",true, @"\TestDataFiles\FR_DISPATCHRMS_DATASET\");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT",true, @"\TestDataFiles\FR_DISPATCHRMS_DATASET\");
             firmwareCablingTest.SetTXRationum(deviceIP, webdriver, InfovarStartTest, TXRatioMultiplier);
-           // firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U", false, @"\TestDataFiles\FR_DISPATCHRMS_DATASET\");
-           // dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "3U");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U", false, @"\TestDataFiles\FR_DISPATCHRMS_DATASET\");
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "3U");
         }
 
         [Test, Order(2)]
