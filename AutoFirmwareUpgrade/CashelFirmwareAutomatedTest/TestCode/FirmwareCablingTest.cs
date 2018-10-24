@@ -27,7 +27,8 @@ namespace CashelFirmware.NunitTests
        string DataSetFileNameWithPath;
        ResourceManager resourceManager;
        public bool isCalibrationNeeded = true;
-
+        string TXRatiobuilder = string.Empty;
+        XmlDocument xmlDocument;
         /// <summary>
         /// This enum contains the data related to busbar and feeder map from DataSet in excel.
         /// </summary>
@@ -46,6 +47,7 @@ namespace CashelFirmware.NunitTests
         public FirmwareCablingTest()
         {
             resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
+            xmlDocument = new XmlDocument();
         }
 
         /// <summary>
@@ -85,6 +87,8 @@ namespace CashelFirmware.NunitTests
                 switch (Cabling)
                 {
                     case "NOCIRCUIT":
+                        Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_DefaultCalibration.cal"));
+                        TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- DefaultCalibration.cal");
                         break;
                     case "3U":
                         {
@@ -122,7 +126,7 @@ namespace CashelFirmware.NunitTests
                 }
             }
 
-            Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
+                Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
                 TestLog.Log(LogStatus.Pass, "Device is up/responding");
 
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_Configuration_Click(), "Clicked on Configuration button on webpage");
@@ -160,13 +164,20 @@ namespace CashelFirmware.NunitTests
                     Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_usage_Click((i), DataSetFileNameWithPath), "Set the usage name for iteration " + i);
                     TestLog.Log(LogStatus.Pass, "Success:-Set the usage number for iteration " + i);
                 }
+
                 Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToParentFrame(), "Successfully switched to parent frame");
                 TestLog.Log(LogStatus.Pass, "Success:-switched to parent frame");
 
                 Assert.IsTrue(Tabindex_Configuration_dfr.Commit_Click(), "Clicked on Commit");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on Commit");
 
-                Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToDefaultContent(), "Successfully switched to default frame/main window");
+           // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?dfr:dfr/config/analog");
+            //xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling + "_" + DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_BeforeSendingConfig.xml");
+
+           // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?pmp:pmp/data");
+           // xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling + "_" + DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_BeforeRebootpmp.xml");
+            Thread.Sleep(60000);       //added so that cablin can be properly set
+            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToDefaultContent(), "Successfully switched to default frame/main window");
                 TestLog.Log(LogStatus.Pass, "Success:-switched to default frame/main window");
 
                 Assert.IsTrue(Tabindex_Data_soh.Item_Data_Click(), "Clicked on Data button");
@@ -199,7 +210,7 @@ namespace CashelFirmware.NunitTests
                 Assert.IsTrue(Tabindex_Data_soh.Commit_RebootDevice(), "Successfully inserted javascript to reboot device");
                 TestLog.Log(LogStatus.Pass, "Success:-Successfully inserted javascript to reboot device");
 
-                Thread.Sleep(40000); //this wait is required so that device can go for reboot
+            Thread.Sleep(40000); //this wait is required so that device can go for reboot
 
                 do
                 {
@@ -227,6 +238,12 @@ namespace CashelFirmware.NunitTests
 
                 Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_Click(), "Clicked on pmp data");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on pmp data");
+
+           // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?dfr:dfr/config/analog");
+           // xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling +"_"+ DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_AfterRebootConfig.xml");
+
+           // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?pmp:pmp/data");
+          //  xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling + "_" + DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_AfterRebootpmp.xml");
 
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
             TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
@@ -616,6 +633,92 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Record.Item_DonwloadPQ10minReturn_Click(), "Clicked on Return button");
             TestLog.Log(LogStatus.Pass, "Clicked on Return button");
             Thread.Sleep(5000); //wait time added to download record
-        }                                                               
+        }
+
+        public void SetTXRationum(string deviceIP,IWebDriver webDriver, ExtentTest TestLog,int[] TXRatio)
+        {
+            Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webDriver);
+            Tabindex_Data_soh Tabindex_Data_soh = new Tabindex_Data_soh(webDriver);
+
+            Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
+            TestLog.Log(LogStatus.Pass, "Device is up/responding");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.Item_Configuration_Click(), "Clicked on Configuration button on webpage");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on Configuration button on webpage");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchFrame_FromParent_Todfr_item(), "Switched Frame from Default to dfr topology");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched Frame from Default to dfr topology");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.Item_Dfr_Click(), "Clicked dfr option under tabindex_configuration page");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked dfr option under tabindex_configuration page");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchFrame_FromDfr_Toanalog(), "Switched Frame from dfr topology to analog");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched Frame from dfr topology to analog");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_Click(), "Clicked on analog option to append it");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on analog option to append it");
+            TXRatiobuilder = string.Empty;
+
+            for (int i = 0; i < 18; i++)
+            {
+                Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i + 1), "Clicked on Channel[" + i + "] option");
+                TestLog.Log(LogStatus.Pass, "Success:-Clicked on Channel[" + i + "] option");
+                TXRatiobuilder+=Tabindex_Configuration_dfr.Configure_TXRatio_num((i), Convert.ToString(TXRatio[i]));
+            }
+
+            TestLog.Log(LogStatus.Pass, "Success:- Configured TXRatioNum in string");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToParentFrame(), "Switched to Parent Frame");
+            TestLog.Log(LogStatus.Pass, "Success:- Switched to Parent Frame");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.InsertTXRation_Num_javascript(TXRatiobuilder), "Inserted TXRatioNum parameters");
+            TestLog.Log(LogStatus.Pass, "Success:- Inserted TXRatioNum parameters");
+
+            Assert.IsTrue(Tabindex_Configuration_dfr.Commit_Click(), "Configured TXRatioNum");
+            TestLog.Log(LogStatus.Pass, "Success:-Configured TXRatioNum");
+            Thread.Sleep(20000); //wait time so that TX ratio can be configured in device
+            Assert.IsTrue(Tabindex_Configuration_dfr.SwitchToDefaultContent(), "Successfully switched to default frame/main window");
+            TestLog.Log(LogStatus.Pass, "Success:-switched to default frame/main window");
+
+            Assert.IsTrue(Tabindex_Data_soh.Item_Data_Click(), "Clicked on Data button");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on Data button");
+
+            Assert.IsTrue(Tabindex_Data_soh.SwitchFrame_FromParent_Tosoh_item(), "Switched frame from main window to soh topology");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched frame from main window to soh topology");
+
+            Assert.IsTrue(Tabindex_Data_soh.Item_soh_Click(), "Clicked on soh item in topology");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on soh item in topology");
+
+            Assert.IsTrue(Tabindex_Data_soh.SwitchFrame_Fromsoh_Tocontrol(), "Switched frame from soh to soh_control");
+            TestLog.Log(LogStatus.Pass, "Success:-Switched frame from soh to soh_control");
+
+            Assert.IsTrue(Tabindex_Data_soh.Item_soh_control_Click(), "Clicked on control button to append the child items");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on control button to append the child items");
+
+            Assert.IsTrue(Tabindex_Data_soh.Edtbx_soh_control_reset_cashel_Clear(), "Clear the value in the Editbox");
+            TestLog.Log(LogStatus.Pass, "Success:-Clear the value in the Editbox");
+
+            Assert.IsTrue(Tabindex_Data_soh.Edtbx_soh_control_reset_cashel_SendKeys("1"), "Send 1 int the edit box");
+            TestLog.Log(LogStatus.Pass, "Success:-Send 1 int the edit box");
+
+            Assert.IsTrue(Tabindex_Data_soh.Item_soh_data_Click(), "Expanded Data item under soh");
+            TestLog.Log(LogStatus.Pass, "Success:-Expanded Data item under soh");
+
+            Assert.IsTrue(Tabindex_Data_soh.SwitchToParentFrame(), "Switch from current frame to parent to click on commit");
+            TestLog.Log(LogStatus.Pass, "Success:-Switch from current frame to parent to click on commit");
+
+            Assert.IsTrue(Tabindex_Data_soh.Commit_RebootDevice(), "Successfully inserted javascript to reboot device");
+            TestLog.Log(LogStatus.Pass, "Success:-Successfully inserted javascript to reboot device");
+
+            Thread.Sleep(40000); //this wait is required so that device can go for reboot
+
+            do
+            {
+                GetDevicePingReplySuccess = pinger.Send(deviceIP);
+            }
+            while (!GetDevicePingReplySuccess.Status.ToString().Equals("Success"));
+
+            Thread.Sleep(40000); //this wait is required so that system is up and running after reboot
+        }
     }
 }

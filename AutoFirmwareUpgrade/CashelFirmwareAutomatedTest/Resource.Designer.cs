@@ -223,6 +223,15 @@ namespace CashelFirmwareAutomatedTest {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;dfr:dfr/config/analog/channel[{0}]/tx_ratio_num&quot;.
+        /// </summary>
+        internal static string LOCATOR_NAME_dfr_analog_channel_tx_rationum {
+            get {
+                return ResourceManager.GetString("LOCATOR_NAME_dfr_analog_channel_tx_rationum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;dis:dis/data/fr_data/fundamental/rms/magnitude[{0}]&quot;.
         /// </summary>
         internal static string LOCATOR_NAME_Dispatch_Data_Fr_Data_Fundamental_RMS_Magnitude {

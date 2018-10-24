@@ -25,7 +25,7 @@
 				<testParameters />
 				<children />
 			</testItem>
-			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="23" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="22" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
@@ -39,7 +39,7 @@
 		<data Version="3" />
 	</variables>
 	<settings key="{CBB56E22-A4AD-4413-A371-61A05D91CB29}">
-		<settingsVersion value="12.50" />
+		<settingsVersion value="12.60" />
 		<setting name="JavaFXOpenApp_NodeByClassNameFilters" type="6" rowIndex="8" colIndex="2">
 			<columns>
 				<column type="1" enabled="True" />

@@ -14,6 +14,7 @@ namespace Tabindex_Configuration.dfr
     {
         IWebDriver webDriver;
         System.Resources.ResourceManager resourceManager;
+        string TXRatio_numbuilder = string.Empty;
 
         public Tabindex_Configuration_dfr(IWebDriver webDriver)
         {
@@ -152,6 +153,22 @@ namespace Tabindex_Configuration.dfr
                 return resourceManager.GetString("LOCATOR_XPATH_SCALEFACTOR_SC_Scalingfactor_Tag").ToString();
             }
         }
+
+        private string Item_dfr_analog_channel_tx_ratio_num
+        {
+            get
+            {
+                return resourceManager.GetString("LOCATOR_NAME_dfr_analog_channel_tx_rationum").ToString();
+            }
+        }
+
+        private IWebElement Item_CommitChangesHidden
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td[1]/form/input[2]"));
+            }
+        }
         #endregion
 
         #region Methods
@@ -283,6 +300,25 @@ namespace Tabindex_Configuration.dfr
             return webDriver.FindElement(By.XPath(String.Format(Scale_factor_SC_channels_scalingfactor_tag, channelnum + 1).Replace("\"", ""))).Text;
         }
 
+        public string Configure_TXRatio_num(int paramindex, string TXratio_num)
+        {
+            if (paramindex == 0)
+            {
+                TXRatio_numbuilder = "dfr:dfr/config/analog/channel[" + paramindex + "]/tx_ratio_num=" + TXratio_num;
+            }
+            else
+            {
+                TXRatio_numbuilder = "&" + "dfr:dfr/config/analog/channel[" + paramindex + "]/tx_ratio_num=" + TXratio_num;
+            }
+            return TXRatio_numbuilder;
+        }
+
+        public bool InsertTXRation_Num_javascript(string TXRationNumBuilder)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)webDriver;
+            js.ExecuteScript("arguments[0].value='" + TXRationNumBuilder + "';", Item_CommitChangesHidden);
+            return true;
+        }
 
         #endregion
     }

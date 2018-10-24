@@ -25,19 +25,21 @@ namespace CashelFirmware.NunitTests
         int[] TXRatioMultiplier;
         double injectvoltage;
         double injectedcurrent;
-        string[] channeltype;
         Dictionary<string, int> Channel_TXRatio;
-
+        Dictionary<string, string> ChannelType;
+        Dictionary<string, string> sortedChannelType;
         public FR_Dispatch_Data()
         {
             resourceManager = new ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
             CablingInfo = new Dictionary<string, string>();
             Channel_TXRatio = new Dictionary<string, int>();
+            ChannelType = new Dictionary<string, string>();
+            sortedChannelType = new Dictionary<string, string>();
+
             FR_Data_RMS_Value = new StringBuilder();
             FR_Dispactch_RMS_Data = new string[18];
             injectvoltage = 50.0;
             injectedcurrent = 1.0;
-            channeltype = new string[18];
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
         }
 
@@ -83,9 +85,12 @@ namespace CashelFirmware.NunitTests
             }
             CablingInfo.Clear();
             Channel_TXRatio.Clear();
+            sortedChannelType.Clear();
+            ChannelType.Clear();
+            FR_Data_RMS_Value.Clear();
+
             for (int channelindex = 0; channelindex < 18; channelindex++)
             {
-                channeltype[channelindex] = Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_si_units").ToString());
                 if (!Channel_TXRatio.ContainsKey(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString())))
                 {
                     Channel_TXRatio.Add(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString()), TXRatioMultiplier[channelindex]);
@@ -94,6 +99,7 @@ namespace CashelFirmware.NunitTests
                 {
                     TestLog.Log(LogStatus.Info,"Key is :- "+ Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString()));
                 }
+
                 if ((Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_busbar").ToString()) == "BUSBAR1") &&
                     (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_feeder_number").ToString()) == "NO_FEEDER") &&
                     ((Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_usage").ToString()) == "BOTH")))
@@ -141,7 +147,7 @@ namespace CashelFirmware.NunitTests
                 else if (Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_usage").ToString()) == "PQ")
                 {
                     CablingInfo.Add(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString()),
-                    Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_usage").ToString()));
+                    "STANDALONE");
                 }
                 else if ((Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_feeder_number").ToString()) == "NO_FEEDER") &&
                      ((Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_usage").ToString()) == "STANDALONE") ||
@@ -153,21 +159,29 @@ namespace CashelFirmware.NunitTests
                 else
                 {
                 }
-            }
 
+                ChannelType.Add(CablingInfo.ElementAt(channelindex).Key, Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_si_units").ToString()));
+            }
+            var sortedDict = from entry in CablingInfo orderby entry.Value ascending select entry;
             //For Partial Circuit
-                if (((CablingInfo.ElementAt(0).Value == "BUSBAR1")|| (CablingInfo.ElementAt(0).Value == "PQ")) && ((CablingInfo.ElementAt(1).Value == "BUSBAR1")|| (CablingInfo.ElementAt(1).Value == "PQ")) && ((CablingInfo.ElementAt(2).Value == "BUSBAR1")|| (CablingInfo.ElementAt(0).Value == "PQ")))
+            if (sortedDict.ElementAt(0).Value == "BUSBAR1")
+            {
+                if (((sortedDict.ElementAt(0).Value == "BUSBAR1") || (sortedDict.ElementAt(0).Value == "PQ")) && ((sortedDict.ElementAt(1).Value == "BUSBAR1") || (sortedDict.ElementAt(1).Value == "PQ")) && ((sortedDict.ElementAt(2).Value == "BUSBAR1") || (sortedDict.ElementAt(0).Value == "PQ")))
                 {
 
                 }
                 else
                 {
                     CablingInfo.Add("Channel 100", "BUSBAR1_1");
-                    CablingInfo.Add("Channel 101","BUSBAR1_2");
+                    CablingInfo.Add("Channel 101", "BUSBAR1_2");
+                    ChannelType.Add("Channel 100", "VOLTS");
+                    ChannelType.Add("Channel 101", "VOLTS");
                 }
-            if (CablingInfo.ElementAt(3).Key == "BUSBAR2")
+            }
+
+            if (sortedDict.ElementAt(3).Value == "BUSBAR2")
             {
-                if (((CablingInfo.ElementAt(3).Key == "BUSBAR2") || (CablingInfo.ElementAt(3).Value == "PQ")) && ((CablingInfo.ElementAt(4).Key == "BUSBAR2") || (CablingInfo.ElementAt(4).Value == "PQ")) && ((CablingInfo.ElementAt(5).Key == "BUSBAR2") || (CablingInfo.ElementAt(5).Value == "PQ")))
+                if (((sortedDict.ElementAt(3).Value == "BUSBAR2") || (sortedDict.ElementAt(3).Value == "PQ")) && ((sortedDict.ElementAt(4).Value == "BUSBAR2") || (sortedDict.ElementAt(4).Value == "PQ")) && ((sortedDict.ElementAt(5).Value == "BUSBAR2") || (sortedDict.ElementAt(5).Value == "PQ")))
                 {
 
                 }
@@ -175,9 +189,19 @@ namespace CashelFirmware.NunitTests
                 {
                     CablingInfo.Add("Channel 200", "BUSBAR2_1");
                     CablingInfo.Add("Channel 201", "BUSBAR2_2");
+                    ChannelType.Add("Channel 200", "VOLTS");
+                    ChannelType.Add("Channel 201", "VOLTS");
                 }
             }
-            var sortedDict = from entry in CablingInfo orderby entry.Value ascending select entry;
+            
+
+            foreach (var t in sortedDict)
+            {
+                if (ChannelType.ContainsKey(t.Key))
+                {
+                    sortedChannelType.Add(t.Key, ChannelType[t.Key]);
+                }
+            }
 
             for (int RMSValue = 0; RMSValue < 18; RMSValue++)
             {   
@@ -194,18 +218,19 @@ namespace CashelFirmware.NunitTests
             {
                 for (int test = 0; test < 18; test++)
                 {
-                    if (channeltype[test] == "VOLTS" && (sortedDict.ElementAt(test).Key.Length<=10))
+                    if (sortedChannelType.ElementAt(test).Value == "VOLTS" && (sortedDict.ElementAt(test).Key.Length<=10))
                     {
-                        Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 1.0);
+                        Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 2.0);
                     }
                     else  if((sortedDict.ElementAt(test).Key.Length <= 10))
                     {
-                        Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.1);
+                        Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.2);
                     }
                 }      
             }
                 );             
             sortedDict = null;
+            FR_Data_RMS_Value.Clear();
         }
 
         private int ChannelMultiplier(string channellabel)

@@ -245,4 +245,7 @@
   <data name="EXCELDATA_CABLING_si_units" xml:space="preserve">
     <value>si_units</value>
   </data>
+  <data name="LOCATOR_NAME_dfr_analog_channel_tx_rationum" xml:space="preserve">
+    <value>"dfr:dfr/config/analog/channel[{0}]/tx_ratio_num"</value>
+  </data>
 </root>
