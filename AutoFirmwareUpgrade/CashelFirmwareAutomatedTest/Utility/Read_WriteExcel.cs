@@ -9,7 +9,7 @@ namespace CashelFirmware.Utility
     public static class Read_WriteExcel
     {
 
-        public static Application xlapp;
+        private static Application xlapp = new Application();
         
         public static string ReadExcel(string filename,string Sheetname,int i,string InputColumn)
         {
@@ -43,7 +43,8 @@ namespace CashelFirmware.Utility
             }
             finally
             {
-                xlapp.Quit();
+                xlapp.ActiveWorkbook.Close();
+                //xlapp.Quit();
             }
         }
     }

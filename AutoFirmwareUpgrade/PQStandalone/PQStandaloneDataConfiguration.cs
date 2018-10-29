@@ -21,14 +21,14 @@ namespace PQStandalone
             Config_Cabling = new FirmwareCablingTest();
     
             SeleniumDriverInitialise(Cabling);        
-            Read_WriteExcel.xlapp = new Application();
+           // Read_WriteExcel.xlapp = new Application();
         }
 
         public PQStandaloneDataConfiguration()
         {
             Config_Cabling = new FirmwareCablingTest();
             SeleniumDriverInitialise();
-            Read_WriteExcel.xlapp = new Application();
+           // Read_WriteExcel.xlapp = new Application();
         }
 
 
