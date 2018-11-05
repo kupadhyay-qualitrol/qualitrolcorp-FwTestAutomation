@@ -105,6 +105,7 @@
     <Compile Include="TestSuite\PQPDynamicCalculationMap.cs" />
     <Compile Include="Utility\Read_WriteExcel.cs" />
     <Compile Include="Utility\ScreenShotCapture.cs" />
+    <Compile Include="Utility\TestProgress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
