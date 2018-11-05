@@ -14,9 +14,11 @@ namespace CashelFirmware.TestSuite
         public ExtentTest InfovarStartTest;        
         public IWebDriver webdriver;
         public string deviceIP = string.Empty;
+        public TestProgressStatus testProgress;
 
         public BaseTestSuite()
-        {            
+        {
+            testProgress = new TestProgressStatus();
             //Read_WriteExcel.xlapp = new Application();
         }
 
@@ -63,6 +65,7 @@ namespace CashelFirmware.TestSuite
         public void TearDown()
         {
             ReportGeneration.EndTestCaseReport(InfovarStartTest, webdriver);
+            testProgress.TestCase_Status(DateTime.Now.ToString() + "--" + TestContext.CurrentContext.Test.Name, TestContext.CurrentContext.Result.Outcome.ToString());
             webdriver.Quit();
         }
     }
