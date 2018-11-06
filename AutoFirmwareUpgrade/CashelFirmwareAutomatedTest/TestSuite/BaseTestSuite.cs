@@ -19,7 +19,7 @@ namespace CashelFirmware.TestSuite
         public BaseTestSuite()
         {
             testProgress = new TestProgressStatus();
-            //Read_WriteExcel.xlapp = new Application();
+            Read_WriteExcel.xlapp = new Application();
         }
 
         [SetUp]
