@@ -17,7 +17,7 @@ namespace CashelFirmware.TestSuite
 
         public BaseTestSuite()
         {            
-            //Read_WriteExcel.xlapp = new Application();
+            Read_WriteExcel.xlapp = new Application();
         }
 
         [SetUp]
