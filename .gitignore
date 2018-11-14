@@ -12,3 +12,11 @@
 
 # Visual Studio 2015 cache/options directory
 .vs/
+Carrick_AutomatedTest/Carrick_Automation/Log/*
+*.tcLogs
+*.tcCfgExtender
+*.bak
+*.tcLS
+*.tlb
+*.data
+*.tcVis
