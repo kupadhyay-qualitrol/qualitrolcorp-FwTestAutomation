@@ -1,4 +1,4 @@
 ﻿function Test()
 {
-  Log.Message("Hello World")
+  TestedApps.iQ_Plus.Run()
 }

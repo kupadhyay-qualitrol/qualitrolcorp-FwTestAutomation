@@ -19,6 +19,9 @@
 		<child name="GeneralPage" key="{7CF24341-D171-4B21-8075-3A2DB14D85ED}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="GeneralPage.js" />
 		</child>
+		<child name="HelloWorld" key="{5AA6E681-FBF1-4E58-9757-243EC954EA9A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="HelloWorld.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
