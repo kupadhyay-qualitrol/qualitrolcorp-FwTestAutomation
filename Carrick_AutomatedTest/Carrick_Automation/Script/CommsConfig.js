@@ -21,7 +21,7 @@ function CommsConfig()
       DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
     }
     //4.Retrieve Configuration
-    CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    //CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     //*Terminates the iq+ application
     //CommonMethod.Close_iQ_Plus()
   }
