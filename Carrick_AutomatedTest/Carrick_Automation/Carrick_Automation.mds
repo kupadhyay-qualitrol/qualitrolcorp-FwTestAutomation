@@ -21,11 +21,11 @@
 	<config language="{90F89436-9452-4F95-9882-6B5210079F13}" />
 	<testItems key="{F5C3AC8F-E7CD-49DA-A415-EFF8D5A099AF}">
 		<children>
-			<testItem name="CommsConfig" key="{2CA62D85-2E42-4D24-B957-6B8D87734A97}" group="False" enabled="False" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}CommsConfig" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="CommsConfig" key="{2CA62D85-2E42-4D24-B957-6B8D87734A97}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}CommsConfig" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
-			<testItem name="ProjectTestItem1" key="{E373F982-DAA0-4E98-BEDB-702F64CCB1F2}" group="False" enabled="True" testMoniker="{5AA6E681-FBF1-4E58-9757-243EC954EA9A}Test" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="ProjectTestItem1" key="{E373F982-DAA0-4E98-BEDB-702F64CCB1F2}" group="False" enabled="False" testMoniker="{5AA6E681-FBF1-4E58-9757-243EC954EA9A}Test" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
