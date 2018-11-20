@@ -12,7 +12,7 @@ function ClickonRetrieveConfig()
     DeviceManagementToolbar.ClickItem("Device &Management")
     DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
     Log.Message("Clicked on Retrieve Configuration Page")
-    CommonMethod.CheckActivityLog("Retrieved Configuration Successfully")    
+    CommonMethod.CheckActivityLog("Configuration retrieved  Successfully")    
     return true
   }
   else
