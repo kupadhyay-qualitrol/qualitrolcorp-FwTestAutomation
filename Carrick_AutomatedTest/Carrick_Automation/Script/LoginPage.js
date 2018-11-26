@@ -5,7 +5,7 @@
 var Edtbx_Username=Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
 var Edtbx_Password=Aliases.iQ_Plus.UserLogin.USRLOGINtxtPassword
 var Btn_Login=Aliases.iQ_Plus.UserLogin.USRLOGINlnkLblLogin
-
+//This method is used to Login the iQ+ application by providing username and password.
 function Login(username,password)
 {
   //Check whether user login box is launched or not.
