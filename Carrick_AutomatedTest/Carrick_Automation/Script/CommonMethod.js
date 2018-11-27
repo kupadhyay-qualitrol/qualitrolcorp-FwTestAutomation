@@ -113,20 +113,10 @@ function Terminate_iQ_Plus_Server()
   }  
 }
 
-//Install iq+
-function Install_iq_plus()
+//LaunchApplication from Wshell
+function LaunchApplication(PathWithFileName)
 {
-  MapNetworkDrive("C:\\My_Documents\\Projects\\4.15_Sprint_1\\Des1")
-  
-}
-
-//Map Networkdrive
-function MapNetworkDrive(DriveName)
-{
- // MapNetworkDrive(DriveName+"\\"+Version)
-  var iQ_LatestBuild_File =LastModifiedFile(DriveName)
- // aqFile.Copy(DriveName+ "\\" + iQ_LatestBuild_File, Project.Path+"Builds\\",true) 
-  WshShell.Run("C:\\My_Documents\\Projects\\4.15_Sprint_1\\Des1\\"+iQ_LatestBuild_File)
+  WshShell.Run(PathWithFileName)
 }
 
 //LastModified File
@@ -167,4 +157,29 @@ function LastModifiedFile(FilePath)
   }
   Log.Message("Latest Build in the folder is:- "+ tempExecutableFile)
   return tempExecutableFile
+}
+
+function CreateDirectory(DirectoryName)
+{
+ if (aqFileSystem.Exists(DirectoryName))
+ {
+  Log.Message("Directory Exists with name:- "+DirectoryName)
+  return DirectoryName
+ }
+ else
+ {
+   Log.Message("Directory doesn't Exists with name:- "+DirectoryName)
+   Log.Message("Creating Directory with name:- "+DirectoryName)
+   var tempresult =aqFileSystem.CreateFolder(DirectoryName)
+   if(tempresult==0)
+   {
+    Log.Message("Folder Created successfully")
+    return DirectoryName
+   }
+   else
+   {
+    Log.Message("Unable to create the folder.Error code is:- "+tempresult+" & error message is :- "+aqUtils.SysErrorMessage(tempresult)) 
+    return null
+   }
+ }
 }
