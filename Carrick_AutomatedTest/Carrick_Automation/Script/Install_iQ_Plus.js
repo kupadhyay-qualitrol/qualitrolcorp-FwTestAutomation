@@ -21,7 +21,8 @@ function Install_iQ_Plus()
 {
   Log.Message("Start:TC-Install IQ+ Application in the PC with default settings.")
   //Step1. Copy the latest build from the server to local path.
-  var DriveName="C:\\My_Documents\\Projects\\4.15_Sprint_1\\Des1\\"
+  var DriveName= CommonMethod.ReadXml("iQ_PlusFilePath","BuildServerPath")
+  
   var LatestBuildFile=CommonMethod.LastModifiedFile(DriveName)
 
   if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null)
@@ -165,7 +166,6 @@ function Install_iQ_Plus()
     {
       Log.Message("Installed iq+ version is :- "+aqString.Trim(lbl_iQ_Server_Version.Text.OleValue))
     }
-    
     Log.Message("Completed:TC-Install IQ+ Application in the PC with default settings.")
   }
 }
