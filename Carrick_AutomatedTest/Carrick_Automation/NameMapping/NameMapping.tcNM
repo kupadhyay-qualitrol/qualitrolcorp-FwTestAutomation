@@ -731,6 +731,34 @@
 							</Child>
 						</Children>
 					</Child>
+					<Child Name="iQ_PlusServerController" Key="{AA062546-D287-4AE5-9974-EBF56B8A2EEB}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="iQ-PlusServerController" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="CarrickServiceManager" Key="{3D5D8FCE-BC8B-4337-AE50-8D05E95AEC43}" ParallelWalk="True">
+								<Image FileName="-71792812" Left="0" Top="0" Right="278" Bottom="209" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="CarrickServiceManager" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="lblVersion" Key="{FA3DBC13-70D9-41BA-8B1A-8D35AFD53501}" ParallelWalk="True">
+										<Image FileName="1625238489" Left="23" Top="150" Right="108" Bottom="163" />
+										<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="lblVersion" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
 				</Children>
 			</Child>
 		</Children>
@@ -842,6 +870,11 @@
 			</Child>
 			<Child Name="FrmConfigSqlServer" Owner="{96582DBC-AF55-4F01-B14E-C84B88C0FF8D}">
 				<Child Name="btnNext" Owner="{E46656C8-8B1A-4270-91F9-B85CE7EA38E5}" />
+			</Child>
+		</Child>
+		<Child Name="iQ_PlusServerController" Owner="{AA062546-D287-4AE5-9974-EBF56B8A2EEB}">
+			<Child Name="CarrickServiceManager" Owner="{3D5D8FCE-BC8B-4337-AE50-8D05E95AEC43}">
+				<Child Name="lblVersion" Owner="{FA3DBC13-70D9-41BA-8B1A-8D35AFD53501}" />
 			</Child>
 		</Child>
 	</LogicalNodes>
@@ -5833,6 +5866,67 @@
 						<ReturnValue Param0="3" />
 					</Child>
 					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4SAU8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="268948303" Key="{71846CD4-E749-44F6-A13B-2D49C5491D0B}">
+			<Data Properties="F3E257AE9EF83E4FBE608B755D10698BUFFFFFFFFFFFFFFFFV4L9ZZY">
+				<FunctionDescriptions>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
 						<ReturnValue Param0="8" />
 					</Child>
 				</FunctionDescriptions>
