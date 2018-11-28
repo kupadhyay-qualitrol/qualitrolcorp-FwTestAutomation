@@ -14,6 +14,7 @@ var Btn_Finish =Aliases.setup.dlgQualitrolIQInstallShieldWizard.btnFinish
 var Edtbx_Username=Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
 var Btn_DBConfigurationAssistant_Next =Aliases.setup.FrmServiceSettings.btnNext
 var Btn_DBServerSelection_Next=Aliases.setup.FrmConfigSqlServer.btnNext
+var lbl_iQ_Server_Version= Aliases.iQ_PlusServerController.CarrickServiceManager.lblVersion
 
 //TC-Install IQ+ Application in the PC with default steps
 function Install_iQ_Plus()
@@ -21,12 +22,13 @@ function Install_iQ_Plus()
   Log.Message("Start:TC-Install IQ+ Application in the PC with default settings.")
   //Step1. Copy the latest build from the server to local path.
   var DriveName="C:\\My_Documents\\Projects\\4.15_Sprint_1\\Des1\\"
-  
+  var LatestBuildFile=CommonMethod.LastModifiedFile(DriveName)
+
   if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null)
   {
-    if(CommonMethod.LastModifiedFile(DriveName)!=CommonMethod.LastModifiedFile(Project.Path+"Builds\\"))
+    if(LatestBuildFile!=CommonMethod.LastModifiedFile(Project.Path+"Builds\\"))
     {
-      if(aqFile.Copy(DriveName+ "\\" + CommonMethod.LastModifiedFile(DriveName), Project.Path+"Builds\\",true))
+      if(aqFile.Copy(DriveName+ "\\" + LatestBuildFile, Project.Path+"Builds\\",true))
       {
         Log.Message("File Copied Successfully")
       }
@@ -153,7 +155,17 @@ function Install_iQ_Plus()
     else
     {
       Log.Message("Application didn't launched successfully")
-    }  
+    }
+        
+    if(aqString.Trim(lbl_iQ_Server_Version.Text.OleValue)==aqString.SubString(LatestBuildFile,7,aqString.GetLength(LatestBuildFile)-11))
+    {
+      Log.Message("Installed iq+ version is :- "+LatestBuildFile)
+    }
+    else
+    {
+      Log.Message("Installed iq+ version is :- "+aqString.Trim(lbl_iQ_Server_Version.Text.OleValue))
+    }
+    
     Log.Message("Completed:TC-Install IQ+ Application in the PC with default settings.")
   }
 }
