@@ -91,7 +91,7 @@ function CheckActivityLog(logmessage)
 function Terminate_iQ_Plus()
 {
   //Check whether the iq+ is running or not?
-  var iQ_process=Sys.WaitProcess("iQ-Plus",30)
+  var iQ_process=Sys.WaitProcess("iQ-Plus",30000)
   
   if (iQ_process.Exists)
   {
@@ -104,7 +104,7 @@ function Terminate_iQ_Plus()
 function Terminate_iQ_Plus_Server()
 {
   //Check whether the iq+ Server is running or not?
-  var iQ_Server_process=Sys.WaitProcess("iQ-PlusServer",30)
+  var iQ_Server_process=Sys.WaitProcess("iQ-PlusServer",30000)
   
   if (iQ_Server_process.Exists)
   {
@@ -182,4 +182,29 @@ function CreateDirectory(DirectoryName)
     return null
    }
  }
+}
+
+/*This method can be used to add any node to the xml file.
+function AddSectiontoXML()
+{
+  var FileSection=Storages.XML("")  
+  var Section= FileSection.GetSubSection("iQ_PlusFilePath")
+  Section.SetOption("BuildServerPath","\\\\qbeleng11\\Builds\\4.15\\")
+  FileSection.SaveAs(Project.ConfigPath+"Config.xml")
+  
+}*/
+//This method is used to read data from the xml file
+function ReadXml(NodeName,Variable)
+{
+  if(NodeName!=null && Variable!=null)
+  {
+    var FileSection=Storages.XML(Project.ConfigPath+"Config.xml")
+    Section= FileSection.GetSubSection(NodeName)
+    return aqConvert.VarToStr(Section.GetOption(Variable,0))
+  }
+  else
+  {
+    Log.Message("NodeName/Variable argument is null.")
+    return null
+  }
 }
