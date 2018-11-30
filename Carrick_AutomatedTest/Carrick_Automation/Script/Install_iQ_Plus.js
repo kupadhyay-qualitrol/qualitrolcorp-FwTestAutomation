@@ -21,7 +21,7 @@ function Install_iQ_Plus()
 {
   Log.Message("Start:TC-Install IQ+ Application in the PC with default settings.")
   //Step1. Copy the latest build from the server to local path.
-  var DriveName= CommonMethod.ReadXml("iQ_PlusFilePath","BuildServerPath")
+  var DriveName= CommonMethod.ReadXml("iQ_PlusFilePath","BuildServerPath",Project.ConfigPath+"Config.xml")
   
   var LatestBuildFile=CommonMethod.LastModifiedFile(DriveName)
 
@@ -35,7 +35,7 @@ function Install_iQ_Plus()
       }
       else
       {
-        Log.Message("File didn't copied")
+        Log.Error("File didn't copied")
       }
     }
     //Step2. Launch iQ+ Application Setup
@@ -157,7 +157,7 @@ function Install_iQ_Plus()
     {
       Log.Message("Application didn't launched successfully")
     }
-        
+    //TODO this method of checking the latest build file to be changed,so that it can handle iq+ file with some different name like iQ+4.16.0058.1811.exe-Conco    
     if(aqString.Trim(lbl_iQ_Server_Version.Text.OleValue)==aqString.SubString(LatestBuildFile,7,aqString.GetLength(LatestBuildFile)-11))
     {
       Log.Message("Installed iq+ version is :- "+LatestBuildFile)
@@ -166,6 +166,10 @@ function Install_iQ_Plus()
     {
       Log.Message("Installed iq+ version is :- "+aqString.Trim(lbl_iQ_Server_Version.Text.OleValue))
     }
-    Log.Message("Completed:TC-Install IQ+ Application in the PC with default settings.")
+    Log.Message("Success:TC-Install IQ+ Application in the PC with default settings.")
+  }
+  else
+  {
+    Log.Error("Failed:TC-Install IQ+ Application in the PC with default settings.")
   }
 }
