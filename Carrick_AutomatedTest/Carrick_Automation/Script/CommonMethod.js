@@ -17,7 +17,7 @@ function AssertIsTrue(Expected,Actual,LogMessage)
    Log.Error("Results didn't match")
  }
 }
-
+var Edtbx_Username = Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
 //This method launches iq+ plus application from installed folder path.
 function Launch_iQ_Plus()
 {
@@ -31,6 +31,18 @@ function Launch_iQ_Plus()
     //Launch iq+ plus application.
     if(TestedApps.iQ_Plus.Run())
     {
+      do
+      {
+        aqUtils.Delay(2000)
+      }
+      while (!Edtbx_Username.Exists)
+    
+      do
+      {
+        aqUtils.Delay(2000)
+      }
+      while (!Edtbx_Username.Enabled)
+    
       Log.Message("Application launched successfully")
       return true
     }
@@ -48,7 +60,7 @@ function Close_iQ_Plus()
 {
   try 
   {
-    //Launch iq+ plus application.
+    //Close iq+ plus application.
     if(TestedApps.iQ_Plus.Terminate())
     {
     Log.Message("Application Closed successfully")    
@@ -200,6 +212,7 @@ function AddSectiontoXML()
   
 }*/
 //This method is used to read data from the xml file
+
 function ReadXml(NodeName,Variable,filenamewithpath)
 {
   if(NodeName!=null && Variable!=null)
