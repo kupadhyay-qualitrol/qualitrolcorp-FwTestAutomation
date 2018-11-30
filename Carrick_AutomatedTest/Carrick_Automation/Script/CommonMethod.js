@@ -122,7 +122,7 @@ function LaunchApplication(PathWithFileName)
 //LastModified File
 function LastModifiedFile(FilePath)
 {
-
+  //TODO This method to be optimised using javascript query as per review comment 
   var FolderName = FilePath
 
   var FolderInfo = aqFileSystem.GetFolderInfo(FolderName)
