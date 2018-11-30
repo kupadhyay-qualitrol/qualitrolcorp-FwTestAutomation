@@ -56,3 +56,20 @@ function ClickOnClose()
     return false
   }
 }
+
+//This method is used to Click on Fault Recording
+var Item_ConfigTree=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel.configTree
+function ClickOnFaultRecording()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Fault Recording")
+    Log.Message("Clicked on Fault Recording")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to click on Fault Recording")
+    return false
+  }
+}
