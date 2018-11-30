@@ -91,7 +91,7 @@ function CheckActivityLog(logmessage)
 function Terminate_iQ_Plus()
 {
   //Check whether the iq+ is running or not?
-  var iQ_process=Sys.WaitProcess("iQ-Plus",30)
+  var iQ_process=Sys.WaitProcess("iQ-Plus")
   
   if (iQ_process.Exists)
   {
@@ -104,7 +104,7 @@ function Terminate_iQ_Plus()
 function Terminate_iQ_Plus_Server()
 {
   //Check whether the iq+ Server is running or not?
-  var iQ_Server_process=Sys.WaitProcess("iQ-PlusServer",30)
+  var iQ_Server_process=Sys.WaitProcess("iQ-PlusServer")
   
   if (iQ_Server_process.Exists)
   {
