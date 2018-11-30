@@ -23,6 +23,11 @@ function Launch_iQ_Plus()
 {
   try 
   {
+    //Before launching iQ+ .Terminate if any instance of iQ+ is running.
+    Terminate_iQ_Plus()
+    //Before launching iQ+ server.Terminate if any instance of iQ+ server is running.
+    Terminate_iQ_Plus_Server()
+  
     //Launch iq+ plus application.
     if(TestedApps.iQ_Plus.Run())
     {
@@ -88,11 +93,11 @@ function CheckActivityLog(logmessage)
  while (aqString.FindLast(Activitylog.Text,logmessage)==-1)  
 }
 
-//Terminate iq+ Client
+//Terminate iQ+ Client
 function Terminate_iQ_Plus()
 {
   //Check whether the iq+ is running or not?
-  var iQ_process=Sys.WaitProcess("iQ-Plus",30000)
+  var iQ_process=Sys.WaitProcess("iQ-Plus")
   
   if (iQ_process.Exists)
   {
@@ -105,7 +110,7 @@ function Terminate_iQ_Plus()
 function Terminate_iQ_Plus_Server()
 {
   //Check whether the iq+ Server is running or not?
-  var iQ_Server_process=Sys.WaitProcess("iQ-PlusServer",30000)
+  var iQ_Server_process=Sys.WaitProcess("iQ-PlusServer")
   
   if (iQ_Server_process.Exists)
   {
