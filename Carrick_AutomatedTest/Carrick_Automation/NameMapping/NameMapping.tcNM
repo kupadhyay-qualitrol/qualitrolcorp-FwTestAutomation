@@ -716,6 +716,17 @@
 										<Value PropertyType="0" Value="CheckConfigVersion" Type="5" />
 									</Property>
 								</Properties>
+								<Children>
+									<Child Name="btnNo" Key="{3B439CCD-E1DB-42E0-83BE-7F802779C7DA}" ParallelWalk="True">
+										<Image FileName="1801483142" Left="243" Top="101" Right="318" Bottom="124" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="btnNo" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
 							</Child>
 						</Children>
 					</Child>
@@ -1097,7 +1108,9 @@
 					</Child>
 				</Child>
 			</Child>
-			<Child Name="CheckConfigVersion" Owner="{E8C622F0-28D4-4A52-8DEE-251D3170DE42}" />
+			<Child Name="CheckConfigVersion" Owner="{E8C622F0-28D4-4A52-8DEE-251D3170DE42}">
+				<Child Name="btnNo" Owner="{3B439CCD-E1DB-42E0-83BE-7F802779C7DA}" />
+			</Child>
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">
 			<Child Name="FrmUninstall" Owner="{990D663C-6273-46B4-AE60-C81BD1783FA8}">
