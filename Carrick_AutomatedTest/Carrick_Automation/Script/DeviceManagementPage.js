@@ -22,6 +22,7 @@ function ClickonRetrieveConfig()
   }
 }
 
+var Btn_PopUpConfigCheck_No=Aliases.iQ_Plus.CheckConfigVersion.btnNo
 //This method is to Click on Modify CConfiguration button
 function ClickonModifyConfig()
 {
@@ -30,7 +31,11 @@ function ClickonModifyConfig()
     DeviceManagementToolbar.ClickItem("Device &Management")
     DeviceManagementToolbar.ClickItem("Device &Management|Configuration|Modify Co&nfiguration")
     Log.Message("Clicked on Modify Configuration Page")
-    CommonMethod.CheckActivityLog("Configuration retrieved successfully from device")    
+    if(Btn_PopUpConfigCheck_No.Exists)
+    {
+      Btn_PopUpConfigCheck_No.Click()
+      Log.Message("Clicked on NO on Check Config version Popup")
+    }
     return true
   }
   else
