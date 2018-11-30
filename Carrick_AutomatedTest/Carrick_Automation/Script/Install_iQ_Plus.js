@@ -157,7 +157,7 @@ function Install_iQ_Plus()
     {
       Log.Message("Application didn't launched successfully")
     }
-        
+    //TODO this method of checking the latest build file to be changed,so that it can handle iq+ file with some different name like iQ+4.16.0058.1811.exe-Conco    
     if(aqString.Trim(lbl_iQ_Server_Version.Text.OleValue)==aqString.SubString(LatestBuildFile,7,aqString.GetLength(LatestBuildFile)-11))
     {
       Log.Message("Installed iq+ version is :- "+LatestBuildFile)
