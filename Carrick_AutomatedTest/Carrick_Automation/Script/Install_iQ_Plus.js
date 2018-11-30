@@ -35,7 +35,7 @@ function Install_iQ_Plus()
       }
       else
       {
-        Log.Message("File didn't copied")
+        Log.Error("File didn't copied")
       }
     }
     //Step2. Launch iQ+ Application Setup
