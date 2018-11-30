@@ -51,9 +51,9 @@ function EnterDeviceDetails(devicetype,deviceName,deviceSerialNo,deviceIPAdd)
   IPSec1=aqString.Find((aqString.SubString(deviceIPAdd,IPSec0+1,aqString.GetLength(deviceIPAdd))),".")
   IPAdd1= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec0+1,aqString.GetLength(deviceIPAdd)),0,IPSec1)
   IPSec2=aqString.Find((aqString.SubString(deviceIPAdd,IPSec1+1,aqString.GetLength(deviceIPAdd))),".")
-  IPAdd2= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec1+1,aqString.GetLength(deviceIPAdd)),0,IPSec2)
+  IPAdd2= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec0+IPSec1+2,aqString.GetLength(deviceIPAdd)),0,IPSec2)
   IPSec3=aqString.Find((aqString.SubString(deviceIPAdd,IPSec2+1,aqString.GetLength(deviceIPAdd))),".")
-  IPAdd3= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec2+1,aqString.GetLength(deviceIPAdd)),0,IPSec3)  
+  IPAdd3= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec0+IPSec1+IPSec2+3,aqString.GetLength(deviceIPAdd)),0,IPSec3)  
   switch (devicetype)
   {
     case "IDM+18":
