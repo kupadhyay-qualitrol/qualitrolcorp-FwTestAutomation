@@ -28,6 +28,10 @@
 						<testParameters />
 						<children />
 					</testItem>
+					<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
 				</children>
 			</testItem>
 		</children>

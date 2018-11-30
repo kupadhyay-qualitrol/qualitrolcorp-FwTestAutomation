@@ -118,26 +118,16 @@ function Terminate_iQ_Plus_Server()
   }  
 }
 
-//Install iq+
-function Install_iq_plus()
+//LaunchApplication from Wshell
+function LaunchApplication(PathWithFileName)
 {
-  MapNetworkDrive("C:\\My_Documents\\Projects\\4.15_Sprint_1\\Des1")
-  
-}
-
-//Map Networkdrive
-function MapNetworkDrive(DriveName)
-{
- // MapNetworkDrive(DriveName+"\\"+Version)
-  var iQ_LatestBuild_File =LastModifiedFile(DriveName)
- // aqFile.Copy(DriveName+ "\\" + iQ_LatestBuild_File, Project.Path+"Builds\\",true) 
-  WshShell.Run("C:\\My_Documents\\Projects\\4.15_Sprint_1\\Des1\\"+iQ_LatestBuild_File)
+  WshShell.Run(PathWithFileName)
 }
 
 //LastModified File
 function LastModifiedFile(FilePath)
 {
-
+  //TODO This method to be optimised using javascript query as per review comment 
   var FolderName = FilePath
 
   var FolderInfo = aqFileSystem.GetFolderInfo(FolderName)
@@ -172,4 +162,54 @@ function LastModifiedFile(FilePath)
   }
   Log.Message("Latest Build in the folder is:- "+ tempExecutableFile)
   return tempExecutableFile
+}
+
+function CreateDirectory(DirectoryName)
+{
+ if (aqFileSystem.Exists(DirectoryName))
+ {
+  Log.Message("Directory Exists with name:- "+DirectoryName)
+  return DirectoryName
+ }
+ else
+ {
+   Log.Message("Directory doesn't Exists with name:- "+DirectoryName)
+   Log.Message("Creating Directory with name:- "+DirectoryName)
+   var tempresult =aqFileSystem.CreateFolder(DirectoryName)
+   if(tempresult==0)
+   {
+    Log.Message("Folder Created successfully")
+    return DirectoryName
+   }
+   else
+   {
+    Log.Message("Unable to create the folder.Error code is:- "+tempresult+" & error message is :- "+aqUtils.SysErrorMessage(tempresult)) 
+    return null
+   }
+ }
+}
+
+/*This method can be used to add any node to the xml file.
+function AddSectiontoXML()
+{
+  var FileSection=Storages.XML("")  
+  var Section= FileSection.GetSubSection("iQ_PlusFilePath")
+  Section.SetOption("BuildServerPath","\\\\qbeleng11\\Builds\\4.15\\")
+  FileSection.SaveAs(Project.ConfigPath+"Config.xml")
+  
+}*/
+//This method is used to read data from the xml file
+function ReadXml(NodeName,Variable,filenamewithpath)
+{
+  if(NodeName!=null && Variable!=null)
+  {
+    var FileSection=Storages.XML(filenamewithpath)
+    Section= FileSection.GetSubSection(NodeName)
+    return aqConvert.VarToStr(Section.GetOption(Variable,0))
+  }
+  else
+  {
+    Log.Message("NodeName/Variable argument is null.")
+    return null
+  }
 }

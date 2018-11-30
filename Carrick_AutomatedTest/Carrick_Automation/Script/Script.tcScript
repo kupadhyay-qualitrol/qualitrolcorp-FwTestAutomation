@@ -22,12 +22,16 @@
 		<child name="Uninstall_iQ_Plus" key="{EC149534-946D-4719-9EF5-22A614F0EB15}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="Uninstall_iQ_Plus.js" />
 		</child>
+		<child name="Install_iQ_Plus" key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Install_iQ_Plus.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
 			<references>
 				<ref key="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}" />
 				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
+				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">

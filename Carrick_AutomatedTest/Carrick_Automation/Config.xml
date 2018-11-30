@@ -1,0 +1,6 @@
+<?xml version = "1.0" encoding="ISO-8859-1"?>
+  <XMLStorage>
+    <iQ_PlusFilePath>
+      <BuildServerPath VarType="varOleStr"><![CDATA[\\qbeleng11\Builds\4.15\]]></BuildServerPath>
+    </iQ_PlusFilePath>
+  </XMLStorage>
