@@ -5,6 +5,7 @@
 //USEUNIT GeneralPage
 //USEUNIT ConfigEditorPage
 //USEUNIT ConfigEditor_FaultRecordingPage
+//USEUNIT SessionLogPage
 
 
 //TC-Test to check Save to Db Config works fine after changing pre-fault time.
@@ -31,6 +32,8 @@ function Test_SaveToDB_Prefault()
         Log.Message("Device exist in the tree topology.")
       }
       //Step4.Retrieve Configuration
+      //Clear Session Log
+      SessionLogPage.ClearLog()
       CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
       //Step5. Change Pre-fault Time.
@@ -40,6 +43,8 @@ function Test_SaveToDB_Prefault()
       ConfigEditorPage.ClickSaveToDb()
     
       //Step7. Modify Configuration
+      //Clear Session Log
+      SessionLogPage.ClearLog()
       DeviceManagementPage.ClickonModifyConfig()
     
       //Step8. Check prefaultime
@@ -94,10 +99,34 @@ function Test_SendToDevice_Prefault()
         Log.Message("Device exist in the tree topology.")
       }
       //Step4.Retrieve Configuration
+      //Clear Session Log
+      SessionLogPage.ClearLog()
       CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
-      //Step5. Change Pre-fault Time & Save to Db
+      //Step5. Change Pre-fault Time
       ConfigEditor_FaultRecordingPage.SetPrefault(CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
+      
+      //Step6. Send to Device
+      ConfigEditorPage.ClickSendToDevice()
+      
+      //Step7.Retrieve Configuration
+      //Clear Session Log
+      SessionLogPage.ClearLog()
+      CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+      
+      //Step8.Check pre-fault time
+      if(ConfigEditor_FaultRecordingPage.GetPrefault()!=CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
+      {
+        Log.Error("Prefault time doesn't match after save to Db.")
+      }
+      else
+      {
+        Log.Message("Prefault time before and After saving to DB is same.")
+      }
+      //Step9.Close the Config Editor
+      ConfigEditorPage.ClickOnClose()
+      //Step10.Terminates the iq+ application
+      CommonMethod.Close_iQ_Plus()
       
       Log.Messsage("Passed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
     }
