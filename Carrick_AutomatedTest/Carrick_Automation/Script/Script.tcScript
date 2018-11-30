@@ -25,6 +25,12 @@
 		<child name="Install_iQ_Plus" key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="Install_iQ_Plus.js" />
 		</child>
+		<child name="ConfigEditor_FaultRecordingPage" key="{FBB97113-FEA9-4185-B99A-46AC93AF87E1}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_FaultRecordingPage.js" />
+		</child>
+		<child name="ConfigEditorPage" key="{4EA6F833-D33B-4F35-A701-4110A6E29951}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditorPage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -41,6 +47,8 @@
 				<ref key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" />
 				<ref key="{32D96BB6-3E93-4C07-A044-799D8464AE0E}" />
 				<ref key="{7CF24341-D171-4B21-8075-3A2DB14D85ED}" />
+				<ref key="{FBB97113-FEA9-4185-B99A-46AC93AF87E1}" />
+				<ref key="{4EA6F833-D33B-4F35-A701-4110A6E29951}" />
 			</references>
 		</folder>
 	</folders>
