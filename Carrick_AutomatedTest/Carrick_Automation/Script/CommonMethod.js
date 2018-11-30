@@ -27,12 +27,14 @@ function Launch_iQ_Plus()
     if(TestedApps.iQ_Plus.Run())
     {
       Log.Message("Application launched successfully")
+      return true
     }
   }
   catch(ex)
   {
     //Post the message to log file  
     Log.Error(ex.message)
+    return false
   }
 }
 
@@ -83,8 +85,7 @@ function CheckActivityLog(logmessage)
  {
  aqUtils.Delay(2000)
  }
- while (aqString.FindLast(Activitylog.Text.OleValue,logmessage)==-1);
-  
+ while (aqString.FindLast(Activitylog.Text,logmessage)==-1)  
 }
 
 //Terminate iq+ Client
