@@ -23,6 +23,11 @@ function Launch_iQ_Plus()
 {
   try 
   {
+    //Before launching iQ+ .Terminate if any instance of iQ+ is running.
+    Terminate_iQ_Plus()
+    //Before launching iQ+ server.Terminate if any instance of iQ+ server is running.
+    Terminate_iQ_Plus_Server()
+  
     //Launch iq+ plus application.
     if(TestedApps.iQ_Plus.Run())
     {
