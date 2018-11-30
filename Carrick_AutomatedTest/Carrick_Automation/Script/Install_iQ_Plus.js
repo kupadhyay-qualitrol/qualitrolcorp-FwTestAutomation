@@ -166,6 +166,10 @@ function Install_iQ_Plus()
     {
       Log.Message("Installed iq+ version is :- "+aqString.Trim(lbl_iQ_Server_Version.Text.OleValue))
     }
-    Log.Message("Completed:TC-Install IQ+ Application in the PC with default settings.")
+    Log.Message("Success:TC-Install IQ+ Application in the PC with default settings.")
+  }
+  else
+  {
+    Log.Error("Failed:TC-Install IQ+ Application in the PC with default settings.")
   }
 }
