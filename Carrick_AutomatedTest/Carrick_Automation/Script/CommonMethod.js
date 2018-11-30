@@ -194,11 +194,11 @@ function AddSectiontoXML()
   
 }*/
 //This method is used to read data from the xml file
-function ReadXml(NodeName,Variable)
+function ReadXml(NodeName,Variable,filenamewithpath)
 {
   if(NodeName!=null && Variable!=null)
   {
-    var FileSection=Storages.XML(Project.ConfigPath+"Config.xml")
+    var FileSection=Storages.XML(filenamewithpath)
     Section= FileSection.GetSubSection(NodeName)
     return aqConvert.VarToStr(Section.GetOption(Variable,0))
   }
