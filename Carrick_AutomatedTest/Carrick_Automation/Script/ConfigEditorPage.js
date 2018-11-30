@@ -4,7 +4,8 @@ Like the buttons/edit box Send to Device,Save to database, Close which are gener
 */
 //USEUNIT CommonMethod
 
-var Btn_SendToDevice =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnClose
+var Btn_SendToDevice =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnSendToDevice
+var Btn_Popup_Warning=Aliases.iQ_Plus.dlgWarning.btnYes
 //This method is used to click on Send to Device button
 function ClickSendToDevice()
 {
@@ -12,6 +13,12 @@ function ClickSendToDevice()
   {
     Btn_SendToDevice.Click()
     Log.Message("Clicked on Send to Device button")
+    do
+    {
+      aqUtils.Delay(1000)
+    }
+    while(!Btn_Popup_Warning.Exists)
+    Btn_Popup_Warning.ClickButton()
     CommonMethod.CheckActivityLog("Configuration assigned successfully to device")
     return true
   }
