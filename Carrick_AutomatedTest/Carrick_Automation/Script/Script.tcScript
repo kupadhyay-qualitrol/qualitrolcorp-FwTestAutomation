@@ -31,6 +31,9 @@
 		<child name="ConfigEditorPage" key="{4EA6F833-D33B-4F35-A701-4110A6E29951}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="ConfigEditorPage.js" />
 		</child>
+		<child name="SessionLogPage" key="{F310E9DA-2A39-4136-AD44-E8F8E1E6C25F}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="SessionLogPage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -49,6 +52,7 @@
 				<ref key="{7CF24341-D171-4B21-8075-3A2DB14D85ED}" />
 				<ref key="{FBB97113-FEA9-4185-B99A-46AC93AF87E1}" />
 				<ref key="{4EA6F833-D33B-4F35-A701-4110A6E29951}" />
+				<ref key="{F310E9DA-2A39-4136-AD44-E8F8E1E6C25F}" />
 			</references>
 		</folder>
 	</folders>
