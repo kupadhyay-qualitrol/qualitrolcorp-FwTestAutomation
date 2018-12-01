@@ -11,7 +11,7 @@ function ClearLog()
   }
   else
   {
-    Toolbar_SessionLog.ClickItem("Clear")
+    Toolbar_SessionLog.ClickItem("ActivityLogToolbar|&Clear")
     Log.Message("Clicked on Clear button")
     return true
   }
@@ -26,7 +26,7 @@ function SaveLog()
   }
   else
   {
-    Toolbar_SessionLog.ClickItem("Save")
+    Toolbar_SessionLog.ClickItem("ActivityLogToolbar|&Save")
     Log.Message("Clicked on Save button")
     return true
   }

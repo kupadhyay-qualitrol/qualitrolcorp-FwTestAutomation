@@ -32,8 +32,6 @@ function Test_SaveToDB_Prefault()
         Log.Message("Device exist in the tree topology.")
       }
       //Step4.Retrieve Configuration
-      //Clear Session Log
-      SessionLogPage.ClearLog()
       CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
       //Step5. Change Pre-fault Time.
@@ -43,8 +41,6 @@ function Test_SaveToDB_Prefault()
       ConfigEditorPage.ClickSaveToDb()
     
       //Step7. Modify Configuration
-      //Clear Session Log
-      SessionLogPage.ClearLog()
       DeviceManagementPage.ClickonModifyConfig()
     
       //Step8. Check prefaultime
@@ -98,9 +94,7 @@ function Test_SendToDevice_Prefault()
       {
         Log.Message("Device exist in the tree topology.")
       }
-      //Step4.Retrieve Configuration
-      //Clear Session Log
-      SessionLogPage.ClearLog()
+      //Step4.Retrieve Configuration     
       CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
       //Step5. Change Pre-fault Time
@@ -110,8 +104,6 @@ function Test_SendToDevice_Prefault()
       ConfigEditorPage.ClickSendToDevice()
       
       //Step7.Retrieve Configuration
-      //Clear Session Log
-      SessionLogPage.ClearLog()
       CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
       
       //Step8.Check pre-fault time
@@ -126,9 +118,8 @@ function Test_SendToDevice_Prefault()
       //Step9.Close the Config Editor
       ConfigEditorPage.ClickOnClose()
       //Step10.Terminates the iq+ application
-      CommonMethod.Close_iQ_Plus()
-      
-      Log.Messsage("Passed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
+      CommonMethod.Close_iQ_Plus()      
+      Log.Message("Passed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
     }
     else
     {
@@ -137,7 +128,7 @@ function Test_SendToDevice_Prefault()
     }
   }
   catch(ex)
-  {
+  {  
     Log.Error(ex.message)
     Log.Message("Failed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
   }

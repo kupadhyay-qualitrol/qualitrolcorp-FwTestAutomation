@@ -2,6 +2,7 @@
 * on iQ+ UI. 
 */
 //USEUNIT CommonMethod
+//USEUNIT SessionLogPage
 
 var DeviceManagementToolbar= CommonMethod.RibbonToolbar
 //This method is to Click on Retrieve CConfiguration button
@@ -9,6 +10,8 @@ function ClickonRetrieveConfig()
 {
   if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
+    //Clear Session log  
+    SessionLogPage.ClearLog()  
     DeviceManagementToolbar.ClickItem("Device &Management")
     DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
     Log.Message("Clicked on Retrieve Configuration Page")
@@ -28,6 +31,8 @@ function ClickonModifyConfig()
 {
   if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
+    //Clear Session log  
+    SessionLogPage.ClearLog()  
     DeviceManagementToolbar.ClickItem("Device &Management")
     DeviceManagementToolbar.ClickItem("Device &Management|Configuration|Modify Co&nfiguration")
     Log.Message("Clicked on Modify Configuration Page")
