@@ -53,3 +53,11 @@ function GetLatestRecordnumber()
     
   }
 }
+
+function Test1()
+{
+  var listView;
+  listView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.z18ca7bd_d0dd_45c5_aaa4_cd1a4c88d6a7.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList;
+  listView.ClickItem("11133", 0);
+  listView.ClickItem("11133", "MANUAL");
+}
