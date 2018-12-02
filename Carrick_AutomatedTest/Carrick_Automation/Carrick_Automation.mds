@@ -21,14 +21,6 @@
 	<config language="{90F89436-9452-4F95-9882-6B5210079F13}" />
 	<testItems key="{F5C3AC8F-E7CD-49DA-A415-EFF8D5A099AF}">
 		<children>
-			<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="False" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-				<testParameters />
-				<children />
-			</testItem>
-			<testItem name="CommsConfig-SendToDevice" key="{2060EF8D-64BF-4630-BF3D-E03E6283C6C2}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SendToDevice_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-				<testParameters />
-				<children />
-			</testItem>
 			<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
@@ -41,6 +33,23 @@
 						<children />
 					</testItem>
 				</children>
+			</testItem>
+			<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+				<testParameters />
+				<children>
+					<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="False" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="CommsConfig-SendToDevice" key="{2060EF8D-64BF-4630-BF3D-E03E6283C6C2}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SendToDevice_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+				</children>
+			</testItem>
+			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+				<testParameters />
+				<children />
 			</testItem>
 		</children>
 	</testItems>
