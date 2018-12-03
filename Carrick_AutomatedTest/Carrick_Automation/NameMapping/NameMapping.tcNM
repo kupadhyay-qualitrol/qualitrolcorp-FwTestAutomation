@@ -516,6 +516,37 @@
 															</Child>
 														</Children>
 													</Child>
+													<Child Name="ManualTriggerView" Key="{F6A133FE-4106-490C-8AA9-4ACBDD893CA9}" ParallelWalk="True">
+														<Image FileName="1720341716" Left="3" Top="26" Right="529" Bottom="338" />
+														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="ManualTriggerView" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="MNLTRGgrpContainer" Key="{3682F254-BF62-4A9A-9AD4-8B0FC76C203C}" ParallelWalk="True">
+																<Image FileName="1720341716" Left="14" Top="38" Right="517" Bottom="326" />
+																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="MNLTRGgrpContainer" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="MNLTRGbtnOk" Key="{0B769023-11E3-4C4C-8FB9-4D2D175770C9}" ParallelWalk="True">
+																		<Image FileName="1720341716" Left="278" Top="291" Right="388" Bottom="316" />
+																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="MNLTRGbtnOk" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
 												</Children>
 											</Child>
 										</Children>
@@ -842,7 +873,7 @@
 														<Image FileName="633063358" Left="3" Top="26" Right="654" Bottom="379" />
 														<Properties>
 															<Property Name="WinFormsControlName">
-																<Value PropertyType="0" Value="118ca7bd-d0dd-45c5-aaa4-cd1a4c88d6a7" Type="5" />
+																<Value PropertyType="0" Value="*" Type="5" />
 															</Property>
 														</Properties>
 														<Children>
@@ -872,6 +903,15 @@
 																				</Properties>
 																			</Child>
 																		</Children>
+																	</Child>
+																	<Child Name="DIRLSTVWbtnCancel" Key="{FCEF519E-D2AC-4035-AD3E-0B821AEE897B}" ParallelWalk="True">
+																		<Image FileName="-1865877568" Left="572" Top="338" Right="645" Bottom="363" />
+																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="DIRLSTVWbtnCancel" Type="5" />
+																			</Property>
+																		</Properties>
 																	</Child>
 																</Children>
 															</Child>
@@ -1231,6 +1271,11 @@
 							<Child Name="MDEVbtnNavigation" Owner="{F37ADC6B-8AD9-4E70-96C0-3DD2880D5CF5}" />
 							<Child Name="MDEVbtnSave" Owner="{A612387A-0CC9-421E-ADEA-7898470746A0}" />
 						</Child>
+						<Child Name="ManualTriggerView" Owner="{F6A133FE-4106-490C-8AA9-4ACBDD893CA9}">
+							<Child Name="MNLTRGgrpContainer" Owner="{3682F254-BF62-4A9A-9AD4-8B0FC76C203C}">
+								<Child Name="MNLTRGbtnOk" Owner="{0B769023-11E3-4C4C-8FB9-4D2D175770C9}" />
+							</Child>
+						</Child>
 					</Child>
 				</Child>
 			</Child>
@@ -1279,11 +1324,12 @@
 			<Child Name="SDPContainer" Owner="{50C5F754-C466-4DC9-A6D5-8624C4605D51}">
 				<Child Name="SDPCTRtsctrSDPToolsContainer" Owner="{BF73C53C-725B-480A-AAD9-F003BEB8E648}">
 					<Child Name="ToolStripContentPanel" Owner="{C698346E-CD2A-41B9-8239-A524A97203F5}">
-						<Child Name="z18ca7bd_d0dd_45c5_aaa4_cd1a4c88d6a7" Owner="{699F1455-1E5B-455C-926F-20EE85249887}">
+						<Child Name="DFRDirectory" Owner="{699F1455-1E5B-455C-926F-20EE85249887}">
 							<Child Name="DirectoryListView" Owner="{14A6A61C-3149-4E4E-BDD2-E16F42B79546}">
 								<Child Name="DIRLSTVWDFRgrpContainer" Owner="{F5CD76B9-2143-46B4-8A67-5887D67051BB}">
 									<Child Name="DIRLSTVWlstDFRDirectoryList" Owner="{E163BA0F-1B3C-4003-A936-14A082E46ECC}" />
 								</Child>
+								<Child Name="DIRLSTVWbtnCancel" Owner="{FCEF519E-D2AC-4035-AD3E-0B821AEE897B}" />
 							</Child>
 						</Child>
 					</Child>
