@@ -34,10 +34,10 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="False" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -49,7 +49,12 @@
 			</testItem>
 			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
-				<children />
+				<children>
+					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="True" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+				</children>
 			</testItem>
 		</children>
 	</testItems>
@@ -156,7 +161,7 @@
 		<setting name="Recording_TestedAppsOnly" type="1" value="False" />
 		<setting name="{FB1CAF99-7FA6-447C-B963-D862CA8BFF89}" type="2" value="3000" />
 		<setting name="{3B76535B-58AD-456C-837E-091A5C480F6C}" type="1" value="True" />
-		<setting name="{3AE91BBD-F37D-40E6-B49D-D2F1EF68E285}" type="1" value="True" />
+		<setting name="{3AE91BBD-F37D-40E6-B49D-D2F1EF68E285}" type="1" value="False" />
 		<setting name="{90FD1116-F071-44C8-AB72-F1916C2B3A1B}" type="1" value="False" />
 		<setting name="JavaFXOpenApp_ExposedCustomNodes" type="6" rowIndex="-1" colIndex="2">
 			<columns>
