@@ -4,7 +4,11 @@
 //USEUNIT CommonMethod
 //USEUNIT SessionLogPage
 
+//Variables
 var DeviceManagementToolbar= CommonMethod.RibbonToolbar
+var Btn_PopUpConfigCheck_No=Aliases.iQ_Plus.CheckConfigVersion.btnNo
+//
+
 //This method is to Click on Retrieve CConfiguration button
 function ClickonRetrieveConfig()
 {
@@ -25,7 +29,6 @@ function ClickonRetrieveConfig()
   }
 }
 
-var Btn_PopUpConfigCheck_No=Aliases.iQ_Plus.CheckConfigVersion.btnNo
 //This method is to Click on Modify CConfiguration button
 function ClickonModifyConfig()
 {

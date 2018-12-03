@@ -3,8 +3,11 @@
 
 //USEUNIT ConfigEditorPage
 
+//Variables
 var Item_ConfigurationEditor = Aliases.iQ_Plus.Form
 var Edtbx_Prefault =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucFrGeneral.frmBackground.frmPrefaultTimeAndSampleRate.txtPrefault
+//
+
 //This method is used to Set Prefault time for DFR.
 function SetPrefault(PrefaultTime)
 {

@@ -46,28 +46,27 @@ function Test_SaveToDB_Prefault()
       //Step8. Check prefaultime
       if(ConfigEditor_FaultRecordingPage.GetPrefault()!=CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
       {
-        Log.Error("Prefault time doesn't match after save to Db.")
+        Log.Error("Failed:-Prefault time doesn't match after save to Db.")
       }
       else
       {
         Log.Message("Prefault time before and After saving to DB is same.")
-      }
-      //Step9.Close the Config Editor
+        Log.Message("Passed:-Test to check Save to Db Config works fine after changing pre-fault time.")
+      }      //Step9.Close the Config Editor
       ConfigEditorPage.ClickOnClose()
       //Step10.Terminates the iq+ application
-      CommonMethod.Close_iQ_Plus()
-      Log.Message("Passed:-Test to check Save to Db Config works fine after changing pre-fault time.")
+      CommonMethod.Close_iQ_Plus()      
     }
     else
     {
       Log.Message("Unable to launch iQ+.")
-      Log.Message("Failed:-Test to check Save to Db Config works fine after changing pre-fault time.")
+      Log.Error("Failed:-Test to check Save to Db Config works fine after changing pre-fault time.")
     }
   }
   catch(ex)
   {
     Log.Error(ex.message)
-    Log.Message("Failed:-Test to check Save to Db Config works fine after changing pre-fault time.")
+    Log.Message("Error:-Test to check Save to Db Config works fine after changing pre-fault time.")
   }
 }
 
@@ -109,27 +108,27 @@ function Test_SendToDevice_Prefault()
       //Step8.Check pre-fault time
       if(ConfigEditor_FaultRecordingPage.GetPrefault()!=CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
       {
-        Log.Error("Prefault time doesn't match after save to Db.")
+        Log.Error("Failed:-Prefault time doesn't match after save to Db.")
       }
       else
       {
         Log.Message("Prefault time before and After saving to DB is same.")
+        Log.Message("Passed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
       }
       //Step9.Close the Config Editor
       ConfigEditorPage.ClickOnClose()
       //Step10.Terminates the iq+ application
-      CommonMethod.Close_iQ_Plus()      
-      Log.Message("Passed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
+      CommonMethod.Close_iQ_Plus()   
     }
     else
     {
-      Log.Message("Unable to launch iQ+.")
+      Log.Error("Unable to launch iQ+.")
       Log.Message("Failed:-Test to check Save to Db Config works fine after changing pre-fault time.")
     }
   }
   catch(ex)
   {  
     Log.Error(ex.message)
-    Log.Message("Failed:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
+    Log.Message("Error:-Test to check Send to Device & Retrieve works fine after changing pre-fault time.")
   }
 }

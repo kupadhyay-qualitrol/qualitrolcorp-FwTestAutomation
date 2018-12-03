@@ -1,7 +1,11 @@
 ﻿/*This page contains the Objects and methods related to iQ+ Device Topology
 */
-var DeviceTopologyTree =Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow5.DeviceTopology.DeviceTopology.UserControlBase_Fill_Panel.TPGYutscTopologies.ultraTabSharedControlsPage1.panelTree.TPGYutvTopologyTree
 
+//Variables
+var DeviceTopologyTree =Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow5.DeviceTopology.DeviceTopology.UserControlBase_Fill_Panel.TPGYutscTopologies.ultraTabSharedControlsPage1.panelTree.TPGYutvTopologyTree
+//
+
+//This method is used to check whether device exist or not?
 function IsDeviceExist(devicetype,deviceName)
 {
   if(Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top.Enabled)
@@ -12,8 +16,6 @@ function IsDeviceExist(devicetype,deviceName)
     {
       if(DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetypecnt).Text==devicetype)
       {    
-        //if(DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Count!=0)
-        //{
           for(Itemcnt=0;Itemcnt<=DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Count-1;Itemcnt++)
           {
              if(deviceName==DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Item(Itemcnt).Text)
@@ -22,12 +24,6 @@ function IsDeviceExist(devicetype,deviceName)
                break
              }
           }
-       // }
-       /// else
-        //{
-         // Log.Message("Count of device type :- "+devicetype+" is 0 in the tree.")
-         // return false
-        //}
       }
       else
       {
@@ -41,6 +37,7 @@ function IsDeviceExist(devicetype,deviceName)
   }
 }
 
+//This method is used to click on Device
 function ClickonDevice(devicetype,deviceName)
 {
   if(IsDeviceExist(devicetype,deviceName))
@@ -64,6 +61,7 @@ function ClickonDevice(devicetype,deviceName)
   }
 }
 
+//This method is used to click on All Device in Topology
 function ClickonAllDevices()
 {
   if(DeviceTopologyTree.Enabled)
@@ -75,9 +73,4 @@ function ClickonAllDevices()
   {
     return false
   }
-}
-
-function IsDeviceTypeExist()
-{
-  
 }
