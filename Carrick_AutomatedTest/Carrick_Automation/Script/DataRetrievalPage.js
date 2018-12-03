@@ -3,7 +3,14 @@
 //USEUNIT CommonMethod
 //USEUNIT SessionLogPage
 
+//Variables
 var DeviceManagementToolbar= CommonMethod.RibbonToolbar
+var DFRDirectory=Aliases.iQ_Plus.SDPContainer
+var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
+var Btn_ManualDFRPopUP_OK =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.MNLTRGbtnOk
+var Btn_DFRDirectory_Close=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
+//
+
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
 function ClickOnFRManualTrigger()
 {
@@ -53,8 +60,6 @@ function ClickOnDFRDirectory()
  }
 }
 
-var DFRDirectory=Aliases.iQ_Plus.SDPContainer
-var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
 //This method is used to Get Latest DFR record number
 function GetLatestRecordnumber()
 {
@@ -137,7 +142,6 @@ function GetCOT()
   
 }
 
-var Btn_ManualDFRPopUP_OK =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.MNLTRGbtnOk
 //This method is used to Click on Manual DFR Trigger-Popup
 function ClickonOKManualDFRTrigger()
 {
@@ -154,7 +158,6 @@ function ClickonOKManualDFRTrigger()
   }
 }
 
-var Btn_DFRDirectory_Close=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
 function CloseDFRDirectory()
 {
   if(DFRDirectory.Exists)

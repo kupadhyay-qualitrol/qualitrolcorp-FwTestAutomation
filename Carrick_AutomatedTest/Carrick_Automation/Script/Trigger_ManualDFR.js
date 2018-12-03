@@ -65,7 +65,7 @@ function TriggerManualDFR()
       NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
       if(aqConvert.StrToInt64(LastDFRRecord)!= aqConvert.StrToInt64(NewDFRRecord)-1)
       {
-       Log.Error("Failed:-Latest Record number is not correct.It is :- "+NewDFRRecord) 
+        Log.Error("Failed:-Latest Record number is not correct.It is :- "+NewDFRRecord) 
       }
       else
       {
@@ -76,6 +76,7 @@ function TriggerManualDFR()
       if(DataRetrievalPage.GetCOT()=="MANUAL")
       {
         Log.Message("Cause of trigger is correct.")
+        Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
       }
       else
       {
@@ -90,12 +91,13 @@ function TriggerManualDFR()
     else
     {
       Log.Error("Unable to launch iQ+")
+      Log.Message("Failed:Test to trigger Manual DFR and see in Display Directory")
     }
-    Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
+
   }
   catch(ex)
   {
     Log.Error(ex.message)
-    Log.Message("Failed:Test to trigger Manual DFR and see in Display Directory")
+    Log.Message("Error:Test to trigger Manual DFR and see in Display Directory")
   }
 }
