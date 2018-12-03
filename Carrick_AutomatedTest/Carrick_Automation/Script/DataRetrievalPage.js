@@ -13,8 +13,18 @@ function ClickOnFRManualTrigger()
    SessionLogPage.ClearLog()
    DeviceManagementToolbar.ClickItem("Device &Management")
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
-   Log.Message("Clicked on FR Manual Trigger")
-   return true
+   Log.Message("Clicked on FR Manual Trigger Option")
+   if(ClickonOKManualDFRTrigger())
+   {
+     Log.Message("Clicke on OK button on Popup menu for FR Manual Trigger")
+     CommonMethod.CheckActivityLog("FR Manual Trigger Command executed successfully for device")  
+     return true
+   }
+   else
+   {
+     Log.Message("Popup to click on OK button for ManualFR trigger is not available.")   
+     return false
+   }
  }
  else
  {
@@ -44,20 +54,118 @@ function ClickOnDFRDirectory()
 }
 
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
+var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
 //This method is used to Get Latest DFR record number
 function GetLatestRecordnumber()
 {
+  var LatestRecordNumber
+  var ColumnName 
+
   if (DFRDirectory.Exists)
-  {
+  { 
     Log.Message("DFR Directory window is visible")
-    
+    ColumnName=GetColumnIndexByColumnName("Record #")
+    if(ColumnName!=null)
+    {
+      LatestRecordNumber=DirectoryList.wItem(0,ColumnName)    
+      Log.Message("Latest Record number is :- "+LatestRecordNumber)    
+      return LatestRecordNumber
+    }
+    else
+    {
+      Log.Message("Column Index is wrong")
+      return null
+    }
+  }
+  else
+  { 
+    CommonMethod.CheckActivityLog("")
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
   }
 }
 
-function Test1()
+//This method is used to get column index by column name for DFR Directory
+function GetColumnIndexByColumnName(ColumnName)
 {
-  var listView;
-  listView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.z18ca7bd_d0dd_45c5_aaa4_cd1a4c88d6a7.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList;
-  listView.ClickItem("11133", 0);
-  listView.ClickItem("11133", "MANUAL");
+  var DFRDirectoryColumn
+  var tempIndex
+  for(DFRDirectoryColumn=0;DFRDirectoryColumn<DirectoryList.Columns.Count;DFRDirectoryColumn++)
+  {
+    if(ColumnName==DirectoryList.Columns.Item(DFRDirectoryColumn).Text.OleValue)
+    {
+      tempIndex= DFRDirectoryColumn  
+      break
+    }
+    else
+    {
+      tempIndex=null
+    }
+  }
+  Log.Message("Index for "+ColumnName+" is "+tempIndex)
+  return tempIndex
+}
+
+//This method is used to get the Cause of Trigger from DFR Directory
+function GetCOT()
+{
+  var COT
+  var ColumnName 
+
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    ColumnName=GetColumnIndexByColumnName("Cause Of Trigger")
+    if(ColumnName!=null)
+    {
+      COT=DirectoryList.wItem(0,ColumnName)    
+      Log.Message("Cause of Trigger is "+COT)    
+      return COT
+    }
+    else
+    {
+      Log.Message("Column Index is wrong")
+      return null
+    }
+  }
+  else
+  { 
+    CommonMethod.CheckActivityLog("")
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  }
+  
+}
+
+var Btn_ManualDFRPopUP_OK =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.MNLTRGbtnOk
+//This method is used to Click on Manual DFR Trigger-Popup
+function ClickonOKManualDFRTrigger()
+{
+  if(Btn_ManualDFRPopUP_OK.Exists)
+  { 
+    Btn_ManualDFRPopUP_OK.ClickButton()
+    Log.Message("Clicked on OK button available on Manaul Trigger Popup.")
+    return true
+  }
+  else
+  {
+    Log.Message("OK button not available on Manual Trigger Popup")
+    return false
+  }
+}
+
+var Btn_DFRDirectory_Close=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
+function CloseDFRDirectory()
+{
+  if(DFRDirectory.Exists)
+  {
+    Btn_DFRDirectory_Close.ClickButton()
+    Log.Message("Clicked on Close button on DFR Directory")
+    return true
+  }
+  else
+  {
+    Log.Message("DFR Directory not visible")
+    return false
+  }
 }
