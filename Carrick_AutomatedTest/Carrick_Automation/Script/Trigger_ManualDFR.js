@@ -2,6 +2,7 @@
 //USEUNIT LoginPage
 //USEUNIT DeviceTopologyPage
 //USEUNIT GeneralPage
+//USEUNIT DataRetrievalPage
 
 //TC-Test to trigger Manual DFR and see in Display Directory
 function TriggerManualDFR()
@@ -9,7 +10,10 @@ function TriggerManualDFR()
   try
   {
     Log.Message("Start:Test to trigger Manual DFR and see in Display Directory")  
-    var DataSheetName = Project.ConfigPath +"TestData\\SmokeTestData.xlsx"  
+    var DataSheetName = Project.ConfigPath +"TestData\\SmokeTestData.xlsx" 
+    var LastDFRRecord
+    var NewDFRRecord
+    var RecordRetryCount
     //Step1.Launch iQ+  
     if(CommonMethod.Launch_iQ_Plus())
     {
@@ -26,13 +30,72 @@ function TriggerManualDFR()
       {
         Log.Message("Device exist in the tree topology.")
       }
-      //Step4. Check last record number
+      //Step4. Click on DFR Directory under Display Device Directory
+      DataRetrievalPage.ClickOnDFRDirectory()
       
+      //Step5. Find latest Record Number
+      LastDFRRecord= DataRetrievalPage.GetLatestRecordnumber()
+      Log.Message("Current Record Number is :- "+LastDFRRecord)
       
+      //Step5.1 Close DFR Directory
+      DataRetrievalPage.CloseDFRDirectory()
+      
+      //Step6. Generate Manual FR Trigger
+      DataRetrievalPage.ClickOnFRManualTrigger()
+            
+      //Step8. Check new record number
+      for(RecordRetryCount=0;RecordRetryCount<10;RecordRetryCount++)
+      {
+        //Try 10 times to check for new record
+        DataRetrievalPage.ClickOnDFRDirectory()
+        if(aqConvert.StrToInt64(DataRetrievalPage.GetLatestRecordnumber())!=aqConvert.StrToInt64(LastDFRRecord)+1)
+        {
+          DataRetrievalPage.CloseDFRDirectory()        
+          aqUtils.Delay(30000)
+        }
+        else
+        {
+          DataRetrievalPage.CloseDFRDirectory()        
+          break
+        }
+      }
+      //Step8.1 Retrieve DFRDirectory
+      DataRetrievalPage.ClickOnDFRDirectory()
+      
+      NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+      if(aqConvert.StrToInt64(LastDFRRecord)!= aqConvert.StrToInt64(NewDFRRecord)-1)
+      {
+       Log.Error("Failed:-Latest Record number is not correct.It is :- "+NewDFRRecord) 
+      }
+      else
+      {
+        Log.Message("Latest Record number is correct.It is:- "+NewDFRRecord)
+      }
+      
+      //Step9. Check COT is Manual
+      if(DataRetrievalPage.GetCOT()=="MANUAL")
+      {
+        Log.Message("Cause of trigger is correct.")
+      }
+      else
+      {
+        Log.Error("Failed:-Cause of Trigger is wrong :-"+DataRetrievalPage.GetCOT())
+      }
+      //Step9.1 Close DFR Directory
+      DataRetrievalPage.CloseDFRDirectory()
+      
+      //Step10. Close iQ_Plus
+      CommonMethod.Terminate_iQ_Plus()
     }
+    else
+    {
+      Log.Error("Unable to launch iQ+")
+    }
+    Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
   }
   catch(ex)
   {
-    
+    Log.Error(ex.message)
+    Log.Message("Failed:Test to trigger Manual DFR and see in Display Directory")
   }
 }
