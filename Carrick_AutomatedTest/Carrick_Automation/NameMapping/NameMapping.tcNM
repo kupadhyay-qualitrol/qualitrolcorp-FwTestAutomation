@@ -442,39 +442,39 @@
 																																	</Property>
 																																</Properties>
 																																<Children>
-																																	<Child Name="FieldControl0" Key="{8C6D5EE1-2058-465C-95A2-5299977EB431}" ParallelWalk="True">
+																																	<Child Name="FieldControl0" Key="{8C6D5EE1-2058-465C-95A2-5299977EB431}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="1465190153" Left="191" Top="363" Right="209" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl0" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection1" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
-																																	<Child Name="FieldControl3" Key="{E98FAD65-2F58-4E5C-8C00-9257B6410EB7}" ParallelWalk="True">
+																																	<Child Name="FieldControl3" Key="{E98FAD65-2F58-4E5C-8C00-9257B6410EB7}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="1465190153" Left="282" Top="363" Right="300" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl3" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection4" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
-																																	<Child Name="FieldControl1" Key="{28849241-05CE-4753-8CBD-3166E06396D0}" ParallelWalk="True">
+																																	<Child Name="FieldControl1" Key="{28849241-05CE-4753-8CBD-3166E06396D0}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="487396022" Left="222" Top="363" Right="240" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl1" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection2" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
-																																	<Child Name="FieldControl2" Key="{43360F00-E54F-42F4-A7BD-C927AF68895E}" ParallelWalk="True">
+																																	<Child Name="FieldControl2" Key="{43360F00-E54F-42F4-A7BD-C927AF68895E}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="487396022" Left="253" Top="363" Right="271" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl2" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection3" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
