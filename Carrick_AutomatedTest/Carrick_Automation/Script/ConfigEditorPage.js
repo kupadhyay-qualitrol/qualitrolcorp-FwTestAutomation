@@ -4,8 +4,14 @@ Like the buttons/edit box Send to Device,Save to database, Close which are gener
 */
 //USEUNIT CommonMethod
 
+//Variables
 var Btn_SendToDevice =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnSendToDevice
 var Btn_Popup_Warning=Aliases.iQ_Plus.dlgWarning.btnYes
+var Btn_SaveToDb =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnSaveToDb
+var Btn_Close =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnClose
+var Item_ConfigTree=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel.configTree
+//
+
 //This method is used to click on Send to Device button
 function ClickSendToDevice()
 {
@@ -29,7 +35,6 @@ function ClickSendToDevice()
   }
 }
 
-var Btn_SaveToDb =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnSaveToDb
 //This method is used to click on Save to Database button
 function ClickSaveToDb()
 {
@@ -47,7 +52,6 @@ function ClickSaveToDb()
   }
 }
 
-var Btn_Close =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnClose
 //This method is used to click on Close button
 function ClickOnClose()
 {
@@ -65,7 +69,6 @@ function ClickOnClose()
 }
 
 //This method is used to Click on Fault Recording
-var Item_ConfigTree=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel.configTree
 function ClickOnFaultRecording()
 {
   if(Item_ConfigTree.Exists)

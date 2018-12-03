@@ -3,6 +3,7 @@
 
 //USEUNIT CommonMethod
 
+//Variables
 var InstallShieldwizard =Aliases.setup.dlgQualitrolIQInstallShieldWizard
 var Btn_InstallShieldwizard_Yes= Aliases.setup.dlgQualitrolIQInstallShieldWizard.btnYes
 var Form_Uninstall =Aliases.setup.FrmUninstall
@@ -11,6 +12,7 @@ var Chkbox_RemoveDb =Aliases.setup.FrmUninstall.chbxRemoveDB
 var Btn_Form_Next=Aliases.setup.FrmUninstall.btnNext
 var Btn_TaskRunner_Next=Aliases.setup.FrmTaskRunner.btnNext
 var Btn_Finish =Aliases.setup.dlgQualitrolIQInstallShieldWizard.btnFinish
+//
 
 //TC-Uninstall IQ+ Application from the PC without taking the backup of the Database.
 function Uninstall_iQ_Plus()

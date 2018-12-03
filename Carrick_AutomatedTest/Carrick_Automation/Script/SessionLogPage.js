@@ -1,6 +1,9 @@
 ﻿/*This page contains methods and objects related to Seesion Log*/
 
+//Variables
 var Toolbar_SessionLog =Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.zUserControlBase_Toolbars_Dock_Area_Top
+//
+
 //This method is used to clear the Session Log.
 function ClearLog()
 {
