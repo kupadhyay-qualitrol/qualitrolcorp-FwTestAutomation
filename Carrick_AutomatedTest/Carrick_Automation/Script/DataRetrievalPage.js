@@ -112,7 +112,7 @@ function GetColumnIndexByColumnName(ColumnName)
 }
 
 //This method is used to get the Cause of Trigger from DFR Directory
-function GetCOT()
+function GetCOTForLatestDFRRecord()
 {
   var COT
   var ColumnName 

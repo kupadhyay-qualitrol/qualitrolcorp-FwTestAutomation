@@ -73,14 +73,14 @@ function TriggerManualDFR()
       }
       
       //Step9. Check COT is Manual
-      if(DataRetrievalPage.GetCOT()=="MANUAL")
+      if(DataRetrievalPage.GetCOTForLatestDFRRecord()=="MANUAL")
       {
         Log.Message("Cause of trigger is correct.")
         Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
       }
       else
       {
-        Log.Error("Failed:-Cause of Trigger is wrong :-"+DataRetrievalPage.GetCOT())
+        Log.Error("Failed:-Cause of Trigger is wrong :-"+DataRetrievalPage.GetCOTForLatestDFRRecord())
       }
       //Step9.1 Close DFR Directory
       DataRetrievalPage.CloseDFRDirectory()
