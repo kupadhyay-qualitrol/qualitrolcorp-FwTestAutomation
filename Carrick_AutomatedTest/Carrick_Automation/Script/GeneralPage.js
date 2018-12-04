@@ -3,6 +3,20 @@
 //USEUNIT DeviceTopologyPage
 //USEUNIT DeviceManagementPage
 
+//Variables
+var DeviceTypePage=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent
+var DeviceType=DeviceTypePage.MDEVtbPDeviceTypes.MDEVpnlDeviceTypes.MDEVlsvDeviceTypes
+var BtnNext_DeviceType= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.MDEVbtnNavigation
+var DeviceName=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCashelDeviceDetails.DEVtxtCashelDeviceName
+var DeviceSerialNo=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCashelDeviceDetails.DEVtxtDeviceSerialNo
+var DeviceIPAdd0=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl0
+var DeviceIPAdd1=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl1
+var DeviceIPAdd2=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl2
+var DeviceIPAdd3=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl3
+var BtnSave_DeviceDetails=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.MDEVbtnSave
+//
+
+//This method is used to Create Device
 function CreateDevice(devicetype,devicename,deviceSerialNo,deviceIPAdd)
 {
   if(DeviceManagementPage.DeviceManagementToolbar.Enabled)
@@ -20,9 +34,8 @@ function CreateDevice(devicetype,devicename,deviceSerialNo,deviceIPAdd)
     Log.Error("iQ+ GUI is not visible")
   }
 }
-var DeviceTypePage=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent
-var DeviceType=DeviceTypePage.MDEVtbPDeviceTypes.MDEVpnlDeviceTypes.MDEVlsvDeviceTypes
-var BtnNext_DeviceType= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.MDEVbtnNavigation
+
+//This method is used to SelectDeviceType in Device Form
 function SelectDeviceType(devicetype)
 {
   if(DeviceTypePage.Enabled)
@@ -37,13 +50,7 @@ function SelectDeviceType(devicetype)
   }
 }
 
-var DeviceName=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCashelDeviceDetails.DEVtxtCashelDeviceName
-var DeviceSerialNo=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCashelDeviceDetails.DEVtxtDeviceSerialNo
-var DeviceIPAdd0=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl0
-var DeviceIPAdd1=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl1
-var DeviceIPAdd2=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl2
-var DeviceIPAdd3=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent.MDEVtbpDevice.MDEVpnlDevice.DEVdwsDecDeviceDetails.ManagePMDADevices.DEVgrpCommunicationDetails.DEVpnlEthernetSettings.DEVuMEEthernetIP.FieldControl3
-var BtnSave_DeviceDetails=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.MDEVbtnSave
+//This method is used to Enter Device Details
 function EnterDeviceDetails(devicetype,deviceName,deviceSerialNo,deviceIPAdd)
 {
   IPSec0= aqString.Find(deviceIPAdd,".")
@@ -51,9 +58,9 @@ function EnterDeviceDetails(devicetype,deviceName,deviceSerialNo,deviceIPAdd)
   IPSec1=aqString.Find((aqString.SubString(deviceIPAdd,IPSec0+1,aqString.GetLength(deviceIPAdd))),".")
   IPAdd1= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec0+1,aqString.GetLength(deviceIPAdd)),0,IPSec1)
   IPSec2=aqString.Find((aqString.SubString(deviceIPAdd,IPSec1+1,aqString.GetLength(deviceIPAdd))),".")
-  IPAdd2= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec1+1,aqString.GetLength(deviceIPAdd)),0,IPSec2)
+  IPAdd2= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec0+IPSec1+2,aqString.GetLength(deviceIPAdd)),0,IPSec2)
   IPSec3=aqString.Find((aqString.SubString(deviceIPAdd,IPSec2+1,aqString.GetLength(deviceIPAdd))),".")
-  IPAdd3= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec2+1,aqString.GetLength(deviceIPAdd)),0,IPSec3)  
+  IPAdd3= aqString.SubString(aqString.SubString(deviceIPAdd,IPSec0+IPSec1+IPSec2+3,aqString.GetLength(deviceIPAdd)),0,IPSec3)  
   switch (devicetype)
   {
     case "IDM+18":

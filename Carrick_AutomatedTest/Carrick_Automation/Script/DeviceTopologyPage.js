@@ -1,39 +1,45 @@
 ﻿/*This page contains the Objects and methods related to iQ+ Device Topology
 */
-var DeviceTopologyTree =Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow5.DeviceTopology.DeviceTopology.UserControlBase_Fill_Panel.TPGYutscTopologies.ultraTabSharedControlsPage1.panelTree.TPGYutvTopologyTree
 
+//Variables
+var DeviceTopologyTree =Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow5.DeviceTopology.DeviceTopology.UserControlBase_Fill_Panel.TPGYutscTopologies.ultraTabSharedControlsPage1.panelTree.TPGYutvTopologyTree
+//
+
+//This method is used to check whether device exist or not?
 function IsDeviceExist(devicetype,deviceName)
 {
-  //IsDeviceExist=false
   if(Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top.Enabled)
   {
     Log.Message("iQ+ UI is open and enabled")
-    if(DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Count!=0)
+    //Check if the device type exists in the tree/not.
+    for(let devicetypecnt=0;devicetypecnt<DeviceTopologyTree.wItems.Item("All Devices").Items.Count;devicetypecnt++ )
     {
-      for(Itemcnt=0;Itemcnt<=DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Count-1;Itemcnt++)
-      {
-         if(deviceName==DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Item(Itemcnt).Text)
-         {
-           return true
-           break
-         }
+      if(DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetypecnt).Text==devicetype)
+      {    
+          for(Itemcnt=0;Itemcnt<=DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Count-1;Itemcnt++)
+          {
+             if(deviceName==DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Item(Itemcnt).Text)
+             {
+               return true
+               break
+             }
+          }
       }
-    }
-    else
-    {
-      Log.Message("Device of the type IDM+18 doesn't exist")
-      return false
+      else
+      {
+        Log.Message("Device Type is not as per expected.Trying to check more...")
+      }
     }
   }
   else
   {
-    Log.Error("iQ+ UI is not up/enabled")
+    Log.Error("iQ+ is not launched correctly.")
   }
 }
 
+//This method is used to click on Device
 function ClickonDevice(devicetype,deviceName)
 {
-  //ClickonDevice=false
   if(IsDeviceExist(devicetype,deviceName))
   {
     DeviceTopologyTree.ClickItem("All Devices|"+devicetype+"|"+ deviceName)
@@ -55,6 +61,7 @@ function ClickonDevice(devicetype,deviceName)
   }
 }
 
+//This method is used to click on All Device in Topology
 function ClickonAllDevices()
 {
   if(DeviceTopologyTree.Enabled)

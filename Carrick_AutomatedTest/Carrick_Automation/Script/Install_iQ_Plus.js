@@ -3,6 +3,7 @@
 
 //USEUNIT CommonMethod
 
+//Variables
 var InstallShieldwizard =Aliases.setup.dlgQualitrolIQInstallShieldWizard
 var Btn_InstallShieldwizard_OK= Aliases.setup.dlgQualitrolIQInstallShieldWizard.btnOK
 var Btn_InstallShieldwizard_Next= Aliases.setup.dlgQualitrolIQInstallShieldWizard.btnNext
@@ -15,6 +16,7 @@ var Edtbx_Username=Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
 var Btn_DBConfigurationAssistant_Next =Aliases.setup.FrmServiceSettings.btnNext
 var Btn_DBServerSelection_Next=Aliases.setup.FrmConfigSqlServer.btnNext
 var lbl_iQ_Server_Version= Aliases.iQ_PlusServerController.CarrickServiceManager.lblVersion
+//
 
 //TC-Install IQ+ Application in the PC with default steps
 function Install_iQ_Plus()

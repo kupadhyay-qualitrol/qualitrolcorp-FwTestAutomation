@@ -5,6 +5,7 @@
 //Global Variables
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.ACTYLOGtxtLog
+var Edtbx_Username = Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
 //
 function AssertIsTrue(Expected,Actual,LogMessage)
 {
@@ -31,13 +32,27 @@ function Launch_iQ_Plus()
     //Launch iq+ plus application.
     if(TestedApps.iQ_Plus.Run())
     {
+      do
+      {
+        aqUtils.Delay(2000)
+      }
+      while (!Edtbx_Username.Exists)
+    
+      do
+      {
+        aqUtils.Delay(2000)
+      }
+      while (!Edtbx_Username.Enabled)
+    
       Log.Message("Application launched successfully")
+      return true
     }
   }
   catch(ex)
   {
     //Post the message to log file  
     Log.Error(ex.message)
+    return false
   }
 }
 
@@ -46,7 +61,7 @@ function Close_iQ_Plus()
 {
   try 
   {
-    //Launch iq+ plus application.
+    //Close iq+ plus application.
     if(TestedApps.iQ_Plus.Terminate())
     {
     Log.Message("Application Closed successfully")    
@@ -88,11 +103,10 @@ function CheckActivityLog(logmessage)
  {
  aqUtils.Delay(2000)
  }
- while (aqString.FindLast(Activitylog.Text.OleValue,logmessage)==-1);
-  
+ while (aqString.FindLast(Activitylog.Text,logmessage)==-1)  
 }
 
-//Terminate iq+ Client
+//Terminate iQ+ Client
 function Terminate_iQ_Plus()
 {
   //Check whether the iq+ is running or not?
@@ -199,6 +213,7 @@ function AddSectiontoXML()
   
 }*/
 //This method is used to read data from the xml file
+
 function ReadXml(NodeName,Variable,filenamewithpath)
 {
   if(NodeName!=null && Variable!=null)
