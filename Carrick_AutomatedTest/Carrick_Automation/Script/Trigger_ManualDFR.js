@@ -55,35 +55,55 @@ function TriggerManualDFR()
         }
         else
         {
+          NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+          if(aqConvert.StrToInt64(LastDFRRecord)!= aqConvert.StrToInt64(NewDFRRecord)-1)
+          {
+            Log.Error("Failed:-Latest Record number is not correct.It is :- "+NewDFRRecord) 
+          }
+          else
+          {
+            Log.Message("Latest Record number is correct.It is:- "+NewDFRRecord)
+          }
+      
+          //Step9. Check COT is Manual
+          if(DataRetrievalPage.GetCOTForLatestDFRRecord()=="MANUAL")
+          {
+            Log.Message("Cause of trigger is correct.")
+            Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
+          }
+          else
+          {
+            Log.Error("Failed:-Cause of Trigger is wrong :-"+DataRetrievalPage.GetCOTForLatestDFRRecord())
+          }
           DataRetrievalPage.CloseDFRDirectory()        
           break
         }
       }
-      //Step8.1 Retrieve DFRDirectory
-      DataRetrievalPage.ClickOnDFRDirectory()
-      
-      NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
-      if(aqConvert.StrToInt64(LastDFRRecord)!= aqConvert.StrToInt64(NewDFRRecord)-1)
-      {
-        Log.Error("Failed:-Latest Record number is not correct.It is :- "+NewDFRRecord) 
-      }
-      else
-      {
-        Log.Message("Latest Record number is correct.It is:- "+NewDFRRecord)
-      }
-      
-      //Step9. Check COT is Manual
-      if(DataRetrievalPage.GetCOTForLatestDFRRecord()=="MANUAL")
-      {
-        Log.Message("Cause of trigger is correct.")
-        Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
-      }
-      else
-      {
-        Log.Error("Failed:-Cause of Trigger is wrong :-"+DataRetrievalPage.GetCOTForLatestDFRRecord())
-      }
-      //Step9.1 Close DFR Directory
-      DataRetrievalPage.CloseDFRDirectory()
+//      //Step8.1 Retrieve DFRDirectory
+//      DataRetrievalPage.ClickOnDFRDirectory()
+//      
+//      NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+//      if(aqConvert.StrToInt64(LastDFRRecord)!= aqConvert.StrToInt64(NewDFRRecord)-1)
+//      {
+//        Log.Error("Failed:-Latest Record number is not correct.It is :- "+NewDFRRecord) 
+//      }
+//      else
+//      {
+//        Log.Message("Latest Record number is correct.It is:- "+NewDFRRecord)
+//      }
+//      
+//      //Step9. Check COT is Manual
+//      if(DataRetrievalPage.GetCOTForLatestDFRRecord()=="MANUAL")
+//      {
+//        Log.Message("Cause of trigger is correct.")
+//        Log.Message("Passed:Test to trigger Manual DFR and see in Display Directory")
+//      }
+//      else
+//      {
+//        Log.Error("Failed:-Cause of Trigger is wrong :-"+DataRetrievalPage.GetCOTForLatestDFRRecord())
+//      }
+//      //Step9.1 Close DFR Directory
+//      DataRetrievalPage.CloseDFRDirectory()
       
       //Step10. Close iQ_Plus
       CommonMethod.Terminate_iQ_Plus()
