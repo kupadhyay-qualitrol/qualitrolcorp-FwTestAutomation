@@ -244,6 +244,25 @@
 											</Child>
 										</Children>
 									</Child>
+									<Child Name="windowDockingArea3" Key="{097AD81A-D07E-4763-8015-8DBDB5EA2BF6}" ParallelWalk="True">
+										<Image FileName="-1147581376" Left="289" Top="157" Right="1366" Bottom="523" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="windowDockingArea3" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="dockableWindow1" Key="{77BB7ECC-5899-443D-95ED-BFDBE0725CB6}" ParallelWalk="True">
+												<Image FileName="-1147581376" Left="289" Top="157" Right="1366" Bottom="523" />
+												<TypeInfo Item0="{552EC000-52F1-4D04-9694-951400A672E8}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="dockableWindow1" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
 								</Children>
 							</Child>
 							<Child Name="ModalDialogContainer" Key="{C1DF22CA-FAF1-4BA0-8DDA-93AD6738032A}" ParallelWalk="True">
@@ -423,39 +442,39 @@
 																																	</Property>
 																																</Properties>
 																																<Children>
-																																	<Child Name="FieldControl0" Key="{8C6D5EE1-2058-465C-95A2-5299977EB431}" ParallelWalk="True">
+																																	<Child Name="FieldControl0" Key="{8C6D5EE1-2058-465C-95A2-5299977EB431}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="1465190153" Left="191" Top="363" Right="209" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl0" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection1" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
-																																	<Child Name="FieldControl3" Key="{E98FAD65-2F58-4E5C-8C00-9257B6410EB7}" ParallelWalk="True">
+																																	<Child Name="FieldControl3" Key="{E98FAD65-2F58-4E5C-8C00-9257B6410EB7}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="1465190153" Left="282" Top="363" Right="300" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl3" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection4" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
-																																	<Child Name="FieldControl1" Key="{28849241-05CE-4753-8CBD-3166E06396D0}" ParallelWalk="True">
+																																	<Child Name="FieldControl1" Key="{28849241-05CE-4753-8CBD-3166E06396D0}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="487396022" Left="222" Top="363" Right="240" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl1" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection2" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
-																																	<Child Name="FieldControl2" Key="{43360F00-E54F-42F4-A7BD-C927AF68895E}" ParallelWalk="True">
+																																	<Child Name="FieldControl2" Key="{43360F00-E54F-42F4-A7BD-C927AF68895E}" ExtendedFind="True" ParallelWalk="True">
 																																		<Image FileName="487396022" Left="253" Top="363" Right="271" Bottom="376" />
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="FieldControl2" Type="5" />
+																																				<Value PropertyType="0" Value="DEVtxtIPSection3" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
@@ -494,6 +513,37 @@
 																		<Value PropertyType="0" Value="MDEVbtnSave" Type="5" />
 																	</Property>
 																</Properties>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="ManualTriggerView" Key="{F6A133FE-4106-490C-8AA9-4ACBDD893CA9}" ParallelWalk="True">
+														<Image FileName="1720341716" Left="3" Top="26" Right="529" Bottom="338" />
+														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="ManualTriggerView" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="MNLTRGgrpContainer" Key="{3682F254-BF62-4A9A-9AD4-8B0FC76C203C}" ParallelWalk="True">
+																<Image FileName="1720341716" Left="14" Top="38" Right="517" Bottom="326" />
+																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="MNLTRGgrpContainer" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="MNLTRGbtnOk" Key="{0B769023-11E3-4C4C-8FB9-4D2D175770C9}" ParallelWalk="True">
+																		<Image FileName="1720341716" Left="278" Top="291" Right="388" Bottom="316" />
+																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="MNLTRGbtnOk" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
 															</Child>
 														</Children>
 													</Child>
@@ -760,6 +810,116 @@
 												<Value PropertyType="0" Value="&amp;Yes" Type="5" />
 											</Property>
 										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="DropDownForm" Key="{B7140279-1F42-421D-B6C6-C6D4D38A175C}" ParallelWalk="True">
+								<Image FileName="1485395971" Left="0" Top="0" Right="254" Bottom="292" />
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="Infragistics.Win.DropDownManager+DropDownForm" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="PopupMenuControlTrusted" Key="{CC1C8A02-8B97-4847-940C-086876033CDB}" ParallelWalk="True">
+										<Image FileName="1485395971" Left="0" Top="0" Right="254" Bottom="292" />
+										<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="Infragistics.Win.UltraWinToolbars.PopupMenuControlTrusted" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="SDPContainer" Key="{50C5F754-C466-4DC9-A6D5-8624C4605D51}" ParallelWalk="True">
+								<Image FileName="1225034966" Left="0" Top="0" Right="657" Bottom="405" />
+								<TypeInfo Item0="{1C716C2E-91C5-4A3B-827D-EA51850363F0}" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="SDPContainer" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="SDPCTRtsctrSDPToolsContainer" Key="{BF73C53C-725B-480A-AAD9-F003BEB8E648}" ParallelWalk="True">
+										<Image FileName="633063358" Left="3" Top="26" Right="654" Bottom="379" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="SDPCTRtsctrSDPToolsContainer" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ToolStripContentPanel" Key="{C698346E-CD2A-41B9-8239-A524A97203F5}" ParallelWalk="True">
+												<Image FileName="633063358" Left="3" Top="26" Right="654" Bottom="379" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Forms.ToolStripContentPanel" Type="5" />
+													</Property>
+													<Property Name="WndCaption">
+														<Value PropertyType="0" Value="" Type="5" />
+													</Property>
+													<Property Name="Index">
+														<Value PropertyType="0" Value="1" Type="0" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="z18ca7bd_d0dd_45c5_aaa4_cd1a4c88d6a7" Key="{699F1455-1E5B-455C-926F-20EE85249887}" ParallelWalk="True">
+														<Image FileName="633063358" Left="3" Top="26" Right="654" Bottom="379" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="*" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="DirectoryListView" Key="{14A6A61C-3149-4E4E-BDD2-E16F42B79546}" ParallelWalk="True">
+																<Image FileName="633063358" Left="3" Top="26" Right="654" Bottom="379" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="DirectoryListView" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="DIRLSTVWDFRgrpContainer" Key="{F5CD76B9-2143-46B4-8A67-5887D67051BB}" ParallelWalk="True">
+																		<Image FileName="633063358" Left="15" Top="36" Right="647" Bottom="314" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="DIRLSTVWDFRgrpContainer" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="DIRLSTVWlstDFRDirectoryList" Key="{E163BA0F-1B3C-4003-A936-14A082E46ECC}" ParallelWalk="True">
+																				<Image FileName="633063358" Left="18" Top="48" Right="644" Bottom="311" />
+																				<TypeInfo Item0="{8AFB4F31-E527-47CD-8AD4-CFFDE21F2924}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="DIRLSTVWlstDFRDirectoryList" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																		</Children>
+																	</Child>
+																	<Child Name="DIRLSTVWbtnCancel" Key="{FCEF519E-D2AC-4035-AD3E-0B821AEE897B}" ParallelWalk="True">
+																		<Image FileName="-1865877568" Left="572" Top="338" Right="645" Bottom="363" />
+																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="DIRLSTVWbtnCancel" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
 									</Child>
 								</Children>
 							</Child>
@@ -1069,6 +1229,9 @@
 						</Child>
 					</Child>
 				</Child>
+				<Child Name="windowDockingArea3" Owner="{097AD81A-D07E-4763-8015-8DBDB5EA2BF6}">
+					<Child Name="dockableWindow1" Owner="{77BB7ECC-5899-443D-95ED-BFDBE0725CB6}" />
+				</Child>
 			</Child>
 			<Child Name="ModalDialogContainer" Owner="{C1DF22CA-FAF1-4BA0-8DDA-93AD6738032A}">
 				<Child Name="MDLGCTRpnlContainer" Owner="{B0E1F04D-4EEC-4621-AD51-454DB1D8C116}">
@@ -1107,6 +1270,11 @@
 							</Child>
 							<Child Name="MDEVbtnNavigation" Owner="{F37ADC6B-8AD9-4E70-96C0-3DD2880D5CF5}" />
 							<Child Name="MDEVbtnSave" Owner="{A612387A-0CC9-421E-ADEA-7898470746A0}" />
+						</Child>
+						<Child Name="ManualTriggerView" Owner="{F6A133FE-4106-490C-8AA9-4ACBDD893CA9}">
+							<Child Name="MNLTRGgrpContainer" Owner="{3682F254-BF62-4A9A-9AD4-8B0FC76C203C}">
+								<Child Name="MNLTRGbtnOk" Owner="{0B769023-11E3-4C4C-8FB9-4D2D175770C9}" />
+							</Child>
 						</Child>
 					</Child>
 				</Child>
@@ -1149,6 +1317,23 @@
 			</Child>
 			<Child Name="dlgWarning" Owner="{85E55F72-7663-4AED-A0F3-A5EB27B97D82}">
 				<Child Name="btnYes" Owner="{2DAFDFD6-7D44-4FFD-9D1F-7B75FEE8EA75}" />
+			</Child>
+			<Child Name="DropDownForm" Owner="{B7140279-1F42-421D-B6C6-C6D4D38A175C}">
+				<Child Name="PopupMenuControlTrusted" Owner="{CC1C8A02-8B97-4847-940C-086876033CDB}" />
+			</Child>
+			<Child Name="SDPContainer" Owner="{50C5F754-C466-4DC9-A6D5-8624C4605D51}">
+				<Child Name="SDPCTRtsctrSDPToolsContainer" Owner="{BF73C53C-725B-480A-AAD9-F003BEB8E648}">
+					<Child Name="ToolStripContentPanel" Owner="{C698346E-CD2A-41B9-8239-A524A97203F5}">
+						<Child Name="DFRDirectory" Owner="{699F1455-1E5B-455C-926F-20EE85249887}">
+							<Child Name="DirectoryListView" Owner="{14A6A61C-3149-4E4E-BDD2-E16F42B79546}">
+								<Child Name="DIRLSTVWDFRgrpContainer" Owner="{F5CD76B9-2143-46B4-8A67-5887D67051BB}">
+									<Child Name="DIRLSTVWlstDFRDirectoryList" Owner="{E163BA0F-1B3C-4003-A936-14A082E46ECC}" />
+								</Child>
+								<Child Name="DIRLSTVWbtnCancel" Owner="{FCEF519E-D2AC-4035-AD3E-0B821AEE897B}" />
+							</Child>
+						</Child>
+					</Child>
+				</Child>
 			</Child>
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">
@@ -6998,6 +7183,253 @@
 						<ReturnValue Param0="9" />
 					</Child>
 					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4SAU8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="1055146884" Key="{1C716C2E-91C5-4A3B-827D-EA51850363F0}">
+			<Data Properties="614CB74BE205FE4EA956ACADE84D31A7UFFFFFFFFFFFFFFFFV4LBZZY">
+				<FunctionDescriptions>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Close" Doc="Closes the specified Window object." IsBasic="True" Param0="WaitTimeout" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="2000" Type="0" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Position" Doc="Sets the specified position and size for the specific Window object." IsBasic="True" Param0="Left" Param1="Top" Param2="Width" Param3="Height" Data="ZI4L1L4L4Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="1" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="1" />
+						</Param2>
+						<Param3>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="1" />
+						</Param3>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="-1911949876" Key="{552EC000-52F1-4D04-9694-951400A672E8}">
+			<Data Properties="5A37A7B2082E944F91465F3B4B314A35UFFFFFFFFFFFFFFFFV4LCZZY">
+				<FunctionDescriptions>
+					<Child Name="Activate" Doc="Activates the window&apos;s dockable pane. It can also expand the pane&apos;s group, activate the tab where the pane is located, or make the auto-hidden pane visible." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Maximize" Doc="Simulates a mouse click on the Maximize button of the window&apos;s dockable pane." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Minimize" Doc="Simulates a mouse click on the Minimize button of the window&apos;s dockable pane." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="-1018564327" Key="{8AFB4F31-E527-47CD-8AD4-CFFDE21F2924}">
+			<Data Properties="1856F1ED2D39E1498387E229B279C1F1UFFFFFFFFFFFFFFFFV4LCZZY">
+				<FunctionDescriptions>
+					<Child Name="ClickItem" Doc="Moves the mouse cursor to Item and then simulates a single click. Item may be specified by index, from 0, or by name." IsBasic="True" Param0="Item" Param1="SubItem" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="wItemCount" Doc="Returns the total number of items in the list view." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="wItem" Doc="Returns the name of the item specified by its index or using a wildcard." IsBasic="True" Param0="Item" Param1="SubItem" Data="ZI4L2L4L2ZG8ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param1>
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
 						<ReturnValue Param0="8" />
 					</Child>
 				</FunctionDescriptions>
