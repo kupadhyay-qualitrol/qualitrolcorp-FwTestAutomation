@@ -5,7 +5,7 @@
 //USEUNIT DataRetrievalPage
 
 //TC-Test to trigger Manual DFR and see in Display Directory
-function TriggerManualDFR()
+function TriggerManualDFR(blnCloseiQPlus)
 {
   try
   {
@@ -32,22 +32,27 @@ function TriggerManualDFR()
       }
       //Step4. Click on DFR Directory under Display Device Directory
       DataRetrievalPage.ClickOnDFRDirectory()
+      aqUtils.Delay(3000)
       
       //Step5. Find latest Record Number
       LastDFRRecord= DataRetrievalPage.GetLatestRecordnumber()
       Log.Message("Current Record Number is :- "+LastDFRRecord)
+      aqUtils.Delay(3000)
       
       //Step5.1 Close DFR Directory
       DataRetrievalPage.CloseDFRDirectory()
+      aqUtils.Delay(3000)
       
       //Step6. Generate Manual FR Trigger
       DataRetrievalPage.ClickOnFRManualTrigger()
+      aqUtils.Delay(3000)
             
       //Step8. Check new record number
       for(RecordRetryCount=0;RecordRetryCount<10;RecordRetryCount++)
       {
         //Try 10 times to check for new record
         DataRetrievalPage.ClickOnDFRDirectory()
+        aqUtils.Delay(3000)
         NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
         if(aqConvert.StrToInt64(NewDFRRecord)!=aqConvert.StrToInt64(LastDFRRecord)+1)
         {
@@ -73,7 +78,10 @@ function TriggerManualDFR()
         }
       }      
       //Step10. Close iQ_Plus
+      if(blnCloseiQPlus)
+      {
       CommonMethod.Terminate_iQ_Plus()
+      }
     }
     else
     {

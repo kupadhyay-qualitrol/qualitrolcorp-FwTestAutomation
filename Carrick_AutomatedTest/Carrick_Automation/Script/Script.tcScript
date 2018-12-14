@@ -40,6 +40,18 @@
 		<child name="DataRetrievalPage" key="{09BC76C4-8202-42D7-9CC0-EF5B349B63FA}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="DataRetrievalPage.js" />
 		</child>
+		<child name="Download_DFR_Record" key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Download_DFR_Record.js" />
+		</child>
+		<child name="PDPPage" key="{B5C7812D-01C5-43EE-9851-9256C277EB0D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="PDPPage.js" />
+		</child>
+		<child name="IECBrowser_COMTRADE_download" key="{D582B660-4576-43CC-8DEE-743ED376AA93}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="IECBrowser_COMTRADE_download.js" />
+		</child>
+		<child name="test" key="{0500BB9A-7E4F-4E0C-9845-7F656F5AD7CE}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="test.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -48,6 +60,7 @@
 				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
 				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 				<ref key="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}" />
+				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -61,6 +74,7 @@
 				<ref key="{4EA6F833-D33B-4F35-A701-4110A6E29951}" />
 				<ref key="{F310E9DA-2A39-4136-AD44-E8F8E1E6C25F}" />
 				<ref key="{09BC76C4-8202-42D7-9CC0-EF5B349B63FA}" />
+				<ref key="{B5C7812D-01C5-43EE-9851-9256C277EB0D}" />
 			</references>
 		</folder>
 	</folders>
