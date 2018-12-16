@@ -24,11 +24,11 @@
 			<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="True" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -37,22 +37,85 @@
 			<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="False" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="CommsConfig-SendToDevice" key="{2060EF8D-64BF-4630-BF3D-E03E6283C6C2}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SendToDevice_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="CommsConfig-SendToDevice" key="{2060EF8D-64BF-4630-BF3D-E03E6283C6C2}" group="False" enabled="False" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SendToDevice_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="True" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="False" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
+					</testItem>
+				</children>
+			</testItem>
+			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+				<testParameters />
+				<children>
+					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="BTC-578" key="{F5303038-9187-45A1-9EDD-896CD6B2379E}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_587" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-588" key="{DC06BDEF-45E1-452D-9C4B-3B860A335447}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_588" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-589" key="{AE1E6FCB-1A39-47E5-82ED-FB963A2E751D}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_589" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-590" key="{546AB27F-8327-4ED2-B2ED-4C35E822BE14}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_590" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-591" key="{33921FCD-CE47-4421-A64F-FE94A1A6FD65}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_591" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-597" key="{EB1DBBD6-30B5-47E3-A305-22B3EB40B113}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_597" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="Ed2" key="{E4E8FB33-1202-41AB-8789-59E3F2D45D82}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="BTC-592" key="{B4739ABC-FBB1-476D-9872-ACC888DF5335}" group="False" enabled="True" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_592" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-593" key="{971720C2-3439-4AF2-9DFA-55CA62A9B859}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_593" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-594" key="{4CFA2BEC-AC70-4C5B-96E3-59FDE01C7BD6}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_594" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-595" key="{6136CEF4-D284-4E21-AF4D-6A42BECB33F9}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_595" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-596" key="{3409BB28-656F-4923-9D4E-A82BD86268BD}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_596" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-598" key="{03AC06A8-E26F-4DB4-85B8-66A06F1653FE}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_598" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
 					</testItem>
 				</children>
 			</testItem>
@@ -62,7 +125,7 @@
 		<data Version="3" />
 	</variables>
 	<settings key="{72394ABF-F8E5-4104-8617-79C02ABF1C12}">
-		<settingsVersion value="12.60" />
+		<settingsVersion value="12.10" />
 		<setting name="JavaFXOpenApp_NodeByClassNameFilters" type="6" rowIndex="8" colIndex="2">
 			<columns>
 				<column type="1" enabled="True" />
@@ -268,7 +331,6 @@
 				<row val0="Breadth-first" />
 			</data>
 		</setting>
-		<setting name="{24DB98D6-5EF8-47BF-977E-C2FD2C5F5FB3}" type="5" value="Log" />
 		<setting name="{3BAA9083-AE46-48CE-BFF4-A656DECF8E2F}" type="1" value="False" />
 		<setting name="{3E8BAA4F-EA09-4DD1-BD8E-DA765C8CF39B}" type="1" value="True" />
 		<setting name="{BE6D588C-BDC7-42E0-8BAE-3E3D8B0F7E83}" type="1" value="True" />
@@ -401,8 +463,8 @@
 		<Templates>
 			<Template Id="{1EB17ADF-E4EB-404D-97DC-AD758A1E8C1D}" ConnectionId="{00000000-0000-0000-0000-000000000000}" Description="This template is used by TestComplete&apos;s Log subsystem to post test results to an issue-tracking system. You can also use it at your desire." Name="CreateWorkItem" IsSystem="True" ItemTypeName="" ProjectName="" IsEditing="False" ItemId="">
 				<Fields>
-					<Field ItemId="{035F504C-4794-4FF3-8AC7-72F560404135}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Subject" />
-					<Field ItemId="{BF29BA96-46FC-4688-A2C6-AB43D68F1BFB}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Description" />
+					<Field ItemId="{6580CEB3-F374-4EED-A01D-963AF84E9189}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Subject" />
+					<Field ItemId="{17CEE2B9-F783-4A68-9686-608593B81FAD}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Description" />
 				</Fields>
 			</Template>
 		</Templates>
