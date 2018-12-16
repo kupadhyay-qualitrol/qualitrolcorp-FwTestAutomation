@@ -93,7 +93,9 @@ function ReadDataFromExcel(FileName,DataHead)
         break
       }
     }
-    return Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
+    var returnValue = Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
+    Excel.Quit();
+    return returnValue;
 }
 
 //Method to check progress from activity log
