@@ -59,10 +59,10 @@
 			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="BTC-578" key="{F5303038-9187-45A1-9EDD-896CD6B2379E}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_587" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-587" key="{F5303038-9187-45A1-9EDD-896CD6B2379E}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_587" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -74,7 +74,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-590" key="{546AB27F-8327-4ED2-B2ED-4C35E822BE14}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_590" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-590" key="{546AB27F-8327-4ED2-B2ED-4C35E822BE14}" group="False" enabled="True" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_590" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -88,10 +88,10 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Ed2" key="{E4E8FB33-1202-41AB-8789-59E3F2D45D82}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Ed2" key="{E4E8FB33-1202-41AB-8789-59E3F2D45D82}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="BTC-592" key="{B4739ABC-FBB1-476D-9872-ACC888DF5335}" group="False" enabled="True" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_592" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-592" key="{B4739ABC-FBB1-476D-9872-ACC888DF5335}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_592" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
