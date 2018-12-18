@@ -8,9 +8,10 @@
 
 //Create Folder C://AIP-74_Testing//TestCaseName
 
-var DataSheetName = Project.ConfigPath +"TestData\\IECBrowser_COMTRADE_download.xlsx" 
+var DataSheetName = Project.ConfigPath +"TestData\\IECBrowser_COMTRADE_download.xlsx"
 var Ed1DeviceIP = ""
 var Ed2DeviceIP = ""
+var FilesToppology
 
 function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, deviceIP)
 {
@@ -21,7 +22,8 @@ function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, devi
     {
       //iecBrowser_process.Terminate() 
       //Log.Message("Terminated IECBrowser Application")
-      Log.Message("IECBrowser is already running")
+      Log.Message("IECBrowser is already running.Starting another new instance")
+      //TestedApps.Iec_Browser.Run()
     }
     else
     {
@@ -31,7 +33,6 @@ function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, devi
     }
   
     var treetopology
-    var FilesToppology
     Aliases.Iec_Browser.mainForm.toolBar1.ClickItem("Connect")
     Aliases.Iec_Browser.FormConnect.comboBoxIp.ComboBoxChildNativeWindow.SetText(deviceIP)
     aqUtils.Delay(2000)
@@ -50,7 +51,6 @@ function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, devi
     if (Aliases.Iec_Browser.mainForm.checkBoxRefresh.CheckState.OleValue == "Checked") {
         Aliases.Iec_Browser.mainForm.checkBoxRefresh.ClickButton()
     }
-    FilesToppology = Aliases.Iec_Browser.mainForm.panel1.dataGrid1
     NoofChecks = 1;
     row = startRow;
     if (CFGOnly)
@@ -67,11 +67,30 @@ function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, devi
     {
         usefilefilter = false;
     }
+    FilesToppology = Aliases.Iec_Browser.mainForm.panel1.dataGrid1
+    i = 1;
     while (NoofChecks <= NoOfFiles)
     {
-        if ((aqString.Find(FilesToppology.Item(row, 0).OleValue, "COMTRADE")) != -1)
+        if (row >= FilesToppology.wRowCount) //If we have reached the end of rows, restart from 1.
         {
-            if (usefilefilter && (aqString.Find(FilesToppology.Item(row, 0).OleValue, filefilter)) != -1)
+          row = 1
+          Log.Message("row exceeded Available RowCount. So,downloading files checked so far and Resetting row to 1");
+          DownloadSelectedFiles(TestCaseName,NoofChecks)
+          TestCaseName = TestCaseName + "_Reset_" + i; //As there is chance that same files would be downloaded again, changing the Output Folder name here
+          i++;
+        }
+        
+        if ((aqString.Find(FilesToppology.Item(row, 0).OleValue, "COMTRADE")) != -1)
+        { 
+            if (usefilefilter)
+            {
+              if(aqString.Find(FilesToppology.Item(row, 0).OleValue, filefilter) != -1)
+              {
+                  FilesToppology.ClickCell(row, "GetFile")
+                  NoofChecks++;
+              }
+            }
+            else
             {
                 FilesToppology.ClickCell(row, "GetFile")
                 NoofChecks++;
@@ -79,6 +98,16 @@ function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, devi
         }
         row++;
     }
+    DownloadSelectedFiles(TestCaseName,NoofChecks)
+    
+    //iecBrowser_process.Terminate() 
+    //Log.Message("Terminated IECBrowser Application")
+    
+    return row;
+}
+
+function DownloadSelectedFiles(TestCaseName,NoofChecks)
+{
     aqFileSystem.CreateFolder("C:\\AIP-74_Testing\\"+ TestCaseName + "\\")
     
     FilesToppology.ClickCellR(NoofChecks, "GetFile")
@@ -90,11 +119,6 @@ function Download_Files(NoOfFiles, CFGOnly, DATOnly, TestCaseName,startRow, devi
     
     FilesToppology.ClickCellR(NoofChecks, "GetFile")
     FilesToppology.PopupMenu.Click("Refresh Table")
-    
-    //iecBrowser_process.Terminate() 
-    //Log.Message("Terminated IECBrowser Application")
-    
-    return row;
 }
 
 function Download_10Chunks_Upto160_CFGOnly(TestCaseName, deviceIP)
@@ -144,7 +168,7 @@ function BTC_588()
     }
     iChunkSize = 150;
     ifiles = 150;
-    Download_Files(iChunkSize, true, false, "BTC_588" + ifiles, 1, Ed1DeviceIP)
+    Download_Files(iChunkSize, true, false, "BTC_588_" + ifiles, 1, Ed1DeviceIP)
     Log.Event("BTC_588 END")
 }
 
@@ -169,7 +193,7 @@ function BTC_590()
     iChunkSize = 500;
     ifiles = 500;
 
-    Download_Files(iChunkSize, true, false, "BTC_590" + ifiles, 1, Ed1DeviceIP)
+    Download_Files(iChunkSize, true, false, "BTC_590_" + ifiles, 1, Ed1DeviceIP)
     Log.Event("BTC_590 END")
 }
 
@@ -180,10 +204,10 @@ function BTC_591()
     {
       Ed1DeviceIP = CommonMethod.ReadDataFromExcel(DataSheetName,"Ed1 Device IP")
     }
-    iChunkSize = 500;
-    ifiles = 500;
+    iChunkSize = 150;
+    ifiles = 150;
 
-    Download_Files(iChunkSize, false, true, "BTC_591" + ifiles, 1, Ed1DeviceIP)
+    Download_Files(iChunkSize, false, true, "BTC_591_" + ifiles, 1, Ed1DeviceIP)
     Log.Event("BTC_591 END")
 }
 
@@ -197,7 +221,7 @@ function BTC_597()
     iChunkSize = 150;
     ifiles = 150;
 
-    Download_Files(iChunkSize, false, false, "BTC_597" + ifiles, 1, Ed1DeviceIP)
+    Download_Files(iChunkSize, false, false, "BTC_597_" + ifiles, 1, Ed1DeviceIP)
     Log.Event("BTC_597 END")
 }
 
@@ -228,7 +252,7 @@ function BTC_593()
     iChunkSize = 150;
     ifiles = 150;
 
-    Download_Files(iChunkSize, true, false, "BTC_593" + ifiles, 1, Ed2DeviceIP)
+    Download_Files(iChunkSize, true, false, "BTC_593_" + ifiles, 1, Ed2DeviceIP)
     Log.Event("BTC_593 END")
 }
 
@@ -253,7 +277,7 @@ function BTC_595()
     iChunkSize = 500;
     ifiles = 500;
 
-    Download_Files(iChunkSize, true, false, "BTC_595" + ifiles, 1, Ed2DeviceIP)
+    Download_Files(iChunkSize, true, false, "BTC_595_" + ifiles, 1, Ed2DeviceIP)
     Log.Event("BTC_595 END")
 }
 
@@ -268,7 +292,7 @@ function BTC_596()
     iChunkSize = 500;
     ifiles = 500;
 
-    Download_Files(iChunkSize, false, true, "BTC_596" + ifiles, 1, Ed2DeviceIP)
+    Download_Files(iChunkSize, false, true, "BTC_596_" + ifiles, 1, Ed2DeviceIP)
     Log.Event("BTC_596 END")
 }
 
@@ -282,7 +306,7 @@ function BTC_598()
     iChunkSize = 150;
     ifiles = 150;
 
-    Download_Files(iChunkSize, false, false, "BTC_598" + ifiles, 1, Ed2DeviceIP)
+    Download_Files(iChunkSize, false, false, "BTC_598_" + ifiles, 1, Ed2DeviceIP)
     Log.Event("BTC_598 END")
 }
 
