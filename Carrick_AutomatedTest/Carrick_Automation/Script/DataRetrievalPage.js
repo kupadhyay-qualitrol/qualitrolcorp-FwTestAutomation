@@ -19,6 +19,7 @@ function ClickOnFRManualTrigger()
    //Clear Session Log
    SessionLogPage.ClearLog()
    DeviceManagementToolbar.ClickItem("Device &Management")
+   aqUtils.Delay(2000)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
    Log.Message("Clicked on FR Manual Trigger Option")
    if(ClickonOKManualDFRTrigger())
