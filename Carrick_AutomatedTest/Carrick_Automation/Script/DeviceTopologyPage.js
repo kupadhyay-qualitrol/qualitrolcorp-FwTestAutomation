@@ -42,7 +42,7 @@ function ClickonDevice(devicetype,deviceName)
 {
   if(IsDeviceExist(devicetype,deviceName))
   {
-    DeviceTopologyTree.Item("All Devices|"+devicetype+"|"+ deviceName)
+    DeviceTopologyTree.ClickItem("All Devices|"+devicetype+"|"+ deviceName)
     Log.Message("Clicked on the device with name :- "+ deviceName)
     if(DeviceTopologyTree.wItems.Item("All Devices").Items.Item(devicetype).Items.Item(deviceName).Selected)
     {
