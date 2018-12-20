@@ -23,8 +23,9 @@ function ClickOnFRManualTrigger()
    //Clear Session Log
    SessionLogPage.ClearLog()
    DeviceManagementToolbar.ClickItem("Device &Management")
+   aqUtils.Delay(2000)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
-   aqUtils.Delay(1000)
+   aqUtils.Delay(2000)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
    Log.Message("Clicked on FR Manual Trigger Option")
    if(ClickonOKManualDFRTrigger())
@@ -54,8 +55,9 @@ function ClickOnDFRDirectory()
    //Clear Session Log
    SessionLogPage.ClearLog()
    DeviceManagementToolbar.ClickItem("Device &Management")
+   aqUtils.Delay(2000)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
-   aqUtils.Delay(1000)
+   aqUtils.Delay(2000)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|&DFR Directory ")
    Log.Message("Clicked on DFR Directory")
    CommonMethod.CheckActivityLog("Directory list displayed successfully")
@@ -156,7 +158,7 @@ function ClickonOKManualDFRTrigger()
   if(Btn_ManualDFRPopUP_OK.Exists)
   { 
     Btn_ManualDFRPopUP_OK.ClickButton()
-    aqUtils.Delay(1000)
+    aqUtils.Delay(2000)
     Log.Message("Clicked on OK button available on Manaul Trigger Popup.")
     return true
   }
@@ -172,7 +174,7 @@ function CloseDFRDirectory()
   if(DFRDirectory.Exists)
   {
     Btn_DFRDirectory_Close.ClickButton()
-    aqUtils.Delay(1000)
+    aqUtils.Delay(2000)
     Log.Message("Clicked on Close button on DFR Directory")
     return true
   }
