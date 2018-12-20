@@ -50,13 +50,13 @@
 			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="False" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="True" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters>
 							<param0 name="blnCloseiQPlus" type="3" localVarName="" varType="0" value="" />
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="ProjectTestItem2" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ProjectTestItem2" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="False" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -131,7 +131,7 @@
 		<data Version="3" />
 	</variables>
 	<settings key="{72394ABF-F8E5-4104-8617-79C02ABF1C12}">
-		<settingsVersion value="12.10" />
+		<settingsVersion value="12.60" />
 		<setting name="JavaFXOpenApp_NodeByClassNameFilters" type="6" rowIndex="8" colIndex="2">
 			<columns>
 				<column type="1" enabled="True" />
@@ -460,6 +460,7 @@
 				<row val0="Capture images" />
 			</data>
 		</setting>
+		<setting name="{24DB98D6-5EF8-47BF-977E-C2FD2C5F5FB3}" type="5" value="Log" />
 	</settings>
 	<analysis key="{CAB7F37E-C704-43C7-BEC4-19C3B492A23E}" />
 	<scc key="{00000000-0000-0000-0000-000000000000}" name="">
