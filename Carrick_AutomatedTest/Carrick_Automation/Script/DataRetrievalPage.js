@@ -49,6 +49,7 @@ function ClickOnDFRDirectory()
    //Clear Session Log
    SessionLogPage.ClearLog()
    DeviceManagementToolbar.ClickItem("Device &Management")
+   aqUtils.Delay(2000)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|&DFR Directory ")
    Log.Message("Clicked on DFR Directory")
    CommonMethod.CheckActivityLog("Directory list displayed successfully")
