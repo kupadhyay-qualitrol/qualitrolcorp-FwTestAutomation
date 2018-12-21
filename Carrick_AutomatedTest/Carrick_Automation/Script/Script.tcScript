@@ -46,9 +46,6 @@
 		<child name="PDPPage" key="{B5C7812D-01C5-43EE-9851-9256C277EB0D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="PDPPage.js" />
 		</child>
-		<child name="IECBrowser_COMTRADE_download" key="{D582B660-4576-43CC-8DEE-743ED376AA93}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
-			<data path="IECBrowser_COMTRADE_download.js" />
-		</child>
 		<child name="test" key="{0500BB9A-7E4F-4E0C-9845-7F656F5AD7CE}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="test.js" />
 		</child>
