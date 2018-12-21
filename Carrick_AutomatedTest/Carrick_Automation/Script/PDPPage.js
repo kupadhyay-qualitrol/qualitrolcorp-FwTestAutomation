@@ -10,7 +10,9 @@ var PDP_StatusBar=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.P
 var PDPContainerWorkspace=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace
 var ultraGrid = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList.ugBaseGrid;
 var EventsList = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList
-// This function is used to Click on Download button of DFR directory pop up
+
+
+ // This function is used to Click on Download button of DFR directory pop up
 function ClickOnDownloadDataNow()
 {
   if(DFRDirectory.Exists)
@@ -33,25 +35,6 @@ function ClickOnDownloadDataNow()
     return false
   }
 }
-//function GetColumnIndexByColumnNameForEventList(ColumnName)
-//{
-//  var WColumn
-//  var tempIndex
-//  for(WColumn=13;WColumn<EventsList.ugBaseGrid.ActiveRow.ListObject.Row.ItemArray.get_Length();PDPColumn++)
-//  {
-//    if(ColumnName==EventsList.ugBaseGrid.ActiveRow.ListObject.Row.ItemArray(PDPColumn).Text.OleValue)
-//    {
-//      tempIndex=PDPColumn  
-//      break
-//    }
-//    else
-//    {
-//      tempIndex=null
-//    }
-//  }
-//  Log.Message("Index for "+ColumnName+" is "+tempIndex)
-//  return tempIndex
-//}
 
 //This function is used to verify the Downloaded record in PDP
 function VerifyDownloadedRecord()

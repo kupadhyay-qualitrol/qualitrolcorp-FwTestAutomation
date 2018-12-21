@@ -22,7 +22,7 @@ function DownloadManualDFR()
       {     
       REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
       PDPPage.ClickOnDownloadDataNow()
-      aqUtils.Delay(10000)
+      CommonMethod.CheckActivityLog("DFR records saved successfully for device")
       DataRetrievalPage.CloseDFRDirectory() 
       Log.Message("DFR data download") 
 //      ActiveRowRecordNumber =     
