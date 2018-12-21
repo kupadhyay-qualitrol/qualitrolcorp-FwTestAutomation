@@ -28,7 +28,11 @@
 			<testData />
 			<data />
 		</child>
+<<<<<<< HEAD
 		<child key="{7560B76F-27FA-4C13-8916-1B18495057BF}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+=======
+		<child key="{F98C9CC3-E8CB-4C2D-A675-7C5D313749D3}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+>>>>>>> refs/remotes/origin/master
 			<config nodeName="Iec_Browser" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
