@@ -42,7 +42,7 @@ function DownloadManualDFR()
        Log.Message("Stores the Device Current date and time")
        
        //Step5. Set Start date time and End date time in IQ+
-       PDPPage.SetDateTime()
+       PDPPage.SetDeviceDateTime()
        Log.Message("Start Date time and End date time is updated in IQ+")
        
      

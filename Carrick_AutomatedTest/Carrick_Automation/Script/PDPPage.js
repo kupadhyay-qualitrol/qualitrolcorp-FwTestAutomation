@@ -98,7 +98,7 @@ function GetDeviceCurrentDateTime()
 }
 
 //This function is used to set the CurrentDateTime for the Device
-function SetDateTime()
+function SetDeviceDateTime()
 {
   if (TimeIntervalControl.VisibleOnScreen) 
   {
