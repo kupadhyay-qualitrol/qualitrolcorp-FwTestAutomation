@@ -104,7 +104,7 @@ function SetDeviceDateTime()
 {
   if (TimeIntervalControl.VisibleOnScreen) 
   {
-    DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
+    DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.GetYear(),NewDateTime.GetMonth(),NewDateTime.GetDate(),NewDateTime.GetHours(),NewDateTime.GetMinutes(),NewDateTime.GetSeconds());
     Log.Message("Start Date time is set for one month ahead as per the Current date time of device")
     
     EndDateTime=TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
