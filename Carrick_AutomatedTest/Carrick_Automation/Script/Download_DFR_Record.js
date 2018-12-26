@@ -40,8 +40,13 @@ function DownloadManualDFR()
        //Step4. Get the Current Date time from the device
        PDPPage.GetDeviceCurrentDateTime()
        Log.Message("Stores the Device Current date and time")
+       
+       //Step5. Set Start date time and End date time in IQ+
+       PDPPage.SetDateTime()
+       Log.Message("Start Date time and End date time is updated in IQ+")
+       
      
-      //Step5. Verify downloaded record on PDP
+      //Step6. Verify downloaded record on PDP
         REC=PDPPage.VerifyDownloadedRecord()
         if(REC==REC_DFR)
         {

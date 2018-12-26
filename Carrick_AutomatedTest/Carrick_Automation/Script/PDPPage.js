@@ -1,6 +1,11 @@
 ﻿/*This file contains methods and objects related to PDP Page*/
-
-
+var DeviceManagementToolbar=CommonMethod.RibbonToolbar
+var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
+var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.ACTYLOGtxtLog
+var TimeIntervalControl = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl;
+var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
+var SetDateTime;
+var NewDateTime = new Date();
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
 var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.txtDeviceStatus
 var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
@@ -55,20 +60,7 @@ Log.Message("PDP window is visible")
       return null
     }
 }
-//This function is used to get the CurrentDateTime for the Device
-function GetDeviceCurrentDateTime()
-{
-  var aString = "CURRENTDATE";
- 
-  var Temp = aqString.Find(DeviceStatusView.text.OleValue,aString)
-  Log.Message(Temp) 
-  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,289,19)
-
-  
-  Log.Message("Current Date time is" + CurrentDateTime)
-}
-
-//This function is used to get the CurrentDateTime for the Device
+//This function is used to get the Device Status View window 
 function ClickOnDeviceStatusView()
 {
  if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
@@ -82,4 +74,42 @@ function ClickOnDeviceStatusView()
    CommonMethod.CheckActivityLog("Device information displayed successfully")
    return true
  }
+}
+//This function is used to get the CurrentDateTime for the Device
+function GetDeviceCurrentDateTime()
+{
+  var aString = "CURRENTDATE";
+ 
+  var Temp = aqString.Find(DeviceStatusView.text.OleValue,aString)
+  Log.Message(Temp) 
+  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,289,19)
+  
+  var deviceCurrentDateTime = aqConvert.StrToDateTime(CurrentDateTime);
+ 
+  Log.Message("Current Date time is" + deviceCurrentDateTime)
+  
+  SetDateTime = aqDateTime.AddDays(deviceCurrentDateTime,-30);
+  NewDateTime = aqConvert.DateTimeToFormatStr(SetDateTime, "%d/%m/%Y %H:%M");
+  
+  Log.Message("Device Set Date time is"+NewDateTime)
+}
+
+//This function is used to set the CurrentDateTime for the Device
+function SetDateTime()
+{
+  if (TimeIntervalControl.VisibleOnScreen) 
+  {
+    DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getFullYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
+    Log.Message("Start Date time is set for one month ahead as per the Current date time of device")
+    
+    EndDateTime=TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
+    Log.Message("End Date time is set for Current date time of PC")
+  }
+  else
+  {
+    //RibbonToolbar.ClickItem("&View");  
+    RibbonToolbar.ClickItem("&View|[0]|&Time Interval");
+    Log.Message("Time interval window open")
+    SetDateTime();
+  }
 }
