@@ -2,6 +2,7 @@
 
 
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
+var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.txtDeviceStatus
 var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
 var Btn_ManualDFRPopUP_OK =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.MNLTRGbtnOk
 var Btn_DFRDirectory_Close=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
@@ -53,4 +54,16 @@ Log.Message("PDP window is visible")
       Log.Message("Column Index is wrong")
       return null
     }
+}
+//This function is used to get the CurrentDateTime for the Device
+function GetDeviceCurrentDateTime()
+{
+  var aString = "CURRENTDATE";
+ 
+  var Temp = aqString.Find(DeviceStatusView.text.OleValue,aString)
+  Log.Message(Temp) 
+  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,289,19)
+
+  
+  Log.Message("Current Date time is" + CurrentDateTime)
 }
