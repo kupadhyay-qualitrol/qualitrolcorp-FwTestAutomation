@@ -19,17 +19,19 @@ function ClickOnDeviceStatusView()
    aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
    Log.Message("Clicked on Device Status Option")
-   if(ClickOnDeviceStatusView())
-   {
-     Log.Message("Clicked on Device Status button")
-     CommonMethod.CheckActivityLog("Device information displayed successfully")  
-     return true
-   }
-   else
-   {
-     Log.Message("Device Status button is not available")   
-     return false
-   }
+   CommonMethod.CheckActivityLog("Device information displayed successfully")
+   return true
+//   if(ClickOnDeviceStatusView())
+//   {
+//     Log.Message("Clicked on Device Status button")
+//     CommonMethod.CheckActivityLog("Device information displayed successfully")  
+//     return true
+//   }
+//   else
+//   {
+//     Log.Message("Device Status button is not available")   
+//     return false
+//   }
  }
  }
  
