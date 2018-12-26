@@ -12,7 +12,6 @@ function ClickOnDeviceStatusView()
 {
  if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
  {
-   //Clear Session Log
    SessionLogPage.ClearLog()
    DeviceManagementToolbar.ClickItem("Device &Management")
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
@@ -21,17 +20,6 @@ function ClickOnDeviceStatusView()
    Log.Message("Clicked on Device Status Option")
    CommonMethod.CheckActivityLog("Device information displayed successfully")
    return true
-//   if(ClickOnDeviceStatusView())
-//   {
-//     Log.Message("Clicked on Device Status button")
-//     CommonMethod.CheckActivityLog("Device information displayed successfully")  
-//     return true
-//   }
-//   else
-//   {
-//     Log.Message("Device Status button is not available")   
-//     return false
-//   }
  }
- }
+}
  

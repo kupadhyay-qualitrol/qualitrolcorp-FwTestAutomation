@@ -25,9 +25,6 @@ function DownloadManualDFR()
       CommonMethod.CheckActivityLog("DFR records saved successfully for device")
       DataRetrievalPage.CloseDFRDirectory() 
       Log.Message("DFR data download") 
-//      ActiveRowRecordNumber =     
-//      Log.Message("Downloaded DFR record no. is"+ActiveRowRecordNumber)   
-      //DataRetrievalPage.CloseDFRDirectory() 
       }
       else
       {
@@ -36,6 +33,14 @@ function DownloadManualDFR()
           }
           DataRetrievalPage.CloseDFRDirectory()        
        }
+       //Step3. Click on device Status view option
+       PDPPage.ClickOnDeviceStatusView()
+       Log.Message("Device Status window is open")
+       
+       //Step4. Get the Current Date time from the device
+       PDPPage.GetDeviceCurrentDateTime()
+       Log.Message("Stores the Device Current date and time")
+     
       //Step3. Verify downloaded record on PDP
         REC=PDPPage.VerifyDownloadedRecord()
         if(REC==REC_DFR)
@@ -46,6 +51,7 @@ function DownloadManualDFR()
         {
           Log.Message("Fail: DFR latest record not able to downloaded and verified on PDP")
      } 
+     
   }
   catch(ex)
   {

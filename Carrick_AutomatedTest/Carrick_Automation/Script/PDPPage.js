@@ -67,3 +67,19 @@ function GetDeviceCurrentDateTime()
   
   Log.Message("Current Date time is" + CurrentDateTime)
 }
+
+//This function is used to get the CurrentDateTime for the Device
+function ClickOnDeviceStatusView()
+{
+ if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+ {
+   SessionLogPage.ClearLog()
+   DeviceManagementToolbar.ClickItem("Device &Management")
+   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+   aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
+   Log.Message("Clicked on Device Status Option")
+   CommonMethod.CheckActivityLog("Device information displayed successfully")
+   return true
+ }
+}
