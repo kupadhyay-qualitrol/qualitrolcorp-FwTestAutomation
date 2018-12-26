@@ -47,7 +47,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="False" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -56,7 +56,7 @@
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="ProjectTestItem2" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ProjectTestItem2" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="False" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -124,6 +124,10 @@
 						</children>
 					</testItem>
 				</children>
+			</testItem>
+			<testItem name="ProjectTestItem3" key="{87576DD2-FE7C-4B02-AFFC-3907A31538DC}" group="False" enabled="True" testMoniker="{0500BB9A-7E4F-4E0C-9845-7F656F5AD7CE}ClickOnDeviceStatusView" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+				<testParameters />
+				<children />
 			</testItem>
 		</children>
 	</testItems>
