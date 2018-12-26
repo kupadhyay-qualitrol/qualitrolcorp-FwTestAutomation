@@ -41,7 +41,7 @@ function DownloadManualDFR()
        PDPPage.GetDeviceCurrentDateTime()
        Log.Message("Stores the Device Current date and time")
      
-      //Step3. Verify downloaded record on PDP
+      //Step5. Verify downloaded record on PDP
         REC=PDPPage.VerifyDownloadedRecord()
         if(REC==REC_DFR)
         {
