@@ -1,4 +1,7 @@
-﻿/*This file contains methods and objects related to PDP Page*/
+﻿//USEUNIT CommonMethod
+//USEUNIT SessionLogPage
+
+/*This file contains methods and objects related to PDP Page*/
 var DeviceManagementToolbar=CommonMethod.RibbonToolbar
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.ACTYLOGtxtLog
