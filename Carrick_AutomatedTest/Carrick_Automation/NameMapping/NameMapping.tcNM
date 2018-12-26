@@ -1004,6 +1004,15 @@
 																			</Property>
 																		</Properties>
 																	</Child>
+																	<Child Name="DEVSTATUSbtnCancel" Key="{30D80349-EEE5-4C39-9B97-DFAE5FB7073A}" ParallelWalk="True">
+																		<Image FileName="1579615139" Left="447" Top="437" Right="555" Bottom="460" />
+																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="DEVSTATUSbtnCancel" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
 																</Children>
 															</Child>
 														</Children>
@@ -1429,6 +1438,7 @@
 							</Child>
 							<Child Name="DeviceStatusView" Owner="{7C051F68-79D1-478D-A9CA-FA9C73F5532D}">
 								<Child Name="txtDeviceStatus" Owner="{AAEA7C03-6E1B-41AE-A15E-2BB1039A808C}" />
+								<Child Name="DEVSTATUSbtnCancel" Owner="{30D80349-EEE5-4C39-9B97-DFAE5FB7073A}" />
 							</Child>
 						</Child>
 					</Child>

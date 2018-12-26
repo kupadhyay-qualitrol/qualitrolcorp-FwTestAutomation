@@ -75,6 +75,7 @@ function ClickOnDeviceStatusView()
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
    Log.Message("Clicked on Device Status Option")
    CommonMethod.CheckActivityLog("Device information displayed successfully")
+   DeviceStatusView.DEVSTATUSbtnCancel.ClickButton();
    return true
  }
 }
