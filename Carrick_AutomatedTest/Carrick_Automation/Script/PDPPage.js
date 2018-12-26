@@ -76,7 +76,6 @@ function ClickOnDeviceStatusView()
    DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
    Log.Message("Clicked on Device Status Option")
    CommonMethod.CheckActivityLog("Device information displayed successfully")
-   CloseDeviceStatus.ClickButton();
    return true
  }
 }
@@ -97,6 +96,7 @@ function GetDeviceCurrentDateTime()
   NewDateTime = aqConvert.DateTimeToFormatStr(SetDateTime, "%d/%m/%Y %H:%M");
   
   Log.Message("Device Set Date time is"+NewDateTime)
+  CloseDeviceStatus.ClickButton();
 }
 
 //This function is used to set the CurrentDateTime for the Device
