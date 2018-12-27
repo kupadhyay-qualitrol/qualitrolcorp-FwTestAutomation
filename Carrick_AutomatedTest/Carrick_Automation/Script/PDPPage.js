@@ -5,19 +5,13 @@
 var DeviceManagementToolbar=CommonMethod.RibbonToolbar
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.ACTYLOGtxtLog
-//var TimeIntervalControl = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl;
-var TimeIntervalControl_1 = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
+var StartDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
 var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
 var SetDateTime;
 var NewDateTime ;
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
 var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.txtDeviceStatus
 var CloseDeviceStatus = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.DEVSTATUSbtnCancel
-var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
-var Btn_ManualDFRPopUP_OK =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.MNLTRGbtnOk
-var Btn_DFRDirectory_Close=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
-var Btn_DFRDirectory_DownloadDataNow=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnDownloadDataNow
-var PDP_StatusBar=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRusbPDPStatusBar
 var PDPContainerWorkspace=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace
 var ultraGrid = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList.ugBaseGrid;
 var EventsList = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList
@@ -103,12 +97,9 @@ function GetDeviceCurrentDateTime()
 //This function is used to set the CurrentDateTime for the Device
 function SetDeviceDateTime()
 {
-  if (TimeIntervalControl_1.VisibleOnScreen) 
+  if (StartDateTime.VisibleOnScreen) 
   {
-    //var NewDateTime = NewDateTime;  
-    //DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
     DateTimePicker.wDate=aqDateTime.SetDateElements(aqDateTime.GetYear(NewDateTime),aqDateTime.GetMonth(NewDateTime),aqDateTime.GetDay(NewDateTime))
-    //DateTimePicker.wDate= aqDateTime.GetDay(aqDateTime.Now())+"-"+aqDateTime.GetMonth(aqDateTime.Now())+"-"+aqDateTime.GetYear(aqDateTime.Now())
     Log.Message("Start Date time is set for one month ahead as per the Current date time of device")
     
     EndDateTime=Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
@@ -116,7 +107,6 @@ function SetDeviceDateTime()
   }
   else
   {
-    //RibbonToolbar.ClickItem("&View");  
     RibbonToolbar.ClickItem("&View|[0]|&Time Interval");
     Log.Message("Time interval window open")
     SetDeviceDateTime();

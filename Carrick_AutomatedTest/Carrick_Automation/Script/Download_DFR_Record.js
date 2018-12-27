@@ -9,6 +9,7 @@ function DownloadManualDFR()
   try
   {
     var REC_DFR;
+    var REC;
   
     Log.Message("Start:Test to to Download Manual DFR record")  
     var DataSheetName = Project.ConfigPath +"TestData\\SmokeTestData.xlsx" 
@@ -57,7 +58,7 @@ function DownloadManualDFR()
   catch(ex)
   {
     Log.Error(ex.message)
-    Log.Message("Error:Test to trigger Manual DFR and see in Display Directory")
+    Log.Message("Error:Test to Download Manual DFR and verify in PDP is fail")
   }
 }
 
