@@ -6,7 +6,7 @@ var DeviceManagementToolbar=CommonMethod.RibbonToolbar
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.ACTYLOGtxtLog
 //var TimeIntervalControl = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl;
-var TimeIntervalControl = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
+var TimeIntervalControl_1 = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
 var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
 var SetDateTime;
 var NewDateTime ;
@@ -103,7 +103,7 @@ function GetDeviceCurrentDateTime()
 //This function is used to set the CurrentDateTime for the Device
 function SetDeviceDateTime()
 {
-  if (TimeIntervalControl.VisibleOnScreen) 
+  if (TimeIntervalControl_1.VisibleOnScreen) 
   {
     //var NewDateTime = NewDateTime;  
     //DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
