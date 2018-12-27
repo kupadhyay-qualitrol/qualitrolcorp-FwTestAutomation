@@ -107,7 +107,8 @@ function SetDeviceDateTime()
   {
     //var NewDateTime = NewDateTime;  
     //DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
-    DateTimePicker.wDate=aqDateTime.SetDateTimeElements(aqDateTime.GetYear(NewDateTime),aqDateTime.GetMonth(NewDateTime),aqDateTime.GetDay(NewDateTime),aqDateTime.GetHours(NewDateTime),aqDateTime.GetMinutes(NewDateTime), aqDateTime.GetSeconds(NewDateTime));
+    DateTimePicker.wDate=aqDateTime.SetDateElements(aqDateTime.GetYear(NewDateTime),aqDateTime.GetMonth(NewDateTime),aqDateTime.GetDay(NewDateTime))
+    //DateTimePicker.wDate= aqDateTime.GetDay(aqDateTime.Now())+"-"+aqDateTime.GetMonth(aqDateTime.Now())+"-"+aqDateTime.GetYear(aqDateTime.Now())
     Log.Message("Start Date time is set for one month ahead as per the Current date time of device")
     
     EndDateTime=Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
@@ -120,4 +121,9 @@ function SetDeviceDateTime()
     Log.Message("Time interval window open")
     SetDeviceDateTime();
   }
+}
+
+function Test1()
+{
+  Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime.wDate = "2018-11-26";
 }
