@@ -8,6 +8,8 @@ function DownloadManualDFR()
 {
   try
   {
+    var REC_DFR;
+  
     Log.Message("Start:Test to to Download Manual DFR record")  
     var DataSheetName = Project.ConfigPath +"TestData\\SmokeTestData.xlsx" 
       //Step1. Run Manual DFR Trigger script
