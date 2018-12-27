@@ -9,7 +9,7 @@ var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.A
 var TimeIntervalControl = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
 var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
 var SetDateTime;
-var NewDateTime = new Date();
+var NewDateTime ;
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
 var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.txtDeviceStatus
 var CloseDeviceStatus = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.DEVSTATUSbtnCancel
@@ -105,7 +105,9 @@ function SetDeviceDateTime()
 {
   if (TimeIntervalControl.VisibleOnScreen) 
   {
-    DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
+    //var NewDateTime = NewDateTime;  
+    //DateTimePicker.wDate=aqDateTime.SetDateTimeElements(NewDateTime.getYear(),NewDateTime.getMonth(),NewDateTime.getDate(),NewDateTime.getHours(),NewDateTime.getMinutes(),NewDateTime.getSeconds());
+    DateTimePicker.wDate=aqDateTime.SetDateTimeElements(aqDateTime.GetYear(NewDateTime),aqDateTime.GetMonth(NewDateTime),aqDateTime.GetDay(NewDateTime),aqDateTime.GetHours(NewDateTime),aqDateTime.GetMinutes(NewDateTime), aqDateTime.GetSeconds(NewDateTime));
     Log.Message("Start Date time is set for one month ahead as per the Current date time of device")
     
     EndDateTime=Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
