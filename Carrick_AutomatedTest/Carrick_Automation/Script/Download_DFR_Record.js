@@ -19,7 +19,7 @@ function DownloadManualDFR()
       //Step2. Now Click on Download Now button
       DataRetrievalPage.ClickOnDFRDirectory()
       if(DataRetrievalPage.GetCOTForLatestDFRRecord()=="MANUAL")
-      {     
+{     
       REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
       PDPPage.ClickOnDownloadDataNow()
       CommonMethod.CheckActivityLog("DFR records saved successfully for device")
@@ -47,14 +47,14 @@ function DownloadManualDFR()
         else
         {
           Log.Message("Fail: DFR latest record not able to downloaded and verified on PDP")
-     }  
-      }
+        }  
+}
       else
       {
             Log.Error("Not able to download DFR Record")
             DataRetrievalPage.CloseDFRDirectory()        
        }    
-  }
+}
   catch(ex)
   {
     Log.Error(ex.message)

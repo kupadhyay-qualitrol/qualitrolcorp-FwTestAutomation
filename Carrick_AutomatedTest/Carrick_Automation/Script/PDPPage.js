@@ -32,8 +32,8 @@ function ClickOnDownloadDataNow()
     {
       Log.Message("Download Now button not available on DFR directory Popup")
       return false
-    }
   }
+}
   else
   {
     Log.Message("DFR Directory not visible")
@@ -50,9 +50,10 @@ if (PDPContainerWorkspace.Exists)
 {
 Log.Message("PDP window is visible")
       REC=EventsList.ugBaseGrid.ActiveRow.Cells.Item(22).get_Value()
+      //22 is the Item number for column Rec.#(DFR) in PDP view
       Log.Message("Rec # is "+REC)    
       return REC
-    }
+}
     else
     {
       Log.Message("Column Index is wrong")
