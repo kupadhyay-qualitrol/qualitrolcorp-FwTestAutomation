@@ -122,8 +122,3 @@ function SetDeviceDateTime()
     SetDeviceDateTime();
   }
 }
-
-function Test1()
-{
-  Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime.wDate = "2018-11-26";
-}
