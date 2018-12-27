@@ -23,16 +23,8 @@ function DownloadManualDFR()
       PDPPage.ClickOnDownloadDataNow()
       CommonMethod.CheckActivityLog("DFR records saved successfully for device")
       DataRetrievalPage.CloseDFRDirectory() 
-      Log.Message("DFR data download") 
-      }
-      else
-      {
-      {
-            Log.Error("Failed:-Text is not there")
-          }
-          DataRetrievalPage.CloseDFRDirectory()        
-       }
-       //Step3. Click on device Status view option
+      Log.Message("DFR data download")
+      //Step3. Click on device Status view option
        PDPPage.ClickOnDeviceStatusView()
        Log.Message("Device Status window is open")
        
@@ -54,8 +46,13 @@ function DownloadManualDFR()
         else
         {
           Log.Message("Fail: DFR latest record not able to downloaded and verified on PDP")
-     } 
-     
+     }  
+      }
+      else
+      {
+            Log.Error("Not able to download DFR Record")
+            DataRetrievalPage.CloseDFRDirectory()        
+       }    
   }
   catch(ex)
   {
