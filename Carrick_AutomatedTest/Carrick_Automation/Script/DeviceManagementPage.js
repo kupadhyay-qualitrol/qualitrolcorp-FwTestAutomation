@@ -111,7 +111,7 @@ function GetDeviceCurrentDateTime()
  
   var CurrentDateTimePos = aqString.Find(DeviceStatusView.text.OleValue,aString)
   Log.Message(CurrentDateTimePos) 
-  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,CurrentDateTimePos,19)
+  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,aqConvert.StrToInt(CurrentDateTimePos)+13,19)
   //289 is the start position for date in text field and 19 is the length for the selected date.
   
   var deviceCurrentDateTime = aqConvert.StrToDateTime(CurrentDateTime);
