@@ -77,7 +77,7 @@ function ClickOnDeviceStatusView()
  else
  {
    RibbonToolbar.ClickItem("Device &Management");
-   Log.Message("Time interval window open")
+   Log.Message("Device Management options is selected")
    ClickOnDeviceStatusView();
  }
 }
