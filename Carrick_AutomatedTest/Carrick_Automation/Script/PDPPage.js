@@ -56,7 +56,7 @@ Log.Message("PDP window is visible")
 }
     else
     {
-      Log.Message("Column Index is wrong")
+      Log.Message("PDP window is not visible")
       return null
     }
 }
@@ -73,6 +73,12 @@ function ClickOnDeviceStatusView()
    Log.Message("Clicked on Device Status Option")
    CommonMethod.CheckActivityLog("Device information displayed successfully")
    return true
+ }
+ else
+ {
+   RibbonToolbar.ClickItem("Device &Management");
+   Log.Message("Time interval window open")
+   ClickOnDeviceStatusView();
  }
 }
 //This function is used to get the CurrentDateTime for the Device
@@ -103,13 +109,21 @@ function SetDeviceDateTime()
     DateTimePicker.wDate=aqDateTime.SetDateElements(aqDateTime.GetYear(NewDateTime),aqDateTime.GetMonth(NewDateTime),aqDateTime.GetDay(NewDateTime))
     Log.Message("Start Date time is set for one month ahead as per the Current date time of device")
     
-    EndDateTime=Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
+    EndDateTime=StartDateTime.TimeInterval.TimeIntervalControl.WinFormsObject("_UserControlBase_Toolbars_Dock_Area_Top").wItems.Item(0).Items.Item("Synchronizes End Date Time to Current Date Time").Click()
     Log.Message("End Date time is set for Current date time of PC")
   }
   else
   {
     RibbonToolbar.ClickItem("&View|[0]|&Time Interval");
     Log.Message("Time interval window open")
-    SetDeviceDateTime();
+    if (StartDateTime.VisibleOnScreen)
+    {
+      SetDeviceDateTime();
+    }
+    else
+    {
+    return false;
+    Log.Message("System not allowed to open time interval window")
+    }
   }
 }
