@@ -2,6 +2,8 @@
 //USEUNIT DataRetrievalPage
 //USEUNIT Trigger_ManualDFR
 //USEUNIT PDPPage
+//USEUNIT DeviceManagementPage
+//USEUNIT TICPage
 
 //TC-Test to Download Manual DFR record
 function DownloadManualDFR()
@@ -21,20 +23,20 @@ function DownloadManualDFR()
       if(DataRetrievalPage.GetCOTForLatestDFRRecord()=="MANUAL")
 {     
       REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
-      PDPPage.ClickOnDownloadDataNow()
+      DeviceManagementPage.ClickOnDownloadDataNow()
       CommonMethod.CheckActivityLog("DFR records saved successfully for device")
       DataRetrievalPage.CloseDFRDirectory() 
       Log.Message("DFR data download")
       //Step3. Click on device Status view option
-       PDPPage.ClickOnDeviceStatusView()
+       DeviceManagementPage.ClickOnDeviceStatusView()
        Log.Message("Device Status window is open")
        
        //Step4. Get the Current Date time from the device
-       PDPPage.GetDeviceCurrentDateTime()
+       DeviceManagementPage.GetDeviceCurrentDateTime()
        Log.Message("Stores the Device Current date and time")
        
        //Step5. Set Start date time and End date time in IQ+
-       PDPPage.SetDeviceDateTime()
+       TICPage.SetDeviceDateTime()
        Log.Message("Start Date time and End date time is updated in IQ+")
        
      
