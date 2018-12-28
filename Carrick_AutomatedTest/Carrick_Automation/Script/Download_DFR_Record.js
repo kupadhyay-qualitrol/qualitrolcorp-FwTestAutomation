@@ -51,7 +51,7 @@ function DownloadManualDFR()
 }
       else
       {
-            Log.Error("Not able to download DFR Record")
+            Log.Error("Latest DFR record found is not of Manual type")
             DataRetrievalPage.CloseDFRDirectory()        
        }    
 }
