@@ -94,7 +94,6 @@ function ReadDataFromExcel(FileName,DataHead)
       }
     }
     var returnValue = Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
-    Excel.Quit();
     return returnValue;
 }
 

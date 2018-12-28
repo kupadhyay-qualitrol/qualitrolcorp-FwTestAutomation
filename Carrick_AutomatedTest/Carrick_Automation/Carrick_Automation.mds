@@ -50,7 +50,13 @@
 			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="ProjectTestItem1" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="True" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Trigger_ManualDFR" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="False" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters>
+							<param0 name="blnCloseiQPlus" type="3" localVarName="" varType="0" value="" />
+						</testParameters>
+						<children />
+					</testItem>
+					<testItem name="Download_DFR_Record" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>

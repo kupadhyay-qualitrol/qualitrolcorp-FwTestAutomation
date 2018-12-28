@@ -11,7 +11,7 @@ var Btn_Login=Aliases.iQ_Plus.UserLogin.USRLOGINlnkLblLogin
 //This method is used to Login the iQ+ application by providing username and password.
 function Login(username,password)
 {
-  //Check whether user login box is launched or not.
+ //Check whether user login box is launched or not.
   if(Edtbx_Username.Enabled)
   {
    Log.Message("User login box is available.")

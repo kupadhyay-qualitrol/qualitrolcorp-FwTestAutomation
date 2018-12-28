@@ -8,7 +8,7 @@
 	<folders />
 	<testItems key="{94487C95-D6F6-4C33-92F2-F44B508DFD9A}">
 		<children>
-			<testItem key="{3B56BC03-0752-4CE2-8D5A-D5DDEFEA2E15}" enabled="True" timeout="0" stopOnError="True" description="" />
+			<testItem key="{3B56BC03-0752-4CE2-8D5A-D5DDEFEA2E15}" enabled="True" timeout="0" stopOnError="False" description="" />
 		</children>
 	</testItems>
 	<variables key="{34AAF7A9-24ED-45C7-A72A-52800FB5C24A}">
