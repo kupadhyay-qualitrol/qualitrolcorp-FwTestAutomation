@@ -156,7 +156,6 @@ function ClickonOKManualDFRTrigger()
   if(Btn_ManualDFRPopUP_OK.Exists)
   { 
     Btn_ManualDFRPopUP_OK.ClickButton()
-    aqUtils.Delay(2000)
     Log.Message("Clicked on OK button available on Manaul Trigger Popup.")
     return true
   }
@@ -172,7 +171,6 @@ function CloseDFRDirectory()
   if(DFRDirectory.Exists)
   {
     Btn_DFRDirectory_Close.ClickButton()
-    aqUtils.Delay(2000)
     Log.Message("Clicked on Close button on DFR Directory")
     return true
   }
