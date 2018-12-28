@@ -48,6 +48,8 @@
 		</child>
 		<child name="TICPage" key="{32BE397E-2D05-413F-B39A-3C6BA908B8CA}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="TICPage.js" />
+		<child name="IECBrowser_COMTRADE_download" key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="IECBrowser_COMTRADE_download.js" />
 		</child>
 	</children>
 	<folders>
@@ -58,6 +60,7 @@
 				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 				<ref key="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}" />
 				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
+				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">

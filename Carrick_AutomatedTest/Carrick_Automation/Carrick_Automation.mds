@@ -68,27 +68,27 @@
 					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="BTC-578" key="{F5303038-9187-45A1-9EDD-896CD6B2379E}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_587" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-587" key="{F5303038-9187-45A1-9EDD-896CD6B2379E}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_587" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-588" key="{DC06BDEF-45E1-452D-9C4B-3B860A335447}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_588" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-588" key="{DC06BDEF-45E1-452D-9C4B-3B860A335447}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_588" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-589" key="{AE1E6FCB-1A39-47E5-82ED-FB963A2E751D}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_589" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-589" key="{AE1E6FCB-1A39-47E5-82ED-FB963A2E751D}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_589" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-590" key="{546AB27F-8327-4ED2-B2ED-4C35E822BE14}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_590" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-590" key="{546AB27F-8327-4ED2-B2ED-4C35E822BE14}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_590" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-591" key="{33921FCD-CE47-4421-A64F-FE94A1A6FD65}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_591" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-591" key="{33921FCD-CE47-4421-A64F-FE94A1A6FD65}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_591" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-597" key="{EB1DBBD6-30B5-47E3-A305-22B3EB40B113}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_597" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-597" key="{EB1DBBD6-30B5-47E3-A305-22B3EB40B113}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_597" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -97,27 +97,27 @@
 					<testItem name="Ed2" key="{E4E8FB33-1202-41AB-8789-59E3F2D45D82}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="BTC-592" key="{B4739ABC-FBB1-476D-9872-ACC888DF5335}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_592" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-592" key="{B4739ABC-FBB1-476D-9872-ACC888DF5335}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_592" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-593" key="{971720C2-3439-4AF2-9DFA-55CA62A9B859}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_593" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-593" key="{971720C2-3439-4AF2-9DFA-55CA62A9B859}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_593" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-594" key="{4CFA2BEC-AC70-4C5B-96E3-59FDE01C7BD6}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_594" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-594" key="{4CFA2BEC-AC70-4C5B-96E3-59FDE01C7BD6}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_594" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-595" key="{6136CEF4-D284-4E21-AF4D-6A42BECB33F9}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_595" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-595" key="{6136CEF4-D284-4E21-AF4D-6A42BECB33F9}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_595" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-596" key="{3409BB28-656F-4923-9D4E-A82BD86268BD}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_596" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-596" key="{3409BB28-656F-4923-9D4E-A82BD86268BD}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_596" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-598" key="{03AC06A8-E26F-4DB4-85B8-66A06F1653FE}" group="False" enabled="False" testMoniker="{D582B660-4576-43CC-8DEE-743ED376AA93}BTC_598" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-598" key="{03AC06A8-E26F-4DB4-85B8-66A06F1653FE}" group="False" enabled="False" testMoniker="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}BTC_598" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -470,8 +470,8 @@
 		<Templates>
 			<Template Id="{1EB17ADF-E4EB-404D-97DC-AD758A1E8C1D}" ConnectionId="{00000000-0000-0000-0000-000000000000}" Description="This template is used by TestComplete&apos;s Log subsystem to post test results to an issue-tracking system. You can also use it at your desire." Name="CreateWorkItem" IsSystem="True" ItemTypeName="" ProjectName="" IsEditing="False" ItemId="">
 				<Fields>
-					<Field ItemId="{859B0F0C-54D4-416D-95B8-621F50892AA8}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Subject" />
-					<Field ItemId="{E8B060E5-05F3-43E2-82E5-6BE2EEB96080}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Description" />
+					<Field ItemId="{6580CEB3-F374-4EED-A01D-963AF84E9189}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Subject" />
+					<Field ItemId="{17CEE2B9-F783-4A68-9686-608593B81FAD}" AliasIsRequired="True" DBFieldNameIsRequired="False" Value="" DBFieldName="" Alias="Description" />
 				</Fields>
 			</Template>
 		</Templates>

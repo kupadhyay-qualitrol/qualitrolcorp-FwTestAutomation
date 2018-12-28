@@ -28,6 +28,18 @@
 			<testData />
 			<data />
 		</child>
+		<child key="{F98C9CC3-E8CB-4C2D-A675-7C5D313749D3}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+			<config nodeName="Iec_Browser" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
+				<runModeParams activeRunMode="Simple">
+					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
+					<param name="Profile" parameters="" workFolder="" />
+					<param name="Debug" parameters="" workFolder="" />
+					<param name="Simple" fileName="Iec_Browser.exe" filePath="C:\Program Files (x86)\Siemens Energy\IEC_Browser V02.21\" parameters="" workFolder="" />
+				</runModeParams>
+			</config>
+			<testData />
+			<data />
+		</child>
 	</children>
 	<folders />
 </Root>
