@@ -12,6 +12,8 @@ var CloseDeviceStatus = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContaine
 var Btn_DFRDirectory_DownloadDataNow = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnDownloadDataNow
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
+var NewDateTime;
+var SetDateTime;
 //
 
 //This method is to Click on Retrieve CConfiguration button
