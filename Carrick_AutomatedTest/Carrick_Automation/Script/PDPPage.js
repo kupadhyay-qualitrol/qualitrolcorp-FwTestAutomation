@@ -46,7 +46,6 @@ function ClickOnDownloadDataNow()
 function VerifyDownloadedRecord()
 {
   var REC
-  var ColumnIndex 
 if (PDPContainerWorkspace.Exists)
 {
 Log.Message("PDP window is visible")
