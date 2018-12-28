@@ -4,13 +4,9 @@
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var StartDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
 var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
-var SetDateTime;
-var NewDateTime;
-
-
 
 //This function is used to set the CurrentDateTime for the Device
-function SetDeviceDateTime()
+function SetDeviceDateTime(NewDateTime)
 {
   if (StartDateTime.VisibleOnScreen) 
   {

@@ -125,4 +125,6 @@ function GetDeviceCurrentDateTime()
   
   Log.Message("Device Set Date time is"+NewDateTime)
   CloseDeviceStatus.ClickButton();
+  return NewDateTime;
+  
 }
