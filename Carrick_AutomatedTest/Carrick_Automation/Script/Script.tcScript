@@ -52,9 +52,6 @@
 		<child name="IECBrowser_COMTRADE_download" key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="IECBrowser_COMTRADE_download.js" />
 		</child>
-		<child name="Temp" key="{F8AF6DD6-31C9-4488-8625-6DC51121D646}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
-			<data path="Temp.js" />
-		</child>
 		<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="AssertClass.js" />
 		</child>
