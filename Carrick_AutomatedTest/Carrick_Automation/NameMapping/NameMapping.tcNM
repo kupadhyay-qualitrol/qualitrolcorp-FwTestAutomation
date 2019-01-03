@@ -165,7 +165,6 @@
 												</Children>
 											</Child>
 											<Child Name="dockableWindow2" Key="{8A8CA41C-6FCC-4322-A037-495B51C61023}" ParallelWalk="True">
-												<Image FileName="-1494641456" Left="8" Top="598" Right="292" Bottom="1025" />
 												<TypeInfo Item0="{9512A635-AED1-4D3D-8996-18F12BF8AB67}" />
 												<Properties>
 													<Property Name="WinFormsControlName">
@@ -174,7 +173,6 @@
 												</Properties>
 												<Children>
 													<Child Name="TimeInterval" Key="{DB243526-8BDB-4D9D-89F6-F5462DC54DB3}" ParallelWalk="True">
-														<Image FileName="-1494641456" Left="8" Top="616" Right="292" Bottom="1025" />
 														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 														<Properties>
 															<Property Name="WinFormsControlName">
@@ -183,7 +181,6 @@
 														</Properties>
 														<Children>
 															<Child Name="TimeIntervalControl" Key="{899DCA9D-0EA6-4697-B6E8-AD2786EDB11E}" ParallelWalk="True">
-																<Image FileName="-1494641456" Left="8" Top="616" Right="292" Bottom="1025" />
 																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																<Properties>
 																	<Property Name="WinFormsControlName">
@@ -192,7 +189,6 @@
 																</Properties>
 																<Children>
 																	<Child Name="UserControlBase_Fill_Panel" Key="{79AF0B41-AA28-4BFF-9FBB-C2D22C87EBF7}" ParallelWalk="True">
-																		<Image FileName="-1494641456" Left="8" Top="644" Right="292" Bottom="1025" />
 																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																		<Properties>
 																			<Property Name="WinFormsControlName">
@@ -201,7 +197,6 @@
 																		</Properties>
 																		<Children>
 																			<Child Name="TICtplInnerMostLayout1" Key="{02FC495B-F8BE-485B-84D0-C5E241BB85A5}" ParallelWalk="True">
-																				<Image FileName="-1494641456" Left="11" Top="650" Right="172" Bottom="689" />
 																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																				<Properties>
 																					<Property Name="WinFormsControlName">
@@ -210,7 +205,6 @@
 																				</Properties>
 																				<Children>
 																					<Child Name="TICdtpStartTime" Key="{C2B63F79-215F-49A4-BCE7-3C347D384ECE}" ParallelWalk="True">
-																						<Image FileName="-1494641456" Left="14" Top="666" Right="169" Bottom="686" />
 																						<TypeInfo Item0="{E600A530-00D9-4CD9-95C2-96FFB8399703}" />
 																						<Properties>
 																							<Property Name="WinFormsControlName">
@@ -551,7 +545,7 @@
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="DEVtxtIPSection1" Type="5" />
+																																				<Value PropertyType="0" Value="FieldControl0" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
@@ -559,7 +553,7 @@
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="DEVtxtIPSection4" Type="5" />
+																																				<Value PropertyType="0" Value="FieldControl3" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
@@ -567,7 +561,7 @@
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="DEVtxtIPSection2" Type="5" />
+																																				<Value PropertyType="0" Value="FieldControl1" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
@@ -575,7 +569,7 @@
 																																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
-																																				<Value PropertyType="0" Value="DEVtxtIPSection3" Type="5" />
+																																				<Value PropertyType="0" Value="FieldControl2" Type="5" />
 																																			</Property>
 																																		</Properties>
 																																	</Child>
@@ -987,7 +981,6 @@
 																</Children>
 															</Child>
 															<Child Name="DeviceStatusView" Key="{7C051F68-79D1-478D-A9CA-FA9C73F5532D}" ParallelWalk="True">
-																<Image FileName="1296690397" Left="3" Top="26" Right="559" Bottom="465" />
 																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																<Properties>
 																	<Property Name="WinFormsControlName">
@@ -996,7 +989,6 @@
 																</Properties>
 																<Children>
 																	<Child Name="txtDeviceStatus" Key="{AAEA7C03-6E1B-41AE-A15E-2BB1039A808C}" ParallelWalk="True">
-																		<Image FileName="1296690397" Left="6" Top="29" Right="555" Bottom="431" />
 																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
 																		<Properties>
 																			<Property Name="WinFormsControlName">
@@ -1005,7 +997,6 @@
 																		</Properties>
 																	</Child>
 																	<Child Name="DEVSTATUSbtnCancel" Key="{30D80349-EEE5-4C39-9B97-DFAE5FB7073A}" ParallelWalk="True">
-																		<Image FileName="1579615139" Left="447" Top="437" Right="555" Bottom="460" />
 																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
 																		<Properties>
 																			<Property Name="WinFormsControlName">
@@ -1480,7 +1471,6 @@
 										</Properties>
 									</Child>
 									<Child Name="btnCancel" Key="{CA9E2AD0-547C-486F-BADE-686B6F832BEA}" ParallelWalk="True">
-										<TypeInfo Item0="{E017EA9D-4CC4-48F9-BA20-866B91181808}" />
 										<Properties>
 											<Property Name="WndClass">
 												<Value PropertyType="0" Value="Button" Type="5" />
@@ -10994,7 +10984,7 @@
 			</Data>
 		</Child>
 		<Child Hash="-702145423" Key="{E600A530-00D9-4CD9-95C2-96FFB8399703}">
-			<Data Properties="ZZKFFFFFFFFFFFFFFFFN4L4K2AZZY">
+			<Data Properties="ZZKFFFFFFFFFFFFFFFFN4L4K2BZZY">
 				<FunctionDescriptions>
 					<Child Name="_NewEnum" Doc="Returns an enumerator for the children collection." IsBasic="True" Data="ZI4L2L4S54TDZN">
 						<ReturnValue Param0="13" />
