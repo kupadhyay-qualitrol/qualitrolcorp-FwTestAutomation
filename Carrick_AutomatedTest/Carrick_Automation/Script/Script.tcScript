@@ -48,8 +48,12 @@
 		</child>
 		<child name="TICPage" key="{32BE397E-2D05-413F-B39A-3C6BA908B8CA}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="TICPage.js" />
+		</child>
 		<child name="IECBrowser_COMTRADE_download" key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="IECBrowser_COMTRADE_download.js" />
+		</child>
+		<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="AssertClass.js" />
 		</child>
 	</children>
 	<folders>
@@ -67,7 +71,6 @@
 			<references>
 				<ref key="{A381FA1F-53C0-488D-B0A7-A1C5075B2252}" />
 				<ref key="{F7C60475-71C6-4EE8-BC31-8302850438FF}" />
-				<ref key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" />
 				<ref key="{32D96BB6-3E93-4C07-A044-799D8464AE0E}" />
 				<ref key="{7CF24341-D171-4B21-8075-3A2DB14D85ED}" />
 				<ref key="{FBB97113-FEA9-4185-B99A-46AC93AF87E1}" />
@@ -76,6 +79,12 @@
 				<ref key="{09BC76C4-8202-42D7-9CC0-EF5B349B63FA}" />
 				<ref key="{B5C7812D-01C5-43EE-9851-9256C277EB0D}" />
 				<ref key="{32BE397E-2D05-413F-B39A-3C6BA908B8CA}" />
+			</references>
+		</folder>
+		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" />
+				<ref key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" />
 			</references>
 		</folder>
 	</folders>

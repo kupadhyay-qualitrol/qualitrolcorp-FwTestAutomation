@@ -6,18 +6,6 @@
 var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var Activitylog = Aliases.iQ_Plus.ShellForm.windowDockingArea1.dockableWindow3.ActivityLog.ActivityMonitor.ACTYLOGtxtLog
 var Edtbx_Username = Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
-//
-function AssertIsTrue(Expected,Actual,LogMessage)
-{
- if(Expected=Actual)
- {
-   Log.Message(LogMessage)
- }
- else
- {
-   Log.Error("Results didn't match")
- }
-}
 
 //This method launches iq+ plus application from installed folder path.
 function Launch_iQ_Plus()

@@ -6,6 +6,7 @@
 //USEUNIT ConfigEditorPage
 //USEUNIT ConfigEditor_FaultRecordingPage
 //USEUNIT SessionLogPage
+//USEUNIT AssertClass
 
 
 //TC-Test to check Save to Db Config works fine after changing pre-fault time.
@@ -32,8 +33,7 @@ function Test_SaveToDB_Prefault()
         Log.Message("Device exist in the tree topology.")
       }
       //Step4.Retrieve Configuration
-      CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
-    
+      AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
       //Step5. Change Pre-fault Time.
       ConfigEditor_FaultRecordingPage.SetPrefault(CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
     
@@ -94,8 +94,7 @@ function Test_SendToDevice_Prefault()
         Log.Message("Device exist in the tree topology.")
       }
       //Step4.Retrieve Configuration     
-      CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
-    
+      AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config") 
       //Step5. Change Pre-fault Time
       ConfigEditor_FaultRecordingPage.SetPrefault(CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
       
@@ -103,7 +102,7 @@ function Test_SendToDevice_Prefault()
       ConfigEditorPage.ClickSendToDevice()
       
       //Step7.Retrieve Configuration
-      CommonMethod.AssertIsTrue(true,DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+      AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
       
       //Step8.Check pre-fault time
       if(ConfigEditor_FaultRecordingPage.GetPrefault()!=CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))

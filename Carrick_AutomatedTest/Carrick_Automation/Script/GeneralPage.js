@@ -2,6 +2,7 @@
 //USEUNIT CommonMethod
 //USEUNIT DeviceTopologyPage
 //USEUNIT DeviceManagementPage
+//USEUNIT AssertClass
 
 //Variables
 var DeviceTypePage=Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManageDevices.panel1.MDEVtbParent
@@ -22,7 +23,7 @@ function CreateDevice(devicetype,devicename,deviceSerialNo,deviceIPAdd)
   if(DeviceManagementPage.DeviceManagementToolbar.Enabled)
   {
     DeviceManagementPage.DeviceManagementToolbar.ClickItem("Device &Management")
-    CommonMethod.AssertIsTrue(true,DeviceTopologyPage.ClickonAllDevices(),"Clicked on All Devices Button")
+    AssertClass.IsTrue(DeviceTopologyPage.ClickonAllDevices(),"Clicked on All Devices Button")
     DeviceManagementPage.DeviceManagementToolbar.ClickItem("Device &Management|General|&Create Device")
     Log.Message("Clicked on Create Device page")
     SelectDeviceType(devicetype)
