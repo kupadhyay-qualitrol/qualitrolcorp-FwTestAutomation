@@ -217,3 +217,25 @@ function ReadXml(NodeName,Variable,filenamewithpath)
     return null
   }
 }
+
+//This method is used to convert time from hh:mm:ss.xxx  to milliseconds
+function ConvertTimeIntoms(Timeinhhmmssms)
+{
+  var DateTimeFrmt
+  if(Timeinhhmmssms!=null)
+  {
+    var Time= Timeinhhmmssms.OleValue.split(".")    
+    var Hours= aqDateTime.GetHours(Time[0])
+    var Minutes= aqDateTime.GetMinutes(Time[0])
+    var Seconds= aqDateTime.GetSeconds(Time[0])
+    var Milliseconds= Time[1]
+   
+    TimeInms = (Hours*60*60*1000)+(Minutes*60*1000)+(Seconds*1000)+ aqConvert.StrToInt64(Milliseconds)
+    return TimeInms   
+  }
+  else
+  {
+    Log.Message("Input Time is null")
+    return null
+  }
+}
