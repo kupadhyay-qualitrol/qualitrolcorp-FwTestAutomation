@@ -782,6 +782,26 @@
 																															</Child>
 																														</Children>
 																													</Child>
+																													<Child Name="frmExternalTriggers" Key="{E4D9D172-950D-459A-888B-454DFA252B26}" ParallelWalk="True">
+																														<Image FileName="-14227639" Left="205" Top="319" Right="897" Bottom="421" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="frmExternalTriggers" Type="5" />
+																															</Property>
+																														</Properties>
+																														<Children>
+																															<Child Name="txtPostfault" Key="{ADE68F55-C1D1-41CF-B50B-3CAC78BCBBAF}" ParallelWalk="True">
+																																<Image FileName="-14227639" Left="556" Top="348" Right="641" Bottom="369" />
+																																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																<Properties>
+																																	<Property Name="WinFormsControlName">
+																																		<Value PropertyType="0" Value="txtPostfault" Type="5" />
+																																	</Property>
+																																</Properties>
+																															</Child>
+																														</Children>
+																													</Child>
 																												</Children>
 																											</Child>
 																										</Children>
@@ -1617,6 +1637,9 @@
 													<Child Name="frmBackground" Owner="{507EBA21-CCED-409B-9462-C14CBFD5B3DF}">
 														<Child Name="frmPrefaultTimeAndSampleRate" Owner="{934F1E81-512F-4CA5-816E-F66BBE76A014}">
 															<Child Name="txtPrefault" Owner="{2774F57A-787C-4712-84A4-3C898F518620}" />
+														</Child>
+														<Child Name="frmExternalTriggers" Owner="{E4D9D172-950D-459A-888B-454DFA252B26}">
+															<Child Name="txtPostfault" Owner="{ADE68F55-C1D1-41CF-B50B-3CAC78BCBBAF}" />
 														</Child>
 													</Child>
 												</Child>
