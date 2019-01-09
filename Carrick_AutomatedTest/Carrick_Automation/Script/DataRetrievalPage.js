@@ -255,7 +255,21 @@ function ClickOnDownloadDataNow()
 }
 
 //This method is used to get TimeSync status from Device Status
-function TimeQualityStatus()
+function TimeQualityStatusFromDeviceStatus()
 {
-  if(DeviceStatusView.
+  var TimeQuality ="clock "
+  if(DeviceStatusView.Exists)
+  {
+    Log.Message("Device Status View is visible and exists")
+    var ClockKeywordPos = aqString.Find(DeviceStatusView.text.OleValue,TimeQuality)
+    
+    var Status = aqString.SubString(DeviceStatusView.text.OleValue, aqConvert.StrToInt(ClockKeywordPos)+5,10)
+    Status = aqString.Trim(Status)
+    return Status
+  }
+  else
+  {
+    Log.Message("Device Status View doesn't exists")
+    return null
+  }
 }
