@@ -239,3 +239,28 @@ function ConvertTimeIntoms(Timeinhhmmssms)
     return null
   }
 }
+
+//This method is used to convert DateTime from to milliseconds with reference to 01-01-1970 00:00:00.000
+function ConvertDateTimeIntoms(DateTimeinddmmyyyyhhmmssms)
+{
+  var DateTimeFrmt
+  if(DateTimeinddmmyyyyhhmmssms!=null)
+  {
+    var DateTime= DateTimeinddmmyyyyhhmmssms.split(".")
+    var TimeinmsFrom1970 = aqDateTime.TimeInterval(DateTime[0],"01/01/2000 00:00:00")
+    
+    var Date = aqDateTime.GetDay(TimeinmsFrom1970)    
+    var Hours= aqDateTime.GetHours(TimeinmsFrom1970)
+    var Minutes= aqDateTime.GetMinutes(TimeinmsFrom1970)
+    var Seconds= aqDateTime.GetSeconds(TimeinmsFrom1970)
+    var Milliseconds= DateTime[1]
+    
+    TimeInms = (Date*24*60*60*1000)+(Hours*60*60*1000)+(Minutes*60*1000)+(Seconds*1000)+ aqConvert.StrToInt64(Milliseconds)
+    return TimeInms   
+  }
+  else
+  {
+    Log.Message("Input Time is null")
+    return null
+  }
+}
