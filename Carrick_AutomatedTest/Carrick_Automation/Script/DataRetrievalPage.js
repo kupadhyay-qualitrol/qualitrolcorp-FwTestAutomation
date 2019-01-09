@@ -21,14 +21,14 @@ var SetDateTime
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
 function ClickOnFRManualTrigger()
 {
- if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+ if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
  {
    //Clear Session Log
    SessionLogPage.ClearLog()
-   DeviceManagementToolbar.ClickItem("Device &Management")
-   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
    aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
-   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
    Log.Message("Clicked on FR Manual Trigger Option")
    if(ClickonOKManualDFRTrigger())
    {
@@ -52,14 +52,14 @@ function ClickOnFRManualTrigger()
 //This method click on DFR Directory under Display Device Directory in Data Retrieval Pane
 function ClickOnDFRDirectory()
 {
- if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+ if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
  {
    //Clear Session Log
    SessionLogPage.ClearLog()
-   DeviceManagementToolbar.ClickItem("Device &Management")
-   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
    aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
-   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|&DFR Directory ")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|&DFR Directory ")
    Log.Message("Clicked on DFR Directory")
    CommonMethod.CheckActivityLog("Directory list displayed successfully")
    return true
@@ -188,21 +188,21 @@ function CloseDFRDirectory()
 //This function is used to get the Device Status View window 
 function ClickOnDeviceStatusView()
 {
- if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+ if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
  {
    SessionLogPage.ClearLog()
-   DeviceManagementToolbar.ClickItem("Device &Management")
-   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
    aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
-   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
    Log.Message("Clicked on Device Status Option")
    CommonMethod.CheckActivityLog("Device information displayed successfully")
    return true
  }
  else
  {
-   RibbonToolbar.ClickItem("Device &Management");
-   Log.Message("Device Management options is selected")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management");
+   Log.Message("Device Management options is not available")
    return false
  }
 }
@@ -257,5 +257,5 @@ function ClickOnDownloadDataNow()
 //This method is used to get TimeSync status from Device Status
 function TimeQualityStatus()
 {
-  
+  if(DeviceStatusView.
 }
