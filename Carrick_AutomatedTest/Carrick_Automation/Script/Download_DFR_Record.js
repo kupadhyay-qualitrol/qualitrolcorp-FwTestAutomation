@@ -69,7 +69,6 @@ function DownloadManualDFR()
 
 
 //TC-Test to Validate Prefault,Post fault time and record length in the DFR record.
-
 function Validate_RecordTime()
 {
   try
@@ -101,16 +100,27 @@ function Validate_RecordTime()
     var RecordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration())
     AssertClass.CompareDecimalValues(aqConvert.StrToInt64(prefault)+aqConvert.StrToInt64(postfault),RecordLength)
     
+    //Step8. Check Time Quality Status
+    //Step8.1 Click on Device Status View
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
     
-    //Step2.
+    //Step8.2 Check Time Quality Staus Actual
+    AssertClass.CompareString(DataRetrievalPage.TimeQualityStatusFromDeviceStatus(),PDPPage.GetTimeQualityStatus(),"Comparing Time Quality from Device Status and from DFR record in PDP.")
+    
+    //Step9. Check Prefault time
+    var ActualPrefault = (PDPPage.GetRecordTriggerDateTime()+1)-PDPPage.GetRecordStartDateTime()
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(prefault),ActualPrefault,"Prefault calculated from PDP is :-"+ActualPrefault)
+    
+    //Step10. Check Postfault value
+    var ActualPostFault = PDPPage.GetRecordEndDateTime()-(PDPPage.GetRecordTriggerDateTime()+1)
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(postfault),ActualPostFault,"Prefault calculated from PDP is :-"+ActualPostFault)
+    
     Log.Message("Pass:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
   }
   catch(ex)
   {
     Log.Message(ex.message)
-    Log.Error("Error:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
-  
+    Log.Error("Error:-Test to Validate Prefault,Post fault time and record length in the DFR record.")  
   }
 }
-
 
