@@ -92,8 +92,8 @@ function GetRecordStartDateTime()
     }
     
     var Record_StartDateTime=EventsList.ugBaseGrid.wValue(0,"Start Date & Time")
+    return CommonMethod.ConvertDateTimeIntoms(Record_StartDateTime.Day+"/"+Record_StartDateTime.Month+"/"+Record_StartDateTime.Year+" "+Record_StartDateTime.Hour+":"+Record_StartDateTime.Minute+":"+Record_StartDateTime.Second+"."+Record_StartDateTime.Millisecond)
     Log.Message("Record Start Date Time is:- "+aqConvert.DateTimeToStr(Record_StartDateTime))    
-    return Record_StartDateTime
   }
   else
   {
@@ -130,9 +130,9 @@ function GetRecordEndDateTime()
       return null
     }
     
-    var Record_EndDate_Time=EventsList.ugBaseGrid.wValue(0,"End Date & Time")
+    var Record_EndDate_Time=EventsList.ugBaseGrid.wValue(0, "End Date & Time")
+    return CommonMethod.ConvertDateTimeIntoms(Record_EndDate_Time.Day+"/"+Record_EndDate_Time.Month+"/"+Record_EndDate_Time.Year+" "+Record_EndDate_Time.Hour+":"+Record_EndDate_Time.Minute+":"+Record_EndDate_Time.Second+"."+Record_EndDate_Time.Millisecond)
     Log.Message("Record End Date Time is:- "+aqConvert.DateTimeToStr(Record_EndDate_Time))    
-    return Record_EndDate_Time
   }
   else
   {
@@ -172,6 +172,45 @@ function GetTimeQualityStatus()
     var Record_TimeQuality=EventsList.ugBaseGrid.wValue(0,"Time Quality")
     Log.Message("Record End Date Time is:- "+Record_TimeQuality)    
     return Record_TimeQuality
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return null
+  }
+}
+
+//This method is used to get Trigger Date & Time
+function GetRecordTriggerDateTime()
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    var PDPcolumn
+    var Record_TriggerDate_Time_ColumnNo=null
+    
+    //Identify the column number for Record EndDateTime
+    for(PDPcolumn=0;PDPcolumn< ultraGrid.wColumnCount; PDPcolumn++)
+    {
+      if(ultraGrid.wColumn(PDPcolumn)=="Trigger Date & Time")
+      {
+        Record_TriggerDate_Time_ColumnNo = PDPcolumn
+        break
+      }
+    }
+    if(Record_TriggerDate_Time_ColumnNo!=null)
+    {
+      Log.Message("Cloumn No. for Trigger Date Time in PDP is :- "+Record_TriggerDate_Time_ColumnNo)
+    }
+    else
+    {
+      Log.Message("Unable to find column no. for Record_TriggerDate_Time in PDP pane.")
+      return null
+    }
+    var Record_TriggerDate_Time =new Date()
+    Record_TriggerDate_Time=EventsList.ugBaseGrid.wValue(0, "Trigger Date & Time")
+    return CommonMethod.ConvertDateTimeIntoms(Record_TriggerDate_Time.Day+"/"+Record_TriggerDate_Time.Month+"/"+Record_TriggerDate_Time.Year+" "+Record_TriggerDate_Time.Hour+":"+Record_TriggerDate_Time.Minute+":"+Record_TriggerDate_Time.Second+"."+Record_TriggerDate_Time.Millisecond)
+    Log.Message("Record Trigger Date Time is:- "+Record_TriggerDate_Time+"_"+Record_TriggerDate_Timems)    
   }
   else
   {
