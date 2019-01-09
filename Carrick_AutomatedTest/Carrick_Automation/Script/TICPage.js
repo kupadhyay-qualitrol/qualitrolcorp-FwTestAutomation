@@ -1,7 +1,6 @@
-﻿//USEUNIT DeviceManagementPage
+﻿//USEUNIT CommonMethod
 
 //Variables
-var RibbonToolbar=Aliases.iQ_Plus.ShellForm.zShellForm_Toolbars_Dock_Area_Top
 var StartDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
 var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
 
@@ -18,7 +17,7 @@ function SetDeviceDateTime(NewDateTime)
   }
   else
   {
-    RibbonToolbar.ClickItem("&View|[0]|&Time Interval");
+    CommonMethod.RibbonToolbar.ClickItem("&View|[0]|&Time Interval");
     Log.Message("Time interval window open")
     if (StartDateTime.VisibleOnScreen)
     {

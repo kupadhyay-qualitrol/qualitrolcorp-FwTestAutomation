@@ -4,7 +4,6 @@
 //USEUNIT SessionLogPage
 
 //Variables
-var DeviceManagementToolbar=CommonMethod.RibbonToolbar
 var DFRDirectory=Aliases.iQ_Plus.SDPContainer
 var DirectoryList=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWDFRgrpContainer.DIRLSTVWlstDFRDirectoryList
 var Btn_ManualDFRPopUP_OK =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.MNLTRGbtnOk
@@ -13,6 +12,10 @@ var Btn_DFRDirectory_DownloadDataNow=Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDP
 var PDP_StatusBar=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRusbPDPStatusBar
 var PDPContainerWorkspace=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace
 var ultraGrid = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList.ugBaseGrid;
+var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.txtDeviceStatus
+var CloseDeviceStatus = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.DEVSTATUSbtnCancel
+var NewDateTime
+var SetDateTime
 //
 
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
@@ -166,6 +169,7 @@ function ClickonOKManualDFRTrigger()
   }
 }
 
+//This method is used to close DFR Directory Popup.
 function CloseDFRDirectory()
 {
   if(DFRDirectory.Exists)
@@ -179,4 +183,79 @@ function CloseDFRDirectory()
     Log.Message("DFR Directory not visible")
     return false
   }
+}
+
+//This function is used to get the Device Status View window 
+function ClickOnDeviceStatusView()
+{
+ if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+ {
+   SessionLogPage.ClearLog()
+   DeviceManagementToolbar.ClickItem("Device &Management")
+   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+   aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+   DeviceManagementToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
+   Log.Message("Clicked on Device Status Option")
+   CommonMethod.CheckActivityLog("Device information displayed successfully")
+   return true
+ }
+ else
+ {
+   RibbonToolbar.ClickItem("Device &Management");
+   Log.Message("Device Management options is selected")
+   return false
+ }
+}
+
+//This function is used to get the CurrentDateTime for the Device
+function GetDeviceCurrentDateTime()
+{
+  var aString = "CURRENTDATE = ";
+ 
+  var CurrentDateTimePos = aqString.Find(DeviceStatusView.text.OleValue,aString)
+  Log.Message(CurrentDateTimePos) 
+  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,aqConvert.StrToInt(CurrentDateTimePos)+13,19)
+  //289 is the start position for date in text field and 19 is the length for the selected date.
+  
+  var deviceCurrentDateTime = aqConvert.StrToDateTime(CurrentDateTime);
+ 
+  Log.Message("Current Date time is" + deviceCurrentDateTime)
+  
+  SetDateTime = aqDateTime.AddDays(deviceCurrentDateTime,-30);
+  NewDateTime = aqConvert.DateTimeToFormatStr(SetDateTime, "%d/%m/%Y %H:%M");
+  
+  Log.Message("Device Set Date time is"+NewDateTime)
+  CloseDeviceStatus.ClickButton();
+  return NewDateTime;
+  
+}
+
+// This function is used to Click on Download button of DFR directory pop up
+function ClickOnDownloadDataNow()
+{
+  if(DFRDirectory.Exists)
+  {
+    if(Btn_DFRDirectory_DownloadDataNow.Exists)
+    { 
+      Btn_DFRDirectory_DownloadDataNow.ClickButton()
+      Log.Message("Clicked on Download Now button available on DFR directory Popup.")
+      return true
+    }
+    else
+    {
+      Log.Message("Download Now button not available on DFR directory Popup")
+      return false
+  }
+}
+  else
+  {
+    Log.Message("DFR Directory not visible")
+    return false
+  }
+}
+
+//This method is used to get TimeSync status from Device Status
+function TimeQualityStatus()
+{
+  
 }
