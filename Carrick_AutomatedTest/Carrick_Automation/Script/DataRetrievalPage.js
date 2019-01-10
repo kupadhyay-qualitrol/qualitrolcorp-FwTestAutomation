@@ -221,7 +221,6 @@ function GetDeviceCurrentDateTime()
  
   Log.Message("Current Date time is" + deviceCurrentDateTime)
   
-  SetDateTime = aqDateTime.AddDays(deviceCurrentDateTime,-30);
   NewDateTime = aqConvert.DateTimeToFormatStr(SetDateTime, "%d/%m/%Y %H:%M");
   
   Log.Message("Device Set Date time is"+NewDateTime)
