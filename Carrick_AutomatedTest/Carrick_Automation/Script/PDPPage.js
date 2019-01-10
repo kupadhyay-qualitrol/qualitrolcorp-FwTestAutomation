@@ -170,7 +170,7 @@ function GetTimeQualityStatus()
     }
     
     var Record_TimeQuality=EventsList.ugBaseGrid.wValue(0,"Time Quality")
-    Log.Message("Record End Date Time is:- "+Record_TimeQuality)    
+    Log.Message("Record Time Quality from Device status is:- "+Record_TimeQuality)    
     return Record_TimeQuality
   }
   else
