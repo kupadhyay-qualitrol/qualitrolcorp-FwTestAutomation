@@ -207,8 +207,7 @@ function GetRecordTriggerDateTime()
       Log.Message("Unable to find column no. for Record_TriggerDate_Time in PDP pane.")
       return null
     }
-    var Record_TriggerDate_Time =new Date()
-    Record_TriggerDate_Time=EventsList.ugBaseGrid.wValue(0, "Trigger Date & Time")
+    var Record_TriggerDate_Time=EventsList.ugBaseGrid.wValue(0, "Trigger Date & Time")
     return CommonMethod.ConvertDateTimeIntoms(Record_TriggerDate_Time.Day+"/"+Record_TriggerDate_Time.Month+"/"+Record_TriggerDate_Time.Year+" "+Record_TriggerDate_Time.Hour+":"+Record_TriggerDate_Time.Minute+":"+Record_TriggerDate_Time.Second+"."+Record_TriggerDate_Time.Millisecond)
     Log.Message("Record Trigger Date Time is:- "+Record_TriggerDate_Time+"_"+Record_TriggerDate_Timems)    
   }
