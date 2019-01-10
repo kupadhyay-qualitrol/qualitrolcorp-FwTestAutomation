@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Root>
 	<Images>
-		<Child1 File="-1222382796.png" RefCount="2" Cookie="-14227639" />
+		<Child1 File="93592468.png" RefCount="4" Cookie="-146971047" />
+		<Child2 File="93728062.png" RefCount="2" Cookie="-385683240" />
+		<Child3 File="-1222382796.png" RefCount="2" Cookie="-14227639" />
 	</Images>
 </Root>

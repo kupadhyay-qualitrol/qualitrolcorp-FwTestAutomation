@@ -222,6 +222,45 @@
 													</Child>
 												</Children>
 											</Child>
+											<Child Name="dockableWindow4" Key="{974B9A61-1264-4019-85B5-79F890B14939}" ParallelWalk="True">
+												<Image FileName="-146971047" Left="0" Top="734" Right="284" Bottom="1017" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="dockableWindow4" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="Favorites" Key="{695EB7F6-8626-4F9D-905D-FEB5A1A2EDCD}" ParallelWalk="True">
+														<Image FileName="-146971047" Left="0" Top="752" Right="284" Bottom="1017" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="Favorites" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="DAFavoriteView" Key="{D5421AFC-87A2-4600-B2B2-913A5A6807CB}" ParallelWalk="True">
+																<Image FileName="-146971047" Left="0" Top="752" Right="284" Bottom="1017" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="DAFavoriteView" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="DAFAVuexpbarFavorites" Key="{39B14C95-4AB7-417E-8C73-7B4638407DDF}" ParallelWalk="True">
+																		<Image FileName="-146971047" Left="0" Top="780" Right="284" Bottom="1017" />
+																		<TypeInfo Item0="{4301ED7D-3BAC-4C84-A4E0-CF7AADE254C3}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="DAFAVuexpbarFavorites" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
 										</Children>
 									</Child>
 									<Child Name="windowDockingArea1" Key="{5F835B75-0736-4970-BCE1-86605AB062C0}" ParallelWalk="True">
@@ -378,6 +417,25 @@
 														</Children>
 													</Child>
 												</Children>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="usbMainStatusBar" Key="{E6D3927D-7EDC-439F-8329-F1DBE2906458}" ParallelWalk="True">
+										<Image FileName="-385683240" Left="0" Top="1017" Right="1920" Bottom="1040" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="usbMainStatusBar" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="stpStatusStrip" Key="{B52D2B11-D21F-4B48-BF19-7DCAB050AA62}" ParallelWalk="True">
+												<Image FileName="-385683240" Left="0" Top="1017" Right="279" Bottom="1040" />
+												<TypeInfo Item0="{B685196F-5625-49A9-82F5-D0A1C7C504D6}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="stpStatusStrip" Type="5" />
+													</Property>
+												</Properties>
 											</Child>
 										</Children>
 									</Child>
@@ -1545,6 +1603,13 @@
 							</Child>
 						</Child>
 					</Child>
+					<Child Name="dockableWindow4" Owner="{974B9A61-1264-4019-85B5-79F890B14939}">
+						<Child Name="Favorites" Owner="{695EB7F6-8626-4F9D-905D-FEB5A1A2EDCD}">
+							<Child Name="DAFavoriteView" Owner="{D5421AFC-87A2-4600-B2B2-913A5A6807CB}">
+								<Child Name="DAFAVuexpbarFavorites" Owner="{39B14C95-4AB7-417E-8C73-7B4638407DDF}" />
+							</Child>
+						</Child>
+					</Child>
 				</Child>
 				<Child Name="windowDockingArea1" Owner="{5F835B75-0736-4970-BCE1-86605AB062C0}">
 					<Child Name="dockableWindow3" Owner="{A36E57C6-80C1-4DC0-AC80-7FC7B9D9F81F}">
@@ -1573,6 +1638,9 @@
 							</Child>
 						</Child>
 					</Child>
+				</Child>
+				<Child Name="usbMainStatusBar" Owner="{E6D3927D-7EDC-439F-8329-F1DBE2906458}">
+					<Child Name="stpStatusStrip" Owner="{B52D2B11-D21F-4B48-BF19-7DCAB050AA62}" />
 				</Child>
 			</Child>
 			<Child Name="ModalDialogContainer" Owner="{C1DF22CA-FAF1-4BA0-8DDA-93AD6738032A}">
@@ -11473,6 +11541,199 @@
 					</Child>
 					<Child Name="Enabled" IsBasic="True" Data="ZI4L2L4ZOBZN">
 						<ReturnValue Param0="11" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="-746695825" Key="{4301ED7D-3BAC-4C84-A4E0-CF7AADE254C3}">
+			<Data Properties="223A74B5831E1B458069A6B67137A4A4UFFFFFFFFFFFFFFFFV4LFZZY">
+				<FunctionDescriptions>
+					<Child Name="ClickItem" Doc="Moves the mouse cursor to the specified item of the specified group and clicks it with the left mouse button." IsBasic="True" Param0="Group" Param1="Item" Data="ZI4L1L4L2Z018ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param1>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ExpandGroup" Doc="Expands the specified group." IsBasic="True" Param0="Group" Param1="Expand" Data="ZI4L1L4L2Z018ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="11" />
+							<ParamDesc Flags="49" Value="True" Type="6" />
+						</Param1>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="wGroupCount" Doc="Returns the total number of groups in the Explorer Bar control." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="wGroup" Doc="Returns the name of the specified group." IsBasic="True" Param0="Group" Data="ZI4L2L4L1ZG8ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="wItemCount" Doc="Returns the total number of items in the specified group of the Explorer Bar control." IsBasic="True" Param0="Group" Data="ZI4L2L4L1ZG3ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="wItem" Doc="Returns the name of the specified item of the specified group." IsBasic="True" Param0="Group" Param1="Item" Data="ZI4L2L4L2ZG8ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param1>
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="1287749523" Key="{B685196F-5625-49A9-82F5-D0A1C7C504D6}">
+			<Data Properties="6EAF7DEE4C3C6E499F2B5FBC7ED91935UFFFFFFFFFFFFFFFFV4LCZZY">
+				<FunctionDescriptions>
+					<Child Name="ClickItem" Doc="Simulates a left-click on the specified status bar item. A status bar item may be specified as an index, from 0, or as text." IsBasic="True" Param0="Item" Param1="Shift" Data="ZI4L1L4L2Z018ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param1>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="wPartCount" Doc="Returns the total number of items the status bar control contains." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="wText" Doc="Returns the text of a status bar item specified by its index." IsBasic="True" Param0="Item" Data="ZI4L2L4L1ZG8ZN">
+						<Param0>
+							<TypeDesc Param0="12" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
 					</Child>
 				</FunctionDescriptions>
 			</Data>
