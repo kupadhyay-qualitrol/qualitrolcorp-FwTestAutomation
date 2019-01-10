@@ -45,7 +45,7 @@ function DownloadManualDFR()
        
        //Step5.1 Click on All FR Record Default Favorites
        AssertClass.IsTrue(FavoritesPage.ClickOnAllFRTriggeredRecord(),"Clicked on All FR Triggered Record")
-     
+       aqUtils.Delay(3000)
       //Step6. Verify downloaded record on PDP
         REC=PDPPage.VerifyDownloadedRecord()
         if(REC==REC_DFR)
