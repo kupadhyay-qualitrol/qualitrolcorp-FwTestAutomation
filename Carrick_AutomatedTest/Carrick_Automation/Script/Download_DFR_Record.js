@@ -9,6 +9,7 @@
 //USEUNIT ConfigEditor_FaultRecordingPage
 //USEUNIT FavoritesPage
 
+
 //TC-Test to Download Manual DFR record
 function DownloadManualDFR()
 {
@@ -130,6 +131,11 @@ function Validate_RecordTime()
     var ActualPostFault = PDPPage.GetRecordEndDateTime()-(PDPPage.GetRecordTriggerDateTime())
     AssertClass.CompareDecimalValues(aqConvert.StrToInt64(postfault),ActualPostFault,0,"Postfault calculated from PDP is :-"+ActualPostFault)
     
+    //Step11. Export to CDF.
+    AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
+    
+    //Step12. Export to CSV
+    AssertClass.IsTrue(PDPPage.ExportTOCSV())
     Log.Message("Pass:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
   }
   catch(ex)
