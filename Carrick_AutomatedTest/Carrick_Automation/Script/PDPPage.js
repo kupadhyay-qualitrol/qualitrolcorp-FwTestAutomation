@@ -27,7 +27,7 @@ function VerifyDownloadedRecord()
 }
 
 //This function is used to get the Record Duration
-function GetRecordDuration()
+function GetRecordDuration(PDPRowNo)
 {
   if (PDPContainerWorkspace.Exists)
   {
@@ -52,7 +52,7 @@ function GetRecordDuration()
       Log.Message("Unable to find column no. for Duration in PDP pane.")
       return null
     }
-    var Record_Duration=EventsList.ugBaseGrid.wValue(0,"Duration (hrs:min:sec.ms)")
+    var Record_Duration=EventsList.ugBaseGrid.wValue(PDPRowNo,"Duration (hrs:min:sec.ms)")
     Log.Message("Record Duration is:- "+Record_Duration)    
     return Record_Duration
   }
@@ -64,7 +64,7 @@ function GetRecordDuration()
 }
 
 //This method is used to get the Record Start Date & Time
-function GetRecordStartDateTime()
+function GetRecordStartDateTime(PDPRowNo)
 {
   if (PDPContainerWorkspace.Exists)
   {
@@ -91,9 +91,9 @@ function GetRecordStartDateTime()
       return null
     }
     
-    var Record_StartDateTime=EventsList.ugBaseGrid.wValue(0,"Start Date & Time")
-    return CommonMethod.ConvertDateTimeIntoms(Record_StartDateTime.Day+"/"+Record_StartDateTime.Month+"/"+Record_StartDateTime.Year+" "+Record_StartDateTime.Hour+":"+Record_StartDateTime.Minute+":"+Record_StartDateTime.Second+"."+Record_StartDateTime.Millisecond)
-    Log.Message("Record Start Date Time is:- "+aqConvert.DateTimeToStr(Record_StartDateTime))    
+    var Record_StartDateTime=EventsList.ugBaseGrid.wValue(PDPRowNo,"Start Date & Time")
+    Log.Message("Record Start Date Time is:- "+aqConvert.DateTimeToStr(Record_StartDateTime))
+    return CommonMethod.ConvertDateTimeIntomsFrom2000(Record_StartDateTime.Day+"/"+Record_StartDateTime.Month+"/"+Record_StartDateTime.Year+" "+Record_StartDateTime.Hour+":"+Record_StartDateTime.Minute+":"+Record_StartDateTime.Second+"."+Record_StartDateTime.Millisecond)    
   }
   else
   {
@@ -103,7 +103,7 @@ function GetRecordStartDateTime()
 }
 
 //This method is used to get Record End Date & Time
-function GetRecordEndDateTime()
+function GetRecordEndDateTime(PDPRowNo)
 {
   if (PDPContainerWorkspace.Exists)
   {
@@ -130,9 +130,9 @@ function GetRecordEndDateTime()
       return null
     }
     
-    var Record_EndDate_Time=EventsList.ugBaseGrid.wValue(0, "End Date & Time")
-    return CommonMethod.ConvertDateTimeIntoms(Record_EndDate_Time.Day+"/"+Record_EndDate_Time.Month+"/"+Record_EndDate_Time.Year+" "+Record_EndDate_Time.Hour+":"+Record_EndDate_Time.Minute+":"+Record_EndDate_Time.Second+"."+Record_EndDate_Time.Millisecond)
-    Log.Message("Record End Date Time is:- "+aqConvert.DateTimeToStr(Record_EndDate_Time))    
+    var Record_EndDate_Time=EventsList.ugBaseGrid.wValue(PDPRowNo, "End Date & Time")
+    Log.Message("Record End Date Time is:- "+aqConvert.DateTimeToStr(Record_EndDate_Time))  
+    return CommonMethod.ConvertDateTimeIntomsFrom2000(Record_EndDate_Time.Day+"/"+Record_EndDate_Time.Month+"/"+Record_EndDate_Time.Year+" "+Record_EndDate_Time.Hour+":"+Record_EndDate_Time.Minute+":"+Record_EndDate_Time.Second+"."+Record_EndDate_Time.Millisecond)  
   }
   else
   {
@@ -142,7 +142,7 @@ function GetRecordEndDateTime()
 }
 
 //This method is used to get Record GPS lock status
-function GetTimeQualityStatus()
+function GetTimeQualityStatus(PDPRowNo)
 {
   if (PDPContainerWorkspace.Exists)
   {
@@ -169,7 +169,7 @@ function GetTimeQualityStatus()
       return null
     }
     
-    var Record_TimeQuality=EventsList.ugBaseGrid.wValue(0,"Time Quality")
+    var Record_TimeQuality=EventsList.ugBaseGrid.wValue(PDPRowNo,"Time Quality")
     Log.Message("Record Time Quality from Device status is:- "+Record_TimeQuality)    
     return Record_TimeQuality
   }
@@ -181,7 +181,7 @@ function GetTimeQualityStatus()
 }
 
 //This method is used to get Trigger Date & Time
-function GetRecordTriggerDateTime()
+function GetRecordTriggerDateTime(PDPRowNo)
 {
   if (PDPContainerWorkspace.Exists)
   {
@@ -207,9 +207,9 @@ function GetRecordTriggerDateTime()
       Log.Message("Unable to find column no. for Record_TriggerDate_Time in PDP pane.")
       return null
     }
-    var Record_TriggerDate_Time=EventsList.ugBaseGrid.wValue(0, "Trigger Date & Time")
-    return CommonMethod.ConvertDateTimeIntoms(Record_TriggerDate_Time.Day+"/"+Record_TriggerDate_Time.Month+"/"+Record_TriggerDate_Time.Year+" "+Record_TriggerDate_Time.Hour+":"+Record_TriggerDate_Time.Minute+":"+Record_TriggerDate_Time.Second+"."+Record_TriggerDate_Time.Millisecond)
+    var Record_TriggerDate_Time=EventsList.ugBaseGrid.wValue(PDPRowNo, "Trigger Date & Time")
     Log.Message("Record Trigger Date Time is:- "+Record_TriggerDate_Time+"_"+Record_TriggerDate_Timems)    
+    return CommonMethod.ConvertDateTimeIntomsFrom2000(Record_TriggerDate_Time.Day+"/"+Record_TriggerDate_Time.Month+"/"+Record_TriggerDate_Time.Year+" "+Record_TriggerDate_Time.Hour+":"+Record_TriggerDate_Time.Minute+":"+Record_TriggerDate_Time.Second+"."+Record_TriggerDate_Time.Millisecond)
   }
   else
   {
