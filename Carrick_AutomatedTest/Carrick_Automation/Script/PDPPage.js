@@ -208,7 +208,7 @@ function GetRecordTriggerDateTime(PDPRowNo)
       return null
     }
     var Record_TriggerDate_Time=EventsList.ugBaseGrid.wValue(PDPRowNo, "Trigger Date & Time")
-    Log.Message("Record Trigger Date Time is:- "+Record_TriggerDate_Time+"_"+Record_TriggerDate_Timems)    
+    Log.Message("Record Trigger Date Time is:- "+aqConvert.DateTimeToStr(Record_TriggerDate_Time))
     return CommonMethod.ConvertDateTimeIntomsFrom2000(Record_TriggerDate_Time.Day+"/"+Record_TriggerDate_Time.Month+"/"+Record_TriggerDate_Time.Year+" "+Record_TriggerDate_Time.Hour+":"+Record_TriggerDate_Time.Minute+":"+Record_TriggerDate_Time.Second+"."+Record_TriggerDate_Time.Millisecond)
   }
   else
