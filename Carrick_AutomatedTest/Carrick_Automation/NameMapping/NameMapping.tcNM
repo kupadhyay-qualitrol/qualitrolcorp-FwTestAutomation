@@ -1753,6 +1753,61 @@
 							</Child>
 						</Children>
 					</Child>
+					<Child Name="RMSDataValidation" Key="{4D378510-2552-4A5E-9302-49FB62140C22}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="RMSDataValidation" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="Form1" Key="{9EECA102-F936-4D2A-9576-475E29BBEE58}" ParallelWalk="True">
+								<Image FileName="821799726" Left="0" Top="0" Right="606" Bottom="189" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="Form1" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="VoltageTextBox" Key="{71730FE2-3B35-4D5F-859D-13ACE2730576}" ParallelWalk="True">
+										<Image FileName="1509684652" Left="76" Top="78" Right="124" Bottom="98" />
+										<TypeInfo Item0="{854FC94F-EF03-4DE7-9E20-A061D02A4C33}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="VoltageTextBox" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="FilePathTextBox" Key="{829C9D7C-B96B-40E8-9F0F-37F1459A1D24}" ParallelWalk="True">
+										<Image FileName="-1544420374" Left="76" Top="45" Right="575" Bottom="65" />
+										<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="FilePathTextBox" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="CurrentTextBox" Key="{1CD02F1C-9FCE-419B-B1F9-C31FAF622080}" ParallelWalk="True">
+										<Image FileName="-1544420374" Left="76" Top="111" Right="123" Bottom="131" />
+										<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="CurrentTextBox" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="StartButton" Key="{F116E18B-EAF0-4C32-9410-CBE8D78C4EE1}" ParallelWalk="True">
+										<Image FileName="-1544420374" Left="76" Top="144" Right="175" Bottom="167" />
+										<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="StartButton" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
 				</Children>
 			</Child>
 		</Children>
@@ -2036,6 +2091,14 @@
 				<Child Name="btnMakeNewFolder" Owner="{325C75E7-118E-4658-8652-4D2F8D9EDFF1}" />
 				<Child Name="btnOK" Owner="{61180E37-62B2-4383-BEF0-318B98F520B4}" />
 				<Child Name="btnCancel" Owner="{CA9E2AD0-547C-486F-BADE-686B6F832BEA}" />
+			</Child>
+		</Child>
+		<Child Name="RMSDataValidation" Owner="{4D378510-2552-4A5E-9302-49FB62140C22}">
+			<Child Name="Form1" Owner="{9EECA102-F936-4D2A-9576-475E29BBEE58}">
+				<Child Name="VoltageTextBox" Owner="{71730FE2-3B35-4D5F-859D-13ACE2730576}" />
+				<Child Name="FilePathTextBox" Owner="{829C9D7C-B96B-40E8-9F0F-37F1459A1D24}" />
+				<Child Name="CurrentTextBox" Owner="{1CD02F1C-9FCE-419B-B1F9-C31FAF622080}" />
+				<Child Name="StartButton" Owner="{F116E18B-EAF0-4C32-9410-CBE8D78C4EE1}" />
 			</Child>
 		</Child>
 	</LogicalNodes>
@@ -12817,6 +12880,80 @@
 						<ReturnValue Param0="9" />
 					</Child>
 					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4SAU8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="-934726023" Key="{854FC94F-EF03-4DE7-9E20-A061D02A4C33}">
+			<Data Properties="4B72FF9F6FC48C48BE23388C5BF75077UFFFFFFFFFFFFFFFFV4LCZZY">
+				<FunctionDescriptions>
+					<Child Name="SetText" Doc="Enters text in the text editor." IsBasic="True" Param0="Text" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="wText" Doc="Contents of the edit control, as text string." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="wSelection" Doc="Retrieves the selected text." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
 						<ReturnValue Param0="8" />
 					</Child>
 				</FunctionDescriptions>
