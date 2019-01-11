@@ -55,6 +55,12 @@
 		<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="AssertClass.js" />
 		</child>
+		<child name="Login_iQ_Plus" key="{7203FC4B-789C-49BC-B57E-625C7E067244}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Login_iQ_Plus.js" />
+		</child>
+		<child name="FavoritesPage" key="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="FavoritesPage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -65,6 +71,7 @@
 				<ref key="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}" />
 				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
+				<ref key="{7203FC4B-789C-49BC-B57E-625C7E067244}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -79,6 +86,7 @@
 				<ref key="{09BC76C4-8202-42D7-9CC0-EF5B349B63FA}" />
 				<ref key="{B5C7812D-01C5-43EE-9851-9256C277EB0D}" />
 				<ref key="{32BE397E-2D05-413F-B39A-3C6BA908B8CA}" />
+				<ref key="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">

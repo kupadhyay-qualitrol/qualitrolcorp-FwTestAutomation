@@ -21,44 +21,61 @@
 	<config language="{90F89436-9452-4F95-9882-6B5210079F13}" />
 	<testItems key="{F5C3AC8F-E7CD-49DA-A415-EFF8D5A099AF}">
 		<children>
-			<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
-						<children />
+						<children>
+							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
 					</testItem>
-					<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
-						<children />
+						<children>
+							<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="CommsConfig-SendToDevice" key="{2060EF8D-64BF-4630-BF3D-E03E6283C6C2}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SendToDevice_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
 					</testItem>
-				</children>
-			</testItem>
-			<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-				<testParameters />
-				<children>
-					<testItem name="CommsConfig-SaveToDB" key="{150F9DD3-E9BD-4B75-9B5C-E99C5500F701}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SaveToDB_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
-						<children />
-					</testItem>
-					<testItem name="CommsConfig-SendToDevice" key="{2060EF8D-64BF-4630-BF3D-E03E6283C6C2}" group="False" enabled="True" testMoniker="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}Test_SendToDevice_Prefault" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-						<testParameters />
-						<children />
-					</testItem>
-				</children>
-			</testItem>
-			<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-				<testParameters />
-				<children>
-					<testItem name="Trigger_ManualDFR" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="False" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-						<testParameters>
-							<param0 name="blnCloseiQPlus" type="3" localVarName="" varType="0" value="" />
-						</testParameters>
-						<children />
-					</testItem>
-					<testItem name="Download_DFR_Record" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-						<testParameters />
-						<children />
+						<children>
+							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Trigger_ManualDFR" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="False" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="blnCloseiQPlus" type="3" localVarName="" varType="0" value="" />
+								</testParameters>
+								<children />
+							</testItem>
+							<testItem name="Download_DFR_Record" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="False" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="ValidateDFRRecord" key="{B1C117EA-065A-45FF-98DF-EDB4C0B1C0DC}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}Validate_RecordTime" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Close_iQ_Plus" key="{36B873F6-7905-495F-83E4-F794EAC06A0F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
 					</testItem>
 				</children>
 			</testItem>

@@ -76,7 +76,7 @@ function CompareString(Expected,Actual,LogMessage)
   {
     if(typeof(Expected)=="string" && typeof(Actual)=="string")
     {  
-      if(aqString.Compare(Expected,Actual,false))
+      if(aqString.Compare(Expected,Actual,false)==0)
       {
         Log.Message("Strings are Same.Message:- "+LogMessage)    
       }
