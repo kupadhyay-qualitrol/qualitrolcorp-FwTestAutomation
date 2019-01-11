@@ -8,7 +8,7 @@
 			<config nodeName="iQ_Plus" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
-					<param name="Profile" parameters="" workFolder="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
 					<param name="Debug" parameters="" workFolder="" />
 					<param name="Simple" fileName="iQ-Plus.exe" filePath="C:\Program Files (x86)\Qualitrol\iQ-Plus\iQ-PlusClient\" parameters="" workFolder="" />
 				</runModeParams>
@@ -20,7 +20,7 @@
 			<config nodeName="Uninstall_iQ" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
-					<param name="Profile" parameters="" workFolder="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
 					<param name="Debug" parameters="" workFolder="" />
 					<param name="Simple" fileName="Uninstall iQ+.lnk" filePath="C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Qualitrol\iQ+\" parameters="" workFolder="" />
 				</runModeParams>
@@ -32,9 +32,21 @@
 			<config nodeName="Iec_Browser" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
-					<param name="Profile" parameters="" workFolder="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
 					<param name="Debug" parameters="" workFolder="" />
 					<param name="Simple" fileName="Iec_Browser.exe" filePath="C:\Program Files (x86)\Siemens Energy\IEC_Browser V02.21\" parameters="" workFolder="" />
+				</runModeParams>
+			</config>
+			<testData />
+			<data />
+		</child>
+		<child key="{BB71682D-8227-4D0C-94E4-99984EEFAC61}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+			<config nodeName="RMSDataValidation" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
+				<runModeParams activeRunMode="Simple">
+					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
+					<param name="Debug" parameters="" workFolder="" />
+					<param name="Simple" fileName="RMSDataValidation.exe" filePath="C:\My_Documents\GitHub_SourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\ThirdParty\" parameters="" workFolder="" />
 				</runModeParams>
 			</config>
 			<testData />

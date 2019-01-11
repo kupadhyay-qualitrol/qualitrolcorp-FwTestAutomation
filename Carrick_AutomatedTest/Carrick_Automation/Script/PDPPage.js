@@ -1,11 +1,11 @@
 ﻿//USEUNIT CommonMethod
 //USEUNIT SessionLogPage
+//USEUNIT FRViewerPage
 
 /*This file contains methods and objects related to PDP Page*/
 var PDPContainerWorkspace=Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace
 var ultraGrid = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList.ugBaseGrid;
 var EventsList = Aliases.iQ_Plus.ShellForm.windowDockingArea3.dockableWindow1.PDPWorkspace.PDPContainer.PDPCTRtsctrPDPToolsContainer.ToolStripContentPanel.PDPContainerWorkspace.EventsList
-
 
 //This function is used to verify the Downloaded record in PDP
 function VerifyDownloadedRecord()
@@ -215,5 +215,49 @@ function GetRecordTriggerDateTime(PDPRowNo)
   {
     Log.Message("PDP window is not visible")
     return null
+  }
+}
+
+//This method is used to Export the record to CDF
+function ExportTOCDF(Path)
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    ultraGrid.ClickCellR(0, "Triggered Parameter Info")
+    LLPlayer.KeyDown(VK_DOWN,500)
+    LLPlayer.KeyDown(VK_RIGHT,1000)
+    LLPlayer.KeyDown(VK_RETURN,1000)
+    aqUtils.Delay(2000)//Added delay so that DFR record can be open in FRViewer
+    FRViewerPage.SaveToCDFFile(Path)
+    return true    
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return false
+  }
+}
+
+//This method is used to Export the record to CSV
+function ExportTOCSV()
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    ultraGrid.ClickCellR(0, "Triggered Parameter Info")
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_RETURN,1000)
+    aqUtils.Delay(2000)
+    Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.ClickItem("|Desktop|DFRRecord")
+    Aliases.iQ_Plus.dlgBrowseForFolder.btnOK.ClickButton()
+    return true
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return false
   }
 }
