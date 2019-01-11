@@ -225,13 +225,21 @@ function ConvertTimeIntoms(Timeinhhmmssms)
   if(Timeinhhmmssms!=null)
   {
     var Time= Timeinhhmmssms.OleValue.split(".")    
-    var Hours= aqDateTime.GetHours(Time[0])
-    var Minutes= aqDateTime.GetMinutes(Time[0])
-    var Seconds= aqDateTime.GetSeconds(Time[0])
-    var Milliseconds= Time[1]
+    if(Time.length > 1)
+    {
+      var Hours= aqDateTime.GetHours(Time[0])
+      var Minutes= aqDateTime.GetMinutes(Time[0])
+      var Seconds= aqDateTime.GetSeconds(Time[0])
+      var Milliseconds= Time[1]
    
-    TimeInms = (Hours*60*60*1000)+(Minutes*60*1000)+(Seconds*1000)+ aqConvert.StrToInt64(Milliseconds)
-    return TimeInms   
+      TimeInms = (Hours*60*60*1000)+(Minutes*60*1000)+(Seconds*1000)+ aqConvert.StrToInt64(Milliseconds)
+      return TimeInms   
+    }
+    else
+    {
+      Log.Message("Input Time is not in correct format")
+      return null
+    }
   }
   else
   {
@@ -240,27 +248,35 @@ function ConvertTimeIntoms(Timeinhhmmssms)
   }
 }
 
-//This method is used to convert DateTime from to milliseconds with reference to 01-01-1970 00:00:00.000
-function ConvertDateTimeIntoms(DateTimeinddmmyyyyhhmmssms)
+//This method is used to convert DateTime from to milliseconds with reference to 01-01-2000 00:00:00.000
+function ConvertDateTimeIntomsFrom2000(DateTimeinddmmyyyyhhmmssms)
 {
   var DateTimeFrmt
   if(DateTimeinddmmyyyyhhmmssms!=null)
   {
     var DateTime= DateTimeinddmmyyyyhhmmssms.split(".")
-    var TimeinmsFrom1970 = aqDateTime.TimeInterval(DateTime[0],"01/01/2000 00:00:00")
+    if(DateTime.length > 1)
+    {
+      var TimeinmsFrom2000 = aqDateTime.TimeInterval(DateTime[0],"01/01/2000 00:00:00")
     
-    var Date = aqDateTime.GetDay(TimeinmsFrom1970)    
-    var Hours= aqDateTime.GetHours(TimeinmsFrom1970)
-    var Minutes= aqDateTime.GetMinutes(TimeinmsFrom1970)
-    var Seconds= aqDateTime.GetSeconds(TimeinmsFrom1970)
-    var Milliseconds= DateTime[1]
+      var Day = aqDateTime.GetDay(TimeinmsFrom2000)    
+      var Hours= aqDateTime.GetHours(TimeinmsFrom2000)
+      var Minutes= aqDateTime.GetMinutes(TimeinmsFrom2000)
+      var Seconds= aqDateTime.GetSeconds(TimeinmsFrom2000)
+      var Milliseconds= DateTime[1]
     
-    TimeInms = (Date*24*60*60*1000)+(Hours*60*60*1000)+(Minutes*60*1000)+(Seconds*1000)+ aqConvert.StrToInt64(Milliseconds)
-    return TimeInms   
+      TimeInms = (Day*24*60*60*1000)+(Hours*60*60*1000)+(Minutes*60*1000)+(Seconds*1000)+ aqConvert.StrToInt64(Milliseconds)
+      return TimeInms 
+    }
+    else
+    {
+      Log.Message("Input DateTime is not in correct format")
+      return null
+    }  
   }
   else
   {
-    Log.Message("Input Time is null")
+    Log.Message("Input DateTime is null")
     return null
   }
 }
