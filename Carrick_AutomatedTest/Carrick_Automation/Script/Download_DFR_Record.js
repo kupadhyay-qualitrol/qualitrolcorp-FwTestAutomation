@@ -132,10 +132,27 @@ function Validate_RecordTime()
     AssertClass.CompareDecimalValues(aqConvert.StrToInt64(postfault),ActualPostFault,0,"Postfault calculated from PDP is :-"+ActualPostFault)
     
     //Step11. Export to CDF.
-    AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
-    
+    if (aqFileSystem.Exists(Project.ConfigPath+"DFRRecordResults"))
+    {
+      AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
+    }
+    else
+    {
+      aqFileSystem.CreateFolder(Project.ConfigPath+"DFRRecordResults")
+      AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
+    }    
     //Step12. Export to CSV
-    AssertClass.IsTrue(PDPPage.ExportTOCSV())
+    var SysUserName = Sys.OleObject("WScript.Network").UserName
+    if (aqFileSystem.Exists("C:\\Users\\"+SysUserName+"\\Desktop\\DFRRecord"))
+    {
+      AssertClass.IsTrue(PDPPage.ExportTOCSV())    
+    }
+    else
+    {
+      aqFileSystem.CreateFolder("C:\\Users\\"+SysUserName+"\\Desktop\\DFRRecord")
+      AssertClass.IsTrue(PDPPage.ExportTOCSV())
+    } 
+
     Log.Message("Pass:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
   }
   catch(ex)
