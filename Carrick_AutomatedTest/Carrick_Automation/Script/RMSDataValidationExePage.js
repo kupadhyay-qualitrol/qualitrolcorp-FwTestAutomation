@@ -1,9 +1,10 @@
 ﻿/* This script contains methods and objects related to RMS Validation Exe*/
 
-var Edtbx_FilePath = Aliases.RMSDataValidation.Form1.FilePathTextBox
-var Edtbx_Voltage = Aliases.RMSDataValidation.Form1.VoltageTextBox
-var Edtbx_Current = Aliases.RMSDataValidation.Form1.CurrentTextBox
-var Btn_Start = Aliases.RMSDataValidation.Form1.StartButton
+var Edtbx_FilePath = Aliases.RMSDataValidation.RMSDataValidation.FilePathTextBox
+var Edtbx_Voltage = Aliases.RMSDataValidation.RMSDataValidation.VoltageTextBox
+var Edtbx_Current = Aliases.RMSDataValidation.RMSDataValidation.CurrentTextBox
+var Btn_Start = Aliases.RMSDataValidation.RMSDataValidation.StartButton
+var lbl_Status = Aliases.RMSDataValidation.RMSDataValidation.ValidationResultLabel
 
 //This function is used to set Filepath in RMSValidation exe
 function SetFilePath(FilePathWithName)
@@ -82,11 +83,15 @@ function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedC
     aqUtils.Delay(2000) 
    }
    while(!Btn_Start.Enabled)
+   var status =lbl_Status.Text.OleValue
+   CloseRMSValidationApplication()
+   return status
  }
  else
  {
    Log.Message("Arguments is/are null")
-   return false
+   CloseRMSValidationApplication()
+   return null
  }
 }
 
@@ -114,5 +119,20 @@ function LaunchRMSValidationApplication()
   {
     Log.Message("Unable to launch application")
     return false
+  }
+}
+
+function CloseRMSValidationApplication()
+{
+  var proc =Sys.WaitProcess("RMSDataValidation",20000)
+  
+  if(proc.Exists)
+  {
+    proc.Terminate()
+    Log.Message("RMSValidation application terminated successfully")
+  }
+  else
+  {
+    Log.Message("RMSValidation application is not running")
   }
 }
