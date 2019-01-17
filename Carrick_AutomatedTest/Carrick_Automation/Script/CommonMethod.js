@@ -328,8 +328,3 @@ function KillProcess(Process)
    return false
  }
 }
-
-function Test()
-{
-  KillProcess("EXCEL")
-}
