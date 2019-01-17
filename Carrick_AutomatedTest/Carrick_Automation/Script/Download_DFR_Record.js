@@ -8,6 +8,7 @@
 //USEUNIT ConfigEditorPage
 //USEUNIT ConfigEditor_FaultRecordingPage
 //USEUNIT FavoritesPage
+//USEUNIT RMSDataValidationExePage
 
 
 //TC-Test to Download Manual DFR record
@@ -43,7 +44,7 @@ function DownloadManualDFR()
        //Step5. Set Start date time and End date time in IQ+
        TICPage.SetDeviceDateTime(NewDateTime)
        Log.Message("Start Date time and End date time is updated in IQ+")
-       
+       aqUtils.Delay(2000)
        //Step5.1 Click on All FR Record Default Favorites
        AssertClass.IsTrue(FavoritesPage.ClickOnAllFRTriggeredRecord(),"Clicked on All FR Triggered Record")
        aqUtils.Delay(3000)
@@ -91,21 +92,21 @@ function Validate_RecordTime()
     }
     
     //Step1. Retrieve Configuration
-    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig())
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
     //Step2. Click on Fault Recording
-    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording())
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
     
     //Step3. Set pre-fault for External Triggers
     var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
-    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault))
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefaul Time")
     
     //Step4. Set Post-fault time for External Triggers
     var postfault=CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime")
-    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault))
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault),"Validating Post Faulttime")
     
     //Step5. Send to Device
-    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice())
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
     //Step6. Download Manual DFR Record
     DownloadManualDFR()
@@ -116,7 +117,7 @@ function Validate_RecordTime()
     
     //Step8. Check Time Quality Status
     //Step8.1 Click on Device Status View
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Clicked on Device Status View")
     
     //Step8.2 Check Time Quality Staus Actual
     AssertClass.CompareString(DataRetrievalPage.TimeQualityStatusFromDeviceStatus(),PDPPage.GetTimeQualityStatus(0).ToString().OleValue,"Comparing Time Quality from Device Status and from DFR record in PDP.")
@@ -142,17 +143,26 @@ function Validate_RecordTime()
       AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
     }    
     //Step12. Export to CSV
-    var SysUserName = Sys.OleObject("WScript.Network").UserName
-    if (aqFileSystem.Exists("C:\\Users\\"+SysUserName+"\\Desktop\\DFRRecord"))
+    var SysUserName = CommonMethod.GetSystemUsername()
+    var DFRRecordPath ="C:\\Users\\"+SysUserName+"\\Desktop\\DFRRecord\\"
+    if (aqFileSystem.Exists(DFRRecordPath))
     {
       AssertClass.IsTrue(PDPPage.ExportTOCSV())    
     }
     else
     {
-      aqFileSystem.CreateFolder("C:\\Users\\"+SysUserName+"\\Desktop\\DFRRecord")
+      aqFileSystem.CreateFolder(DFRRecordPath)
       AssertClass.IsTrue(PDPPage.ExportTOCSV())
-    } 
-
+    }
+    AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process
+    
+    //Step 13. Validate RMS Data
+    AssertClass.IsTrue(RMSDataValidationExePage.LaunchRMSValidationApplication())
+    
+    var RMSValidationStatus= RMSDataValidationExePage.ValidateRMSData(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedVoltage"),CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedCurrent"))
+    
+    AssertClass.IsTrue(aqFile.Move(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,Project.ConfigPath+"DFRRecordResults"),"Moving CSV file to Project Folder")//Move the file to the Project path folder
+    AssertClass.CompareString("FAIL", RMSValidationStatus,"Checking RMS Validation" )    
     Log.Message("Pass:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
   }
   catch(ex)
