@@ -103,14 +103,14 @@
             // 
             this.ValidationResultLabel.AutoSize = true;
             this.ValidationResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValidationResultLabel.Location = new System.Drawing.Point(527, 116);
+            this.ValidationResultLabel.Location = new System.Drawing.Point(505, 116);
             this.ValidationResultLabel.Name = "ValidationResultLabel";
-            this.ValidationResultLabel.Size = new System.Drawing.Size(40, 20);
+            this.ValidationResultLabel.Size = new System.Drawing.Size(62, 20);
             this.ValidationResultLabel.TabIndex = 7;
-            this.ValidationResultLabel.Text = "test";
+            this.ValidationResultLabel.Text = "Status";
             this.ValidationResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // Form1
+            // RMSDataValidation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,7 +125,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "RMSDataValidation";
             this.Text = "RMS Validator";
             this.ResumeLayout(false);
             this.PerformLayout();

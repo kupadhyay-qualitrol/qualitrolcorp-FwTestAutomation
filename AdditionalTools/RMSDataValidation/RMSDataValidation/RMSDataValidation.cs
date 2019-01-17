@@ -17,12 +17,12 @@ namespace RMSDataValidation
         {
             InitializeComponent();
             StartButton.Enabled = false;
-            ValidationResultLabel.Text = string.Empty;
+            //ValidationResultLabel.Text = string.Empty;
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            ValidationResultLabel.Text = string.Empty;
+           // ValidationResultLabel.Text = string.Empty;
 
             ChangeState(false);
 

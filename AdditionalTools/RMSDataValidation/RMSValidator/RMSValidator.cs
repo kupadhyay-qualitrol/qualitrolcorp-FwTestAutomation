@@ -91,9 +91,9 @@ namespace RMSValidator
 
                 int channelNumber = 1;
 
-                for (int counter = 0; counter < channelNames.Count(); counter++)
+                for (int counter = 0; counter < channelType.Count(); counter++)
                 {
-                    if (channelNames[counter] != "Sample" && channelNames[counter] != "TimeStamps" && !string.IsNullOrEmpty(channelNames[counter]))
+                    if (channelNames[counter] != "Sample" && channelNames[counter] != "TimeStamps" && !string.IsNullOrEmpty(channelNames[counter]) && !string.IsNullOrEmpty(channelType[counter]))
                     {
                         usedIndexs.Add(counter);
                         _analogData.Columns.Add("Channel" + channelNumber, typeof(float));
