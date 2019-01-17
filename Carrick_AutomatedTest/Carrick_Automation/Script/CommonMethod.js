@@ -302,8 +302,7 @@ function GetSystemUsername()
 
 //This function is used to kill the process if it exists
 function KillProcess(Process)
-{
- 
+{ 
  if(Process!=null)
  {
    while(Sys.WaitProcess(Process,5000).Exists)
@@ -311,15 +310,6 @@ function KillProcess(Process)
      Sys.WaitProcess(Process,5000).Terminate()
      aqUtils.Delay(500)
    }
-//   if (proc.Exists)
-//   {
-//     proc.Terminate()
-//     Log.Message("Killed all process named as:- "+Process)
-//   }
-//   else
-//   {
-//     Log.Message("Process doesn't exist")
-//   }
    return true
  }
  else
