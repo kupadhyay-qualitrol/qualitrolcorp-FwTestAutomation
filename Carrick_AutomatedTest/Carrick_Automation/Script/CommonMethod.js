@@ -303,23 +303,33 @@ function GetSystemUsername()
 //This function is used to kill the process if it exists
 function KillProcess(Process)
 {
- var proc =Sys.WaitProcess(Process,20000)
- if(proc!=null)
+ 
+ if(Process!=null)
  {
-   if (proc.Exists)
+   while(Sys.WaitProcess(Process,5000).Exists)
    {
-     proc.Terminate()
-     Log.Message("Killed all process named as:- "+Process)
+     Sys.WaitProcess(Process,5000).Terminate()
+     aqUtils.Delay(500)
    }
-   else
-   {
-     Log.Message("Process doesn't exist")
-   }
+//   if (proc.Exists)
+//   {
+//     proc.Terminate()
+//     Log.Message("Killed all process named as:- "+Process)
+//   }
+//   else
+//   {
+//     Log.Message("Process doesn't exist")
+//   }
    return true
  }
  else
  {
-   Log.Message("Unable to create Oleobject")
+   Log.Message("Process input is empty")
    return false
  }
+}
+
+function Test()
+{
+  KillProcess("EXCEL")
 }
