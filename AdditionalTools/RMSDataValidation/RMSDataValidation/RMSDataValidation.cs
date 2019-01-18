@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RMSDataValidation
@@ -17,13 +9,10 @@ namespace RMSDataValidation
         {
             InitializeComponent();
             StartButton.Enabled = false;
-            //ValidationResultLabel.Text = string.Empty;
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-           // ValidationResultLabel.Text = string.Empty;
-
             ChangeState(false);
 
             string filePath = FilePathTextBox.Text.ToString();
