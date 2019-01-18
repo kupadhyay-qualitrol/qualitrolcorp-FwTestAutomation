@@ -162,7 +162,7 @@ function Validate_RecordTime()
     var RMSValidationStatus= RMSDataValidationExePage.ValidateRMSData(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedVoltage"),CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedCurrent"))
     
     AssertClass.IsTrue(aqFile.Move(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,Project.ConfigPath+"DFRRecordResults"),"Moving CSV file to Project Folder")//Move the file to the Project path folder
-    AssertClass.CompareString("FAIL", RMSValidationStatus,"Checking RMS Validation" )    
+    AssertClass.CompareString("PASS", RMSValidationStatus,"Checking RMS Validation" )    
     Log.Message("Pass:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
   }
   catch(ex)
