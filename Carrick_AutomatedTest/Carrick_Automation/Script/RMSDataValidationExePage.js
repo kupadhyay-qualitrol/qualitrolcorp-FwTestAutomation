@@ -98,6 +98,7 @@ function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedC
 function LaunchRMSValidationApplication()
 {
   //Launch RMSValidation application.
+  TestedApps.RMSDataValidation.Path= Project.ConfigPath+"\\ThirdParty\\"
   if(TestedApps.RMSDataValidation.Run())
   {
     do
