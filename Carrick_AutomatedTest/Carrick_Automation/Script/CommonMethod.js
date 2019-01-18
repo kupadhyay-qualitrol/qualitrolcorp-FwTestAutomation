@@ -82,6 +82,8 @@ function ReadDataFromExcel(FileName,DataHead)
       }
     }
     var returnValue = Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
+    Excel.ActiveWorkbook.Close()
+    Excel =null
     return returnValue;
 }
 
@@ -279,4 +281,40 @@ function ConvertDateTimeIntomsFrom2000(DateTimeinddmmyyyyhhmmssms)
     Log.Message("Input DateTime is null")
     return null
   }
+}
+
+//This function is used to get the Username of the System
+function GetSystemUsername()
+{
+  var NetworkObject = Sys.OleObject("WScript.Network")
+  
+  if (NetworkObject!=null)
+  {
+    Log.Message("System Username is :-"+ NetworkObject.UserName)  
+    return NetworkObject.UserName  
+  }
+  else
+  {
+    Log.Message("Unable to get Network Object")
+    return null
+  }
+}
+
+//This function is used to kill the process if it exists
+function KillProcess(Process)
+{ 
+ if(Process!=null)
+ {
+   while(Sys.WaitProcess(Process,5000).Exists)
+   {
+     Sys.WaitProcess(Process,5000).Terminate()
+     aqUtils.Delay(500)
+   }
+   return true
+ }
+ else
+ {
+   Log.Message("Process input is empty")
+   return false
+ }
 }

@@ -64,6 +64,9 @@
 		<child name="FRViewerPage" key="{E1380228-DDF0-44CB-BC31-A93D81675EEF}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="FRViewerPage.js" />
 		</child>
+		<child name="RMSDataValidationExePage" key="{29E26F74-67F9-463C-8252-E638E45B6D66}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="RMSDataValidationExePage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -91,6 +94,7 @@
 				<ref key="{32BE397E-2D05-413F-B39A-3C6BA908B8CA}" />
 				<ref key="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}" />
 				<ref key="{E1380228-DDF0-44CB-BC31-A93D81675EEF}" />
+				<ref key="{29E26F74-67F9-463C-8252-E638E45B6D66}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
