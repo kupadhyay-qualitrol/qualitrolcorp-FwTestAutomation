@@ -8,7 +8,7 @@ function ClickOnAllFRTriggeredRecord()
 {
   if(Topology_DefaultFavorites.Exists)
   {
-    Topology_DefaultFavorites.ClickItem("Default Favorites", "All FR triggered records (DFR, DDR-C, DDR-T, DDR-L)")
+    Topology_DefaultFavorites.ClickItem("Default Favorites", "All FR triggered records (DFR, DDR-C, DDR-T*")
     Log.Message("Clicked on All FR Triggered Record in Favorites")
     return true
     //TODO Need to further fine tune this code to handle condition
