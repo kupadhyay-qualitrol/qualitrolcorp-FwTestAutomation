@@ -318,3 +318,27 @@ function KillProcess(Process)
    return false
  }
 }
+
+//This function is used to check if application is running/not
+function IsExist(AppProcess)
+{
+  if(AppProcess!=null)
+  {
+    var Application=Sys.WaitProcess(AppProcess)
+    if (Application.Exists)
+    {
+      Log.Message("Application is running")
+      return true   
+    }
+    else
+    {
+      Log.Message("Application is not running") 
+      return false
+    }
+  }
+  else
+  {
+    Log.Message("Input is null")
+    return false
+  }
+}
