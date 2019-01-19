@@ -891,6 +891,26 @@
 																											</Child>
 																										</Children>
 																									</Child>
+																									<Child Name="ucValidation" Key="{7A6B2DEC-9196-49C4-9B69-40BDE52E4372}" ParallelWalk="True">
+																										<Image FileName="1499279805" Left="197" Top="81" Right="1020" Bottom="562" />
+																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ucValidation" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="lstErrors" Key="{3D6843DB-450B-4722-B094-C470CAFC1778}" ParallelWalk="True">
+																												<Image FileName="1499279805" Left="197" Top="118" Right="1020" Bottom="562" />
+																												<TypeInfo Item0="{810CFB4D-0F40-4382-AA79-CD5CA003822A}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="lstErrors" Type="5" />
+																													</Property>
+																												</Properties>
+																											</Child>
+																										</Children>
+																									</Child>
 																								</Children>
 																							</Child>
 																						</Children>
@@ -2063,6 +2083,9 @@
 														<Child Name="lblMaxDFRUnits" Owner="{40F8B4FD-91EC-4B49-9FF7-272FD0820E68}" />
 														<Child Name="txtMaxDFRDuration" Owner="{05C5E755-90F0-4586-8E3E-C5389A8F72C2}" />
 													</Child>
+												</Child>
+												<Child Name="ucValidation" Owner="{7A6B2DEC-9196-49C4-9B69-40BDE52E4372}">
+													<Child Name="lstErrors" Owner="{3D6843DB-450B-4722-B094-C470CAFC1778}" />
 												</Child>
 											</Child>
 										</Child>
