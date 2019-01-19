@@ -88,6 +88,10 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="3" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
+								<testParameters />
+								<children />
+							</testItem>
 						</children>
 					</testItem>
 				</children>
