@@ -115,3 +115,43 @@ function GetMaxDFRUnit()
   }
 }
 
+//This method is used to set the Max DFR value
+function SetMaxDFR(MaxDFRValue)
+{
+  //Click on Fault Recording in Config Editor
+  if(ConfigEditorPage.ClickOnFaultRecording())
+  {  
+    Edtbx_MaxDFR.Value= MaxDFRValue
+    if(GetMaxDFR()==MaxDFRValue)
+    {
+      Log.Message("Successfully sets the Max DFR Value")
+      return true
+    }
+    else
+    {
+      Log.Message("Not able to set Max DFR Value")
+      return false
+    }
+  }
+  else
+  {
+    Log.Picture(Item_ConfigurationEditor,"Sanpshot for debug")
+    return false
+  }
+}
+
+//This method is used to get the MaxDFR Value
+function GetMaxDFR()
+{
+    //Click on Fault Recording in Config Editor
+  if(Edtbx_MaxDFR.Exists)
+  {  
+    return Edtbx_MaxDFR.Text.OleValue
+  }
+  else
+  {
+    Log.Picture(Item_ConfigurationEditor,"Sanpshot for debug")
+    return null
+  }
+}
+
