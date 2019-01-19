@@ -860,6 +860,33 @@
 																															</Child>
 																														</Children>
 																													</Child>
+																													<Child Name="lblMaxDurationDFR" Key="{F1DFF989-215B-4E67-AE3E-EF7B31B0607D}" ParallelWalk="True">
+																														<Image FileName="2019832568" Left="203" Top="473" Right="360" Bottom="494" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="lblMaxDurationDFR" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																													<Child Name="lblMaxDFRUnits" Key="{40F8B4FD-91EC-4B49-9FF7-272FD0820E68}" ParallelWalk="True">
+																														<Image FileName="2019832568" Left="464" Top="473" Right="533" Bottom="495" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="lblMaxDFRUnits" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																													<Child Name="txtMaxDFRDuration" Key="{05C5E755-90F0-4586-8E3E-C5389A8F72C2}" ParallelWalk="True">
+																														<Image FileName="2019832568" Left="373" Top="472" Right="458" Bottom="493" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="txtMaxDFRDuration" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
 																												</Children>
 																											</Child>
 																										</Children>
@@ -2032,6 +2059,9 @@
 														<Child Name="frmExternalTriggers" Owner="{E4D9D172-950D-459A-888B-454DFA252B26}">
 															<Child Name="txtPostfault" Owner="{ADE68F55-C1D1-41CF-B50B-3CAC78BCBBAF}" />
 														</Child>
+														<Child Name="lblMaxDurationDFR" Owner="{F1DFF989-215B-4E67-AE3E-EF7B31B0607D}" />
+														<Child Name="lblMaxDFRUnits" Owner="{40F8B4FD-91EC-4B49-9FF7-272FD0820E68}" />
+														<Child Name="txtMaxDFRDuration" Owner="{05C5E755-90F0-4586-8E3E-C5389A8F72C2}" />
 													</Child>
 												</Child>
 											</Child>
