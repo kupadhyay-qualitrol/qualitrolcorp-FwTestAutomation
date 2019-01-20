@@ -19,13 +19,11 @@ function ClickSendToDevice()
   {
     Btn_SendToDevice.Click()
     Log.Message("Clicked on Send to Device button")
-    do
+    if(Btn_Popup_Warning.Exists)
     {
-      aqUtils.Delay(1000)
-    }
-    while(!Btn_Popup_Warning.Exists)
-    Btn_Popup_Warning.ClickButton()
-    CommonMethod.CheckActivityLog("Configuration assigned successfully to device")
+      Btn_Popup_Warning.ClickButton()
+      CommonMethod.CheckActivityLog("Configuration assigned successfully to device")
+    }    
     return true
   }
   else
@@ -59,6 +57,10 @@ function ClickOnClose()
   {
     Btn_Close.Click()
     Log.Message("Clicked on Close button")
+    if(Btn_Popup_Warning.Exists)
+    {
+      Btn_Popup_Warning.ClickButton()
+    }
     return true
   }
   else
@@ -80,6 +82,22 @@ function ClickOnFaultRecording()
   else
   {
     Log.Message("Unable to click on Fault Recording")
+    return false
+  }
+}
+
+//This method is used to Click on Finish Page
+function ClickOnFinish()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Finish")
+    Log.Message("Clicked on Finish")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to click on Finish")
     return false
   }
 }
