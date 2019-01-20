@@ -96,6 +96,10 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
+								<testParameters />
+								<children />
+							</testItem>
 						</children>
 					</testItem>
 				</children>
