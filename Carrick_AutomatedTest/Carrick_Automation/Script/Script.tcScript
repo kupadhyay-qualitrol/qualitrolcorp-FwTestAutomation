@@ -69,6 +69,9 @@
 		</child>
 		<child name="Max_DFR_TestCases" key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="Max_DFR_TestCases.js" />
+		</child>	
+		<child name="OmicronQuickCMCPage" key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="OmicronQuickCMCPage.js" />
 		</child>
 		<child name="ConfigEditor_FinishPage" key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="ConfigEditor_FinishPage.js" />
@@ -103,6 +106,7 @@
 				<ref key="{E1380228-DDF0-44CB-BC31-A93D81675EEF}" />
 				<ref key="{29E26F74-67F9-463C-8252-E638E45B6D66}" />
 				<ref key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" />
+				<ref key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
