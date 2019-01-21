@@ -9,6 +9,7 @@
 //USEUNIT ConfigEditor_FaultRecordingPage
 //USEUNIT FavoritesPage
 //USEUNIT RMSDataValidationExePage
+//USEUNIT OmicronQuickCMCPage
 
 
 //TC-Test to Download Manual DFR record
@@ -80,6 +81,8 @@ function Validate_RecordTime()
   {
     Log.Message("Start:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
     var DataSheetName = Project.ConfigPath +"TestData\\SmokeTestData.xlsx"
+    //Step0.1 Start Omicron Injection
+    OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(DataSheetName,"OmicronFile"))
     //Step0.Check whether device exists or not in the topology.    
     if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
     {
@@ -169,5 +172,9 @@ function Validate_RecordTime()
   {
     Log.Message(ex.message)
     Log.Error("Error:-Test to Validate Prefault,Post fault time and record length in the DFR record.")  
+  }
+  finally
+  {
+    AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Close Quick CMC Application")
   }
 }
