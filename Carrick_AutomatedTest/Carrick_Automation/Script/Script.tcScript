@@ -67,6 +67,9 @@
 		<child name="RMSDataValidationExePage" key="{29E26F74-67F9-463C-8252-E638E45B6D66}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="RMSDataValidationExePage.js" />
 		</child>
+		<child name="Max_DFR_TestCases" key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Max_DFR_TestCases.js" />
+		</child>	
 		<child name="OmicronQuickCMCPage" key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="OmicronQuickCMCPage.js" />
 		</child>
@@ -81,6 +84,7 @@
 				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
 				<ref key="{7203FC4B-789C-49BC-B57E-625C7E067244}" />
+				<ref key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">

@@ -77,6 +77,19 @@
 							</testItem>
 						</children>
 					</testItem>
+					<testItem name="MaxDFR" key="{22AD86D0-6BC7-492C-B5A7-DCD998391FDE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="Login" key="{D0E051E5-3D5E-423F-B131-C0CF3A7DF657}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="CAM-727" key="{2BA887D3-A6DF-471B-8103-AE959C1DA118}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_727" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
 				</children>
 			</testItem>
 			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">

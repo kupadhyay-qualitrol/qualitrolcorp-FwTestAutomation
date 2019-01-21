@@ -62,7 +62,13 @@ function CloseQuickCMC()
   {
     QuickCMC.Close() 
     Log.Message("Terminated Quick CMC Application")
-  }  
+    return true
+  }
+  else
+  {
+    Log.Message("Quick CMC Application doesn't exists")  
+    return false
+  }
 }
 
 //This function is used to Open the Test Data File
