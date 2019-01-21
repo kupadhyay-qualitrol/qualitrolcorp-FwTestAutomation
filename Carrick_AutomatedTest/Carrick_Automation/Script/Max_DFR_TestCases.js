@@ -47,6 +47,9 @@ function CAM_727()
     //Step6. Check Max DFR Editbox exist on UI.
     AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.Edtbx_MaxDFR.Exists,"Checking Editbox exists on UI")
     Log.Message("Pass:-Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length")
+    
+    //Step7.Close Config Editor
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close in Config Editor")
   }
   catch(ex)
   {
