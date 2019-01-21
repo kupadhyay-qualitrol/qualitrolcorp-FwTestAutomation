@@ -6,7 +6,7 @@ var Topology_DefaultFavorites =Aliases.iQ_Plus.ShellForm.windowDockingArea2.dock
 //This function is used to click on All FR Trigger Favorites
 function ClickOnAllFRTriggeredRecord()
 {
-  if(Topology_DefaultFavorites.Exists)
+  if(Topology_DefaultFavorites.Visible)
   {
     Topology_DefaultFavorites.ClickItem("Default Favorites", "All FR triggered records (DFR, DDR-C, DDR-T*")
     Log.Message("Clicked on All FR Triggered Record in Favorites")
