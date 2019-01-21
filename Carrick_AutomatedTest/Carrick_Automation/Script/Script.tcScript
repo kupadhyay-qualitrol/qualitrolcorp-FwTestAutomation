@@ -73,6 +73,9 @@
 		<child name="OmicronQuickCMCPage" key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="OmicronQuickCMCPage.js" />
 		</child>
+		<child name="ConfigEditor_FinishPage" key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_FinishPage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -102,6 +105,7 @@
 				<ref key="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}" />
 				<ref key="{E1380228-DDF0-44CB-BC31-A93D81675EEF}" />
 				<ref key="{29E26F74-67F9-463C-8252-E638E45B6D66}" />
+				<ref key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" />
 				<ref key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" />
 			</references>
 		</folder>
