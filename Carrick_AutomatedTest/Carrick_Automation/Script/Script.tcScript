@@ -69,24 +69,24 @@
 		</child>
 		<child name="Max_DFR_TestCases" key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="Max_DFR_TestCases.js" />
-		</child>	
+		</child>
 		<child name="OmicronQuickCMCPage" key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="OmicronQuickCMCPage.js" />
 		</child>
 		<child name="ConfigEditor_FinishPage" key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="ConfigEditor_FinishPage.js" />
 		</child>
+		<child name="DFR_Methods" key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DFR_Methods.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
 			<references>
 				<ref key="{C39EC05D-002A-4639-BEE0-C21A5FFC8D0C}" />
-				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
-				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 				<ref key="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}" />
 				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
-				<ref key="{7203FC4B-789C-49BC-B57E-625C7E067244}" />
 				<ref key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" />
 			</references>
 		</folder>
@@ -113,6 +113,14 @@
 			<references>
 				<ref key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" />
 				<ref key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" />
+			</references>
+		</folder>
+		<folder caption="Functional_Methods" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" />
+				<ref key="{7203FC4B-789C-49BC-B57E-625C7E067244}" />
+				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
+				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
 			</references>
 		</folder>
 	</folders>
