@@ -254,14 +254,26 @@ function ClickOnDownloadDataNow()
 //This method is used to get TimeSync status from Device Status
 function TimeQualityStatusFromDeviceStatus()
 {
-  var TimeQuality ="clock "
+  var TimeQuality ="TIMESYNC = "
   if(DeviceStatusView.Exists)
   {
     Log.Message("Device Status View is visible and exists")
     var ClockKeywordPos = aqString.Find(DeviceStatusView.text.OleValue,TimeQuality)
     
-    var Status = aqString.SubString(DeviceStatusView.text.OleValue, aqConvert.StrToInt(ClockKeywordPos)+5,10)
-    Status = aqString.Trim(Status)
+    var Status = aqString.SubString(DeviceStatusView.text.OleValue, aqConvert.StrToInt(ClockKeywordPos)+10,50)
+
+    if(aqString.Find(Status,"unlocked")!=-1)
+    {
+      Status = "unlocked"
+    }
+    else if (aqString.Find(Status,"locked")!=-1)
+    {
+      Status ="locked"
+    }
+    else
+    {
+      Status =null
+    }
     return Status
   }
   else
