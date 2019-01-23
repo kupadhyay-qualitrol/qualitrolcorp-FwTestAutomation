@@ -44,33 +44,35 @@ function TriggerManualDFR()
 }
 
 function DownloadManualDFR()
-{
+{   
+    //Step 1. Click on DFR Directory
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
     var REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
+    //Step2. Click on Download Data Now
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data Now")
     CommonMethod.CheckActivityLog("DFR records saved successfully for device")
-  
+    //Step3. Click on Close DFR Directory
     DataRetrievalPage.CloseDFRDirectory() 
     Log.Message("DFR data download")
   
-    //Step3. Click on device Status view option
+    //Step4. Click on device Status view option
     DataRetrievalPage.ClickOnDeviceStatusView()
     Log.Message("Device Status window is open")
        
-    //Step4. Get the Current Date time from the device
+    //Step5. Get the Current Date time from the device
     var NewDateTime=DataRetrievalPage.GetDeviceCurrentDateTime()
     Log.Message("Stores the Device Current date and time")
       
-    //Step5. Set Start date time and End date time in IQ+
+    //Step6. Set Start date time and End date time in IQ+
     TICPage.SetDeviceDateTime(NewDateTime)
     Log.Message("Start Date time and End date time is updated in IQ+")
     aqUtils.Delay(2000)
     
-    //Step5.1 Click on All FR Record Default Favorites
+    //Step7. Click on All FR Record Default Favorites
     AssertClass.IsTrue(FavoritesPage.ClickOnAllFRTriggeredRecord(),"Clicked on All FR Triggered Record")
     aqUtils.Delay(3000)
     
-    //Step6. Verify downloaded record on PDP
+    //Step8. Verify downloaded record on PDP
     REC=PDPPage.VerifyDownloadedRecord()
     if(REC==REC_DFR)
     {
