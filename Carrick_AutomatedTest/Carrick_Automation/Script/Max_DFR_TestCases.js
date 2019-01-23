@@ -307,12 +307,8 @@ function CAM_686_687_688()
     //Step9. Check Record Length
     var RecordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
     
-    if(aqConvert.StrToInt64(Prefault)+aqConvert.StrToInt64(PostFault)<aqConvert.StrToInt64(MaxDFRLength))
+    if(aqConvert.StrToInt64(Prefault)+aqConvert.StrToInt64(PostFault)<=aqConvert.StrToInt64(MaxDFRLength))
     {    
-      AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ActualPrefault)+aqConvert.StrToInt64(ActualPostFault),aqConvert.StrToInt64(RecordLength),1,"Validating Record Duration.")
-    }
-    else if(aqConvert.StrToInt64(Prefault)+aqConvert.StrToInt64(PostFault)==aqConvert.StrToInt64(MaxDFRLength))
-    {
       AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ActualPrefault)+aqConvert.StrToInt64(ActualPostFault),aqConvert.StrToInt64(RecordLength),1,"Validating Record Duration.")
     }
     else
