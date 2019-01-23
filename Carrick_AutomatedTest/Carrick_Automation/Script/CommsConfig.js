@@ -36,7 +36,10 @@ function Test_SaveToDB_Prefault()
       AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
       //Step5. Change Pre-fault Time.
       ConfigEditor_FaultRecordingPage.SetPrefault(CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
-    
+      
+      //Step5.1 Set Max DFR
+      ConfigEditor_FaultRecordingPage.SetMaxDFR(CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR"))
+      
       //Step6. Save to DB
       ConfigEditorPage.ClickSaveToDb()
     
@@ -97,6 +100,9 @@ function Test_SendToDevice_Prefault()
       AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config") 
       //Step5. Change Pre-fault Time
       ConfigEditor_FaultRecordingPage.SetPrefault(CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"))
+      
+      //Step 5.1 Set Max DFR
+      ConfigEditor_FaultRecordingPage.SetMaxDFR(CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR"))
       
       //Step6. Send to Device
       ConfigEditorPage.ClickSendToDevice()

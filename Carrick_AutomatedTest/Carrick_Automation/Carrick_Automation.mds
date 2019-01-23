@@ -80,7 +80,7 @@
 					<testItem name="MaxDFR" key="{22AD86D0-6BC7-492C-B5A7-DCD998391FDE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Login" key="{D0E051E5-3D5E-423F-B131-C0CF3A7DF657}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Login" key="{D0E051E5-3D5E-423F-B131-C0CF3A7DF657}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
 								<testParameters />
 								<children />
 							</testItem>
@@ -92,11 +92,19 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="2" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
+							<testItem name="Close iQ_Plus" key="{DC22F493-4F64-4B36-8D1E-81D17E1B9F6B}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
 								<testParameters />
 								<children />
 							</testItem>
