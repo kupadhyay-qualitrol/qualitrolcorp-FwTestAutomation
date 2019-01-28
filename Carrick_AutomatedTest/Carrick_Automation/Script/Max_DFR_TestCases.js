@@ -323,3 +323,131 @@ function CAM_686_687_688()
     Log.Error("Fail:-Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length")
   }
 }
+
+/*
+CAM-725 Test to check that user tries to input DFR record length value less/greater than minimum/maximum value
+PreCondition- iQ+ is launched already
+*/
+function CAM_725()
+{
+  try
+  {
+    Log.Message("Started TC:-Test to check that user tries to input DFR record length value less/greater than minimum/maximum value")
+    var DataSheetName = Project.ConfigPath +"TestData\\MaxDFRValidation.xlsx";
+    
+    //Step1.: Check if iQ-Plus is running or not.
+    AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
+    
+    //Step2.Check whether device exists or not in the topology.    
+    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
+    {
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
+    
+    //Step3. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+    //Step4. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step5. Check the Max DFR Value
+   // AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetMaxDFR(),MaxDFRLength,"Checking Max DFR value")
+    var MaxDFR = ConfigEditor_FaultRecordingPage.GetMaxDFR();
+    Log.Message("Max DFR value is" + MaxDFR);
+    
+    //Step6. //Enter MaxDFR_Min
+    var MaxDFR_Min = CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR_Min")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR_Min),"Setting and checking Max DFR")
+    
+    //Step7. Save to DB
+    AssertClass.IsTrue(ConfigEditorPage.ClickSaveToDb(),"Clicked on Save to DB")
+    
+    //Step8. Click on Modify Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonModifyConfig(),"Clicked on Modify Config")
+    
+    //Step9. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step10. Check the Max DFR Value
+    AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetMaxDFR(),MaxDFR_Min,"Checking Max DFR value")
+    var MaxDFR = ConfigEditor_FaultRecordingPage.GetMaxDFR();
+    
+    //Step11. Check Max DFR value
+    if (MaxDFR!=MaxDFR_Min)
+    {
+      Log.Message("Pass:- MaxDFRLength should be minimum 500")
+    }
+    else
+    {
+      Log.Error("Fail:- MaxDFRLength would not set to value less than 500")
+    }
+    //Step12. //Enter MaxDFR_Max
+    var MaxDFR_Max =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR_Max")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR_Max),"Setting and checking Max DFR")
+    
+    //Step13. Save to DB
+    AssertClass.IsTrue(ConfigEditorPage.ClickSaveToDb(),"Clicked on Save to DB")
+    
+    //Step14. Click on Modify Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonModifyConfig(),"Clicked on Modify Config")
+    
+    //Step15. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step16. Check the Max DFR Value
+    AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetMaxDFR(),MaxDFR_Max,"Checking Max DFR value")
+    var MaxDFR = ConfigEditor_FaultRecordingPage.GetMaxDFR();
+    
+    //Step17. Check Max DFR value
+    if (MaxDFR!=MaxDFR_Max)
+    {
+      Log.Message("Pass:- MaxDFRLength should be minimum 500")
+    }
+    else
+    {
+      Log.Error("Fail:- MaxDFRLength would not set to value less than 500")
+    }
+    //Step18. //Enter MaxDFR_Min
+    var MaxDFR_Mid =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR_Mid")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR_Mid),"Setting and checking Max DFR")
+    
+    //Step19. Save to DB
+    AssertClass.IsTrue(ConfigEditorPage.ClickSaveToDb(),"Clicked on Save to DB")
+    
+    //Step20. Click on Modify Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonModifyConfig(),"Clicked on Modify Config")
+    
+    //Step21. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step22. Check the Max DFR Value
+    AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetMaxDFR(),MaxDFR_Mid,"Checking Max DFR value")
+    var MaxDFR = ConfigEditor_FaultRecordingPage.GetMaxDFR();
+    
+    //Step23. Check Max DFR value
+    if (MaxDFR=MaxDFR_Mid)
+    {
+      Log.Message("Pass:- MaxDFRLength should be minimum 500")
+    }
+    else
+    {
+      Log.Error("Fail:- MaxDFRLength would not set to value less than 500")
+    }
+  
+    Log.Message("Pass:-Test to check that user tries to input DFR record length value less/greater than minimum/maximum value")
+  }
+  catch(ex)
+  {
+    Log.Error(ex.stack)
+    Log.Error("Fail:-Test to check that user tries to input DFR record length value less/greater than minimum/maximum value")
+  }
+  finally
+  {
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close in Config Editor")
+  }
+}
