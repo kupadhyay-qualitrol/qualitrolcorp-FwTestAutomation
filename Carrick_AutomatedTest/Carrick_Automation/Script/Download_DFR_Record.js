@@ -1,6 +1,5 @@
 ﻿//USEUNIT CommonMethod
 //USEUNIT DataRetrievalPage
-//USEUNIT Trigger_ManualDFR
 //USEUNIT PDPPage
 //USEUNIT DeviceManagementPage
 //USEUNIT TICPage
@@ -10,6 +9,8 @@
 //USEUNIT FavoritesPage
 //USEUNIT RMSDataValidationExePage
 //USEUNIT OmicronQuickCMCPage
+//USEUNIT DFR_Methods
+//USEUNIT DeviceTopologyPage
 
 
 //TC-Test to Download Manual DFR record
@@ -45,7 +46,10 @@ function DownloadManualDFR()
        //Step5. Set Start date time and End date time in IQ+
        TICPage.SetDeviceDateTime(NewDateTime)
        Log.Message("Start Date time and End date time is updated in IQ+")
-       aqUtils.Delay(2000)
+       
+       //Step6.1 Set EndDateTime
+      TICPage.SetTICEndDateTime(TICPage.GetTICEndDateTime(),1,0) //Set the EndDate Time with offsetof +1 month and 0 days
+      aqUtils.Delay(2000)
        //Step5.1 Click on All FR Record Default Favorites
        AssertClass.IsTrue(FavoritesPage.ClickOnAllFRTriggeredRecord(),"Clicked on All FR Triggered Record")
        aqUtils.Delay(3000)
@@ -111,8 +115,11 @@ function Validate_RecordTime()
     //Step5. Send to Device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
-    //Step6. Download Manual DFR Record
-    DownloadManualDFR()
+    //Step6. Trigger & Download Manual DFR Record
+    DFR_Methods.TriggerManualDFR()
+    
+    //Step6.1 
+    DFR_Methods.DownloadManualDFR()
     
     //Step7. Check Record Length
     var RecordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
@@ -170,7 +177,7 @@ function Validate_RecordTime()
   }
   catch(ex)
   {
-    Log.Message(ex.message)
+    Log.Message(ex.stack)
     Log.Error("Error:-Test to Validate Prefault,Post fault time and record length in the DFR record.")  
   }
   finally
