@@ -333,7 +333,7 @@ function CAM_725()
   try
   {
     Log.Message("Started TC:-Test to check that user tries to input DFR record length value less/greater than minimum/maximum value")
-    var DataSheetName = Project.ConfigPath +"TestData\\MaxDFRValidation.xlsx";
+    var DataSheetName = Project.ConfigPath +"TestData\\CAM_725.xlsx";
     
     //Step1.: Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
