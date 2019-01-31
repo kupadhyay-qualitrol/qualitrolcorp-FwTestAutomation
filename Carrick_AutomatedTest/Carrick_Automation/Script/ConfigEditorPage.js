@@ -101,3 +101,19 @@ function ClickOnFinish()
     return false
   }
 }
+
+//This method is used to Click on Time Management
+function ClickOnTimeManagement()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Time Management")
+    Log.Message("Clicked on Time Management")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to click on Time Management")
+    return false
+  }
+}
