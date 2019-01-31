@@ -6,7 +6,7 @@
 function IsTrue(Actual,LogMessage)
 {
   if(Actual !="")
-  {
+ {
     if(Actual==true)
     {
       Log.Message("Actual Value is :- "+Actual+".Message:- "+LogMessage)    
@@ -15,7 +15,7 @@ function IsTrue(Actual,LogMessage)
     {
       throw ("Results didn't match.Actual Value is :- "+Actual+".Message:- "+LogMessage)
     }
-  }
+ }
   else
   {
     throw ("Actual value is null")
@@ -25,8 +25,8 @@ function IsTrue(Actual,LogMessage)
 //This method is used to compare Actual boolean values.
 function IsFalse(Actual,LogMessage)
 {
-  if(Actual !="")
-  {
+//  if(Actual !="")
+//  {
     if(Actual==false)
     {
       Log.Message("Actual Value is :- "+Actual+".Message:- "+LogMessage)    
@@ -36,11 +36,11 @@ function IsFalse(Actual,LogMessage)
       throw ("Results didn't match.Actual Value is :- "+Actual+".Message:- "+LogMessage)
     }
   }
-  else
-  {
-    throw ("Actual value is null")
-  }
-}
+//  else
+//  {
+//    throw ("Actual value is null")
+////  }
+//}
 
 //This method is used to compare Decimal values with Delta.
 function CompareDecimalValues(Expected,Actual,delta,LogMessage)
