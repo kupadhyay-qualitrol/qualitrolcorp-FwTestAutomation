@@ -79,6 +79,9 @@
 		<child name="DFR_Methods" key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="DFR_Methods.js" />
 		</child>
+		<child name="TimeZone_TestCases" key="{4906C236-045F-4DEA-9A47-483016389E62}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="TimeZone_TestCases.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -88,6 +91,7 @@
 				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
 				<ref key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" />
+				<ref key="{4906C236-045F-4DEA-9A47-483016389E62}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">
