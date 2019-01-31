@@ -82,6 +82,9 @@
 		<child name="TimeZone_TestCases" key="{4906C236-045F-4DEA-9A47-483016389E62}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="TimeZone_TestCases.js" />
 		</child>
+		<child name="ConfigEditor_TimeManagementPage" key="{AC4422A9-4D87-412C-B1FB-E3CA721748A7}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_TimeManagementPage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -111,6 +114,7 @@
 				<ref key="{29E26F74-67F9-463C-8252-E638E45B6D66}" />
 				<ref key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" />
 				<ref key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" />
+				<ref key="{AC4422A9-4D87-412C-B1FB-E3CA721748A7}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
