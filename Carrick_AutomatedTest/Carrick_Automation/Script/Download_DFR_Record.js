@@ -113,6 +113,10 @@ function Validate_RecordTime()
     var postfault=CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime")
     AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault),"Validating Post Faulttime")
     
+    //Step4.1. Set Max DFR time
+    var MaxDFR=CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR),"Validating Max DFR")
+    
     //Step5. Send to Device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
