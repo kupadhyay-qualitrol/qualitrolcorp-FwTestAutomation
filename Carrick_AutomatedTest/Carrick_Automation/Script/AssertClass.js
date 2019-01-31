@@ -13,7 +13,7 @@ function IsTrue(Actual,LogMessage)
     }
     else
     {
-      Log.Message("Actual Value is :- "+Actual+".Message:- "+LogMessage)    
+      Log.Message("Results didn't match.Actual Value is :- "+Actual+".Message:- "+LogMessage)    
       throw ("Results didn't match.Actual Value is :- "+Actual+".Message:- "+LogMessage)
     }
   }
@@ -34,7 +34,7 @@ function IsFalse(Actual,LogMessage)
     }
     else
     {
-      Log.Message("Actual Value is :- "+Actual+".Message:- "+LogMessage)    
+      Log.Message("Results didn't match.Actual Value is :- "+Actual+".Message:- "+LogMessage)    
       throw ("Results didn't match.Actual Value is :- "+Actual+".Message:- "+LogMessage)
     }
   }
@@ -57,7 +57,7 @@ function CompareDecimalValues(Expected,Actual,delta,LogMessage)
       }
       else
       {
-        Log.Message("Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)      
+        Log.Message("Results didn't match.Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)      
         throw ("Results didn't match.Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)
       }
     }
@@ -85,7 +85,7 @@ function CompareString(Expected,Actual,LogMessage)
       }
       else
       {
-        Log.Message("Strings are Same.Message:- "+LogMessage)      
+        Log.Message("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)      
         throw ("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)
       }
     }
