@@ -214,6 +214,26 @@
 																					</Child>
 																				</Children>
 																			</Child>
+																			<Child Name="TICtplInnerMostLayout2" Key="{7FF7433E-93BD-45A4-A369-890AAB58EE68}" ParallelWalk="True">
+																				<Image FileName="1800961546" Left="11" Top="588" Right="172" Bottom="627" />
+																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="TICtplInnerMostLayout2" Type="5" />
+																					</Property>
+																				</Properties>
+																				<Children>
+																					<Child Name="TICdtpEndTime" Key="{4B4D399E-D68F-4D3F-9E37-7556FFF878E7}" ParallelWalk="True">
+																						<Image FileName="1800961546" Left="14" Top="604" Right="169" Bottom="624" />
+																						<TypeInfo Item0="{E600A530-00D9-4CD9-95C2-96FFB8399703}" />
+																						<Properties>
+																							<Property Name="WinFormsControlName">
+																								<Value PropertyType="0" Value="TICdtpEndTime" Type="5" />
+																							</Property>
+																						</Properties>
+																					</Child>
+																				</Children>
+																			</Child>
 																		</Children>
 																	</Child>
 																</Children>
@@ -861,7 +881,6 @@
 																														</Children>
 																													</Child>
 																													<Child Name="lblMaxDurationDFR" Key="{F1DFF989-215B-4E67-AE3E-EF7B31B0607D}" ParallelWalk="True">
-																														<Image FileName="2019832568" Left="203" Top="473" Right="360" Bottom="494" />
 																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																														<Properties>
 																															<Property Name="WinFormsControlName">
@@ -870,7 +889,6 @@
 																														</Properties>
 																													</Child>
 																													<Child Name="lblMaxDFRUnits" Key="{40F8B4FD-91EC-4B49-9FF7-272FD0820E68}" ParallelWalk="True">
-																														<Image FileName="2019832568" Left="464" Top="473" Right="533" Bottom="495" />
 																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																														<Properties>
 																															<Property Name="WinFormsControlName">
@@ -879,7 +897,6 @@
 																														</Properties>
 																													</Child>
 																													<Child Name="txtMaxDFRDuration" Key="{05C5E755-90F0-4586-8E3E-C5389A8F72C2}" ParallelWalk="True">
-																														<Image FileName="2019832568" Left="373" Top="472" Right="458" Bottom="493" />
 																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																														<Properties>
 																															<Property Name="WinFormsControlName">
@@ -892,7 +909,6 @@
 																										</Children>
 																									</Child>
 																									<Child Name="ucValidation" Key="{7A6B2DEC-9196-49C4-9B69-40BDE52E4372}" ParallelWalk="True">
-																										<Image FileName="1499279805" Left="197" Top="81" Right="1020" Bottom="562" />
 																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -901,7 +917,6 @@
 																										</Properties>
 																										<Children>
 																											<Child Name="lstErrors" Key="{3D6843DB-450B-4722-B094-C470CAFC1778}" ParallelWalk="True">
-																												<Image FileName="1499279805" Left="197" Top="118" Right="1020" Bottom="562" />
 																												<TypeInfo Item0="{810CFB4D-0F40-4382-AA79-CD5CA003822A}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -2074,6 +2089,9 @@
 								<Child Name="UserControlBase_Fill_Panel" Owner="{79AF0B41-AA28-4BFF-9FBB-C2D22C87EBF7}">
 									<Child Name="TICtplInnerMostLayout1" Owner="{02FC495B-F8BE-485B-84D0-C5E241BB85A5}">
 										<Child Name="TICdtpStartTime" Owner="{C2B63F79-215F-49A4-BCE7-3C347D384ECE}" />
+									</Child>
+									<Child Name="TICtplInnerMostLayout2" Owner="{7FF7433E-93BD-45A4-A369-890AAB58EE68}">
+										<Child Name="TICdtpEndTime" Owner="{4B4D399E-D68F-4D3F-9E37-7556FFF878E7}" />
 									</Child>
 								</Child>
 							</Child>
