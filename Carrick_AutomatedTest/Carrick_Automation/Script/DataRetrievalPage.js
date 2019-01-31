@@ -282,3 +282,17 @@ function TimeQualityStatusFromDeviceStatus()
     return null
   }
 }
+
+//This function is used to get the CurrentDateTime for the Device
+function GetDeviceActualDateTime()
+{
+  var aString = "CURRENTDATE = ";
+ 
+  var CurrentDateTimePos = aqString.Find(DeviceStatusView.text.OleValue,aString)
+  Log.Message(CurrentDateTimePos) 
+  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,aqConvert.StrToInt(CurrentDateTimePos)+13,19)
+  //289 is the start position for date in text field and 19 is the length for the selected date. 
+  Log.Message("Current Date time is" + CurrentDateTime)  
+  CloseDeviceStatus.ClickButton()
+  return CurrentDateTime  
+}
