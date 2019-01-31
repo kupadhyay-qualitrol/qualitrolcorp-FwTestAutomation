@@ -11,6 +11,7 @@
 //USEUNIT OmicronQuickCMCPage
 //USEUNIT DFR_Methods
 //USEUNIT DeviceTopologyPage
+//USEUNIT GeneralPage
 
 
 //TC-Test to Download Manual DFR record
