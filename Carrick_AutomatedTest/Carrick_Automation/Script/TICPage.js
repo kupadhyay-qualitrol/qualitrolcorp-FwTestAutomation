@@ -3,7 +3,7 @@
 //Variables
 var StartDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
 var DateTimePicker = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
-
+var Edtbx_EndDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout2.TICdtpEndTime
 //This function is used to set the CurrentDateTime for the Device
 function SetDeviceDateTime(NewDateTime)
 {
@@ -30,5 +30,45 @@ function SetDeviceDateTime(NewDateTime)
       return false;
       Log.Message("System not allowed to open time interval window")
     }
+  }
+}
+
+//This function is used to Set the EndDate Time in TIC
+function SetTICEndDateTime(DateTime,Monthoffset,Daysoffset)
+{
+  if(Edtbx_EndDateTime.Exists)
+  {
+    Log.Message("Time Interval Pane is visible on screen")
+    if(DateTime!=null && Monthoffset!=null && Daysoffset!=null)
+    {
+      var DateAfterMonthOffset = aqDateTime.AddMonths(DateTime,Monthoffset)    
+      var DateAfterDayOffset = aqDateTime.AddDays(DateAfterMonthOffset,Daysoffset)      
+      Edtbx_EndDateTime.wDate=aqDateTime.SetDateElements(aqDateTime.GetYear(DateAfterDayOffset), aqDateTime.GetMonth(DateAfterDayOffset), aqDateTime.GetDay(DateAfterDayOffset))
+    }
+    else
+    {
+      Log.Message("Value of one of the argument is null")
+      return null
+    }
+  }
+  else
+  {
+    Log.Message("Time Interval pane is not visible on Screen")
+    return null
+  }
+}
+
+//This function is used to get the EndDateTime in TIC
+function GetTICEndDateTime()
+{
+    if(Edtbx_EndDateTime.Exists)
+  {
+    Log.Message("Time Interval Pane is visible on screen") 
+    return Edtbx_EndDateTime.wDate
+  }
+  else
+  {
+    Log.Message("Time Interval pane is not visible on Screen")
+    return null
   }
 }

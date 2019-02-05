@@ -66,6 +66,9 @@ function DownloadManualDFR()
     //Step6. Set Start date time and End date time in IQ+
     TICPage.SetDeviceDateTime(NewDateTime)
     Log.Message("Start Date time and End date time is updated in IQ+")
+    
+    //Step6.1 Set EndDateTime
+    TICPage.SetTICEndDateTime(TICPage.GetTICEndDateTime(),1,0) //Set the EndDate Time with offsetof +1 month and 0 days
     aqUtils.Delay(2000)
     
     //Step7. Click on All FR Record Default Favorites
