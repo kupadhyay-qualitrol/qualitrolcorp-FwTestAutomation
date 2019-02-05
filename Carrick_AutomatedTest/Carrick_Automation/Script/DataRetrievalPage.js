@@ -296,3 +296,9 @@ function GetDeviceActualDateTime()
   CloseDeviceStatus.ClickButton()
   return CurrentDateTime  
 }
+
+//This function is used to Forecefully/Request to Set the Device Date Time
+function SetDeviceTime()
+{
+  
+}

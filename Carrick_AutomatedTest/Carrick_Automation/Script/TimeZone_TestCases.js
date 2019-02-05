@@ -69,4 +69,8 @@ function BTC_95_BTC_106()
     Log.Message(ex.stack)
     Log.Error("Fail:-Test all Timezone supported in Carrick & Cashel")
   }
+  finally
+  {
+    CommonMethod.SetPCTimeZone("India Standard Time")
+  }
 }
