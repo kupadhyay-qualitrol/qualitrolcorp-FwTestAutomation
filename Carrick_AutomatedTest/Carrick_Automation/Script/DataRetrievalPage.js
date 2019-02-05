@@ -16,6 +16,10 @@ var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer
 var CloseDeviceStatus = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.DEVSTATUSbtnCancel
 var NewDateTime
 var SetDateTime
+var RadioBtn_RqstDeviceToSetDateTime = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STgrpContainer.STrboRequestTimeFromDevice
+var RadioBtn_ForceDeviceToSetDateTime= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STgrpContainer.STrboForceTimeForDevice
+var Btn_SetTimeOK = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STbtnOK
+var Btn_SetTimeCancel =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STbtnCancel
 //
 
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
@@ -298,7 +302,42 @@ function GetDeviceActualDateTime()
 }
 
 //This function is used to Forecefully/Request to Set the Device Date Time
-function SetDeviceTime()
+function SetDeviceTime(ForceORRequest)
 {
-  
+  if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+  {  
+    //Clear Session Log
+     SessionLogPage.ClearLog()
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+     aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|&Set Time")
+     Log.Message("Clicked on Set Time")
+     
+     if(ForceORRequest=="Force")
+     {
+       RadioBtn_ForceDeviceToSetDateTime.ClickButton()
+       Btn_SetTimeOK.ClickButton()
+       CommonMethod.CheckActivityLog("Set Date/Time Command executed successfully")
+       return true
+     }
+     else if(ForceORRequest=="Request")
+     {
+       RadioBtn_RqstDeviceToSetDateTime.ClickButton()
+       Btn_SetTimeOK.ClickButton()
+       CommonMethod.CheckActivityLog("Set Date/Time Command executed successfully")
+       return true
+     }
+     else
+     {     
+       Log.Message("No option passed in argument")
+       Btn_SetTimeCancel.ClickButton()
+       return false
+     }
+  }
+  else
+  {
+    Log.Message("Unable to click on Set Time")
+    return false
+  }
 }
