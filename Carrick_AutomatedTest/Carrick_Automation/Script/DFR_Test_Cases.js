@@ -56,7 +56,10 @@ function BTC_125()
     //Step5. Send to Device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
-    //Step6. Download Manual DFR Record
+    //Step6. Trigger & Download Manual DFR Record
+    DFR_Methods.TriggerManualDFR()
+    
+    //Step6.1 Download Manual DFR Record
     DFR_Methods.DownloadManualDFR()
     
     //Step7. Check Record Length
