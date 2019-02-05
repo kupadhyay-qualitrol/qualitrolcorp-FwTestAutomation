@@ -57,17 +57,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Trigger_ManualDFR" key="{1C553E49-DED6-4518-8769-18103BCE757A}" group="False" enabled="True" testMoniker="{781BE7CF-1224-4CF3-BE35-A1C41A7FE094}TriggerManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-								<testParameters>
-									<param0 name="blnCloseiQPlus" type="3" localVarName="" varType="0" value="" />
-								</testParameters>
-								<children />
-							</testItem>
-							<testItem name="Download_DFR_Record" key="{C168455E-E88B-4A93-B3EE-49D2E624BF47}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}DownloadManualDFR" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-								<testParameters />
-								<children />
-							</testItem>
-							<testItem name="ValidateDFRRecord" key="{B1C117EA-065A-45FF-98DF-EDB4C0B1C0DC}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}Validate_RecordTime" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="BTC-125" key="{7E0BFFF0-0F22-4B09-915A-A76E091AA929}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_125" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check for DFR record length and time stamp validation">
 								<testParameters />
 								<children />
 							</testItem>

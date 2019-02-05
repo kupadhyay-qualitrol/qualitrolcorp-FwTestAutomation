@@ -40,8 +40,8 @@
 		<child name="DataRetrievalPage" key="{09BC76C4-8202-42D7-9CC0-EF5B349B63FA}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="DataRetrievalPage.js" />
 		</child>
-		<child name="Download_DFR_Record" key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
-			<data path="Download_DFR_Record.js" />
+		<child name="DFR_Test_Cases" key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="DFR_Test_Cases.js" />
 		</child>
 		<child name="PDPPage" key="{B5C7812D-01C5-43EE-9851-9256C277EB0D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="PDPPage.js" />
