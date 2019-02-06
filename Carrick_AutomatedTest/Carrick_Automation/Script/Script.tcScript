@@ -85,6 +85,12 @@
 		<child name="ConfigEditor_TimeManagementPage" key="{AC4422A9-4D87-412C-B1FB-E3CA721748A7}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="ConfigEditor_TimeManagementPage.js" />
 		</child>
+		<child name="LinuxOS_Methods" key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="LinuxOS_Methods.js" />
+		</child>
+		<child name="Unit1" key="{654EA5A7-1B8E-4739-B98A-2F71090F9EE7}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Unit1.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -95,6 +101,7 @@
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
 				<ref key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" />
 				<ref key="{4906C236-045F-4DEA-9A47-483016389E62}" />
+				<ref key="{654EA5A7-1B8E-4739-B98A-2F71090F9EE7}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -129,6 +136,7 @@
 				<ref key="{7203FC4B-789C-49BC-B57E-625C7E067244}" />
 				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
+				<ref key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" />
 			</references>
 		</folder>
 	</folders>
