@@ -47,29 +47,22 @@ function IsFalse(Actual,LogMessage)
 //This method is used to compare Decimal values with Delta.
 function CompareDecimalValues(Expected,Actual,delta,LogMessage)
 {
-  if(Actual !="" && Expected !="")
-  {  
-    if(typeof(Expected)=="number" && typeof(Actual)=="number")
+  if(typeof(Expected)=="number" && typeof(Actual)=="number")
+  {
+    if(Math.abs(Expected-Actual)<=delta)
     {
-      if(Math.abs(Expected-Actual)<=delta)
-      {
-        Log.Message("Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)    
-      }
-      else
-      {
-        Log.Message("Results didn't match.Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)      
-        throw ("Results didn't match.Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)
-      }
+      Log.Message("Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)    
     }
     else
     {
-      throw ("Expected/Actual value is not a decimal:- "+ Expected+"  "+Actual)
+      Log.Message("Results didn't match.Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)      
+      throw ("Results didn't match.Delta is :- "+Math.abs(Expected-Actual)+".Message:- "+LogMessage)
     }
   }
   else
   {
-    throw ("Actual/Expected value is null")
-  }
+    throw ("Expected/Actual value is not a decimal:- "+ Expected+"  "+Actual)
+  }  
 }
 
 //This method is used to compare Expected and Actual string values.
