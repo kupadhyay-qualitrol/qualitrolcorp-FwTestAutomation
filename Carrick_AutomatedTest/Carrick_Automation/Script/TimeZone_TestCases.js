@@ -8,6 +8,7 @@
 //USEUNIT ConfigEditorPage
 //USEUNIT ConfigEditor_TimeManagementPage
 //USEUNIT DataRetrievalPage
+//USEUNIT LinuxOS_Methods
 
 
 /*
@@ -16,10 +17,10 @@ BTC-95 & BTC-106:-Test all Timezone supported in Carrick & Cashel
 function BTC_95_BTC_106()
 {
   try
-  {
+  {  
     Log.Message("Started TC:-Test all Timezone supported in Carrick & Cashel")
     var DataSheetName = Project.ConfigPath +"TestData\\BTC_95_BTC106.xlsx"
-    
+    Log.Message("Test Timezone :- "+CommonMethod.ReadDataFromExcel(DataSheetName,"Timezone"))
     //Step1.: Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
     
@@ -33,7 +34,11 @@ function BTC_95_BTC_106()
     {
       Log.Message("Device exist in the tree topology.")
     }
-    
+    //Step2.1 Force Device to Sync Time
+    if(Project.TestItems.Current.Iteration==1)
+    {
+      AssertClass.IsTrue(DataRetrievalPage.SetDeviceTime("Force"))
+    }
     //Step3. Retrieve Configuration
     AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
@@ -44,23 +49,49 @@ function BTC_95_BTC_106()
     AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeZone(CommonMethod.ReadDataFromExcel(DataSheetName,"Timezone")),"Sets the Time Zone")
     
     //Step6. Click on Send to Device
-    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice())
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
     //Step7. Retrieve the Device Status
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Clicked on Device Status View")
         
     //Step8. Set PC Time to Test Data TimeZone
     CommonMethod.SetPCTimeZone(CommonMethod.ReadDataFromExcel(DataSheetName,"Timezone_path"))
     
     //Step9. Get Time
     var DeviceTime = DataRetrievalPage.GetDeviceActualDateTime()
+    Log.Message("Date Time Shown in iQ+ :- "+DeviceTime)
     
-    //Step10. Check TimeDifference between iq+ & PC
-    var TimeInterval=aqDateTime.TimeInterval(DeviceTime, aqDateTime.Now())
+    //Step10. Check TimeDifference between iq+ & PC  
+    var DeviceDateTimeParse = new dotNET.System.DateTime.Parse(aqConvert.DateTimeToStr(DeviceTime)) 
+    aqConvert.DateTimeToStr(DeviceDateTimeParse )   
     
-    AssertClass.CompareDecimalValues(0,aqDateTime.GetDay(TimeInterval),0,"Checking for Days Difference")
-    AssertClass.CompareDecimalValues(0,aqDateTime.GetHours(TimeInterval),0,"Checking for Hours Difference")
-    AssertClass.CompareDecimalValues(0,aqDateTime.GetMinutes(TimeInterval),10,"Checking for Minutes Difference")
+    //Step11. Check TimeDifference between Device & PC 
+    AssertClass.IsTrue(LinuxOS_Methods.ConnectToDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"),"root","qualcorpDec09"),"Making SSH Connection")    
+    var LinuxOSTime = LinuxOS_Methods.SendCommand("date '+%d/%m/%Y %H:%M:%S.%Z'")
+    
+    //Step 12.Comparing Time from iQ+ and PC
+    var TimeInterval=DeviceDateTimeParse.Subtract(dotNET.System.DateTime.Parse(aqConvert.DateTimeToStr(aqDateTime.Now())))
+    
+    Log.Message(aqConvert.TimeIntervalToStr(aqDateTime.TimeInterval(DeviceTime, aqDateTime.Now())))
+    
+    AssertClass.CompareDecimalValues(0,aqConvert.StrToInt64(TimeInterval.Days),0,"Checking for Days Difference")
+    AssertClass.CompareDecimalValues(0,aqConvert.StrToInt64(TimeInterval.Hours),0,"Checking for Hours Difference")
+    AssertClass.CompareDecimalValues(0,aqConvert.StrToInt64(TimeInterval.Minutes),5,"Checking for Minutes Difference")
+    
+    //Step 12.Comparing Time from Device and PC
+    var LinuxDTime =LinuxOSTime.OleValue.split(".")
+    
+    Log.Message("Time Zone is :- "+ LinuxDTime[1])
+    Log.Message("DateTime is :- "+ LinuxDTime[0])
+    
+    var LinuxDateTimeParse = new dotNET.System.DateTime.Parse(aqConvert.DateTimeToStr(LinuxDTime[0]))    
+    var LinuxTimeInterval=LinuxDateTimeParse.Subtract(dotNET.System.DateTime.Parse(aqConvert.DateTimeToStr(aqDateTime.Now())))
+    
+    AssertClass.CompareDecimalValues(0,aqConvert.StrToInt64(LinuxTimeInterval.Days),0,"Checking for Days Difference")
+    AssertClass.CompareDecimalValues(0,aqConvert.StrToInt64(LinuxTimeInterval.Hours),0,"Checking for Hours Difference")
+    AssertClass.CompareDecimalValues(0,aqConvert.StrToInt64(LinuxTimeInterval.Minutes),5,"Checking for Minutes Difference")
+    
+    AssertClass.IsTrue(LinuxOS_Methods.DisconnectFromDevice(),"Disconnected Linux Connection")
     
     Log.Message("Pass:-Test all Timezone supported in Carrick & Cashel")
   }
@@ -68,9 +99,5 @@ function BTC_95_BTC_106()
   {
     Log.Message(ex.stack)
     Log.Error("Fail:-Test all Timezone supported in Carrick & Cashel")
-  }
-  finally
-  {
-    CommonMethod.SetPCTimeZone("India Standard Time")
   }
 }
