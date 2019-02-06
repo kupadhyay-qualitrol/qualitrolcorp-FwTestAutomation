@@ -110,6 +110,23 @@
 							</testItem>
 						</children>
 					</testItem>
+					<testItem name="TimeZone" key="{214F7030-6597-4591-BD7C-435A0E018280}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="Login" key="{90D84BF4-664D-4E02-93E7-5C4F193BC132}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC_95_BTC_106" key="{C6EA1462-E0BC-43EC-800F-DD0083D81979}" group="False" enabled="True" testMoniker="{4906C236-045F-4DEA-9A47-483016389E62}BTC_95_BTC_106" count="76" timeout="0" stopOnError="0" stopOnException="2" description="Test all Timezone supported in Carrick &amp; Cashel">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Close iQ_Plus" key="{F591A032-0EBE-4A30-BA6D-B9E243BBB75F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
 				</children>
 			</testItem>
 			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -268,12 +285,14 @@
 		</setting>
 		<setting name="{0DEF6033-13D4-4335-97E9-CC6F1FC04342}" type="1" value="True" />
 		<setting name="{DF56DCEA-130B-4D36-8893-5FDC090AFB17}" type="1" value="False" />
-		<setting name="CLRBridge_SelectedComponents" type="6" rowIndex="-1" colIndex="1">
+		<setting name="CLRBridge_SelectedComponents" type="6" rowIndex="0" colIndex="1">
 			<columns>
 				<column type="5" enabled="True" />
 				<column type="1" enabled="True" />
 			</columns>
-			<data />
+			<data>
+				<row val0="..\..\..\..\Softwares\Release\Renci.SshNet.dll" val1="False" />
+			</data>
 		</setting>
 		<setting name="{85CD048A-29FF-4ABF-95A6-B915AEA2C10D}" type="1" value="False" />
 		<setting name="{2044DC7F-423E-4668-8114-68D23AE97AD6}" type="2" value="50" />
