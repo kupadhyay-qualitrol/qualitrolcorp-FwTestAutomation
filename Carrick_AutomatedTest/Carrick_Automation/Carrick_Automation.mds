@@ -111,7 +111,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC_95_BTC_106" key="{C6EA1462-E0BC-43EC-800F-DD0083D81979}" group="False" enabled="True" testMoniker="{4906C236-045F-4DEA-9A47-483016389E62}BTC_95_BTC_106" count="76" timeout="0" stopOnError="0" stopOnException="2" description="Test all Timezone supported in Carrick &amp; Cashel">
+							<testItem name="BTC_95_BTC_106" key="{C6EA1462-E0BC-43EC-800F-DD0083D81979}" group="False" enabled="True" testMoniker="{4906C236-045F-4DEA-9A47-483016389E62}BTC_95_BTC_106" count="75" timeout="0" stopOnError="0" stopOnException="2" description="Test all Timezone supported in Carrick &amp; Cashel">
 								<testParameters />
 								<children />
 							</testItem>
