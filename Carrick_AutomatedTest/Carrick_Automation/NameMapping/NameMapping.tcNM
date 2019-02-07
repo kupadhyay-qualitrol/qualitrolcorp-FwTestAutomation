@@ -715,6 +715,62 @@
 															</Child>
 														</Children>
 													</Child>
+													<Child Name="SetTimeView" Key="{E81F98AD-314E-4297-9A30-2D49968624A2}" ParallelWalk="True">
+														<Image FileName="-757388956" Left="3" Top="26" Right="325" Bottom="152" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="SetTimeView" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="STgrpContainer" Key="{1EBB906F-3346-428B-8F7A-DB28156080C3}" ParallelWalk="True">
+																<Image FileName="-757388956" Left="7" Top="24" Right="321" Bottom="117" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="STgrpContainer" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="STrboForceTimeForDevice" Key="{BB8D3A01-C9E4-42A3-815E-B36AD53A3190}" ParallelWalk="True">
+																		<Image FileName="-757388956" Left="19" Top="94" Right="272" Bottom="111" />
+																		<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="STrboForceTimeForDevice" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																	<Child Name="STrboRequestTimeFromDevice" Key="{137AA648-84EA-4322-83E8-4C1F930A6F20}" ParallelWalk="True">
+																		<Image FileName="-1339080316" Left="19" Top="71" Right="206" Bottom="88" />
+																		<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="STrboRequestTimeFromDevice" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+															<Child Name="STbtnOK" Key="{B8CF4AC2-9CFD-475C-AFCE-5864EAA85143}" ParallelWalk="True">
+																<Image FileName="169767724" Left="96" Top="121" Right="206" Bottom="146" />
+																<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="STbtnOK" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+															<Child Name="STbtnCancel" Key="{C711DF4B-0DC3-4AAC-A1FF-AA4012A66D1F}" ParallelWalk="True">
+																<Image FileName="1304411851" Left="211" Top="121" Right="321" Bottom="146" />
+																<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="STbtnCancel" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
 												</Children>
 											</Child>
 										</Children>
@@ -926,6 +982,37 @@
 																											</Child>
 																										</Children>
 																									</Child>
+																									<Child Name="ucTimeManagement" Key="{00E2BFDC-DA38-4014-9BCF-405FE5693B26}" ParallelWalk="True">
+																										<Image FileName="1209139136" Left="197" Top="81" Right="1020" Bottom="562" />
+																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ucTimeManagement" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="ugbxGroupBox2" Key="{E0E12507-C4E8-4EFD-8AF7-7D56EF9345C7}" ParallelWalk="True">
+																												<Image FileName="1209139136" Left="197" Top="81" Right="1020" Bottom="171" />
+																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="ugbxGroupBox2" Type="5" />
+																													</Property>
+																												</Properties>
+																												<Children>
+																													<Child Name="cmbTimeZone" Key="{18AA0D05-7ECB-4204-89D0-A3DB7AD08E9D}" ParallelWalk="True">
+																														<Image FileName="1209139136" Left="320" Top="111" Right="941" Bottom="132" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="cmbTimeZone" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																												</Children>
+																											</Child>
+																										</Children>
+																									</Child>
 																								</Children>
 																							</Child>
 																						</Children>
@@ -1035,6 +1122,18 @@
 										<Properties>
 											<Property Name="ClrFullClassName">
 												<Value PropertyType="0" Value="Infragistics.Win.UltraWinToolbars.PopupMenuControlTrusted" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="ValueListDropDownUnsafe" Key="{97F73D90-FFC6-41D1-BE07-242C3490F657}" ParallelWalk="True">
+										<Image FileName="2074728304" Left="0" Top="0" Right="625" Bottom="172" />
+										<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+										<Properties>
+											<Property Name="ClrFullClassName">
+												<Value PropertyType="0" Value="Infragistics.Win.ValueListDropDownUnsafe" Type="5" />
 											</Property>
 											<Property Name="WndCaption">
 												<Value PropertyType="0" Value="" Type="5" />
@@ -2180,6 +2279,14 @@
 								<Child Name="MNLTRGbtnOk" Owner="{0B769023-11E3-4C4C-8FB9-4D2D175770C9}" />
 							</Child>
 						</Child>
+						<Child Name="SetTimeView" Owner="{E81F98AD-314E-4297-9A30-2D49968624A2}">
+							<Child Name="STgrpContainer" Owner="{1EBB906F-3346-428B-8F7A-DB28156080C3}">
+								<Child Name="STrboForceTimeForDevice" Owner="{BB8D3A01-C9E4-42A3-815E-B36AD53A3190}" />
+								<Child Name="STrboRequestTimeFromDevice" Owner="{137AA648-84EA-4322-83E8-4C1F930A6F20}" />
+							</Child>
+							<Child Name="STbtnOK" Owner="{B8CF4AC2-9CFD-475C-AFCE-5864EAA85143}" />
+							<Child Name="STbtnCancel" Owner="{C711DF4B-0DC3-4AAC-A1FF-AA4012A66D1F}" />
+						</Child>
 					</Child>
 				</Child>
 			</Child>
@@ -2211,6 +2318,11 @@
 												<Child Name="ucValidation" Owner="{7A6B2DEC-9196-49C4-9B69-40BDE52E4372}">
 													<Child Name="lstErrors" Owner="{3D6843DB-450B-4722-B094-C470CAFC1778}" />
 												</Child>
+												<Child Name="ucTimeManagement" Owner="{00E2BFDC-DA38-4014-9BCF-405FE5693B26}">
+													<Child Name="ugbxGroupBox2" Owner="{E0E12507-C4E8-4EFD-8AF7-7D56EF9345C7}">
+														<Child Name="cmbTimeZone" Owner="{18AA0D05-7ECB-4204-89D0-A3DB7AD08E9D}" />
+													</Child>
+												</Child>
 											</Child>
 										</Child>
 									</Child>
@@ -2233,6 +2345,7 @@
 			</Child>
 			<Child Name="DropDownForm" Owner="{B7140279-1F42-421D-B6C6-C6D4D38A175C}">
 				<Child Name="PopupMenuControlTrusted" Owner="{CC1C8A02-8B97-4847-940C-086876033CDB}" />
+				<Child Name="ValueListDropDownUnsafe" Owner="{97F73D90-FFC6-41D1-BE07-242C3490F657}" />
 			</Child>
 			<Child Name="SDPContainer" Owner="{50C5F754-C466-4DC9-A6D5-8624C4605D51}">
 				<Child Name="SDPCTRtsctrSDPToolsContainer" Owner="{BF73C53C-725B-480A-AAD9-F003BEB8E648}">

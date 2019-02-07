@@ -342,3 +342,10 @@ function IsExist(AppProcess)
     return false
   }
 }
+
+//This function is used to set the PC timezone
+function SetPCTimeZone(PCTimeZone)
+{
+  var objShell = Sys.OleObject("Wscript.Shell")
+  objShell.Exec("tzutil.exe /s " +aqString.Quote(PCTimeZone))
+}
