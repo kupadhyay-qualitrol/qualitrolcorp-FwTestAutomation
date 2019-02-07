@@ -10,6 +10,8 @@ var Edtbx_Postfault = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPadding
 var lbl_MaxDFR =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucFrGeneral.frmBackground.lblMaxDurationDFR
 var lbl_MaxDFRUnit= Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucFrGeneral.frmBackground.lblMaxDFRUnits
 var Edtbx_MaxDFR= Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucFrGeneral.frmBackground.txtMaxDFRDuration
+var Edtbx_TriggerPriority= Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucFrGeneral.frmBackground.frmExternalTriggers.txtPriority
+
 //
 
 //This method is used to Set Prefault time for DFR.
@@ -147,6 +149,45 @@ function GetMaxDFR()
   if(Edtbx_MaxDFR.Exists)
   {  
     return Edtbx_MaxDFR.Text.OleValue
+  }
+  else
+  {
+    Log.Picture(Item_ConfigurationEditor,"Sanpshot for debug")
+    return null
+  }
+}
+//This method is used to set the Trigger Priority value
+function SetTriggerPriority(TriggerPriorityValue)
+{
+  //Click on Fault Recording in Config Editor
+  if(ConfigEditorPage.ClickOnFaultRecording())
+  {  
+    Edtbx_TriggerPriority.Value= TriggerPriorityValue
+    if(GetTriggerPriority()==TriggerPriorityValue)
+    {
+      Log.Message("Successfully sets the Trigger Priority Value")
+      return true
+    }
+    else
+    {
+      Log.Message("Not able to set Trigger Priority Value")
+      return false
+    }
+  }
+  else
+  {
+    Log.Picture(Item_ConfigurationEditor,"Sanpshot for debug")
+    return false
+  }
+}
+
+//This method is used to get the Trigger Priority Value
+function GetTriggerPriority()
+{
+    //Click on Fault Recording in Config Editor
+  if(Edtbx_TriggerPriority.Exists)
+  {  
+    return Edtbx_TriggerPriority.Text.OleValue
   }
   else
   {

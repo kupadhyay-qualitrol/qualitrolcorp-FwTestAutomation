@@ -127,3 +127,101 @@ function BTC_125()
     AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Close Quick CMC Application")
   }
 }
+
+/*
+BTC-114 Check for DFR record length and time stamp validation
+*/
+function BTC_114()
+{
+  try
+  {
+    Log.Message("Started TC:-Test to check for Trigger Priority")
+    var DataSheetName = Project.ConfigPath +"TestData\\BTC_114.xlsx";
+    
+    //Step1.: Check if iQ-Plus is running or not.
+    AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
+    
+    //Step2.Check whether device exists or not in the topology.    
+    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
+    {
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
+    
+    //Step3. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+    //Step4. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step5. Check the Max TriggerPriority Value
+    var TriggerPriority = ConfigEditor_FaultRecordingPage.GetTriggerPriority();
+    Log.Message("Trigger Priority value is" + TriggerPriority);
+    
+    //Step6. //Enter TriggerPriority_Max
+    var TriggerPriority_Max = CommonMethod.ReadDataFromExcel(DataSheetName,"TriggerPriority_Max")
+    AssertClass.IsFalse(ConfigEditor_FaultRecordingPage.SetTriggerPriority(TriggerPriority_Max),"Setting and checking Trigger Priority")
+    
+    //Step7. Save to DB
+    AssertClass.IsTrue(ConfigEditorPage.ClickSaveToDb(),"Clicked on Save to DB")
+    
+    //Step8. Click on Modify Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonModifyConfig(),"Clicked on Modify Config")
+    
+    //Step9. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step10. Check the Max Trigger Priority Value
+    AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetTriggerPriority(),TriggerPriority,"Checking Trigger Priority value")
+
+    //Step11. //Enter TriggerPriority_Min
+    var TriggerPriority_Min =CommonMethod.ReadDataFromExcel(DataSheetName,"TriggerPriority_Min")
+    AssertClass.IsFalse(ConfigEditor_FaultRecordingPage.SetTriggerPriority(TriggerPriority_Min),"Setting and checking Max DFR")
+    
+    //Step12. Save to DB
+    AssertClass.IsTrue(ConfigEditorPage.ClickSaveToDb(),"Clicked on Save to DB")
+    
+    //Step13. Click on Modify Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonModifyConfig(),"Clicked on Modify Config")
+    
+    //Step14. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step15. Check the Min Trigger Priority Value
+    AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetTriggerPriority(),TriggerPriority,"Checking Max DFR value")
+    
+    //Step16 //Enter PreFault
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")),"Setting Prefault Time")
+       
+    //Step17. //Enter TriggerPriority_Mid
+    var TriggerPriority_Mid =CommonMethod.ReadDataFromExcel(DataSheetName,"TriggerPriority_Mid")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetTriggerPriority(TriggerPriority_Mid),"Setting and checking TriggerPriority")
+    
+    //Step18. Save to DB
+    AssertClass.IsTrue(ConfigEditorPage.ClickSaveToDb(),"Clicked on Save to DB")
+    
+    //Step19. Click on Modify Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonModifyConfig(),"Clicked on Modify Config")
+    
+    //Step20. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step21. Check the Max DFR Value
+    AssertClass.CompareString(ConfigEditor_FaultRecordingPage.GetTriggerPriority(),TriggerPriority_Mid,"Checking TriggerPriority value")
+
+    //Step22. Send to Device
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    
+  
+    Log.Message("Pass:-Test to check for Trigger Priority")
+  }
+  catch(ex)
+  {
+    Log.Error(ex.stack)
+    Log.Error("Fail:-Test to check for Trigger Priority")
+  }
+}

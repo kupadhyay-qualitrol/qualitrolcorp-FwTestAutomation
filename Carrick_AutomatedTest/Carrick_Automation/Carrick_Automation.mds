@@ -61,6 +61,10 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="BTC-114" key="{E1945617-FAEA-4C75-93B2-8489C80AD1AD}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_114" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check for Trigger Priority">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="Close_iQ_Plus" key="{36B873F6-7905-495F-83E4-F794EAC06A0F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
