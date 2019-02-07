@@ -285,7 +285,7 @@
 				<column type="1" enabled="True" />
 			</columns>
 			<data>
-				<row val0="..\..\..\..\Softwares\Release\Renci.SshNet.dll" val1="False" />
+				<row val0=".\ThirdParty\SSH\Renci.SshNet.dll" val1="False" />
 			</data>
 		</setting>
 		<setting name="{85CD048A-29FF-4ABF-95A6-B915AEA2C10D}" type="1" value="False" />
