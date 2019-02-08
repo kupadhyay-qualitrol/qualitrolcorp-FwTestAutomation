@@ -500,7 +500,7 @@ function CAM_736()
     var TimeStatusDevice2=""
     do
     {
-      aqUtils.Delay(5000)
+      aqUtils.Delay(5000) //Wait included so that time sync can happen
       DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))      
       AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
       TimeStatusDevice1 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
