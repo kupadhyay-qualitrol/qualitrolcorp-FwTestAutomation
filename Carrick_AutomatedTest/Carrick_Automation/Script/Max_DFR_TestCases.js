@@ -9,6 +9,7 @@
 //USEUNIT ConfigEditor_FinishPage
 //USEUNIT DFR_Methods
 //USEUNIT PDPPage
+//USEUNIT ConfigEditor_TimeManagementPage
 
 /*
 CAM-727 Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length
@@ -420,5 +421,101 @@ function CAM_725()
   {
     Log.Error(ex.stack)
     Log.Error("Fail:-Test to check that user tries to input DFR record length value less/greater than minimum/maximum value")
+  }
+}
+
+/*
+CAM-736 Test to check DFR record length with Cross Trigger
+*/
+function CAM_736()
+{
+  try
+  {
+    Log.Message("Start TC:-CAM-736 Test to check DFR record length with Cross Trigger")
+    var DeviceSuffix =["1","2"]
+    
+    var DataSheetName = Project.ConfigPath +"TestData\\CAM_736.xlsx"
+    
+    for(let i=0;i< DeviceSuffix.length;i++ )
+    {
+      //Step0.Check whether device exists or not in the topology.    
+      if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))!=true)
+      {
+        GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"+(i+1)))
+        DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))      
+      }
+      else
+      {
+        Log.Message("Device exist in the tree topology.")
+      }
+       
+      //Step1. Retrieve Configuration
+      AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+      //Step2. Click on Fault Recording
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+      //Step3. Set pre-fault for External Triggers
+      var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"+(i+1))
+      AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefaul Time")
+    
+      //Step4. Set Post-fault time for External Triggers
+      var postfault=CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime"+(i+1))
+      AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault),"Validating Post Faulttime")
+    
+      //Step4.1. Set Max DFR time
+      var MaxDFR=CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR"+(i+1))
+      AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR),"Validating Max DFR")
+    
+      //Step5. Click on TimeManagement Page
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnTimeManagement(),"Clicked on Time Management")
+    
+      //Step6. Set Master/Slave Settings
+      if(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeMaster")== CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))
+      {
+        //Step6.1 Select Time Master
+        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeMaster(),"Selected Time Master")
+        //Step6.2 Select Time Source
+        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeSourceSettings_Master(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeMasterClock_Setting")),"Selected the time source for time sync")
+      }
+      else if (CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave")== CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))
+      {
+        //Step6.3 Select Time Slave    
+        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeSlave(),"Selecting the Time Slave")
+      
+        //Step6.4 Set Master IP
+        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeMasterIP_TimeSync(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave_Setting_Backup_IP")),"Setting Time Sync IP")
+      
+        //Step6.5 Select PPS INput
+        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetPPSInput(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave_Setting_PPS")),"Setting PPS Input")      
+      }
+    
+      //Step5. Send to Device
+      AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    }
+        
+    //Step8. Check Time Quality Status
+    //Step8.1 Click on Device Status View
+    var TimeStatusDevice1=""
+    var TimeStatusDevice2=""
+    do
+    {
+      aqUtils.Delay(5000)
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))      
+      AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
+      TimeStatusDevice1 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
+      DataRetrievalPage.CloseDeviceStatus.ClickButton()
+      
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[1]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[1]))      
+      AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
+      TimeStatusDevice2 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
+      DataRetrievalPage.CloseDeviceStatus.ClickButton()
+    }
+    while (TimeStatusDevice1!="locked" && TimeStatusDevice2!="locked")   
+  }
+  catch(ex)
+  {
+    Log.Message(ex.stack)
+    Log.Error("Error:-CAM-736 Test to check DFR record length with Cross Trigger")  
   }
 }
