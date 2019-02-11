@@ -10,6 +10,7 @@
 //USEUNIT DFR_Methods
 //USEUNIT PDPPage
 //USEUNIT ConfigEditor_TimeManagementPage
+//USEUNIT ConfigEditor_Comms_NetworkServices
 
 /*
 CAM-727 Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length
@@ -489,8 +490,15 @@ function CAM_736()
         //Step6.5 Select PPS INput
         AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetPPSInput(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave_Setting_PPS")),"Setting PPS Input")      
       }
-    
-      //Step5. Send to Device
+      
+      //Step7. Configure Cross Trigger
+      //Step 7.1 Set UDP Port Number
+      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetUDPPort(CommonMethod.ReadDataFromExcel(DataSheetName,"UDPPortNumber"+(i+1))))
+      //Step7.2 Set MaskID
+      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetGroupMaskID(CommonMethod.ReadDataFromExcel(DataSheetName,"GroupMaskID"+(i+1))))
+      //Step7.3 Set Compatibility
+      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetCompatibility(CommonMethod.ReadDataFromExcel(DataSheetName,"Compatibility"+(i+1))))
+      //Step7. Send to Device
       AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     }
         
@@ -511,7 +519,30 @@ function CAM_736()
       TimeStatusDevice2 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
       DataRetrievalPage.CloseDeviceStatus.ClickButton()
     }
-    while (TimeStatusDevice1!="locked" && TimeStatusDevice2!="locked")   
+    while (TimeStatusDevice1!="locked" && TimeStatusDevice2!="locked")
+        
+    //Step9. Generate Manual Trigger
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))
+    
+    //Step9.1 Trigger Manual DFR
+    var NumberofTimes=0
+    var IterationReq = CommonMethod.ReadDataFromExcel(DataSheetName,"NumberofTimes")
+    var Delay = aqConvert.StrToInt64(CommonMethod.ReadDataFromExcel(DataSheetName,"Delay"))
+    do
+    {
+      NumberofTimes=NumberofTimes+1    
+      AssertClass.IsTrue(DataRetrievalPage.ClickOnFRManualTrigger(),"Clicked on FR Manual Trigger")
+      AssertClass.IsTrue(DataRetrievalPage.ClickonOKManualDFRTrigger())
+      aqUtils.Delay(Delay*1000)      
+    }
+    while (NumberofTimes!=IterationReq)
+    
+    //Step10. Check for Cross Trigger
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[1]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[1]))
+    
+    //Step10.1 Check for COT
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data")
   }
   catch(ex)
   {
