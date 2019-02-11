@@ -137,7 +137,7 @@ function BTC_639()
     Log.Message("Started TC:-Test to check for Trigger priority verification on device configuration for boundary value 0-99")
     var DataSheetName = Project.ConfigPath +"TestData\\BTC_639.xlsx";
     
-    //Step1.: Check if iQ-Plus is running or not.
+    //Step1. Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
     
     //Step2.Check whether device exists or not in the topology.    
@@ -161,7 +161,7 @@ function BTC_639()
     var TriggerPriority = ConfigEditor_FaultRecordingPage.GetTriggerPriority();
     Log.Message("Trigger Priority value is" + TriggerPriority);
     
-    //Step6. //Enter TriggerPriority_Max
+    //Step6. Enter TriggerPriority_Max
     var TriggerPriority_MaxPlusOne = CommonMethod.ReadDataFromExcel(DataSheetName,"TriggerPriority_Max")
     AssertClass.IsFalse(ConfigEditor_FaultRecordingPage.SetTriggerPriority(TriggerPriority_MaxPlusOne),"Setting and checking Trigger Priority")
     
