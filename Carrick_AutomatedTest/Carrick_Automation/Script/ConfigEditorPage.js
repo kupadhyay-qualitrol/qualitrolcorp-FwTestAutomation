@@ -10,6 +10,8 @@ var Btn_Popup_Warning=Aliases.iQ_Plus.dlgWarning.btnYes
 var Btn_SaveToDb =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnSaveToDb
 var Btn_Close =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnClose
 var Item_ConfigTree=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel.configTree
+var Item_ConfigMainMenu =Aliases.iQ_Plus.Form.StripMainMenu
+var drpdwn_MenuView = Aliases.iQ_Plus.ToolStripDropDownMenu
 //
 
 //This method is used to click on Send to Device button
@@ -114,6 +116,47 @@ function ClickOnTimeManagement()
   else
   {
     Log.Message("Unable to click on Time Management")
+    return false
+  }
+}
+
+//This method is used to click on Advanced option under View
+function ClickonAdvance()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigMainMenu.Click("View")
+    if(true==aqObject.CheckProperty(drpdwn_MenuView,"Enabled",cmpEqual,true))
+    {
+      Item_ConfigMainMenu.Click("View|Advanced")
+      Log.Message("Clicked on Advance under View")
+      return true
+    }
+    else
+    {
+      Log.Message("Unable to click on Advance under View")    
+      return false
+    }
+  }
+  else
+  {
+    Log.Message("Unable to find Config Main Menu")
+    return false
+  }
+}
+
+//This method is used to click on Network Services in Config Editor
+function ClickonNetworkServices()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Communications|Network Services")
+    Log.Message("Clicked on Network Services")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
     return false
   }
 }
