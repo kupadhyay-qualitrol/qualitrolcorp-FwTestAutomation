@@ -341,3 +341,33 @@ function SetDeviceTime(ForceORRequest)
     return false
   }
 }
+
+//This method is used to get the Trigger Priority from DFR Directory
+function GetTriggerPriorityOnDFR()
+{
+  var TriggerPriority
+  var ColumnName1 
+
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    ColumnName1=GetColumnIndexByColumnName("Priority")
+    if(ColumnName1!=null)
+    {
+      TriggerPriority=DirectoryList.wItem(0,ColumnName1)    
+      Log.Message("Trigger Priority value is "+TriggerPriority)    
+      return TriggerPriority
+    }
+    else
+    {
+      Log.Message("Column Index is wrong")
+      return null
+    }
+  }
+  else
+  { 
+    CommonMethod.CheckActivityLog("")
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  } 
+}

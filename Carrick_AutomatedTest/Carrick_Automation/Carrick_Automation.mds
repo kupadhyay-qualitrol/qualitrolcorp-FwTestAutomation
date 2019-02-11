@@ -61,7 +61,11 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="BTC-114" key="{E1945617-FAEA-4C75-93B2-8489C80AD1AD}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_114" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check for Trigger Priority">
+							<testItem name="BTC-114" key="{E1945617-FAEA-4C75-93B2-8489C80AD1AD}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_114" count="5" timeout="0" stopOnError="2" stopOnException="2" description="Test to check for Trigger Priority on DFR Directory pop-up and PDP page">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-639" key="{1D2E0805-C489-44C8-83AC-F7AD3DA7590D}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_639" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Trigger priority verification on device configuration for boundary value 0-99">
 								<testParameters />
 								<children />
 							</testItem>
