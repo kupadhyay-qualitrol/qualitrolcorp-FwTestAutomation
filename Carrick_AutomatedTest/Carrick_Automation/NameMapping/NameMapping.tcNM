@@ -1157,6 +1157,53 @@
 																											</Child>
 																										</Children>
 																									</Child>
+																									<Child Name="ucNetworkServices" Key="{97E2B643-800D-43CC-952A-01D594DA4875}" ParallelWalk="True">
+																										<Image FileName="698719004" Left="197" Top="81" Right="1020" Bottom="562" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ucNetworkServices" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="ugbxCrossTriggerSettings" Key="{FD110A23-E652-49D8-B8CB-58DDE1EB99D2}" ParallelWalk="True">
+																												<Image FileName="698719004" Left="423" Top="91" Right="851" Bottom="216" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="ugbxCrossTriggerSettings" Type="5" />
+																													</Property>
+																												</Properties>
+																												<Children>
+																													<Child Name="cmbGroupMaskId" Key="{DAF6FBEE-2CF6-47A0-8F1F-7BB119BEF812}" ParallelWalk="True">
+																														<Image FileName="698719004" Left="595" Top="148" Right="694" Bottom="169" />
+																														<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="cmbGroupMaskId" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																													<Child Name="cmbIdmCompatibility" Key="{3F453A6E-98D2-441A-A32D-A7913626439E}" ParallelWalk="True">
+																														<Image FileName="333122768" Left="595" Top="176" Right="814" Bottom="197" />
+																														<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="cmbIdmCompatibility" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																													<Child Name="txtUDPPortNumber" Key="{B22E833A-EA7D-42CB-906C-9CDD755AFC1F}" ParallelWalk="True">
+																														<Image FileName="1728333486" Left="595" Top="121" Right="694" Bottom="142" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="txtUDPPortNumber" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																												</Children>
+																											</Child>
+																										</Children>
+																									</Child>
 																								</Children>
 																							</Child>
 																						</Children>
@@ -2485,6 +2532,13 @@
 																<Child Name="FieldControl3" Owner="{D0800F70-5B83-40A0-872C-7B9C1DDCF214}" />
 															</Child>
 														</Child>
+													</Child>
+												</Child>
+												<Child Name="ucNetworkServices" Owner="{97E2B643-800D-43CC-952A-01D594DA4875}">
+													<Child Name="ugbxCrossTriggerSettings" Owner="{FD110A23-E652-49D8-B8CB-58DDE1EB99D2}">
+														<Child Name="cmbGroupMaskId" Owner="{DAF6FBEE-2CF6-47A0-8F1F-7BB119BEF812}" />
+														<Child Name="cmbIdmCompatibility" Owner="{3F453A6E-98D2-441A-A32D-A7913626439E}" />
+														<Child Name="txtUDPPortNumber" Owner="{B22E833A-EA7D-42CB-906C-9CDD755AFC1F}" />
 													</Child>
 												</Child>
 											</Child>
