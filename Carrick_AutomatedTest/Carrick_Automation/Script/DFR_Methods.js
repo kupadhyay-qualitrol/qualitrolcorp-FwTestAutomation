@@ -45,44 +45,48 @@ function TriggerManualDFR()
 
 function DownloadManualDFR()
 {   
-    //Step 1. Click on DFR Directory
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
-    var REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
-    //Step2. Click on Download Data Now
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data Now")
-    CommonMethod.CheckActivityLog("DFR records saved successfully for device")
-    //Step3. Click on Close DFR Directory
-    DataRetrievalPage.CloseDFRDirectory() 
-    Log.Message("DFR data download")
-  
-    //Step4. Click on device Status view option
-    DataRetrievalPage.ClickOnDeviceStatusView()
-    Log.Message("Device Status window is open")
+  //Step 1. Click on DFR Directory
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
+  var REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
+  //Step2. Click on Download Data Now
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data Now")
+  CommonMethod.CheckActivityLog("DFR records saved successfully for device")
+  //Step3. Click on Close DFR Directory
+  DataRetrievalPage.CloseDFRDirectory() 
+  Log.Message("DFR data download")  
+  ViewDFROnPDP(REC_DFR)    
+}
+
+function ViewDFROnPDP(DownloadedDFRNum)
+{
+  //Step1. Click on device Status view option
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Clicked on Device Status")
+  Log.Message("Device Status window is open")
        
-    //Step5. Get the Current Date time from the device
-    var NewDateTime=DataRetrievalPage.GetDeviceCurrentDateTime()
-    Log.Message("Stores the Device Current date and time")
+  //Step2. Get the Current Date time from the device
+  var NewDateTime=DataRetrievalPage.GetDeviceCurrentDateTime()
+  Log.Message("Stores the Device Current date and time")
       
-    //Step6. Set Start date time and End date time in IQ+
-    TICPage.SetDeviceDateTime(NewDateTime)
-    Log.Message("Start Date time and End date time is updated in IQ+")
+  //Step3. Set Start date time and End date time in IQ+
+  TICPage.SetDeviceDateTime(NewDateTime)
+  Log.Message("Start Date time and End date time is updated in IQ+")
     
-    //Step6.1 Set EndDateTime
-    TICPage.SetTICEndDateTime(TICPage.GetTICEndDateTime(),1,0) //Set the EndDate Time with offsetof +1 month and 0 days
-    aqUtils.Delay(2000)
+  //Step3.1 Set EndDateTime
+  TICPage.SetTICEndDateTime(TICPage.GetTICEndDateTime(),1,0) //Set the EndDate Time with offsetof +1 month and 0 days
+  aqUtils.Delay(2000)
     
-    //Step7. Click on All FR Record Default Favorites
-    AssertClass.IsTrue(FavoritesPage.ClickOnAllFRTriggeredRecord(),"Clicked on All FR Triggered Record")
-    aqUtils.Delay(3000)
+  //Step4. Click on All FR Record Default Favorites
+  AssertClass.IsTrue(FavoritesPage.ClickOnAllFRTriggeredRecord(),"Clicked on All FR Triggered Record")
+  aqUtils.Delay(3000)
     
-    //Step8. Verify downloaded record on PDP
-    REC=PDPPage.VerifyDownloadedRecord()
-    if(REC==REC_DFR)
-    {
-      return true 
-    }
-    else
-    {
-      return false
-    }
+  //Step5. Verify downloaded record on PDP
+  REC=PDPPage.VerifyDownloadedRecord()
+  if(REC==DownloadedDFRNum)
+  {
+    return true 
+  }
+  else
+  {
+    return false
+  }
 }
