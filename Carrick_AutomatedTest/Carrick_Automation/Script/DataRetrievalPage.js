@@ -426,8 +426,3 @@ function GetRowIndexByRecordNumber(RecNumber)
   Log.Message("Index for record :- "+RecNumber+" is "+tempIndex)
   return tempIndex
 }
-
-function SelectRecordByRecordNumber()
-{
-  GetCOTByRecordNumber("159")
-}
