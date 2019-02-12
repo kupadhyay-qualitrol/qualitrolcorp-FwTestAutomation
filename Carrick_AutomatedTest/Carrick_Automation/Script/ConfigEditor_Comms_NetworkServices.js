@@ -87,7 +87,7 @@ function SetUDPPort(PortNumber)
     
     if(Edtbx_UDPPortNumber.Text== PortNumber)
     {
-      Log.Message("Success to set the port number")
+      Log.Message("Able to set the port number")
       return true
     }
     else
@@ -101,10 +101,4 @@ function SetUDPPort(PortNumber)
     Log.Message("Unable to locate UDP Port Control")
     return false
   }
-}
-
-
-function Test()
-{
-  SetCompatibility("1")
 }
