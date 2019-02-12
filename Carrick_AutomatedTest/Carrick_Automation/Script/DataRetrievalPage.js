@@ -376,15 +376,15 @@ function SetNoOfManualTrigger(NumberofManualTrigger)
 function GetCOTByRecordNumber(RecordNum)
 {
   var COT
-  var ColumnName 
+  var COTColumnName 
   if (DFRDirectory.Exists)
   { 
     Log.Message("DFR Directory window is visible")
-    ColumnName=GetColumnIndexByColumnName("Cause Of Trigger")
+    COTColumnName=GetColumnIndexByColumnName("Cause Of Trigger")
     var RowByRecord = GetRowIndexByRecordNumber(RecordNum)
-    if(ColumnName!=null)
+    if(COTColumnName!=null)
     {
-      COT=DirectoryList.wItem(RowByRecord,ColumnName)
+      COT=DirectoryList.wItem(RowByRecord,COTColumnName)
       //Unselect Default
       DirectoryList.Items.Item(0).set_Selected(false)
       //Select Now as per Record Number
@@ -410,10 +410,10 @@ function GetRowIndexByRecordNumber(RecNumber)
 {
   var DFRDirectoryRow
   var tempIndex
-  var ColumnName=GetColumnIndexByColumnName("Record #")
+  var RecordColumnName=GetColumnIndexByColumnName("Record #")
   for(DFRDirectoryRow=0;DFRDirectoryRow<DirectoryList.wItemCount;DFRDirectoryRow++)
   {
-    if(RecNumber==DirectoryList.wItem(DFRDirectoryRow,ColumnName))
+    if(RecNumber==DirectoryList.wItem(DFRDirectoryRow,RecordColumnName))
     {
       tempIndex= DFRDirectoryRow  
       break
