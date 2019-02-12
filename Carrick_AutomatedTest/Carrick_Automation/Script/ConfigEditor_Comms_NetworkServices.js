@@ -13,7 +13,7 @@ function SetGroupMaskID(GroupMaskID)
 {
   if(drpdwn_MaskID.Exists)
   {
-    drpdwn_MaskID.SetText(GroupMaskID)
+    drpdwn_MaskID.Value=GroupMaskID
     if(drpdwn_MaskID.Text==GroupMaskID)
     {
       Log.Message("Able to set Group Mask ID")    
@@ -38,15 +38,36 @@ function SetCompatibility(Compatiblity)
 {
   if(drpdwn_Compatibility.Exists)
   {
-    drpdwn_Compatibility.SetText(Compatiblity)
-    if(drpdwn_Compatibility.Text== Compatiblity)
+    drpdwn_Compatibility.Value=Compatiblity //0 for Not Compatible; 1 for Send and Recieve Cross Triggers
+    if(Compatiblity=="0")
     {
-      Log.Message("Able to set compatibility")
-      return true
+      if(drpdwn_Compatibility.Text== "Not compatible")
+      {
+        Log.Message("Able to set compatibility")
+        return true
+      }
+      else
+      {
+        Log.Message("Unable to set Compatibility")    
+        return false
+      }
+    }
+    else if(Compatiblity=="1")
+    {
+      if(drpdwn_Compatibility.Text== "Send and receive cross triggers")
+      {
+        Log.Message("Able to set compatibility")
+        return true
+      }
+      else
+      {
+        Log.Message("Unable to set Compatibility")    
+        return false
+      }
     }
     else
     {
-      Log.Message("Unable to set Compatibility")    
+      Log.Message("Compatibility is not set")
       return false
     }
   }
@@ -62,7 +83,7 @@ function SetUDPPort(PortNumber)
 {
   if(Edtbx_UDPPortNumber.Exists)
   {
-    Edtbx_UDPPortNumber.Text= PortNumber
+    Edtbx_UDPPortNumber.Value=PortNumber
     
     if(Edtbx_UDPPortNumber.Text== PortNumber)
     {
@@ -80,4 +101,10 @@ function SetUDPPort(PortNumber)
     Log.Message("Unable to locate UDP Port Control")
     return false
   }
+}
+
+
+function Test()
+{
+  SetCompatibility("1")
 }
