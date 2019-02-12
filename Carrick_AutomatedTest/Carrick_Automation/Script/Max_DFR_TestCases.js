@@ -434,7 +434,8 @@ function CAM_736()
   {
     Log.Message("Start TC:-CAM-736 Test to check DFR record length with Cross Trigger")
     var DeviceSuffix =["1","2"]
-    
+    var DeviceLRecordNum=[]
+    DeviceLRecordNum.length =2
     var DataSheetName = Project.ConfigPath +"TestData\\CAM_736.xlsx"
     
     for(let i=0;i< DeviceSuffix.length;i++ )
@@ -492,14 +493,20 @@ function CAM_736()
       }
       
       //Step7. Configure Cross Trigger
+      AssertClass.IsTrue(ConfigEditorPage.ClickonAdvance(),"Clicked on Advance")
+      AssertClass.IsTrue(ConfigEditorPage.ClickonNetworkServices(),"Clicked on Network Services")
       //Step 7.1 Set UDP Port Number
-      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetUDPPort(CommonMethod.ReadDataFromExcel(DataSheetName,"UDPPortNumber"+(i+1))))
+      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetUDPPort(CommonMethod.ReadDataFromExcel(DataSheetName,"UDPPortNumber"+(i+1))),"Setting Port Number")
       //Step7.2 Set MaskID
-      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetGroupMaskID(CommonMethod.ReadDataFromExcel(DataSheetName,"GroupMaskID"+(i+1))))
+      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetGroupMaskID(CommonMethod.ReadDataFromExcel(DataSheetName,"GroupMaskID"+(i+1))),"Setting Group Mask ID")
       //Step7.3 Set Compatibility
-      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetCompatibility(CommonMethod.ReadDataFromExcel(DataSheetName,"Compatibility"+(i+1))))
-      //Step7. Send to Device
+      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetCompatibility(CommonMethod.ReadDataFromExcel(DataSheetName,"Compatibility"+(i+1))),"Setting Compatibility")
+      //Step7.4 Send to Device
       AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+      //Step7.5 Get Both Device Latest Record Number
+      AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
+      DeviceLRecordNum[i] = DataRetrievalPage.GetLatestRecordnumber()
+      AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"Clicked on Close button")
     }
         
     //Step8. Check Time Quality Status
@@ -519,30 +526,55 @@ function CAM_736()
       TimeStatusDevice2 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
       DataRetrievalPage.CloseDeviceStatus.ClickButton()
     }
-    while (TimeStatusDevice1!="locked" && TimeStatusDevice2!="locked")
+    while (TimeStatusDevice1!="locked" || TimeStatusDevice2!="locked")
         
     //Step9. Generate Manual Trigger
     DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))
     
-    //Step9.1 Trigger Manual DFR
-    var NumberofTimes=0
-    var IterationReq = CommonMethod.ReadDataFromExcel(DataSheetName,"NumberofTimes")
-    var Delay = aqConvert.StrToInt64(CommonMethod.ReadDataFromExcel(DataSheetName,"Delay"))
-    do
-    {
-      NumberofTimes=NumberofTimes+1    
-      AssertClass.IsTrue(DataRetrievalPage.ClickOnFRManualTrigger(),"Clicked on FR Manual Trigger")
-      AssertClass.IsTrue(DataRetrievalPage.ClickonOKManualDFRTrigger())
-      aqUtils.Delay(Delay*1000)      
-    }
-    while (NumberofTimes!=IterationReq)
+    AssertClass.IsTrue(DataRetrievalPage.OpenFRManualTriggerDialog(),"Clicked on FR Manual Trigger")
+    AssertClass.IsTrue(DataRetrievalPage.SetNoOfManualTrigger(CommonMethod.ReadDataFromExcel(DataSheetName,"NoOfManualTrigger")),"Setting No. of Manual Triggers")
+    AssertClass.IsTrue(DataRetrievalPage.ClickonOKManualDFRTrigger(),"Clicked on OK button")
     
     //Step10. Check for Cross Trigger
     DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[1]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[1]))
     
-    //Step10.1 Check for COT
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data")
+    var IsNewRecordFound =false
+    //Step10.1 Check for New DFR Record
+    for(RecordRetryCount=0;RecordRetryCount<30;RecordRetryCount++)
+    {
+      //Try 10 times to check for new record
+      DataRetrievalPage.ClickOnDFRDirectory()      
+      var NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+      if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))<0)
+      {
+        DataRetrievalPage.CloseDFRDirectory()
+      }
+      else if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))>0)
+      {
+        Log.Message("Multiple Triggers found unexpectedly.")
+        DataRetrievalPage.CloseDFRDirectory()
+        break
+      }
+      else
+      {
+        IsNewRecordFound =true      
+        Log.Message("Latest Record number is :- "+NewDFRRecord)
+        break
+      }  
+      aqUtils.Delay(20000)    
+    }
+    AssertClass.IsTrue(IsNewRecordFound,"Checking for New Record")
+    //Step10.2 Check for COT
+    AssertClass.CompareString("XTRIG", DataRetrievalPage.GetCOTByRecordNumber(NewDFRRecord),"Checking COT for DFR")
+    
+    //Step10.3 Download DFR
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Downloadind Record Now")
+    AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"Closed DFR Directory Popup") 
+    //Step10.4 View Record on PDP
+    AssertClass.IsTrue(DFR_Methods.ViewDFROnPDP(NewDFRRecord),"Checking for New record on PDP")
+    
+    //Step 11 Validate Record Length
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(CommonMethod.ReadDataFromExcel(DataSheetName,"ExpectedRecordLength")),CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0)),0,"Checking Record Duration")
   }
   catch(ex)
   {
