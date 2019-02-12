@@ -391,6 +391,36 @@ function GetCOTByRecordNumber(RecordNum)
       DirectoryList.Items.Item(RowByRecord).set_Selected(true)
       Log.Message("Cause of Trigger is "+COT)    
       return COT
+        }
+    else
+    {
+      Log.Message("Column Index is wrong")
+      return null
+    }
+     }
+  else
+  { 
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  }
+}
+
+
+//This method is used to get the Trigger Priority from DFR Directory
+function GetTriggerPriorityOnDFR()
+{
+  var TriggerPriority
+  var PriorityColumnName 
+
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    PriorityColumnName=GetColumnIndexByColumnName("Priority")
+    if(PriorityColumnName!=null)
+    {
+      TriggerPriority=DirectoryList.wItem(0,PriorityColumnName)    
+      Log.Message("Trigger Priority value is "+TriggerPriority)    
+      return TriggerPriority
     }
     else
     {
@@ -400,7 +430,6 @@ function GetCOTByRecordNumber(RecordNum)
   }
   else
   { 
-    CommonMethod.CheckActivityLog("")
     Log.Message("DFR Record doesn't exist in the device.")
     return null
   } 
