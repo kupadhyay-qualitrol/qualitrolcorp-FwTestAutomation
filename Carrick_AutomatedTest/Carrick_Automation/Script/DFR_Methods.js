@@ -54,7 +54,7 @@ function DownloadManualDFR()
   //Step3. Click on Close DFR Directory
   DataRetrievalPage.CloseDFRDirectory() 
   Log.Message("DFR data download")  
-  ViewDFROnPDP(REC_DFR)    
+  return ViewDFROnPDP(REC_DFR)
 }
 
 function ViewDFROnPDP(DownloadedDFRNum)
@@ -83,10 +83,12 @@ function ViewDFROnPDP(DownloadedDFRNum)
   REC=PDPPage.VerifyDownloadedRecord()
   if(REC==DownloadedDFRNum)
   {
+    Log.Message("DFR Record Number is correct on PDP also.")  
     return true 
   }
   else
   {
+    Log.Message("DFR Record Number is not correct on PDP.Record number on PDP is :- "+REC+" & on Downloaded one is :- "+DownloadedDFRNum)    
     return false
   }
 }
