@@ -54,14 +54,7 @@ function DownloadManualDFR()
   //Step3. Click on Close DFR Directory
   DataRetrievalPage.CloseDFRDirectory() 
   Log.Message("DFR data download")  
-  if(ViewDFROnPDP(REC_DFR))
-  {
-   return true 
-  }
-  else
-  {
-    return false
-  }
+  return ViewDFROnPDP(REC_DFR)
 }
 
 function ViewDFROnPDP(DownloadedDFRNum)
