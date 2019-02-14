@@ -91,6 +91,12 @@
 		<child name="ConfigEditor_Comms_NetworkServices" key="{91669D5F-1B80-469A-A640-380CDD11C88A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="ConfigEditor_Comms_NetworkServices.js" />
 		</child>
+		<child name="TimeSync_Methods" key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="TimeSync_Methods.js" />
+		</child>
+		<child name="CrossTrigger_Methods" key="{54997743-4D7C-474F-A1D9-57992A0836AD}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="CrossTrigger_Methods.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -137,6 +143,8 @@
 				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
 				<ref key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" />
+				<ref key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" />
+				<ref key="{54997743-4D7C-474F-A1D9-57992A0836AD}" />
 			</references>
 		</folder>
 	</folders>
