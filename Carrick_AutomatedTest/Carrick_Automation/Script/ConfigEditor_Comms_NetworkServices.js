@@ -3,28 +3,33 @@
 //USEUNIT ConfigEditorPage
 
 //Variables
-var drpdwn_MaskID = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.ugbxCrossTriggerSettings.cmbGroupMaskId
-var drpdwn_Compatibility=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.ugbxCrossTriggerSettings.cmbIdmCompatibility
+var drpdwn_Compatibility=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.cmbIdmCompatibility
 var Edtbx_UDPPortNumber =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.ugbxCrossTriggerSettings.txtUDPPortNumber
+var Chkbx_Group1 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.ugbxCrossTriggerSettings.chkGroup1
+var Chkbx_Group2 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.ugbxCrossTriggerSettings.chkGroup2
+var Chkbx_Group3 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.ugbxCrossTriggerSettings.chkGroup3
+var Chkbx_Group4 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucNetworkServices.chkGroup4
 //
 
 //This method is used to set the Groupmask id
-function SetGroupMaskID(GroupMaskID)
+function SetGroupMaskID(Grp1,Grp2,Grp3,Grp4)
 {
-  if(drpdwn_MaskID.Exists)
-  {
-    drpdwn_MaskID.Value=GroupMaskID
-    if(drpdwn_MaskID.Text==GroupMaskID)
+  if(Chkbx_Group1.Exists)
+  {  
+    Chkbx_Group1.wState =Grp1
+    Chkbx_Group2.wState =Grp2
+    Chkbx_Group3.wState =Grp3
+    Chkbx_Group4.Checked =Grp4
+    if(Chkbx_Group1.wState==Grp1 && Chkbx_Group2.wState==Grp2 && Chkbx_Group3.wState==Grp3 && Chkbx_Group4.wState==Grp4)
     {
-      Log.Message("Able to set Group Mask ID")    
+      Log.Message("Checked the Checkbox in Groups")
       return true
     }
     else
     {
-      Log.Message("Unable to set Group Mask ID")
+      Log.Message("Unable to Check the checkbox in Groups")
       return false
     }
-    
   }
   else
   {
