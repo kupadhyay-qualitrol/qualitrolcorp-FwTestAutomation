@@ -11,6 +11,8 @@
 //USEUNIT PDPPage
 //USEUNIT ConfigEditor_TimeManagementPage
 //USEUNIT ConfigEditor_Comms_NetworkServices
+//USEUNIT CrossTrigger_Methods
+//USEUNIT TimeSync_Methods
 
 /*
 CAM-727 Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length
@@ -432,7 +434,7 @@ function CAM_736()
 {
   try
   {
-    Log.Message("Start TC:-CAM-736 Test to check DFR record length with Cross Trigger")
+    Log.Message("Start TC:-CAM-736- Test to check DFR record length with Cross Trigger")
     var DeviceSuffix =["1","2"]
     var DeviceLRecordNum=[]
     DeviceLRecordNum.length =2
@@ -469,64 +471,23 @@ function CAM_736()
       var MaxDFR=CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR"+(i+1))
       AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR),"Validating Max DFR")
     
-      //Step5. Click on TimeManagement Page
-      AssertClass.IsTrue(ConfigEditorPage.ClickOnTimeManagement(),"Clicked on Time Management")
-    
-      //Step6. Set Master/Slave Settings
-      if(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeMaster")== CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))
-      {
-        //Step6.1 Select Time Master
-        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeMaster(),"Selected Time Master")
-        //Step6.2 Select Time Source
-        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeSourceSettings_Master(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeMasterClock_Setting")),"Selected the time source for time sync")
-      }
-      else if (CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave")== CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))
-      {
-        //Step6.3 Select Time Slave    
-        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeSlave(),"Selecting the Time Slave")
+      //Step 5. Configure Time Master Slave
+      TimeSync_Methods.Configure_TimeMaster_Slave(DataSheetName,(i+1))
       
-        //Step6.4 Set Master IP
-        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetTimeMasterIP_TimeSync(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave_Setting_Backup_IP")),"Setting Time Sync IP")
-      
-        //Step6.5 Select PPS INput
-        AssertClass.IsTrue(ConfigEditor_TimeManagementPage.SetPPSInput(CommonMethod.ReadDataFromExcel(DataSheetName,"TimeSlave_Setting_PPS")),"Setting PPS Input")      
-      }
-      
-      //Step7. Configure Cross Trigger
+      //Step6. Configure Cross Trigger
       AssertClass.IsTrue(ConfigEditorPage.ClickonAdvance(),"Clicked on Advance")
-      AssertClass.IsTrue(ConfigEditorPage.ClickonNetworkServices(),"Clicked on Network Services")
-      //Step 7.1 Set UDP Port Number
-      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetUDPPort(CommonMethod.ReadDataFromExcel(DataSheetName,"UDPPortNumber"+(i+1))),"Setting Port Number")
-      //Step7.2 Set MaskID
-      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetGroupMaskID(CommonMethod.ReadDataFromExcel(DataSheetName,"GroupMaskID"+(i+1))),"Setting Group Mask ID")
-      //Step7.3 Set Compatibility
-      AssertClass.IsTrue(ConfigEditor_Comms_NetworkServices.SetCompatibility(CommonMethod.ReadDataFromExcel(DataSheetName,"Compatibility"+(i+1))),"Setting Compatibility")
-      //Step7.4 Send to Device
+      CrossTrigger_Methods.Configure_CrossTrigger(DataSheetName,(i+1))
+      
+      //Step7.1 Send to Device
       AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
-      //Step7.5 Get Both Device Latest Record Number
+      //Step7.2 Get Both Device Latest Record Number
       AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
       DeviceLRecordNum[i] = DataRetrievalPage.GetLatestRecordnumber()
       AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"Clicked on Close button")
     }
         
     //Step8. Check Time Quality Status
-    //Step8.1 Click on Device Status View
-    var TimeStatusDevice1=""
-    var TimeStatusDevice2=""
-    do
-    {
-      aqUtils.Delay(5000) //Wait included so that time sync can happen
-      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))      
-      AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
-      TimeStatusDevice1 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
-      DataRetrievalPage.CloseDeviceStatus.ClickButton()
-      
-      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[1]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[1]))      
-      AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView())
-      TimeStatusDevice2 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
-      DataRetrievalPage.CloseDeviceStatus.ClickButton()
-    }
-    while (TimeStatusDevice1!="locked" || TimeStatusDevice2!="locked")
+    TimeSync_Methods.CheckTimeQualityInMasterSlave(DataSheetName, DeviceSuffix[0], DeviceSuffix[1])
         
     //Step9. Generate Manual Trigger
     DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))
@@ -575,6 +536,7 @@ function CAM_736()
     
     //Step 11 Validate Record Length
     AssertClass.CompareDecimalValues(aqConvert.StrToInt64(CommonMethod.ReadDataFromExcel(DataSheetName,"ExpectedRecordLength")),CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0)),0,"Checking Record Duration")
+    Log.Message("Pass:- CAM-736 Test to check DFR record length with Cross Trigger")
   }
   catch(ex)
   {
