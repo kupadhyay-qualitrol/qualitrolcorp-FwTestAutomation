@@ -130,7 +130,9 @@ namespace RMSValidator
                         {
                             float rmsValue = CalculateRMS(rowCounter, columnsCounter);
 
-                            if (rmsValue >= (_injectedNominalVoltage + ((_injectedNominalVoltage * _voltageTolerance) / 100)) || rmsValue <= (_injectedNominalVoltage - ((_injectedNominalVoltage * _voltageTolerance) / 100)))
+                            //if (rmsValue >= (_injectedNominalVoltage + ((_injectedNominalVoltage * _voltageTolerance) / 100)) || rmsValue <= (_injectedNominalVoltage - ((_injectedNominalVoltage * _voltageTolerance) / 100)))
+
+                            if (rmsValue >= (_injectedNominalVoltage + _voltageTolerance) || rmsValue <= (_injectedNominalVoltage - _voltageTolerance))
                             {
                                 throw new ValidationFailedException();
                             }
@@ -142,11 +144,11 @@ namespace RMSValidator
                         {
                             float rmsValue = CalculateRMS(rowCounter, columnsCounter);
 
-                            if (rmsValue >= (_injectedNominalCurrent + ((_injectedNominalCurrent * _currentTolerance))) || rmsValue <= (_injectedNominalCurrent - (_injectedNominalCurrent * _currentTolerance)))
+                            //if (rmsValue >= (_injectedNominalCurrent + ((_injectedNominalCurrent * _currentTolerance))) || rmsValue <= (_injectedNominalCurrent - (_injectedNominalCurrent * _currentTolerance)))
+                            if (rmsValue >= (_injectedNominalCurrent + _currentTolerance) || rmsValue <= (_injectedNominalCurrent - _currentTolerance))
                             {
                                 throw new ValidationFailedException();
                             }
-
                         }
                     }
                 }

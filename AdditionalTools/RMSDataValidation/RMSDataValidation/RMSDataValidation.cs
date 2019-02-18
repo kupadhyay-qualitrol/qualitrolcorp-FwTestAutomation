@@ -18,8 +18,10 @@ namespace RMSDataValidation
             string filePath = FilePathTextBox.Text.ToString();
             double voltage = Double.Parse(VoltageTextBox.Text);
             double current = Double.Parse(CurrentTextBox.Text);
+            double voltageTolerance = Double.Parse(VoltageToleranceTextBox.Text);
+            double currentTolerance = Double.Parse(CurrentToleranceTextBox.Text);
 
-            RMSValidator.RMSValidator local = new RMSValidator.RMSValidator(filePath, voltage, current);
+            RMSValidator.RMSValidator local = new RMSValidator.RMSValidator(filePath, voltage, current, voltageTolerance, currentTolerance);
 
             bool isValidationPass = local.Validate();
 
