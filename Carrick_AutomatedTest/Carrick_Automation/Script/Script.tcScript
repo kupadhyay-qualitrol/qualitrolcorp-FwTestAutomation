@@ -79,6 +79,24 @@
 		<child name="DFR_Methods" key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="DFR_Methods.js" />
 		</child>
+		<child name="TimeZone_TestCases" key="{4906C236-045F-4DEA-9A47-483016389E62}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="TimeZone_TestCases.js" />
+		</child>
+		<child name="ConfigEditor_TimeManagementPage" key="{AC4422A9-4D87-412C-B1FB-E3CA721748A7}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_TimeManagementPage.js" />
+		</child>
+		<child name="LinuxOS_Methods" key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="LinuxOS_Methods.js" />
+		</child>
+		<child name="ConfigEditor_Comms_NetworkServices" key="{91669D5F-1B80-469A-A640-380CDD11C88A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_Comms_NetworkServices.js" />
+		</child>
+		<child name="TimeSync_Methods" key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="TimeSync_Methods.js" />
+		</child>
+		<child name="CrossTrigger_Methods" key="{54997743-4D7C-474F-A1D9-57992A0836AD}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="CrossTrigger_Methods.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -88,6 +106,7 @@
 				<ref key="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}" />
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
 				<ref key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" />
+				<ref key="{4906C236-045F-4DEA-9A47-483016389E62}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -107,6 +126,8 @@
 				<ref key="{29E26F74-67F9-463C-8252-E638E45B6D66}" />
 				<ref key="{8F654CD4-17C9-4AF8-B88A-A91F6171BF80}" />
 				<ref key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" />
+				<ref key="{AC4422A9-4D87-412C-B1FB-E3CA721748A7}" />
+				<ref key="{91669D5F-1B80-469A-A640-380CDD11C88A}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -121,6 +142,9 @@
 				<ref key="{7203FC4B-789C-49BC-B57E-625C7E067244}" />
 				<ref key="{36CF6109-A286-4FD9-AD73-C005E25C987C}" />
 				<ref key="{EC149534-946D-4719-9EF5-22A614F0EB15}" />
+				<ref key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" />
+				<ref key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" />
+				<ref key="{54997743-4D7C-474F-A1D9-57992A0836AD}" />
 			</references>
 		</folder>
 	</folders>

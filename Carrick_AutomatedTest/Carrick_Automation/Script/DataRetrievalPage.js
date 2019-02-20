@@ -16,6 +16,11 @@ var DeviceStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer
 var CloseDeviceStatus = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DeviceStatusView.DEVSTATUSbtnCancel
 var NewDateTime
 var SetDateTime
+var RadioBtn_RqstDeviceToSetDateTime = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STgrpContainer.STrboRequestTimeFromDevice
+var RadioBtn_ForceDeviceToSetDateTime= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STgrpContainer.STrboForceTimeForDevice
+var Btn_SetTimeOK = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STbtnOK
+var Btn_SetTimeCancel =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STbtnCancel
+var Edtbx_NoOfManualDFR= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.nudNoManualTrigger.UpDownEdit
 //
 
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
@@ -23,13 +28,7 @@ function ClickOnFRManualTrigger()
 {
  if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
  {
-   //Clear Session Log
-   SessionLogPage.ClearLog()
-   CommonMethod.RibbonToolbar.ClickItem("Device &Management")
-   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
-   aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
-   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
-   Log.Message("Clicked on FR Manual Trigger Option")
+   OpenFRManualTriggerDialog()
    if(ClickonOKManualDFRTrigger())
    {
      Log.Message("Clicke on OK button on Popup menu for FR Manual Trigger")
@@ -47,6 +46,27 @@ function ClickOnFRManualTrigger()
    Log.Message("Unable to Click on FR Manual Trigger")
    return false
  }
+}
+
+function OpenFRManualTriggerDialog()
+{
+  //Clear Session Log
+  SessionLogPage.ClearLog()
+  CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+  CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+  aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+  CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|FR &Manual Trigger")
+  Log.Message("Clicked on FR Manual Trigger Option")
+  if(Btn_ManualDFRPopUP_OK.Exists)
+  {
+    Log.Message("FR Manual Trigger Dialog Opens")  
+    return true
+  }
+  else
+  {
+    Log.Message("FR Manual Trigger Dialog Unable to Open")  
+    return false
+  }
 }
 
 //This method click on DFR Directory under Display Device Directory in Data Retrieval Pane
@@ -149,8 +169,7 @@ function GetCOTForLatestDFRRecord()
     CommonMethod.CheckActivityLog("")
     Log.Message("DFR Record doesn't exist in the device.")
     return null
-  }
-  
+  }  
 }
 
 //This method is used to Click on Manual DFR Trigger-Popup
@@ -281,4 +300,158 @@ function TimeQualityStatusFromDeviceStatus()
     Log.Message("Device Status View doesn't exists")
     return null
   }
+}
+
+//This function is used to get the CurrentDateTime for the Device
+function GetDeviceActualDateTime()
+{
+  var aString = "CURRENTDATE = ";
+ 
+  var CurrentDateTimePos = aqString.Find(DeviceStatusView.text.OleValue,aString)
+  Log.Message(CurrentDateTimePos) 
+  var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,aqConvert.StrToInt(CurrentDateTimePos)+13,20)
+  //289 is the start position for date in text field and 19 is the length for the selected date. 
+  Log.Message("Current Date time is" + CurrentDateTime)  
+  CloseDeviceStatus.ClickButton()
+  return CurrentDateTime  
+}
+
+//This function is used to Forecefully/Request to Set the Device Date Time
+function SetDeviceTime(ForceORRequest)
+{
+  if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+  {  
+    //Clear Session Log
+     SessionLogPage.ClearLog()
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+     aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|&Set Time")
+     Log.Message("Clicked on Set Time")
+     
+     if(ForceORRequest=="Force")
+     {
+       RadioBtn_ForceDeviceToSetDateTime.ClickButton()
+       Btn_SetTimeOK.ClickButton()
+       CommonMethod.CheckActivityLog("Set Date/Time Command executed successfully")
+       return true
+     }
+     else if(ForceORRequest=="Request")
+     {
+       RadioBtn_RqstDeviceToSetDateTime.ClickButton()
+       Btn_SetTimeOK.ClickButton()
+       CommonMethod.CheckActivityLog("Set Date/Time Command executed successfully")
+       return true
+     }
+     else
+     {     
+       Log.Message("No option passed in argument")
+       Btn_SetTimeCancel.ClickButton()
+       return false
+     }
+  }
+  else
+  {
+    Log.Message("Unable to click on Set Time")
+    return false
+  }
+}
+
+//This method is used to set number of Manual Triggers
+function SetNoOfManualTrigger(NumberofManualTrigger)
+{
+  if(Btn_ManualDFRPopUP_OK.Exists)
+  { 
+    Edtbx_NoOfManualDFR.Text=NumberofManualTrigger
+    Log.Message("Able to set the value")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to set the DFR value")
+    return false
+  }
+}
+
+function GetCOTByRecordNumber(RecordNum)
+{
+  var COT
+  var COTColumnName 
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    COTColumnName=GetColumnIndexByColumnName("Cause Of Trigger")
+    var RowByRecord = GetRowIndexByRecordNumber(RecordNum)
+    if(COTColumnName!=null)
+    {
+      COT=DirectoryList.wItem(RowByRecord,COTColumnName)
+      //Unselect Default
+      DirectoryList.Items.Item(0).set_Selected(false)
+      //Select Now as per Record Number
+      DirectoryList.Items.Item(RowByRecord).set_Selected(true)
+      Log.Message("Cause of Trigger is "+COT)    
+      return COT
+        }
+    else
+    {
+      Log.Message("Column Index is wrong")
+      return null
+    }
+     }
+  else
+  { 
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  }
+}
+
+
+//This method is used to get the Trigger Priority from DFR Directory
+function GetTriggerPriorityOnDFR()
+{
+  var TriggerPriority
+  var PriorityColumnName 
+
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    PriorityColumnName=GetColumnIndexByColumnName("Priority")
+    if(PriorityColumnName!=null)
+    {
+      TriggerPriority=DirectoryList.wItem(0,PriorityColumnName)    
+      Log.Message("Trigger Priority value is "+TriggerPriority)    
+      return TriggerPriority
+    }
+    else
+    {
+      Log.Message("Column Index is wrong")
+      return null
+    }
+  }
+  else
+  { 
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  } 
+}
+
+function GetRowIndexByRecordNumber(RecNumber)
+{
+  var DFRDirectoryRow
+  var tempIndex
+  var RecordColumnName=GetColumnIndexByColumnName("Record #")
+  for(DFRDirectoryRow=0;DFRDirectoryRow<DirectoryList.wItemCount;DFRDirectoryRow++)
+  {
+    if(RecNumber==DirectoryList.wItem(DFRDirectoryRow,RecordColumnName))
+    {
+      tempIndex= DFRDirectoryRow  
+      break
+    }
+    else
+    {
+      tempIndex=null
+    }
+  }
+  Log.Message("Index for record :- "+RecNumber+" is "+tempIndex)
+  return tempIndex
 }

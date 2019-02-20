@@ -9,6 +9,10 @@
 //USEUNIT ConfigEditor_FinishPage
 //USEUNIT DFR_Methods
 //USEUNIT PDPPage
+//USEUNIT ConfigEditor_TimeManagementPage
+//USEUNIT ConfigEditor_Comms_NetworkServices
+//USEUNIT CrossTrigger_Methods
+//USEUNIT TimeSync_Methods
 
 /*
 CAM-727 Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length
@@ -420,5 +424,123 @@ function CAM_725()
   {
     Log.Error(ex.stack)
     Log.Error("Fail:-Test to check that user tries to input DFR record length value less/greater than minimum/maximum value")
+  }
+}
+
+/*
+CAM-736 Test to check DFR record length with Cross Trigger
+*/
+function CAM_736()
+{
+  try
+  {
+    Log.Message("Start TC:-CAM-736- Test to check DFR record length with Cross Trigger")
+    var DeviceSuffix =["1","2"]
+    var DeviceLRecordNum=[]
+    DeviceLRecordNum.length =2
+    var DataSheetName = Project.ConfigPath +"TestData\\CAM_736.xlsx"
+    
+    for(let i=0;i< DeviceSuffix.length;i++ )
+    {
+      //Step0.Check whether device exists or not in the topology.    
+      if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))!=true)
+      {
+        GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"+(i+1)))
+        DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+(i+1)),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+(i+1)))      
+      }
+      else
+      {
+        Log.Message("Device exist in the tree topology.")
+      }
+       
+      //Step1. Retrieve Configuration
+      AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+      //Step2. Click on Fault Recording
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+      //Step3. Set pre-fault for External Triggers
+      var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime"+(i+1))
+      AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefaul Time")
+    
+      //Step4. Set Post-fault time for External Triggers
+      var postfault=CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime"+(i+1))
+      AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault),"Validating Post Faulttime")
+    
+      //Step4.1. Set Max DFR time
+      var MaxDFR=CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR"+(i+1))
+      AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR),"Validating Max DFR")
+    
+      //Step 5. Configure Time Master Slave
+      TimeSync_Methods.Configure_TimeMaster_Slave(DataSheetName,(i+1))
+      
+      //Step6. Configure Cross Trigger
+      AssertClass.IsTrue(ConfigEditorPage.ClickonAdvance(),"Clicked on Advance")
+      CrossTrigger_Methods.Configure_CrossTrigger(DataSheetName,(i+1))
+      
+      //Step7.1 Send to Device
+      AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+      //Step7.2 Get Both Device Latest Record Number
+      AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
+      DeviceLRecordNum[i] = DataRetrievalPage.GetLatestRecordnumber()
+      AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"Clicked on Close button")
+    }
+        
+    //Step8. Check Time Quality Status
+    TimeSync_Methods.CheckTimeQualityInMasterSlave(DataSheetName, DeviceSuffix[0], DeviceSuffix[1])
+        
+    //Step9. Generate Manual Trigger
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[0]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[0]))
+    
+    AssertClass.IsTrue(DataRetrievalPage.OpenFRManualTriggerDialog(),"Clicked on FR Manual Trigger")
+    AssertClass.IsTrue(DataRetrievalPage.SetNoOfManualTrigger(CommonMethod.ReadDataFromExcel(DataSheetName,"NoOfManualTrigger")),"Setting No. of Manual Triggers")
+    AssertClass.IsTrue(DataRetrievalPage.ClickonOKManualDFRTrigger(),"Clicked on OK button")
+    
+    //Step10. Check for Cross Trigger
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[1]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[1]))
+    
+    var IsNewRecordFound =false
+    //Step10.1 Check for New DFR Record
+    for(RecordRetryCount=0;RecordRetryCount<30;RecordRetryCount++)
+    {
+      //Try 10 times to check for new record
+      DataRetrievalPage.ClickOnDFRDirectory()      
+      var NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+      if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))<0)
+      {
+        DataRetrievalPage.CloseDFRDirectory()
+      }
+      else if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))>0)
+      {
+        Log.Message("Multiple Triggers found unexpectedly.")
+        DataRetrievalPage.CloseDFRDirectory()
+        break
+      }
+      else
+      {
+        IsNewRecordFound =true      
+        Log.Message("Latest Record number is :- "+NewDFRRecord)
+        break
+      }  
+      aqUtils.Delay(20000)    
+    }
+    AssertClass.IsTrue(IsNewRecordFound,"Checking for New Record")
+    //Step10.2 Check for COT
+    AssertClass.CompareString("XTRIG", DataRetrievalPage.GetCOTByRecordNumber(NewDFRRecord),"Checking COT for DFR")
+    
+    //Step10.3 Download DFR
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Downloadind Record Now")
+    AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"Closed DFR Directory Popup") 
+    //Step10.4 View Record on PDP
+    AssertClass.IsTrue(DFR_Methods.ViewDFROnPDP(NewDFRRecord),"Checking for New record on PDP")
+    
+    //Step 11 Validate Record Length
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(CommonMethod.ReadDataFromExcel(DataSheetName,"ExpectedRecordLength")),CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0)),0,"Checking Record Duration")
+    Log.Message("Pass:- CAM-736 Test to check DFR record length with Cross Trigger")
+  }
+  catch(ex)
+  {
+    Log.Message(ex.stack)
+    Log.Error("Error:-CAM-736 Test to check DFR record length with Cross Trigger")  
   }
 }

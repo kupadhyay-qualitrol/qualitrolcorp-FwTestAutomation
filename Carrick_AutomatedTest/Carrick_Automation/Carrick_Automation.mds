@@ -61,6 +61,14 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="BTC-114" key="{E1945617-FAEA-4C75-93B2-8489C80AD1AD}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_114" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check for Trigger Priority on DFR Directory pop-up and PDP page">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-639" key="{1D2E0805-C489-44C8-83AC-F7AD3DA7590D}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_639" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Trigger priority verification on device configuration for boundary value 0-99">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="Close_iQ_Plus" key="{36B873F6-7905-495F-83E4-F794EAC06A0F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
@@ -78,7 +86,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="5" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
+							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
 								<testParameters />
 								<children />
 							</testItem>
@@ -86,11 +94,11 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="2" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
+							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="0" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
+							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
 								<testParameters />
 								<children />
 							</testItem>
@@ -98,7 +106,28 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="Close iQ_Plus" key="{DC22F493-4F64-4B36-8D1E-81D17E1B9F6B}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="TimeZone" key="{214F7030-6597-4591-BD7C-435A0E018280}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="Login" key="{90D84BF4-664D-4E02-93E7-5C4F193BC132}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC_95_BTC_106" key="{C6EA1462-E0BC-43EC-800F-DD0083D81979}" group="False" enabled="True" testMoniker="{4906C236-045F-4DEA-9A47-483016389E62}BTC_95_BTC_106" count="75" timeout="0" stopOnError="0" stopOnException="2" description="Test all Timezone supported in Carrick &amp; Cashel">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Close iQ_Plus" key="{F591A032-0EBE-4A30-BA6D-B9E243BBB75F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
 								<testParameters />
 								<children />
 							</testItem>
@@ -262,12 +291,14 @@
 		</setting>
 		<setting name="{0DEF6033-13D4-4335-97E9-CC6F1FC04342}" type="1" value="True" />
 		<setting name="{DF56DCEA-130B-4D36-8893-5FDC090AFB17}" type="1" value="False" />
-		<setting name="CLRBridge_SelectedComponents" type="6" rowIndex="-1" colIndex="1">
+		<setting name="CLRBridge_SelectedComponents" type="6" rowIndex="0" colIndex="1">
 			<columns>
 				<column type="5" enabled="True" />
 				<column type="1" enabled="True" />
 			</columns>
-			<data />
+			<data>
+				<row val0=".\ThirdParty\SSH\Renci.SshNet.dll" val1="False" />
+			</data>
 		</setting>
 		<setting name="{85CD048A-29FF-4ABF-95A6-B915AEA2C10D}" type="1" value="False" />
 		<setting name="{2044DC7F-423E-4668-8114-68D23AE97AD6}" type="2" value="50" />

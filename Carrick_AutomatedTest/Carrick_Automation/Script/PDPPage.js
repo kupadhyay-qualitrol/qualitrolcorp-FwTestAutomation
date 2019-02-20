@@ -261,3 +261,42 @@ function ExportTOCSV()
     return false
   }
 }
+
+//This function is used to get the Record Duration
+
+function GetTriggerPriority(PDPRowNo)
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    var PDPcolumn
+    var PriorityColumnNo
+    var Priority
+    //Identify the column number for Priority
+    for(PDPcolumn=0;PDPcolumn< ultraGrid.wColumnCount; PDPcolumn++)
+    {
+      if(ultraGrid.wColumn(PDPcolumn)=="Priority")
+      {
+        PriorityColumnNo = PDPcolumn
+        break
+      }
+    }
+    if(PriorityColumnNo!=null)
+    {
+      Log.Message("Priority No. in PDP is :- "+PriorityColumnNo)
+    }
+    else
+    {
+      Log.Message("Unable to find column no. for Priority in PDP pane.")
+      return null
+    }
+    Priority =EventsList.ugBaseGrid.wValue(PDPRowNo,"Priority")
+    Log.Message("Priority is:- "+Priority)    
+    return Priority
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return null
+  }
+}
