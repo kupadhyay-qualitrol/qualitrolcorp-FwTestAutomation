@@ -16,11 +16,13 @@ namespace CashelFirmware.TestSuite
         public string deviceIP = string.Empty;
         public TestProgressStatus testProgress;
 
-        public BaseTestSuite()
+        public BaseTestSuite(string DeviceIP)
         {
             testProgress = new TestProgressStatus();
             Read_WriteExcel.xlapp = new Application();
+            deviceIP = DeviceIP;
         }
+
 
         [SetUp]
         public void TestSetup()
@@ -35,7 +37,6 @@ namespace CashelFirmware.TestSuite
 
             webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
-            deviceIP = "10.75.58.51";
         }
 
         [OneTimeSetUp]
