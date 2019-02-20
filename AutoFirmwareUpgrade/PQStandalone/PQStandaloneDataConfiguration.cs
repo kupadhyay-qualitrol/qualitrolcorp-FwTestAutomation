@@ -90,8 +90,9 @@ namespace PQStandalone
         {
             try
             {
+                string DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory+ @"\TestData\PQStandalone_Ckt_ParamOnly\";
                 InfovarStartTest = ReportGeneration.extent.StartTest("Configure PQ param for "+CablingType+" Cabling");
-                Config_Cabling.TestCabling(webdriver, deviceIP, InfovarStartTest, CablingType,false, @"\TestData\PQStandalone_Ckt_ParamOnly\");
+                Config_Cabling.TestCabling(webdriver, deviceIP, InfovarStartTest, CablingType, DataSetFolderPath, false);
                 Config_Cabling.ConfigurePQData(deviceIP, webdriver, InfovarStartTest, CablingType, PQDuration, PQDurationUnit);
             }
             catch (Exception ex)
