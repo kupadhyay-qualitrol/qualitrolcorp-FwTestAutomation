@@ -5,6 +5,8 @@ var Edtbx_Voltage = Aliases.RMSDataValidation.RMSDataValidation.VoltageTextBox
 var Edtbx_Current = Aliases.RMSDataValidation.RMSDataValidation.CurrentTextBox
 var Btn_Start = Aliases.RMSDataValidation.RMSDataValidation.StartButton
 var lbl_Status = Aliases.RMSDataValidation.RMSDataValidation.ValidationResultLabel
+var Edtbx_VoltageTolerance= Aliases.RMSDataValidation.RMSDataValidation.VoltageToleranceTextBox
+var Edtbx_CurrentTolerance= Aliases.RMSDataValidation.RMSDataValidation.CurrentToleranceTextBox
 
 //This function is used to set Filepath in RMSValidation exe
 function SetFilePath(FilePathWithName)
@@ -54,6 +56,38 @@ function SetRMSCurrent(InjectedCurrent)
   }
 }
 
+//This function is used to set Voltage Tolerance in RMSValidation exe
+function SetVoltageTolerance(VoltageTolerance)
+{
+  if(VoltageTolerance!=null)
+  {
+    Edtbx_VoltageTolerance.SetText(VoltageTolerance)
+    Log.Message("Set the Voltage Tolerance to :- "+VoltageTolerance)
+    return true
+  }
+  else
+  {
+    Log.Message("Voltage Tolerance is null")
+    return false
+  }
+}
+
+//This function is used to set Current Tolerance in RMSValidation exe
+function SetCurrentTolerance(CurrentTolerance)
+{
+  if(CurrentTolerance!=null)
+  {
+    Edtbx_CurrentTolerance.SetText(CurrentTolerance)
+    Log.Message("Set the Current Tolerance to :- "+CurrentTolerance)
+    return true
+  }
+  else
+  {
+    Log.Message("Current Tolerance is null")
+    return false
+  }
+}
+
 function ClickStart()
 {
   if(Btn_Start.Enabled)
@@ -70,13 +104,15 @@ function ClickStart()
   }
 }
 
-function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedCurrent)
+function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedCurrent,VoltagTolerance,CurrentTolerance)
 {
- if(RMSDataFileNameWithPath!=null&& RMSInjectedVolatge!=null && RMSInjectedCurrent!=null )
+ if(RMSDataFileNameWithPath!=null&& RMSInjectedVolatge!=null && RMSInjectedCurrent!=null && VoltagTolerance!=null && CurrentTolerance!=null)
  {
    SetFilePath(RMSDataFileNameWithPath)
    SetRMSVoltage(RMSInjectedVolatge)
    SetRMSCurrent(RMSInjectedCurrent)
+   SetVoltageTolerance(VoltagTolerance)
+   SetCurrentTolerance(CurrentTolerance)
    ClickStart()
    do
    {
