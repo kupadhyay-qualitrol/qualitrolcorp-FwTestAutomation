@@ -36,6 +36,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.StartButton = new System.Windows.Forms.Button();
             this.ValidationResultLabel = new System.Windows.Forms.Label();
+            this.VoltageToleranceTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CurrentToleranceTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -103,18 +109,77 @@
             // 
             this.ValidationResultLabel.AutoSize = true;
             this.ValidationResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValidationResultLabel.Location = new System.Drawing.Point(505, 116);
+            this.ValidationResultLabel.Location = new System.Drawing.Point(404, 116);
             this.ValidationResultLabel.Name = "ValidationResultLabel";
             this.ValidationResultLabel.Size = new System.Drawing.Size(62, 20);
             this.ValidationResultLabel.TabIndex = 7;
             this.ValidationResultLabel.Text = "Status";
             this.ValidationResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // VoltageToleranceTextBox
+            // 
+            this.VoltageToleranceTextBox.Location = new System.Drawing.Point(231, 47);
+            this.VoltageToleranceTextBox.Name = "VoltageToleranceTextBox";
+            this.VoltageToleranceTextBox.Size = new System.Drawing.Size(48, 20);
+            this.VoltageToleranceTextBox.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(133, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Voltage Tolerance";
+            // 
+            // CurrentToleranceTextBox
+            // 
+            this.CurrentToleranceTextBox.Location = new System.Drawing.Point(231, 80);
+            this.CurrentToleranceTextBox.Name = "CurrentToleranceTextBox";
+            this.CurrentToleranceTextBox.Size = new System.Drawing.Size(48, 20);
+            this.CurrentToleranceTextBox.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(133, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Current Tolerance";
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.Location = new System.Drawing.Point(475, 84);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(0, 20);
+            this.TimeLabel.TabIndex = 25;
+            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(349, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Time Elapsed";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // RMSDataValidation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 150);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TimeLabel);
+            this.Controls.Add(this.CurrentToleranceTextBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.VoltageToleranceTextBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ValidationResultLabel);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.VoltageTextBox);
@@ -142,6 +207,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label ValidationResultLabel;
+        private System.Windows.Forms.TextBox VoltageToleranceTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox CurrentToleranceTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label TimeLabel;
+        private System.Windows.Forms.Label label6;
     }
 }
 
