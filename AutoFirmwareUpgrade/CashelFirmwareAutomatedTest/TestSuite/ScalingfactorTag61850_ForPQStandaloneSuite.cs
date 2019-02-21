@@ -2,6 +2,7 @@
 using CashelFirmware.Reporting;
 using CashelFirmware.NunitTests;
 using NUnit.Framework;
+using CashelFirmware.GlobalVariables;
 
 namespace CashelFirmware.TestSuite
 {
@@ -9,18 +10,20 @@ namespace CashelFirmware.TestSuite
     {
         FirmwareCablingTest CablingTest;
         ScalingFactorTag61850_ForPQStandalone ScalingFactorTag61850_ForPQStandalone;
+        string DataSetFolderPath = string.Empty;
 
-        public ScalingfactorTag61850_ForPQStandaloneSuite()
+        public ScalingfactorTag61850_ForPQStandaloneSuite():base(Constants.glb_DeviceIP_18Channel)
         {
             ScalingFactorTag61850_ForPQStandalone = new ScalingFactorTag61850_ForPQStandalone();
             CablingTest = new FirmwareCablingTest();
+            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory;
         }
         [Test, Order(1)]
         public void ScalingFactorTag_3U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT", DataSetFolderPath);
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U");
         }
 
@@ -28,7 +31,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U3I");
         }
 
@@ -36,7 +39,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U3I3I");
         }
 
@@ -44,7 +47,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I");
         }
 
@@ -52,7 +55,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I");
         }
 
@@ -60,7 +63,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U3I3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U3I3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U3I3I3I3I3I");
         }
 
@@ -68,7 +71,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3I");
         }
 
@@ -76,7 +79,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3I3I");
         }
 
@@ -84,7 +87,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I");
         }
 
@@ -92,7 +95,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I");
         }
 
@@ -100,7 +103,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3I3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3I3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3I3I3I3I3I");
         }
 
@@ -109,8 +112,8 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M3U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M3U Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT", DataSetFolderPath);
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M3U");
         }
 
@@ -118,7 +121,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U3U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U3U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U3U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U3U3I3I3I3I");
         }
 
@@ -126,7 +129,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M3U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M3U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M3U3I");
         }
 
@@ -134,7 +137,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M3U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M3U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I");
         }
 
@@ -142,7 +145,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M3U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M3U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I");
         }
 
@@ -150,7 +153,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M3U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M3U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M3U3I3I3I3I");
         }
 
@@ -158,7 +161,7 @@ namespace CashelFirmware.TestSuite
         //public void ScalingFactorTag_1U3U3I()
         //{
         //    InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3U3I Cabling");
-        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
+        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I", DataSetFolderPath);
         //    ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3U3I");
         //}
 
@@ -166,7 +169,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I");
         }
 
@@ -174,7 +177,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I");
         }
 
@@ -182,7 +185,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U3U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U3U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U3U3I3I3I3I");
         }
 
@@ -190,7 +193,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U1U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U1U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I");
         }
 
@@ -198,7 +201,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U1U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U1U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U1U3I3I3I3I");
         }
 
@@ -206,7 +209,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U1U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U1U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I");
         }
 
@@ -214,7 +217,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U1U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U1U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I");
         }
 
@@ -222,7 +225,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U1U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U1U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U1U3I3I3I3I");
         }
 
@@ -230,7 +233,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_S1U1U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  S1U1U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S1U1U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S1U1U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "S1U1U3I3I3I3I");
         }
 
@@ -238,7 +241,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_S1U3U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  S1U3U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S1U3U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S1U3U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "S1U3U3I3I3I3I");
         }
 
@@ -246,7 +249,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_S3U1U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  S3U1U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S3U1U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "S3U1U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "S3U1U3I3I3I3I");
         }
 
@@ -254,8 +257,8 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT", DataSetFolderPath);
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U");
         }
 
@@ -263,7 +266,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3I");
         }
 
@@ -271,7 +274,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3I3I");
         }
 
@@ -279,7 +282,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I");
         }
 
@@ -287,7 +290,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3I3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3I3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3I3I3I3I");
         }
 
@@ -295,7 +298,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U4I");
         }
 
@@ -303,7 +306,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U4I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U4I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U4I4I");
         }
 
@@ -311,7 +314,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U4I4I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U4I4I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U4I4I4I");
         }
 
@@ -319,8 +322,8 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M4U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M4U Cabling Testing");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT", DataSetFolderPath);
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M4U");
         }
 
@@ -328,7 +331,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M4U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M4U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M4U3I");
         }
 
@@ -336,7 +339,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M4U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M4U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I");
         }
 
@@ -344,7 +347,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M4U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M4U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M4U3I3I3I");
         }
 
@@ -352,7 +355,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M4U4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M4U4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M4U4I");
         }
 
@@ -360,7 +363,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_2M4U4I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  2M4U4I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "2M4U4I4I");
         }
 
@@ -368,8 +371,8 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT", DataSetFolderPath);
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U");
         }
 
@@ -377,7 +380,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U3I");
         }
 
@@ -385,7 +388,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I");
         }
 
@@ -393,7 +396,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U3I3I3I");
         }
 
@@ -401,7 +404,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U4U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U4U Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U4U");
         }
 
@@ -409,7 +412,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U4U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U4U3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U4U3I");
         }
 
@@ -417,7 +420,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U4U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U4U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I");
         }
 
@@ -425,7 +428,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U4U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U4U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I3I");
         }
 
@@ -433,7 +436,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U4I");
         }
 
@@ -441,7 +444,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U4I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U4I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U4I3I");
         }
 
@@ -449,7 +452,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U3U4I4I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U3U4I4I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U3U4I4I3I");
         }
 
@@ -457,7 +460,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U4U3I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U4U3I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U4U3I4I");
         }
 
@@ -465,7 +468,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_3U4U3I3I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  3U4U3I3I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "3U4U3I3I4I");
         }
 
@@ -473,7 +476,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U1U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U1U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I");
         }
 
@@ -481,7 +484,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U1U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U1U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U1U3I3I3I");
         }
 
@@ -489,7 +492,7 @@ namespace CashelFirmware.TestSuite
         //public void ScalingFactorTag_1U4U3I()
         //{
         //    InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U4U3I Cabling");
-        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
+        //    CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I", DataSetFolderPath);
         //    ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U4U3I");
         //}
 
@@ -497,7 +500,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U4U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U4U3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I");
         }
 
@@ -505,7 +508,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U4U3I3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U4U3I3I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I3I");
         }
 
@@ -513,7 +516,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U1U4I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U1U4I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U4I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U4I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U1U4I3I");
         }
 
@@ -521,7 +524,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_4U1U4I4I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  4U1U4I4I3I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U4I4I3I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "4U1U4I4I3I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "4U1U4I4I3I");
         }
 
@@ -529,7 +532,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U4U3I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U4U3I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U4U3I4I");
         }
 
@@ -537,7 +540,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_1U4U3I3I4I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  1U4U3I3I4I Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I4I");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I4I", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "1U4U3I3I4I");
         }
 
@@ -545,7 +548,7 @@ namespace CashelFirmware.TestSuite
         public void ScalingFactorTag_NOCIRCUIT()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate Scale Factor Tag in Standalone channel for  NOCIRCUIT Cabling");
-            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
+            CablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT", DataSetFolderPath);
             ScalingFactorTag61850_ForPQStandalone.ValidateScalingfactorTag_PQStandalone(webdriver, deviceIP, InfovarStartTest, "NOCIRCUIT");
         }
 
