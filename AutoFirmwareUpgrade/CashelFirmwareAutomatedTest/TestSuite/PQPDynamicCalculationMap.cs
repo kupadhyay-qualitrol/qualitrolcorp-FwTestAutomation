@@ -15,7 +15,7 @@ namespace CashelFirmware.TestSuite
         {
             validatePQP_CalculationTable = new ValidatePQP_CalculationTable();
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory+ @"TestDataFiles\CablingDataSet\";
         }
         [Test, Order(1)]
         public void pqp_Dynamic_Calculation_3U()
