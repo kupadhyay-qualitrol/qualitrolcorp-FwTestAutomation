@@ -95,6 +95,7 @@
     <Compile Include="TestCode\FR_Dispatch_Data.cs" />
     <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
     <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
+    <Compile Include="TestSuite\CablingSuite_9Channel.cs" />
     <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite.cs" />
     <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
     <Compile Include="TestSuite\BaseTestSuite.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_LDLicense.cs" />
     <Compile Include="TestSuite\CablingSuite.cs" />
     <Compile Include="TestSuite\PQPDynamicCalculationMap.cs" />
+    <Compile Include="GlobalVariables\Constants.cs" />
     <Compile Include="Utility\Read_WriteExcel.cs" />
     <Compile Include="Utility\ScreenShotCapture.cs" />
     <Compile Include="Utility\TestProgress.cs" />
@@ -249,6 +251,9 @@
     <None Include="TestDataFiles\CablingDataSet\3U4U3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\CablingDataSet\3U_15I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\CablingDataSet\4U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -309,6 +314,21 @@
     <None Include="TestDataFiles\CablingDataSet\4U4I4I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\CablingDataSet\4U_14I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet\6U_12I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet\7U_11I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet\8U_10I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet\DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\CablingDataSet\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -321,22 +341,67 @@
     <None Include="TestDataFiles\CablingDataSet\S3U1U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\sn409026540_3U_15I.cal">
+    <None Include="TestDataFiles\CablingDataSet_9Channel\1U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\sn409026540_4U_14I.cal">
+    <None Include="TestDataFiles\CablingDataSet_9Channel\1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\sn409026540_6U_12I.cal">
+    <None Include="TestDataFiles\CablingDataSet_9Channel\1U3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\sn409026540_7U_11I.cal">
+    <None Include="TestDataFiles\CablingDataSet_9Channel\2M3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\sn409026540_8U_10I.cal">
+    <None Include="TestDataFiles\CablingDataSet_9Channel\2M3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\sn409026540_DefaultCalibration.cal">
+    <None Include="TestDataFiles\CablingDataSet_9Channel\2M4U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\3U4U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\3U_15I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\4U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\4U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\4U3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\4U4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\4U_14I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\6U_12I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\7U_11I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\8U_10I.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\CablingDataSet_9Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U1U3I3I.xlsx">

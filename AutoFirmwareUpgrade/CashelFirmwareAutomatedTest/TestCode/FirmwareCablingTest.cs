@@ -16,6 +16,7 @@ using CashelFirmware.Utility;
 using RelevantCodes.ExtentReports;
 using System.Resources;
 using System.Xml;
+using CashelFirmware.GlobalVariables;
 
 namespace CashelFirmware.NunitTests
 {
@@ -64,7 +65,7 @@ namespace CashelFirmware.NunitTests
         /// <param name="TestLog">Object of Extent Report for log info</param>
         /// <param name="webdriver"></param>
         /// </summary>
-        public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling,bool isCalibrationNeeded=true,string IsFolderPath=null)
+        public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling, string DataSetFolderPath,bool isCalibrationNeeded=true,string IsFolderPath=null)
         {  
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
@@ -75,7 +76,7 @@ namespace CashelFirmware.NunitTests
 
             if (IsFolderPath == null)
             {
-                DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\" + Cabling + ".xlsx";
+                DataSetFileNameWithPath = DataSetFolderPath + Cabling + ".xlsx";
             }
             else
             {
@@ -87,37 +88,37 @@ namespace CashelFirmware.NunitTests
                 switch (Cabling)
                 {
                     case "NOCIRCUIT":
-                        Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_DefaultCalibration.cal"));
+                        Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, DataSetFolderPath+ "DefaultCalibration.cal"));
                         TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- DefaultCalibration.cal");
                         break;
                     case "3U":
                         {
-                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_3U_15I.cal"));
+                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, DataSetFolderPath + "3U_15I.cal"));
                             TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- 3U_15I");
                         }
                         break;
                     case "2M3U":
                         {
-                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_6U_12I.cal"));
+                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, DataSetFolderPath + "6U_12I.cal"));
                             TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- 6U_12I");
                         }
                         break;
                     case "4U":
                         {
-                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_4U_14I.cal"));
+                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, DataSetFolderPath + "4U_14I.cal"));
                             TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- 4U_14I");
                         }
                         break;
 
                     case "2M4U":
                         {
-                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_8U_10I.cal"));
+                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, DataSetFolderPath + "8U_10I.cal"));
                             TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- 8U_10I");
                         }
                         break;
                     case "4U3U":
                         {
-                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, "sn409026540_7U_11I.cal"));
+                            Assert.IsTrue(UploadCalbirationFile(deviceIP, webdriver, DataSetFolderPath + "7U_11I.cal"));
                             TestLog.Log(LogStatus.Pass, "Successfully loaded calibration file:- 7U_11I");
                         }
                         break;
@@ -144,7 +145,7 @@ namespace CashelFirmware.NunitTests
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_Click(), "Clicked on analog option to append it");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on analog option to append it");
 
-                for (int i = 0; i < 18; i++)
+                for (int i = 0; i < Constants.glb_deviceType; i++)
                 {
                     Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i + 1), "Clicked on Channel[" + i + "] option");
                     TestLog.Log(LogStatus.Pass, "Success:-Clicked on Channel[" + i + "] option");
@@ -239,11 +240,12 @@ namespace CashelFirmware.NunitTests
                 Assert.IsTrue(Tabindex_Data_pmp.Item_pmp_data_Click(), "Clicked on pmp data");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on pmp data");
 
-           // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?dfr:dfr/config/analog");
-           // xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling +"_"+ DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_AfterRebootConfig.xml");
+            // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?dfr:dfr/config/analog");
+            // xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling +"_"+ DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_AfterRebootConfig.xml");
 
-           // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?pmp:pmp/data");
-          //  xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling + "_" + DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_AfterRebootpmp.xml");
+            // xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?pmp:pmp/data");
+            //  xmlDocument.Save(AppDomain.CurrentDomain.BaseDirectory + Cabling + "_" + DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss") + "_AfterRebootpmp.xml");
+
 
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
             TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
@@ -348,7 +350,7 @@ namespace CashelFirmware.NunitTests
         /// <returns></returns>
         private bool UploadCalbirationFile(string deviceIP,IWebDriver webdriver,string filepath)
         {
-            string calibrationfilenamewithpath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\CablingDataSet\" + filepath;
+            string calibrationfilenamewithpath = filepath;
             Mfgindex_Calibration Mfgindex_Calibration = new Mfgindex_Calibration(webdriver);
             Assert.AreEqual("Calibration", Mfgindex_Calibration.OpenMfgindexPage(deviceIP));
             Assert.IsTrue(Mfgindex_Calibration.Btn_Calibration_Click());
