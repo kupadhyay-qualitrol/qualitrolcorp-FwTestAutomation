@@ -2183,6 +2183,24 @@
 											</Property>
 										</Properties>
 									</Child>
+									<Child Name="VoltageToleranceTextBox" Key="{AF0F1508-F7C2-4F3A-85EB-7AE326330211}" ParallelWalk="True">
+										<Image FileName="-1311780871" Left="239" Top="78" Right="287" Bottom="98" />
+										<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="VoltageToleranceTextBox" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="CurrentToleranceTextBox" Key="{C1B71482-E548-48A3-A282-DC3057F5715A}" ParallelWalk="True">
+										<Image FileName="-706673130" Left="239" Top="111" Right="287" Bottom="131" />
+										<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="CurrentToleranceTextBox" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
 								</Children>
 							</Child>
 						</Children>
@@ -2699,6 +2717,8 @@
 				<Child Name="VoltageTextBox" Owner="{53DA9F7E-B4BC-4FB2-8055-F50D33781E7A}" />
 				<Child Name="CurrentTextBox" Owner="{D9A966C9-998F-4147-9A5F-0BB5D00F969D}" />
 				<Child Name="StartButton" Owner="{BDC94778-4B2D-443C-84DE-C92E6ECACD45}" />
+				<Child Name="VoltageToleranceTextBox" Owner="{AF0F1508-F7C2-4F3A-85EB-7AE326330211}" />
+				<Child Name="CurrentToleranceTextBox" Owner="{C1B71482-E548-48A3-A282-DC3057F5715A}" />
 			</Child>
 		</Child>
 		<Child Name="QuickCMC" Owner="{8B93D1BE-BBB7-4D44-B31A-D019EFFABBC3}">
