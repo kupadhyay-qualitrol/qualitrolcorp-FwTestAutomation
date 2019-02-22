@@ -20,7 +20,7 @@ function BTC_125()
   try
   {
     Log.Message("Start:-Test to Validate Prefault,Post fault time and record length in the DFR record.")
-    var DataSheetName = Project.ConfigPath +"TestData\\SmokeTestData.xlsx"
+    var DataSheetName = Project.ConfigPath +"TestData\\BTC_125.xlsx"
     //Step0.1 Start Omicron Injection
     OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(DataSheetName,"OmicronFile"))
     //Step0.Check whether device exists or not in the topology.    
@@ -110,7 +110,7 @@ function BTC_125()
     //Step 13. Validate RMS Data
     AssertClass.IsTrue(RMSDataValidationExePage.LaunchRMSValidationApplication())
     
-    var RMSValidationStatus= RMSDataValidationExePage.ValidateRMSData(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedVoltage"),CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedCurrent"))
+    var RMSValidationStatus= RMSDataValidationExePage.ValidateRMSData(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedVoltage"),CommonMethod.ReadDataFromExcel(DataSheetName,"RMSInjectedCurrent"),CommonMethod.ReadDataFromExcel(DataSheetName,"VoltageTolerance"),CommonMethod.ReadDataFromExcel(DataSheetName,"CurrentTolerance"))
     
     AssertClass.IsTrue(aqFile.Move(DFRRecordPath+aqFileSystem.FindFiles(DFRRecordPath, "*.csv").Item(0).Name,Project.ConfigPath+"DFRRecordResults"),"Moving CSV file to Project Folder")//Move the file to the Project path folder
     AssertClass.CompareString("PASS", RMSValidationStatus,"Checking RMS Validation" )    

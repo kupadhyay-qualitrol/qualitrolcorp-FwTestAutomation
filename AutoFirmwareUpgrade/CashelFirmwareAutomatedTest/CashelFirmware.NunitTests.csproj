@@ -98,6 +98,7 @@
     <Compile Include="TestSuite\CablingSuite_9Channel.cs" />
     <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite.cs" />
     <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite_9Channel.cs" />
+    <Compile Include="TestSuite\PQPDynamicCalculationMap_9Channel.cs" />
     <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
     <Compile Include="TestSuite\BaseTestSuite.cs" />
     <Compile Include="TestCode\FirmwareCablingTest.cs" />
@@ -801,6 +802,51 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S3U1U3I3I3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\1U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\1U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\1U3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\2M3U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\2M3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\2M4U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\3U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\3U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\3U3I3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\3U4U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\4U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\4U3I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\4U3U.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\4U4I.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\NOCIRCUIT.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
