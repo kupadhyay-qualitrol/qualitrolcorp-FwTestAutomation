@@ -14,7 +14,7 @@ namespace CashelFirmware.NunitTests
 {
     public class ValidatePQP_CalculationTable
     {          
-        public void PQP_CalculationTable(IWebDriver webDriver,string deviceIP, ExtentTest TestLog,string Cabling)
+        public void PQP_CalculationTable(IWebDriver webDriver,string deviceIP, ExtentTest TestLog,string Cabling,string PQDynamicFilePath)
         {
             string paramtype = string.Empty;
             string phase = string.Empty;
@@ -24,7 +24,7 @@ namespace CashelFirmware.NunitTests
             StringBuilder pqpdataActual = new StringBuilder();
             StringBuilder pqpdataExpected = new StringBuilder();
 
-            string DataSetFileName= AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\PQPDynamicParametersDataSet\" + Cabling + ".txt";
+            string DataSetFileName= PQDynamicFilePath + Cabling + ".txt";
 
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load("http://" + deviceIP + "/cgi-bin/ipcxml.cgi?pqp:pqp/data");               
@@ -53,7 +53,6 @@ namespace CashelFirmware.NunitTests
             }
 
             StreamReader streamReader = new StreamReader(DataSetFileName);
-            
             while (!streamReader.EndOfStream)
             {
                 pqpdataExpected.AppendLine(streamReader.ReadLine()); 
