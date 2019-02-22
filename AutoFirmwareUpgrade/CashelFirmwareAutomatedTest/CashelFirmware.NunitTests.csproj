@@ -97,6 +97,7 @@
     <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
     <Compile Include="TestSuite\CablingSuite_9Channel.cs" />
     <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite.cs" />
+    <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite_9Channel.cs" />
     <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
     <Compile Include="TestSuite\BaseTestSuite.cs" />
     <Compile Include="TestCode\FirmwareCablingTest.cs" />
@@ -547,6 +548,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\sn409026540_DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\1U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
