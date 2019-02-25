@@ -13,14 +13,14 @@ namespace CashelFirmware.TestSuite
         int[] NoTXRatio;
         string DataSetFolderPath = string.Empty;
 
-        public FR_Dispatch_RMSDataSuite_9Channel() : base(Constants.glb_DeviceIP_9Channel)
+        public FR_Dispatch_RMSDataSuite_9Channel() : base(DeviceInformation.glb_DeviceIP_9Channel)
         {
             dispatch_RMSData = new FR_Dispatch_Data();
             firmwareCablingTest = new FirmwareCablingTest();
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9};
-            Constants.glb_deviceType = 9;
+            DeviceInformation.glb_deviceType = 9;
             NoTXRatio = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1};
-            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\";
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\";
         }
 
         [Test, Order(1)]

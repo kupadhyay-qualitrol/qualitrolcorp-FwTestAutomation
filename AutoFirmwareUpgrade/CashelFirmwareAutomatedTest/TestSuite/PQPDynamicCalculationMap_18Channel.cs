@@ -5,20 +5,20 @@ using CashelFirmware.GlobalVariables;
 
 namespace CashelFirmware.TestSuite
 {
-    public class PQPDynamicCalculationMap:BaseTestSuite
+    public class PQPDynamicCalculationMap_18Channel:BaseTestSuite
     {
         ValidatePQP_CalculationTable validatePQP_CalculationTable;
         FirmwareCablingTest CablingTest;
         string DataSetFolderPath = string.Empty;
         string PQFile_DataSet = string.Empty;
 
-        public PQPDynamicCalculationMap() :base(Constants.glb_DeviceIP_18Channel)
+        public PQPDynamicCalculationMap_18Channel() :base(DeviceInformation.glb_DeviceIP_18Channel)
         {
             validatePQP_CalculationTable = new ValidatePQP_CalculationTable();
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory+ @"TestDataFiles\CablingDataSet\";
-            PQFile_DataSet = System.AppDomain.CurrentDomain.BaseDirectory + @"TestDataFiles\PQPDynamicParametersDataSet\";
-            Constants.glb_deviceType = 18;
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\CablingDataSet\";
+            PQFile_DataSet = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\PQPDynamicParametersDataSet\";
+            DeviceInformation.glb_deviceType = 18;
         }
         [Test, Order(1)]
         public void pqp_Dynamic_Calculation_3U()

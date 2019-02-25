@@ -80,7 +80,7 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_Dispatch.Item_rms_Click(), "Clicked on rms");
             TestLog.Log(LogStatus.Info, "Success:- Clicked on rms");
 
-            for (int index = 0; index < Constants.glb_deviceType; index++)
+            for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
             {
                 FR_Dispactch_RMS_Data[index] = Tabindex_Data_Dispatch.Get_Magnitude(index);
             }
@@ -90,7 +90,7 @@ namespace CashelFirmware.NunitTests
             ChannelType.Clear();
             FR_Data_RMS_Value.Clear();
 
-            for (int channelindex = 0; channelindex < Constants.glb_deviceType; channelindex++)
+            for (int channelindex = 0; channelindex < DeviceInformation.glb_deviceType; channelindex++)
             {
                 if (!Channel_TXRatio.ContainsKey(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString())))
                 {
@@ -204,7 +204,7 @@ namespace CashelFirmware.NunitTests
                 }
             }
 
-            for (int RMSValue = 0; RMSValue < Constants.glb_deviceType; RMSValue++)
+            for (int RMSValue = 0; RMSValue < DeviceInformation.glb_deviceType; RMSValue++)
             {   
                 FR_Data_RMS_Value.AppendLine(sortedDict.ElementAt(RMSValue).Value+" -- "+ sortedDict.ElementAt(RMSValue).Key+ " -- " + FR_Dispactch_RMS_Data[RMSValue]);
             }
@@ -217,7 +217,7 @@ namespace CashelFirmware.NunitTests
 
             Assert.Multiple(() =>
             {
-                for (int test = 0; test < Constants.glb_deviceType; test++)
+                for (int test = 0; test < DeviceInformation.glb_deviceType; test++)
                 {
                     if (sortedChannelType.ElementAt(test).Value == "VOLTS" && (sortedDict.ElementAt(test).Key.Length<=10))
                     {

@@ -9,16 +9,16 @@ using System;
 
 namespace CashelFirmware.TestSuite
 {
-    public class CablingSuite : BaseTestSuite
+    public class CablingSuite_18Channel: BaseTestSuite
     {
         string DataSetFolderPath = string.Empty;
         public FirmwareCablingTest CablingTest;
 
-        public CablingSuite() : base(Constants.glb_DeviceIP_18Channel)
+        public CablingSuite_18Channel() : base(DeviceInformation.glb_DeviceIP_18Channel)
         {
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = AppDomain.CurrentDomain.BaseDirectory+ @"TestDataFiles\CablingDataSet\";
-            Constants.glb_deviceType = 18;
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\CablingDataSet\";
+            DeviceInformation.glb_deviceType = 18;
         }
 
         [Test, Order(1)]

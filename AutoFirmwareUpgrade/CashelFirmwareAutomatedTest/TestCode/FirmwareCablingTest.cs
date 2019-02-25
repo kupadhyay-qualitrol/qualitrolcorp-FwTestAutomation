@@ -145,7 +145,7 @@ namespace CashelFirmware.NunitTests
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_Click(), "Clicked on analog option to append it");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on analog option to append it");
 
-                for (int i = 0; i < Constants.glb_deviceType; i++)
+                for (int i = 0; i < DeviceInformation.glb_deviceType; i++)
                 {
                     Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i + 1), "Clicked on Channel[" + i + "] option");
                     TestLog.Log(LogStatus.Pass, "Success:-Clicked on Channel[" + i + "] option");

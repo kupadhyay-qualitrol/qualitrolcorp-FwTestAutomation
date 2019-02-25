@@ -5,7 +5,7 @@ using CashelFirmware.GlobalVariables;
 
 namespace CashelFirmware.TestSuite
 {
-    public class FR_Dispatch_RMSDataSuite: BaseTestSuite
+    public class FR_Dispatch_RMSDataSuite_18Channel: BaseTestSuite
     {
         public FR_Dispatch_Data dispatch_RMSData;
         public FirmwareCablingTest firmwareCablingTest;
@@ -13,13 +13,13 @@ namespace CashelFirmware.TestSuite
         int[] NoTXRatio;
         string DataSetFolderPath = string.Empty;
 
-        public FR_Dispatch_RMSDataSuite() : base(Constants.glb_DeviceIP_18Channel)
+        public FR_Dispatch_RMSDataSuite_18Channel() : base(DeviceInformation.glb_DeviceIP_18Channel)
         {
             dispatch_RMSData = new FR_Dispatch_Data();
             firmwareCablingTest = new FirmwareCablingTest();
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
             NoTXRatio = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory+ @"\TestDataFiles\FR_DISPATCHRMS_DATASET\";
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"\TestDataFiles\FR_DISPATCHRMS_DATASET\";
         }
          [Test,Order(1)]
         public void FR_DIS_RMSDATA_3U()
