@@ -96,16 +96,17 @@
     <Compile Include="TestCode\GetPQP_CalculationTable.cs" />
     <Compile Include="TestCode\ScalingFactorTag61850_ForPQStandalone.cs" />
     <Compile Include="TestSuite\CablingSuite_9Channel.cs" />
-    <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite.cs" />
+    <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite_18Channel.cs" />
+    <Compile Include="TestSuite\FR_Dispatch_RMSDataSuite_9Channel.cs" />
     <Compile Include="TestSuite\PQPDynamicCalculationMap_9Channel.cs" />
     <Compile Include="TestSuite\ScalingfactorTag61850_ForPQStandaloneSuite.cs" />
     <Compile Include="TestSuite\BaseTestSuite.cs" />
     <Compile Include="TestCode\FirmwareCablingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Tabindex_Pages\Tabindex_Configuration_LDLicense.cs" />
-    <Compile Include="TestSuite\CablingSuite.cs" />
-    <Compile Include="TestSuite\PQPDynamicCalculationMap.cs" />
-    <Compile Include="GlobalVariables\Constants.cs" />
+    <Compile Include="TestSuite\CablingSuite_18Channel.cs" />
+    <Compile Include="TestSuite\PQPDynamicCalculationMap_18Channel.cs" />
+    <Compile Include="GlobalVariables\DeviceInformation.cs" />
     <Compile Include="Utility\Read_WriteExcel.cs" />
     <Compile Include="Utility\ScreenShotCapture.cs" />
     <Compile Include="Utility\TestProgress.cs" />
@@ -115,232 +116,232 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U1U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U1U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U1U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3I3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3I3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U3U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U3U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U4U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U4U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U4U3I3I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U4U3I3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\1U4U3I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\1U4U3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M3U.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M3U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M3U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M3U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M3U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M4U.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M4U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M4U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M4U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M4U4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M4U4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\2M4U4I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\2M4U4I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U1U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U1U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I1U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I1U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I1U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3I3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3I3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U3U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U3U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U4U.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U4U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U4U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U4U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U4U3I3I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U4U3I3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U4U3I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U4U3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\3U_15I.cal">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\3U_15I.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U1U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U1U4I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U1U4I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U1U4I4I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U1U4I4I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3I1U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3I1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U4I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U4I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U3U4I4I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U3U4I4I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U4I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U4I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U4I4I4I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U4I4I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\4U_14I.cal">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\4U_14I.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\6U_12I.cal">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\6U_12I.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\7U_11I.cal">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\7U_11I.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\8U_10I.cal">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\8U_10I.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\DefaultCalibration.cal">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\DefaultCalibration.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\NOCIRCUIT.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\S1U1U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\S1U1U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\S1U3U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\S1U3U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\CablingDataSet\S3U1U3I3I3I3I.xlsx">
+    <None Include="TestDataFiles\CablingDataSet_18Channel\S3U1U3I3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\CablingDataSet_9Channel\1U3I.xlsx">
@@ -406,148 +407,169 @@
     <None Include="TestDataFiles\CablingDataSet_9Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U1U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I3I4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\1U4U3I4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\2M3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\2M3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\2M3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\2M3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\2M3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I1U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I1U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U4U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I3I4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U4U3I3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\3U4U3I4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U4U3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U1U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U1U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U1U4I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U4I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I1U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3U.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U3I3I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3U4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U3U4I3I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3U4I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\4U4I4I.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U4I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\NOCIRCUIT.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET\sn409026540_DefaultCalibration.cal">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\sn409026540_DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\1U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\3U3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\3U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\DefaultCalibration.cal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -584,202 +606,202 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Reports\CashelFirmwareReport.html" />
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U1U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U1U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U1U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U1U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U1U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U1U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3I3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3I3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U3U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U3U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U4U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U4U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U4U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I3I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U4U3I3I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\1U4U3I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\1U4U3I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M3U.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M3U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M3U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M3U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M3U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M3U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M4U.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M4U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M4U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M4U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M4U4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\2M4U4I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\2M4U4I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U1U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U1U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U1U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U1U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3I3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U3I3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U3U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U3U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U4U.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U4U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U4U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U4U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I3I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U4U3I3I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\3U4U3I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\3U4U3I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U1U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U1U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U4I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U1U4I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U1U4I4I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U1U4I4I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U4I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U4I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U3U4I4I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U3U4I4I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U4I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U4I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\4U4I4I4I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\4U4I4I4I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\NOCIRCUIT.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\NOCIRCUIT.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S1U1U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\S1U1U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S1U3U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\S1U3U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestDataFiles\PQPDynamicParametersDataSet\S3U1U3I3I3I3I.txt">
+    <Content Include="TestDataFiles\PQPDynamicParametersDataSet_18Channel\S3U1U3I3I3I3I.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestDataFiles\PQPDynamicParametersDataSet_9Channel\1U3I.txt">

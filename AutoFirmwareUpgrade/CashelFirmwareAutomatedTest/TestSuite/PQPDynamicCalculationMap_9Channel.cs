@@ -12,13 +12,13 @@ namespace CashelFirmware.TestSuite
         string DataSetFolderPath = string.Empty;
         string PQFile_DataSet = string.Empty;
 
-        public PQPDynamicCalculationMap_9Channel() : base(Constants.glb_DeviceIP_9Channel)
+        public PQPDynamicCalculationMap_9Channel() : base(DeviceInformation.glb_DeviceIP_9Channel)
         {
             validatePQP_CalculationTable = new ValidatePQP_CalculationTable();
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory + @"TestDataFiles\CablingDataSet_9Channel\";
-            PQFile_DataSet = System.AppDomain.CurrentDomain.BaseDirectory + @"TestDataFiles\PQPDynamicParametersDataSet_9Channel\";
-            Constants.glb_deviceType = 9;
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\CablingDataSet_9Channel\";
+            PQFile_DataSet = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\PQPDynamicParametersDataSet_9Channel\";
+            DeviceInformation.glb_deviceType = 9;
         }
 
         [Test, Order(1)]

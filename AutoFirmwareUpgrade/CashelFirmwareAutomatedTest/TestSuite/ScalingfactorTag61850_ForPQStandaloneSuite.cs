@@ -12,11 +12,11 @@ namespace CashelFirmware.TestSuite
         ScalingFactorTag61850_ForPQStandalone ScalingFactorTag61850_ForPQStandalone;
         string DataSetFolderPath = string.Empty;
 
-        public ScalingfactorTag61850_ForPQStandaloneSuite():base(Constants.glb_DeviceIP_18Channel)
+        public ScalingfactorTag61850_ForPQStandaloneSuite():base(DeviceInformation.glb_DeviceIP_18Channel)
         {
             ScalingFactorTag61850_ForPQStandalone = new ScalingFactorTag61850_ForPQStandalone();
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath+ @"TestDataFiles\CablingDataSet\";
         }
         [Test, Order(1)]
         public void ScalingFactorTag_3U()

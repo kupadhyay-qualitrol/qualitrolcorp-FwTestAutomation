@@ -12,6 +12,7 @@ using RelevantCodes.ExtentReports;
 using System.Resources;
 using NUnit.Framework;
 using CashelFirmware.Utility;
+using CashelFirmware.GlobalVariables;
 
 namespace CashelFirmware.NunitTests
 {
@@ -35,7 +36,7 @@ namespace CashelFirmware.NunitTests
             Channel_TXRatio = new Dictionary<string, int>();
             ChannelType = new Dictionary<string, string>();
             sortedChannelType = new Dictionary<string, string>();
-
+            
             FR_Data_RMS_Value = new StringBuilder();
             FR_Dispactch_RMS_Data = new string[18];
             injectvoltage = 50.0;
@@ -43,14 +44,14 @@ namespace CashelFirmware.NunitTests
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
         }
 
-        public void Validate_FR_Dispatch_Data(IWebDriver webDriver, string deviceIP, ExtentTest TestLog, string Cabling)
+        public void Validate_FR_Dispatch_Data(IWebDriver webDriver, string deviceIP, ExtentTest TestLog, string Cabling,string FRDataSetPath)
         {
             Tabindex_Data_dispatch Tabindex_Data_Dispatch = new Tabindex_Data_dispatch(webDriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webDriver);
 
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
 
-            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestDataFiles\FR_DISPATCHRMS_DATASET\" + Cabling + ".xlsx";
+            DataSetFileNameWithPath = FRDataSetPath + Cabling + ".xlsx";
 
             Assert.AreEqual("Data", Tabindex_Data_Dispatch.OpenTabIndexPage(deviceIP), "Device is up/responding");
             TestLog.Log(LogStatus.Info, "Device is up/responding");
@@ -79,7 +80,7 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_Dispatch.Item_rms_Click(), "Clicked on rms");
             TestLog.Log(LogStatus.Info, "Success:- Clicked on rms");
 
-            for (int index = 0; index < 18; index++)
+            for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
             {
                 FR_Dispactch_RMS_Data[index] = Tabindex_Data_Dispatch.Get_Magnitude(index);
             }
@@ -89,7 +90,7 @@ namespace CashelFirmware.NunitTests
             ChannelType.Clear();
             FR_Data_RMS_Value.Clear();
 
-            for (int channelindex = 0; channelindex < 18; channelindex++)
+            for (int channelindex = 0; channelindex < DeviceInformation.glb_deviceType; channelindex++)
             {
                 if (!Channel_TXRatio.ContainsKey(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString())))
                 {
@@ -203,7 +204,7 @@ namespace CashelFirmware.NunitTests
                 }
             }
 
-            for (int RMSValue = 0; RMSValue < 18; RMSValue++)
+            for (int RMSValue = 0; RMSValue < DeviceInformation.glb_deviceType; RMSValue++)
             {   
                 FR_Data_RMS_Value.AppendLine(sortedDict.ElementAt(RMSValue).Value+" -- "+ sortedDict.ElementAt(RMSValue).Key+ " -- " + FR_Dispactch_RMS_Data[RMSValue]);
             }
@@ -216,15 +217,15 @@ namespace CashelFirmware.NunitTests
 
             Assert.Multiple(() =>
             {
-                for (int test = 0; test < 18; test++)
+                for (int test = 0; test < DeviceInformation.glb_deviceType; test++)
                 {
                     if (sortedChannelType.ElementAt(test).Value == "VOLTS" && (sortedDict.ElementAt(test).Key.Length<=10))
                     {
-                        Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 2.0);
+                        Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 3.0);
                     }
                     else  if((sortedDict.ElementAt(test).Key.Length <= 10))
                     {
-                        Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.2);
+                        Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.3);
                     }
                 }      
             }
