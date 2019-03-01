@@ -97,6 +97,12 @@
 		<child name="CrossTrigger_Methods" key="{54997743-4D7C-474F-A1D9-57992A0836AD}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="CrossTrigger_Methods.js" />
 		</child>
+		<child name="SeleniumWebdriver" key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="SeleniumWebdriver.js" />
+		</child>
+		<child name="Firmware_Mfgindex_Methods" key="{91EB42F9-2BA3-4A37-A8E7-1B727E9BE644}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Firmware_Mfgindex_Methods.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -145,6 +151,12 @@
 				<ref key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" />
 				<ref key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" />
 				<ref key="{54997743-4D7C-474F-A1D9-57992A0836AD}" />
+			</references>
+		</folder>
+		<folder caption="Firmware_WebPage_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
+			<references>
+				<ref key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" />
+				<ref key="{91EB42F9-2BA3-4A37-A8E7-1B727E9BE644}" />
 			</references>
 		</folder>
 	</folders>
