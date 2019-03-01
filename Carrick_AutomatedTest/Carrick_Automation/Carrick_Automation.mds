@@ -298,19 +298,19 @@
 			</columns>
 			<data>
 				<row val0=".\ThirdParty\SSH\Renci.SshNet.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\WebDriver.Support.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\WebDriver.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\ThoughtWorks.Selenium.Core.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\System.Runtime.InteropServices.RuntimeInformation.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\Selenium.WebDriverBackedSelenium.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\RelevantCodes.ExtentReports.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\NUnit3.TestAdapter.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\nunit.framework.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\nunit.engine.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\nunit.engine.api.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\Mono.Cecil.dll" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\chromedriver.exe" val1="False" />
-				<row val0=".\ThirdParty\bin\DLL\CashelFirmwareAutomatedTest.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\WebDriver.Support.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\WebDriver.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\ThoughtWorks.Selenium.Core.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\System.Runtime.InteropServices.RuntimeInformation.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\Selenium.WebDriverBackedSelenium.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\RelevantCodes.ExtentReports.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\NUnit3.TestAdapter.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\nunit.framework.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\nunit.engine.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\nunit.engine.api.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\Mono.Cecil.dll" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\chromedriver.exe" val1="False" />
+				<row val0=".\ThirdParty\ProjectDLL\CashelFirmwareAutomatedTest.dll" val1="False" />
 			</data>
 		</setting>
 		<setting name="{85CD048A-29FF-4ABF-95A6-B915AEA2C10D}" type="1" value="False" />
