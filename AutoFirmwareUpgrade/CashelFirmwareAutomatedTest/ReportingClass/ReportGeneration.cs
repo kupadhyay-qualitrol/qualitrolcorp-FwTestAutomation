@@ -16,9 +16,7 @@ namespace CashelFirmware.Reporting
  
         public static void StartReport(string TestSuite)
         {
-            string path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
-            string actualPath = path.Substring(0, path.LastIndexOf("bin"));
-            string projectPath = new Uri(actualPath).LocalPath;
+            string projectPath = new Uri(Environment.CurrentDirectory).LocalPath;
             string reportPath = projectPath + @"Reports\"+TestSuite+".html";
 
             extent = new ExtentReports(reportPath, true);
