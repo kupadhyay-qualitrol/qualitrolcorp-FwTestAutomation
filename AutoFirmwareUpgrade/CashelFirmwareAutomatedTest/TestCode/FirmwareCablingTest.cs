@@ -348,7 +348,7 @@ namespace CashelFirmware.NunitTests
         /// <param name="webdriver">Selenium driver instance</param>
         /// <param name="filepath">Path of the calibration file</param>
         /// <returns></returns>
-        private bool UploadCalbirationFile(string deviceIP,IWebDriver webdriver,string filepath)
+        public bool UploadCalbirationFile(string deviceIP,IWebDriver webdriver,string filepath)
         {
             string calibrationfilenamewithpath = filepath;
             Mfgindex_Calibration Mfgindex_Calibration = new Mfgindex_Calibration(webdriver);

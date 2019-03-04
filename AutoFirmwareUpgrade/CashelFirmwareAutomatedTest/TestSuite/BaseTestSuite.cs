@@ -6,6 +6,7 @@ using Microsoft.Office.Interop.Excel;
 using CashelFirmware.Utility;
 using NUnit.Framework;
 using CashelFirmware.Reporting;
+using CashelFirmware.GlobalVariables;
 
 namespace CashelFirmware.TestSuite
 {
@@ -25,7 +26,7 @@ namespace CashelFirmware.TestSuite
 
 
         [SetUp]
-        public void TestSetup()
+        public IWebDriver TestSetup()
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments(new[] {
@@ -33,10 +34,10 @@ namespace CashelFirmware.TestSuite
                 "allow-running-insecure-content",
                 "test-type","ignore-certificate-errors","disable-extensions"});
             options.AddUserProfilePreference("credentials_enable_service", false);
-            options.AddUserProfilePreference("profile.password_manager_enabled", false);
-
-            webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
+            options.AddUserProfilePreference("profile.password_manager_enabled", false); 
+            webdriver = new ChromeDriver(DeviceInformation.BaseDirectoryPath, options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
+            return webdriver;
         }
 
         [OneTimeSetUp]
