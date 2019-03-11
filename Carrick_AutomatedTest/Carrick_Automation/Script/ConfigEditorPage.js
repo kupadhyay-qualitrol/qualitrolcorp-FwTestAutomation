@@ -159,3 +159,35 @@ function ClickonNetworkServices()
     return false
   }
 }
+
+//This method is used to click on Circuits in Config Editor
+function ClickOnCircuits()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Circuits")
+    Log.Message("Clicked on Circuits")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}
+
+//This method is used to click on Circuits in Config Editor
+function ClickOnAnalogInputs()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Device Overview|Analog Inputs")
+    Log.Message("Clicked on analog Inputs")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}
