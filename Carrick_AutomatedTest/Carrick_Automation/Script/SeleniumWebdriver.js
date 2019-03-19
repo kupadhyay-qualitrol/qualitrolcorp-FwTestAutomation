@@ -1,8 +1,8 @@
 ﻿/*This file contains methods and objects related to Firmware Mfgindex page*/
 var objBaseTestSuite
+
 function InitialiseWebdriver(deviceIP)
 {
-  CreateObject(deviceIP)
   var ChromeDriverInstance = objBaseTestSuite.TestSetup()
   return ChromeDriverInstance
 }
@@ -27,8 +27,9 @@ function EndReport()
   return true
 }
 
-function StartReport()
-{  
+function StartReport(deviceIP)
+{
+  CreateObject(deviceIP)
   objBaseTestSuite.StartReport()
   Log.Message("Report for WebPage has been Started")
   return true
@@ -37,5 +38,5 @@ function StartReport()
 function StartTestCaseReport(TestCaseName)
 {
   objBaseTestSuite.InfovarStartTest = dotNET.CashelFirmware_Reporting.ReportGeneration.extent.StartTest(TestCaseName,undefined)
-  return true
+  return objBaseTestSuite.InfovarStartTest
 }
