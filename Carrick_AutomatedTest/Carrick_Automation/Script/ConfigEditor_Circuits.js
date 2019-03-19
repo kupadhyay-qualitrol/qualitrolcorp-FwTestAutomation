@@ -77,6 +77,36 @@ function ClickOnDeletePresentCircuit()
   }
 }
 
+function SwitchBusbar(BusbarName)
+{
+ if(BusbarName!=null)
+ {
+   var Eventargs = dotNET.System.EventArgs.zctor()   
+   drpdwn_GroupName.set_Text(BusbarName)
+   drpdwn_GroupName.FireSelectionChangeCommitted(Eventargs)  //This event makes changes to the circuit values
+   Log.Message("Selected Busbar as :-"+ BusbarName)
+   return true
+ }
+ else
+ {
+   Log.Message("Input Parameter is null") 
+   return false
+ }
+}
+
+function GetBusbar_Name(index)
+{
+  if(drpdwn_GroupName.Exists)
+  {
+    return drpdwn_GroupName.get_Items().Item(index).DisplayText.OleValue
+  }
+  else
+  {
+    Log.Message("Config Editor doesn't exists")
+    return null
+  }
+}
+
 function SwitchCircuits(CircuitName)
 {
   if(Form_Circuit_Container.Exists)
@@ -287,7 +317,7 @@ function SetILN(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_ILN.set_Text(ChannelName)
+    drpdwn_IN.set_Text(ChannelName)
     return true
   }
   else
