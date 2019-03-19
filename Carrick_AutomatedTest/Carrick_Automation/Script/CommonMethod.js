@@ -68,7 +68,6 @@ function ReadDataFromExcel(FileName,DataHead,SheetName=null,iteration=null)
     var Excel, s;
     var returnValue
     Excel = Sys.OleObject("Excel.Application")
-    Delay (3000)
     // Wait until Excel starts
     Excel.Visible = false
     Excel.Workbooks.Open(FileName)
