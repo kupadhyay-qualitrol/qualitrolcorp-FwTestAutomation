@@ -10,30 +10,63 @@
 //USEUNIT DeviceTopologyPage
 //USEUNIT GeneralPage
 //USEUNIT DeviceManagementPage
+//USEUNIT Circuit_Configuration
+//USEUNIT Firmware_Tabindex_Methods
 
-function TestNOCIRCUITCabling()
+var DataSetFolderPath = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\"
+var DeviceIP ="10.75.58.51"
+var CashelType ="IDM+18"
+var DeviceName ="IND_DAU_51"
+var DeviceSerialNo ="409026540"
+var DriverInstance
+var TestLog
+var DeviceStatus
+var Busbar1_Name ="Busbar 1"
+var Busbar2_Name ="Busbar 2"
+
+function TestCabling(DatasetFolderPath,CablingName,TestLog)
 {
   try
   {
-    Log.Message("Started TC:-Test to check NOCIRCUIT Cabling")
-    var DataSheetName = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\NOCIRCUIT.xlsx"
-    var CalibrationFilePath = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\DefaultCalibration.cal"
-    var DeviceIP="10.75.58.51"
-    //Step0. Start Report
-    var DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
-    AssertClass.IsTrue(SeleniumWebdriver.StartReport(DeviceIP),"Starting Report")
-    //Step1. Initialise ChromeDriver     
-    AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,CalibrationFilePath),"Uploading Calibration File")
-    
-    SeleniumWebdriver.StartTestCaseReport("Test NOCIRCUIT Cabling")
+    Log.Message("Started TC:-Test to check " +CablingName+ " Cabling")
+    var DataSheetName = DataSetFolderPath+ CablingName + ".xlsx"
+    DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
+       
+    do
+    {
+      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
+    }
+    while (DeviceStatus!="Success")
+    //Step1. Upload Calibration
+    switch (CablingName)
+    {
+      case "NOCIRCUIT":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"DefaultCalibration.cal"),"Uploading Calibration File")    
+        break    
+      case "3U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"3U_15I.cal"),"Uploading Calibration File")    
+        break
+      case "2M3U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"6U_12I.cal"),"Uploading Calibration File")    
+        break
+      case "4U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"4U_14I.cal"),"Uploading Calibration File")    
+        break
+      case "2M4U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"8U_10I.cal"),"Uploading Calibration File")    
+        break
+      case "4U3U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"7U_11I.cal"),"Uploading Calibration File")    
+        break
+    }    
     //Step2. Check if iQ+ is running or not
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
     
     //Step3.Check whether device exists or not in the topology.    
-    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType","DeviceInfo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName","DeviceInfo"))!=true)
+    if(DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)!=true)
     {
-      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
-      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+      GeneralPage.CreateDevice(CashelType,DeviceName,DeviceSerialNo,DeviceIP)
+      DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)      
     }
     else
     {
@@ -50,28 +83,67 @@ function TestNOCIRCUITCabling()
     //Step6.1 Get RowCount
     var DeviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
     
-    //Step6.2 Check Channel name & Set it if it is different from DataSheet
-    for (AnalogRows=0 ; AnalogRows< DeviceType;AnalogRows++)
-    {
-      var DataSheetChannelName =CommonMethod.ReadDataFromExcel(DataSheetName,"label","Cabling",AnalogRows)
+//    //Step6.2 Check Channel name & Set it if it is different from DataSheet
+//    for (AnalogRows=0 ; AnalogRows< DeviceType;AnalogRows++)
+//    {
+//      var DataSheetChannelName =CommonMethod.ReadDataFromExcel(DataSheetName,"label","Cabling",AnalogRows)
+//    
+//      if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(AnalogRows)!= DataSheetChannelName)
+//      {
+//        AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
+//      }
+//    }    
+    //Step7. Click on Circuits ConfiguBusbar1ration
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits") 
     
-      if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(AnalogRows)!= DataSheetChannelName)
-      {
-        AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
-      }
-    }
-    
-    //Step7. Click on Circuits Configuration
-    AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits")
-    
-    //Step8. Delete All Circuits
-    //Step8.1 Get Circuit Count
-    var CiruitsCount=ConfigEditor_Circuits.GetCircuitsCount()
-    
-    //Step8.2 Delete all circuits
-    if(CiruitsCount>0)
+    //Step8.1 Delete all circuits    
+    while(ConfigEditor_Circuits.GetCircuitsCount()>0)
     {
       AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnDeletePresentCircuit())
+    }
+    
+    //Step8.3 Configure Circuit
+    Circuit_Configuration.GetCircuitConfiguration(DataSheetName,"Cabling",DeviceType)
+    
+    //Configure Busbar1
+    if(Circuit_Configuration.Busbar1.length>0)
+    {
+      AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
+      if(ConfigEditor_Circuits.GetBusbar_Name(0)!= Busbar1_Name)
+      {
+        if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(0))
+        {
+          AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(0)),"Switched Busbar")  
+        }
+      
+        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar1_Name),"Setting Busbar 1")
+      }
+      if (ConfigEditor_Circuits.GetBusbar_Name(1)!= Busbar2_Name)
+      {
+        if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(1))
+        {
+          AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(1)),"Switched Busbar")  
+        }   
+        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar2_Name),"Setting Busbar 2")      
+      }
+
+      AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar1_Name),"Switched to Busbar 1")
+
+         
+      AssertClass.IsTrue(Circuit_Configuration.SetBusbar1(),"Setting Busbar 1")
+    
+      //Configure Busbar 1 Feeders
+      Circuit_Configuration.ConfigureBB1Feeder()
+      //Configure Busbar2
+      if(Circuit_Configuration.Busbar2.length>0)
+      {
+        AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
+        AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar2_Name),"Switched to Busbar 1") 
+              
+        AssertClass.IsTrue(Circuit_Configuration.SetBusbar2(),"Setting Busbar 2")    
+        //Configure Busbar2 Feeder
+        Circuit_Configuration.ConfigureBB2Feeder()
+      }
     }
     
     //Step9. Send to Device
@@ -81,38 +153,438 @@ function TestNOCIRCUITCabling()
     aqUtils.Delay(40000)
     
     //Step11. Check if Device is up
-    var DeviceStatus
     do
     {
-      DeviceStatus=CommonMethod.GetDeviceStatusOnPing("10.75.58.51")
+      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
     }
     while (DeviceStatus!="Success")
     
     //Step12. Wait for device to be stable
     aqUtils.Delay(120000)
     
-    //Step13. Retrieve Configuration
-    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    //Step16. Validate from Tabindex
+    //var TestLog = SeleniumWebdriver.StartTestCaseReport(TestReportMessage)
+    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
     
-    //Step14. Click on Circuits
-    AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits")
-    
-    //Step14. Get Circuit Count
-    AssertClass.CompareDecimalValues(0, ConfigEditor_Circuits.GetCircuitsCount(),0,"Checking Circuits Counts")
-    
-    //Step15. Close Config Editor
-    AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close Config Editor")
-    
-    Log.Message("Pass:- Test to check NOCIRCUIT Cabling")  
+    Log.Message("Pass:- Test to check Cabling:-"+CablingName)  
   }
   catch (ex)
   {
-    Log.Message(ex.stack)
-    Log.Error("Fail:-Test to check NOCIRCUIT Cabling")
+    Log.Message(ex.stack)    
+    Log.Error("Fail:-Test to check Cabling:-"+CablingName)
   }
   finally
   {
-    SeleniumWebdriver.TearDown(DeviceIP)
-    SeleniumWebdriver.EndReport(DeviceIP)
+    SeleniumWebdriver.TearDown() 
   }
+}
+
+function Test()
+{
+    var DataSheetName = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\1U1U3I3I.xlsx"
+    var DeviceType =18
+    Circuit_Configuration.GetCircuitConfiguration(DataSheetName,"Cabling",DeviceType)
+    
+    //Configure Busbar1
+    if(Circuit_Configuration.Busbar1.length>0)
+    {
+      AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
+      if(ConfigEditor_Circuits.GetBusbar_Name(0)!= Busbar1_Name)
+      {
+        if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(0))
+        {
+          AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(0)),"Switched Busbar")  
+        }
+      
+        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar1_Name),"Setting Busbar 1")
+      }
+      if (ConfigEditor_Circuits.GetBusbar_Name(1)!= Busbar2_Name)
+      {
+        if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(1))
+        {
+          AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(1)),"Switched Busbar")  
+        }   
+        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar2_Name),"Setting Busbar 1")      
+      }
+      
+      AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar1_Name),"Switched to Busbar 1")
+        
+      AssertClass.IsTrue(Circuit_Configuration.SetBusbar1(),"Setting Busbar1")
+    
+      //Configure Busbar 1 Feeders
+      Circuit_Configuration.ConfigureBB1Feeder()
+      //Configure Busbar2
+      if(Circuit_Configuration.Busbar2.length>0)
+      {
+        AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
+        AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar2_Name),"Switched to Busbar 1")    
+              
+        AssertClass.IsTrue(Circuit_Configuration.SetBusbar2(),"Setting Busbar 2")    
+        //Configure Busbar2 Feeder
+        Circuit_Configuration.ConfigureBB2Feeder()
+      }
+    }
+}
+
+function StartReport()
+{
+  SeleniumWebdriver.StartReport(DeviceIP)
+}
+
+function EndReport()
+{
+  SeleniumWebdriver.EndReport()
+}
+
+function TestCabling3U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
+  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCabling(DataSetFolderPath,"3U",TestLog)
+}
+
+function TestCabling3U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I",TestLog)
+}
+
+function TestCabling3U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I3I",TestLog)
+}
+
+function TestCabling3U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I3I3I",TestLog)
+}
+
+function TestCabling3U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I3I3I3I",TestLog)
+}
+
+function TestCabling3U3I3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I3I3I3I3I",TestLog)
+}
+
+function TestCabling1U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I",TestLog)
+}
+
+function TestCabling1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I",TestLog)
+}
+
+function TestCabling1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I3I",TestLog)
+}
+
+function TestCabling1U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I3I3I",TestLog)
+}
+
+function TestCabling1U3I3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I3I3I3I",TestLog)
+}
+
+function TestCabling2M3U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U Cabling")
+  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCabling(DataSetFolderPath,"2M3U",TestLog)
+}
+
+function TestCabling2M3U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I Cabling")
+  TestCabling(DataSetFolderPath,"2M3U3I",TestLog)
+}
+
+function TestCabling2M3U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"2M3U3I3I",TestLog)
+}
+
+function TestCabling2M3U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"2M3U3I3I3I",TestLog)
+}
+
+function TestCabling2M3U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"2M3U3I3I3I3I",TestLog)
+}
+
+function TestCabling1U1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U1U3I3I",TestLog)
+}
+
+function TestCabling1U1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U1U3I3I3I",TestLog)
+}
+
+function TestCabling1U1U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U1U3I3I3I3I",TestLog)
+}
+
+function TestCabling1U3U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3U3I",TestLog)
+}
+
+function TestCabling1U3U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3U3I3I",TestLog)
+}
+
+function TestCabling1U3U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3U3I3I3I",TestLog)
+}
+
+function TestCabling1U3U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3U3I3I3I3I",TestLog)
+}
+
+function TestCabling3U1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U1U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U1U3I3I3I",TestLog)
+}
+
+function TestCabling3U1U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U1U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U1U3I3I3I3I",TestLog)
+}
+
+function TestCabling3U3I1U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I1U3I",TestLog)
+}
+
+function TestCabling3U3I1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I1U3I3I",TestLog)
+}
+
+function TestCabling3U3I1U3I3I3I()
+{
+ TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U3I1U3I3I3I",TestLog)
+}
+
+function TestCablingS1U1U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test S1U1U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"S1U1U3I3I3I3I",TestLog)
+}
+
+function TestCablingS1U3U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test S1U3U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"S1U3U3I3I3I3I",TestLog)
+}
+
+function TestCablingS3U1U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test S3U1U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"S3U1U3I3I3I3I",TestLog)
+}
+
+function TestCabling4U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U Cabling")
+  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCabling(DataSetFolderPath,"4U",TestLog)
+}
+
+function TestCabling4U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3I",TestLog)
+}
+
+function TestCabling4U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3I3I",TestLog)
+}
+
+function TestCabling4U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3I3I3I",TestLog)
+}
+
+function TestCabling4U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3I3I3I3I",TestLog)
+}
+
+function TestCabling4U4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U4I Cabling")
+  TestCabling(DataSetFolderPath,"4U4I",TestLog)
+}
+
+function TestCabling4U4I4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U4I4I Cabling")
+  TestCabling(DataSetFolderPath,"4U4I4I",TestLog)
+}
+
+function TestCabling4U4I4I4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U4I4I4I Cabling")
+  TestCabling(DataSetFolderPath,"4U4I4I4I",TestLog)
+}
+
+function TestCabling2M4U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U Cabling")
+  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCabling(DataSetFolderPath,"2M4U",TestLog)
+}
+
+function TestCabling2M4U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I Cabling")
+  TestCabling(DataSetFolderPath,"2M4U3I",TestLog)
+}
+
+function TestCabling2M4U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"2M4U3I3I",TestLog)
+}
+
+function TestCabling2M4U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"2M4U3I3I3I",TestLog)
+}
+
+function TestCabling2M4U4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U4I Cabling")
+  TestCabling(DataSetFolderPath,"2M4U4I",TestLog)
+}
+
+function TestCabling2M4U4I4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U4I4I Cabling")
+  TestCabling(DataSetFolderPath,"2M4U4I4I",TestLog)
+}
+
+function TestCabling4U3U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U Cabling")
+  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCabling(DataSetFolderPath,"4U3U",TestLog)
+}
+
+function TestCabling4U3U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3U3I",TestLog)
+}
+
+function TestCabling4U3U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3U3I3I",TestLog)
+}
+
+function TestCabling4U3U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3U3I3I3I",TestLog)
+}
+
+function TestCabling3U4U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U Cabling")
+  TestCabling(DataSetFolderPath,"3U4U",TestLog)
+}
+
+function TestCabling3U4U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I Cabling")
+  TestCabling(DataSetFolderPath,"3U4U3I",TestLog)
+}
+
+function TestCabling3U4U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U4U3I3I",TestLog)
+}
+
+function TestCabling3U4U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U4U3I3I3I",TestLog)
+}
+
+function TestCabling4U3U4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I Cabling")
+  TestCabling(DataSetFolderPath,"4U3U4I",TestLog)
+}
+
+function TestCabling4U3U4I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3U4I3I",TestLog)
+}
+
+function TestCabling4U3U4I4I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I4I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3U4I4I3I",TestLog)
+}
+
+function TestCabling3U4U3I4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I4I Cabling")
+  TestCabling(DataSetFolderPath,"3U4U3I4I",TestLog)
+}
+
+function TestCabling3U4U3I3I4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I4I Cabling")
+  TestCabling(DataSetFolderPath,"3U4U3I3I4I",TestLog)
 }
