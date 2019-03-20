@@ -229,6 +229,10 @@ function SetBusbar1()
         {
           Log.Message("Phase is not defined")
         }
+        if(Busbar1.length==3)
+        {
+          ConfigEditor_Circuits.SetVN("Not Selected")
+        }
       }
     }
     return true
@@ -304,36 +308,14 @@ function SetBusbar2()
         {
           Log.Message("Phase is not defined")
         }
+        if(Busbar2.length==3)
+        {
+          ConfigEditor_Circuits.SetVN("Not Selected")
+        }
       }
     }
     return true
   }
-//  
-//    for (let channelindex=0;channelindex<Busbar2.length;channelindex++)
-//    {
-//      if(Busbar2Phase[channelindex]=="A/AB")
-//      {
-//        ConfigEditor_Circuits.SetVL1(Busbar2[channelindex])
-//      }
-//      else if(Busbar2Phase[channelindex]=="B/BC")
-//      {
-//        ConfigEditor_Circuits.SetVL2(Busbar2[channelindex])
-//      }
-//      else if(Busbar2Phase[channelindex]=="C/CA")
-//      {
-//        ConfigEditor_Circuits.SetVL3(Busbar2[channelindex])
-//      }
-//      else if(Busbar2Phase[channelindex]=="N")
-//      {
-//        ConfigEditor_Circuits.SetVN(Busbar2[channelindex])
-//      }
-//      else
-//      {
-//        Log.Message("Phase is not defined")
-//      }
-//    }
-//    return true
-//  }
   else
   {
     Log.Message("Busbar 2 is not defined")
@@ -378,377 +360,7 @@ function SetBBFeeder(BusbarFeederData,BusbarFeederPhase)
   }
 }
 
-function SetBB1Feeder1()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_1_Feeder_1.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_1_Feeder_1.length;channelindex++)
-    {
-      if(Busbar_1_Feeder_1[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_1_Feeder_1[channelindex])
-      }
-      else if(Busbar_1_Feeder_1Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_1_Feeder_1[channelindex])
-      }
-      else if(Busbar_1_Feeder_1Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_1_Feeder_1[channelindex])
-      }
-      else if(Busbar_1_Feeder_1Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_1_Feeder_1[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB1Feeder2()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_1_Feeder_2.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_1_Feeder_2.length;channelindex++)
-    {
-      if(Busbar_1_Feeder_2[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_1_Feeder_2[channelindex])
-      }
-      else if(Busbar_1_Feeder_2Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_1_Feeder_2[channelindex])
-      }
-      else if(Busbar_1_Feeder_2Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_1_Feeder_2[channelindex])
-      }
-      else if(Busbar_1_Feeder_2Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_1_Feeder_2[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB1Feeder3()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_1_Feeder_3.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_1_Feeder_3.length;channelindex++)
-    {
-      if(Busbar_1_Feeder_3[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_1_Feeder_3[channelindex])
-      }
-      else if(Busbar_1_Feeder_3Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_1_Feeder_3[channelindex])
-      }
-      else if(Busbar_1_Feeder_3Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_1_Feeder_3[channelindex])
-      }
-      else if(Busbar_1_Feeder_3Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_1_Feeder_3[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB1Feeder4()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_1_Feeder_4.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_1_Feeder_4.length;channelindex++)
-    {
-      if(Busbar_1_Feeder_4[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_1_Feeder_4[channelindex])
-      }
-      else if(Busbar_1_Feeder_4Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_1_Feeder_4[channelindex])
-      }
-      else if(Busbar_1_Feeder_4Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_1_Feeder_4[channelindex])
-      }
-      else if(Busbar_1_Feeder_4Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_1_Feeder_4[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB1Feeder5()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_1_Feeder_5.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_1_Feeder_5.length;channelindex++)
-    {
-      if(Busbar_1_Feeder_5[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_1_Feeder_5[channelindex])
-      }
-      else if(Busbar_1_Feeder_5Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_1_Feeder_5[channelindex])
-      }
-      else if(Busbar_1_Feeder_5Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_1_Feeder_5[channelindex])
-      }
-      else if(Busbar_1_Feeder_5Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_1_Feeder_5[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB2Feeder1()
-{
-  //Configure Feeder 1
-  if(Busbar2.length>0 && Busbar_2_Feeder_1.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_2_Feeder_1.length;channelindex++)
-    {
-      if(Busbar_2_Feeder_1[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_2_Feeder_1[channelindex])
-      }
-      else if(Busbar_2_Feeder_1Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_2_Feeder_1[channelindex])
-      }
-      else if(Busbar_2_Feeder_1Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_2_Feeder_1[channelindex])
-      }
-      else if(Busbar_2_Feeder_1Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_2_Feeder_1[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB2Feeder2()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_2_Feeder_2.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_2_Feeder_2.length;channelindex++)
-    {
-      if(Busbar_2_Feeder_2[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_2_Feeder_2[channelindex])
-      }
-      else if(Busbar_2_Feeder_2Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_2_Feeder_2[channelindex])
-      }
-      else if(Busbar_2_Feeder_2Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_2_Feeder_2[channelindex])
-      }
-      else if(Busbar_2_Feeder_2Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_2_Feeder_2[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB2Feeder3()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_2_Feeder_3.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_2_Feeder_3.length;channelindex++)
-    {
-      if(Busbar_2_Feeder_3[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_2_Feeder_3[channelindex])
-      }
-      else if(Busbar_2_Feeder_3Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_2_Feeder_3[channelindex])
-      }
-      else if(Busbar_2_Feeder_3Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_2_Feeder_3[channelindex])
-      }
-      else if(Busbar_2_Feeder_3Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_2_Feeder_3[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB2Feeder4()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_2_Feeder_4.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_2_Feeder_4.length;channelindex++)
-    {
-      if(Busbar_2_Feeder_4[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_2_Feeder_4[channelindex])
-      }
-      else if(Busbar_2_Feeder_4Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_2_Feeder_4[channelindex])
-      }
-      else if(Busbar_2_Feeder_4Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_2_Feeder_4[channelindex])
-      }
-      else if(Busbar_2_Feeder_4Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_2_Feeder_4[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function SetBB2Feeder5()
-{
-  //Configure Feeder 1
-  if(Busbar1.length>0 && Busbar_2_Feeder_5.length>0)
-  {
-    for (let channelindex=0;channelindex<Busbar_2_Feeder_5.length;channelindex++)
-    {
-      if(Busbar_2_Feeder_5[channelindex]=="A/AB")
-      {
-        ConfigEditor_Circuits.SetIL1(Busbar_2_Feeder_5[channelindex])
-      }
-      else if(Busbar_2_Feeder_5Phase[channelindex]=="B/BC")
-      {
-        ConfigEditor_Circuits.SetIL2(Busbar_2_Feeder_5[channelindex])
-      }
-      else if(Busbar_2_Feeder_5Phase[channelindex]=="C/CA")
-      {
-        ConfigEditor_Circuits.SetIL3(Busbar_2_Feeder_5[channelindex])
-      }
-      else if(Busbar_2_Feeder_5Phase[channelindex]=="N")
-      {
-        ConfigEditor_Circuits.SetIN(Busbar_2_Feeder_5[channelindex])
-      }
-      else
-      {
-        Log.Message("Phase is not defined")
-      }
-    }
-    return true
-  }
-  else
-  {
-    Log.Message("Feeder Channels not defined")
-    return false
-  }
-}
-
-function ConfigureBB1Feeder()
+function ConfigureBB1Feeder(Busbar1_Name)
 {
   var FeederArr =[Busbar_1_Feeder_1,Busbar_1_Feeder_2,Busbar_1_Feeder_3,Busbar_1_Feeder_4,Busbar_1_Feeder_5]
   var PhaseArr = [Busbar_1_Feeder_1Phase,Busbar_1_Feeder_2Phase,Busbar_1_Feeder_3Phase,Busbar_1_Feeder_4Phase,Busbar_1_Feeder_5Phase]
@@ -769,12 +381,13 @@ function ConfigureBB1Feeder()
     if(i!=0)
     {
       ConfigEditor_Circuits.ClickOnAddNewCircuit()
+      ConfigEditor_Circuits.SwitchBusbar(Busbar1_Name)
     }  
     SetBBFeeder(ActualFeeder_BB1[i],ActualPhase_BB1[i])
   }
 }
 
-function ConfigureBB2Feeder()
+function ConfigureBB2Feeder(Busbar2_Name)
 {
   var FeederArr =[Busbar_2_Feeder_1,Busbar_2_Feeder_2,Busbar_2_Feeder_3,Busbar_2_Feeder_4,Busbar_2_Feeder_5]
   var PhaseArr = [Busbar_2_Feeder_1Phase,Busbar_2_Feeder_2Phase,Busbar_2_Feeder_3Phase,Busbar_2_Feeder_4Phase,Busbar_2_Feeder_5Phase]
@@ -795,6 +408,7 @@ function ConfigureBB2Feeder()
     if(i!=0)
     {
       ConfigEditor_Circuits.ClickOnAddNewCircuit()
+      ConfigEditor_Circuits.SwitchBusbar(Busbar2_Name)
     }  
     SetBBFeeder(ActualFeeder_BB2[i],ActualPhase_BB2[i])
   }
