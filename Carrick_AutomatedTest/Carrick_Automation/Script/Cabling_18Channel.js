@@ -133,7 +133,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
       AssertClass.IsTrue(Circuit_Configuration.SetBusbar1(),"Setting Busbar 1")
     
       //Configure Busbar 1 Feeders
-      Circuit_Configuration.ConfigureBB1Feeder()
+      Circuit_Configuration.ConfigureBB1Feeder(Busbar1_Name)
       //Configure Busbar2
       if(Circuit_Configuration.Busbar2.length>0)
       {
@@ -142,7 +142,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
               
         AssertClass.IsTrue(Circuit_Configuration.SetBusbar2(),"Setting Busbar 2")    
         //Configure Busbar2 Feeder
-        Circuit_Configuration.ConfigureBB2Feeder()
+        Circuit_Configuration.ConfigureBB2Feeder(Busbar2_Name)
       }
     }
     
@@ -177,53 +177,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
   {
     SeleniumWebdriver.TearDown() 
   }
-}
-
-function Test()
-{
-    var DataSheetName = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\1U1U3I3I.xlsx"
-    var DeviceType =18
-    Circuit_Configuration.GetCircuitConfiguration(DataSheetName,"Cabling",DeviceType)
-    
-    //Configure Busbar1
-    if(Circuit_Configuration.Busbar1.length>0)
-    {
-      AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
-      if(ConfigEditor_Circuits.GetBusbar_Name(0)!= Busbar1_Name)
-      {
-        if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(0))
-        {
-          AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(0)),"Switched Busbar")  
-        }
-      
-        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar1_Name),"Setting Busbar 1")
-      }
-      if (ConfigEditor_Circuits.GetBusbar_Name(1)!= Busbar2_Name)
-      {
-        if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(1))
-        {
-          AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(1)),"Switched Busbar")  
-        }   
-        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar2_Name),"Setting Busbar 1")      
-      }
-      
-      AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar1_Name),"Switched to Busbar 1")
-        
-      AssertClass.IsTrue(Circuit_Configuration.SetBusbar1(),"Setting Busbar1")
-    
-      //Configure Busbar 1 Feeders
-      Circuit_Configuration.ConfigureBB1Feeder()
-      //Configure Busbar2
-      if(Circuit_Configuration.Busbar2.length>0)
-      {
-        AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
-        AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar2_Name),"Switched to Busbar 1")    
-              
-        AssertClass.IsTrue(Circuit_Configuration.SetBusbar2(),"Setting Busbar 2")    
-        //Configure Busbar2 Feeder
-        Circuit_Configuration.ConfigureBB2Feeder()
-      }
-    }
 }
 
 function StartReport()
@@ -352,29 +305,11 @@ function TestCabling1U1U3I3I3I3I()
   TestCabling(DataSetFolderPath,"1U1U3I3I3I3I",TestLog)
 }
 
-function TestCabling1U3U3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I Cabling")
-  TestCabling(DataSetFolderPath,"1U3U3I",TestLog)
-}
-
-function TestCabling1U3U3I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I3I Cabling")
-  TestCabling(DataSetFolderPath,"1U3U3I3I",TestLog)
-}
-
-function TestCabling1U3U3I3I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I3I3I Cabling")
-  TestCabling(DataSetFolderPath,"1U3U3I3I3I",TestLog)
-}
-
-function TestCabling1U3U3I3I3I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I3I3I3I Cabling")
-  TestCabling(DataSetFolderPath,"1U3U3I3I3I3I",TestLog)
-}
+//function TestCabling1U3U3I() //Not Supported in iQ+. Firmware Supports this
+//{
+//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I Cabling")
+//  TestCabling(DataSetFolderPath,"1U3U3I",TestLog)
+//}
 
 function TestCabling3U1U3I3I3I()
 {
@@ -410,12 +345,6 @@ function TestCablingS1U1U3I3I3I3I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test S1U1U3I3I3I3I Cabling")
   TestCabling(DataSetFolderPath,"S1U1U3I3I3I3I",TestLog)
-}
-
-function TestCablingS1U3U3I3I3I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test S1U3U3I3I3I3I Cabling")
-  TestCabling(DataSetFolderPath,"S1U3U3I3I3I3I",TestLog)
 }
 
 function TestCablingS3U1U3I3I3I3I()
@@ -587,4 +516,34 @@ function TestCabling3U4U3I3I4I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I4I Cabling")
   TestCabling(DataSetFolderPath,"3U4U3I3I4I",TestLog)
+}
+
+function TestCabling4U1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U1U3I3I",TestLog)
+}
+
+function TestCabling4U1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U1U3I3I3I",TestLog)
+}
+
+function TestCabling4U1U4I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U4I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U1U4I3I",TestLog)
+}
+
+function TestCabling4U1U4I4I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U4I4I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U1U4I4I3I",TestLog)
+}
+
+function TestCabling4U3I1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3I1U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"4U3I1U3I3I",TestLog)
 }
