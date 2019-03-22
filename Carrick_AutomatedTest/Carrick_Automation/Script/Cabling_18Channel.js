@@ -476,12 +476,6 @@ function TestCabling3U4U3I()
   TestCabling(DataSetFolderPath,"3U4U3I",TestLog)
 }
 
-function TestCabling3U4U3I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I Cabling")
-  TestCabling(DataSetFolderPath,"3U4U3I3I",TestLog)
-}
-
 function TestCabling3U4U3I3I3I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I3I Cabling")
@@ -506,12 +500,6 @@ function TestCabling4U3U4I4I3I()
   TestCabling(DataSetFolderPath,"4U3U4I4I3I",TestLog)
 }
 
-function TestCabling3U4U3I4I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I4I Cabling")
-  TestCabling(DataSetFolderPath,"3U4U3I4I",TestLog)
-}
-
 function TestCabling3U4U3I3I4I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I4I Cabling")
@@ -530,17 +518,17 @@ function TestCabling4U1U3I3I3I()
   TestCabling(DataSetFolderPath,"4U1U3I3I3I",TestLog)
 }
 
-function TestCabling4U1U4I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U4I3I Cabling")
-  TestCabling(DataSetFolderPath,"4U1U4I3I",TestLog)
-}
+//function TestCabling4U1U4I3I() //not Supported in iQ+
+//{
+//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U4I3I Cabling")
+//  TestCabling(DataSetFolderPath,"4U1U4I3I",TestLog)
+//}
 
-function TestCabling4U1U4I4I3I()
-{
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U4I4I3I Cabling")
-  TestCabling(DataSetFolderPath,"4U1U4I4I3I",TestLog)
-}
+//function TestCabling4U1U4I4I3I() //Not Supported in iQ+
+//{
+//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U1U4I4I3I Cabling")
+//  TestCabling(DataSetFolderPath,"4U1U4I4I3I",TestLog)
+//}
 
 function TestCabling4U3I1U3I3I()
 {
