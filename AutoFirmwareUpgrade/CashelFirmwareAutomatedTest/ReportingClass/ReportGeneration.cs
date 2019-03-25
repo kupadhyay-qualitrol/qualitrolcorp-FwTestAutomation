@@ -17,7 +17,7 @@ namespace CashelFirmware.Reporting
         public static void StartReport(string TestSuite)
         {
             string projectPath = new Uri(Environment.CurrentDirectory).LocalPath;
-            string reportPath = projectPath + @"Reports\"+TestSuite+".html";
+            string reportPath = projectPath + @"\Reports\"+TestSuite+".html";
 
             extent = new ExtentReports(reportPath, true);
             extent

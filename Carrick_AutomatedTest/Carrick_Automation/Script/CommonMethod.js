@@ -63,14 +63,26 @@ function Close_iQ_Plus()
 }
 
 //DataDriver to fetch data from excel sheet
-function ReadDataFromExcel(FileName,DataHead)
+function ReadDataFromExcel(FileName,DataHead,SheetName=null,Iteration=null)
 {
     var Excel, s;
+    var returnValue
     Excel = Sys.OleObject("Excel.Application")
-    Delay (3000)
     // Wait until Excel starts
     Excel.Visible = false
     Excel.Workbooks.Open(FileName)
+    if(SheetName!=null)
+    {
+      var WorkSheetCount = Excel.ActiveWorkbook.Worksheets.Count
+      for(let IterateSheets=0;IterateSheets<WorkSheetCount;IterateSheets++)
+      {
+        if(SheetName== Excel.ActiveWorkbook.Worksheets.Item(IterateSheets+1).Name)
+        {
+          Excel.ActiveWorkbook.Worksheets.Item(IterateSheets+1).Select(true)        
+          break
+        }
+      }
+    }
     ColumnCnt= Excel.ActiveCell.CurrentRegion.Columns.Count
     var j=-1
     for (let i = 1;i<=ColumnCnt; i++)
@@ -81,7 +93,15 @@ function ReadDataFromExcel(FileName,DataHead)
         break
       }
     }
-    var returnValue = Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
+    if(Iteration==null)
+    {
+      returnValue = Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
+    }
+    else
+    {
+      returnValue = Excel.ActiveSheet.Cells.Item((Iteration+2),j).Value2
+    }
+    
     Excel.ActiveWorkbook.Close()
     Excel =null
     return returnValue;
@@ -348,4 +368,12 @@ function SetPCTimeZone(PCTimeZone)
 {
   var objShell = Sys.OleObject("Wscript.Shell")
   objShell.Exec("tzutil.exe /s " +aqString.Quote(PCTimeZone))
+}
+
+function GetDeviceStatusOnPing(deviceIPAddress)
+{
+  var IPAdd = dotNET.System_Net.IPAddress.Parse(deviceIPAddress)
+  var Pinger = new dotNET.System_Net_NetworkInformation.Ping.zctor()
+  var PingReply=Pinger.Send(IPAdd)
+  return PingReply.Status.OleValue
 }

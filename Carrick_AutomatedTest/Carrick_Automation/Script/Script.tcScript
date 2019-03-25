@@ -103,6 +103,21 @@
 		<child name="Firmware_Mfgindex_Methods" key="{91EB42F9-2BA3-4A37-A8E7-1B727E9BE644}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="Firmware_Mfgindex_Methods.js" />
 		</child>
+		<child name="ConfigEditor_Circuits" key="{7A3C4435-6763-4F65-A8EB-ACE39AE1565C}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_Circuits.js" />
+		</child>
+		<child name="ConfigEditor_DeviceOverview_AnalogInputs" key="{BB8D6D13-1F7F-4682-B57D-A82DD9BD08A5}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_DeviceOverview_AnalogInputs.js" />
+		</child>
+		<child name="Cabling_18Channel" key="{95952818-0B7B-4203-AC0E-3D62F32D7A95}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Cabling_18Channel.js" />
+		</child>
+		<child name="Circuit_Configuration" key="{21EEBEBA-1A70-4CDD-984C-41C9D6534189}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Circuit_Configuration.js" />
+		</child>
+		<child name="Firmware_Tabindex_Methods" key="{9CCDD66E-3146-4E08-8D72-1F16639E7DD1}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="Firmware_Tabindex_Methods.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -113,6 +128,7 @@
 				<ref key="{08A5EF8B-1B9A-4356-BD2A-1EF2C6046A51}" />
 				<ref key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" />
 				<ref key="{4906C236-045F-4DEA-9A47-483016389E62}" />
+				<ref key="{95952818-0B7B-4203-AC0E-3D62F32D7A95}" />
 			</references>
 		</folder>
 		<folder caption="POM" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -134,6 +150,8 @@
 				<ref key="{5F6A0140-C53A-4BF4-806B-AAA2EF7B7DF2}" />
 				<ref key="{AC4422A9-4D87-412C-B1FB-E3CA721748A7}" />
 				<ref key="{91669D5F-1B80-469A-A640-380CDD11C88A}" />
+				<ref key="{7A3C4435-6763-4F65-A8EB-ACE39AE1565C}" />
+				<ref key="{BB8D6D13-1F7F-4682-B57D-A82DD9BD08A5}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -151,12 +169,14 @@
 				<ref key="{5AEC7EAC-7518-4653-902A-4441AE890E1D}" />
 				<ref key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" />
 				<ref key="{54997743-4D7C-474F-A1D9-57992A0836AD}" />
+				<ref key="{21EEBEBA-1A70-4CDD-984C-41C9D6534189}" />
 			</references>
 		</folder>
 		<folder caption="Firmware_WebPage_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
 			<references>
 				<ref key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" />
 				<ref key="{91EB42F9-2BA3-4A37-A8E7-1B727E9BE644}" />
+				<ref key="{9CCDD66E-3146-4E08-8D72-1F16639E7DD1}" />
 			</references>
 		</folder>
 	</folders>
