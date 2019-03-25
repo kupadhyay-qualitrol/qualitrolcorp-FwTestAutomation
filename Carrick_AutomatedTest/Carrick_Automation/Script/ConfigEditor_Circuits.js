@@ -5,40 +5,40 @@ var Form_Circuits = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingCo
 var Form_Circuit_Container = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer
 var Lnk_AddNewCircuit =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.llbAddNewCircuit
 var Lnk_DeletePresentCircuit =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.llbDelete
-var btn_PopuDialog_Yes =Aliases.iQ_Plus.dlgQualitrolCashelMConfigurator.btnYes
+var Btn_PopuDialog_Yes =Aliases.iQ_Plus.dlgQualitrolCashelMConfigurator.btnYes
 var Edtbx_CircuitName = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.txtCircuitName
-var drpdwn_GroupName = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.cmbGroupName
+var Drpdwn_GroupName = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.cmbGroupName
 var Lnk_RenameGroupName = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.llblRenameBusbar
 var Edtbx_ModifyGroupName =Aliases.iQ_Plus.RenameBusbar.txtGroupName
-var btn_ModifyGroupName_OK = Aliases.iQ_Plus.RenameBusbar.btnModify
-var drpdwn_VL1=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVa
-var drpdwn_VL2=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVb
-var drpdwn_VL3=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVc
-var drpdwn_VN=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVn
-var drpdwn_IL1 = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIa
-var drpdwn_IL2 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIb
-var drpdwn_IL3 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIc
-var drpdwn_IN =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIn
+var Btn_ModifyGroupName_OK = Aliases.iQ_Plus.RenameBusbar.btnModify
+var Drpdwn_VL1=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVa
+var Drpdwn_VL2=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVb
+var Drpdwn_VL3=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVc
+var Drpdwn_VN=Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxVoltages.ugbxVoltageChannels.cmbVn
+var Drpdwn_IL1 = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIa
+var Drpdwn_IL2 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIb
+var Drpdwn_IL3 =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIc
+var Drpdwn_IN =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucCircuits.tcCircuitContainer.ultraTabSharedControlsPage2.circuitEditor.ugbxCurrents.ugbxCurrentChannels.cmbIn
 //
 
 //This method is used to get the circuits count
 function GetCircuitsCount()
 {
-  var CircuitCount=0
+  var circuitCount=0
   if (Form_Circuits.Exists)
   {
     Log.Message("Circuits Form is visible")
     if(Form_Circuit_Container.Exists)
     {
       Log.Message("Circuit Container Exists")
-      CircuitCount= Form_Circuit_Container.DataSource.List.Count
-      Log.Message("No. of Circuit Exists:- "+CircuitCount)
-      return CircuitCount
+      circuitCount= Form_Circuit_Container.DataSource.List.Count
+      Log.Message("No. of Circuit Exists:- "+circuitCount)
+      return circuitCount
     }
     else
     {
       Log.Message("Circuit Container doesn't Exists")
-      return CircuitCount
+      return circuitCount
     }
   }
   else
@@ -67,7 +67,7 @@ function ClickOnDeletePresentCircuit()
   if (Lnk_DeletePresentCircuit.Enabled)
   {
     Lnk_DeletePresentCircuit.Click()
-    btn_PopuDialog_Yes.ClickButton()
+    Btn_PopuDialog_Yes.ClickButton()
     return true  
   }
   else
@@ -81,9 +81,9 @@ function SwitchBusbar(BusbarName)
 {
  if(BusbarName!=null)
  {
-   var Eventargs = dotNET.System.EventArgs.zctor()   
-   drpdwn_GroupName.set_Text(BusbarName)
-   drpdwn_GroupName.FireSelectionChangeCommitted(Eventargs)  //This event makes changes to the circuit values
+   var eventargs = dotNET.System.EventArgs.zctor()   
+   Drpdwn_GroupName.set_Text(BusbarName)
+   Drpdwn_GroupName.FireSelectionChangeCommitted(eventargs)  //This event makes changes to the circuit values
    Log.Message("Selected Busbar as :-"+ BusbarName)
    return true
  }
@@ -96,9 +96,9 @@ function SwitchBusbar(BusbarName)
 
 function GetBusbar_Name(index)
 {
-  if(drpdwn_GroupName.Exists)
+  if(Drpdwn_GroupName.Exists)
   {
-    return drpdwn_GroupName.get_Items().Item(index).DisplayText.OleValue
+    return Drpdwn_GroupName.get_Items().Item(index).DisplayText.OleValue
   }
   else
   {
@@ -113,13 +113,13 @@ function SwitchCircuits(CircuitName)
   {
     Log.Message("Circuit Container Exists")
     //Get Index
-    var CircuitCount = GetCircuitsCount()
+    var circuitCount = GetCircuitsCount()
     var index
-    for (i=0;i<CircuitCount;i++)
+    for (let circuitindex=0;circuitindex<circuitCount;circuitindex++)
     {
-      if(CircuitName== Form_Circuit_Container.Tabs.Item_2(i).Text.OleValue)
+      if(CircuitName== Form_Circuit_Container.Tabs.Item_2(circuitindex).Text.OleValue)
       {
-        index=i
+        index=circuitindex
         break
       }
     
@@ -139,13 +139,13 @@ function GetCircuitIndexByName(CircuitName)
   {
     Log.Message("Circuit Container Exists")
     var index =null
-    var CircuitCount =GetCircuitsCount()
+    var circuitCount =GetCircuitsCount()
     //Get Index
-    for (let i=0;i<CircuitCount;i++)
+    for (let circuitindex=0;circuitindex<circuitCount;circuitindex++)
     {
-      if(Form_Circuit_Container.DataSource.List.Item(i).Label.OleValue==CircuitName)
+      if(Form_Circuit_Container.DataSource.List.Item(circuitindex).Label.OleValue==CircuitName)
       {
-        index=i
+        index=circuitindex
         Log.Message("Index for Circuit "+CircuitName+ " is "+index)
         break     
       }    
@@ -164,7 +164,7 @@ function SetCircuitName(CircuitName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    var CircuitCount =GetCircuitsCount()
+    var circuitCount =GetCircuitsCount()
     Edtbx_CircuitName.SetText(CircuitName)
     return true  
   }
@@ -180,7 +180,7 @@ function GetGroupName()
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    return drpdwn_GroupName.Text.OleValue
+    return Drpdwn_GroupName.Text.OleValue
   }
   else
   {
@@ -196,7 +196,7 @@ function SetGroupName(GroupName)
     Log.Message("Circuit Container Exists")
     Lnk_RenameGroupName.Click()
     Edtbx_ModifyGroupName.SetText(GroupName)
-    btn_ModifyGroupName_OK.Click()
+    Btn_ModifyGroupName_OK.Click()
     Log.Message("Successfully Sets the Voltage GroupName")
     return true
   }
@@ -212,7 +212,7 @@ function SetVL1(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_VL1.set_Text(ChannelName)
+    Drpdwn_VL1.set_Text(ChannelName)
     return true
   }
   else
@@ -227,7 +227,7 @@ function SetVL2(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_VL2.set_Text(ChannelName)
+    Drpdwn_VL2.set_Text(ChannelName)
     return true
   }
   else
@@ -242,7 +242,7 @@ function SetVL3(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_VL3.set_Text(ChannelName)
+    Drpdwn_VL3.set_Text(ChannelName)
     return true
   }
   else
@@ -257,7 +257,7 @@ function SetVN(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_VN.set_Text(ChannelName)
+    Drpdwn_VN.set_Text(ChannelName)
     return true
   }
   else
@@ -272,7 +272,7 @@ function SetIL1(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_IL1.set_Text(ChannelName)
+    Drpdwn_IL1.set_Text(ChannelName)
     return true
   }
   else
@@ -287,7 +287,7 @@ function SetIL2(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_IL2.set_Text(ChannelName)
+    Drpdwn_IL2.set_Text(ChannelName)
     return true
   }
   else
@@ -302,7 +302,7 @@ function SetIL3(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_IL3.set_Text(ChannelName)
+    Drpdwn_IL3.set_Text(ChannelName)
     return true
   }
   else
@@ -317,7 +317,7 @@ function SetILN(ChannelName)
   if(Form_Circuit_Container.Exists)
   {
     Log.Message("Circuit Container Exists")
-    drpdwn_IN.set_Text(ChannelName)
+    Drpdwn_IN.set_Text(ChannelName)
     return true
   }
   else

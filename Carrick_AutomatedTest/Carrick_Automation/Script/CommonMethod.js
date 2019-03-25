@@ -63,7 +63,7 @@ function Close_iQ_Plus()
 }
 
 //DataDriver to fetch data from excel sheet
-function ReadDataFromExcel(FileName,DataHead,SheetName=null,iteration=null)
+function ReadDataFromExcel(FileName,DataHead,SheetName=null,Iteration=null)
 {
     var Excel, s;
     var returnValue
@@ -74,11 +74,11 @@ function ReadDataFromExcel(FileName,DataHead,SheetName=null,iteration=null)
     if(SheetName!=null)
     {
       var WorkSheetCount = Excel.ActiveWorkbook.Worksheets.Count
-      for(let i=0;i<WorkSheetCount;i++)
+      for(let IterateSheets=0;IterateSheets<WorkSheetCount;IterateSheets++)
       {
-        if(SheetName== Excel.ActiveWorkbook.Worksheets.Item(i+1).Name)
+        if(SheetName== Excel.ActiveWorkbook.Worksheets.Item(IterateSheets+1).Name)
         {
-          Excel.ActiveWorkbook.Worksheets.Item(i+1).Select(true)        
+          Excel.ActiveWorkbook.Worksheets.Item(IterateSheets+1).Select(true)        
           break
         }
       }
@@ -93,13 +93,13 @@ function ReadDataFromExcel(FileName,DataHead,SheetName=null,iteration=null)
         break
       }
     }
-    if(iteration==null)
+    if(Iteration==null)
     {
       returnValue = Excel.ActiveSheet.Cells.Item((Project.TestItems.Current.Iteration+1),j).Value2
     }
     else
     {
-      returnValue = Excel.ActiveSheet.Cells.Item((iteration+2),j).Value2
+      returnValue = Excel.ActiveSheet.Cells.Item((Iteration+2),j).Value2
     }
     
     Excel.ActiveWorkbook.Close()
