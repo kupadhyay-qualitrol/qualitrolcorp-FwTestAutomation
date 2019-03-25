@@ -29,7 +29,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
   try
   {
     Log.Message("Started TC:-Test to check " +CablingName+ " Cabling")
-    var DataSheetName = DataSetFolderPath+ CablingName + ".xlsx"
+    var dataSheetName = DataSetFolderPath+ CablingName + ".xlsx"
     DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
        
     do
@@ -81,18 +81,8 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     
     //Step6. Set Channel Name
     //Step6.1 Get RowCount
-    var DeviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
-    
-//    //Step6.2 Check Channel name & Set it if it is different from DataSheet
-//    for (AnalogRows=0 ; AnalogRows< DeviceType;AnalogRows++)
-//    {
-//      var DataSheetChannelName =CommonMethod.ReadDataFromExcel(DataSheetName,"label","Cabling",AnalogRows)
-//    
-//      if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(AnalogRows)!= DataSheetChannelName)
-//      {
-//        AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
-//      }
-//    }    
+    var deviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
+ 
     //Step7. Click on Circuits ConfiguBusbar1ration
     AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits") 
     
@@ -103,7 +93,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     }
     
     //Step8.3 Configure Circuit
-    Circuit_Configuration.GetCircuitConfiguration(DataSheetName,"Cabling",DeviceType)
+    Circuit_Configuration.GetCircuitConfiguration(dataSheetName,"Cabling",deviceType)
     
     //Configure Busbar1
     if(Circuit_Configuration.Busbar1.length>0)
@@ -163,7 +153,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     aqUtils.Delay(120000)
     
     //Step16. Validate from Tabindex
-    //var TestLog = SeleniumWebdriver.StartTestCaseReport(TestReportMessage)
     AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
     
     Log.Message("Pass:- Test to check Cabling:-"+CablingName)  
@@ -187,6 +176,28 @@ function StartReport()
 function EndReport()
 {
   SeleniumWebdriver.EndReport()
+}
+
+function SetAnalogChannelName()
+{
+    var datasheetname = DataSetFolderPath+ "NOCIRCUIT.xlsx"
+    //Step1. Click on Analog Inputs
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnAnalogInputs(),"Clicked on Analog Inputs")
+    
+    //Step2. Set Channel Name
+    //Step2.1 Get RowCount
+    var DeviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
+    
+    //Step3.2 Check Channel name & Set it if it is different from DataSheet
+    for (let AnalogRows=0 ; AnalogRows< DeviceType;AnalogRows++)
+    {
+      var DataSheetChannelName =CommonMethod.ReadDataFromExcel(datasheetname,"label","Cabling",AnalogRows)
+    
+      if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(AnalogRows)!= DataSheetChannelName)
+      {
+        AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
+      }
+    } 
 }
 
 function TestCabling3U()
