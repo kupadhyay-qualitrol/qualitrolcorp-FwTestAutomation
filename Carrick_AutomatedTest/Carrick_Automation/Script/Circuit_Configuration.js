@@ -59,7 +59,7 @@ function GetCircuitConfiguration(DataSheetName,SheetName,NoOfChannels)
   Busbar_2_Feeder_5Phase =[]
   
   var busbar_1_Index =0
-  var busbar_1_Index =0
+  var busbar_2_Index =0
   var bB1FF1_index =0
   var bB1FF2_index =0
   var bB1FF3_index =0
