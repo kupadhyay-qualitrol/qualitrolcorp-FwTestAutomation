@@ -118,6 +118,9 @@
 		<child name="Firmware_Tabindex_Methods" key="{9CCDD66E-3146-4E08-8D72-1F16639E7DD1}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
 			<data path="Firmware_Tabindex_Methods.js" />
 		</child>
+		<child name="ConfigEditor_FaultRecording_FRSensorPage" key="{19474A48-A7D5-4733-B543-25993B7A7C79}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
+			<data path="ConfigEditor_FaultRecording_FRSensorPage.js" />
+		</child>
 	</children>
 	<folders>
 		<folder caption="Test_Scripts" description="A logical folder that is used to organize project items and elements." moniker="">
@@ -152,6 +155,7 @@
 				<ref key="{91669D5F-1B80-469A-A640-380CDD11C88A}" />
 				<ref key="{7A3C4435-6763-4F65-A8EB-ACE39AE1565C}" />
 				<ref key="{BB8D6D13-1F7F-4682-B57D-A82DD9BD08A5}" />
+				<ref key="{19474A48-A7D5-4733-B543-25993B7A7C79}" />
 			</references>
 		</folder>
 		<folder caption="CustomLibrary" description="A logical folder that is used to organize project items and elements." moniker="">
