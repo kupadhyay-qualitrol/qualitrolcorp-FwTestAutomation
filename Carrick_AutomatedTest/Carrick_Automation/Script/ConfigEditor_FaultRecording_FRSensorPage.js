@@ -21,22 +21,21 @@ function SelectFRSensorByName(sensorName)
   if(Dialog_EditFRSensor.Exists) 
    {  
     Edtbx_FRSensor_Quantity.wButtonsRight(0).DropDown()
-    var sensorcount=Item_FRQuantity.wItemCount
-    var sensorindex =-1
-    for (let iteratesensor =0 ; iteratesensor<sensorcount ; iteratesensor++)
+    var sensorCount=Item_FRQuantity.wItemCount
+    var sensorIndex =-1
+    for (let iterateSensor =0 ; iterateSensor<sensorCount ; iterateSensor++)
     {
-      if(Item_FRQuantity.wItem(iteratesensor)==sensorName)
+      if(Item_FRQuantity.wItem(iterateSensor)==sensorName)
       {
-        sensorindex =iteratesensor
+        sensorIndex =iterateSensor
         break
       }
     } 
-    if(sensorindex!=-1)
+    if(sensorIndex!=-1)
     {
-      var sensortobeselected=Item_FRQuantity.wItem(sensorindex)
-      Item_FRQuantity.ClickItem(sensortobeselected)
+      var sensorToBeSelected=Item_FRQuantity.wItem(sensorIndex)
+      Item_FRQuantity.ClickItem(sensorToBeSelected)
       Btn_EditFRSensor_Quantity_OK.Click()
-     // Btn_EditFRSensor_OK.Click()
       return true
     }
     else
