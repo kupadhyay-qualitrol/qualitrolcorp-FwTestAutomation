@@ -6,6 +6,7 @@
 //USEUNIT CommonMethod
 //USEUNIT FavoritesPage
 //USEUNIT PDPPage
+//USEUNIT ConfigEditor_FaultRecording_FRSensorPage
 
 function TriggerManualDFR()
 {
@@ -91,4 +92,15 @@ function ViewDFROnPDP(DownloadedDFRNum)
     Log.Message("DFR Record Number is not correct on PDP.Record number on PDP is :- "+REC+" & on Downloaded one is :- "+DownloadedDFRNum)    
     return false
   }
+}
+
+function SetFRSensor(frsensorName,frsensorType,frsensorScalingType,frsensorUpperThreshold,frsensorPostfaultTime,frsensorOplimit)
+{
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SelectFRSensorByName(frsensorName),"Setting FR Sensor Name")
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SetFRSensorType(frsensorType),"Setting FR sensor Type")
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SetScalingType(frsensorScalingType),"Setting FR Sensor Scaling Type")
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SetUpperThreshold(frsensorUpperThreshold),"Setting FR sensor Upper Threshold")
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SetPostFaultTime(frsensorPostfaultTime),"Setitng FR sensor Post fault")
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SetOplimit(frsensorOplimit),"Setting FR sensor Oplimit")
+  AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.ClickOnOkEditFRSensor() ,"Clicked on OK Button on Edit FR Sensor")
 }
