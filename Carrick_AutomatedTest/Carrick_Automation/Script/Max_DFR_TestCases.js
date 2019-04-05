@@ -548,9 +548,12 @@ function CAM_736()
 }
 
 /*
+CAM-729 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is equal to Maximum record length.
+CAM-730 Test to check limit DFR record length functionality when FR trigger(Pre+Oplimit+Post fault time) is over Maximum record length.
 CAM-731 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.
+CAM-733 Test to check DFR record with continuous FR Trigger in Post Fault state.
 */
-function CAM_731()
+function CAM_729_730_731_733()
 {
   try
   {
