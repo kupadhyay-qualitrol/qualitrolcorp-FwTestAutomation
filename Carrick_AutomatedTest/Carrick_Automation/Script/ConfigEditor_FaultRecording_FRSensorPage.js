@@ -192,3 +192,17 @@ function SetOplimit(oplimit)
   }
 }
 
+function ClickOnOkEditFRSensor()
+{
+  if(Btn_EditFRSensor_OK.Exists)
+  {
+    Btn_EditFRSensor_OK.Click() 
+    return true
+  }
+  else
+  {
+    Log.Message("Edit FR sensor dialog doesn't exists")
+    return false
+  }
+}
+
