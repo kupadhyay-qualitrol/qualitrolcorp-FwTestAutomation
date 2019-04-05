@@ -328,7 +328,7 @@ function KillProcess(Process)
    while(Sys.WaitProcess(Process,5000).Exists)
    {
      Sys.WaitProcess(Process,5000).Terminate()
-     aqUtils.Delay(500)
+     aqUtils.Delay(1000)
    }
    return true
  }
