@@ -13,6 +13,7 @@
 //USEUNIT ConfigEditor_Comms_NetworkServices
 //USEUNIT CrossTrigger_Methods
 //USEUNIT TimeSync_Methods
+//USEUNIT ConfigEditor_FaultRecording_FRSensorPage
 
 /*
 CAM-727 Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length
@@ -542,5 +543,139 @@ function CAM_736()
   {
     Log.Message(ex.stack)
     Log.Error("Error:-CAM-736 Test to check DFR record length with Cross Trigger")  
+  }
+}
+
+/*
+CAM-731 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.
+*/
+function CAM_731()
+{
+  try
+  {
+    Log.Message("Start:-Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.")
+    var DataSheetName = Project.ConfigPath +"TestData\\CAM_731.xlsx"
+    //Step0.Check whether device exists or not in the topology.    
+    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
+    {
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
+    
+    //Step1. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+    //Step2. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step3. Set pre-fault for External Triggers
+    var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefault Time")
+    
+    //Step3.1. Set Max DFR time
+    var MaxDFR=CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFR),"Validating Max DFR") 
+    
+    //Step3.2 Click on FR Sensor
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFRSensor(),"Clicked on FR Sensor")
+    
+    //Step4 Set Post Fault,Oplimit for FR Sensor
+    AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.OpenFRSensorEditor(0),"Open up FR Sensor Editor") //Setting First FR Sensor
+    var frsensorNameFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"FRSensorName")
+    var frsensorTypeFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"Type")
+    var frsensorScalingTypeFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"ScalingType")
+    var frsensorUpperThresholdFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"UpperThreshold")
+    var frsensorPostFaultTimeFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime")
+    var frsensorOplimitFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"Oplimit")
+    var frsensorRecordDurationFromTestData = CommonMethod.ReadDataFromExcel(DataSheetName,"RecordDuration")
+    
+    DFR_Methods.SetFRSensor(frsensorNameFromTestData,frsensorTypeFromTestData,frsensorScalingTypeFromTestData,frsensorUpperThresholdFromTestData,frsensorPostFaultTimeFromTestData,frsensorOplimitFromTestData)
+    
+    //Step5. Send to Device
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    
+    //Step6. Click on DFR Directory under Display Device Directory
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory() ,"Clicked on DFR Directory")           
+      
+    //Step7. Find latest Record Number
+    var lastDFRRecord= DataRetrievalPage.GetLatestRecordnumber()
+    Log.Message("Current Record Number is :- "+lastDFRRecord)      
+      
+    //Step8. Close DFR Directory
+    AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory() ,"Close DFR Directory") 
+    
+    //Step0.1 Start Omicron Injection
+    //OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(DataSheetName,"OmicronFile"))
+    
+    //Step10. Check new record number
+    for(let recordRetryCount=0;recordRetryCount<10;recordRetryCount++)
+    {
+      //Try 10 times to check for new record
+      DataRetrievalPage.ClickOnDFRDirectory()
+       
+      var newDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+      if(aqConvert.StrToInt64(newDFRRecord)!=aqConvert.StrToInt64(lastDFRRecord)+1)
+      {
+        DataRetrievalPage.CloseDFRDirectory()
+      }
+      else
+      {
+        Log.Message("Latest Record number is correct.It is:- "+newDFRRecord)
+        break
+      }      
+    }    
+    AssertClass.CompareString("FRSENSOR",DataRetrievalPage.GetCOTForLatestDFRRecord(),"Checking COT") 
+    
+    //Step11. Click on Download Data Now
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data Now")
+    CommonMethod.CheckActivityLog("DFR records saved successfully for device")
+    AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"Closed DFR Directory")
+    DFR_Methods.ViewDFROnPDP(aqConvert.StrToInt64(lastDFRRecord)+1)
+    
+    //Step12. Check Record Length
+    var RecordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(frsensorRecordDurationFromTestData),aqConvert.StrToInt64(RecordLength),0,"Validating Record Duration.")
+    
+    //Step13. Check Prefault time
+    var ActualPrefault = (PDPPage.GetRecordTriggerDateTime(0))-PDPPage.GetRecordStartDateTime(0)
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(prefault),ActualPrefault,0,"Prefault calculated from PDP is :-"+ActualPrefault)
+    
+    //Step14. Export to CDF.
+    if (aqFileSystem.Exists(Project.ConfigPath+"DFRRecordResults"))
+    {
+      AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
+    }
+    else
+    {
+      aqFileSystem.CreateFolder(Project.ConfigPath+"DFRRecordResults")
+      AssertClass.IsTrue(PDPPage.ExportTOCDF(Project.ConfigPath+"DFRRecordResults\\"))
+    }    
+    //Step15. Export to CSV
+    var SysUserName = CommonMethod.GetSystemUsername()
+    var DFRRecordPath ="C:\\Users\\"+SysUserName+"\\Desktop\\DFRRecord\\"
+    if (aqFileSystem.Exists(DFRRecordPath))
+    {
+      AssertClass.IsTrue(PDPPage.ExportTOCSV())    
+    }
+    else
+    {
+      aqFileSystem.CreateFolder(DFRRecordPath)
+      AssertClass.IsTrue(PDPPage.ExportTOCSV())
+    }
+    AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process    
+    Log.Message("Pass:-Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.")
+  }
+  catch(ex)
+  {
+    Log.Message(ex.stack)
+    Log.Error("Error:-Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.")  
+  }
+  finally
+  {
+    //Close Sequencer
   }
 }
