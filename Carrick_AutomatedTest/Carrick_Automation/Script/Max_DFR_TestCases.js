@@ -14,6 +14,7 @@
 //USEUNIT CrossTrigger_Methods
 //USEUNIT TimeSync_Methods
 //USEUNIT ConfigEditor_FaultRecording_FRSensorPage
+//USEUNIT OmicronStateSeqPage
 
 /*
 CAM-727 Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length
@@ -611,8 +612,8 @@ function CAM_729_730_731_733()
     //Step8. Close DFR Directory
     AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory() ,"Close DFR Directory") 
     
-    //Step0.1 Start Omicron Injection
-    //OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(DataSheetName,"OmicronFile"))
+    //Step9 Start Omicron Injection
+    OmicronStateSeqPage.RunSeqFile(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(DataSheetName,"OmicronFile"))
     
     //Step10. Check new record number
     for(let recordRetryCount=0;recordRetryCount<10;recordRetryCount++)
@@ -679,6 +680,6 @@ function CAM_729_730_731_733()
   }
   finally
   {
-    //Close Sequencer
+    OmicronStateSeqPage.CloseStateSeq()
   }
 }

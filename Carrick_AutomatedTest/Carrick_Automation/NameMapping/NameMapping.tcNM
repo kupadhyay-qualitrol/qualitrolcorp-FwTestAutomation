@@ -2833,6 +2833,172 @@
 							</Child>
 						</Children>
 					</Child>
+					<Child Name="OMSeq" Key="{74FD50F4-352E-40D4-B3EF-0BC90554D651}" ParallelWalk="True">
+						<TypeInfo Item0="{9CF551A9-EB64-43F0-B541-36BCC6DA2756}" />
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="OMSeq" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndAfx" Key="{DFB7096F-8CF1-4817-9B92-432136729B5E}" ParallelWalk="True">
+								<Image FileName="-854620144" Left="0" Top="0" Right="1936" Bottom="1056" />
+								<TypeInfo Item0="{769679BD-9B41-471B-BBCD-353528935F33}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="*" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="xtpBarTop" Key="{476B312B-622E-443C-8E54-7F7582AB50A1}" ParallelWalk="True">
+										<Image FileName="-854620144" Left="8" Top="8" Right="1928" Bottom="156" />
+										<TypeInfo Item0="{3E5CDF11-7903-42AC-B70B-4E6752FC3A60}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="XTPDockBar" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="xtpBarTop" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="toolbarTheRibbon" Key="{4B574F13-46A4-4D1C-B24B-37A19A1B48D1}" ParallelWalk="True">
+												<Image FileName="-854620144" Left="8" Top="8" Right="1928" Bottom="156" />
+												<TypeInfo Item0="{7D51827F-8942-4EC1-90B1-B753C1D504B8}" />
+												<Properties>
+													<Property Name="ObjectType">
+														<Value PropertyType="0" Value="ToolBar" Type="5" />
+													</Property>
+													<Property Name="Caption">
+														<Value PropertyType="0" Value="The Ribbon" Type="5" />
+													</Property>
+													<Property Name="ObjectGroupIndex">
+														<Value PropertyType="0" Value="1" Type="0" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="buttonStartContinue" Key="{989735B9-9FB0-4F55-BFC7-A6A42275A5B6}" ParallelWalk="True">
+														<Image FileName="-854620144" Left="237" Top="65" Right="320" Bottom="131" />
+														<TypeInfo Item0="{012263C5-A4F1-4C08-9DA2-A00AD0CD729A}" />
+														<Properties>
+															<Property Name="ObjectType">
+																<Value PropertyType="0" Value="Button" Type="5" />
+															</Property>
+															<Property Name="Caption">
+																<Value PropertyType="0" Value="Start/Continue" Type="5" />
+															</Property>
+															<Property Name="ObjectGroupIndex">
+																<Value PropertyType="0" Value="2" Type="0" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="menubuttonFile" Key="{AA276030-D075-47D8-8E59-94423D5D6396}" ParallelWalk="True">
+														<Image FileName="-1028957967" Left="8" Top="36" Right="64" Bottom="59" />
+														<TypeInfo Item0="{C25285F6-9B86-4115-9948-157F649CD56E}" />
+														<Properties>
+															<Property Name="ObjectType">
+																<Value PropertyType="0" Value="MenuButton" Type="5" />
+															</Property>
+															<Property Name="Caption">
+																<Value PropertyType="0" Value="File" Type="5" />
+															</Property>
+															<Property Name="ObjectGroupIndex">
+																<Value PropertyType="0" Value="1" Type="0" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="buttonClear" Key="{8619717A-6933-473B-82E8-C65912B21886}" ParallelWalk="True">
+														<Image FileName="349686349" Left="402" Top="61" Right="445" Bottom="127" />
+														<TypeInfo Item0="{012263C5-A4F1-4C08-9DA2-A00AD0CD729A}" />
+														<Properties>
+															<Property Name="ObjectType">
+																<Value PropertyType="0" Value="Button" Type="5" />
+															</Property>
+															<Property Name="Caption">
+																<Value PropertyType="0" Value="Clear" Type="5" />
+															</Property>
+															<Property Name="ObjectGroupIndex">
+																<Value PropertyType="0" Value="2" Type="0" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="menuitemOpenCtrlO" Key="{9E069D37-B1DA-4720-B06D-2147B9F4FDEA}" ParallelWalk="True">
+										<TypeInfo Item0="{FF324DD0-543A-4A3D-986C-FBF92208DA27}" />
+										<Properties>
+											<Property Name="ObjectType">
+												<Value PropertyType="0" Value="MenuItem" Type="5" />
+											</Property>
+											<Property Name="Caption">
+												<Value PropertyType="0" Value="4F00700065006E002E002E002E0009004300740072006C002B004F00" Type="7" />
+											</Property>
+											<Property Name="ObjectGroupIndex">
+												<Value PropertyType="0" Value="1" Type="0" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="cbxFileName" Key="{54D1B288-C4AD-47EB-B611-EB618462415A}" ParallelWalk="True">
+										<Image FileName="-103195497" Left="206" Top="366" Right="452" Bottom="388" />
+										<TypeInfo Item0="{84424348-66CC-44D5-8FD4-332BBF648A04}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="ComboBoxEx32" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ComboBox" Key="{03DBD0A1-76A9-43C8-872E-E08DD9E86E66}" ParallelWalk="True">
+												<Image FileName="-103195497" Left="206" Top="366" Right="452" Bottom="388" />
+												<TypeInfo Item0="{84424348-66CC-44D5-8FD4-332BBF648A04}" />
+												<Properties>
+													<Property Name="WndClass">
+														<Value PropertyType="0" Value="ComboBox" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="Edit" Key="{1593338F-31DC-4537-873F-7F5E98EEE965}" ParallelWalk="True">
+														<Image FileName="-103195497" Left="210" Top="371" Right="432" Bottom="384" />
+														<TypeInfo Item0="{ABC89E00-4706-4129-9490-8D989EA902FA}" />
+														<Properties>
+															<Property Name="WndClass">
+																<Value PropertyType="0" Value="Edit" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="btnOpen" Key="{580DF485-3F01-487D-9562-10E27A3F8ADA}" ParallelWalk="True">
+										<Image FileName="1894111712" Left="485" Top="366" Right="560" Bottom="389" />
+										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="&amp;Open" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="btnNo" Key="{D10B354E-A05B-444C-B767-80049AC17BC9}" ParallelWalk="True">
+										<Image FileName="-929723527" Left="113" Top="118" Right="188" Bottom="141" />
+										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="&amp;No" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
 				</Children>
 			</Child>
 		</Children>
@@ -3278,6 +3444,25 @@
 					</Child>
 				</Child>
 				<Child Name="btnOpen" Owner="{EED8FC35-7D6F-4060-AAD8-B67FD5762F16}" />
+			</Child>
+		</Child>
+		<Child Name="OMSeq" Owner="{74FD50F4-352E-40D4-B3EF-0BC90554D651}">
+			<Child Name="wndAfx" Owner="{DFB7096F-8CF1-4817-9B92-432136729B5E}">
+				<Child Name="xtpBarTop" Owner="{476B312B-622E-443C-8E54-7F7582AB50A1}">
+					<Child Name="toolbarTheRibbon" Owner="{4B574F13-46A4-4D1C-B24B-37A19A1B48D1}">
+						<Child Name="buttonStartContinue" Owner="{989735B9-9FB0-4F55-BFC7-A6A42275A5B6}" />
+						<Child Name="menubuttonFile" Owner="{AA276030-D075-47D8-8E59-94423D5D6396}" />
+						<Child Name="buttonClear" Owner="{8619717A-6933-473B-82E8-C65912B21886}" />
+					</Child>
+				</Child>
+				<Child Name="menuitemOpenCtrlO" Owner="{9E069D37-B1DA-4720-B06D-2147B9F4FDEA}" />
+				<Child Name="cbxFileName" Owner="{54D1B288-C4AD-47EB-B611-EB618462415A}">
+					<Child Name="ComboBox" Owner="{03DBD0A1-76A9-43C8-872E-E08DD9E86E66}">
+						<Child Name="Edit" Owner="{1593338F-31DC-4537-873F-7F5E98EEE965}" />
+					</Child>
+				</Child>
+				<Child Name="btnOpen" Owner="{580DF485-3F01-487D-9562-10E27A3F8ADA}" />
+				<Child Name="btnNo" Owner="{D10B354E-A05B-444C-B767-80049AC17BC9}" />
 			</Child>
 		</Child>
 	</LogicalNodes>
