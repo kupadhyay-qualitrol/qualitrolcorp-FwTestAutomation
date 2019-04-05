@@ -110,7 +110,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-729_730_731" key="{3D3AAB3F-F47B-41BC-A5F6-FC5768DC25B6}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_729_730_731" count="3" timeout="0" stopOnError="2" stopOnException="2" description="CAM-729 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is equal to Maximum record length.&#13;&#10;CAM-730 Test to check limit DFR record length functionality when FR trigger(Pre+Oplimit+Post fault time) is over Maximum record length.&#13;&#10;CAM-731 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.">
+							<testItem name="CAM-729_730_731_733" key="{3D3AAB3F-F47B-41BC-A5F6-FC5768DC25B6}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_729_730_731_733" count="3" timeout="0" stopOnError="2" stopOnException="2" description="CAM-729 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is equal to Maximum record length.&#13;&#10;CAM-730 Test to check limit DFR record length functionality when FR trigger(Pre+Oplimit+Post fault time) is over Maximum record length.&#13;&#10;CAM-731 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.CAM-733 Test to check DFR record with continuous FR Trigger in Post Fault state.">
 								<testParameters />
 								<children />
 							</testItem>
