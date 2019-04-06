@@ -501,32 +501,32 @@ function CAM_736()
     //Step10. Check for Cross Trigger
     DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"+DeviceSuffix[1]),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"+DeviceSuffix[1]))
     
-    var IsNewRecordFound =false
+//    var IsNewRecordFound =false
     //Step10.1 Check for New DFR Record
-    for(RecordRetryCount=0;RecordRetryCount<30;RecordRetryCount++)
-    {
-      //Try 10 times to check for new record
-      DataRetrievalPage.ClickOnDFRDirectory()      
-      var NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
-      if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))<0)
-      {
-        DataRetrievalPage.CloseDFRDirectory()
-      }
-      else if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))>0)
-      {
-        Log.Message("Multiple Triggers found unexpectedly.")
-        DataRetrievalPage.CloseDFRDirectory()
-        break
-      }
-      else
-      {
-        IsNewRecordFound =true      
-        Log.Message("Latest Record number is :- "+NewDFRRecord)
-        break
-      }  
-      aqUtils.Delay(20000)    
-    }
-    AssertClass.IsTrue(IsNewRecordFound,"Checking for New Record")
+//    for(RecordRetryCount=0;RecordRetryCount<30;RecordRetryCount++)
+//    {
+//      //Try 10 times to check for new record
+//      DataRetrievalPage.ClickOnDFRDirectory()      
+//      var NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+//      if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))<0)
+//      {
+//        DataRetrievalPage.CloseDFRDirectory()
+//      }
+//      else if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(DeviceLRecordNum[1])+1))>0)
+//      {
+//        Log.Message("Multiple Triggers found unexpectedly.")
+//        DataRetrievalPage.CloseDFRDirectory()
+//        break
+//      }
+//      else
+//      {
+//        IsNewRecordFound =true      
+//        Log.Message("Latest Record number is :- "+NewDFRRecord)
+//        break
+//      }  
+//      aqUtils.Delay(20000)    
+//    }
+    AssertClass.IsTrue(DFR_Methods.IsNewRecordFound(30,DeviceLRecordNum[1]),"Checking for New Record")
     //Step10.2 Check for COT
     AssertClass.CompareString("XTRIG", DataRetrievalPage.GetCOTByRecordNumber(NewDFRRecord),"Checking COT for DFR")
     
@@ -558,7 +558,7 @@ function CAM_729_730_731_733()
   try
   {
     Log.Message("Start:-Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.")
-    var DataSheetName = Project.ConfigPath +"TestData\\CAM_731.xlsx"
+    var DataSheetName = Project.ConfigPath +"TestData\\CAM_729_730_731_733.xlsx"
     //Step0.Check whether device exists or not in the topology.    
     if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
     {
@@ -616,22 +616,27 @@ function CAM_729_730_731_733()
     OmicronStateSeqPage.RunSeqFile(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(DataSheetName,"OmicronFile"))
     
     //Step10. Check new record number
-    for(let recordRetryCount=0;recordRetryCount<10;recordRetryCount++)
-    {
-      //Try 10 times to check for new record
-      DataRetrievalPage.ClickOnDFRDirectory()
-       
-      var newDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
-      if(aqConvert.StrToInt64(newDFRRecord)!=aqConvert.StrToInt64(lastDFRRecord)+1)
-      {
-        DataRetrievalPage.CloseDFRDirectory()
-      }
-      else
-      {
-        Log.Message("Latest Record number is correct.It is:- "+newDFRRecord)
-        break
-      }      
-    }    
+//    var newRecordFound =false
+//    for(let recordRetryCount=0;recordRetryCount<10;recordRetryCount++)
+//    {
+//      //Try 10 times to check for new record
+//      DataRetrievalPage.ClickOnDFRDirectory()
+//       
+//      var newDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+//      if(aqConvert.StrToInt64(newDFRRecord)!=aqConvert.StrToInt64(lastDFRRecord)+1)
+//      {
+//        newRecordFound =true      
+//        DataRetrievalPage.CloseDFRDirectory()
+//      }
+//      else
+//      {
+//        Log.Message("Latest Record number is correct.It is:- "+newDFRRecord)
+//        break
+//      }      
+//    } 
+//    AssertClass.IsTrue(newRecordFound,"Checking for new Record")   
+    AssertClass.IsTrue(DFR_Methods.IsNewRecordFound(10,lastDFRRecord),"Checking for new Record")
+    
     AssertClass.CompareString("FRSENSOR",DataRetrievalPage.GetCOTForLatestDFRRecord(),"Checking COT") 
     
     //Step11. Click on Download Data Now

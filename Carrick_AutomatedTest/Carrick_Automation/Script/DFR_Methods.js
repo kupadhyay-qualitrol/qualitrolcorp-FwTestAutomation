@@ -104,3 +104,29 @@ function SetFRSensor(frsensorName,frsensorType,frsensorScalingType,frsensorUpper
   AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.SetOplimit(frsensorOplimit),"Setting FR sensor Oplimit")
   AssertClass.IsTrue(ConfigEditor_FaultRecording_FRSensorPage.ClickOnOkEditFRSensor() ,"Clicked on OK Button on Edit FR Sensor")
 }
+
+function IsNewRecordFound(retryCount,lastRecordNumber)
+{
+  for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
+  {
+    DataRetrievalPage.ClickOnDFRDirectory()      
+    var NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+    if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(lastRecordNumber)+1))<0)
+    {
+      DataRetrievalPage.CloseDFRDirectory()
+      aqUtils.Delay(20000) 
+    }
+    else if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(lastRecordNumber)+1))>0)
+    {
+      Log.Message("Multiple Triggers found")
+      DataRetrievalPage.CloseDFRDirectory()
+      return false
+      break
+    }
+    else
+    {   
+      Log.Message("Latest Record number is :- "+NewDFRRecord)
+      return true
+    }   
+  }
+}
