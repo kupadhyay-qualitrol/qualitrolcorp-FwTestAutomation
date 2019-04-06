@@ -253,6 +253,7 @@ function ExportTOCSV()
     aqUtils.Delay(2000)
     Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.ClickItem("|Desktop|DFRRecord")
     Aliases.iQ_Plus.dlgBrowseForFolder.btnOK.ClickButton()
+    CommonMethod.CheckActivityLog("Exported Successfully")    
     return true
   }
   else
