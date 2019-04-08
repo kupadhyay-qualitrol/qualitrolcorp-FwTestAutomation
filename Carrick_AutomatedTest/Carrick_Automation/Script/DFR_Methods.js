@@ -110,13 +110,13 @@ function IsNewRecordFound(retryCount,lastRecordNumber)
   for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
   {
     DataRetrievalPage.ClickOnDFRDirectory()      
-    var NewDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
-    if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(lastRecordNumber)+1))<0)
+    var newDFRRecord=DataRetrievalPage.GetLatestRecordnumber()
+    if((aqConvert.StrToInt64(newDFRRecord)-(aqConvert.StrToInt64(lastRecordNumber)+1))<0)
     {
       DataRetrievalPage.CloseDFRDirectory()
       aqUtils.Delay(20000) 
     }
-    else if((aqConvert.StrToInt64(NewDFRRecord)-(aqConvert.StrToInt64(lastRecordNumber)+1))>0)
+    else if((aqConvert.StrToInt64(newDFRRecord)-(aqConvert.StrToInt64(lastRecordNumber)+1))>0)
     {
       Log.Message("Multiple Triggers found")
       DataRetrievalPage.CloseDFRDirectory()
@@ -125,7 +125,7 @@ function IsNewRecordFound(retryCount,lastRecordNumber)
     }
     else
     {   
-      Log.Message("Latest Record number is :- "+NewDFRRecord)
+      Log.Message("Latest Record number is :- "+newDFRRecord)
       return true
     }   
   }
