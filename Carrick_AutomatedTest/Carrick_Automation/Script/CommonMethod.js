@@ -156,37 +156,45 @@ function LastModifiedFile(FilePath)
   var FolderName = FilePath
 
   var FolderInfo = aqFileSystem.GetFolderInfo(FolderName)
-
-  var Num = FolderInfo.Files.Count
-
-  Log.Message("The folder contains " + Num + " files.")
   
-  var FileDateModified = []
-  var ExecutableFile=[]
-  var temp
-  var tempExecutableFile
-  
-  for (var i=0; i < Num; i++)
+  if(FolderInfo.Files!=null)
   {
-      var FileDate = FolderInfo.Files.Item(i).DateLastModified
-      var strFileDate = aqConvert.DateTimeToStr(FolderInfo.Files.Item(i).DateLastModified)
+    var Num = FolderInfo.Files.Count
 
-      if(i==0)
-      {
-        temp= FileDate
-        tempExecutableFile=FolderInfo.Files.Item(i).Name          
-      }
-      else
-      {            
-        if(aqDateTime.Compare(temp,FileDate)==-1)
+    Log.Message("The folder contains " + Num + " files.")
+  
+    var FileDateModified = []
+    var ExecutableFile=[]
+    var temp
+    var tempExecutableFile
+  
+    for (var i=0; i < Num; i++)
+    {
+        var FileDate = FolderInfo.Files.Item(i).DateLastModified
+        var strFileDate = aqConvert.DateTimeToStr(FolderInfo.Files.Item(i).DateLastModified)
+
+        if(i==0)
         {
           temp= FileDate
-          tempExecutableFile=FolderInfo.Files.Item(i).Name 
+          tempExecutableFile=FolderInfo.Files.Item(i).Name          
         }
-      }
+        else
+        {            
+          if(aqDateTime.Compare(temp,FileDate)==-1)
+          {
+            temp= FileDate
+            tempExecutableFile=FolderInfo.Files.Item(i).Name 
+          }
+        }
+    }
+    Log.Message("Latest Build in the folder is:- "+ tempExecutableFile)
+    return tempExecutableFile
   }
-  Log.Message("Latest Build in the folder is:- "+ tempExecutableFile)
-  return tempExecutableFile
+  else
+  {
+    Log.Message("Folder is Empty")  
+    return null
+  }
 }
 
 function CreateDirectory(DirectoryName)
