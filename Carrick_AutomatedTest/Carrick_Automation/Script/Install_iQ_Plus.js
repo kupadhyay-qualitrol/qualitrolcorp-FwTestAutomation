@@ -16,10 +16,11 @@ var Edtbx_Username=Aliases.iQ_Plus.UserLogin.USRLOGINtxtUserName
 var Btn_DBConfigurationAssistant_Next =Aliases.setup.FrmServiceSettings.btnNext
 var Btn_DBServerSelection_Next=Aliases.setup.FrmConfigSqlServer.btnNext
 var lbl_iQ_Server_Version= Aliases.iQ_PlusServerController.CarrickServiceManager.lblVersion
+var Btn_KeepDb_Next =Aliases.setup.FrmSelectDbOption.btnNext
 //
 
 //TC-Install IQ+ Application in the PC with default steps
-function Install_iQ_Plus()
+function Install_iQ_Plus(Isupgrade=false)
 {
   Log.Message("Start:TC-Install IQ+ Application in the PC with default settings.")
   //Step1. Copy the latest build from the server to local path.
@@ -106,7 +107,17 @@ function Install_iQ_Plus()
     }
     while (!Btn_DBServerSelection_Next.Exists)
     Btn_DBServerSelection_Next.ClickButton()
-  
+    
+    //Step10.1.DatabaseServer Selection:-Press Next to continue Installation To be included for upgrade
+    if(Isupgrade)
+    {
+      do
+      {
+        aqUtils.Delay(2000)
+      }
+      while (!Btn_KeepDb_Next.Exists)
+      Btn_KeepDb_Next.ClickButton()
+    }
     //Step11. Ready to install
     do
     {
@@ -121,6 +132,7 @@ function Install_iQ_Plus()
       aqUtils.Delay(2000)
     }
     while (!Btn_TaskRunner_Next.Exists)
+    
     do
     {
       aqUtils.Delay(2000)
@@ -128,13 +140,16 @@ function Install_iQ_Plus()
     while (!Btn_TaskRunner_Next.Enabled)
     Btn_TaskRunner_Next.ClickButton()
   
-    //Step13.Press button Next
-    do
+    //Step13.Press button Next Not required for Upgrade
+    if(!Isupgrade)
     {
-      aqUtils.Delay(2000)
+      do
+      {
+        aqUtils.Delay(2000)
+      }
+      while (!Btn_SetPassword_Next.Exists)
+      Btn_SetPassword_Next.ClickButton()
     }
-    while (!Btn_SetPassword_Next.Exists)
-    Btn_SetPassword_Next.ClickButton()
   
     //Steps14.Press Finish button
     do
