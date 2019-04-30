@@ -262,7 +262,50 @@ function ExportTOCSV()
     return false
   }
 }
+//This method is used to Export the record to CDF
+function ExportMultipleTOCDF(Path,Index_number)
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    ultraGrid.ClickCellR(Index_number, "Triggered Parameter Info")
+    LLPlayer.KeyDown(VK_DOWN,500)
+    LLPlayer.KeyDown(VK_RIGHT,1000)
+    LLPlayer.KeyDown(VK_RETURN,1000)
+    aqUtils.Delay(2000)//Added delay so that DFR record can be open in FRViewer
+    FRViewerPage.SaveToCDFFile(Path)
+    return true    
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return false
+  }
+}
 
+//This method is used to Export the record to CSV
+function ExportMultipleTOCSV(Index_number)
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    ultraGrid.ClickCellR(Index_number, "Triggered Parameter Info")
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_RETURN,1000)
+    aqUtils.Delay(2000)
+    Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.ClickItem("|Desktop|DFRRecord")
+    Aliases.iQ_Plus.dlgBrowseForFolder.btnOK.ClickButton()
+    CommonMethod.CheckActivityLog("Exported Successfully")    
+    return true
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return false
+  }
+}
 //This function is used to get the Record Duration
 
 function GetTriggerPriority(PDPRowNo)

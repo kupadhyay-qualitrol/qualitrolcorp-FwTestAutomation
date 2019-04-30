@@ -130,3 +130,39 @@ function IsNewRecordFound(retryCount,lastRecordNumber)
     }   
   }
 }
+function IsMultipleRecordFound(retryCount,lastRecordNumber)
+{
+  for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
+  {
+    DataRetrievalPage.ClickOnDFRDirectory()      
+    var newDFRRecord=DataRetrievalPage.GetMultipleLatestRecordnumber()
+    if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+2))<0)
+    {
+      DataRetrievalPage.CloseDFRDirectory()
+      aqUtils.Delay(20000) 
+    }
+    else if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+2))>0)
+    {
+      Log.Message("Multiple Triggers found")
+      DataRetrievalPage.CloseDFRDirectory()
+      return false
+      break
+    }
+    else
+    {   
+      Log.Message("Latest Record number is :- "+newDFRRecord[0])
+      Log.Message("Latest Record number is :- "+newDFRRecord[1])
+      return true
+    }   
+  }
+}
+function downloadmultiplerecords()
+{
+  DataRetrievalPage.ClickOnDFRDirectory()  
+  var NewDFRRecord=DataRetrievalPage.GetMultipleLatestRecordnumber()  
+  DirectoryList.ClickItem(NewDFRRecord[1], 0, skCtrl);
+  Log.Message("selected multiple records")
+  aqUtils.Delay(2000)
+  DataRetrievalPage.ClickOnDownloadDataNow()
+  return true
+}
