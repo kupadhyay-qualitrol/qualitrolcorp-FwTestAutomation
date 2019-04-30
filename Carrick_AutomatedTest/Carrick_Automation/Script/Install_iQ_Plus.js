@@ -26,9 +26,14 @@ function Install_iQ_Plus(Isupgrade=false)
   //Step1. Copy the latest build from the server to local path.
   var DriveName= CommonMethod.ReadXml("iQ_PlusFilePath","BuildServerPath",Project.ConfigPath+"Config.xml")
   
+  var iQPlusVersionInfo = aqString.Trim(aqString.Replace(CommonMethod.GetiQPlusInstallInfo(),"Qualitrol iQ+","")) //Get iQ+ Installed Version
+  aqString.ListSeparator="."
+  var installedVersion = aqString.GetListItem(iQPlusVersionInfo,2)
+  
   var LatestBuildFile=CommonMethod.LastModifiedFile(DriveName)
-
-  if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null)
+  aqString.ListSeparator="."
+  var serverVersion = aqString.GetListItem(LatestBuildFile,2)
+  if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null && (serverVersion> installedVersion ))
   {
     if(LatestBuildFile!=CommonMethod.LastModifiedFile(Project.Path+"Builds\\"))
     {
@@ -187,6 +192,6 @@ function Install_iQ_Plus(Isupgrade=false)
   }
   else
   {
-    Log.Error("Failed:TC-Install IQ+ Application in the PC with default settings.")
+    Log.Error("Failed:TC-Install IQ+ Application in the PC with default settings/No new version is available on server")
   }
 }
