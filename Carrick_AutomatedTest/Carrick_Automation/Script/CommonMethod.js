@@ -389,7 +389,7 @@ function GetDeviceStatusOnPing(deviceIPAddress)
 //This function is used to get the installed version of iQ+
 function GetiQPlusInstallInfo()
 {
-  var versionInfo
+  var versionInfo =null
   var command ="wmic product get Name,Version"
   var oShell = getActiveXObject("WScript.Shell") // Or oShell = WshShell
   //var oExec = oShell.Exec("powershell -command Get-Process");
