@@ -71,6 +71,12 @@ function Uninstall_iQ_Plus()
       aqUtils.Delay(1000)
     }
     while (!Btn_TaskRunner_Next.Exists)
+    
+    do
+    {
+      aqUtils.Delay(1000)
+    }
+    while (!Btn_TaskRunner_Next.Enabled)
     //Step10. Press Next button
     Btn_TaskRunner_Next.ClickButton()
     

@@ -2338,6 +2338,25 @@
 									</Child>
 								</Children>
 							</Child>
+							<Child Name="FrmSelectDbOption" Key="{485AC92D-CDC0-4705-9965-E00DF078BE57}" ParallelWalk="True">
+								<Image FileName="1379193648" Left="0" Top="0" Right="500" Bottom="387" />
+								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="FrmSelectDbOption" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="btnNext" Key="{36E0DD97-B726-4B98-A37F-DD1FD1A85EBF}" ParallelWalk="True">
+										<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="btnNext" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
 						</Children>
 					</Child>
 					<Child Name="iQ_PlusServerController" Key="{AA062546-D287-4AE5-9974-EBF56B8A2EEB}" ParallelWalk="True">
@@ -3339,6 +3358,9 @@
 			</Child>
 			<Child Name="FrmConfigSqlServer" Owner="{96582DBC-AF55-4F01-B14E-C84B88C0FF8D}">
 				<Child Name="btnNext" Owner="{E46656C8-8B1A-4270-91F9-B85CE7EA38E5}" />
+			</Child>
+			<Child Name="FrmSelectDbOption" Owner="{485AC92D-CDC0-4705-9965-E00DF078BE57}">
+				<Child Name="btnNext" Owner="{36E0DD97-B726-4B98-A37F-DD1FD1A85EBF}" />
 			</Child>
 		</Child>
 		<Child Name="iQ_PlusServerController" Owner="{AA062546-D287-4AE5-9974-EBF56B8A2EEB}">
