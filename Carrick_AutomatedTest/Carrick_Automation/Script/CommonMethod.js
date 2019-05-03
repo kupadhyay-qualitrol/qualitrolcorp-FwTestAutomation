@@ -405,16 +405,12 @@ function GetiQPlusInstallInfo()
   aqString.ListSeparator = "\r\n";
   for (var indexProgram = 0; indexProgram < aqString.GetListLength(strOutput); indexProgram++)
   {
-    if(aqString.Find(aqString.GetListItem(strOutput,indexProgram),"Qualitrol")==-1)
-    {
-    
-    }
-    else
+    if(aqString.Find(aqString.GetListItem(strOutput,indexProgram),"Qualitrol")!=-1)
     {
       versionInfo = aqString.GetListItem(strOutput, indexProgram) 
       Log.Message(versionInfo)
       break
-    }    
+    }  
   }
   return versionInfo
 }
