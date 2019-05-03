@@ -27,10 +27,8 @@
 					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Upgrade_iQ_Plus" key="{E811CA0A-D78F-4031-93CB-EF28F32101AE}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
-								<testParameters>
-									<param0 name="Isupgrade" type="3" localVarName="" varType="11" value="True" />
-								</testParameters>
+							<testItem name="Upgrade" key="{D136D67B-22B4-4340-966B-6E68023867FA}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}UpgradeiQ_Plus" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
+								<testParameters />
 								<children />
 							</testItem>
 							<testItem name="Close_iQ_Plus" key="{72F6ACB8-9338-401D-A68F-06D57D533EBB}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
