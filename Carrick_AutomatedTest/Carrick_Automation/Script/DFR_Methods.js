@@ -133,8 +133,7 @@ function IsNewRecordFound(retryCount,lastRecordNumber)
 function IsMultipleRecordFound(retryCount,lastRecordNumber)
 {
   for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
-  {
-    DataRetrievalPage.ClickOnDFRDirectory()      
+  {     
     var newDFRRecord=DataRetrievalPage.GetMultipleLatestRecordnumber()
     if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+2))<0)
     {
@@ -156,9 +155,8 @@ function IsMultipleRecordFound(retryCount,lastRecordNumber)
     }   
   }
 }
-function downloadmultiplerecords()
-{
-  DataRetrievalPage.ClickOnDFRDirectory()  
+function DownloadMultipleRecords()
+{ 
   var NewDFRRecord=DataRetrievalPage.GetMultipleLatestRecordnumber()  
   DirectoryList.ClickItem(NewDFRRecord[1], 0, skCtrl);
   Log.Message("selected multiple records")

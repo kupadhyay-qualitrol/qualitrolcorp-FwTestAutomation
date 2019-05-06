@@ -120,33 +120,31 @@ function GetLatestRecordnumber()
     return null
   }
 }
-function GetMultipleLatestRecordnumber()
+function GetLastestTwoDFRRecordNumbers()
 {
   var LatestRecordNumber1
   var LatestRecordNumber2
-  var ColumnName 
+  var RecordNumberColumnIndex 
   var LatestRecordNumberArray = new Array();
   
-
+  DataRetrievalPage.ClickOnDFRDirectory()
   if (DFRDirectory.Exists)
   { 
     Log.Message("DFR Directory window is visible")
-    ColumnName=GetColumnIndexByColumnName("Record #")
-    if(ColumnName!=null)
+    RecordNumberColumnIndex=GetColumnIndexByColumnName("Record #")
+    if(RecordNumberColumnIndex!=null)
     {
-      LatestRecordNumber1=DirectoryList.wItem(0,ColumnName)    
-      Log.Message("Latest Record number is :- "+LatestRecordNumber1)    
-      //return LatestRecordNumber1
-      LatestRecordNumber2=DirectoryList.wItem(1,ColumnName)    
-      Log.Message("Latest Record number is :- "+LatestRecordNumber2)    
-      //return LatestRecordNumber2
+      LatestRecordNumber1=DirectoryList.wItem(0,RecordNumberColumnIndex)    
+      Log.Message("Latest Record number is :- "+LatestRecordNumber1) 
+      LatestRecordNumber2=DirectoryList.wItem(1,RecordNumberColumnIndex)    
+      Log.Message("Latest Record number is :- "+LatestRecordNumber2) 
       LatestRecordNumberArray.push(LatestRecordNumber1);
       LatestRecordNumberArray.push(LatestRecordNumber2);
       return LatestRecordNumberArray;
     }
     else
     {
-      Log.Message("Column Index is wrong")
+      Log.Message("Record Number Column Index is wrong")
       return null
     }
   }
@@ -492,21 +490,22 @@ function GetRowIndexByRecordNumber(RecNumber)
   Log.Message("Index for record :- "+RecNumber+" is "+tempIndex)
   return tempIndex
 }
-function GetCOTForLatestMultipleDFRRecord()
+function GetCOTForLastestTwoDFRRecords()
 {
   var COT
   var COT1
-  var ColumnName 
+  var COTColumnIndex
   var COTArray = new Array();
 
+  DataRetrievalPage.ClickOnDFRDirectory()
   if (DFRDirectory.Exists)
   { 
     Log.Message("DFR Directory window is visible")
-    ColumnName=GetColumnIndexByColumnName("Cause Of Trigger")
-    if(ColumnName!=null)
+    COTColumnIndex=GetColumnIndexByColumnName("Cause Of Trigger")
+    if(COTColumnIndex!=null)
     {
-      COT=DirectoryList.wItem(0,ColumnName)    
-      COT1=DirectoryList.wItem(1,ColumnName)
+      COT=DirectoryList.wItem(0,COTColumnIndex)    
+      COT1=DirectoryList.wItem(1,COTColumnIndex)
       COTArray.push(COT) 
       COTArray.push(COT1)
       Log.Message("Cause of Trigger is "+COT) 
@@ -516,7 +515,7 @@ function GetCOTForLatestMultipleDFRRecord()
     }
     else
     {
-      Log.Message("Column Index is wrong")
+      Log.Message("COT Column Index is wrong")
       return null
     }
   }
