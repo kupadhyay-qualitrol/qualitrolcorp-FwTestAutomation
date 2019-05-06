@@ -130,10 +130,6 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-734-1" key="{2BCC9C4E-0CA4-4403-913C-B6A06508A70E}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_734_1" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length when Trigger comes at end of first record.">
-								<testParameters />
-								<children />
-							</testItem>
 							<testItem name="Close iQ_Plus" key="{DC22F493-4F64-4B36-8D1E-81D17E1B9F6B}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
 								<testParameters />
 								<children />

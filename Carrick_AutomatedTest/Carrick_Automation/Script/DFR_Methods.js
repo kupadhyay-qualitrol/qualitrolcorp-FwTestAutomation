@@ -134,7 +134,7 @@ function IsMultipleRecordFound(retryCount,lastRecordNumber)
 {
   for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
   {     
-    var newDFRRecord=DataRetrievalPage.GetMultipleLatestRecordnumber()
+    var newDFRRecord=DataRetrievalPage.GetLastestTwoDFRRecordNumbers()
     if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+2))<0)
     {
       DataRetrievalPage.CloseDFRDirectory()
@@ -157,7 +157,7 @@ function IsMultipleRecordFound(retryCount,lastRecordNumber)
 }
 function DownloadMultipleRecords()
 { 
-  var NewDFRRecord=DataRetrievalPage.GetMultipleLatestRecordnumber()  
+  var NewDFRRecord=DataRetrievalPage.GetLastestTwoDFRRecordNumbers()  
   DirectoryList.ClickItem(NewDFRRecord[1], 0, skCtrl);
   Log.Message("selected multiple records")
   aqUtils.Delay(2000)
