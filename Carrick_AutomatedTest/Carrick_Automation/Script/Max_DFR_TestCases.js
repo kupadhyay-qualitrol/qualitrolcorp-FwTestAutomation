@@ -737,7 +737,7 @@ function CAM_734_Verification(OmirconSeqFile,expectedRecordDurationPrevRec,expec
       
     AssertClass.IsTrue(DFR_Methods.IsMultipleRecordFound(10,lastDFRRecord),"Checking for new Record")
     
-    AssertClass.CompareString("FRSENSOR",DataRetrievalPage.GetCOTForLastestTwoDFRRecords()[0],"Checking COT")
+    AssertClass.CompareString("FRSENSOR",DataRetrievalPage.GetCOTForLastestXDFRRecords(2)[0],"Checking COT")
      
     //Step11. Click on Download Data Now
     AssertClass.IsTrue(DFR_Methods.DownloadMultipleRecords(),"Clicked on Download Data Now")

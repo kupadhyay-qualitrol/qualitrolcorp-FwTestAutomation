@@ -120,10 +120,9 @@ function GetLatestRecordnumber()
     return null
   }
 }
-function GetLastestTwoDFRRecordNumbers()
+function GetLastestXDFRRecordNumbers(NoOfRecords)
 {
-  var LatestRecordNumber1
-  var LatestRecordNumber2
+  var RecordNumber
   var RecordNumberColumnIndex 
   var LatestRecordNumberArray = new Array();
   
@@ -134,12 +133,12 @@ function GetLastestTwoDFRRecordNumbers()
     RecordNumberColumnIndex=GetColumnIndexByColumnName("Record #")
     if(RecordNumberColumnIndex!=null)
     {
-      LatestRecordNumber1=DirectoryList.wItem(0,RecordNumberColumnIndex)    
-      Log.Message("Latest Record number is :- "+LatestRecordNumber1) 
-      LatestRecordNumber2=DirectoryList.wItem(1,RecordNumberColumnIndex)    
-      Log.Message("Latest Record number is :- "+LatestRecordNumber2) 
-      LatestRecordNumberArray.push(LatestRecordNumber1);
-      LatestRecordNumberArray.push(LatestRecordNumber2);
+      for(var iterator = 0; iterator < NoOfRecords; iterator++)
+      {
+        RecordNumber=DirectoryList.wItem(0,RecordNumberColumnIndex)    
+        Log.Message("Record number " + (iterator+1)  + " is :- "+RecordNumber)
+        LatestRecordNumberArray.push(RecordNumber);
+      } 
       return LatestRecordNumberArray;
     }
     else
@@ -490,10 +489,9 @@ function GetRowIndexByRecordNumber(RecNumber)
   Log.Message("Index for record :- "+RecNumber+" is "+tempIndex)
   return tempIndex
 }
-function GetCOTForLastestTwoDFRRecords()
+function GetCOTForLastestXDFRRecords(NoOfRecords)
 {
   var COT
-  var COT1
   var COTColumnIndex
   var COTArray = new Array();
 
@@ -504,12 +502,12 @@ function GetCOTForLastestTwoDFRRecords()
     COTColumnIndex=GetColumnIndexByColumnName("Cause Of Trigger")
     if(COTColumnIndex!=null)
     {
-      COT=DirectoryList.wItem(0,COTColumnIndex)    
-      COT1=DirectoryList.wItem(1,COTColumnIndex)
-      COTArray.push(COT) 
-      COTArray.push(COT1)
-      Log.Message("Cause of Trigger is "+COT) 
-      Log.Message("Cause of Trigger is "+COT1)   
+      for(var iterator = 0; iterator < NoOfRecords; iterator++)
+      {
+        COT=DirectoryList.wItem(iterator,COTColumnIndex) 
+        COTArray.push(COT) 
+        Log.Message("Cause of Trigger is "+COT) 
+      }
       DataRetrievalPage.CloseDFRDirectory()
       return COTArray
     }

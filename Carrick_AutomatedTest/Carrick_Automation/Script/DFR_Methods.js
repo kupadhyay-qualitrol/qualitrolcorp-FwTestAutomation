@@ -130,34 +130,39 @@ function IsNewRecordFound(retryCount,lastRecordNumber)
     }   
   }
 }
-function IsMultipleRecordFound(retryCount,lastRecordNumber)
+function IsMultipleRecordFound(retryCount,ExpectedNoOfRecords,lastRecordNumber)
 {
   for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
   {     
-    var newDFRRecord=DataRetrievalPage.GetLastestTwoDFRRecordNumbers()
-    if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+2))<0)
+    var newDFRRecord=DataRetrievalPage.GetLastestXDFRRecordNumbers(ExpectedNoOfRecords)
+    if(newDFRRecord != null)
     {
-      DataRetrievalPage.CloseDFRDirectory()
-      aqUtils.Delay(20000) 
+      if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+ExpectedNoOfRecords))<0)
+      {
+        DataRetrievalPage.CloseDFRDirectory()
+        aqUtils.Delay(20000) 
+      }
+      else if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+ExpectedNoOfRecords))>0)
+      {
+        Log.Message("Multiple Triggers greater than expected no of records found")
+        DataRetrievalPage.CloseDFRDirectory()
+        return false
+        break
+      }
+      else
+      { 
+        for(var iterator=0;iterator < ExpectedNoOfRecords; iterator++)
+        {
+          Log.Message("Record number found at " + iterator + " is :- " + newDFRRecord[0])  
+        }
+        return true
+      }  
     }
-    else if((aqConvert.StrToInt64(newDFRRecord[0])-(aqConvert.StrToInt64(lastRecordNumber)+2))>0)
-    {
-      Log.Message("Multiple Triggers found")
-      DataRetrievalPage.CloseDFRDirectory()
-      return false
-      break
-    }
-    else
-    {   
-      Log.Message("Latest Record number is :- "+newDFRRecord[0])
-      Log.Message("Latest Record number is :- "+newDFRRecord[1])
-      return true
-    }   
   }
 }
 function DownloadMultipleRecords()
 { 
-  var NewDFRRecord=DataRetrievalPage.GetLastestTwoDFRRecordNumbers()  
+  var NewDFRRecord=DataRetrievalPage.GetLastestXDFRRecordNumbers(2)  
   DirectoryList.ClickItem(NewDFRRecord[1], 0, skCtrl);
   Log.Message("selected multiple records")
   aqUtils.Delay(2000)
