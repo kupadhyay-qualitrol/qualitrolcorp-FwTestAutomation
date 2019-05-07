@@ -702,8 +702,7 @@ function CAM_734()
     //Step5. Send to Device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
-    CAM_734_Verification("OmicronFile_1",expectedRecordDuration1,expectedRecordDuration2,dataSheetName,prefault);
-    aqUtils.Delay(120000) //Waitso that device is back to normal
+    CAM_734_Verification("OmicronFile_1",expectedRecordDuration1,expectedRecordDuration2,dataSheetName,prefault,100);
     CAM_734_Verification("OmicronFile_2",expectedRecordDuration3,expectedRecordDuration4,dataSheetName,prefault);
        
     Log.Message("Pass:-Test to check DFR record length when Trigger comes at end of first record.")
@@ -717,7 +716,7 @@ function CAM_734()
 
 //This Function Gets Latest DFR record number, Injects Omicron seq file , 
 //verify if two records are generated and if so, perform record duration verification & exports them to CDF & CSV
-function CAM_734_Verification(OmirconSeqFile,expectedRecordDurationPrevRec,expectedRecordDurationLatestRec,dataSheetName,expectedPrefault)
+function CAM_734_Verification(OmirconSeqFile,expectedRecordDurationPrevRec,expectedRecordDurationLatestRec,dataSheetName,expectedPrefault,prefaultBuffer=0)
 {
  try
   {
@@ -753,7 +752,7 @@ function CAM_734_Verification(OmirconSeqFile,expectedRecordDurationPrevRec,expec
     
     //Step13. Check Prefault time
     var actualPrefault = (PDPPage.GetRecordTriggerDateTime(0))-PDPPage.GetRecordStartDateTime(0)
-    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedPrefault)-100,actualPrefault,0,"Prefault calculated from PDP is :-"+actualPrefault)
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedPrefault)-prefaultBuffer,actualPrefault,0,"Prefault calculated from PDP is :-"+actualPrefault)
     var actualPrefault = (PDPPage.GetRecordTriggerDateTime(1))-PDPPage.GetRecordStartDateTime(1)
     AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedPrefault),actualPrefault,0,"Prefault calculated from PDP is :-"+actualPrefault)
     
