@@ -155,6 +155,7 @@ function IsMultipleRecordFound(retryCount,ExpectedNoOfRecords,lastRecordNumber)
         {
           Log.Message("Record number found at " + iterator + " is :- " + newDFRRecord[0])  
         }
+        DataRetrievalPage.CloseDFRDirectory()
         return true
       }  
     }
