@@ -135,7 +135,7 @@ function GetLastestXDFRRecordNumbers(NoOfRecords)
     {
       for(var iterator = 0; iterator < NoOfRecords; iterator++)
       {
-        RecordNumber=DirectoryList.wItem(0,RecordNumberColumnIndex)    
+        RecordNumber=DirectoryList.wItem(iterator,RecordNumberColumnIndex)    
         Log.Message("Record number " + (iterator+1)  + " is :- "+RecordNumber)
         LatestRecordNumberArray.push(RecordNumber);
       } 
