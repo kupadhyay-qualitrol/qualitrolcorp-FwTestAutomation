@@ -120,6 +120,40 @@ function GetLatestRecordnumber()
     return null
   }
 }
+function GetLastestXDFRRecordNumbers(NoOfRecords)
+{
+  var RecordNumber
+  var RecordNumberColumnIndex 
+  var LatestRecordNumberArray = new Array();
+  
+  DataRetrievalPage.ClickOnDFRDirectory()
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    RecordNumberColumnIndex=GetColumnIndexByColumnName("Record #")
+    if(RecordNumberColumnIndex!=null)
+    {
+      for(var iterator = 0; iterator < NoOfRecords; iterator++)
+      {
+        RecordNumber=DirectoryList.wItem(iterator,RecordNumberColumnIndex)    
+        Log.Message("Record number " + (iterator+1)  + " is :- "+RecordNumber)
+        LatestRecordNumberArray.push(RecordNumber);
+      } 
+      return LatestRecordNumberArray;
+    }
+    else
+    {
+      Log.Message("Record Number Column Index is wrong")
+      return null
+    }
+  }
+  else
+  { 
+    CommonMethod.CheckActivityLog("")
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  }
+}
 
 //This method is used to get column index by column name for DFR Directory
 function GetColumnIndexByColumnName(ColumnName)
@@ -454,4 +488,39 @@ function GetRowIndexByRecordNumber(RecNumber)
   }
   Log.Message("Index for record :- "+RecNumber+" is "+tempIndex)
   return tempIndex
+}
+function GetCOTForLastestXDFRRecords(NoOfRecords)
+{
+  var COT
+  var COTColumnIndex
+  var COTArray = new Array();
+
+  DataRetrievalPage.ClickOnDFRDirectory()
+  if (DFRDirectory.Exists)
+  { 
+    Log.Message("DFR Directory window is visible")
+    COTColumnIndex=GetColumnIndexByColumnName("Cause Of Trigger")
+    if(COTColumnIndex!=null)
+    {
+      for(var iterator = 0; iterator < NoOfRecords; iterator++)
+      {
+        COT=DirectoryList.wItem(iterator,COTColumnIndex) 
+        COTArray.push(COT) 
+        Log.Message("Cause of Trigger is "+COT) 
+      }
+      DataRetrievalPage.CloseDFRDirectory()
+      return COTArray
+    }
+    else
+    {
+      Log.Message("COT Column Index is wrong")
+      return null
+    }
+  }
+  else
+  { 
+    CommonMethod.CheckActivityLog("")
+    Log.Message("DFR Record doesn't exist in the device.")
+    return null
+  }  
 }

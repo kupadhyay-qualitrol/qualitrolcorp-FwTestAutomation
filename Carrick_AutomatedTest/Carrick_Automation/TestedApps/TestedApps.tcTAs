@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root signature="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" version="1140" key="{07175C32-939D-4A41-903C-76761FC0AEA0}" type="Tested Applications" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}">
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" version="1400" key="{07175C32-939D-4A41-903C-76761FC0AEA0}" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}">
 	<config nodeName="TestedApps" />
 	<testData />
 	<data />
 	<children>
-		<child key="{9B2ABFA5-ECC0-40E9-99D4-B71D0E7AB252}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+		<child key="{9B2ABFA5-ECC0-40E9-99D4-B71D0E7AB252}">
 			<config nodeName="iQ_Plus" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
@@ -16,7 +16,7 @@
 			<testData />
 			<data />
 		</child>
-		<child key="{131D9CC6-2D27-4B98-9B1E-E8C9840DE65D}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+		<child key="{131D9CC6-2D27-4B98-9B1E-E8C9840DE65D}">
 			<config nodeName="Uninstall_iQ" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
@@ -28,7 +28,7 @@
 			<testData />
 			<data />
 		</child>
-		<child key="{F98C9CC3-E8CB-4C2D-A675-7C5D313749D3}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+		<child key="{F98C9CC3-E8CB-4C2D-A675-7C5D313749D3}">
 			<config nodeName="Iec_Browser" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
@@ -40,7 +40,7 @@
 			<testData />
 			<data />
 		</child>
-		<child key="{BB71682D-8227-4D0C-94E4-99984EEFAC61}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+		<child key="{BB71682D-8227-4D0C-94E4-99984EEFAC61}">
 			<config nodeName="RMSDataValidation" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
@@ -52,7 +52,7 @@
 			<testData />
 			<data />
 		</child>
-		<child key="{26F6030B-4953-4281-BE77-6DA3278A4A9E}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+		<child key="{26F6030B-4953-4281-BE77-6DA3278A4A9E}">
 			<config nodeName="QuickCMC" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
@@ -64,7 +64,7 @@
 			<testData />
 			<data />
 		</child>
-		<child key="{EE8183B3-2007-4A25-A465-57DA734D48A8}" type="Tested Application" typeId="{FD30A383-63C2-4C25-948C-2595C0F81320}">
+		<child key="{EE8183B3-2007-4A25-A465-57DA734D48A8}">
 			<config nodeName="OMSeq" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
 				<runModeParams activeRunMode="Simple">
 					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
@@ -77,5 +77,4 @@
 			<data />
 		</child>
 	</children>
-	<folders />
 </Root>

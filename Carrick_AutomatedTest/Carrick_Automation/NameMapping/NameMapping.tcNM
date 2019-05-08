@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="6" SaveImages="0">
 	<Storages Current="0">
 		<Child Name="Default Configuration" />
@@ -1218,7 +1218,6 @@
 																										</Children>
 																									</Child>
 																									<Child Name="ucAnalogInputs" Key="{ABFD85E6-F71D-4FB3-99E4-669841851458}" ParallelWalk="True">
-																										<Image FileName="796721698" Left="197" Top="81" Right="1020" Bottom="562" />
 																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1227,7 +1226,6 @@
 																										</Properties>
 																										<Children>
 																											<Child Name="ugAnalogChannels" Key="{84DFE440-94C0-4008-9055-6544A0380A6F}" ParallelWalk="True">
-																												<Image FileName="796721698" Left="197" Top="81" Right="1020" Bottom="562" />
 																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -1238,7 +1236,6 @@
 																										</Children>
 																									</Child>
 																									<Child Name="ucCircuits" Key="{77D1FE73-6F35-4E54-B599-301CB25FB6D9}" ParallelWalk="True">
-																										<Image FileName="-230221618" Left="197" Top="81" Right="1020" Bottom="562" />
 																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1247,7 +1244,6 @@
 																										</Properties>
 																										<Children>
 																											<Child Name="llbDelete" Key="{89E33C57-A3DC-462B-BD68-0CD07A8B22A6}" ParallelWalk="True">
-																												<Image FileName="-230221618" Left="858" Top="87" Right="1014" Bottom="100" />
 																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -1256,7 +1252,6 @@
 																												</Properties>
 																											</Child>
 																											<Child Name="tcCircuitContainer" Key="{FAFCF0B1-A509-4E27-9349-617E20326D75}" ParallelWalk="True">
-																												<Image FileName="-1536900330" Left="197" Top="124" Right="1020" Bottom="562" />
 																												<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -1265,7 +1260,6 @@
 																												</Properties>
 																												<Children>
 																													<Child Name="ultraTabSharedControlsPage2" Key="{718C4C52-35AB-4126-8333-F7B68094C4FD}" ParallelWalk="True">
-																														<Image FileName="957526637" Left="198" Top="147" Right="1019" Bottom="561" />
 																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																														<Properties>
 																															<Property Name="WinFormsControlName">
@@ -1300,7 +1294,6 @@
 																																		</Children>
 																																	</Child>
 																																	<Child Name="ugbxVoltages" Key="{D3B73488-15C2-46EC-A448-3B41562908B7}" ParallelWalk="True">
-																																		<Image FileName="-230221618" Left="205" Top="184" Right="605" Bottom="468" />
 																																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
@@ -1309,7 +1302,6 @@
 																																		</Properties>
 																																		<Children>
 																																			<Child Name="cmbGroupName" Key="{9ED76C5C-EDE8-4085-B1A2-79FF7D2FD525}" ParallelWalk="True">
-																																				<Image FileName="-230221618" Left="358" Top="209" Right="496" Bottom="230" />
 																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																				<Properties>
 																																					<Property Name="WinFormsControlName">
@@ -1318,7 +1310,6 @@
 																																				</Properties>
 																																			</Child>
 																																			<Child Name="llblRenameBusbar" Key="{B4D2BF53-1256-4511-86C5-AEFF06CA344D}" ParallelWalk="True">
-																																				<Image FileName="-230221618" Left="502" Top="209" Right="575" Bottom="230" />
 																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																				<Properties>
 																																					<Property Name="WinFormsControlName">
@@ -1327,7 +1318,6 @@
 																																				</Properties>
 																																			</Child>
 																																			<Child Name="ugbxVoltageChannels" Key="{EE2C95C5-AA15-4178-905F-9237F998C1AD}" ParallelWalk="True">
-																																				<Image FileName="787600612" Left="237" Top="236" Right="581" Bottom="371" />
 																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																				<Properties>
 																																					<Property Name="WinFormsControlName">
@@ -1336,7 +1326,6 @@
 																																				</Properties>
 																																				<Children>
 																																					<Child Name="cmbVa" Key="{1F9CD231-3C57-47D5-BB9F-B8FBD3BD229B}" ParallelWalk="True">
-																																						<Image FileName="787600612" Left="361" Top="264" Right="499" Bottom="285" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1345,7 +1334,6 @@
 																																						</Properties>
 																																					</Child>
 																																					<Child Name="cmbVb" Key="{877E2098-5A99-431B-9DC5-D4C42E8DFE53}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="361" Top="292" Right="499" Bottom="313" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1354,7 +1342,6 @@
 																																						</Properties>
 																																					</Child>
 																																					<Child Name="cmbVc" Key="{B3B35315-2F52-4F93-8681-985A0A9DDD55}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="361" Top="319" Right="499" Bottom="340" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1363,7 +1350,6 @@
 																																						</Properties>
 																																					</Child>
 																																					<Child Name="cmbVn" Key="{8A168398-C938-4B33-B241-490DFD4EC712}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="361" Top="346" Right="499" Bottom="367" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1376,7 +1362,6 @@
 																																		</Children>
 																																	</Child>
 																																	<Child Name="ugbxCurrents" Key="{4254B6A6-79A5-488E-B3DB-DA56F4B1A3B6}" ParallelWalk="True">
-																																		<Image FileName="1371834340" Left="609" Top="184" Right="1009" Bottom="468" />
 																																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
@@ -1385,7 +1370,6 @@
 																																		</Properties>
 																																		<Children>
 																																			<Child Name="ugbxCurrentChannels" Key="{B46CA3AC-E233-447D-801B-027DFE3AF534}" ParallelWalk="True">
-																																				<Image FileName="1371834340" Left="637" Top="236" Right="981" Bottom="371" />
 																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																				<Properties>
 																																					<Property Name="WinFormsControlName">
@@ -1394,7 +1378,6 @@
 																																				</Properties>
 																																				<Children>
 																																					<Child Name="cmbIa" Key="{31951E5B-8853-4FFB-9212-60069E9A7B7B}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="762" Top="264" Right="900" Bottom="285" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1403,7 +1386,6 @@
 																																						</Properties>
 																																					</Child>
 																																					<Child Name="cmbIb" Key="{660F0707-55BB-4D22-B70B-F1658C1F6EF1}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="762" Top="291" Right="900" Bottom="312" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1412,7 +1394,6 @@
 																																						</Properties>
 																																					</Child>
 																																					<Child Name="cmbIc" Key="{9D0347BE-9100-420D-A873-E7049F3A2675}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="762" Top="318" Right="900" Bottom="339" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1421,7 +1402,6 @@
 																																						</Properties>
 																																					</Child>
 																																					<Child Name="cmbIn" Key="{03F4C1CB-FCC7-4973-B057-7C759A183E9C}" ParallelWalk="True">
-																																						<Image FileName="1371834340" Left="762" Top="345" Right="900" Bottom="366" />
 																																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																																						<Properties>
 																																							<Property Name="WinFormsControlName">
@@ -1440,7 +1420,6 @@
 																												</Children>
 																											</Child>
 																											<Child Name="llbAddNewCircuit" Key="{7CC9ADBD-3C0D-45B9-8269-CA855B38DB51}" ParallelWalk="True">
-																												<Image FileName="514676941" Left="726" Top="87" Right="852" Bottom="100" />
 																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -1451,7 +1430,6 @@
 																										</Children>
 																									</Child>
 																									<Child Name="ucFrCircuitSensors" Key="{A899FDB4-42C8-42B2-BA5D-330D3777B39C}" ParallelWalk="True">
-																										<Image FileName="2086093868" Left="197" Top="81" Right="1020" Bottom="562" />
 																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1460,7 +1438,6 @@
 																										</Properties>
 																										<Children>
 																											<Child Name="ugSensors" Key="{ED8D972A-BCC5-482F-9F3B-9ADA241E9C3F}" ParallelWalk="True">
-																												<Image FileName="2086093868" Left="197" Top="81" Right="1020" Bottom="562" />
 																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -1991,7 +1968,6 @@
 								</Children>
 							</Child>
 							<Child Name="dlgQualitrolCashelMConfigurator" Key="{B3A1426E-05B6-43B3-B529-E8B29630B000}" ParallelWalk="True">
-								<Image FileName="788539271" Left="0" Top="0" Right="416" Bottom="182" />
 								<TypeInfo Item0="{769679BD-9B41-471B-BBCD-353528935F33}" />
 								<Properties>
 									<Property Name="WndClass">
@@ -2003,7 +1979,6 @@
 								</Properties>
 								<Children>
 									<Child Name="btnYes" Key="{39FA2715-A3C4-45A9-A63C-18776F724AE9}" ParallelWalk="True">
-										<Image FileName="788539271" Left="239" Top="146" Right="314" Bottom="169" />
 										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
 										<Properties>
 											<Property Name="WndClass">
@@ -2017,7 +1992,6 @@
 								</Children>
 							</Child>
 							<Child Name="RenameBusbar" Key="{ED85C2F0-69AE-4CE8-968B-BC268DA6183B}" ParallelWalk="True">
-								<Image FileName="657338255" Left="0" Top="0" Right="285" Bottom="119" />
 								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
 								<Properties>
 									<Property Name="WinFormsControlName">
@@ -2026,7 +2000,6 @@
 								</Properties>
 								<Children>
 									<Child Name="txtGroupName" Key="{19F7E4A8-03DE-4359-A4D0-C92F852745A7}" ParallelWalk="True">
-										<Image FileName="657338255" Left="136" Top="40" Right="274" Bottom="61" />
 										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 										<Properties>
 											<Property Name="WinFormsControlName">
@@ -2035,7 +2008,6 @@
 										</Properties>
 									</Child>
 									<Child Name="btnModify" Key="{29CFC88E-9128-4673-A6CB-53E9EBB8466B}" ParallelWalk="True">
-										<Image FileName="657338255" Left="55" Top="86" Right="139" Bottom="109" />
 										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 										<Properties>
 											<Property Name="WinFormsControlName">
@@ -2046,7 +2018,6 @@
 								</Children>
 							</Child>
 							<Child Name="FrSensor" Key="{A957D38E-DA49-4E06-B433-2B9F0F2AAB99}" ParallelWalk="True">
-								<Image FileName="-893912694" Left="0" Top="0" Right="800" Bottom="334" />
 								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
 								<Properties>
 									<Property Name="WinFormsControlName">
@@ -2055,7 +2026,6 @@
 								</Properties>
 								<Children>
 									<Child Name="tcFRParameters" Key="{2CDA487B-298D-4ADC-9DEA-FD58D492789B}" ParallelWalk="True">
-										<Image FileName="-893912694" Left="3" Top="26" Right="797" Bottom="280" />
 										<TypeInfo Item0="{6E33BE11-31AF-4A4B-B6BD-243307ADA947}" />
 										<Properties>
 											<Property Name="WinFormsControlName">
@@ -2064,7 +2034,6 @@
 										</Properties>
 										<Children>
 											<Child Name="tbGeneral" Key="{0675AD2A-4688-4A54-8E74-0CB2C261A593}" ParallelWalk="True">
-												<Image FileName="-893912694" Left="4" Top="49" Right="796" Bottom="279" />
 												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 												<Properties>
 													<Property Name="WinFormsControlName">
@@ -2073,7 +2042,6 @@
 												</Properties>
 												<Children>
 													<Child Name="txtQuantity" Key="{2DB14296-AD35-45F0-A833-A2D2D4E57259}" ParallelWalk="True">
-														<Image FileName="-893912694" Left="169" Top="60" Right="389" Bottom="84" />
 														<TypeInfo Item0="{E20BCEEE-0F40-4629-BE2D-A1DD7AF6E291}" />
 														<Properties>
 															<Property Name="WinFormsControlName">
@@ -2082,7 +2050,6 @@
 														</Properties>
 													</Child>
 													<Child Name="cmbType" Key="{DADCAC39-2A2A-4BFE-8E70-39579AECB8B5}" ParallelWalk="True">
-														<Image FileName="-1497544877" Left="169" Top="87" Right="389" Bottom="108" />
 														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 														<Properties>
 															<Property Name="WinFormsControlName">
@@ -2091,7 +2058,6 @@
 														</Properties>
 													</Child>
 													<Child Name="cmbScalingType" Key="{A0B7899F-CC91-47A5-831C-7AE292793054}" ParallelWalk="True">
-														<Image FileName="-1637595842" Left="169" Top="114" Right="389" Bottom="135" />
 														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 														<Properties>
 															<Property Name="WinFormsControlName">
@@ -2100,7 +2066,6 @@
 														</Properties>
 													</Child>
 													<Child Name="txtUpperThreshold" Key="{365E7F08-40EE-4EB5-99D2-EB406770DB40}" ParallelWalk="True">
-														<Image FileName="-1047916457" Left="169" Top="167" Right="290" Bottom="188" />
 														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 														<Properties>
 															<Property Name="WinFormsControlName">
@@ -2109,7 +2074,6 @@
 														</Properties>
 													</Child>
 													<Child Name="gbxWhenTheSensorActivates" Key="{60CA82BF-6CC9-4821-AC11-4660550ED684}" ParallelWalk="True">
-														<Image FileName="-1047916457" Left="405" Top="145" Right="787" Bottom="277" />
 														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 														<Properties>
 															<Property Name="WinFormsControlName">
@@ -2118,7 +2082,6 @@
 														</Properties>
 														<Children>
 															<Child Name="txtPostFault" Key="{F8F89A08-CEFC-4D32-B85E-C8D4A02A0819}" ParallelWalk="True">
-																<Image FileName="-1047916457" Left="566" Top="172" Right="687" Bottom="193" />
 																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																<Properties>
 																	<Property Name="WinFormsControlName">
@@ -2127,7 +2090,6 @@
 																</Properties>
 															</Child>
 															<Child Name="txtOpLimit" Key="{68DC11B0-4733-416F-BFBE-97E8D819377E}" ParallelWalk="True">
-																<Image FileName="-1047916457" Left="566" Top="201" Right="687" Bottom="222" />
 																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 																<Properties>
 																	<Property Name="WinFormsControlName">
@@ -2142,7 +2104,6 @@
 										</Children>
 									</Child>
 									<Child Name="btnOk" Key="{719C5E37-58A6-4CB0-B8AD-91BA313FE503}" ParallelWalk="True">
-										<Image FileName="-1223413682" Left="299" Top="297" Right="396" Bottom="320" />
 										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
 										<Properties>
 											<Property Name="WinFormsControlName">
@@ -2151,6 +2112,17 @@
 										</Properties>
 									</Child>
 								</Children>
+							</Child>
+							<Child Name="wndWindowsForms10Window8app032f6d92r9ad1" Key="{90B203E9-09A6-4143-A481-A857F7CBE5C1}" ParallelWalk="True">
+								<TypeInfo Item0="{1C716C2E-91C5-4A3B-827D-EA51850363F0}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="WindowsForms10.Window.8.app.0.32f6d92_r9_ad1" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="iQ+-V_ 4.15.0127.1904" Type="5" />
+									</Property>
+								</Properties>
 							</Child>
 						</Children>
 					</Child>
@@ -2861,7 +2833,6 @@
 						</Properties>
 						<Children>
 							<Child Name="wndAfx" Key="{DFB7096F-8CF1-4817-9B92-432136729B5E}" ParallelWalk="True">
-								<Image FileName="-854620144" Left="0" Top="0" Right="1936" Bottom="1056" />
 								<TypeInfo Item0="{769679BD-9B41-471B-BBCD-353528935F33}" />
 								<Properties>
 									<Property Name="WndClass">
@@ -2870,7 +2841,6 @@
 								</Properties>
 								<Children>
 									<Child Name="xtpBarTop" Key="{476B312B-622E-443C-8E54-7F7582AB50A1}" ParallelWalk="True">
-										<Image FileName="-854620144" Left="8" Top="8" Right="1928" Bottom="156" />
 										<TypeInfo Item0="{3E5CDF11-7903-42AC-B70B-4E6752FC3A60}" />
 										<Properties>
 											<Property Name="WndClass">
@@ -2882,7 +2852,6 @@
 										</Properties>
 										<Children>
 											<Child Name="toolbarTheRibbon" Key="{4B574F13-46A4-4D1C-B24B-37A19A1B48D1}" ParallelWalk="True">
-												<Image FileName="-854620144" Left="8" Top="8" Right="1928" Bottom="156" />
 												<TypeInfo Item0="{7D51827F-8942-4EC1-90B1-B753C1D504B8}" />
 												<Properties>
 													<Property Name="ObjectType">
@@ -2897,7 +2866,6 @@
 												</Properties>
 												<Children>
 													<Child Name="buttonStartContinue" Key="{989735B9-9FB0-4F55-BFC7-A6A42275A5B6}" ParallelWalk="True">
-														<Image FileName="-854620144" Left="237" Top="65" Right="320" Bottom="131" />
 														<TypeInfo Item0="{012263C5-A4F1-4C08-9DA2-A00AD0CD729A}" />
 														<Properties>
 															<Property Name="ObjectType">
@@ -2912,7 +2880,6 @@
 														</Properties>
 													</Child>
 													<Child Name="menubuttonFile" Key="{AA276030-D075-47D8-8E59-94423D5D6396}" ParallelWalk="True">
-														<Image FileName="-1028957967" Left="8" Top="36" Right="64" Bottom="59" />
 														<TypeInfo Item0="{C25285F6-9B86-4115-9948-157F649CD56E}" />
 														<Properties>
 															<Property Name="ObjectType">
@@ -2927,7 +2894,6 @@
 														</Properties>
 													</Child>
 													<Child Name="buttonClear" Key="{8619717A-6933-473B-82E8-C65912B21886}" ParallelWalk="True">
-														<Image FileName="349686349" Left="402" Top="61" Right="445" Bottom="127" />
 														<TypeInfo Item0="{012263C5-A4F1-4C08-9DA2-A00AD0CD729A}" />
 														<Properties>
 															<Property Name="ObjectType">
@@ -2960,7 +2926,6 @@
 										</Properties>
 									</Child>
 									<Child Name="cbxFileName" Key="{54D1B288-C4AD-47EB-B611-EB618462415A}" ParallelWalk="True">
-										<Image FileName="-103195497" Left="206" Top="366" Right="452" Bottom="388" />
 										<TypeInfo Item0="{84424348-66CC-44D5-8FD4-332BBF648A04}" />
 										<Properties>
 											<Property Name="WndClass">
@@ -2969,7 +2934,6 @@
 										</Properties>
 										<Children>
 											<Child Name="ComboBox" Key="{03DBD0A1-76A9-43C8-872E-E08DD9E86E66}" ParallelWalk="True">
-												<Image FileName="-103195497" Left="206" Top="366" Right="452" Bottom="388" />
 												<TypeInfo Item0="{84424348-66CC-44D5-8FD4-332BBF648A04}" />
 												<Properties>
 													<Property Name="WndClass">
@@ -2978,7 +2942,6 @@
 												</Properties>
 												<Children>
 													<Child Name="Edit" Key="{1593338F-31DC-4537-873F-7F5E98EEE965}" ParallelWalk="True">
-														<Image FileName="-103195497" Left="210" Top="371" Right="432" Bottom="384" />
 														<TypeInfo Item0="{ABC89E00-4706-4129-9490-8D989EA902FA}" />
 														<Properties>
 															<Property Name="WndClass">
@@ -2991,7 +2954,6 @@
 										</Children>
 									</Child>
 									<Child Name="btnOpen" Key="{580DF485-3F01-487D-9562-10E27A3F8ADA}" ParallelWalk="True">
-										<Image FileName="1894111712" Left="485" Top="366" Right="560" Bottom="389" />
 										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
 										<Properties>
 											<Property Name="WndClass">
@@ -3003,7 +2965,6 @@
 										</Properties>
 									</Child>
 									<Child Name="btnNo" Key="{D10B354E-A05B-444C-B767-80049AC17BC9}" ParallelWalk="True">
-										<Image FileName="-929723527" Left="113" Top="118" Right="188" Bottom="141" />
 										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
 										<Properties>
 											<Property Name="WndClass">
@@ -3367,6 +3328,7 @@
 				</Child>
 				<Child Name="btnOk" Owner="{719C5E37-58A6-4CB0-B8AD-91BA313FE503}" />
 			</Child>
+			<Child Name="wndWindowsForms10Window8app032f6d92r9ad1" Owner="{90B203E9-09A6-4143-A481-A857F7CBE5C1}" />
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">
 			<Child Name="FrmUninstall" Owner="{990D663C-6273-46B4-AE60-C81BD1783FA8}">

@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="12.0" key="{84E29951-A967-4647-BDC6-3B5A97AF477D}">
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="14.0" key="{84E29951-A967-4647-BDC6-3B5A97AF477D}">
 	<children>
-		<child name="Carrick_Automation" key="{3B56BC03-0752-4CE2-8D5A-D5DDEFEA2E15}" type="Project" typeId="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}" pluginName="">
-			<data path="Carrick_Automation\Carrick_Automation.mds" />
-		</child>
+		<child name="Carrick_Automation" key="{3B56BC03-0752-4CE2-8D5A-D5DDEFEA2E15}" path="Carrick_Automation\Carrick_Automation.mds" />
 	</children>
-	<folders />
 	<testItems key="{94487C95-D6F6-4C33-92F2-F44B508DFD9A}">
 		<children>
 			<testItem key="{3B56BC03-0752-4CE2-8D5A-D5DDEFEA2E15}" enabled="True" timeout="0" stopOnError="False" description="" />
@@ -18,5 +15,7 @@
 	<scc key="{C900492B-D218-429C-9AA0-264B7D78CA88}" name="Git Plugin">
 		<data />
 	</scc>
-	<extender key="{1A3FC97E-9A66-4716-B166-35D10B4146E0}" />
+	<extender key="{1A3FC97E-9A66-4716-B166-35D10B4146E0}">
+		<CrossBrowserTesting Enable="True" />
+	</extender>
 </Root>
