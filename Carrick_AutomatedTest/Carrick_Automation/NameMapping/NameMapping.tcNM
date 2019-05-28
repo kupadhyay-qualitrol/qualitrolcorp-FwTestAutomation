@@ -2653,6 +2653,17 @@
 									</Child>
 								</Children>
 							</Child>
+							<Child Name="dlgSelectACashelMConfigurationFile" Key="{EC74CB02-E57E-4E5F-8071-DFE2FFB84D5D}" ParallelWalk="True">
+								<Image FileName="63717730" Left="0" Top="0" Right="960" Bottom="540" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Select a CashelM Configuration File" Type="5" />
+									</Property>
+								</Properties>
+							</Child>
 						</Children>
 					</Child>
 					<Child Name="setup" Key="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}" ParallelWalk="True">
@@ -3922,6 +3933,7 @@
 					</Child>
 				</Child>
 			</Child>
+			<Child Name="dlgSelectACashelMConfigurationFile" Owner="{EC74CB02-E57E-4E5F-8071-DFE2FFB84D5D}" />
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">
 			<Child Name="FrmUninstall" Owner="{990D663C-6273-46B4-AE60-C81BD1783FA8}">
