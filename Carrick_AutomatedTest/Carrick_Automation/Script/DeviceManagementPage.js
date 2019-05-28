@@ -63,11 +63,13 @@ function ClickonModifyConfig()
     return false
   }
 }
+// This method is to export config from device
 function ExportConfiguration()
 {
   if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
- 
+    //Clear Session log  
+    SessionLogPage.ClearLog()
     DeviceManagementToolbar.ClickItem("Device &Management")
     DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
     Log.Message("Clicked on Retrieve Configuration Page")
