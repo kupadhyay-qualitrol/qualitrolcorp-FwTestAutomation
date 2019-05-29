@@ -2664,6 +2664,123 @@
 									</Property>
 								</Properties>
 							</Child>
+							<Child Name="Form2" Key="{8B5B7D49-3BB9-407B-8901-D2384A9F6D03}" ParallelWalk="True">
+								<Image FileName="-1445224141" Left="0" Top="0" Right="237" Bottom="119" />
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="System.Windows.Forms.Form" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Save As Template" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="z973c19b_5924_43c3_8fe3_04e2539377ac" Key="{EFA5CCE2-AD25-4014-B069-00B7ABF8BCC4}" ParallelWalk="True">
+										<Image FileName="885016939" Left="3" Top="26" Right="234" Bottom="116" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="*" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="SaveAsTemplate" Key="{F0C63FEE-DA26-41F2-9AFA-ED46AFF0F0CE}" ParallelWalk="True">
+												<Image FileName="885016939" Left="3" Top="26" Right="234" Bottom="116" />
+												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="SaveAsTemplate" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="btnOk" Key="{41936A2B-DCA0-4B7A-8647-2182575EF608}" ParallelWalk="True">
+														<Image FileName="885016939" Left="64" Top="83" Right="144" Bottom="108" />
+														<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="btnOk" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="txtUsername" Key="{7266F528-043C-4CD5-9D86-0D5C14FACA5C}" ParallelWalk="True">
+														<Image FileName="885016939" Left="9" Top="51" Right="227" Bottom="71" />
+														<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="txtUsername" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="Form3" Key="{85614259-1D15-402E-86DF-0B2FDBB2D58F}" ParallelWalk="True">
+								<Image FileName="-831529173" Left="0" Top="0" Right="308" Bottom="308" />
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="System.Windows.Forms.Form" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Template" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="fe276abf_4ba1_46dd_b075_52df3107883b" Key="{45F9594A-BE39-4D63-8B4D-12AAABB194CF}" ParallelWalk="True">
+										<Image FileName="-665219747" Left="3" Top="26" Right="305" Bottom="305" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="*" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ImportTemplate" Key="{FA90E54F-12F6-4AEE-9E18-630C5C48C4F9}" ParallelWalk="True">
+												<Image FileName="-665219747" Left="3" Top="26" Right="305" Bottom="305" />
+												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="ImportTemplate" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="gbDefaultConfigurations" Key="{C15F8B91-2228-457C-BF8E-7CDE5860510F}" ParallelWalk="True">
+														<Image FileName="-665219747" Left="7" Top="30" Right="298" Bottom="258" />
+														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="gbDefaultConfigurations" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="lstDefaultTemplates" Key="{72E852D4-2EE9-4593-B2E2-4B1691DE116D}" ParallelWalk="True">
+																<Image FileName="-665219747" Left="14" Top="48" Right="288" Bottom="247" />
+																<TypeInfo Item0="{518207D3-86C6-4102-9294-5A73C2F7017A}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="lstDefaultTemplates" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="btnImport" Key="{0ABA0A62-331E-48F5-8F95-FB686F67A7B5}" ParallelWalk="True">
+														<Image FileName="-665219747" Left="123" Top="265" Right="208" Bottom="289" />
+														<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="btnImport" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
 						</Children>
 					</Child>
 					<Child Name="setup" Key="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}" ParallelWalk="True">
@@ -3934,6 +4051,24 @@
 				</Child>
 			</Child>
 			<Child Name="dlgSelectACashelMConfigurationFile" Owner="{EC74CB02-E57E-4E5F-8071-DFE2FFB84D5D}" />
+			<Child Name="Form2" Owner="{8B5B7D49-3BB9-407B-8901-D2384A9F6D03}">
+				<Child Name="Save_As_Template" Owner="{EFA5CCE2-AD25-4014-B069-00B7ABF8BCC4}">
+					<Child Name="SaveAsTemplate" Owner="{F0C63FEE-DA26-41F2-9AFA-ED46AFF0F0CE}">
+						<Child Name="btnOk" Owner="{41936A2B-DCA0-4B7A-8647-2182575EF608}" />
+						<Child Name="txtUsername" Owner="{7266F528-043C-4CD5-9D86-0D5C14FACA5C}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="Form3" Owner="{85614259-1D15-402E-86DF-0B2FDBB2D58F}">
+				<Child Name="Import_Template" Owner="{45F9594A-BE39-4D63-8B4D-12AAABB194CF}">
+					<Child Name="ImportTemplate" Owner="{FA90E54F-12F6-4AEE-9E18-630C5C48C4F9}">
+						<Child Name="gbDefaultConfigurations" Owner="{C15F8B91-2228-457C-BF8E-7CDE5860510F}">
+							<Child Name="lstDefaultTemplates" Owner="{72E852D4-2EE9-4593-B2E2-4B1691DE116D}" />
+						</Child>
+						<Child Name="btnImport" Owner="{0ABA0A62-331E-48F5-8F95-FB686F67A7B5}" />
+					</Child>
+				</Child>
+			</Child>
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">
 			<Child Name="FrmUninstall" Owner="{990D663C-6273-46B4-AE60-C81BD1783FA8}">
