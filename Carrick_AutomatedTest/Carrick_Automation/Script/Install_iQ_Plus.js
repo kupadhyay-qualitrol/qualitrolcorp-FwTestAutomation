@@ -193,7 +193,8 @@ function Install_iQ_Plus(Isupgrade)
   }
   else
   {
-    Log.Error("Failed:TC-Install IQ+ Application in the PC with default settings/No new version is available on server")
+    Log.Message("Failed:TC-Install IQ+ Application in the PC with default settings/No new version is available on server")
+    Runner.Stop()
   }
 }
 
