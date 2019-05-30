@@ -34,7 +34,7 @@ function Install_iQ_Plus(Isupgrade)
   {
     installedVersion=0
   }
-  if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null && (serverVersion> installedVersion ))
+  if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null && (aqConvert.StrToInt(serverVersion)> aqConvert.StrToInt(installedVersion)))
   {
     if(LatestBuildFile!=CommonMethod.LastModifiedFile(Project.Path+"Builds\\"))
     {
