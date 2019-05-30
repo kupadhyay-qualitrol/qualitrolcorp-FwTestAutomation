@@ -30,6 +30,7 @@ function Install_iQ_Plus(Isupgrade)
   var LatestBuildFile=CommonMethod.LastModifiedFile(DriveName)
   aqString.ListSeparator="."
   var serverVersion = aqString.GetListItem(LatestBuildFile,2)
+  Log.Message("Installed Version:- "+aqConvert.StrToInt(installedVersion))
   if(!Isupgrade)
   {
     installedVersion=0
