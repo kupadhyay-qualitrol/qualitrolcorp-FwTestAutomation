@@ -36,6 +36,7 @@ function Install_iQ_Plus(Isupgrade)
   }
   if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null && (aqConvert.StrToInt(serverVersion)> aqConvert.StrToInt(installedVersion)))
   {
+    Log.Message(aqConvert.StrToInt(serverVersion)> aqConvert.StrToInt(installedVersion))
     if(LatestBuildFile!=CommonMethod.LastModifiedFile(Project.Path+"Builds\\"))
     {
       if(aqFile.Copy(DriveName+ "\\" + LatestBuildFile, Project.Path+"Builds\\",true))
