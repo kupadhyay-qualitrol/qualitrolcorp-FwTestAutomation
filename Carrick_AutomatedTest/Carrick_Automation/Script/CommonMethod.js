@@ -400,7 +400,7 @@ function GetiQPlusInstallInfo()
   var strOutput = oExec.StdOut.ReadAll()
   // Trim leading and trailing empty lines
   strOutput = aqString.Trim(strOutput, aqString.stAll)
-
+  Log.Message(strOutput)
   // Post PowerShell output to the test log line by line
   aqString.ListSeparator = "\r\n";
   for (var indexProgram = 0; indexProgram < aqString.GetListLength(strOutput); indexProgram++)
