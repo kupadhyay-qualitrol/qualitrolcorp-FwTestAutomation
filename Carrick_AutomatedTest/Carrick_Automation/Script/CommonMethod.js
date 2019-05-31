@@ -390,7 +390,7 @@ function GetDeviceStatusOnPing(deviceIPAddress)
 function GetiQPlusInstallInfo()
 {
   var versionInfo =null
-  var command ="wmic product get Name,Version"
+  var command ="wmic product get Name"
   var oShell = getActiveXObject("WScript.Shell") // Or oShell = WshShell
   //var oExec = oShell.Exec("powershell -command Get-Process");
   var oExec = oShell.Exec("powershell -command "+command)
