@@ -392,16 +392,15 @@ function GetiQPlusInstallInfo()
   var versionInfo =null
   var command ="wmic product get Name,Version"
   var oShell = getActiveXObject("WScript.Shell") // Or oShell = WshShell
-  //var oExec = oShell.Exec("powershell -command Get-Process");
-//  var oExec = oShell.Exec("powershell -command "+command)
-var oExec = oShell.Exec(command)
+
+  var oExec = oShell.Exec(command)
   oExec.StdIn.Close(); // Close standard input before reading output
 
   // Get PowerShell output
   var strOutput = oExec.StdOut.ReadAll()
   // Trim leading and trailing empty lines
   strOutput = aqString.Trim(strOutput, aqString.stAll)
-  Log.Message(strOutput)
+
   // Post PowerShell output to the test log line by line
   aqString.ListSeparator = "\r\n";
   for (var indexProgram = 0; indexProgram < aqString.GetListLength(strOutput); indexProgram++)
