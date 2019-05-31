@@ -900,3 +900,128 @@ function CAM_732()
     OmicronStateSeqPage.CloseStateSeq()
   }
 }
+//CAM-739 Test to check the import/export functionality for DFR record length.//
+function CAM_739()
+{
+  try
+  {
+    Log.Message("Started TC:-Test to check the import/export functionality for DFR record length.")
+    var DataSheetName = Project.ConfigPath +"TestData\\CAM-739.xlsx"
+    
+    //Step1.: Check if iQ-Plus is running or not.
+    AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
+    
+    //Step2.Check whether device exists or not in the topology.    
+    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
+    {
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
+    
+    //Step3. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+    //Step4. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step5. Enter & Check Max DFR value
+    var MaxDFRLength =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFRLength),"Setting and checking Max DFR")
+    
+    //Step6. Send to Device
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+        
+    //Step7. Export configuration as a File
+    AssertClass.IsTrue(DeviceManagementPage.ExportConfigurationAsFile(CommonMethod.ReadDataFromExcel(DataSheetName,"File_Name")) ,"Exported configuration as a File")
+    
+    //Step8. Select other device
+    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"))!=true)
+    {
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo2"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd2"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"))      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
+    
+    //Step9.Import Configuration as a File
+    AssertClass.IsTrue(DeviceManagementPage.ImportConfigurationAsFile(), "Imported configuration as a File")
+    
+    //Step9.1 Verify Max DFR value
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ConfigEditor_FaultRecordingPage.GetMaxDFR()),aqConvert.StrToInt64(MaxDFRLength),0, "Max DFR value is properly imported and is equal to the primary device value")
+    ConfigEditorPage.ClickOnClose()
+    
+    
+    //Step10. Select Primary device
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))
+    
+     //Step11. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+    //Step12. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step13. Enter & Check Max DFR value
+    var MaxDFRLength1 =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR1")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFRLength1),"Setting and checking Max DFR")
+    
+    //Step14. Send to Device
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    
+    //Step15. Export configuration as a Template
+    AssertClass.IsTrue(DeviceManagementPage.ExportConfigurationAsTemplate(CommonMethod.ReadDataFromExcel(DataSheetName,"Template_Name")) ,"Exported configuration as a Template")
+    
+    //Step16. Select other device
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"))
+  
+    //Step17. Import configuration as a Template
+    AssertClass.IsTrue(DeviceManagementPage.ImportConfigurationAsTemplate(CommonMethod.ReadDataFromExcel(DataSheetName,"Template_Name")) ,"Imported configuration as a Template")
+    
+    //Step17.2 Verify Max DFR value after Importing as Template
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ConfigEditor_FaultRecordingPage.GetMaxDFR()),aqConvert.StrToInt64(MaxDFRLength1),0, "Max DFR value is properly imported and is equal to the primary device value")
+    ConfigEditorPage.ClickOnClose()
+    
+    //Step18. Select Primary device
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))
+    
+     //Step19. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
+    
+    //Step20. Click on Fault Recording
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    
+    //Step21. Enter & Check Max DFR value
+    var MaxDFRLength2 =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR2")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFRLength2),"Setting and checking Max DFR")
+    
+    //Step22. Send to device
+    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    
+    //Step23. Select other device
+    DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"))
+    
+    //Step24. Import configuration from other device
+    AssertClass.IsTrue(DeviceManagementPage.ImportConfigFromOtherDevice())
+    Log.Message("Imported configuration from other device")
+    
+    //Step25 Verify Max DFR value after Importing from other device
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ConfigEditor_FaultRecordingPage.GetMaxDFR()),aqConvert.StrToInt64(MaxDFRLength2),0,"Max DFR value is properly imported and is equal to the primary device value")
+  }
+  catch(ex)
+  {
+    Log.Error(ex.stack)
+    Log.Error("Fail:-Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length")
+  }
+  finally
+  {
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close in Config Editor")
+  }
+}

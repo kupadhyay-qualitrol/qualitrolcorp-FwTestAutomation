@@ -1593,6 +1593,18 @@
 											</Property>
 										</Properties>
 									</Child>
+									<Child Name="btnNo" Key="{5C27C508-34B8-4A6D-92AD-58A8FC1BCFDB}" ParallelWalk="True">
+										<Image FileName="-347078850" Left="300" Top="185" Right="375" Bottom="208" />
+										<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="&amp;No" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
 								</Children>
 							</Child>
 							<Child Name="DropDownForm" Key="{B7140279-1F42-421D-B6C6-C6D4D38A175C}" ParallelWalk="True">
@@ -2781,6 +2793,158 @@
 									</Child>
 								</Children>
 							</Child>
+							<Child Name="Form4" Key="{B2968B41-D272-4A00-B2E4-3F9263C6A87C}" ParallelWalk="True">
+								<Image FileName="114991232" Left="0" Top="0" Right="307" Bottom="321" />
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="System.Windows.Forms.Form" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Other Device" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="z29658ad_53a0_4e65_987e_47b4eabf80cf" Key="{68E04938-855B-47DB-A1A0-B9BC2185478A}" ParallelWalk="True">
+										<Image FileName="73413987" Left="3" Top="26" Right="304" Bottom="318" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="*" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ImportDeviceTemplate" Key="{BC9ECECC-8B12-4AD9-AAB0-49EDA1E40888}" ParallelWalk="True">
+												<Image FileName="73413987" Left="3" Top="26" Right="304" Bottom="318" />
+												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="ImportDeviceTemplate" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="pnlTopContainer" Key="{DA473849-552B-4099-BAE8-77BF581E1AF6}" ParallelWalk="True">
+														<Image FileName="73413987" Left="3" Top="26" Right="304" Bottom="277" />
+														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="pnlTopContainer" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="gbxImportConfig" Key="{CA19B4B2-9C27-4CB0-B500-CBB9D2683E91}" ParallelWalk="True">
+																<Image FileName="73413987" Left="3" Top="26" Right="304" Bottom="277" />
+																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="gbxImportConfig" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="TopologyWorkspace" Key="{A83C69B6-CA76-4134-B0DF-7174B03F814B}" ParallelWalk="True">
+																		<Image FileName="73413987" Left="6" Top="42" Right="301" Bottom="274" />
+																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="TopologyWorkspace" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="DeviceTopology" Key="{24099A95-6192-4B29-8CDB-608582F606A7}" ParallelWalk="True">
+																				<Image FileName="73413987" Left="6" Top="42" Right="301" Bottom="274" />
+																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="DeviceTopology" Type="5" />
+																					</Property>
+																				</Properties>
+																				<Children>
+																					<Child Name="UserControlBase_Fill_Panel" Key="{2FF3E708-A218-461A-9467-10AF2FBB04A1}" ParallelWalk="True">
+																						<Image FileName="73413987" Left="6" Top="42" Right="301" Bottom="274" />
+																						<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																						<Properties>
+																							<Property Name="WinFormsControlName">
+																								<Value PropertyType="0" Value="UserControlBase_Fill_Panel" Type="5" />
+																							</Property>
+																						</Properties>
+																						<Children>
+																							<Child Name="TPGYutscTopologies" Key="{3420EC0D-CCC4-400C-A3EB-1C2D9E17AF62}" ParallelWalk="True">
+																								<Image FileName="73413987" Left="6" Top="42" Right="301" Bottom="274" />
+																								<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																								<Properties>
+																									<Property Name="WinFormsControlName">
+																										<Value PropertyType="0" Value="TPGYutscTopologies" Type="5" />
+																									</Property>
+																								</Properties>
+																								<Children>
+																									<Child Name="ultraTabSharedControlsPage1" Key="{3BC08980-E8A6-47C1-814E-F29B122410C2}" ParallelWalk="True">
+																										<Image FileName="73413987" Left="7" Top="65" Right="300" Bottom="273" />
+																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ultraTabSharedControlsPage1" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="panelTree" Key="{3B497906-0372-4203-9D69-07D3491DDBA5}" ParallelWalk="True">
+																												<Image FileName="73413987" Left="7" Top="91" Right="300" Bottom="273" />
+																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="panelTree" Type="5" />
+																													</Property>
+																												</Properties>
+																												<Children>
+																													<Child Name="TPGYutvTopologyTree" Key="{E066CDB2-4458-47F4-9489-85C7C8EEF8F2}" ParallelWalk="True">
+																														<Image FileName="73413987" Left="7" Top="91" Right="300" Bottom="273" />
+																														<TypeInfo Item0="{810CFB4D-0F40-4382-AA79-CD5CA003822A}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="TPGYutvTopologyTree" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																												</Children>
+																											</Child>
+																										</Children>
+																									</Child>
+																								</Children>
+																							</Child>
+																						</Children>
+																					</Child>
+																				</Children>
+																			</Child>
+																		</Children>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
+													<Child Name="pnlContainer" Key="{6EB4E97F-68C2-4B94-BC3F-FA0C615F8BEE}" ParallelWalk="True">
+														<Image FileName="-1759231647" Left="3" Top="277" Right="304" Bottom="318" />
+														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="pnlContainer" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="btnImport" Key="{A13890DE-8E3C-4671-A1DD-3F5B07F3DFF8}" ParallelWalk="True">
+																<Image FileName="-1759231647" Left="116" Top="283" Right="201" Bottom="307" />
+																<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="btnImport" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
 						</Children>
 					</Child>
 					<Child Name="setup" Key="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}" ParallelWalk="True">
@@ -3902,6 +4066,7 @@
 			</Child>
 			<Child Name="dlgWarning" Owner="{85E55F72-7663-4AED-A0F3-A5EB27B97D82}">
 				<Child Name="btnYes" Owner="{2DAFDFD6-7D44-4FFD-9D1F-7B75FEE8EA75}" />
+				<Child Name="btnNo" Owner="{5C27C508-34B8-4A6D-92AD-58A8FC1BCFDB}" />
 			</Child>
 			<Child Name="DropDownForm" Owner="{B7140279-1F42-421D-B6C6-C6D4D38A175C}">
 				<Child Name="PopupMenuControlTrusted" Owner="{CC1C8A02-8B97-4847-940C-086876033CDB}" />
@@ -4066,6 +4231,32 @@
 							<Child Name="lstDefaultTemplates" Owner="{72E852D4-2EE9-4593-B2E2-4B1691DE116D}" />
 						</Child>
 						<Child Name="btnImport" Owner="{0ABA0A62-331E-48F5-8F95-FB686F67A7B5}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="Form4" Owner="{B2968B41-D272-4A00-B2E4-3F9263C6A87C}">
+				<Child Name="ImportOtherDevice" Owner="{68E04938-855B-47DB-A1A0-B9BC2185478A}">
+					<Child Name="ImportDeviceTemplate" Owner="{BC9ECECC-8B12-4AD9-AAB0-49EDA1E40888}">
+						<Child Name="pnlTopContainer" Owner="{DA473849-552B-4099-BAE8-77BF581E1AF6}">
+							<Child Name="gbxImportConfig" Owner="{CA19B4B2-9C27-4CB0-B500-CBB9D2683E91}">
+								<Child Name="TopologyWorkspace" Owner="{A83C69B6-CA76-4134-B0DF-7174B03F814B}">
+									<Child Name="DeviceTopology" Owner="{24099A95-6192-4B29-8CDB-608582F606A7}">
+										<Child Name="UserControlBase_Fill_Panel" Owner="{2FF3E708-A218-461A-9467-10AF2FBB04A1}">
+											<Child Name="TPGYutscTopologies" Owner="{3420EC0D-CCC4-400C-A3EB-1C2D9E17AF62}">
+												<Child Name="ultraTabSharedControlsPage1" Owner="{3BC08980-E8A6-47C1-814E-F29B122410C2}">
+													<Child Name="panelTree" Owner="{3B497906-0372-4203-9D69-07D3491DDBA5}">
+														<Child Name="TPGYutvTopologyTree" Owner="{E066CDB2-4458-47F4-9489-85C7C8EEF8F2}" />
+													</Child>
+												</Child>
+											</Child>
+										</Child>
+									</Child>
+								</Child>
+							</Child>
+						</Child>
+						<Child Name="pnlContainer" Owner="{6EB4E97F-68C2-4B94-BC3F-FA0C615F8BEE}">
+							<Child Name="btnImport" Owner="{A13890DE-8E3C-4671-A1DD-3F5B07F3DFF8}" />
+						</Child>
 					</Child>
 				</Child>
 			</Child>

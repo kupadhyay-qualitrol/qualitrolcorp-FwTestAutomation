@@ -17,6 +17,7 @@ var ConfigOptions = Aliases.iQ_Plus.ToolStripDropDownMenu
 var Address_bar = Aliases.iQ_Plus.dlg.WorkerW.ReBarWindow32.AddressBandRoot.progress.BreadcrumbParent.toolbarAddressDBelfast
 var Confirm_Save_As = Aliases.iQ_Plus.dlgConfirmSaveAs
 var Save_As_Button = Aliases.iQ_Plus.dlgConfirmSaveAs.Confirm_Save_As.CtrlNotifySink.btnYes
+var Save_button = Aliases.iQ_Plus.dlg.btnSave
 var export_window = Aliases.iQ_Plus.dlg
 var Import_window = Aliases.iQ_Plus.dlgSelectACashelMConfigurationFile
 var Save_as_template = Aliases.iQ_Plus.Form2
@@ -24,6 +25,8 @@ var ok_button = Aliases.iQ_Plus.Form2.Save_As_Template.SaveAsTemplate.btnOk
 var Template_Name_txt_box = Aliases.iQ_Plus.Form2.Save_As_Template.SaveAsTemplate.txtUsername
 var Template = Aliases.iQ_Plus.Form3.Import_Template.ImportTemplate.gbDefaultConfigurations.lstDefaultTemplates
 var Copy_button = Aliases.iQ_Plus.Form3.Import_Template.ImportTemplate.btnImport
+var Device_topology = Aliases.iQ_Plus.Form4.ImportOtherDevice.ImportDeviceTemplate.pnlTopContainer.gbxImportConfig.TopologyWorkspace.DeviceTopology.UserControlBase_Fill_Panel.TPGYutscTopologies.ultraTabSharedControlsPage1.panelTree.TPGYutvTopologyTree
+var Copy_button_other_device = Aliases.iQ_Plus.Form4.ImportOtherDevice.ImportDeviceTemplate.pnlContainer.btnImport
 //
 
 //This method is to Click on Retrieve CConfiguration button
@@ -70,7 +73,7 @@ function ClickonModifyConfig()
   }
 }
 // This method is to export config from device
-function ExportConfigurationAsFile()
+function ExportConfigurationAsFile(File_Name)
 {
   if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
@@ -83,9 +86,9 @@ function ExportConfigurationAsFile()
     Item_ConfigurationEditor.SetFocus()
     Item_ConfigurationEditor.StripMainMenu.Click("Configuration|Export|As a File")
     Log.Message("Export as a file button clicked")
-    Save_as_template.SetFocus()
-    ViewFileName.SetText(aqString.Trim("Configuration"))
-    ok_button.Click()
+    export_window.SetFocus()
+    ViewFileName.SetText(aqString.Trim(File_Name))
+    Save_button.Click()
     if(Confirm_Save_As.Exists)
     {
       
@@ -117,7 +120,6 @@ function ImportConfigurationAsFile()
     Log.Message("Import from file button clicked")
     Import_window.SetFocus()
     Import_window.OpenFile("D:\\Belfast\\Configuration\\Configuration.cfg", "CFG files (*.cfg)")
-    ConfigEditorPage.ClickSendToDevice()
     return true
   }
   else
@@ -126,7 +128,7 @@ function ImportConfigurationAsFile()
     return false
   }
 }
-function ExportConfigurationAsTemplate()
+function ExportConfigurationAsTemplate(Template_Name)
 {
   if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
@@ -140,9 +142,9 @@ function ExportConfigurationAsTemplate()
     Item_ConfigurationEditor.StripMainMenu.Click("Configuration|Export|As a Template")
     Log.Message("Export as a template button clicked")
     Save_as_template.SetFocus()
-    Template_Name_txt_box.SetText(aqString.Trim("Device_51"))
-    //Template_Name_txt_box.wText(aqString.Trim("Device_51"))
+    Template_Name_txt_box.SetText(aqString.Trim(Template_Name))
     ok_button.ClickButton()
+    aqUtils.Delay(3000)
     Item_ConfigurationEditor.SetFocus()
     ConfigEditorPage.ClickOnClose()
     return true
@@ -154,7 +156,7 @@ function ExportConfigurationAsTemplate()
   }
 }
 
-function ImportConfigurationAsTemplate()
+function ImportConfigurationAsTemplate(Template_Name)
 {
  if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
@@ -166,9 +168,9 @@ function ImportConfigurationAsTemplate()
     CommonMethod.CheckActivityLog("Configuration retrieved successfully from device")
     Item_ConfigurationEditor.SetFocus()
     Item_ConfigurationEditor.StripMainMenu.Click("Configuration|Import|From Template")
-    Template.ClickItem("Device_51")
+    Template.ClickItem(Template_Name)
     Copy_button.ClickButton()
-    ConfigEditorPage.ClickSendToDevice()
+    CommonMethod.CheckActivityLog("Template copied successfully.")
     return true
   }  
  else
@@ -176,4 +178,28 @@ function ImportConfigurationAsTemplate()
     Log.Message("Unable to Click on Device Management Button")
     return false
   }
+}
+function ImportConfigFromOtherDevice()
+{
+  if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
+  {
+    //Clear Session log  
+    SessionLogPage.ClearLog()
+    DeviceManagementToolbar.ClickItem("Device &Management")
+    DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
+    Log.Message("Clicked on Retrieve Configuration Page")
+    CommonMethod.CheckActivityLog("Configuration retrieved successfully from device")
+    Item_ConfigurationEditor.SetFocus()
+    Item_ConfigurationEditor.StripMainMenu.Click("Configuration") 
+    Item_ConfigurationEditor.StripMainMenu.Click("Configuration|Import|From Another Device")
+    Device_topology.ClickItem("All Devices|IDM+18|IND_DAU_51")
+    Copy_button_other_device.ClickButton()
+    CommonMethod.CheckActivityLog("Configuration copied successfully from device")
+    return true
+   }
+   else
+   {
+    Log.Message("Unable to Click on Device Management Button")
+    return false
+   }
 }
