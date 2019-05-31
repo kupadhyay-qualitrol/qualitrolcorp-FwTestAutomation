@@ -198,7 +198,7 @@ function Install_iQ_Plus(Isupgrade)
   else
   {
     Log.Message("No new version is available on server")
-    Runner.Stop()
+    //Runner.Stop()
   }
 }
 
