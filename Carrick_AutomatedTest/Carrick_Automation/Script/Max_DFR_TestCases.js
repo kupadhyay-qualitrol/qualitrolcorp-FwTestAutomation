@@ -1069,36 +1069,41 @@ function CAM_763()
     var frsensorPostFaultTimeFromTestData = CommonMethod.ReadDataFromExcel(dataSheetName,"PostFaultTime")
     var frsensorOplimitFromTestData = CommonMethod.ReadDataFromExcel(dataSheetName,"Oplimit")
     var frsensorRecordDurationFromTestData = CommonMethod.ReadDataFromExcel(dataSheetName,"RecordDuration")
-    var expectedRecordDuration1 = CommonMethod.ReadDataFromExcel(dataSheetName,"ExpectedRecordDuration_1")
+    var expectedRecordDuration = CommonMethod.ReadDataFromExcel(dataSheetName,"ExpectedRecordDuration")
     
     DFR_Methods.SetFRSensor(frsensorNameFromTestData,frsensorTypeFromTestData,frsensorScalingTypeFromTestData,frsensorUpperThresholdFromTestData,frsensorPostFaultTimeFromTestData,frsensorOplimitFromTestData)
     
     //Step5. Send to Device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device") 
-    
-    //Step6. Generate Manual trigger
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnFRManualTrigger())
-    
-    //Step7. Click on DFR Directory under Display Device Directory
+      
+    //Step6. Click on DFR Directory under Display Device Directory
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory() ,"Clicked on DFR Directory")           
       
-    //Step8. Find latest Record Number
+    //Step7. Find latest Record Number
     var lastDFRRecord= DataRetrievalPage.GetLatestRecordnumber()
     Log.Message("Current Record Number is :- "+lastDFRRecord)      
       
-    //Step9. Close DFR Directory
+    //Step8. Close DFR Directory
     AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory() ,"Close DFR Directory") 
     
+    //Step9.Start Omicron Injection
+    OmicronStateSeqPage.RunSeqFile(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(dataSheetName,"OmicronFile"))
+    AssertClass.IsTrue(DFR_Methods.IsMultipleRecordFound(10,1,lastDFRRecord),"Checking for new Record") 
+     
     //Step10. Click on Download Data Now
     AssertClass.IsTrue(DFR_Methods.DownloadManualDFR(),"Clicked on Download Data Now")
     
     //Step11. Check Record Length
     var recordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
-    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedRecordDuration1),aqConvert.StrToInt64(recordLength),10,"Validating Record Duration.")
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedRecordDuration),aqConvert.StrToInt64(recordLength),10,"Validating Record Duration.")
     }
   catch(ex)
   {
     Log.Error(ex.stack)
     Log.Error("Fail:-Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length")
+  }
+  finally
+  {
+    OmicronStateSeqPage.CloseStateSeq()
   }
 }
