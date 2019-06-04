@@ -970,7 +970,7 @@ function CAM_763()
     
     //Step11. Check Record Length
     var recordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
-    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedRecordDuration),aqConvert.StrToInt64(recordLength),10,"Validating Record Duration.") //Added tolerance of 10 as sometimes we get 3-3 ms of additional duration
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(expectedRecordDuration),aqConvert.StrToInt64(recordLength),10,"Validating Record Duration.") //Added tolerance of 10 as sometimes we get 2-3 ms of additional duration
     
     Log.Message("Pass:-Test to check DFR record length with prefault =500ms and Max length =800ms")
     }
