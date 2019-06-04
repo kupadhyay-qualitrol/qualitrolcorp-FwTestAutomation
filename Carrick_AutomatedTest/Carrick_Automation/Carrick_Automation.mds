@@ -134,14 +134,6 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-739" key="{474DD36B-4A7D-4B20-80FC-B1B25DC819D6}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
-								<testParameters />
-								<children />
-							</testItem>
-							<testItem name="CAM-763" key="{89E755F4-D96E-4765-BE7D-B7D003CE5680}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms">
-								<testParameters />
-								<children />
-							</testItem>
 							<testItem name="Close iQ_Plus" key="{DC22F493-4F64-4B36-8D1E-81D17E1B9F6B}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
 								<testParameters />
 								<children />
