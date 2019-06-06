@@ -3,10 +3,10 @@
 */
 
 //Variables//
-var EdtBx_File_Name = Aliases.iQ_Plus.dlg.DUIViewWndClassName.Explorer_Pane.FloatNotifySink2.ComboBox.Edit
+var EdtBx_File_Name = Aliases.iQ_Plus.dlg.DUIViewWndClassName.Explorer_Pane.FloatNotifySink.ComboBox.Edit
 var Configuration_Editor_box = Aliases.iQ_Plus.Form
 var Dialog_Confirm_Save_As = Aliases.iQ_Plus.dlgConfirmSaveAs
-var Btn_Yes_Confirm_Save = Aliases.iQ_Plus.dlgConfirmSaveAs.Confirm_Save_As2.CtrlNotifySink.btnYes
+var Btn_Yes_Confirm_Save = Aliases.iQ_Plus.dlgConfirmSaveAs.Confirm_Save_As.CtrlNotifySink.btnYes
 var Btn_Save = Aliases.iQ_Plus.dlg.btnSave
 var Dlg_Export_Configuration = Aliases.iQ_Plus.dlg
 var Dlg_Import_Configuration = Aliases.iQ_Plus.dlgSelectACashelMConfigurationFile
@@ -78,6 +78,7 @@ function ClickImportAsFile()
   if(Configuration_Editor_box.Enabled)
     {
     Configuration_Editor_box.SetFocus()
+    Configuration_Editor_box.StripMainMenu.Click("Configuration")
     Configuration_Editor_box.StripMainMenu.Click("Configuration|Import|From File")
     Log.Message("Import from file button clicked")
     return true
@@ -170,9 +171,10 @@ function SelectTemplateFromTemplateList(Template_Name)
 //This method is used for clicking on Copy button of Import 4template pop up.
 function ClickCopyTemplateButton()
 {
-  if(Template_Pop_Up.Enabled)
+  if(Dlg_Template.Enabled)
   {
     Btn_Copy_Template.ClickButton()
+    aqUtils.Delay(2000);
     return true
   }  
  else
@@ -200,9 +202,10 @@ function ClickImportFromOtherDevice()
 //This method is used for click on Copy button of Import other device pop up of Import configuration from other device
 function ClickOnCopyButton()
 {
-  if(Device_topology.Enabled)
+  if(Import_Device_topology.Enabled)
   {
-    Copy_button_other_device.ClickButton()
+    Btn_Copy_Other_Device.ClickButton()
+    aqUtils.Delay(3000);
     return true
   }
   else
@@ -211,7 +214,7 @@ function ClickOnCopyButton()
     return false
   }
 }
-//This method used for selecting device from the device topology of Import other device pop up of Import configuration from other device
+//This method used for selecting device from the device topology of Import other device pop up of Import configuration from other device devicetype,deviceName "+devicetype+" "+ deviceName
 function SelectDeviceFromImportOtherDevice(devicetype,deviceName)
 {
   if(Dlg_Other_Device_popup.Enabled)

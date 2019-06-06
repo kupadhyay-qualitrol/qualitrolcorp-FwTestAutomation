@@ -983,7 +983,6 @@ function CAM_739()
     ConfigEditor_Methods.ImportConfigurationAsTemplate(CommonMethod.ReadDataFromExcel(DataSheetName,"Template_Name"))
     Log.Message("Imported configuration as a Template")
     
-    
     //Step17.2 Verify Max DFR value after Importing as Template
     AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
     AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ConfigEditor_FaultRecordingPage.GetMaxDFR()),aqConvert.StrToInt64(MaxDFRLength1),0, "Max DFR value is properly imported and is equal to the primary device value")
@@ -1009,13 +1008,13 @@ function CAM_739()
     DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"))
     
     //Step24. Import configuration from other device
-    ConfigEditor_Methods.ImportConfigFromOtherDevice()
+    ConfigEditor_Methods.ImportConfigFromOtherDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))
     Log.Message("Imported configuration from other device")
     
     
     //Step25 Verify Max DFR value after Importing from other device
     AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
-    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ConfigEditor_FaultRecordingPage.GetMaxDFR()),aqConvert.StrToInt64(MaxDFRLength2),0,"Max DFR value is properly imported and is equal to the primary device value")
+    AssertClass.CompareDecimalValues(aqConvert.StrToInt64(ConfigEditor_FaultRecordingPage.GetMaxDFR()),aqConvert.StrToInt64(MaxDFRLength2),0, "Max DFR value is properly imported and is equal to the primary device value")
   }
   catch(ex)
   {
