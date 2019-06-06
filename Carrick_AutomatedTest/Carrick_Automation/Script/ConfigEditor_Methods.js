@@ -20,7 +20,7 @@ function ExportConfigurationAsFile(File_Name)
    //Step3. Click on Save button on Export configuration file popup
    AssertClass.IsTrue(ConfigEditor_ConfigurationPage.ClickOnSaveButtonExportAsFile(),"Clicked on Save button of Export configuration file popup")  
 }
-function ImportConfigurationAsFile(File_Name)
+function ImportConfigurationAsFile(File_Name_Import)
 {
   //Step0. Retrieve Configuration
   AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
@@ -29,7 +29,7 @@ function ImportConfigurationAsFile(File_Name)
   AssertClass.IsTrue(ConfigEditor_ConfigurationPage.ClickImportAsFile(),"Clicked on import as a file button")
   
   //Step2. Open configuration file and 
-  AssertClass.IsTrue(ConfigEditor_ConfigurationPage.OpenConfiguratioAsFile(File_Name),"Select configuration file and click on open button")
+  AssertClass.IsTrue(ConfigEditor_ConfigurationPage.OpenConfiguratioAsFile(File_Name_Import),"Select configuration file and click on open button")
 }
 function ExportConfigurationAsTemplate(Template_Name)
 {

@@ -90,12 +90,12 @@ function ClickImportAsFile()
     return false
 }
 // This method is to Open configuration as a file
-function OpenConfiguratioAsFile(File_Name)
+function OpenConfiguratioAsFile(File_Name_Import)
 {
   if(Dlg_Import_Configuration.Enabled)
   {
   Dlg_Import_Configuration.SetFocus()
-  Dlg_Import_Configuration.OpenFile(File_Name, "CFG files (*.cfg)")
+  Dlg_Import_Configuration.OpenFile(File_Name_Import)
   Log.Message("Clicked on Open button of Import Configuration")
   return true
   }

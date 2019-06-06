@@ -908,6 +908,7 @@ function CAM_739()
   {
     Log.Message("Started TC:-Test to check the import/export functionality for DFR record length.")
     var DataSheetName = Project.ConfigPath +"TestData\\CAM-739.xlsx"
+    var File_Name = Project.ConfigPath +"TestData\\CAM-739_Export-Import Configuration\\Configuration.cfg"
     
     //Step1.: Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
@@ -937,7 +938,7 @@ function CAM_739()
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
         
     //Step7. Export configuration as a File
-    ConfigEditor_Methods.ExportConfigurationAsFile(CommonMethod.ReadDataFromExcel(DataSheetName,"File_Name"))
+    ConfigEditor_Methods.ExportConfigurationAsFile(File_Name)
     Log.Message("Exported configuration as a File")
     ConfigEditorPage.ClickOnClose()
     
@@ -945,7 +946,7 @@ function CAM_739()
     DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName2"))
     
     //Step9.Import Configuration as a File
-    ConfigEditor_Methods.ImportConfigurationAsFile(CommonMethod.ReadDataFromExcel(DataSheetName,"File_Name"))
+    ConfigEditor_Methods.ImportConfigurationAsFile(CommonMethod.ReadDataFromExcel(DataSheetName,"File_Name_Import"))
     Log.Message("Imported configuration as a File")
  
     
