@@ -268,8 +268,7 @@ function BTC_114()
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
     //Step7. Trigger Manual DFR
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnFRManualTrigger(),"Mannual Trigger sent to Device")
-    aqUtils.Delay(2000);
+    DFR_Methods.TriggerManualDFR()
     
     //Step8. Click on DFR directoy
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"DFR Directory pop up is open")
