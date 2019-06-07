@@ -102,6 +102,22 @@ namespace Tabindex_Data.soh
 
         }
 
+        private IWebElement Item_soh_data_static_data
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/a"));
+            }
+        }
+
+        private IWebElement Edtbx_soh_data_static_CPU_Application
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/div/table[3]/tbody/tr/td[3]/span/a/input"));
+            }
+        }
+
 
         #endregion
 
