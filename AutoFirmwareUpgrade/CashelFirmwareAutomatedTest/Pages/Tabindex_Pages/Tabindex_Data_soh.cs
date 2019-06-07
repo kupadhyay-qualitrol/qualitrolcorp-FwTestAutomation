@@ -204,6 +204,17 @@ namespace Tabindex_Data.soh
             CommitChanges.Click();
             return true;
         }
+
+        public bool Item_soh_data_static_data_Click()
+        {
+            Item_soh_data_static_data.Click();
+            return true;
+        }
+
+        public string Get_CPU_Application_Version()
+        {
+            return Edtbx_soh_data_static_CPU_Application.Text;
+        }
         #endregion
 
 
