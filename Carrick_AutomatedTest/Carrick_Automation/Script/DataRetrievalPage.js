@@ -319,6 +319,10 @@ function TimeQualityStatusFromDeviceStatus()
     {
       Status = "unlocked"
     }
+    else if (aqString.Find(Status,"locked-full")!=-1)
+    {
+      Status ="locked-full"
+    }
     else if (aqString.Find(Status,"locked")!=-1)
     {
       Status ="locked"
