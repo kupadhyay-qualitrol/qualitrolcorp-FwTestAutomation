@@ -70,7 +70,7 @@ function BTC_125()
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Clicked on Device Status View")
     
     //Step8.2 Check Time Quality Staus Actual
-    AssertClass.CompareString(DataRetrievalPage.TimeQualityStatusFromDeviceStatus(),PDPPage.GetTimeQualityStatus(0).ToString().OleValue,"Comparing Time Quality from Device Status and from DFR record in PDP.")
+    AssertClass.CompareString(DataRetrievalPage.TimeQualityStatusFromDeviceStatus(),PDPPage.GetTimeQualityStatus(0),"Comparing Time Quality from Device Status and from DFR record in PDP.")
     
     //Step8.3
     DataRetrievalPage.CloseDeviceStatus.ClickButton()
