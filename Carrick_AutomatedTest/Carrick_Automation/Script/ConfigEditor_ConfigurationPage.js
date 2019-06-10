@@ -19,7 +19,7 @@ var Btn_Copy_Template = Aliases.iQ_Plus.Form3.Import_Template.ImportTemplate.btn
 var Import_Device_topology = Aliases.iQ_Plus.Form4.ImportOtherDevice.ImportDeviceTemplate.pnlTopContainer.gbxImportConfig.TopologyWorkspace.DeviceTopology.UserControlBase_Fill_Panel.TPGYutscTopologies.ultraTabSharedControlsPage1.panelTree.TPGYutvTopologyTree
 var Btn_Copy_Other_Device = Aliases.iQ_Plus.Form4.ImportOtherDevice.ImportDeviceTemplate.pnlContainer.btnImport
 var Dlg_Other_Device_popup = Aliases.iQ_Plus.Form4
-
+var Referesh_time = 1000;
 // This method is to click on Export as a file button
 function ClickExportAsFile()
 {
@@ -129,7 +129,7 @@ function SetTemplateName(Template_Name)
     Dlg_Save_As_Template.SetFocus()
     EdtBx_Template_Name.SetText(aqString.Trim(Template_Name))
     Btn_Ok.ClickButton()
-    aqUtils.Delay(3000)
+    aqUtils.Delay(3*Referesh_time)
     //Delay given because it takes few seconds to get referesh the values
     Configuration_Editor_box.SetFocus()
     return true
@@ -176,7 +176,7 @@ function ClickCopyTemplateButton()
   if(Dlg_Template.Enabled)
   {
     Btn_Copy_Template.ClickButton()
-    aqUtils.Delay(2000);
+    aqUtils.Delay(2*Referesh_time);
     //Delay given because it takes few seconds to get referesh the values
     return true
   }  
@@ -208,7 +208,7 @@ function ClickOnCopyButton()
   if(Import_Device_topology.Enabled)
   {
     Btn_Copy_Other_Device.ClickButton()
-    aqUtils.Delay(3000);
+    aqUtils.Delay(3*Referesh_time);
     //Delay given because it takes few seconds to get referesh the values
     return true
   }
