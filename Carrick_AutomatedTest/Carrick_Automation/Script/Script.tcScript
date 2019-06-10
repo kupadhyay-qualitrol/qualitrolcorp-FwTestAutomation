@@ -32,6 +32,7 @@
 			<child name="ConfigEditor_DeviceOverview_AnalogInputs" key="{BB8D6D13-1F7F-4682-B57D-A82DD9BD08A5}" path="ConfigEditor_DeviceOverview_AnalogInputs.js" />
 			<child name="ConfigEditor_FaultRecording_FRSensorPage" key="{19474A48-A7D5-4733-B543-25993B7A7C79}" path="ConfigEditor_FaultRecording_FRSensorPage.js" />
 			<child name="OmicronStateSeqPage" key="{8F389BA8-7093-4E3E-BE8B-9BE7561CF828}" path="OmicronStateSeqPage.js" />
+			<child name="ConfigEditor_ConfigurationPage" key="{F34F8852-ADE5-4C80-8ABD-50A4A6B9AB08}" path="ConfigEditor_ConfigurationPage.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />
@@ -46,6 +47,7 @@
 			<child name="TimeSync_Methods" key="{E201E781-EE48-4FB8-8960-9C5062A926C1}" path="TimeSync_Methods.js" />
 			<child name="CrossTrigger_Methods" key="{54997743-4D7C-474F-A1D9-57992A0836AD}" path="CrossTrigger_Methods.js" />
 			<child name="Circuit_Configuration" key="{21EEBEBA-1A70-4CDD-984C-41C9D6534189}" path="Circuit_Configuration.js" />
+			<child name="ConfigEditor_Methods" key="{EB352A05-0142-4195-A290-4ECF3C50D33E}" path="ConfigEditor_Methods.js" />
 		</folder>
 		<folder name="Firmware_WebPage_Scripts">
 			<child name="SeleniumWebdriver" key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" path="SeleniumWebdriver.js" />

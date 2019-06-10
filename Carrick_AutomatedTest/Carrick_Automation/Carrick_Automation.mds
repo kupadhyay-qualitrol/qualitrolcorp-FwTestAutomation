@@ -29,11 +29,11 @@
 					<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="True" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters>
 									<param0 name="Isupgrade" type="3" localVarName="" varType="11" value="False" />
 								</testParameters>
@@ -94,47 +94,51 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-727" key="{2BA887D3-A6DF-471B-8103-AE959C1DA118}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_727" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length">
+							<testItem name="CAM-727" key="{2BA887D3-A6DF-471B-8103-AE959C1DA118}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_727" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
+							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
+							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="0" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
+							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="0" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
+							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-725" key="{BDDE28E1-CBC1-45AC-9424-F3F091094B8D}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_725" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to input DFR record length value less/greater than minimum/maximum value">
+							<testItem name="CAM-725" key="{BDDE28E1-CBC1-45AC-9424-F3F091094B8D}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_725" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check that user tries to input DFR record length value less/greater than minimum/maximum value">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
+							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-729_730_731_733" key="{3D3AAB3F-F47B-41BC-A5F6-FC5768DC25B6}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_729_730_731_733" count="4" timeout="0" stopOnError="2" stopOnException="2" description="CAM-729 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is equal to Maximum record length.&#13;&#10;CAM-730 Test to check limit DFR record length functionality when FR trigger(Pre+Oplimit+Post fault time) is over Maximum record length.&#13;&#10;CAM-731 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.CAM-733 Test to check DFR record with continuous FR Trigger in Post Fault state.">
+							<testItem name="CAM-729_730_731_733" key="{3D3AAB3F-F47B-41BC-A5F6-FC5768DC25B6}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_729_730_731_733" count="4" timeout="0" stopOnError="2" stopOnException="2" description="CAM-729 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is equal to Maximum record length.&#13;&#10;CAM-730 Test to check limit DFR record length functionality when FR trigger(Pre+Oplimit+Post fault time) is over Maximum record length.&#13;&#10;CAM-731 Test to check limit DFR record length feature when FR trigger(Pre+Oplimit+Post fault time) is within Maximum record length.CAM-733 Test to check DFR record with continuous FR Trigger in Post Fault state.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-734" key="{C429B42C-4E2E-433E-BF64-FA09EBA24F5E}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_734" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length when Trigger comes at end of first record.">
+							<testItem name="CAM-734" key="{C429B42C-4E2E-433E-BF64-FA09EBA24F5E}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_734" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length when Trigger comes at end of first record.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-732" key="{4B40CB5E-D336-42BC-A378-0D049DFB03D2}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_732" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with continuous FR Trigger within oplimit.">
+							<testItem name="CAM-732" key="{4B40CB5E-D336-42BC-A378-0D049DFB03D2}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_732" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with continuous FR Trigger within oplimit.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-763" key="{53C4DC15-388A-4306-8382-88CE32EC4B21}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms.">
+							<testItem name="CAM-763" key="{53C4DC15-388A-4306-8382-88CE32EC4B21}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms.">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="3" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
 								<testParameters />
 								<children />
 							</testItem>
@@ -161,7 +165,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{4DE1FBC5-D7E7-47CE-AD88-D1A598F1CC1A}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
@@ -429,7 +433,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">

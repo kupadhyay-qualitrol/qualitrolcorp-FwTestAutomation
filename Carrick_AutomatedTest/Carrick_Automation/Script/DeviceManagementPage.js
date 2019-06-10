@@ -3,6 +3,7 @@
 */
 //USEUNIT CommonMethod
 //USEUNIT SessionLogPage
+//USEUNIT ConfigEditorPage
 
 //Variables
 var DeviceManagementToolbar= CommonMethod.RibbonToolbar
