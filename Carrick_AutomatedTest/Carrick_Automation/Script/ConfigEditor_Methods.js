@@ -1,4 +1,4 @@
-﻿//This file contains methods and objects variable related to device Management page on iQ+ UI.
+﻿//This file contains methods and objects variable related to Config editor page on iQ+ UI.
 
 //USEUNIT DataRetrievalPage
 //USEUNIT AssertClass

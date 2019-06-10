@@ -13,7 +13,7 @@
 			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Upgrade" key="{D136D67B-22B4-4340-966B-6E68023867FA}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}UpgradeiQ_Plus" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
@@ -29,11 +29,11 @@
 					<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="True" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters>
 									<param0 name="Isupgrade" type="3" localVarName="" varType="11" value="False" />
 								</testParameters>
@@ -41,7 +41,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{8B9E04B0-E7D2-4F55-B9DB-71544FB61962}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -62,7 +62,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -148,7 +148,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="TimeZone" key="{214F7030-6597-4591-BD7C-435A0E018280}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="TimeZone" key="{214F7030-6597-4591-BD7C-435A0E018280}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{90D84BF4-664D-4E02-93E7-5C4F193BC132}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
@@ -165,7 +165,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{4DE1FBC5-D7E7-47CE-AD88-D1A598F1CC1A}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
@@ -433,7 +433,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">

@@ -1,4 +1,4 @@
-﻿/*This file contains methods and objects variable related to device Management page
+﻿/*This file contains methods and objects variable related to Import Export functionality of configuration dialog box
 * on iQ+ UI. 
 */
 
@@ -25,15 +25,15 @@ function ClickExportAsFile()
 {
     if(Configuration_Editor_box.Enabled)
     {
-    Configuration_Editor_box.SetFocus()
-    Configuration_Editor_box.StripMainMenu.Click("Configuration|Export|As a File")
-    Log.Message("Export as a file button clicked")
-    return true
+      Configuration_Editor_box.SetFocus()
+      Configuration_Editor_box.StripMainMenu.Click("Configuration|Export|As a File")
+      Log.Message("Export as a file button clicked")
+      return true
     }
     else
     {
-    Log.Message("Unable to Click on Export As a File Button")
-    return false
+      Log.Message("Unable to Click on Export As a File Button")
+      return false
     }
 }
 // This method is to set file name 
@@ -41,15 +41,15 @@ function SetFileName(File_Name)
 {
     if(Dlg_Export_Configuration.Enabled)
     {
-    Dlg_Export_Configuration.SetFocus()
-    EdtBx_File_Name.SetText(aqString.Trim(File_Name))
-    Log.Message("Configuration file set to file name")
-    return true
+      Dlg_Export_Configuration.SetFocus()
+      EdtBx_File_Name.SetText(aqString.Trim(File_Name))
+      Log.Message("Configuration file set to file name")
+      return true
     }
     else
     {
-    Log.Message("Not able to set file name in Export configuration window")
-    return false
+      Log.Message("Not able to set file name in Export configuration window")
+      return false
     }
 }
 //This method is used for clicking on Save button of Export pop up
@@ -57,19 +57,19 @@ function ClickOnSaveButtonExportAsFile()
 {
   if(Dlg_Export_Configuration.Enabled)  
   {
-  Btn_Save.Click()
-  if(Dialog_Confirm_Save_As.Exists)
+    Btn_Save.Click()
+    if(Dialog_Confirm_Save_As.Exists)
   {
     Btn_Yes_Confirm_Save.Click()
     Log.Message("New configuration is replaced with the previous configuration")
   }
-  Log.Message("Save button clicked on Export configuration window")
-  return true
+    Log.Message("Save button clicked on Export configuration window")
+    return true
   }
   else
   {
-  Log.Message("Unable to Click on Save Button of Export configuration window")
-  return false
+    Log.Message("Unable to Click on Save Button of Export configuration window")
+    return false
   }
 }
 // This method is to import as a file button
@@ -77,11 +77,11 @@ function ClickImportAsFile()
 {
   if(Configuration_Editor_box.Enabled)
     {
-    Configuration_Editor_box.SetFocus()
-    Configuration_Editor_box.StripMainMenu.Click("Configuration")
-    Configuration_Editor_box.StripMainMenu.Click("Configuration|Import|From File")
-    Log.Message("Import from file button clicked")
-    return true
+      Configuration_Editor_box.SetFocus()
+      Configuration_Editor_box.StripMainMenu.Click("Configuration")
+      Configuration_Editor_box.StripMainMenu.Click("Configuration|Import|From File")
+      Log.Message("Import from file button clicked")
+      return true
     }
     else
     {
@@ -94,15 +94,15 @@ function OpenConfiguratioAsFile(File_Name_Import)
 {
   if(Dlg_Import_Configuration.Enabled)
   {
-  Dlg_Import_Configuration.SetFocus()
-  Dlg_Import_Configuration.OpenFile(File_Name_Import)
-  Log.Message("Clicked on Open button of Import Configuration")
-  return true
+    Dlg_Import_Configuration.SetFocus()
+    Dlg_Import_Configuration.OpenFile(File_Name_Import)
+    Log.Message("Clicked on Open button of Import Configuration")
+    return true
   }
   else
   {
-  Log.Message("Not able to click on Open button of Select a ChashelIM configuration file")
-  return false
+    Log.Message("Not able to click on Open button of Select a ChashelIM configuration file")
+    return false
   }
 }
 //This method is used for the Clicking on Export as a template button
@@ -118,6 +118,7 @@ function ClickExportAsTemplate()
   else
   {
     Log.Message("Unable to click on Export as a Template button")
+    return false
   }
 }
 //This method is used for setting the Template name
@@ -129,6 +130,7 @@ function SetTemplateName(Template_Name)
     EdtBx_Template_Name.SetText(aqString.Trim(Template_Name))
     Btn_Ok.ClickButton()
     aqUtils.Delay(3000)
+    //Delay given because it takes few seconds to get referesh the values
     Configuration_Editor_box.SetFocus()
     return true
   }
@@ -143,15 +145,15 @@ function ClickImportAsTemplate()
 {
   if(Configuration_Editor_box.Enabled)
   {
-  Configuration_Editor_box.SetFocus()
-  Configuration_Editor_box.StripMainMenu.Click("Configuration|Import|From Template")
-  Log.Message("Click on Import As A Template")
-  return true
+    Configuration_Editor_box.SetFocus()
+    Configuration_Editor_box.StripMainMenu.Click("Configuration|Import|From Template")
+    Log.Message("Click on Import As A Template")
+    return true
   }
   else
   {
-  Log.Message("Not able to click on Import As A Template")
-  return false
+    Log.Message("Not able to click on Import As A Template")
+    return false
   }
 }
 //This method is used for selecting Template from the template list
@@ -175,6 +177,7 @@ function ClickCopyTemplateButton()
   {
     Btn_Copy_Template.ClickButton()
     aqUtils.Delay(2000);
+    //Delay given because it takes few seconds to get referesh the values
     return true
   }  
  else
@@ -206,6 +209,7 @@ function ClickOnCopyButton()
   {
     Btn_Copy_Other_Device.ClickButton()
     aqUtils.Delay(3000);
+    //Delay given because it takes few seconds to get referesh the values
     return true
   }
   else
