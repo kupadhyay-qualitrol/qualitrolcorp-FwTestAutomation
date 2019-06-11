@@ -3415,6 +3415,18 @@
 															</Property>
 														</Properties>
 													</Child>
+													<Child Name="Edit2" Key="{55568862-C4DD-4976-926B-A7E604F28C47}" ParallelWalk="True">
+														<Image FileName="-370422110" Left="116" Top="289" Right="211" Bottom="308" />
+														<TypeInfo Item0="{F0CED07F-0014-41B7-B093-59BFE8A7B7DE}" />
+														<Properties>
+															<Property Name="WndClass">
+																<Value PropertyType="0" Value="Edit" Type="5" />
+															</Property>
+															<Property Name="WndCaption">
+																<Value PropertyType="0" Value="New folder (3)" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
 												</Children>
 											</Child>
 										</Children>
@@ -3843,6 +3855,60 @@
 												<Value PropertyType="0" Value="&amp;No" Type="5" />
 											</Property>
 										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="explorer" Key="{CD51EF2A-3404-4576-A3F0-50EC178DEF87}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="explorer" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndShell_TrayWnd" Key="{D250539C-4405-48A1-9369-921ADEFA5ECE}" ParallelWalk="True">
+								<Image FileName="-1996598220" Left="0" Top="0" Right="1920" Bottom="40" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="Shell_TrayWnd" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="ReBarWindow32" Key="{961114FE-5B93-42A4-A320-487782EAABAA}" ParallelWalk="True">
+										<Image FileName="-1996598220" Left="438" Top="0" Right="1701" Bottom="40" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="ReBarWindow32" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="MSTaskSwWClass" Key="{B62F0BF5-8E95-4183-B566-B30E050C2BB4}" ParallelWalk="True">
+												<Image FileName="-1996598220" Left="440" Top="0" Right="1647" Bottom="40" />
+												<Properties>
+													<Property Name="WndClass">
+														<Value PropertyType="0" Value="MSTaskSwWClass" Type="5" />
+													</Property>
+													<Property Name="WndCaption">
+														<Value PropertyType="0" Value="Running applications" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="MSTaskListWClass" Key="{3B0B5C64-4232-48B0-BD2D-04DC06337C9C}" ParallelWalk="True">
+														<Image FileName="-1996598220" Left="440" Top="0" Right="1647" Bottom="40" />
+														<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+														<Properties>
+															<Property Name="WndClass">
+																<Value PropertyType="0" Value="MSTaskListWClass" Type="5" />
+															</Property>
+															<Property Name="WndCaption">
+																<Value PropertyType="0" Value="Running applications" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
 									</Child>
 								</Children>
 							</Child>
@@ -4362,6 +4428,7 @@
 				<Child Name="SHBrowseForFolderShellNameSpaceControl" Owner="{485EA972-1D65-49D9-8DBD-6B3E15AA923F}">
 					<Child Name="TreeView" Owner="{CEA63F75-8CC7-4E29-AE5A-982720533659}">
 						<Child Name="Edit" Owner="{1CAF72C7-1BC5-4E67-A43B-A7A74A517740}" />
+						<Child Name="Edit2" Owner="{55568862-C4DD-4976-926B-A7E604F28C47}" />
 					</Child>
 				</Child>
 				<Child Name="btnMakeNewFolder" Owner="{325C75E7-118E-4658-8652-4D2F8D9EDFF1}" />
@@ -4418,6 +4485,15 @@
 				</Child>
 				<Child Name="btnOpen" Owner="{580DF485-3F01-487D-9562-10E27A3F8ADA}" />
 				<Child Name="btnNo" Owner="{D10B354E-A05B-444C-B767-80049AC17BC9}" />
+			</Child>
+		</Child>
+		<Child Name="explorer" Owner="{CD51EF2A-3404-4576-A3F0-50EC178DEF87}">
+			<Child Name="wndShell_TrayWnd" Owner="{D250539C-4405-48A1-9369-921ADEFA5ECE}">
+				<Child Name="ReBarWindow32" Owner="{961114FE-5B93-42A4-A320-487782EAABAA}">
+					<Child Name="MSTaskSwWClass" Owner="{B62F0BF5-8E95-4183-B566-B30E050C2BB4}">
+						<Child Name="MSTaskListWClass" Owner="{3B0B5C64-4232-48B0-BD2D-04DC06337C9C}" />
+					</Child>
+				</Child>
 			</Child>
 		</Child>
 	</LogicalNodes>
@@ -22147,6 +22223,80 @@
 							<ParamDesc Flags="1" />
 						</Param0>
 						<ReturnValue Param0="24" />
+					</Child>
+				</FunctionDescriptions>
+			</Data>
+		</Child>
+		<Child Hash="-934726023" Key="{F0CED07F-0014-41B7-B093-59BFE8A7B7DE}">
+			<Data Properties="1219D31DC061F04FAD93B86AG4A1186UFFFFFFFFFFFFFFFFV4LCZZY">
+				<FunctionDescriptions>
+					<Child Name="SetText" Doc="Enters text in the text editor." IsBasic="True" Param0="Text" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="wText" Doc="Contents of the edit control, as text string." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="wSelection" Doc="Retrieves the selected text." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
+					</Child>
+					<Child Name="SetFocus" Doc="Sets focus to the specified Window object." IsBasic="True" Data="ZI4L1L4ZN18ZN">
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Click" Doc="Simulates a left-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="ClickR" Doc="Simulates a right-button single click in a window or control as specified (relative position, shift keys)." IsBasic="True" Param0="ClientX" Param1="ClientY" Param2="Shift" Data="ZI4L1L4L3Z018ZN">
+						<Param0>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param0>
+						<Param1>
+							<TypeDesc Param0="3" />
+							<ParamDesc Flags="49" Value="-1" Type="0" />
+						</Param1>
+						<Param2>
+							<TypeDesc Param0="29" Type0="TShiftKey" />
+							<ParamDesc Flags="49" Value="0" Type="0" />
+						</Param2>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Keys" Doc="Simulates one or several keypresses." IsBasic="True" Param0="Keys" Data="ZI4L1L4L1Z018ZN">
+						<Param0>
+							<TypeDesc Param0="8" />
+							<ParamDesc Flags="1" />
+						</Param0>
+						<ReturnValue Param0="24" />
+					</Child>
+					<Child Name="Visible" Doc="Specifies whether an onscreen object is visible to users." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="Width" Doc="The object&apos;s width in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Height" Doc="The object&apos;s height in pixels." IsBasic="True" Data="ZI4L2L4ZO3ZN">
+						<ReturnValue Param0="3" />
+					</Child>
+					<Child Name="Enabled" Doc="Specifies whether the object is enabled or disabled." IsBasic="True" Data="ZI4L2L4ZOBZN">
+						<ReturnValue Param0="11" />
+					</Child>
+					<Child Name="WndCaption" Doc="Returns the window&apos;s caption." IsBasic="True" Data="ZI4L2L4ZO8ZN">
+						<ReturnValue Param0="8" />
 					</Child>
 				</FunctionDescriptions>
 			</Data>

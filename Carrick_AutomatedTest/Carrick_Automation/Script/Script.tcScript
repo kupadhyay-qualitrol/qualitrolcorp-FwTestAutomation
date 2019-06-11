@@ -33,10 +33,12 @@
 			<child name="ConfigEditor_FaultRecording_FRSensorPage" key="{19474A48-A7D5-4733-B543-25993B7A7C79}" path="ConfigEditor_FaultRecording_FRSensorPage.js" />
 			<child name="OmicronStateSeqPage" key="{8F389BA8-7093-4E3E-BE8B-9BE7561CF828}" path="OmicronStateSeqPage.js" />
 			<child name="ConfigEditor_ConfigurationPage" key="{F34F8852-ADE5-4C80-8ABD-50A4A6B9AB08}" path="ConfigEditor_ConfigurationPage.js" />
+			<child name="IECBrowserPage" key="{B4B30C51-70EB-4E60-8CD9-988F538B24C5}" path="IECBrowserPage.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />
 			<child name="CommonMethod" key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" path="CommonMethod.js" />
+			<child name="IECBrowserCommonMethod" key="{AB3A8F15-256D-498B-9AB8-EA8F6FBFBEED}" path="IECBrowserCommonMethod.js" />
 		</folder>
 		<folder name="Functional_Methods">
 			<child name="DFR_Methods" key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" path="DFR_Methods.js" />
