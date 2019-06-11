@@ -114,7 +114,7 @@ namespace Tabindex_Data.soh
         {
             get
             {
-                return webDriver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/div/table[3]/tbody/tr/td[3]/span/a/input"));
+                return webDriver.FindElement(By.Name("soh:soh/data/static_data/cpu_application_version"));
             }
         }
 
@@ -213,7 +213,7 @@ namespace Tabindex_Data.soh
 
         public string Get_CPU_Application_Version()
         {
-            return Edtbx_soh_data_static_CPU_Application.Text;
+            return Edtbx_soh_data_static_CPU_Application.GetAttribute("value").ToString();
         }
         #endregion
 
