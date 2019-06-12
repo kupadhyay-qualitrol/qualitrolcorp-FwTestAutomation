@@ -82,6 +82,11 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     //Step6. Set Channel Name
     //Step6.1 Get RowCount
     var deviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
+    
+    if(Project.TestItems.Current.Iteration==1)
+    {
+      SetAnalogChannelName()
+    }
  
     //Step7. Click on Circuits ConfiguBusbar1ration
     AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits") 
@@ -181,19 +186,7 @@ function EndReport()
 function SetAnalogChannelName()
 {
     var datasheetname = DataSetFolderPath+ "NOCIRCUIT.xlsx"
-    //Step0. Retrieve config
-    if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
-    {
-      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
-      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
-    }
-    else
-    {
-      Log.Message("Device exist in the tree topology.")
-    }
     
-    //Step1. Retrieve Configuration
-    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     //Step1. Click on Analog Inputs
     AssertClass.IsTrue(ConfigEditorPage.ClickOnAnalogInputs(),"Clicked on Analog Inputs")
     
