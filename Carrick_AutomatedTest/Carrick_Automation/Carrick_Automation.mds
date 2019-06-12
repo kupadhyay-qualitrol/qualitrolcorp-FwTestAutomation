@@ -433,7 +433,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
