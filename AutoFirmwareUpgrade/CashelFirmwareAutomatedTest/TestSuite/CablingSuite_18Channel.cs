@@ -17,7 +17,7 @@ namespace CashelFirmware.TestSuite
         public CablingSuite_18Channel() : base(DeviceInformation.glb_DeviceIP_18Channel)
         {
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\CablingDataSet\";
+            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\CablingDataSet_18Channel\";
             DeviceInformation.glb_deviceType = 18;
         }
         [Test, Order(0)]

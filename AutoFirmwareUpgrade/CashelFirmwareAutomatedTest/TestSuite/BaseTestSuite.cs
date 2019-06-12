@@ -33,7 +33,7 @@ namespace CashelFirmware.TestSuite
                 "test-type","ignore-certificate-errors","disable-extensions"});
             options.AddUserProfilePreference("credentials_enable_service", false);
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
-            webdriver = new ChromeDriver(DeviceInformation.BaseDirectoryPath, options);
+            webdriver = new ChromeDriver(System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString(), options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
             return webdriver;
         }
@@ -48,14 +48,14 @@ namespace CashelFirmware.TestSuite
                 "test-type","ignore-certificate-errors","disable-extensions"});
             options.AddUserProfilePreference("credentials_enable_service", false);
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
-            webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
+            webdriver = new ChromeDriver(System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString(), options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
         }
 
         [OneTimeSetUp]
         public void StartReport()
         {
-            ReportGeneration.StartReport_dotNet("Firmware_TestReport_"+ DateTime.Now.ToString("dd_MM_yyy_hh_mm_ss"));
+            ReportGeneration.StartReport("Firmware_TestReport_"+ DateTime.Now.ToString("dd_MM_yyy_hh_mm_ss"));
         }
 
         [OneTimeTearDown]
