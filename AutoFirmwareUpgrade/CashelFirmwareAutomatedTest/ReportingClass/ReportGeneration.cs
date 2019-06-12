@@ -14,22 +14,9 @@ namespace CashelFirmware.Reporting
         public static ExtentReports  extent;
         public static IWebDriver webDriver;
  
-        public static void StartReport_dotNet(string TestSuite)
-        {
-            string projectPath = System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
-            string reportPath = projectPath + @"\Reports\"+TestSuite+".html";
-
-            extent = new ExtentReports(reportPath, true);
-            extent
-            .AddSystemInfo("Host Name", "QTRL-FLTHQ72")
-            .AddSystemInfo("Environment", "Windows")
-            .AddSystemInfo("User Name", "Rahuldev Gupta");
-            extent.LoadConfig(projectPath + "extent-config.xml");
-        }
-
         public static void StartReport(string TestSuite)
         {
-            string projectPath = new Uri(Environment.CurrentDirectory).LocalPath;
+            string projectPath = System.IO.Directory.GetParent(CashelFirmware.GlobalVariables.DeviceInformation.BaseDirectoryPath).Parent.Parent.FullName.ToString();
             string reportPath = projectPath + @"\Reports\" + TestSuite + ".html";
 
             extent = new ExtentReports(reportPath, true);
