@@ -11,7 +11,7 @@ namespace PQStandalone
         public PQStandaloneData()
         {
             InitializeComponent();
-            ReportGeneration.StartReport_dotNet("PQStandalone_"+ DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss"));
+            ReportGeneration.StartReport("PQStandalone_"+ DateTime.Now.ToString(@"dd_MM_yyyy_hh_mm_ss"));
         }
 
         private void DeviceIP_Click(object sender, EventArgs e)
