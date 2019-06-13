@@ -207,3 +207,18 @@ function ClickOnFRSensor()
     return false
   }
 }
+//This method is used to click on Protocols in Config Editor
+function ClickOnProtocols()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Communications|Protocols")
+    Log.Message("Clicked on Protocols")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}

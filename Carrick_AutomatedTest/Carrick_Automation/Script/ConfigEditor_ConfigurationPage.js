@@ -233,3 +233,19 @@ function SelectDeviceFromImportOtherDevice(devicetype,deviceName)
     return false
   }
 }
+// This method is to click on Export as a file button
+function ClickAdvanceInView()
+{
+    if(Configuration_Editor_box.Enabled)
+    {
+      Configuration_Editor_box.SetFocus()
+      Configuration_Editor_box.StripMainMenu.Click("View|Advanced")
+      Log.Message("Advanced button clicked")
+      return true
+    }
+    else
+    {
+      Log.Message("Unable to Click on Advanced Button")
+      return false
+    }
+}

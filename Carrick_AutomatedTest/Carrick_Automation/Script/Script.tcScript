@@ -34,6 +34,7 @@
 			<child name="OmicronStateSeqPage" key="{8F389BA8-7093-4E3E-BE8B-9BE7561CF828}" path="OmicronStateSeqPage.js" />
 			<child name="ConfigEditor_ConfigurationPage" key="{F34F8852-ADE5-4C80-8ABD-50A4A6B9AB08}" path="ConfigEditor_ConfigurationPage.js" />
 			<child name="IECBrowserPage" key="{B4B30C51-70EB-4E60-8CD9-988F538B24C5}" path="IECBrowserPage.js" />
+			<child name="ConfigEditor_Protocols" key="{DEF80D06-D6E4-4593-8EB8-BCE21E15FCA6}" path="ConfigEditor_Protocols.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />
@@ -50,6 +51,7 @@
 			<child name="CrossTrigger_Methods" key="{54997743-4D7C-474F-A1D9-57992A0836AD}" path="CrossTrigger_Methods.js" />
 			<child name="Circuit_Configuration" key="{21EEBEBA-1A70-4CDD-984C-41C9D6534189}" path="Circuit_Configuration.js" />
 			<child name="ConfigEditor_Methods" key="{EB352A05-0142-4195-A290-4ECF3C50D33E}" path="ConfigEditor_Methods.js" />
+			<child name="IECBrowser_Methods" key="{A9025138-3A97-4BC3-ADEA-AEDBF212CD04}" path="IECBrowser_Methods.js" />
 		</folder>
 		<folder name="Firmware_WebPage_Scripts">
 			<child name="SeleniumWebdriver" key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" path="SeleniumWebdriver.js" />

@@ -2,6 +2,9 @@
 This page contains objects & method related to IEC browser.
 */
 //USEUNIT CommonMethod
+//USEUNIT IECBrowserCommonMethod
+//USEUNIT AssertClass
+
 var IECBrowser = Aliases.Iec_Browser
 var Toolbar = Aliases.Iec_Browser.mainForm.toolBar1
 var Dlg_Connect_Device = Aliases.Iec_Browser.FormConnect
@@ -9,7 +12,7 @@ var Edt_Bx_IP = Aliases.Iec_Browser.FormConnect.comboBoxIp
 var Btn_Connect = Aliases.Iec_Browser.FormConnect.buttonConnect
 var Device_Tree_view = Aliases.Iec_Browser.mainForm.panel2.gridControl1
 var Data_view = Aliases.Iec_Browser.mainForm.panel1.dataGrid1
-var TraceLog = Aliases.Iec_Browser.mainForm.panel1.textBox_Output
+var Trace_Log = Aliases.Iec_Browser.mainForm.panel1.textBox_Output
 var Dlg_BrowseFolder = Aliases.Iec_Browser.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView
 var Btn_ok_select_folder = Aliases.Iec_Browser.dlgBrowseForFolder.btnOK
 
@@ -21,6 +24,7 @@ function ConnectDevice()
   {
     Toolbar.ClickItem("Connect")
     Log.Message("Connect button clicked")
+    IECBrowserCommonMethod.CheckTraceLog("Done")
     return true
   }
   else
@@ -68,6 +72,7 @@ function SelectFilesInDeviceTree()
    Files_row = Device_Tree_view.FindRow(1,"Files") 
    Device_Tree_view.ClickCell(Files_row,1)
    Log.Message("Clicked on Files under Device tree grid1")
+   Log.Picture(Device_Tree_view, "Snapshot for verififcation of connection with device")
    return true
   }
   else

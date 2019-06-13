@@ -5,6 +5,7 @@
 
 //Global Variables
 var IECtoolbar = Aliases.Iec_Browser.mainForm.toolBar1
+var Trace_Log = Aliases.Iec_Browser.mainForm.panel1.textBox_Output
 
 function LaunchIECBrowser()
 {
@@ -44,4 +45,14 @@ function CloseIECBrowser()
     //Post the message to log file  
     Log.Error("Exception raised:- "+ex.message)
   }
+}
+
+//Method to check progress from activity log
+function CheckTraceLog(logmessage)
+{
+ do
+ {
+ aqUtils.Delay(2000)
+ }
+ while (aqString.FindLast(Trace_Log.Text,logmessage)==-1)  
 }

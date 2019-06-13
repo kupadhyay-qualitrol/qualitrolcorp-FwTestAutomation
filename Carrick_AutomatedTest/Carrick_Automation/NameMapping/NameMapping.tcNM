@@ -2546,6 +2546,55 @@
 																											</Child>
 																										</Children>
 																									</Child>
+																									<Child Name="ucProtocols" Key="{02D96A4F-8EB5-45C7-A624-22407B2BB3C7}" ParallelWalk="True">
+																										<Image FileName="566102780" Left="197" Top="81" Right="1020" Bottom="562" />
+																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ucProtocols" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="utcProtocol" Key="{2401330A-0582-4A1B-9E61-F7561FD63B33}" ParallelWalk="True">
+																												<Image FileName="566102780" Left="197" Top="128" Right="1020" Bottom="562" />
+																												<TypeInfo Item0="{6E33BE11-31AF-4A4B-B6BD-243307ADA947}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="utcProtocol" Type="5" />
+																													</Property>
+																												</Properties>
+																												<Children>
+																													<Child Name="ultraTabSharedControlsPage1" Key="{008A4A46-3ECB-4C97-8858-2A0386598278}" ParallelWalk="True">
+																														<Image FileName="629470168" Left="198" Top="129" Right="1019" Bottom="561" />
+																														<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="ultraTabSharedControlsPage1" Type="5" />
+																															</Property>
+																														</Properties>
+																													</Child>
+																												</Children>
+																											</Child>
+																											<Child Name="llblAddProtocol" Key="{D091521A-F58E-45B2-847A-2AC5460514B5}" ParallelWalk="True">
+																												<Image FileName="566102780" Left="733" Top="92" Right="863" Bottom="115" />
+																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="llblAddProtocol" Type="5" />
+																													</Property>
+																												</Properties>
+																											</Child>
+																											<Child Name="llblRemoveProtocol" Key="{C0A0618D-7EBE-4516-8DDB-9FD287C66792}" ParallelWalk="True">
+																												<Image FileName="566102780" Left="869" Top="92" Right="999" Bottom="115" />
+																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="llblRemoveProtocol" Type="5" />
+																													</Property>
+																												</Properties>
+																											</Child>
+																										</Children>
+																									</Child>
 																								</Children>
 																							</Child>
 																						</Children>
@@ -2991,6 +3040,34 @@
 												</Children>
 											</Child>
 										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="SelectProtocol" Key="{6A648DD7-049A-4315-9303-FDF4AB274210}" ParallelWalk="True">
+								<Image FileName="351740400" Left="0" Top="0" Right="345" Bottom="145" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="SelectProtocol" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="cmbProtocol" Key="{C4873E62-6C64-416F-A7C2-E540186D0AA0}" ParallelWalk="True">
+										<Image FileName="351740400" Left="142" Top="48" Right="280" Bottom="69" />
+										<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="cmbProtocol" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="btnSelect" Key="{CB6228F3-D644-4C54-8ADA-11C2B7FE95DB}" ParallelWalk="True">
+										<Image FileName="-530361536" Left="84" Top="107" Right="168" Bottom="130" />
+										<TypeInfo Item0="{71846CD4-E749-44F6-A13B-2D49C5491D0B}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="btnSelect" Type="5" />
+											</Property>
+										</Properties>
 									</Child>
 								</Children>
 							</Child>
@@ -4295,6 +4372,13 @@
 													<Child Name="lblErrorList" Owner="{2C120388-F550-4AD9-8D14-D618E90A36CB}" />
 													<Child Name="lstErrors" Owner="{A42EE6C8-1AB4-42AF-A199-480DC5B37DDE}" />
 												</Child>
+												<Child Name="ucProtocols" Owner="{02D96A4F-8EB5-45C7-A624-22407B2BB3C7}">
+													<Child Name="utcProtocol" Owner="{2401330A-0582-4A1B-9E61-F7561FD63B33}">
+														<Child Name="ultraTabSharedControlsPage1" Owner="{008A4A46-3ECB-4C97-8858-2A0386598278}" />
+													</Child>
+													<Child Name="llblAddProtocol" Owner="{D091521A-F58E-45B2-847A-2AC5460514B5}" />
+													<Child Name="llblRemoveProtocol" Owner="{C0A0618D-7EBE-4516-8DDB-9FD287C66792}" />
+												</Child>
 											</Child>
 										</Child>
 									</Child>
@@ -4365,6 +4449,10 @@
 						</Child>
 					</Child>
 				</Child>
+			</Child>
+			<Child Name="SelectProtocol" Owner="{6A648DD7-049A-4315-9303-FDF4AB274210}">
+				<Child Name="cmbProtocol" Owner="{C4873E62-6C64-416F-A7C2-E540186D0AA0}" />
+				<Child Name="btnSelect" Owner="{CB6228F3-D644-4C54-8ADA-11C2B7FE95DB}" />
 			</Child>
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">
