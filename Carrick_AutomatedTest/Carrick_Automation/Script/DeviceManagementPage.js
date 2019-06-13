@@ -14,6 +14,7 @@ var Btn_DFRDirectory_DownloadDataNow = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrS
 //This method is to Click on Retrieve CConfiguration button
 function ClickonRetrieveConfig()
 {
+  var deviceResponse= false
   if(DeviceManagementToolbar.wItems.Item("Device &Management").Text=="Device &Management")
   {
     //Clear Session log  
@@ -21,7 +22,23 @@ function ClickonRetrieveConfig()
     DeviceManagementToolbar.ClickItem("Device &Management")
     DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
     Log.Message("Clicked on Retrieve Configuration Page")
-    CommonMethod.CheckActivityLog("Configuration retrieved successfully from device")    
+    do
+    {
+      if(CommonMethod.CheckActivityLog("The device is rebooting, please try later."))
+      {
+        aqUtils.Delay(2000) //wait before retry 
+        //Clear Session log  
+        SessionLogPage.ClearLog()  
+        DeviceManagementToolbar.ClickItem("Device &Management")
+        DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
+      }
+      if (CommonMethod.CheckActivityLog("Configuration retrieved successfully from device"))
+      {
+        deviceResponse=true
+      }
+    }
+    while (!deviceResponse)
+    //CommonMethod.CheckActivityLog("Configuration retrieved successfully from device")    
     return true
   }
   else
