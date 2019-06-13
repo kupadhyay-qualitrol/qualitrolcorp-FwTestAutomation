@@ -23,6 +23,7 @@ var TestLog
 var DeviceStatus
 var Busbar1_Name ="Busbar 1"
 var Busbar2_Name ="Busbar 2"
+var counter
 
 function TestCabling(DatasetFolderPath,CablingName,TestLog)
 {
@@ -31,12 +32,13 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     Log.Message("Started TC:-Test to check " +CablingName+ " Cabling")
     var dataSheetName = DataSetFolderPath+ CablingName + ".xlsx"
     DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
-       
+    
     do
     {
       DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
     }
     while (DeviceStatus!="Success")
+    
     //Step1. Upload Calibration
     switch (CablingName)
     {
@@ -82,11 +84,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     //Step6. Set Channel Name
     //Step6.1 Get RowCount
     var deviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
-    
-    if(Project.TestItems.Current.Iteration==1)
-    {
-      SetAnalogChannelName()
-    }
  
     //Step7. Click on Circuits ConfiguBusbar1ration
     AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits") 
@@ -145,7 +142,15 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
     //Step10. Wait for Device to go in reboot
-    aqUtils.Delay(40000)
+    counter =0
+    do
+    {
+      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
+      counter=counter+1
+      aqUtils.Delay(1000)
+      Log.Message("DeviceDown Counter "+counter)
+    }
+    while (DeviceStatus=="Success" && counter<=100)
     
     //Step11. Check if Device is up
     do
@@ -153,9 +158,19 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
       DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
     }
     while (DeviceStatus!="Success")
-    
-    //Step12. Wait for device to be stable
-    aqUtils.Delay(120000)
+
+    counter =0
+    do
+    {
+      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
+      if(DeviceStatus=="Success")
+      {
+        counter =counter+1
+        Log.Message("DeviceUp Counter "+counter)
+      }
+      aqUtils.Delay(1000)
+    }
+    while (counter<=30)
     
     //Step16. Validate from Tabindex
     AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
@@ -186,7 +201,19 @@ function EndReport()
 function SetAnalogChannelName()
 {
     var datasheetname = DataSetFolderPath+ "NOCIRCUIT.xlsx"
+    var channelNameChangeCounter =0
+    if(DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)!=true)
+    {
+      GeneralPage.CreateDevice(CashelType,DeviceName,DeviceSerialNo,DeviceIP)
+      DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
     
+    //Step4. Retrieve Configuration
+    AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     //Step1. Click on Analog Inputs
     AssertClass.IsTrue(ConfigEditorPage.ClickOnAnalogInputs(),"Clicked on Analog Inputs")
     
@@ -202,8 +229,20 @@ function SetAnalogChannelName()
       if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(AnalogRows)!= DataSheetChannelName)
       {
         AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
+        channelNameChangeCounter=channelNameChangeCounter+1
       }
-    } 
+    }
+        
+    if(channelNameChangeCounter>=0)
+    {
+      //Step9. Send to Device
+      AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    }
+    else
+    {
+      //Step9. Send to Device
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Send to Device")
+    }
 }
 
 function TestCabling3U()
