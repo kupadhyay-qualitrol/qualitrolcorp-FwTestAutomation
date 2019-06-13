@@ -176,7 +176,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="SetAnalogChannelName" key="{F3360692-427F-49F2-A9D0-D093099D497D}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="SetAnalogChannelName" key="{F3360692-427F-49F2-A9D0-D093099D497D}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -426,6 +426,23 @@
 								<children />
 							</testItem>
 							<testItem name="Close iQ_Plus" key="{55B2BB83-A2BC-4972-B3DD-509897F5457C}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Close iQ Plus">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="IECBrowser_Test_Cases" key="{7FA3E9D4-329E-48F0-9F4C-6CA49F6A28DD}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="Login_1" key="{3CBA22C0-A87D-472F-A61F-0E85F3F66076}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-792" key="{4AA57B3C-6C13-4834-BEFD-9233D10BA895}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="Test to Verify IEC browser connection and disconnection with the device">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Close_iQ_Plus_1" key="{B1DC6E97-9B78-44BD-A0F6-D5AC0245ABF1}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>

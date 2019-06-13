@@ -20,6 +20,7 @@ var Btn_ok_select_folder = Aliases.Iec_Browser.dlgBrowseForFolder.btnOK
 //This function used for connecting device with IECBrowser page.
 function ConnectDevice()
 {
+  AssertClass.IsTrue(IECBrowserCommonMethod.LaunchIECBrowser())
   if(IECBrowser.Enabled)
   {
     Toolbar.ClickItem("Connect")

@@ -9,6 +9,7 @@
 			<child name="Max_DFR_TestCases" key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" path="Max_DFR_TestCases.js" />
 			<child name="TimeZone_TestCases" key="{4906C236-045F-4DEA-9A47-483016389E62}" path="TimeZone_TestCases.js" />
 			<child name="Cabling_18Channel" key="{95952818-0B7B-4203-AC0E-3D62F32D7A95}" path="Cabling_18Channel.js" />
+			<child name="IECBrowser_Test_Cases" key="{0567AFC5-96F0-4E3B-9A32-C363E754303A}" path="IECBrowser_Test_Cases.js" />
 		</folder>
 		<folder name="POM">
 			<child name="LoginPage" key="{A381FA1F-53C0-488D-B0A7-A1C5075B2252}" path="LoginPage.js" />
@@ -52,6 +53,7 @@
 			<child name="Circuit_Configuration" key="{21EEBEBA-1A70-4CDD-984C-41C9D6534189}" path="Circuit_Configuration.js" />
 			<child name="ConfigEditor_Methods" key="{EB352A05-0142-4195-A290-4ECF3C50D33E}" path="ConfigEditor_Methods.js" />
 			<child name="IECBrowser_Methods" key="{A9025138-3A97-4BC3-ADEA-AEDBF212CD04}" path="IECBrowser_Methods.js" />
+			<child name="Protocols_Method" key="{37E37903-9BCC-4642-8335-99F6AFCD097D}" path="Protocols_Method.js" />
 		</folder>
 		<folder name="Firmware_WebPage_Scripts">
 			<child name="SeleniumWebdriver" key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" path="SeleniumWebdriver.js" />
