@@ -2430,26 +2430,6 @@
 																											</Child>
 																										</Children>
 																									</Child>
-																									<Child Name="ucProtocols" Key="{20D1EB16-F387-4F7A-90D4-2FCEAD3400DF}" ParallelWalk="True">
-																										<Image FileName="3349091" Left="197" Top="81" Right="1020" Bottom="562" />
-																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
-																										<Properties>
-																											<Property Name="WinFormsControlName">
-																												<Value PropertyType="0" Value="ucProtocols" Type="5" />
-																											</Property>
-																										</Properties>
-																										<Children>
-																											<Child Name="llblAddProtocol" Key="{3D7DE2E9-4FF3-4EB6-81D7-15F87BC31CFC}" ParallelWalk="True">
-																												<Image FileName="3349091" Left="733" Top="92" Right="863" Bottom="115" />
-																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
-																												<Properties>
-																													<Property Name="WinFormsControlName">
-																														<Value PropertyType="0" Value="llblAddProtocol" Type="5" />
-																													</Property>
-																												</Properties>
-																											</Child>
-																										</Children>
-																									</Child>
 																								</Children>
 																							</Child>
 																						</Children>
@@ -4093,9 +4073,6 @@
 												<Child Name="ucValidation" Owner="{411DFAF8-D562-47F0-8934-EC04C02B0C20}">
 													<Child Name="lblErrorList" Owner="{2C120388-F550-4AD9-8D14-D618E90A36CB}" />
 													<Child Name="lstErrors" Owner="{A42EE6C8-1AB4-42AF-A199-480DC5B37DDE}" />
-												</Child>
-												<Child Name="ucProtocols" Owner="{20D1EB16-F387-4F7A-90D4-2FCEAD3400DF}">
-													<Child Name="llblAddProtocol" Owner="{3D7DE2E9-4FF3-4EB6-81D7-15F87BC31CFC}" />
 												</Child>
 											</Child>
 										</Child>
