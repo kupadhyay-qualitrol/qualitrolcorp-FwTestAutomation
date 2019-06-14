@@ -176,11 +176,11 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="SetAnalogChannelName" key="{F3360692-427F-49F2-A9D0-D093099D497D}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="SetAnalogChannelName" key="{F3360692-427F-49F2-A9D0-D093099D497D}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Test 3U/1U Cabling Configuration" key="{5FB736B3-AD5A-452E-B81E-C9A444B9A778}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 3U/1U Cabling Configuration" key="{5FB736B3-AD5A-452E-B81E-C9A444B9A778}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="3U" key="{50389EF4-8C5B-4A0B-AABD-5CAA3FC82C30}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -229,7 +229,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 2M3U/1U1U Cabling Configuration" key="{EB8B50B8-51C5-49B6-B97B-2F9335B14188}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 2M3U/1U1U Cabling Configuration" key="{EB8B50B8-51C5-49B6-B97B-2F9335B14188}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="2M3U" key="{E0F1DC43-BC4A-4901-92EC-675D44127759}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
