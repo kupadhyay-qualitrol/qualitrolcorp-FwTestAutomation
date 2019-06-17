@@ -54,7 +54,7 @@ function IsErrorFound()
     }
     else
     {
-      Log.Message("More than one error present on page")
+      Log.Error("More than one error present on page")
       return true
     }
   }
