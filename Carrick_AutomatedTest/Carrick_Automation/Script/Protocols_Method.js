@@ -5,12 +5,26 @@
 //USEUNIT ConfigEditor_ConfigurationPage
 //USEUNIT ConfigEditorPage
 //USEUNIT DeviceManagementPage
+//USEUNIT DeviceTopologyPage
 
 var noOfProtocols
 
 //This method is used to add protocols in a device
-function EnableProtocols(Protocol_Name)
+function EnableProtocols()
 {
+  
+  var DataSheetName = Project.ConfigPath +"TestData\\BTC_792.xlsx";
+  var Protocol_Name
+  //Step Check for the device in the device tree
+  if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
+    {
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+    }
+    else
+    {
+      Log.Message("Device exist in the tree topology.")
+    }
   //Step0. Retrieve Configuration
   AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
   
@@ -37,7 +51,7 @@ function EnableProtocols(Protocol_Name)
   AssertClass.IsTrue(ConfigEditor_Protocols.ClickOnAddProtocol(),"Clicked on Add Protocol")
   
   //Step5. Select Protocols from the dropdown and click on ok
-  AssertClass.IsTrue(ConfigEditor_Protocols.SelectProtocol(Protocol_Name),"Protocol has been selected")
+  AssertClass.IsTrue(ConfigEditor_Protocols.SelectProtocol(CommonMethod.ReadDataFromExcel(DataSheetName,"Protocol_Name")),"Protocol has been selected")
   
   //Step6. Click on send to device button
   AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Configuration has been sent to device")

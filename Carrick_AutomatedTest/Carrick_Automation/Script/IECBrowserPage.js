@@ -25,7 +25,6 @@ function ConnectDevice()
   {
     Toolbar.ClickItem("Connect")
     Log.Message("Connect button clicked")
-    IECBrowserCommonMethod.CheckTraceLog("Done")
     return true
   }
   else

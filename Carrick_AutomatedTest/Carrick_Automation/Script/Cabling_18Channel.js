@@ -12,6 +12,7 @@
 //USEUNIT DeviceManagementPage
 //USEUNIT Circuit_Configuration
 //USEUNIT Firmware_Tabindex_Methods
+//USEUNIT IECBrowser_Test_Cases
 
 var DataSetFolderPath = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\"
 var DeviceIP ="10.75.58.51"
@@ -245,11 +246,16 @@ function SetAnalogChannelName()
     }
 }
 
-function TestCabling3U()
+function TestCabling3U(run61850Test)
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
   TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
   TestCabling(DataSetFolderPath,"3U",TestLog)
+  if(run61850Test)
+  {
+    IECBrowser_Test_Cases.BTC_792()
+    Log.Message("Checked connection with IEC Brwoser after configuring cabling")
+  }
 }
 
 function TestCabling3U3I()
