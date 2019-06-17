@@ -16,7 +16,7 @@ namespace CashelFirmware.TestSuite
         {
             ScalingFactorTag61850_ForPQStandalone = new ScalingFactorTag61850_ForPQStandalone();
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = DeviceInformation.BaseDirectoryPath+ @"TestDataFiles\CablingDataSet\";
+            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\CablingDataSet\";
         }
         [Test, Order(1)]
         public void ScalingFactorTag_3U()

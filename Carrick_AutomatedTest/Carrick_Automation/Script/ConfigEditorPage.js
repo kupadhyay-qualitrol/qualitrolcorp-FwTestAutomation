@@ -3,6 +3,7 @@ This page contains objects & method related to Config Editor.
 Like the buttons/edit box Send to Device,Save to database, Close which are general.
 */
 //USEUNIT CommonMethod
+//USEUNIT ConfigEditor_FinishPage
 
 //Variables
 var Btn_SendToDevice =Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.frmBottom.btnSendToDevice
@@ -20,6 +21,10 @@ function ClickSendToDevice()
   {
     Btn_SendToDevice.Click()
     Log.Message("Clicked on Send to Device button")
+    if(!ConfigEditor_FinishPage.IsErrorFound())  //Added this code because of issue in iq+
+    {
+      Btn_SendToDevice.Click()
+    }
     if(Btn_Popup_Warning.Exists)
     {
       Btn_Popup_Warning.ClickButton()

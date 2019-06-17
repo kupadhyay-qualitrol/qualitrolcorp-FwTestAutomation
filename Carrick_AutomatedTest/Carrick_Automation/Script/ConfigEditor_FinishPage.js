@@ -42,3 +42,25 @@ function GetErrorText(MainTreeItem)
     Log.Message("Not on Error list Page.")
   }
 }
+
+function IsErrorFound()
+{
+  if(Tree_ErrorList.Exists)
+  {
+    if(Tree_ErrorList.wItems.Count==1)
+    {
+      Log.Message(Tree_ErrorList.wItems.Item(0).Text)
+      return false
+    }
+    else
+    {
+      Log.Message("More than one error present on page")
+      return true
+    }
+  }
+  else
+  {
+    Log.Message("Finish Page is not there")
+    return true
+  }
+}
