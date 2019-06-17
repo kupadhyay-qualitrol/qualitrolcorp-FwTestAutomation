@@ -79,31 +79,6 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
-						<testParameters />
-						<children>
-							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
-								<testParameters />
-								<children />
-							</testItem>
-							<testItem name="BTC-125" key="{7E0BFFF0-0F22-4B09-915A-A76E091AA929}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_125" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check for DFR record length and time stamp validation">
-								<testParameters />
-								<children />
-							</testItem>
-							<testItem name="BTC-114" key="{E1945617-FAEA-4C75-93B2-8489C80AD1AD}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_114" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check for Trigger Priority on DFR Directory pop-up and PDP page">
-								<testParameters />
-								<children />
-							</testItem>
-							<testItem name="BTC-639" key="{1D2E0805-C489-44C8-83AC-F7AD3DA7590D}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_639" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Trigger priority verification on device configuration for boundary value 0-99">
-								<testParameters />
-								<children />
-							</testItem>
-							<testItem name="Close_iQ_Plus" key="{36B873F6-7905-495F-83E4-F794EAC06A0F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
-								<testParameters />
-								<children />
-							</testItem>
-						</children>
-					</testItem>
 					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
@@ -426,6 +401,31 @@
 								<children />
 							</testItem>
 							<testItem name="Close iQ_Plus" key="{DC22F493-4F64-4B36-8D1E-81D17E1B9F6B}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Close iQ Plus">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-125" key="{7E0BFFF0-0F22-4B09-915A-A76E091AA929}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_125" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check for DFR record length and time stamp validation">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-114" key="{E1945617-FAEA-4C75-93B2-8489C80AD1AD}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_114" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check for Trigger Priority on DFR Directory pop-up and PDP page">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="BTC-639" key="{1D2E0805-C489-44C8-83AC-F7AD3DA7590D}" group="False" enabled="True" testMoniker="{1A849F44-C0EB-4661-8336-4D8C80B3DB5C}BTC_639" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Trigger priority verification on device configuration for boundary value 0-99">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="Close_iQ_Plus" key="{36B873F6-7905-495F-83E4-F794EAC06A0F}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
