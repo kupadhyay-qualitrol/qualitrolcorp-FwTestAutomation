@@ -110,11 +110,22 @@ function ReadDataFromExcel(FileName,DataHead,SheetName=null,Iteration=null)
 //Method to check progress from activity log
 function CheckActivityLog(logmessage)
 {
+ var executioncount=0
  do
  {
- aqUtils.Delay(2000)
+  aqUtils.Delay(2000)
+  executioncount = executioncount+1
  }
- while (aqString.FindLast(Activitylog.Text,logmessage)==-1)  
+ while (aqString.FindLast(Activitylog.Text,logmessage)==-1 && executioncount<=10) 
+ 
+ if(executioncount==11)
+ {
+   return false
+ }
+ else
+ {
+   return true
+ }
 }
 
 //Terminate iQ+ Client

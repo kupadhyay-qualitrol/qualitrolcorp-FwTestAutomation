@@ -12,8 +12,15 @@ namespace CashelFirmware.TestSuite
         public CablingSuite_9Channel() : base(DeviceInformation.glb_DeviceIP_9Channel)
         {
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = DeviceInformation.BaseDirectoryPath+ @"TestDataFiles\CablingDataSet_9Channel\";
+            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\CablingDataSet_9Channel\";
             DeviceInformation.glb_deviceType = 9;
+        }
+
+        [Test, Order(0)]
+        public void GetFirmwareInfo()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Getting Firware Information");
+            FirmwareInformation.GetFirmwareVersion(deviceIP, webdriver, InfovarStartTest);
         }
 
         [Test, Order(1)]
