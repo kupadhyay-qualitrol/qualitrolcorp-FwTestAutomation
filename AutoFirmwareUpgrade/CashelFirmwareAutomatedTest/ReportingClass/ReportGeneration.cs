@@ -16,8 +16,8 @@ namespace CashelFirmware.Reporting
  
         public static void StartReport(string TestSuite)
         {
-            string projectPath = System.IO.Directory.GetParent(CashelFirmware.GlobalVariables.DeviceInformation.BaseDirectoryPath).Parent.Parent.FullName.ToString();
-            string reportPath = projectPath + @"\Reports\" + TestSuite + ".html";
+            string projectPath = new Uri(Environment.CurrentDirectory).LocalPath;
+            string reportPath = projectPath + @"\Reports\"+TestSuite+".html";
 
             extent = new ExtentReports(reportPath, true);
             extent

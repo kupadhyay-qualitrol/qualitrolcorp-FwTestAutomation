@@ -20,7 +20,7 @@ namespace CashelFirmware.TestSuite
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9};
             DeviceInformation.glb_deviceType = 9;
             NoTXRatio = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1};
-            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\";
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\";
         }
 
         [Test, Order(1)]

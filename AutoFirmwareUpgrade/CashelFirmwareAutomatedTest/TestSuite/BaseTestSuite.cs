@@ -16,6 +16,7 @@ namespace CashelFirmware.TestSuite
         public IWebDriver webdriver;
         public string deviceIP = string.Empty;
         public TestProgressStatus testProgress;
+
         public BaseTestSuite(string DeviceIP)
         {
             testProgress = new TestProgressStatus();
@@ -24,6 +25,7 @@ namespace CashelFirmware.TestSuite
         }
 
 
+        [SetUp]
         public IWebDriver TestSetup()
         {
             ChromeOptions options = new ChromeOptions();
@@ -32,24 +34,10 @@ namespace CashelFirmware.TestSuite
                 "allow-running-insecure-content",
                 "test-type","ignore-certificate-errors","disable-extensions"});
             options.AddUserProfilePreference("credentials_enable_service", false);
-            options.AddUserProfilePreference("profile.password_manager_enabled", false);
-            webdriver = new ChromeDriver(System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString(), options);
+            options.AddUserProfilePreference("profile.password_manager_enabled", false); 
+            webdriver = new ChromeDriver(DeviceInformation.BaseDirectoryPath, options);
             webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
             return webdriver;
-        }
-
-        [SetUp]
-        public void TestSetup_dotNet()
-        {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArguments(new[] {
-                "start-maximized",
-                "allow-running-insecure-content",
-                "test-type","ignore-certificate-errors","disable-extensions"});
-            options.AddUserProfilePreference("credentials_enable_service", false);
-            options.AddUserProfilePreference("profile.password_manager_enabled", false);
-            webdriver = new ChromeDriver(System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString(), options);
-            webdriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100)); //Implicit wait is added so that selenium doesn't fail if any element is not loaded within specified time interval.
         }
 
         [OneTimeSetUp]

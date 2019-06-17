@@ -102,22 +102,6 @@ namespace Tabindex_Data.soh
 
         }
 
-        private IWebElement Item_soh_data_static_data
-        {
-            get
-            {
-                return webDriver.FindElement(By.XPath("/html/body/form/table/tbody/tr/td/table[2]/tbody/tr/td/div/table[1]/tbody/tr/td[2]/a"));
-            }
-        }
-
-        private IWebElement Edtbx_soh_data_static_CPU_Application
-        {
-            get
-            {
-                return webDriver.FindElement(By.Name("soh:soh/data/static_data/cpu_application_version"));
-            }
-        }
-
 
         #endregion
 
@@ -203,17 +187,6 @@ namespace Tabindex_Data.soh
         {
             CommitChanges.Click();
             return true;
-        }
-
-        public bool Item_soh_data_static_data_Click()
-        {
-            Item_soh_data_static_data.Click();
-            return true;
-        }
-
-        public string Get_CPU_Application_Version()
-        {
-            return Edtbx_soh_data_static_CPU_Application.GetAttribute("value").ToString();
         }
         #endregion
 

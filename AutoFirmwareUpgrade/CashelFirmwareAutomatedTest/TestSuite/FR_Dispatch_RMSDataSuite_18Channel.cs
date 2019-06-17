@@ -19,7 +19,7 @@ namespace CashelFirmware.TestSuite
             firmwareCablingTest = new FirmwareCablingTest();
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
             NoTXRatio = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1, 1, 1, 1 };
-            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\FR_DISPATCHRMS_DATASET\";
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"\TestDataFiles\FR_DISPATCHRMS_DATASET\";
         }
          [Test,Order(1)]
         public void FR_DIS_RMSDATA_3U()

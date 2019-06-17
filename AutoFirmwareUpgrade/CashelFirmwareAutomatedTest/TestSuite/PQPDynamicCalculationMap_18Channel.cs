@@ -16,8 +16,8 @@ namespace CashelFirmware.TestSuite
         {
             validatePQP_CalculationTable = new ValidatePQP_CalculationTable();
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\CablingDataSet\";
-            PQFile_DataSet = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\PQPDynamicParametersDataSet\";
+            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\CablingDataSet\";
+            PQFile_DataSet = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\PQPDynamicParametersDataSet\";
             DeviceInformation.glb_deviceType = 18;
         }
         [Test, Order(1)]
