@@ -241,7 +241,7 @@ function SetAnalogChannelName()
     else
     {
       //Step9. Click on Close
-      AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Send to Device")
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close")
     }
 }
 
