@@ -935,6 +935,7 @@
 								</Children>
 							</Child>
 							<Child Name="SDPContainer" Key="{50C5F754-C466-4DC9-A6D5-8624C4605D51}" ParallelWalk="True">
+								<Image FileName="-829091755" Left="0" Top="0" Right="1308" Bottom="689" />
 								<TypeInfo Item0="{1C716C2E-91C5-4A3B-827D-EA51850363F0}" />
 								<Properties>
 									<Property Name="WinFormsControlName">
@@ -1034,6 +1035,37 @@
 																				<Value PropertyType="0" Value="DEVSTATUSbtnCancel" Type="5" />
 																			</Property>
 																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+															<Child Name="GooseStatusView" Key="{AAB2766C-0882-475A-928A-C968EA787299}" ParallelWalk="True">
+																<Image FileName="-862913040" Left="3" Top="26" Right="1305" Bottom="663" />
+																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="GooseStatusView" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="GSVgrpContainer" Key="{A5D599BD-EDC7-4C95-BACE-1F2819000F1B}" ParallelWalk="True">
+																		<Image FileName="-862913040" Left="11" Top="34" Right="1297" Bottom="656" />
+																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="GSVgrpContainer" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="GSVbtnClose" Key="{812AA83C-6E55-4303-A390-00F8C476EC26}" ParallelWalk="True">
+																				<Image FileName="-862913040" Left="1156" Top="598" Right="1266" Bottom="644" />
+																				<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="GSVbtnClose" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																		</Children>
 																	</Child>
 																</Children>
 															</Child>
@@ -4170,6 +4202,11 @@
 							<Child Name="DeviceStatusView" Owner="{7C051F68-79D1-478D-A9CA-FA9C73F5532D}">
 								<Child Name="txtDeviceStatus" Owner="{AAEA7C03-6E1B-41AE-A15E-2BB1039A808C}" />
 								<Child Name="DEVSTATUSbtnCancel" Owner="{30D80349-EEE5-4C39-9B97-DFAE5FB7073A}" />
+							</Child>
+							<Child Name="GooseStatusView" Owner="{AAB2766C-0882-475A-928A-C968EA787299}">
+								<Child Name="GSVgrpContainer" Owner="{A5D599BD-EDC7-4C95-BACE-1F2819000F1B}">
+									<Child Name="GSVbtnClose" Owner="{812AA83C-6E55-4303-A390-00F8C476EC26}" />
+								</Child>
 							</Child>
 						</Child>
 					</Child>

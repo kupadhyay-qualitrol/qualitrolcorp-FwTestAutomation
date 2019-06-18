@@ -176,7 +176,7 @@ function ClickCopyTemplateButton()
   if(Dlg_Template.Enabled)
   {
     Btn_Copy_Template.ClickButton()
-    aqUtils.Delay(2*Referesh_time);
+    aqUtils.Delay(4*Referesh_time);
     //Delay given because it takes few seconds to get referesh the values
     return true
   }  
@@ -208,7 +208,7 @@ function ClickOnCopyButton()
   if(Import_Device_topology.Enabled)
   {
     Btn_Copy_Other_Device.ClickButton()
-    aqUtils.Delay(3*Referesh_time);
+    aqUtils.Delay(4*Referesh_time);
     //Delay given because it takes few seconds to get referesh the values
     return true
   }
