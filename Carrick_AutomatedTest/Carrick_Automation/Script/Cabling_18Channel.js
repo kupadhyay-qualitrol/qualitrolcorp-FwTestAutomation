@@ -198,7 +198,18 @@ function SetAnalogChannelName()
       {
         AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
       }
-    } 
+    }
+        
+    if(channelNameChangeCounter>=0)
+    {
+      //Step9. Send to Device
+      AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    }
+    else
+    {
+      //Step9. Click on Close
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Send to Device")
+    }
 }
 
 function TestCabling3U(run61850Test)

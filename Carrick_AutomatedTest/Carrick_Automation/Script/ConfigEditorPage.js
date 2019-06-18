@@ -20,6 +20,11 @@ function ClickSendToDevice()
   {
     Btn_SendToDevice.Click()
     Log.Message("Clicked on Send to Device button")
+    if(!ConfigEditor_FinishPage.IsErrorFound())  //Added this code because of issue in iq+
+    {
+      Btn_SendToDevice.Click()
+      Log.Message("Clicked on Send to Device button")
+    }
     if(Btn_Popup_Warning.Exists)
     {
       Btn_Popup_Warning.ClickButton()
