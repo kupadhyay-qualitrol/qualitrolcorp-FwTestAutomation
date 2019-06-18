@@ -9,7 +9,7 @@ using System;
 
 namespace CashelFirmware.TestSuite
 {
-    public class CablingSuite_18Channel: BaseTestSuite
+    public class CablingSuite_18Channel : BaseTestSuite
     {
         string DataSetFolderPath = string.Empty;
         public FirmwareCablingTest CablingTest;
@@ -17,8 +17,14 @@ namespace CashelFirmware.TestSuite
         public CablingSuite_18Channel() : base(DeviceInformation.glb_DeviceIP_18Channel)
         {
             CablingTest = new FirmwareCablingTest();
-            DataSetFolderPath = DeviceInformation.BaseDirectoryPath + @"TestDataFiles\CablingDataSet\";
+            DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\CablingDataSet_18Channel\";
             DeviceInformation.glb_deviceType = 18;
+        }
+        [Test, Order(0)]
+        public void GetFirmwareInfo()
+        {
+           InfovarStartTest = ReportGeneration.extent.StartTest("Getting Firware Information");
+           FirmwareInformation.GetFirmwareVersion(deviceIP, webdriver, InfovarStartTest);
         }
 
         [Test, Order(1)]

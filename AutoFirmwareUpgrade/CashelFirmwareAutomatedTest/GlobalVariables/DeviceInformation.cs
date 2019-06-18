@@ -12,6 +12,6 @@ namespace CashelFirmware.GlobalVariables
         public static readonly string glb_DeviceIP_18Channel = ConfigurationSettings.AppSettings.Get("DeviceIPAddress_18Channel");
         public static readonly string glb_DeviceIP_9Channel = ConfigurationSettings.AppSettings.Get("DeviceIPAddress_9Channel");
         public static int glb_deviceType;
-        public static readonly string BaseDirectoryPath = Environment.CurrentDirectory;
+        public static readonly string BaseDirectoryPath = System.Reflection.Assembly.GetExecutingAssembly().Location.ToString();
     }
 }
