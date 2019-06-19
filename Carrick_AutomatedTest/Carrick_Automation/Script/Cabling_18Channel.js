@@ -212,16 +212,11 @@ function SetAnalogChannelName()
     }
 }
 
-function TestCabling3U(run61850Test)
+function TestCabling3U()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
   TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
   TestCabling(DataSetFolderPath,"3U",TestLog)
-  if(run61850Test)
-  {
-    IECBrowser_Test_Cases.BTC_792()
-    Log.Message("Checked connection with IEC Brwoser after configuring cabling")
-  }
 }
 
 function TestCabling3U3I()
