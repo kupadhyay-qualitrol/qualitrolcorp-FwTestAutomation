@@ -176,7 +176,7 @@ function ClickCopyTemplateButton()
   if(Dlg_Template.Enabled)
   {
     Btn_Copy_Template.ClickButton()
-    aqUtils.Delay(2*Referesh_time);
+    aqUtils.Delay(4*Referesh_time);
     //Delay given because it takes few seconds to get referesh the values
     return true
   }  
@@ -208,7 +208,7 @@ function ClickOnCopyButton()
   if(Import_Device_topology.Enabled)
   {
     Btn_Copy_Other_Device.ClickButton()
-    aqUtils.Delay(3*Referesh_time);
+    aqUtils.Delay(4*Referesh_time);
     //Delay given because it takes few seconds to get referesh the values
     return true
   }
@@ -232,4 +232,20 @@ function SelectDeviceFromImportOtherDevice(devicetype,deviceName)
     Log.Message("Not able to select Device from the topology")
     return false
   }
+}
+// This method is to click on Export as a file button
+function ClickAdvanceInView()
+{
+    if(Configuration_Editor_box.Enabled)
+    {
+      Configuration_Editor_box.SetFocus()
+      Configuration_Editor_box.StripMainMenu.Click("View|Advanced")
+      Log.Message("Advanced button clicked")
+      return true
+    }
+    else
+    {
+      Log.Message("Unable to Click on Advanced Button")
+      return false
+    }
 }

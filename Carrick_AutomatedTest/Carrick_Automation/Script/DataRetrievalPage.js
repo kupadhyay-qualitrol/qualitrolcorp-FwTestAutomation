@@ -21,6 +21,8 @@ var RadioBtn_ForceDeviceToSetDateTime= Aliases.iQ_Plus.ModalDialogContainer.MDLG
 var Btn_SetTimeOK = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STbtnOK
 var Btn_SetTimeCancel =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.SetTimeView.STbtnCancel
 var Edtbx_NoOfManualDFR= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.nudNoManualTrigger.UpDownEdit
+var Btn_CloseGooseWindow = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.GooseStatusView.GSVgrpContainer.GSVbtnClose
+var GooseStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.GooseStatusView
 //
 
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
@@ -523,4 +525,44 @@ function GetCOTForLastestXDFRRecords(NoOfRecords)
     Log.Message("DFR Record doesn't exist in the device.")
     return null
   }  
+}
+
+function OpenGooseStatusWindow()
+{
+  if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+ {
+   SessionLogPage.ClearLog()
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+   aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|&Goose Status")
+   if(CommonMethod.CheckActivityLog("Goose status configuration file is successfully downloaded")==true)
+   {
+     return true
+   }
+   else
+   {
+     return false
+   }
+ }
+ else
+ {
+   CommonMethod.RibbonToolbar.ClickItem("Device &Management");
+   Log.Message("Device Management options is not available")
+   return false
+ } 
+}
+function CloseGooseStatusWindow()
+{
+  if(GooseStatusView.Exists)
+  {
+    Btn_CloseGooseWindow.ClickButton()
+    Log.Message("Clicked on Close button of Goose Status window")
+    return true
+  }
+  else
+  {
+    Log.Message("Not able to find Goose Status window")
+    return false
+  }
 }
