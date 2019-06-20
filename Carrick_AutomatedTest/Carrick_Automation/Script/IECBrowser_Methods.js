@@ -25,4 +25,7 @@ function VerifyDeviceConnection()
   
   //Step2. Download the cid files
   AssertClass.IsTrue(IECBrowserPage.DownloadCIDFile(), "CID file downloaded")
+  
+  //Step3. Verify File downloaded successfully or not
+  IECBrowserCommonMethod.CheckTraceLog("Copied with success.")
 }
