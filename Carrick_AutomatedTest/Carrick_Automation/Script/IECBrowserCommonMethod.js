@@ -54,5 +54,6 @@ function CheckTraceLog(logmessage)
  {
  aqUtils.Delay(2000)
  }
- while (aqString.FindLast(Trace_Log.Text,logmessage)==-1)  
+ while (aqString.FindLast(Trace_Log.Text,logmessage)==-1) 
+ return true 
 }

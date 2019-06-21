@@ -37,8 +37,12 @@ function BTC_792()
     AssertClass.IsTrue(DataRetrievalPage.CloseGooseStatusWindow(),"Closed Goose Status Window")
     
     //Step1. Connect device to IEC browser
+    for(i=0;i<5;i++)
+    {
     IECBrowser_Methods.ConnectDeviceToIECBrowser(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"),"Device connected to IEC Browser")
-    
+    if(IECBrowserCommonMethod.CheckTraceLog("Done"))
+    break
+    }
     //Step2. Verify the connection of device on IEC Browser
     IECBrowser_Methods.VerifyDeviceConnection(),"Downloaded the CID file"
     
