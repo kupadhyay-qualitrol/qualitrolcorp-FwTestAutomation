@@ -335,6 +335,10 @@
 									</testItem>
 								</children>
 							</testItem>
+							<testItem name="NOCIRCUIT" key="{70C86A72-C5AD-491C-94B6-C5321DFE305D}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCablingNOCIRCUIT" count="1" timeout="1" stopOnError="0" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="EndReport" key="{D901B23E-0B55-421D-A59F-3F56908FA5AE}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children />
