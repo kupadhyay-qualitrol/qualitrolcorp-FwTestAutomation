@@ -3,7 +3,6 @@
 //USEUNIT AssertClass
 //USEUNIT IECBrowserCommonMethod
 //USEUNIT IECBrowserPage
-var Toolbar = Aliases.Iec_Browser.mainForm.toolBar1
 
 //This method used for connecting the device and checking connection is proper with device or not
 function ConnectDeviceToIECBrowser(DeviceIPAdd)
@@ -12,21 +11,13 @@ function ConnectDeviceToIECBrowser(DeviceIPAdd)
   AssertClass.IsTrue(IECBrowserPage.ConnectDevice(),"Clicked on connect button at toolbar of IECbrowser")
   
   //Step2. Set IP address in IP address text box
-  AssertClass.IsTrue(IECBrowserPage.SetIPAddress(DeviceIPAdd),"IP address set as device IP")
+  AssertClass.IsTrue(IECBrowserPage.SetIPAddress(DeviceIPAdd),"IP address set as iedevice IP")
   
   //Step3. Click on connect button
   AssertClass.IsTrue(IECBrowserPage.ClickOnConnectButton(),"Clicked on connect button")
   
   //Step4. Test the connection
-  if(Toolbar.wEnabled("Disconnect"))
-  {
-    Log.Message("Connection successful")
-  }
-  else
-  {
-    CheckTraceLog("Connect failed!")
-    IECBrowser_Methods.ConnectDeviceToIECBrowser(DeviceIPAdd)
-  }
+  IECBrowserPage.TestConnectionIECBrowser()
 }
 //This method will add protocol and download the cid files
 function VerifyDeviceConnection()

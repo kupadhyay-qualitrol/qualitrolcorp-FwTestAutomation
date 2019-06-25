@@ -6,6 +6,7 @@
 //Global Variables
 var IECtoolbar = Aliases.Iec_Browser.mainForm.toolBar1
 var Trace_Log = Aliases.Iec_Browser.mainForm.panel1.textBox_Output
+var Referesh_time = 1000;
 
 function LaunchIECBrowser()
 {
@@ -50,10 +51,20 @@ function CloseIECBrowser()
 //Method to check progress from activity log
 function CheckTraceLog(logmessage)
 {
+ var trace_executioncount=0
  do
  {
- aqUtils.Delay(2000)
+  aqUtils.Delay(2000)
+  trace_executioncount = trace_executioncount + 1
+  }
+ while (aqString.FindLast(Trace_Log.Text,logmessage)==-1 && trace_executioncount<=10) 
+ 
+ if(trace_executioncount==11)
+ {
+   return false
  }
- while (aqString.FindLast(Trace_Log.Text,logmessage)==-1) 
- return true 
+ else
+ {
+   return true
+ } 
 }

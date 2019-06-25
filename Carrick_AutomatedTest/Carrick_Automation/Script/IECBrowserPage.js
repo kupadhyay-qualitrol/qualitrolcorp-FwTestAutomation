@@ -4,8 +4,11 @@ This page contains objects & method related to IEC browser.
 //USEUNIT CommonMethod
 //USEUNIT IECBrowserCommonMethod
 //USEUNIT AssertClass
+//USEUNIT IECBrowser_Methods
+
 
 var IECBrowser = Aliases.Iec_Browser
+var MainMenu = Aliases.Iec_Browser.mainForm.MainMenu
 var Toolbar = Aliases.Iec_Browser.mainForm.toolBar1
 var Dlg_Connect_Device = Aliases.Iec_Browser.FormConnect
 var Edt_Bx_IP = Aliases.Iec_Browser.FormConnect.comboBoxIp
@@ -123,4 +126,41 @@ function DisconnectDevice()
     Log.Message("Unable to Click on Disconnect Button")
     return false
   }
+}
+//This function is used to clear trace log
+function CleareTraceLog()
+{
+  if(IECBrowser.Enabled)
+  {
+    MainMenu.Click("Edit|Del Trace")
+    Log.Message("Cleared Trace log")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to Clear trace log")
+    return false
+  }  
+}
+//This function is used to test the connection
+function TestConnectionIECBrowser()
+{
+  var device_connection = false
+  aqUtils.Delay(3*Referesh_time)
+  do
+  {
+    if(IECBrowserCommonMethod.CheckTraceLog("Done"))
+    {
+     IECBrowserPage.CleareTraceLog()
+     device_connection = true
+     Log.Message("Connection successful")    
+    }
+    if(IECBrowserCommonMethod.CheckTraceLog("Connect failed!"))
+    {
+     IECBrowserPage.CleareTraceLog()
+     Log.Message("Retry connection")
+     IECBrowser_Methods.ConnectDeviceToIECBrowser(DeviceIPAdd)
+    }  
+  }
+  while(!device_connection)
 }

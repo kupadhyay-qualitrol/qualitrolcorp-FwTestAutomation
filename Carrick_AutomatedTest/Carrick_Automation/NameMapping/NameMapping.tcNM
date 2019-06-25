@@ -3372,6 +3372,7 @@
 						</Properties>
 						<Children>
 							<Child Name="mainForm" Key="{E3B6F931-BB6D-4BBC-BA82-B256560B5627}" ParallelWalk="True">
+								<Image FileName="226133826" Left="0" Top="0" Right="1936" Bottom="1056" />
 								<TypeInfo Item0="{CF2E60F6-E2A2-4784-8D72-E313B3F564AC}" />
 								<Properties>
 									<Property Name="WinFormsControlName">
@@ -3380,6 +3381,7 @@
 								</Properties>
 								<Children>
 									<Child Name="panel1" Key="{CAE89E9A-065F-4CA8-A383-83C32C9E3708}" ParallelWalk="True">
+										<Image FileName="226133826" Left="534" Top="93" Right="1928" Bottom="1048" />
 										<TypeInfo Item0="{E2A9013A-DDA8-465F-9FB0-77FE8BB5F04F}" />
 										<Properties>
 											<Property Name="WinFormsControlName">

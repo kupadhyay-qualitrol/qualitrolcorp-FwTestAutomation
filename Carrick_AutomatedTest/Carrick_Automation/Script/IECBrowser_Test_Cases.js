@@ -25,17 +25,8 @@ function BTC_792()
   {
     Log.Message("Started TC:-Test to Verify IEC browser connection and disconnection with the device")
     var DataSheetName = Project.ConfigPath +"TestData\\BTC_792.xlsx";
-    var retrycount_61850 = 16
-    
-    //Step0. Check whether IEC61850 is up or not
-    do
-    {
-    GooseWIndow=DataRetrievalPage.OpenGooseStatusWindow()
-    retrycount_61850 = retrycount_61850-1
-    }
-    while (retrycount_61850>1 && GooseWIndow==false)
-    AssertClass.IsTrue(DataRetrievalPage.CloseGooseStatusWindow(),"Closed Goose Status Window")
-    
+   // aqUtils.Delay(20*Referesh_time)//Delay for IECBrowser service to restore
+      
     //Step1. Connect device to IEC browser
     IECBrowser_Methods.ConnectDeviceToIECBrowser(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"),"Device connected to IEC Browser")
 
