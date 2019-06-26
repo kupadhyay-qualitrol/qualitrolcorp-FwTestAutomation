@@ -8,7 +8,7 @@ This page contains objects & method related to IEC browser.
 
 
 var IECBrowser = Aliases.Iec_Browser
-var MainMenu = Aliases.Iec_Browser.mainForm.MainMenu
+var Main_Menu = Aliases.Iec_Browser.mainForm
 var Toolbar = Aliases.Iec_Browser.mainForm.toolBar1
 var Dlg_Connect_Device = Aliases.Iec_Browser.FormConnect
 var Edt_Bx_IP = Aliases.Iec_Browser.FormConnect.comboBoxIp
@@ -118,6 +118,7 @@ function DisconnectDevice()
   if(IECBrowser.Enabled)
   {
     Toolbar.ClickItem("Disconnect")
+    IECBrowserCommonMethod.CheckTraceLog("Disconnecting from:")
     Log.Message("Disconnect button clicked")
     return true
   }
@@ -132,7 +133,7 @@ function CleareTraceLog()
 {
   if(IECBrowser.Enabled)
   {
-    MainMenu.Click("Edit|Del Trace")
+    Main_Menu.MainMenu.Click("Edit|Del Trace")
     Log.Message("Cleared Trace log")
     return true
   }
@@ -141,26 +142,4 @@ function CleareTraceLog()
     Log.Message("Unable to Clear trace log")
     return false
   }  
-}
-//This function is used to test the connection
-function TestConnectionIECBrowser()
-{
-  var device_connection = false
-  aqUtils.Delay(3*Referesh_time)
-  do
-  {
-    if(IECBrowserCommonMethod.CheckTraceLog("Done"))
-    {
-     IECBrowserPage.CleareTraceLog()
-     device_connection = true
-     Log.Message("Connection successful")    
-    }
-    if(IECBrowserCommonMethod.CheckTraceLog("Connect failed!"))
-    {
-     IECBrowserPage.CleareTraceLog()
-     Log.Message("Retry connection")
-     IECBrowser_Methods.ConnectDeviceToIECBrowser(DeviceIPAdd)
-    }  
-  }
-  while(!device_connection)
 }

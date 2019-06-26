@@ -6,6 +6,7 @@
 //Global Variables
 var IECtoolbar = Aliases.Iec_Browser.mainForm.toolBar1
 var Trace_Log = Aliases.Iec_Browser.mainForm.panel1.textBox_Output
+var Main_Menu = Aliases.Iec_Browser.mainForm
 var Referesh_time = 1000;
 
 function LaunchIECBrowser()
@@ -36,10 +37,8 @@ function CloseIECBrowser()
   try 
   {
     //Close iec browser application.
-    if(TestedApps.Iec_Browser.Terminate())
-    {
+    Main_Menu.Close()
     Log.Message("Application Closed successfully")    
-    }
   }
   catch(ex)
   {

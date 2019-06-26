@@ -25,7 +25,7 @@ function BTC_792()
   {
     Log.Message("Started TC:-Test to Verify IEC browser connection and disconnection with the device")
     var DataSheetName = Project.ConfigPath +"TestData\\BTC_792.xlsx";
-   // aqUtils.Delay(20*Referesh_time)//Delay for IECBrowser service to restore
+    aqUtils.Delay(180*Referesh_time)//Delay for IECBrowser service to restore
       
     //Step1. Connect device to IEC browser
     IECBrowser_Methods.ConnectDeviceToIECBrowser(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"),"Device connected to IEC Browser")
