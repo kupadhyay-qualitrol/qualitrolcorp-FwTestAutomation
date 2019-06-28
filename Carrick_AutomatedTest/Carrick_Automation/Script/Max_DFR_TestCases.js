@@ -951,6 +951,10 @@ function CAM_739()
     AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
     
     //Step5. Enter & Check Max DFR value
+    //Step5.1 Set Prefault time
+    var prefault =CommonMethod.ReadDataFromExcel(dataSheetName,"PrefaultTime")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefault Time") 
+    
     var MaxDFRLength =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR")
     AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFRLength),"Setting and checking Max DFR")
     

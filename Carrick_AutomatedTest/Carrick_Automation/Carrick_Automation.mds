@@ -388,15 +388,15 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-732" key="{4B40CB5E-D336-42BC-A378-0D049DFB03D2}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_732" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with continuous FR Trigger within oplimit.">
+							<testItem name="CAM-732" key="{4B40CB5E-D336-42BC-A378-0D049DFB03D2}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_732" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with continuous FR Trigger within oplimit.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-763" key="{53C4DC15-388A-4306-8382-88CE32EC4B21}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms.">
+							<testItem name="CAM-763" key="{53C4DC15-388A-4306-8382-88CE32EC4B21}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
+							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
 								<testParameters />
 								<children />
 							</testItem>
