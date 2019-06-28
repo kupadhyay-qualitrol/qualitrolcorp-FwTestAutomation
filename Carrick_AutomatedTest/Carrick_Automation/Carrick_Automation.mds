@@ -396,7 +396,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
+							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
 								<testParameters />
 								<children />
 							</testItem>
