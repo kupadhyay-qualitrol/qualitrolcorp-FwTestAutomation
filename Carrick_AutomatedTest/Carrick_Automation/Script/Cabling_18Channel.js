@@ -148,7 +148,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
       DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
       counter=counter+1
       aqUtils.Delay(1000)
-      Log.Message("DeviceDown Counter "+counter)
     }
     while (DeviceStatus=="Success" && counter<=100)
     
@@ -166,7 +165,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
       if(DeviceStatus=="Success")
       {
         counter =counter+1
-        Log.Message("DeviceUp Counter "+counter)
       }
       aqUtils.Delay(1000)
     }
