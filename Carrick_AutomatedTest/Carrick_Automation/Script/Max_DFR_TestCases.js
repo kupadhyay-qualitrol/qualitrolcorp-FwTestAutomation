@@ -952,7 +952,7 @@ function CAM_739()
     
     //Step5. Enter & Check Max DFR value
     //Step5.1 Set Prefault time
-    var prefault =CommonMethod.ReadDataFromExcel(dataSheetName,"PrefaultTime")
+    var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
     AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefault Time") 
     
     var MaxDFRLength =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR")
