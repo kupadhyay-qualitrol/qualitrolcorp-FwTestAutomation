@@ -249,7 +249,7 @@ function ClickOnDeviceStatusView()
    aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
    CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|D&evice Status")
    Log.Message("Clicked on Device Status Option")
-   retryCnt =2
+   retryCnt =5
    do
    {
     if(CommonMethod.CheckActivityLog("Device information displayed successfully"))
@@ -257,6 +257,7 @@ function ClickOnDeviceStatusView()
       break
     }
     retryCnt = retryCnt-1
+    Log.Message(retryCnt)
    }
    while (retryCnt>0)
    return true
