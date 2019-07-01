@@ -903,7 +903,7 @@ function CAM_732()
     //Step11.3. Click on Close DFR Directory
     DataRetrievalPage.CloseDFRDirectory() 
     Log.Message("DFR data download")  
-    AssertClass.IsTrue(ViewDFROnPDP(REC_DFR),"Checking on PDP")
+    AssertClass.IsTrue(DFR_Methods.ViewDFROnPDP(REC_DFR),"Checking on PDP")
     
     //Step12. Check Record Length
     var recordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
