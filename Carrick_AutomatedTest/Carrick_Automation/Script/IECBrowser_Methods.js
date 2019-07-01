@@ -5,13 +5,13 @@
 //USEUNIT IECBrowserPage
 
 //This method used for connecting the device and checking connection is proper with device or not
-function ConnectDeviceToIECBrowser(DeviceIPAdd)
+function ConnectDeviceToIECBrowser(deviceIPAdd)
 {
   //Step1. Click on connect button on tool bar
   AssertClass.IsTrue(IECBrowserPage.ConnectDevice(),"Clicked on connect button at toolbar of IECbrowser")
   
   //Step2. Set IP address in IP address text box
-  AssertClass.IsTrue(IECBrowserPage.SetIPAddress(DeviceIPAdd),"IP address set as iedevice IP")
+  AssertClass.IsTrue(IECBrowserPage.SetIPAddress(deviceIPAdd),"IP address set as iedevice IP")
   
   //Step3. Click on connect button
   AssertClass.IsTrue(IECBrowserPage.ClickOnConnectButton(),"Clicked on connect button")
@@ -46,5 +46,5 @@ function VerifyDeviceConnection()
   AssertClass.IsTrue(IECBrowserPage.DownloadCIDFile(), "CID file downloaded")
   
   //Step3. Verify File downloaded successfully or not
-  IECBrowserCommonMethod.CheckTraceLog("Copied with success.")
+  AssertClass.IsTrue(IECBrowserCommonMethod.CheckTraceLog("Copied with success."))
 }

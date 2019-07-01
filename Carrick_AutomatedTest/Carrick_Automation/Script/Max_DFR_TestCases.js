@@ -932,7 +932,7 @@ function CAM_739()
     
     //Step3. Set pre-fault for External Triggers
     var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
-    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Updated Prefaul Time")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Updated Prefault Time")
     
     //Step4. Set Post-fault time for External Triggers
     var postfault=CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime")

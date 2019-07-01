@@ -4,10 +4,10 @@
 //USEUNIT ConfigEditor_ConfigurationPage
 
 //Global Variables
-var IECtoolbar = Aliases.Iec_Browser.mainForm.toolBar1
+var IECToolBar = Aliases.Iec_Browser.mainForm.toolBar1
 var Trace_Log = Aliases.Iec_Browser.mainForm.panel1.textBox_Output
 var Main_Menu = Aliases.Iec_Browser.mainForm
-var Referesh_time = 1000;
+var Referesh_Time = 1000;
 
 function LaunchIECBrowser()
 {
@@ -48,17 +48,17 @@ function CloseIECBrowser()
 }
 
 //Method to check progress from activity log
-function CheckTraceLog(logmessage)
+function CheckTraceLog(logMessage)
 {
- var trace_executioncount=0
+ var trace_ExecutionCount=0
  do
  {
   aqUtils.Delay(2000)
-  trace_executioncount = trace_executioncount + 1
+  trace_ExecutionCount = trace_ExecutionCount + 1
   }
- while (aqString.FindLast(Trace_Log.Text,logmessage)==-1 && trace_executioncount<=10) 
+ while (aqString.FindLast(Trace_Log.Text,logMessage)==-1 && trace_ExecutionCount<=10) 
  
- if(trace_executioncount==11)
+ if(trace_ExecutionCount==11)
  {
    return false
  }

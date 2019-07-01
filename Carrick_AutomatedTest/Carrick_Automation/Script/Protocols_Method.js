@@ -7,19 +7,17 @@
 //USEUNIT DeviceManagementPage
 //USEUNIT DeviceTopologyPage
 
-var noOfProtocols
-
 //This method is used to add protocols in a device
 function EnableProtocols()
 {
   
-  var DataSheetName = Project.ConfigPath +"TestData\\BTC_792.xlsx";
-  var Protocol_Name
+  var dataSheetName = Project.ConfigPath +"TestData\\BTC_792.xlsx";
+  var noOfProtocols
   //Step Check for the device in the device tree
-  if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))!=true)
+  if(DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceName"))!=true)
     {
-      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceIPAdd"))
-      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(DataSheetName,"DeviceName"))      
+      GeneralPage.CreateDevice(CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceName"),CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceSerialNo"),CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceIPAdd"))
+      DeviceTopologyPage.ClickonDevice(CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceType"),CommonMethod.ReadDataFromExcel(dataSheetName,"DeviceName"))      
     }
     else
     {
@@ -51,7 +49,7 @@ function EnableProtocols()
   AssertClass.IsTrue(ConfigEditor_Protocols.ClickOnAddProtocol(),"Clicked on Add Protocol")
   
   //Step5. Select Protocols from the dropdown and click on ok
-  AssertClass.IsTrue(ConfigEditor_Protocols.SelectProtocol(CommonMethod.ReadDataFromExcel(DataSheetName,"Protocol_Name")),"Protocol has been selected")
+  AssertClass.IsTrue(ConfigEditor_Protocols.SelectProtocol(CommonMethod.ReadDataFromExcel(dataSheetName,"Protocol_Name")),"Protocol has been selected")
   
   //Step6. Click on send to device button
   AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Configuration has been sent to device")

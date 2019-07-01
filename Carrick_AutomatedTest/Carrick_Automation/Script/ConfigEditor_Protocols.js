@@ -57,11 +57,11 @@ function ClickOnRemoveProtocol()
   }
 }
 //This method is used to select IEC61850 protocol in select protocol window
-function SelectProtocol(Protocol_Name)
+function SelectProtocol(protocol_Name)
 {
   if(Dlg_Select_Protocol.Exists)
   {
-   Dlg_Select_Protocol.cmbProtocol.Text=Protocol_Name
+   Dlg_Select_Protocol.cmbProtocol.Text=protocol_Name
    Btn_Ok_Select_Portocol.Click()
    Log.Message("Selected the Protocol")
    return true

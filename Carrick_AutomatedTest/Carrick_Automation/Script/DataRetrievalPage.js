@@ -547,7 +547,6 @@ function OpenGooseStatusWindow()
  }
  else
  {
-   CommonMethod.RibbonToolbar.ClickItem("Device &Management");
    Log.Message("Device Management options is not available")
    return false
  } 
