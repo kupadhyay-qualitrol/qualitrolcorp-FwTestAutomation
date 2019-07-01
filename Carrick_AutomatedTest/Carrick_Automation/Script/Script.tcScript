@@ -9,6 +9,7 @@
 			<child name="Max_DFR_TestCases" key="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}" path="Max_DFR_TestCases.js" />
 			<child name="TimeZone_TestCases" key="{4906C236-045F-4DEA-9A47-483016389E62}" path="TimeZone_TestCases.js" />
 			<child name="Cabling_18Channel" key="{95952818-0B7B-4203-AC0E-3D62F32D7A95}" path="Cabling_18Channel.js" />
+			<child name="IECBrowser_Test_Cases" key="{0567AFC5-96F0-4E3B-9A32-C363E754303A}" path="IECBrowser_Test_Cases.js" />
 		</folder>
 		<folder name="POM">
 			<child name="LoginPage" key="{A381FA1F-53C0-488D-B0A7-A1C5075B2252}" path="LoginPage.js" />
@@ -33,10 +34,13 @@
 			<child name="ConfigEditor_FaultRecording_FRSensorPage" key="{19474A48-A7D5-4733-B543-25993B7A7C79}" path="ConfigEditor_FaultRecording_FRSensorPage.js" />
 			<child name="OmicronStateSeqPage" key="{8F389BA8-7093-4E3E-BE8B-9BE7561CF828}" path="OmicronStateSeqPage.js" />
 			<child name="ConfigEditor_ConfigurationPage" key="{F34F8852-ADE5-4C80-8ABD-50A4A6B9AB08}" path="ConfigEditor_ConfigurationPage.js" />
+			<child name="IECBrowserPage" key="{B4B30C51-70EB-4E60-8CD9-988F538B24C5}" path="IECBrowserPage.js" />
+			<child name="ConfigEditor_Protocols" key="{DEF80D06-D6E4-4593-8EB8-BCE21E15FCA6}" path="ConfigEditor_Protocols.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />
 			<child name="CommonMethod" key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" path="CommonMethod.js" />
+			<child name="IECBrowserCommonMethod" key="{AB3A8F15-256D-498B-9AB8-EA8F6FBFBEED}" path="IECBrowserCommonMethod.js" />
 		</folder>
 		<folder name="Functional_Methods">
 			<child name="DFR_Methods" key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" path="DFR_Methods.js" />
@@ -48,6 +52,8 @@
 			<child name="CrossTrigger_Methods" key="{54997743-4D7C-474F-A1D9-57992A0836AD}" path="CrossTrigger_Methods.js" />
 			<child name="Circuit_Configuration" key="{21EEBEBA-1A70-4CDD-984C-41C9D6534189}" path="Circuit_Configuration.js" />
 			<child name="ConfigEditor_Methods" key="{EB352A05-0142-4195-A290-4ECF3C50D33E}" path="ConfigEditor_Methods.js" />
+			<child name="IECBrowser_Methods" key="{A9025138-3A97-4BC3-ADEA-AEDBF212CD04}" path="IECBrowser_Methods.js" />
+			<child name="Protocols_Method" key="{37E37903-9BCC-4642-8335-99F6AFCD097D}" path="Protocols_Method.js" />
 		</folder>
 		<folder name="Firmware_WebPage_Scripts">
 			<child name="SeleniumWebdriver" key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" path="SeleniumWebdriver.js" />

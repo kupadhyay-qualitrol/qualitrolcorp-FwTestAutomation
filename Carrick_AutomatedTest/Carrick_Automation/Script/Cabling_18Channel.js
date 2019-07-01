@@ -12,6 +12,7 @@
 //USEUNIT DeviceManagementPage
 //USEUNIT Circuit_Configuration
 //USEUNIT Firmware_Tabindex_Methods
+//USEUNIT IECBrowser_Test_Cases
 
 var DataSetFolderPath = Project.ConfigPath +"TestData\\CablingDataSet\\CablingDataSet_18Channel\\"
 var DeviceIP ="10.75.58.51"
