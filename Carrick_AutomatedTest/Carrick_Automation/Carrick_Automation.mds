@@ -79,7 +79,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{4DE1FBC5-D7E7-47CE-AD88-D1A598F1CC1A}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">

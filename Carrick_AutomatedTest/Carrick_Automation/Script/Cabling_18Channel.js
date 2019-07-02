@@ -41,10 +41,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     
     //Step1. Upload Calibration
     switch (CablingName)
-    {
-      case "NOCIRCUIT":
-        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"DefaultCalibration.cal"),"Uploading Calibration File")    
-        break    
+    {    
       case "3U":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"3U_15I.cal"),"Uploading Calibration File")    
         break
@@ -173,6 +170,10 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     //Step16. Validate from Tabindex
     AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
     
+    if(CablingName=="NOCIRCUIT")
+    {
+      AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"DefaultCalibration.cal"),"Uploading Calibration File")    
+    }
     Log.Message("Pass:- Test to check Cabling:-"+CablingName)  
   }
   catch (ex)
