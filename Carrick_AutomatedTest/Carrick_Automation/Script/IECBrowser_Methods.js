@@ -31,7 +31,7 @@ function ConnectDeviceToIECBrowser(deviceIPAdd)
     {
      IECBrowserPage.CleareTraceLog()
      Log.Message("Retry connection")
-     IECBrowser_Methods.ConnectDeviceToIECBrowser(DeviceIPAdd)
+     IECBrowser_Methods.ConnectDeviceToIECBrowser(deviceIPAdd)
     }  
   }
   while(!device_connection)
