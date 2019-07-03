@@ -101,39 +101,39 @@
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="3U3I" key="{7458F75C-EC53-4FE8-8612-CEA11AD9082B}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I" key="{7458F75C-EC53-4FE8-8612-CEA11AD9082B}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="3U3I3I" key="{9B6AABAB-2ECA-4074-927A-B40342899A1A}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I" key="{9B6AABAB-2ECA-4074-927A-B40342899A1A}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="3U3I3I3I" key="{1EE5BD37-4C39-4B3C-A3C0-84C5CF7256ED}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I3I" key="{1EE5BD37-4C39-4B3C-A3C0-84C5CF7256ED}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="3U3I3I3I3I" key="{27A06635-A81F-4F84-BB09-CF1CDA126C2E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I3I3I" key="{27A06635-A81F-4F84-BB09-CF1CDA126C2E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="3U3I3I3I3I3I" key="{E24BDF8B-7824-4661-891D-603A97F49FEE}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I3I3I3I" key="{E24BDF8B-7824-4661-891D-603A97F49FEE}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="1U3I" key="{037737D9-E9D8-4063-995E-51C904951C58}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I" key="{037737D9-E9D8-4063-995E-51C904951C58}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="1U3I3I" key="{F15B0090-A9A5-47A2-9628-D1BB3A608AE8}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I" key="{F15B0090-A9A5-47A2-9628-D1BB3A608AE8}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="1U3I3I3I" key="{604901B2-4E90-454A-8795-6A3E62F3F143}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I3I" key="{604901B2-4E90-454A-8795-6A3E62F3F143}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="1U3I3I3I3I" key="{0E3AEA50-206D-4E64-BC2D-AE46FCA4BDAF}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I3I3I" key="{0E3AEA50-206D-4E64-BC2D-AE46FCA4BDAF}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
@@ -150,11 +150,11 @@
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="2M3U3I" key="{B5370C83-9865-40A5-8202-CC45BFAB0DA9}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M3U3I" key="{B5370C83-9865-40A5-8202-CC45BFAB0DA9}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
-									<testItem name="2M3U3I3I" key="{D735C056-4F9E-44C7-9CE7-E6F76EA85BA2}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M3U3I3I" key="{D735C056-4F9E-44C7-9CE7-E6F76EA85BA2}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children />
 									</testItem>
@@ -208,7 +208,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 4U/1U Cabling Configuration" key="{07C0F1AB-2816-4A83-AA89-B5192EB2F623}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 4U/1U Cabling Configuration" key="{07C0F1AB-2816-4A83-AA89-B5192EB2F623}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="4U" key="{2F78CD37-BF70-4348-B1CE-2D3D0954CF2C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -245,7 +245,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 2M4U Cabling Configuration" key="{550A2CF2-3E3F-461D-9614-008B6EA2DFE6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 2M4U Cabling Configuration" key="{550A2CF2-3E3F-461D-9614-008B6EA2DFE6}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="2M4U" key="{35436166-5D19-49C7-B8DD-88A8C1FADEC7}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -274,7 +274,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 4U3U" key="{35FD313B-1252-4272-B17E-23E50ADBF0F8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 4U3U" key="{35FD313B-1252-4272-B17E-23E50ADBF0F8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="4U3U" key="{3D9CB0B2-2F50-41B2-83EF-4D6CFD85D6D6}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
