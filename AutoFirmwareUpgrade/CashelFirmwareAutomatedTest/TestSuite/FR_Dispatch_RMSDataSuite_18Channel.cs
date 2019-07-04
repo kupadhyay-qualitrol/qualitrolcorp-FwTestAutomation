@@ -20,6 +20,7 @@ namespace CashelFirmware.TestSuite
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
             NoTXRatio = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1, 1, 1, 1, 1, 1, 1, 1, 1 };
             DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\";
+            DeviceInformation.glb_deviceType = 18;
         }
          [Test,Order(1)]
         public void FR_DIS_RMSDATA_3U()
@@ -30,6 +31,14 @@ namespace CashelFirmware.TestSuite
             firmwareCablingTest.SetTXRationum(deviceIP, webdriver, InfovarStartTest, TXRatioMultiplier);
             firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "3U", DataSetFolderPath,false);
             dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "3U", DataSetFolderPath);
+        }
+
+        [Test, Order(0)]
+        public void FR_DIS_RMSDATA_1U3I_phB()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U3I Cabling");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I_PhaseB", DataSetFolderPath, false);
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I_PhaseB", DataSetFolderPath);
         }
 
         [Test, Order(2)]

@@ -21,6 +21,7 @@ namespace CashelFirmware.TestSuite
             DeviceInformation.glb_deviceType = 9;
             NoTXRatio = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1};
             DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\";
+            DeviceInformation.glb_deviceType = 9;
         }
 
         [Test, Order(1)]

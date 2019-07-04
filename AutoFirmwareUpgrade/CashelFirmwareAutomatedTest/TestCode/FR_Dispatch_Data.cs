@@ -20,7 +20,7 @@ namespace CashelFirmware.NunitTests
     {
         ResourceManager resourceManager;
         string DataSetFileNameWithPath;
-        string[] FR_Dispactch_RMS_Data;
+        int[] FR_Dispactch_RMS_Data;
         Dictionary<string, string> CablingInfo;
         StringBuilder FR_Data_RMS_Value;
         int[] TXRatioMultiplier;
@@ -38,7 +38,7 @@ namespace CashelFirmware.NunitTests
             sortedChannelType = new Dictionary<string, string>();
             
             FR_Data_RMS_Value = new StringBuilder();
-            FR_Dispactch_RMS_Data = new string[18];
+            FR_Dispactch_RMS_Data = new int[18] {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
             injectvoltage = 50.0;
             injectedcurrent = 1.0;
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
@@ -62,27 +62,30 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdefault_Todispatch(), "Switched frame from Default to dispatch topology");
             TestLog.Log(LogStatus.Info, "Success:- Switched frame from Default to dispatch topology");
 
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_Data_dispatch_Click(), "Clicked on dispatch under tabindex_data page");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on dispatch under tabindex_data page");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
-            TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_fr_data_Click(), "Clicked on fr_data");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on fr_data");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_fundamental_Click(), "Clicked on fundamental");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on fundamental");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_rms_Click(), "Clicked on rms");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on rms");
-
-            for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
+            for (int retrysum = 0; retrysum < 20; retrysum++)
             {
-                FR_Dispactch_RMS_Data[index] = Tabindex_Data_Dispatch.Get_Magnitude(index);
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_Data_dispatch_Click(), "Clicked on dispatch under tabindex_data page");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on dispatch under tabindex_data page");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
+                TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_fr_data_Click(), "Clicked on fr_data");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on fr_data");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_fundamental_Click(), "Clicked on fundamental");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on fundamental");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_rms_Click(), "Clicked on rms");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on rms");
+
+                for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
+                {
+                    FR_Dispactch_RMS_Data[index] = FR_Dispactch_RMS_Data[index] + Convert.ToInt32(Tabindex_Data_Dispatch.Get_Magnitude(index));
+                }
             }
             CablingInfo.Clear();
             Channel_TXRatio.Clear();
