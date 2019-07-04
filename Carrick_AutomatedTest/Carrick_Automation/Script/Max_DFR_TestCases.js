@@ -950,6 +950,14 @@ function CAM_739()
     //Step4. Click on Fault Recording
     AssertClass.IsTrue(ConfigEditorPage.ClickOnFaultRecording(),"Clicked on Fault Recording")
     
+    //Step3. Set pre-fault for External Triggers
+    var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Updated Pre-fault Time")
+    
+    //Step4. Set Post-fault time for External Triggers
+    var postfault=CommonMethod.ReadDataFromExcel(DataSheetName,"PostFaultTime")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault),"Updated Post-faulttime")
+    
     //Step5. Enter & Check Max DFR value
     //Step5.1 Set Prefault time
     var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
