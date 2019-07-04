@@ -62,11 +62,11 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdefault_Todispatch(), "Switched frame from Default to dispatch topology");
             TestLog.Log(LogStatus.Info, "Success:- Switched frame from Default to dispatch topology");
 
+            Assert.IsTrue(Tabindex_Data_Dispatch.Item_Data_dispatch_Click(), "Clicked on dispatch under tabindex_data page");
+            TestLog.Log(LogStatus.Info, "Success:- Clicked on dispatch under tabindex_data page");
+
             for (int retrysum = 0; retrysum < 20; retrysum++)
             {
-                Assert.IsTrue(Tabindex_Data_Dispatch.Item_Data_dispatch_Click(), "Clicked on dispatch under tabindex_data page");
-                TestLog.Log(LogStatus.Info, "Success:- Clicked on dispatch under tabindex_data page");
-
                 Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
                 TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
 
@@ -86,6 +86,14 @@ namespace CashelFirmware.NunitTests
                 {
                     FR_Dispactch_RMS_Data[index] = FR_Dispactch_RMS_Data[index] + Convert.ToInt32(Tabindex_Data_Dispatch.Get_Magnitude(index));
                 }
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.SwitchToParentFrame(), "Switched frame to Refresh Button");
+                TestLog.Log(LogStatus.Info, "Success:- Switched frame to Refresh Button");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Btn_refresh_click(), "Clicked on Refresh Button");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on Refresh Button");
+
+
             }
             CablingInfo.Clear();
             Channel_TXRatio.Clear();

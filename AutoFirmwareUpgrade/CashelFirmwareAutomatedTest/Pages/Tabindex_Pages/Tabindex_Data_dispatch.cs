@@ -101,6 +101,14 @@ namespace Tabindex_Data.dispatch
             }
         }
 
+        private IWebElement Btn_refresh
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td[2]/form/input"));
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -165,6 +173,20 @@ namespace Tabindex_Data.dispatch
         {
             return webDriver.FindElement(By.Name(String.Format(Item_dispatch_data_fr_data_fundamental_rms_magnitude, index).Replace("\"", ""))).GetAttribute("value").ToString();
         }  
+
+        public bool Btn_refresh_click()
+        {
+            Btn_refresh.Click();
+            return true;
+        }
+
+        public bool SwitchToParentFrame()
+        {
+            webDriver.SwitchTo().ParentFrame();
+            return true;
+        }
+
+
 
         #endregion
     }
