@@ -145,6 +145,13 @@ namespace Tabindex_Data.dispatch
             return true;
         }
 
+        public bool SwitchSubFrame_Todata()
+        {
+            webDriver.SwitchTo().Frame(SubFrame_dispatch_data);
+            return true;
+        }
+
+
         public bool Item_dispatch_data_Click()
         {
             Item_dispatch_data.Click();
