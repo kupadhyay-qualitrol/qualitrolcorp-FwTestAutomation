@@ -38,17 +38,17 @@ namespace CashelFirmware.NunitTests
             sortedChannelType = new Dictionary<string, string>();
             
             FR_Data_RMS_Value = new StringBuilder();
-            FR_Dispactch_RMS_Data = new double[18] {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+            FR_Dispactch_RMS_Data = new double[18];
             injectvoltage = 50.0;
             injectedcurrent = 1.0;
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
         }
 
-        public void Validate_FR_Dispatch_Data(IWebDriver webDriver, string deviceIP, ExtentTest TestLog, string Cabling,string FRDataSetPath)
+        public void Validate_FR_Dispatch_Data(IWebDriver webDriver, string deviceIP, ExtentTest TestLog, string Cabling, string FRDataSetPath)
         {
             Tabindex_Data_dispatch Tabindex_Data_Dispatch = new Tabindex_Data_dispatch(webDriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webDriver);
-
+            DataSetFileNameWithPath = FRDataSetPath + Cabling + ".xlsx";
             CablingInfo.Clear();
             Channel_TXRatio.Clear();
             sortedChannelType.Clear();
@@ -171,12 +171,12 @@ namespace CashelFirmware.NunitTests
 
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
 
-            DataSetFileNameWithPath = FRDataSetPath + Cabling + ".xlsx";
+            
 
             Assert.AreEqual("Data", Tabindex_Data_Dispatch.OpenTabIndexPage(deviceIP), "Device is up/responding");
             TestLog.Log(LogStatus.Info, "Device is up/responding");
 
-            Assert.IsTrue(Tabindex_Data_Dispatch.Btn_Data_Click(),"Clicked on Data button on webpage");
+            Assert.IsTrue(Tabindex_Data_Dispatch.Btn_Data_Click(), "Clicked on Data button on webpage");
             TestLog.Log(LogStatus.Info, "Success:-Clicked on Data button on webpage");
 
             Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdefault_Todispatch(), "Switched frame from Default to dispatch topology");
@@ -204,7 +204,7 @@ namespace CashelFirmware.NunitTests
 
                 for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
                 {
-                    FR_Dispactch_RMS_Data[index] = FR_Dispactch_RMS_Data[index] + Convert.ToDouble(Tabindex_Data_Dispatch.Get_Magnitude(index));
+                    FR_Dispactch_RMS_Data[index] = Convert.ToDouble(Tabindex_Data_Dispatch.Get_Magnitude(index));
                 }
 
                 Assert.IsTrue(Tabindex_Data_Dispatch.SwitchToParentFrame(), "Switched frame to Refresh Button");
@@ -243,9 +243,10 @@ namespace CashelFirmware.NunitTests
                     }
                 }
                 );
+                
+                FR_Data_RMS_Value.Clear();
             }
             sortedDict = null;
-            FR_Data_RMS_Value.Clear();
         }
 
         private int ChannelMultiplier(string channellabel)
