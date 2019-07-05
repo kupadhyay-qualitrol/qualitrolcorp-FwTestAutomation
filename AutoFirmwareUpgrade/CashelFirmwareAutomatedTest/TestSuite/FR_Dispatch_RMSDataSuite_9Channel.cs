@@ -36,14 +36,6 @@ namespace CashelFirmware.TestSuite
         }
 
         [Test, Order(2)]
-        public void FR_DIS_RMSDATA_1U3I_phB()
-        {
-            InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U3I Cabling");
-            //firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath, false);
-            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath);
-        }
-
-        [Test, Order(2)]
         public void FR_DIS_RMSDATA_3U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U3I Cabling");
@@ -59,7 +51,7 @@ namespace CashelFirmware.TestSuite
             dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "3U3I3I",DataSetFolderPath);
         }
 
-        [Test, Order(7)]
+        [Test, Order(4)]
         public void FR_DIS_RMSDATA_1U3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 1U3I Cabling");
@@ -67,7 +59,23 @@ namespace CashelFirmware.TestSuite
             dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I",DataSetFolderPath);
         }
 
-        [Test, Order(8)]
+        [Test, Order(5)]
+        public void FR_DIS_RMSDATA_1U3I_phB()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U3I Cabling");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath, false);
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath);
+        }
+
+        [Test, Order(6)]
+        public void FR_DIS_RMSDATA_1U3I_phC()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U3I Cabling");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath, false);
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath);
+        }
+
+        [Test, Order(7)]
         public void FR_DIS_RMSDATA_1U3I3I()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 1U3I3I Cabling");
@@ -75,7 +83,23 @@ namespace CashelFirmware.TestSuite
             dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I3I",DataSetFolderPath);
         }
 
+        [Test, Order(8)]
+        public void FR_DIS_RMSDATA_1U3I3I_phB()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 1U3I3I Cabling");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I_phB", DataSetFolderPath, false);
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I3I_phB", DataSetFolderPath);
+        }
+
         [Test, Order(9)]
+        public void FR_DIS_RMSDATA_1U3I3I_phC()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 1U3I3I Cabling");
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I3I_phC", DataSetFolderPath, false);
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I3I_phC", DataSetFolderPath);
+        }
+
+        [Test, Order(10)]
         public void FR_DIS_RMSDATA_NOCIRCUIT()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for NOCIRCUIT Cabling");
