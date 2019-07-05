@@ -24,6 +24,10 @@ function ClickonRetrieveConfig()
     Log.Message("Clicked on Retrieve Configuration Page")
     do
     {
+      if (CommonMethod.CheckActivityLog("Configuration retrieved successfully from device"))
+      {
+        break
+      }
       if(CommonMethod.CheckActivityLog("The device is rebooting, please try later."))
       {
         aqUtils.Delay(2000) //wait before retry 
@@ -32,9 +36,17 @@ function ClickonRetrieveConfig()
         DeviceManagementToolbar.ClickItem("Device &Management")
         DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
       }
-      if (CommonMethod.CheckActivityLog("Configuration retrieved successfully from device"))
+      else if(CommonMethod.CheckActivityLog("Failed to get response"))
       {
-        deviceResponse=true
+        aqUtils.Delay(2000) //wait before retry 
+        //Clear Session log  
+        SessionLogPage.ClearLog()  
+        DeviceManagementToolbar.ClickItem("Device &Management")
+        DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
+      }
+      else if(CommonMethod.CheckActivityLog("Unable to establish connection with device"))
+      {
+       Log.Error("Device IP is wrong")
       }
     }
     while (!deviceResponse)

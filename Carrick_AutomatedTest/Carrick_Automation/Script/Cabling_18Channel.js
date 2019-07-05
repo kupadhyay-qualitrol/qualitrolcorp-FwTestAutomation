@@ -42,10 +42,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     
     //Step1. Upload Calibration
     switch (CablingName)
-    {
-      case "NOCIRCUIT":
-        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"DefaultCalibration.cal"),"Uploading Calibration File")    
-        break    
+    {    
       case "3U":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"3U_15I.cal"),"Uploading Calibration File")    
         break
@@ -149,7 +146,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
       DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
       counter=counter+1
       aqUtils.Delay(1000)
-      Log.Message("DeviceDown Counter "+counter)
     }
     while (DeviceStatus=="Success" && counter<=100)
     
@@ -167,7 +163,6 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
       if(DeviceStatus=="Success")
       {
         counter =counter+1
-        Log.Message("DeviceUp Counter "+counter)
       }
       aqUtils.Delay(1000)
     }
@@ -176,6 +171,10 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     //Step16. Validate from Tabindex
     AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
     
+    if(CablingName=="NOCIRCUIT")
+    {
+      AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"DefaultCalibration.cal"),"Uploading Calibration File")    
+    }
     Log.Message("Pass:- Test to check Cabling:-"+CablingName)  
   }
   catch (ex)
@@ -242,8 +241,14 @@ function SetAnalogChannelName()
     else
     {
       //Step9. Click on Close
-      AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Send to Device")
+      AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close")
     }
+}
+
+function TestCablingNOCIRCUIT()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test NOCIRCUIT Cabling")
+  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
 }
 
 function TestCabling3U()

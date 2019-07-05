@@ -13,7 +13,7 @@
 			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Upgrade" key="{D136D67B-22B4-4340-966B-6E68023867FA}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}UpgradeiQ_Plus" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
@@ -609,6 +609,10 @@
 									</testItem>
 								</children>
 							</testItem>
+							<testItem name="TestNOCIRCUIT" key="{0F3CE823-2E06-468F-990B-0035B6E8E0AD}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCablingNOCIRCUIT" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="EndReport" key="{D901B23E-0B55-421D-A59F-3F56908FA5AE}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children />
@@ -670,7 +674,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
+							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
 								<testParameters />
 								<children />
 							</testItem>
