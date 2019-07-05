@@ -34,7 +34,7 @@ function Install_iQ_Plus(Isupgrade)
   {
     installedVersion=0
   }
-  if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null && (serverVersion> installedVersion ))
+  if(CommonMethod.CreateDirectory(Project.Path+"Builds\\")!=null && (aqConvert.StrToInt(serverVersion)> aqConvert.StrToInt(installedVersion)))
   {
     if(LatestBuildFile!=CommonMethod.LastModifiedFile(Project.Path+"Builds\\"))
     {
@@ -193,7 +193,7 @@ function Install_iQ_Plus(Isupgrade)
   }
   else
   {
-    Log.Error("Failed:TC-Install IQ+ Application in the PC with default settings/No new version is available on server")
+    Log.Message("No new version is available on server")
   }
 }
 

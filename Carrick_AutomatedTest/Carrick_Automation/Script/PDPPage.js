@@ -170,8 +170,25 @@ function GetTimeQualityStatus(PDPRowNo)
     }
     
     var Record_TimeQuality=EventsList.ugBaseGrid.wValue(PDPRowNo,"Time Quality")
-    Log.Message("Record Time Quality from Device status is:- "+Record_TimeQuality)    
-    return Record_TimeQuality
+    Log.Message("Record Time Quality from Device status is:- "+Record_TimeQuality)
+    switch (Record_TimeQuality.OleValue)
+    {
+      case "Locked-Full": 
+        return 1    
+        break
+    
+      case "Locked":
+        return 1
+        break
+        
+      case "Unlocked":
+        return 0
+        break
+        
+      default:
+        null
+    }  
+    //return Record_TimeQuality
   }
   else
   {
