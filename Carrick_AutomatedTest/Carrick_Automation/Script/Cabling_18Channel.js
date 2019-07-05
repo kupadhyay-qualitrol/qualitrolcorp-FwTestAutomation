@@ -247,7 +247,7 @@ function SetAnalogChannelName()
 
 function TestCablingNOCIRCUIT()
 {
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test NOCIRCUIT Cabling")
   TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
 }
 
