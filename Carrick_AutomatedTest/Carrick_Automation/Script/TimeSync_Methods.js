@@ -50,5 +50,5 @@ function CheckTimeQualityInMasterSlave(DataSheetName,MasterIndex,SlaveIndex)
       TimeStatusDevice2 = DataRetrievalPage.TimeQualityStatusFromDeviceStatus()
       DataRetrievalPage.CloseDeviceStatus.ClickButton()
     }
-    while (TimeStatusDevice1!="locked" || TimeStatusDevice2!="locked")
+    while (TimeStatusDevice1!="1" || TimeStatusDevice2!="1")
 }

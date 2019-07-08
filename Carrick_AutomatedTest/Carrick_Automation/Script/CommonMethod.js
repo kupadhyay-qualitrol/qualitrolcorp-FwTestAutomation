@@ -404,7 +404,7 @@ function GetiQPlusInstallInfo()
   var command ="wmic product get Name,Version"
   var oShell = getActiveXObject("WScript.Shell") // Or oShell = WshShell
   //var oExec = oShell.Exec("powershell -command Get-Process");
-  var oExec = oShell.Exec("powershell -command "+command)
+  var oExec = oShell.Exec(command)
   oExec.StdIn.Close(); // Close standard input before reading output
 
   // Get PowerShell output

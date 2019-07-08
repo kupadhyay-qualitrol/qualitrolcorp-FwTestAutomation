@@ -882,8 +882,28 @@ function CAM_732()
     OmicronStateSeqPage.RunSeqFile(Project.ConfigPath+"TestData\\"+CommonMethod.ReadDataFromExcel(dataSheetName,"OmicronFile_1"))  
     AssertClass.IsTrue(DFR_Methods.IsMultipleRecordFound(10,1,lastDFRRecord),"Checking for new Record")    
      
-    //Step11. Click on Download Data Now
-    AssertClass.IsTrue(DFR_Methods.DownloadManualDFR(),"Clicked on Download Data Now")
+    //Step11. Click on Download Data Now //This logic is only applicable to this script as it is downloading max length DFR record.
+    //Step 11.1 Click on DFR Directory
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDFRDirectory(),"Clicked on DFR Directory")
+    var REC_DFR=DataRetrievalPage.GetLatestRecordnumber()
+    //Step11.2. Click on Download Data Now
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDownloadDataNow(),"Clicked on Download Data Now")
+    var retryCnt =100
+    do
+    {
+      aqUtils.Delay(60000)
+      if(CommonMethod.CheckActivityLog("DFR records saved successfully for device"))
+      {
+       break 
+      }
+      retryCnt = retryCnt-1
+    }
+    while (retryCnt>0)
+    
+    //Step11.3. Click on Close DFR Directory
+    DataRetrievalPage.CloseDFRDirectory() 
+    Log.Message("DFR data download")  
+    AssertClass.IsTrue(DFR_Methods.ViewDFROnPDP(REC_DFR),"Checking on PDP")
     
     //Step12. Check Record Length
     var recordLength= CommonMethod.ConvertTimeIntoms(PDPPage.GetRecordDuration(0))//FirstRow
@@ -939,6 +959,10 @@ function CAM_739()
     AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPostFault(postfault),"Updated Post-faulttime")
     
     //Step5. Enter & Check Max DFR value
+    //Step5.1 Set Prefault time
+    var prefault =CommonMethod.ReadDataFromExcel(DataSheetName,"PrefaultTime")
+    AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetPrefault(prefault),"Validating Prefault Time") 
+    
     var MaxDFRLength =CommonMethod.ReadDataFromExcel(DataSheetName,"MaxDFR")
     AssertClass.IsTrue(ConfigEditor_FaultRecordingPage.SetMaxDFR(MaxDFRLength),"Setting and checking Max DFR")
     
