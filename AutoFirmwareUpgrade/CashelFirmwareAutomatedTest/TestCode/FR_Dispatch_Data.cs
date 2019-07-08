@@ -187,9 +187,8 @@ namespace CashelFirmware.NunitTests
 
             Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
             TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
-            System.Threading.Thread.Sleep(300000);
 
-            for (int retrysum = 0; retrysum < 20; retrysum++)
+            for (int retrysum = 0; retrysum < 50; retrysum++)
             {
                 Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
                 TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
@@ -235,11 +234,11 @@ namespace CashelFirmware.NunitTests
                     {
                         if (sortedChannelType.ElementAt(test).Value == "VOLTS" && (sortedDict.ElementAt(test).Key.Length <= 10))
                         {
-                            Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 2.0);
+                            Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 3.0);
                         }
                         else if ((sortedDict.ElementAt(test).Key.Length <= 10))
                         {
-                            Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.2);
+                            Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.3);
                         }
                     }
                 }
