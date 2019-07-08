@@ -415,6 +415,18 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U1U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -424,7 +436,22 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I_PhaseB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I_PhaseC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I.xlsx">
@@ -436,6 +463,18 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -445,10 +484,34 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I4I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I4I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I4I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I4I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U4U3I4I_phC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\2M3U.xlsx">
@@ -469,6 +532,12 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U1U3I3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U1U3I3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -476,6 +545,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I1U3I_phC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\3U3I3I.xlsx">
@@ -511,7 +592,19 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U4I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U4I3I_phC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I.xlsx">
@@ -550,10 +643,10 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U4I4I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\NOCIRCUIT.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\DefaultCalibration.cal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\sn409026540_DefaultCalibration.cal">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\NOCIRCUIT.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_9Channel\1U3I.xlsx">

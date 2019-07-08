@@ -188,7 +188,7 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
             TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
 
-            for (int retrysum = 0; retrysum < 50; retrysum++)
+            for (int retrysum = 0; retrysum < 1; retrysum++)
             {
                 Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
                 TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
