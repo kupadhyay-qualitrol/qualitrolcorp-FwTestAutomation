@@ -22,7 +22,15 @@ namespace CashelFirmware.TestSuite
             DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\";
             DeviceInformation.glb_deviceType = 18;
         }
-         [Test,Order(1)]
+
+        [Test, Order(0)]
+        public void GetFirmwareInfo()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Getting Firware Information");
+            FirmwareInformation.GetFirmwareVersion(deviceIP, webdriver, InfovarStartTest);
+        }
+
+        [Test,Order(1)]
         public void FR_DIS_RMSDATA_3U()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U Cabling");

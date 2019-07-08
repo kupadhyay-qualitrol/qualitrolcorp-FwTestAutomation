@@ -24,6 +24,13 @@ namespace CashelFirmware.TestSuite
             DeviceInformation.glb_deviceType = 9;
         }
 
+        [Test, Order(0)]
+        public void GetFirmwareInfo()
+        {
+            InfovarStartTest = ReportGeneration.extent.StartTest("Getting Firware Information");
+            FirmwareInformation.GetFirmwareVersion(deviceIP, webdriver, InfovarStartTest);
+        }
+
         [Test, Order(1)]
         public void FR_DIS_RMSDATA_3U()
         {
@@ -71,8 +78,8 @@ namespace CashelFirmware.TestSuite
         public void FR_DIS_RMSDATA_1U3I_phC()
         {
             InfovarStartTest = ReportGeneration.extent.StartTest("Validate FR_DISPATCH_RMSDATA for 3U3I Cabling");
-            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath, false);
-            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I_phB", DataSetFolderPath);
+            firmwareCablingTest.TestCabling(webdriver, deviceIP, InfovarStartTest, "1U3I_phC", DataSetFolderPath, false);
+            dispatch_RMSData.Validate_FR_Dispatch_Data(webdriver, deviceIP, InfovarStartTest, "1U3I_phC", DataSetFolderPath);
         }
 
         [Test, Order(7)]
