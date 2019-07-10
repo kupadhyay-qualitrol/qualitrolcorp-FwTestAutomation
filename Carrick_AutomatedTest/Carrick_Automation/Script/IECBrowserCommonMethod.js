@@ -19,7 +19,7 @@ function LaunchIECBrowser()
       {
         aqUtils.Delay(2*Referesh_time)
       }
-      while (!IECToolbar.Exists)
+      while (!IECToolBar.Exists)
       Log.Message("Application launched successfully")
       return true
     }
