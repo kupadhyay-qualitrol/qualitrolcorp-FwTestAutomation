@@ -171,7 +171,7 @@ namespace CashelFirmware.NunitTests
 
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
 
-            
+
 
             Assert.AreEqual("Data", Tabindex_Data_Dispatch.OpenTabIndexPage(deviceIP), "Device is up/responding");
             TestLog.Log(LogStatus.Info, "Device is up/responding");
@@ -188,8 +188,9 @@ namespace CashelFirmware.NunitTests
             Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
             TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
 
-            for (int retrysum = 0; retrysum < 1; retrysum++)
+            for (int retrysum = 0; retrysum < 20; retrysum++)
             {
+                TestLog.Log(LogStatus.Info, "Retry:- " +retrysum);
                 Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
                 TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
 
@@ -212,6 +213,8 @@ namespace CashelFirmware.NunitTests
 
                 Assert.IsTrue(Tabindex_Data_Dispatch.Btn_refresh_click(), "Clicked on Refresh Button");
                 TestLog.Log(LogStatus.Info, "Success:- Clicked on Refresh Button");
+
+                System.Threading.Thread.Sleep(100000);
 
                 Assert.IsTrue(Tabindex_Data_Dispatch.SwitchSubFrame_Todata(), "Switched frame from dispatch to data");
                 TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
@@ -243,7 +246,7 @@ namespace CashelFirmware.NunitTests
                     }
                 }
                 );
-                
+
                 FR_Data_RMS_Value.Clear();
             }
             sortedDict = null;

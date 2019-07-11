@@ -65,7 +65,7 @@ namespace CashelFirmware.NunitTests
         /// <param name="TestLog">Object of Extent Report for log info</param>
         /// <param name="webdriver"></param>
         /// </summary>
-        public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling, string DataSetFolderPath,bool isCalibrationNeeded=true,string IsFolderPath=null)
+        public void TestCabling(IWebDriver webdriver,string deviceIP,ExtentTest TestLog,string Cabling, string DataSetFolderPath,bool isCalibrationNeeded=true,bool IsDSPValidationRequired=true)
         {  
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
@@ -76,14 +76,7 @@ namespace CashelFirmware.NunitTests
             
             //created this so that shared Data Set can be used for Test Cases with no injection and injection
 
-            if (IsFolderPath == null)
-            {
-                DataSetFileNameWithPath = DataSetFolderPath + Cabling + ".xlsx";
-            }
-            else
-            {
-                DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + IsFolderPath + Cabling + ".xlsx";
-            }
+            DataSetFileNameWithPath = DataSetFolderPath + Cabling + ".xlsx";
 
             if (isCalibrationNeeded)
             {
@@ -252,14 +245,10 @@ namespace CashelFirmware.NunitTests
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
             TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
 
-            if (FirmwareInformation.FirmwareVersion == 4.16)
+            if (FirmwareInformation.FirmwareVersion == 4.16 && IsDSPValidationRequired)
             {
                 Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
                 TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- " + Tabindex_Data_pmp.Get_PQCabling());
-
-
-                if (IsFolderPath == null)
-                {
                     Assert.Multiple(() =>
                     {
                        Assert.IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click());
@@ -342,7 +331,6 @@ namespace CashelFirmware.NunitTests
                             TestLog.Log(LogStatus.Pass, "Success:-Dsp2 feeder number:- " + dspfeeder + ": " + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
                         }
                     });
-                }
             }
             TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test"); 
         }
@@ -784,7 +772,7 @@ namespace CashelFirmware.NunitTests
             TestLog.Log(LogStatus.Pass, "Success:-Clicked on analog option to append it");
             TXRatiobuilder = string.Empty;
 
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < DeviceInformation.glb_deviceType; i++)
             {
                 Assert.IsTrue(Tabindex_Configuration_dfr.Item_dfr_analog_channel_Click(i + 1), "Clicked on Channel[" + i + "] option");
                 TestLog.Log(LogStatus.Pass, "Success:-Clicked on Channel[" + i + "] option");

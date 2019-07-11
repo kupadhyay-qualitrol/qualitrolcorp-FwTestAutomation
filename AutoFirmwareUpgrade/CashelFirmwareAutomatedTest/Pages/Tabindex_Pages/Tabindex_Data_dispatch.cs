@@ -154,8 +154,28 @@ namespace Tabindex_Data.dispatch
 
         public bool Item_dispatch_data_Click()
         {
-            Item_dispatch_data.Click();
-            return true;
+            int retry = 100;
+            do
+            {
+                if (Item_dispatch_data.Enabled)
+                {
+                    Item_dispatch_data.Click();
+                    break;
+                }
+                else
+                {
+                    retry = retry - 1;
+                }
+            }
+            while (retry >= 0);
+            if (retry !=0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool Item_fr_data_Click()
