@@ -613,6 +613,12 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I1U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I1U3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I1U3I3I_phC.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
