@@ -448,10 +448,10 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I3I_phC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I_PhaseB.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I_phB.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I_PhaseC.xlsx">
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3I_phC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\1U3U3I.xlsx">
