@@ -5,7 +5,7 @@
 //USEUNIT IECBrowserPage
 
 //This method used for connecting the device and checking connection is proper with device or not
-function ConnectDeviceToIECBrowser(deviceIPAdd)
+function ConnectToIECBrowser(deviceIPAdd)
 {
   //Step1. Click on connect button on tool bar
   AssertClass.IsTrue(IECBrowserPage.ConnectDevice(),"Clicked on connect button at toolbar of IECbrowser")
@@ -16,25 +16,42 @@ function ConnectDeviceToIECBrowser(deviceIPAdd)
   //Step3. Click on connect button
   AssertClass.IsTrue(IECBrowserPage.ClickOnConnectButton(),"Clicked on connect button")
   
-  //Step4. Test the connection
-  var device_connection = false
-  aqUtils.Delay(3*Referesh_time)
-  do
-  {
-    if(IECBrowserCommonMethod.CheckTraceLog("Done"))
+   aqUtils.Delay(3*Referesh_time)
+}
+function ConnectDeviceToIECBrowser(deviceIPAdd)
+{
+  ConnectToIECBrowser(deviceIPAdd)
+  
+  if(IECBrowserCommonMethod.CheckTraceLog("Done"))
     {
      Log.Message("Connection successful") 
-     device_connection = true   
      aqUtils.Delay(2*Referesh_time)  //Delay for getting page refereshed
     }
-    else if(IECBrowserCommonMethod.CheckTraceLog("Connect failed!"))
-    {
-     IECBrowserPage.CleareTraceLog()
+	else if(IECBrowserCommonMethod.CheckTraceLog("Connect failed!"))
+	{
+	 var device_connection = false
+	 var protocol_enable_counter = 0
+	
+	do
+  {
+    protocol_enable_counter++
+	
+	 ConnectToIECBrowser(deviceIPAdd)
+	 
+	if(IECBrowserCommonMethod.CheckTraceLog("Done"))
+	{
+	  Log.Message("Connection successful") 
+     device_connection = true   
+     aqUtils.Delay(2*Referesh_time)  //Delay for getting page refereshed
+	}    
+    else
+	{
+	 IECBrowserPage.CleareTraceLog()
      Log.Message("Retry connection")
-     IECBrowser_Methods.ConnectDeviceToIECBrowser(deviceIPAdd)
-    }  
+	}	
   }
-  while(!device_connection)
+  while(!device_connection && protocol_enable_counter<=10)
+	}
 }
 //This method will add protocol and download the cid files
 function VerifyDeviceConnection()

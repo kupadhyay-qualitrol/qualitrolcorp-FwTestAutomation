@@ -6,6 +6,7 @@
 //USEUNIT ConfigEditorPage
 //USEUNIT DeviceManagementPage
 //USEUNIT DeviceTopologyPage
+//USEUNIT GeneralPage
 
 //This method is used to add protocols in a device
 function EnableProtocols()
