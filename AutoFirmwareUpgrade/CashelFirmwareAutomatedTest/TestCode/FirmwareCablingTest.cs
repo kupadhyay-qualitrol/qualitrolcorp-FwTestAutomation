@@ -70,7 +70,12 @@ namespace CashelFirmware.NunitTests
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
             Tabindex_Data_soh Tabindex_Data_soh = new Tabindex_Data_soh(webdriver);
-            
+
+            do
+            {
+                GetDevicePingReplySuccess = pinger.Send(deviceIP);
+            }
+            while (!GetDevicePingReplySuccess.Status.ToString().Equals("Success"));
 
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
             

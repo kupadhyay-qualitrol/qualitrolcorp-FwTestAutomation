@@ -592,6 +592,9 @@
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I3I_phB.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U3I3I3I_phC.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -602,6 +605,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U4I3I.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U4I3I_phB.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestDataFiles\FR_DISPATCHRMS_DATASET_18Channel\4U1U4I3I_phC.xlsx">
