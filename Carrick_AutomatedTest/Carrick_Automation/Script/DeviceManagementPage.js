@@ -40,7 +40,7 @@ function ClickonRetrieveConfig()
     }
     while (retrycount<=60) //Trying to retrieve the config for 2 minute after that will fail the script
     //CommonMethod.CheckActivityLog("Configuration retrieved successfully from device")
-    if(retrycount!=61)
+    if(retrycount==61)
     {
       Log.Message("Unable to retrieve the config")
       return false
