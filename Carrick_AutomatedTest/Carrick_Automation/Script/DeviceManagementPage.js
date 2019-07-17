@@ -44,6 +44,14 @@ function ClickonRetrieveConfig()
         DeviceManagementToolbar.ClickItem("Device &Management")
         DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
       }
+      else if(CommonMethod.CheckActivityLog("Retrieve configuration from device")) //Retrieve configuration from device IND_DAU_51 failed
+      {
+        aqUtils.Delay(2000) //wait before retry 
+        //Clear Session log  
+        SessionLogPage.ClearLog()  
+        DeviceManagementToolbar.ClickItem("Device &Management")
+        DeviceManagementToolbar.ClickItem("Device &Management|Configuration|&Retrieve Configuration")
+      }
       else if(CommonMethod.CheckActivityLog("Unable to establish connection with device"))
       {
        Log.Error("Device IP is wrong")
