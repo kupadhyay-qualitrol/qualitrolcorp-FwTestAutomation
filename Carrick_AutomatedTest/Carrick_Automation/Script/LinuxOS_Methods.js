@@ -56,10 +56,17 @@ function CleanDevice(deviceIP)
   do
   {
     deviceStatus=CommonMethod.GetDeviceStatusOnPing(deviceIP)
-    counter=counter+1
-    aqUtils.Delay(1000)
+    if(deviceStatus=="Success")
+    {
+      counter=counter+1
+      aqUtils.Delay(1000)
+    }
   }
   while (deviceStatus=="Success" && counter<=20)
+  if(counter==21)
+  {
+    Log.Error("Device has not gone for reboot after cleanup")
+  }
   
   counter =0
   do

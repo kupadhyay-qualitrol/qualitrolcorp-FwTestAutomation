@@ -26,7 +26,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Initialization" key="{D01B0748-F5F7-4990-97C4-C1318DECA89C}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="Initialization" key="{D01B0748-F5F7-4990-97C4-C1318DECA89C}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
 						<testParameters>
 							<param0 name="deviceIP" type="3" localVarName="" varType="8" value="10.75.58.51" />
 						</testParameters>
