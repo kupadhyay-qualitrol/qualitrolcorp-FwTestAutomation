@@ -10,6 +10,7 @@
 			<child name="TimeZone_TestCases" key="{4906C236-045F-4DEA-9A47-483016389E62}" path="TimeZone_TestCases.js" />
 			<child name="Cabling_18Channel" key="{95952818-0B7B-4203-AC0E-3D62F32D7A95}" path="Cabling_18Channel.js" />
 			<child name="IECBrowser_Test_Cases" key="{0567AFC5-96F0-4E3B-9A32-C363E754303A}" path="IECBrowser_Test_Cases.js" />
+			<child name="Unit1" key="{151A556F-24B8-41AD-B64B-A2785D68FDEB}" path="Unit1.js" />
 		</folder>
 		<folder name="POM">
 			<child name="LoginPage" key="{A381FA1F-53C0-488D-B0A7-A1C5075B2252}" path="LoginPage.js" />
