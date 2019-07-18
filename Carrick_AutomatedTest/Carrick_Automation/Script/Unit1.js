@@ -1,5 +1,9 @@
 ﻿function Message()
 {
   Log.Message(BuiltIn.ParamCount())
-  Log.Message(BuiltIn.ParamStr(0))
+  for (let i=0;i<=BuiltIn.ParamCount();i++ )
+  {
+    Log.Message(BuiltIn.ParamStr(i))
+  }
+  
 }
