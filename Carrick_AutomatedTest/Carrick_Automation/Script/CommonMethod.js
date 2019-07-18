@@ -116,9 +116,9 @@ function CheckActivityLog(logmessage)
   aqUtils.Delay(2000)
   executioncount = executioncount+1
  }
- while (aqString.FindLast(Activitylog.Text,logmessage)==-1 && executioncount<=10) 
+ while (aqString.FindLast(Activitylog.Text,logmessage)==-1 && executioncount<=60) 
  
- if(executioncount==11)
+ if(executioncount==61)
  {
    return false
  }
