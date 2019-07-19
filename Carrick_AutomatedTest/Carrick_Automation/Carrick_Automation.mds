@@ -780,6 +780,63 @@
 					</testItem>
 				</children>
 			</testItem>
+<<<<<<< Updated upstream
+=======
+			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+				<testParameters />
+				<children>
+					<testItem name="LoginIQ+" key="{793EBB06-A01F-481E-ACE7-973ABEAA3721}" group="False" enabled="False" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="StartReportIDME" key="{BD1C7B78-69DA-4900-B53B-F06472B0A0C3}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}StartReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="SetAnalogChannelNameIDME" key="{17FC0237-E921-41CE-BBEE-6F7FFE8EA4AE}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}SetAnalogChannelNameIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="Test IDME3U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U3I" key="{CF543998-C508-4873-9655-4D253CEDBBB6}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U3I3I" key="{24DF3437-EE4C-4AE3-848E-F87FE6DE7763}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U3I3I3I" key="{16072FDD-775F-43C5-9CBA-792C28BD50E6}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U3I3I3I3I" key="{6FC08BCF-93A9-4C99-8F78-A4C120D71729}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="TestIDMENOCIRCUIT" key="{5D5553E3-FBDA-44D9-9D5B-5C293E23597F}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECablingNOCIRCUIT" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="EndReportIDME" key="{6C6FD177-008E-450E-8835-FA593682E546}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}EndReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="CLoseIQPlus" key="{7A527B63-B181-440A-9BF3-726CA48B6F5E}" group="False" enabled="False" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+				</children>
+			</testItem>
+>>>>>>> Stashed changes
 		</children>
 	</testItems>
 	<variables key="{1F7A971B-01CD-4966-98C5-2260E1EA544C}">
