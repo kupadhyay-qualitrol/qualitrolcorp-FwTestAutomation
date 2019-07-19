@@ -96,6 +96,10 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="GetFirmwareVersion" key="{8929C17B-3111-4982-A534-DC15BFF0558E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="Enable Protocol" key="{54596F92-E184-47F4-B078-73AE1CCE8766}" group="False" enabled="True" testMoniker="{37E37903-9BCC-4642-8335-99F6AFCD097D}EnableProtocols" count="1" timeout="0" stopOnError="3" stopOnException="2" description="Enables protocol">
 								<testParameters />
 								<children />
@@ -328,7 +332,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="S1U1U3I3I3I3I" key="{63D3D983-F9BF-4445-A666-B4CDD3A50654}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCablingS1U1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="S1U1U3I3I3I3I" key="{63D3D983-F9BF-4445-A666-B4CDD3A50654}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCablingS1U1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{428D8640-2FB3-4B49-9884-E5B4E67C5AE1}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -337,7 +341,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="S3U1U3I3I3I3I" key="{17B8BAC9-E066-4AEB-AA60-82483A5FB635}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCablingS3U1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="S3U1U3I3I3I3I" key="{17B8BAC9-E066-4AEB-AA60-82483A5FB635}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCablingS3U1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{85707DF4-2B94-479F-B903-AC7731277E07}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
