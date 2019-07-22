@@ -29,11 +29,14 @@ var counter
 function Test()
 {
   Log.Message(BuiltIn.ParamCount())
-  for (i=0;i< BuiltIn.ParamCount();i++)
+  var temp =aqString.Trim(BuiltIn.ParamStr(11))
+  Log.Message(temp)
+  aqString.ListSeparator=";"
+  Log.Message(aqString.GetListLength(temp))
+  for(i=0;i<aqString.GetListLength(temp);i++)
   {
-    Log.Message(BuiltIn.ParamStr(i))
+    aqString.GetListItem(temp,i)
   }
-  
   
 }
 
