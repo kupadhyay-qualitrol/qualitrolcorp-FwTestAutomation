@@ -96,6 +96,10 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="GetFirmwareVersion" key="{8929C17B-3111-4982-A534-DC15BFF0558E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
 							<testItem name="Enable Protocol" key="{54596F92-E184-47F4-B078-73AE1CCE8766}" group="False" enabled="True" testMoniker="{37E37903-9BCC-4642-8335-99F6AFCD097D}EnableProtocols" count="1" timeout="0" stopOnError="3" stopOnException="2" description="Enables protocol">
 								<testParameters />
 								<children />

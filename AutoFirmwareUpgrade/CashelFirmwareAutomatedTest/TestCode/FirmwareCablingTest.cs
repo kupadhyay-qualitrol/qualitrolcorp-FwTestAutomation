@@ -252,7 +252,7 @@ namespace CashelFirmware.NunitTests
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
             TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
 
-            if (FirmwareInformation.FirmwareVersion == 4.16)
+            if (FirmwareInformation.FirmwareVersion >= 4.16)
             {
                 Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
                 TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- " + Tabindex_Data_pmp.Get_PQCabling());
@@ -347,7 +347,7 @@ namespace CashelFirmware.NunitTests
             TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test"); 
         }
 
-        public bool ValidateCabling(IWebDriver webdriver, string deviceIP, ExtentTest TestLog, string Cabling, string DataSetFolderPath)
+        public bool ValidateCabling(IWebDriver webdriver, string deviceIP, ExtentTest TestLog, string Cabling, string DataSetFolderPath,double FwVersion)
         {
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
@@ -375,7 +375,7 @@ namespace CashelFirmware.NunitTests
 
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
             TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
-            if (FirmwareInformation.FirmwareVersion == 4.16)
+            if (FwVersion >= 4.16)
             {
                 Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
                 TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- " + Tabindex_Data_pmp.Get_PQCabling());
