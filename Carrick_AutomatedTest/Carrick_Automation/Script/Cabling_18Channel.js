@@ -26,6 +26,17 @@ var Busbar1_Name ="Busbar 1"
 var Busbar2_Name ="Busbar 2"
 var counter
 
+function Test()
+{
+  Log.Message(BuiltIn.ParamCount())
+  for (i=0;i< BuiltIn.ParamCount();i++)
+  {
+    Log.Message(BuiltIn.ParamStr(i))
+  }
+  
+  
+}
+
 function TestCabling(DatasetFolderPath,CablingName,TestLog)
 {
   try
