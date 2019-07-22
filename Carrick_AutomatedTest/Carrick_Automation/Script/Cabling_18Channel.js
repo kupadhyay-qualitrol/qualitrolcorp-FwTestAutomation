@@ -35,7 +35,7 @@ function Test()
   Log.Message(aqString.GetListLength(temp))
   for(i=0;i<aqString.GetListLength(temp);i++)
   {
-    aqString.GetListItem(temp,i)
+    Log.Message(aqString.GetListItem(temp,i))
   }
   
 }
