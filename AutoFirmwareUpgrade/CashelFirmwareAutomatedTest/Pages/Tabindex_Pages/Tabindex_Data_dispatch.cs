@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Tabindex_Data.dispatch
 {
     class Tabindex_Data_dispatch
     {
         IWebDriver webDriver;
+        WebDriverWait explicitWait;
         System.Resources.ResourceManager resourceManager;
 
         public Tabindex_Data_dispatch(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
+            explicitWait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(100));
         }
 
         #region Object Repository
@@ -152,30 +155,11 @@ namespace Tabindex_Data.dispatch
         }
 
 
-        public bool Item_dispatch_data_Click()
+        public bool Item_dispatch_data_Click(int waitTime)
         {
-            int retry = 100;
-            do
-            {
-                if (Item_dispatch_data.Enabled)
-                {
-                    Item_dispatch_data.Click();
-                    break;
-                }
-                else
-                {
-                    retry = retry - 1;
-                }
-            }
-            while (retry >= 0);
-            if (retry !=0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            explicitWait .Until(ExpectedConditions.ElementToBeClickable(Item_dispatch_data));
+            Item_dispatch_data.Click();              
+            return true;
         }
 
         public bool Item_fr_data_Click()
