@@ -155,7 +155,7 @@ namespace Tabindex_Data.dispatch
         }
 
 
-        public bool Item_dispatch_data_Click(int waitTime)
+        public bool Item_dispatch_data_Click()
         {
             explicitWait .Until(ExpectedConditions.ElementToBeClickable(Item_dispatch_data));
             Item_dispatch_data.Click();              

@@ -25,6 +25,16 @@ var DeviceStatus
 var Busbar1_Name ="Busbar 1"
 var Busbar2_Name ="Busbar 2"
 var counter
+var FwVersion
+
+function GetFwVersion()
+{
+  DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
+  TestLog = SeleniumWebdriver.StartTestCaseReport("GetFirmware Version")
+  FwVersion = dotNET.CashelFirmware_NunitTests.FirmwareInformation.GetFirmwareVersion(DeviceIP,DriverInstance,TestLog)
+  Log.Message("Firmwaere Versiion is:- "+ FwVersion)
+  SeleniumWebdriver.TearDown()
+}
 
 function TestCabling(DatasetFolderPath,CablingName,TestLog)
 {
@@ -169,7 +179,7 @@ function TestCabling(DatasetFolderPath,CablingName,TestLog)
     while (counter<=30)
     
     //Step16. Validate from Tabindex
-    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
+    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName,FwVersion))   
     
     if(CablingName=="NOCIRCUIT")
     {
