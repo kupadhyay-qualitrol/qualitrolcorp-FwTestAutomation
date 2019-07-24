@@ -20,7 +20,7 @@ namespace CashelFirmware.NunitTests
     {
         ResourceManager resourceManager;
         string DataSetFileNameWithPath;
-        string[] FR_Dispactch_RMS_Data;
+        double[] FR_Dispactch_RMS_Data;
         Dictionary<string, string> CablingInfo;
         StringBuilder FR_Data_RMS_Value;
         int[] TXRatioMultiplier;
@@ -38,52 +38,17 @@ namespace CashelFirmware.NunitTests
             sortedChannelType = new Dictionary<string, string>();
             
             FR_Data_RMS_Value = new StringBuilder();
-            FR_Dispactch_RMS_Data = new string[18];
+            FR_Dispactch_RMS_Data = new double[18];
             injectvoltage = 50.0;
             injectedcurrent = 1.0;
             TXRatioMultiplier = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
         }
 
-        public void Validate_FR_Dispatch_Data(IWebDriver webDriver, string deviceIP, ExtentTest TestLog, string Cabling,string FRDataSetPath)
+        public void Validate_FR_Dispatch_Data(IWebDriver webDriver, string deviceIP, ExtentTest TestLog, string Cabling, string FRDataSetPath)
         {
             Tabindex_Data_dispatch Tabindex_Data_Dispatch = new Tabindex_Data_dispatch(webDriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webDriver);
-
-            TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
-
             DataSetFileNameWithPath = FRDataSetPath + Cabling + ".xlsx";
-
-            Assert.AreEqual("Data", Tabindex_Data_Dispatch.OpenTabIndexPage(deviceIP), "Device is up/responding");
-            TestLog.Log(LogStatus.Info, "Device is up/responding");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Btn_Data_Click(),"Clicked on Data button on webpage");
-            TestLog.Log(LogStatus.Info, "Success:-Clicked on Data button on webpage");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdefault_Todispatch(), "Switched frame from Default to dispatch topology");
-            TestLog.Log(LogStatus.Info, "Success:- Switched frame from Default to dispatch topology");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_Data_dispatch_Click(), "Clicked on dispatch under tabindex_data page");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on dispatch under tabindex_data page");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
-            TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_fr_data_Click(), "Clicked on fr_data");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on fr_data");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_fundamental_Click(), "Clicked on fundamental");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on fundamental");
-
-            Assert.IsTrue(Tabindex_Data_Dispatch.Item_rms_Click(), "Clicked on rms");
-            TestLog.Log(LogStatus.Info, "Success:- Clicked on rms");
-
-            for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
-            {
-                FR_Dispactch_RMS_Data[index] = Tabindex_Data_Dispatch.Get_Magnitude(index);
-            }
             CablingInfo.Clear();
             Channel_TXRatio.Clear();
             sortedChannelType.Clear();
@@ -98,7 +63,7 @@ namespace CashelFirmware.NunitTests
                 }
                 else
                 {
-                    TestLog.Log(LogStatus.Info,"Key is :- "+ Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString()));
+                    TestLog.Log(LogStatus.Info, "Key is :- " + Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_label").ToString()));
                 }
 
                 if ((Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), channelindex, resourceManager.GetString("EXCELDATA_CABLING_busbar").ToString()) == "BUSBAR1") &&
@@ -194,7 +159,7 @@ namespace CashelFirmware.NunitTests
                     ChannelType.Add("Channel 201", "VOLTS");
                 }
             }
-            
+
 
             foreach (var t in sortedDict)
             {
@@ -204,34 +169,87 @@ namespace CashelFirmware.NunitTests
                 }
             }
 
-            for (int RMSValue = 0; RMSValue < DeviceInformation.glb_deviceType; RMSValue++)
-            {   
-                FR_Data_RMS_Value.AppendLine(sortedDict.ElementAt(RMSValue).Value+" -- "+ sortedDict.ElementAt(RMSValue).Key+ " -- " + FR_Dispactch_RMS_Data[RMSValue]);
-            }
+            TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(AppDomain.CurrentDomain.BaseDirectory + Cabling + ".txt"))
-            {
-                file.WriteLine(FR_Data_RMS_Value);
-                file.Close();
-            }
 
-            Assert.Multiple(() =>
+
+            Assert.AreEqual("Data", Tabindex_Data_Dispatch.OpenTabIndexPage(deviceIP), "Device is up/responding");
+            TestLog.Log(LogStatus.Info, "Device is up/responding");
+
+            Assert.IsTrue(Tabindex_Data_Dispatch.Btn_Data_Click(), "Clicked on Data button on webpage");
+            TestLog.Log(LogStatus.Info, "Success:-Clicked on Data button on webpage");
+
+            Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdefault_Todispatch(), "Switched frame from Default to dispatch topology");
+            TestLog.Log(LogStatus.Info, "Success:- Switched frame from Default to dispatch topology");
+
+            Assert.IsTrue(Tabindex_Data_Dispatch.Item_Data_dispatch_Click(), "Clicked on dispatch under tabindex_data page");
+            TestLog.Log(LogStatus.Info, "Success:- Clicked on dispatch under tabindex_data page");
+
+            Assert.IsTrue(Tabindex_Data_Dispatch.SwitchFrame_Fromdispatch_Todata(), "Switched frame from dispatch to data");
+            TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
+
+            for (int retrysum = 0; retrysum < 20; retrysum++)
             {
-                for (int test = 0; test < DeviceInformation.glb_deviceType; test++)
+                TestLog.Log(LogStatus.Info, "Retry:- " +retrysum);
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_dispatch_data_Click(), "Clicked on data");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on data");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_fr_data_Click(), "Clicked on fr_data");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on fr_data");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_fundamental_Click(), "Clicked on fundamental");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on fundamental");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Item_rms_Click(), "Clicked on rms");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on rms");
+
+                for (int index = 0; index < DeviceInformation.glb_deviceType; index++)
                 {
-                    if (sortedChannelType.ElementAt(test).Value == "VOLTS" && (sortedDict.ElementAt(test).Key.Length<=10))
+                    FR_Dispactch_RMS_Data[index] = Convert.ToDouble(Tabindex_Data_Dispatch.Get_Magnitude(index));
+                }
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.SwitchToParentFrame(), "Switched frame to Refresh Button");
+                TestLog.Log(LogStatus.Info, "Success:- Switched frame to Refresh Button");
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.Btn_refresh_click(), "Clicked on Refresh Button");
+                TestLog.Log(LogStatus.Info, "Success:- Clicked on Refresh Button");
+
+                System.Threading.Thread.Sleep(100000);
+
+                Assert.IsTrue(Tabindex_Data_Dispatch.SwitchSubFrame_Todata(), "Switched frame from dispatch to data");
+                TestLog.Log(LogStatus.Info, "Success:- Switched frame from dispatch to data");
+
+
+                for (int RMSValue = 0; RMSValue < DeviceInformation.glb_deviceType; RMSValue++)
+                {
+                    FR_Data_RMS_Value.AppendLine(sortedDict.ElementAt(RMSValue).Value + " -- " + sortedDict.ElementAt(RMSValue).Key + " -- " + FR_Dispactch_RMS_Data[RMSValue]);
+                }
+
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(AppDomain.CurrentDomain.BaseDirectory + Cabling + ".txt"))
+                {
+                    file.WriteLine(FR_Data_RMS_Value);
+                    file.Close();
+                }
+
+                Assert.Multiple(() =>
+                {
+                    for (int test = 0; test < DeviceInformation.glb_deviceType; test++)
                     {
-                        Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 3.0);
+                        if (sortedChannelType.ElementAt(test).Value == "VOLTS" && (sortedDict.ElementAt(test).Key.Length <= 10))
+                        {
+                            Assert.AreEqual(injectvoltage * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 3.0);
+                        }
+                        else if ((sortedDict.ElementAt(test).Key.Length <= 10))
+                        {
+                            Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.3);
+                        }
                     }
-                    else  if((sortedDict.ElementAt(test).Key.Length <= 10))
-                    {
-                        Assert.AreEqual(injectedcurrent * ChannelMultiplier(sortedDict.ElementAt(test).Key), Convert.ToDouble(FR_Dispactch_RMS_Data[test]), 0.3);
-                    }
-                }      
+                }
+                );
+
+                FR_Data_RMS_Value.Clear();
             }
-                );             
             sortedDict = null;
-            FR_Data_RMS_Value.Clear();
         }
 
         private int ChannelMultiplier(string channellabel)

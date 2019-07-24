@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Tabindex_Data.dispatch
 {
     class Tabindex_Data_dispatch
     {
         IWebDriver webDriver;
+        WebDriverWait explicitWait;
         System.Resources.ResourceManager resourceManager;
 
         public Tabindex_Data_dispatch(IWebDriver webDriver)
         {
             this.webDriver = webDriver;
             resourceManager = new System.Resources.ResourceManager("CashelFirmwareAutomatedTest.Resource", this.GetType().Assembly);
+            explicitWait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(100));
         }
 
         #region Object Repository
@@ -101,6 +104,14 @@ namespace Tabindex_Data.dispatch
             }
         }
 
+        private IWebElement Btn_refresh
+        {
+            get
+            {
+                return webDriver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td[2]/form/input"));
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -137,9 +148,17 @@ namespace Tabindex_Data.dispatch
             return true;
         }
 
+        public bool SwitchSubFrame_Todata()
+        {
+            webDriver.SwitchTo().Frame(SubFrame_dispatch_data);
+            return true;
+        }
+
+
         public bool Item_dispatch_data_Click()
         {
-            Item_dispatch_data.Click();
+            explicitWait .Until(ExpectedConditions.ElementToBeClickable(Item_dispatch_data));
+            Item_dispatch_data.Click();              
             return true;
         }
 
@@ -165,6 +184,20 @@ namespace Tabindex_Data.dispatch
         {
             return webDriver.FindElement(By.Name(String.Format(Item_dispatch_data_fr_data_fundamental_rms_magnitude, index).Replace("\"", ""))).GetAttribute("value").ToString();
         }  
+
+        public bool Btn_refresh_click()
+        {
+            Btn_refresh.Click();
+            return true;
+        }
+
+        public bool SwitchToParentFrame()
+        {
+            webDriver.SwitchTo().ParentFrame();
+            return true;
+        }
+
+
 
         #endregion
     }
