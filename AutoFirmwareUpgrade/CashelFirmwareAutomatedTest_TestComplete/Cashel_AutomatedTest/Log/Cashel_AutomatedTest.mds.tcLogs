@@ -138,6 +138,42 @@
 				<Prp name="relpath" type="S" value="25-07-2019_15_54_40_868\Description.tcLog"/>
 				<Prp name="status" type="I" value="2"/>
 			</Node>
+			<Node name="log idx=0013">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43672.6480798958"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{D54DE343-BECF-4AAA-8F57-288EFD3687CC}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="26-07-2019_15_33_14_103\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0014">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43672.6714518287"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{E469B178-2077-49BA-B9B9-1640E622A9B5}"/>
+				<Prp name="nameofroot" type="S" value="LaunchPQStandaloneApplication"/>
+				<Prp name="relpath" type="S" value="26-07-2019_16_06_53_438\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0015">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43672.6716434028"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{DF3C9F26-89A9-445C-A96B-B545E761577D}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="26-07-2019_16_07_09_990\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0016">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43672.744219375"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{23C14E53-CCE9-4A6C-B48C-1E7C22B187D8}"/>
+				<Prp name="nameofroot" type="S" value=""/>
+				<Prp name="relpath" type="S" value="26-07-2019_17_51_40_554\Description.tcLog"/>
+				<Prp name="status" type="I" value="3"/>
+			</Node>
 		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="11.0"/>
