@@ -250,7 +250,7 @@ namespace CashelFirmware.NunitTests
             Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling());
             TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
 
-            if (FirmwareInformation.FirmwareVersion == 4.16 && IsDSPValidationRequired)
+            if (FirmwareInformation.FirmwareVersion >= 4.16 && IsDSPValidationRequired)
             {
                 Assert.AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling());
                 TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- " + Tabindex_Data_pmp.Get_PQCabling());
