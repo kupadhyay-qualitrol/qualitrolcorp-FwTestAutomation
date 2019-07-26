@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="message 8">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="257"/>
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="247"/>
+					<Prp name="object right" type="I" value="422"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="43671.5104152199"/>
+					<Prp name="line #" type="I" value="32"/>
+					<Prp name="image file name" type="S" value="visImage51.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.Edtbx_PQDurUnit"/>
+					<Prp name="object bottom" type="I" value="273"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.Edtbx_PQDurUnit&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;Edtbx_PQDurUnit&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7395825116"/>
+			<Prp name="id" type="I" value="8"/>
+			<Prp name="message" type="S" value="The text 'Minute' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="32"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="units">
+			<Prp name="unit 0" type="S" value="{945D175E-39EC-4CA6-827D-6C14403DF63B}"/>
+		</Node>
+		<Node name="message 13">
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="The close command was send to the window with the 'OMICRON Harmonics - [70V_1A_Harmonic.hou]' caption. The process displayed a dialog with the 'OMICRON Harmonics' caption.&#xA;&#xA;Tested object:&#xA;Aliases.Harmonics&#xA;(Sys.Process(&quot;Harmonics&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7603189352"/>
+			<Prp name="id" type="I" value="13"/>
+			<Prp name="message" type="S" value="The close command was sent to the process &quot;Harmonics&quot;. Failed to wait for the process to close due to an unexpected window."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="81"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 7">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="257"/>
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="210"/>
+					<Prp name="object right" type="I" value="422"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="43671.5103853009"/>
+					<Prp name="line #" type="I" value="30"/>
+					<Prp name="image file name" type="S" value="visImage50.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.Edtbx_PQDuration"/>
+					<Prp name="object bottom" type="I" value="236"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.Edtbx_PQDuration&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;Edtbx_PQDuration&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7395527199"/>
+			<Prp name="id" type="I" value="7"/>
+			<Prp name="message" type="S" value="The text '5' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="30"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 2">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="206"/>
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="366"/>
+					<Prp name="object right" type="I" value="452"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="43671.5100494213"/>
+					<Prp name="line #" type="I" value="70"/>
+					<Prp name="image file name" type="S" value="visImage45.png"/>
+					<Prp name="object name" type="S" value="Aliases.Harmonics.dlgOpen.cbxFileName"/>
+					<Prp name="object bottom" type="I" value="388"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.Harmonics.dlgOpen.cbxFileName&#xA;(Sys.Process(&quot;Harmonics&quot;).Window(&quot;#32770&quot;, &quot;Open&quot;, 1).Window(&quot;ComboBoxEx32&quot;, &quot;&quot;, 1))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7392173843"/>
+			<Prp name="id" type="I" value="2"/>
+			<Prp name="message" type="S" value="The text 'D:\Belfast\GitSourceCode\FwTestAutomation\AutoFirmwareUpgrade\PQStandalone\TestData\PQStandaloneInjectionfile\70V_1A_Harmonic.hou' was entered in the combo box editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="70"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 12">
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="stack end" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="&#xA;&#xA;Tested object:&#xA;Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonStaticOutput&#xA;(Sys.Process(&quot;Harmonics&quot;).Window(&quot;Afx:00C20000:8:00010007:00000000:071101EF&quot;, &quot;OMICRON Harmonics - [70V_1A_Harmonic.hou]&quot;, 1).Window(&quot;XTPDockBar&quot;, &quot;xtpBarTop&quot;, 1).ToolBar(&quot;Toolbar&quot;).Button(&quot;Static Output&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="stack beginning" type="I" value="0"/>
+			<Prp name="date" type="D" value="43671.7601908449"/>
+			<Prp name="id" type="I" value="12"/>
+			<Prp name="message" type="S" value="Unable to perform the action because the button is disabled."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="79"/>
+			<Prp name="picture" type="S" value="Picture3.png"/>
+			<Prp name="pictype" type="I" value="2"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 9">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="25"/>
+					<Prp name="click point x" type="I" value="25"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="288"/>
+					<Prp name="object right" type="I" value="182"/>
+					<Prp name="click point y" type="I" value="288"/>
+					<Prp name="datetime" type="D" value="43671.5104186458"/>
+					<Prp name="line #" type="I" value="34"/>
+					<Prp name="image file name" type="S" value="visImage52.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.btn_ConfigureCabling"/>
+					<Prp name="object bottom" type="I" value="317"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="A click at point (0, 0) with no key pressed.&#xA;&#xA;Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.btn_ConfigureCabling&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;btn_ConfigureCabling&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7395869907"/>
+			<Prp name="id" type="I" value="9"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="34"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="item 0">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stacktext" type="S" value="StopOmicronInjection"/>
+			<Prp name="line no" type="I" value="79"/>
+		</Node>
+		<Node name="stack"/>
+		<Node name="message 5">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="231"/>
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="59"/>
+					<Prp name="object right" type="I" value="422"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="43671.5103222685"/>
+					<Prp name="line #" type="I" value="26"/>
+					<Prp name="image file name" type="S" value="visImage48.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.Edtbx_DeviceIP"/>
+					<Prp name="object bottom" type="I" value="85"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.Edtbx_DeviceIP&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;Edtbx_DeviceIP&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7394896528"/>
+			<Prp name="id" type="I" value="5"/>
+			<Prp name="message" type="S" value="The text '10.75.58.51' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="26"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 10">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="231"/>
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="160"/>
+					<Prp name="object right" type="I" value="422"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="43671.527811794"/>
+					<Prp name="line #" type="I" value="51"/>
+					<Prp name="image file name" type="S" value="visImage53.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.Edtbx_RecordStartTime"/>
+					<Prp name="object bottom" type="I" value="186"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.Edtbx_RecordStartTime&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;Edtbx_RecordStartTime&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7569792708"/>
+			<Prp name="id" type="I" value="10"/>
+			<Prp name="message" type="S" value="The text '25/07/2019 12:30' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="51"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 0">
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="The process ID is 11028."/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.738899213"/>
+			<Prp name="id" type="I" value="0"/>
+			<Prp name="message" type="S" value="The application &quot;C:\Program Files (x86)\OMICRON\Test Universe\Apps\Harmonics.exe&quot; started."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="66"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 3">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="485"/>
+					<Prp name="click point x" type="I" value="522"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="366"/>
+					<Prp name="object right" type="I" value="560"/>
+					<Prp name="click point y" type="I" value="377"/>
+					<Prp name="datetime" type="D" value="43671.5101686458"/>
+					<Prp name="line #" type="I" value="72"/>
+					<Prp name="image file name" type="S" value="visImage46.png"/>
+					<Prp name="object name" type="S" value="Aliases.Harmonics.dlgOpen.btnOpen"/>
+					<Prp name="object bottom" type="I" value="389"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.Harmonics.dlgOpen.btnOpen&#xA;(Sys.Process(&quot;Harmonics&quot;).Window(&quot;#32770&quot;, &quot;Open&quot;, 1).Window(&quot;Button&quot;, &quot;&amp;Open&quot;, 2))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7393362616"/>
+			<Prp name="id" type="I" value="3"/>
+			<Prp name="message" type="S" value="The button was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="72"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 11">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="221"/>
+					<Prp name="click point x" type="I" value="316"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="288"/>
+					<Prp name="object right" type="I" value="412"/>
+					<Prp name="click point y" type="I" value="302"/>
+					<Prp name="datetime" type="D" value="43671.5302981597"/>
+					<Prp name="line #" type="I" value="55"/>
+					<Prp name="image file name" type="S" value="visImage54.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.btn_DownloadPQData"/>
+					<Prp name="object bottom" type="I" value="317"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="A click at point (95, 14) with no key pressed.&#xA;&#xA;Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.btn_DownloadPQData&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;btn_DownloadPQData&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7594702778"/>
+			<Prp name="id" type="I" value="11"/>
+			<Prp name="message" type="S" value="The window was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="55"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 6">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="231"/>
+					<Prp name="click point x" type="I" value="-1"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="105"/>
+					<Prp name="object right" type="I" value="422"/>
+					<Prp name="click point y" type="I" value="-1"/>
+					<Prp name="datetime" type="D" value="43671.5103551042"/>
+					<Prp name="line #" type="I" value="28"/>
+					<Prp name="image file name" type="S" value="visImage49.png"/>
+					<Prp name="object name" type="S" value="Aliases.PQStandalone.PQStandaloneData.Edtbx_CablingType"/>
+					<Prp name="object bottom" type="I" value="131"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.PQStandalone.PQStandaloneData.Edtbx_CablingType&#xA;(Sys.Process(&quot;PQStandalone&quot;).WinFormsObject(&quot;PQStandaloneData&quot;).WinFormsObject(&quot;Edtbx_CablingType&quot;))"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7395223264"/>
+			<Prp name="id" type="I" value="6"/>
+			<Prp name="message" type="S" value="The text '4U3U4I' was entered in the text editor."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="28"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="item 1">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="stacktext" type="S" value="PQStandalone_Test"/>
+			<Prp name="line no" type="I" value="61"/>
+		</Node>
+		<Node name="message 4">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="168"/>
+					<Prp name="click point x" type="I" value="179"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="56"/>
+					<Prp name="object right" type="I" value="190"/>
+					<Prp name="click point y" type="I" value="67"/>
+					<Prp name="datetime" type="D" value="43671.5102883449"/>
+					<Prp name="line #" type="I" value="74"/>
+					<Prp name="image file name" type="S" value="visImage47.png"/>
+					<Prp name="object name" type="S" value="Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonStaticOutput"/>
+					<Prp name="object bottom" type="I" value="78"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonStaticOutput"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7394583681"/>
+			<Prp name="id" type="I" value="4"/>
+			<Prp name="message" type="S" value="The button was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="74"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 1">
+			<Node name="visualizer">
+				<Node name="current">
+					<Prp name="object left" type="I" value="40"/>
+					<Prp name="click point x" type="I" value="51"/>
+					<Prp name="storage file name" type="S" value=""/>
+					<Prp name="version" type="I" value="2"/>
+					<Prp name="kind" type="I" value="0"/>
+					<Prp name="need update" type="B" value="0"/>
+					<Prp name="rect color" type="I" value="255"/>
+					<Prp name="signature" type="S" value="{87B03792-E854-4F5D-9F33-165F1F874209}"/>
+					<Prp name="object top" type="I" value="56"/>
+					<Prp name="object right" type="I" value="62"/>
+					<Prp name="click point y" type="I" value="67"/>
+					<Prp name="datetime" type="D" value="43671.5099218519"/>
+					<Prp name="line #" type="I" value="68"/>
+					<Prp name="image file name" type="S" value="visImage44.png"/>
+					<Prp name="object name" type="S" value="Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonOpen"/>
+					<Prp name="object bottom" type="I" value="78"/>
+				</Node>
+			</Node>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="Tested object:&#xA;Aliases.Harmonics.wndAfx.xtpBarTop.toolbar.buttonOpen"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7390959491"/>
+			<Prp name="id" type="I" value="1"/>
+			<Prp name="message" type="S" value="The button was clicked with the left mouse button."/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="68"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="message 14">
+			<Prp name="type" type="I" value="2"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="remarks" type="S" value="The process ID is 11028."/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="link" type="S" value=""/>
+			<Prp name="date" type="D" value="43671.7604382755"/>
+			<Prp name="id" type="I" value="14"/>
+			<Prp name="message" type="S" value="The application &quot;C:\Program Files (x86)\OMICRON\Test Universe\Apps\Harmonics.exe&quot; got a command to close, but it is still running, though the default timeout has expired."/>
+			<Prp name="priority" type="I" value="400"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="81"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="owner id" type="I" value="-1"/>
+		</Node>
+		<Node name="child data"/>
+		<Prp name="status" type="I" value="2"/>
+	</Node>
+</Nodes>

@@ -493,7 +493,7 @@ namespace CashelFirmware.NunitTests
             Tabindex_Configuration_pqp Tabindex_Configuration_pqp = new Tabindex_Configuration_pqp(webdriver);
             TestLog.Log(LogStatus.Info, "Initialised the reference variable from classes");
 
-            DataSetFileNameWithPath = AppDomain.CurrentDomain.BaseDirectory + @"\TestData\PQStandalone_Ckt_ParamOnly\" + Cabling + ".xlsx";
+            DataSetFileNameWithPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestData\PQStandalone_Ckt_ParamOnly\" + Cabling + ".xlsx";
 
             Assert.AreEqual("Configuration", Tabindex_Configuration_dfr.OpenTabIndexPage(deviceIP), "Device is up/responding");
             TestLog.Log(LogStatus.Pass, "Device is up/responding");

@@ -91,9 +91,11 @@ namespace PQStandalone
         {
             try
             {
-                string DataSetFolderPath = DeviceInformation.BaseDirectoryPath+ @"\TestData\PQStandalone_Ckt_ParamOnly\";
+                DeviceInformation.glb_deviceType = 18;
+                Read_WriteExcel.xlapp = new Application();
+                string DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestData\PQStandalone_Ckt_ParamOnly\";
                 InfovarStartTest = ReportGeneration.extent.StartTest("Configure PQ param for "+CablingType+" Cabling");
-                Config_Cabling.TestCabling(webdriver, deviceIP, InfovarStartTest, CablingType, DataSetFolderPath, false);
+                Config_Cabling.TestCabling(webdriver, deviceIP, InfovarStartTest, CablingType, DataSetFolderPath, false,false);
                 Config_Cabling.ConfigurePQData(deviceIP, webdriver, InfovarStartTest, CablingType, PQDuration, PQDurationUnit);
             }
             catch (Exception ex)

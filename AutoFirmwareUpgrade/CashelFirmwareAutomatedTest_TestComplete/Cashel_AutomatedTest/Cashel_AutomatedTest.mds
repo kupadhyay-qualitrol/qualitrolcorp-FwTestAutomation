@@ -1,35 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root signature="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}" version="12.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}" version="14.0">
 	<children>
-		<child name="Script" key="{FEFF1416-F6F9-43A9-95EE-34A95EBFB03D}" type="Script" typeId="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" pluginName="Script">
-			<data path="Script\Script.tcScript" />
-		</child>
-		<child name="NameMapping" key="{28029FC5-C01D-4AAF-B6FF-80BAB142FDF4}" type="Name Mapping" typeId="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" pluginName="NameMapping">
-			<data path="NameMapping\NameMapping.tcNM" />
-		</child>
-		<child name="TestedApps" key="{2869684D-A2B2-4ED0-9304-36C7BDA7CE3D}" type="Tested Applications" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" pluginName="">
-			<data path="TestedApps\TestedApps.tcTAs" />
-		</child>
-	</children>
-	<folders>
-		<folder caption="Advanced" description="A logical folder that is used to organize project items and elements." moniker="{69583268-92F3-49FA-B573-C831F5ABC27B}">
-			<references>
-				<ref key="{FEFF1416-F6F9-43A9-95EE-34A95EBFB03D}" />
-			</references>
+		<folder name="Advanced" moniker="{69583268-92F3-49FA-B573-C831F5ABC27B}">
+			<child name="Script" key="{FEFF1416-F6F9-43A9-95EE-34A95EBFB03D}" type="Script" typeId="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" pluginName="Script" path="Script\Script.tcScript" />
 		</folder>
-	</folders>
+		<child name="NameMapping" key="{28029FC5-C01D-4AAF-B6FF-80BAB142FDF4}" type="Name Mapping" typeId="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" pluginName="NameMapping" path="NameMapping\NameMapping.tcNM" />
+		<child name="TestedApps" key="{2869684D-A2B2-4ED0-9304-36C7BDA7CE3D}" type="Tested Applications" typeId="{90D101C8-80C7-48D4-9055-2E451B9BCD75}" pluginName="" path="TestedApps\TestedApps.tcTAs" />
+	</children>
 	<config language="{897793E3-73F3-4895-A956-3D41D3A24A45}" />
-	<testItems key="{D6A2D64E-F034-4624-9B6D-EF17B9363F56}">
+	<testItems key="{D6A2D64E-F034-4624-9B6D-EF17B9363F56}" version="14">
 		<children>
-			<testItem name="LaunchPQStandaloneApplication" key="{13F5DD9E-55C9-4BC5-A22F-5CDDE933D673}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}LaunchPQStandaloneApp" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="LaunchPQStandaloneApplication" key="{13F5DD9E-55C9-4BC5-A22F-5CDDE933D673}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}LaunchPQStandaloneApp" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
-			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="22" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="22" timeout="0" stopOnError="0" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
-			<testItem name="ClosePQStandaloneApplication" key="{85B65B9D-02F3-4B97-998F-B321068AC925}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}ClosePQStandaloneApp" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="ClosePQStandaloneApplication" key="{85B65B9D-02F3-4B97-998F-B321068AC925}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}ClosePQStandaloneApp" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
@@ -39,7 +28,124 @@
 		<data Version="3" />
 	</variables>
 	<settings key="{CBB56E22-A4AD-4413-A371-61A05D91CB29}">
-		<settingsVersion value="12.60" />
+		<settingsVersion value="14.0" />
+		<setting name="ApplicationHangingProcessFilterMode" type="6" rowIndex="4" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Use all processes" />
+				<row val0="Use only tested applications" />
+				<row val0="Use only selected processes" />
+				<row val0="Ignore selected processes" />
+				<row val0="Ignore all processes" />
+			</data>
+		</setting>
+		<setting name="ApplicationHangingProcessList" type="6" rowIndex="-1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="ApplicationHangingTimeout" type="2" value="30000" />
+		<setting name="CLRBridge_PreferredApartmentModel" type="6" rowIndex="0" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Does not matter" />
+				<row val0="Single-threaded apartment" />
+				<row val0="Multi-threaded apartment" />
+			</data>
+		</setting>
+		<setting name="CLRBridge_PreferredArchitecture" type="6" rowIndex="1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="The same as the operating system" />
+				<row val0="32-bit" />
+				<row val0="64-bit" />
+			</data>
+		</setting>
+		<setting name="CLRBridge_SelectedComponents" type="6" rowIndex="-1" colIndex="1">
+			<columns>
+				<column type="5" enabled="True" />
+				<column type="1" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="CountProcessesOfAllUsers" type="1" value="True" />
+		<setting name="DbgServices_Active" type="1" value="True" />
+		<setting name="DbgServices_DepthShown" type="2" value="10" />
+		<setting name="DbgServices_EnableEvents" type="1" value="True" />
+		<setting name="DbgServices_Priority" type="6" rowIndex="3" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="pmLowest" />
+				<row val0="pmLower" />
+				<row val0="pmNormal" />
+				<row val0="pmHigher" />
+				<row val0="pmHighest" />
+			</data>
+		</setting>
+		<setting name="DbgServices_UseExtendedDebugger" type="1" value="True" />
+		<setting name="DraggingDelay" type="2" value="5" />
+		<setting name="General_CurrentImageFormat" type="5" value="126_0_0_0_97_113_115_111_1_0_0_0_4_0_0_0_114_0_111_0_111_0_116_0_1_0_0_0_9_0_0_0_102_0_111_0_114_0_109_0_97_0_116_0_107_0_101_0_121_0_1_0_0_0_38_0_0_0_123_0_66_0_65_0_55_0_52_0_53_0_49_0_54_0_57_0_45_0_70_0_51_0_52_0_68_0_45_0_52_0_55_0_49_0_48_0_45_0_66_0_51_0_55_0_70_0_45_0_68_0_53_0_69_0_70_0_69_0_56_0_65_0_53_0_49_0_51_0_51_0_57_0_125_0_1_0_0_0_16_0_0_0_112_0_110_0_103_0_99_0_111_0_110_0_102_0_105_0_103_0_117_0_114_0_97_0_116_0_105_0_111_0_110_0_2_0_0_0_16_0_0_0_99_0_111_0_109_0_112_0_114_0_101_0_115_0_115_0_105_0_111_0_110_0_108_0_101_0_118_0_101_0_108_0_0_0_0_0_4_0_0_0_10_0_0_0_105_0_110_0_116_0_101_0_114_0_108_0_97_0_99_0_101_0_100_0_5_0_0_0_0_0_0_0_0_0_" />
+		<setting name="General_DisableDWMBeforeCapturingImage" type="1" value="True" />
+		<setting name="General_ImageFormat" type="5" value="Format: PNG; Compression level: 4" />
+		<setting name="General_ObjectTreeModel" type="6" rowIndex="0" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Tree" />
+				<row val0="Flat" />
+			</data>
+		</setting>
+		<setting name="General_ProjectLogLocation" type="5" value="Log" />
+		<setting name="General_UnitsEncoding" type="6" rowIndex="1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="UTF-16" />
+				<row val0="UTF-8" />
+				<row val0="ANSI" />
+				<row val0="Auto" />
+			</data>
+		</setting>
+		<setting name="HipTest_ProjectID" type="2" value="-1" />
+		<setting name="HipTest_ProjectName" type="5" value="The current project is not bound to HipTest." />
+		<setting name="HipTest_SaveResults" type="1" value="True" />
+		<setting name="HipTest_SynchronizeBeforeRun" type="1" value="True" />
+		<setting name="HipTest_SynchronizeOnOpening" type="1" value="True" />
+		<setting name="HipTest_SynchronizeTestRun" type="1" value="False" />
+		<setting name="HipTest_TestRunID" type="5" value="" />
+		<setting name="HipTest_TestRunName" type="5" value="[Test run created last]" />
+		<setting name="JavaBridge_Classes" type="6" rowIndex="-1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="JavaBridge_ClassPaths" type="6" rowIndex="-1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="JavaFXOpenApp_DoNotRecognizeJavaFXStageAsAWTComponent" type="1" value="True" />
+		<setting name="JavaFXOpenApp_ExposedCustomNodes" type="6" rowIndex="-1" colIndex="2">
+			<columns>
+				<column type="1" enabled="True" />
+				<column type="5" enabled="True" />
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
 		<setting name="JavaFXOpenApp_NodeByClassNameFilters" type="6" rowIndex="8" colIndex="2">
 			<columns>
 				<column type="1" enabled="True" />
@@ -58,144 +164,27 @@
 				<row val0="True" val1="com.sun.javafx.scene.control.ContextMenuContent$MenuItemContainer" val2="True" />
 			</data>
 		</setting>
-		<setting name="{42651A7C-4287-4C91-AE26-98CBD2EA9355}" type="1" value="False" />
-		<setting name="{A2568CC8-7E8E-42C5-A87D-B69684A1E616}" type="1" value="True" />
-		<setting name="{3EADAFE2-0CD4-4B1E-A2A9-B184E94FDCC7}" type="6" rowIndex="1" colIndex="0">
+		<setting name="JavaOpenApp_DoNotRecognizeChildSWTAsParent" type="1" value="False" />
+		<setting name="KeyPressingDelay" type="2" value="0" />
+		<setting name="MouseMovementDelay" type="2" value="0" />
+		<setting name="ObjectMapping_Objects" type="6" rowIndex="-1" colIndex="3">
 			<columns>
 				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="UTF-16" />
-				<row val0="UTF-8" />
-				<row val0="ANSI" />
-				<row val0="Auto" />
-			</data>
-		</setting>
-		<setting name="RecreateActiveXObjects" type="1" value="False" />
-		<setting name="{0BE15905-46A9-40D6-9BE2-892EC4AABBD4}" type="1" value="False" />
-		<setting name="{9273E75A-1D1D-4F5F-9421-28A4BD60D485}" type="1" value="True" />
-		<setting name="{239AE5E0-D898-415D-8ECB-EBEB31D3F66F}" type="6" rowIndex="2" colIndex="1">
-			<columns>
-				<column type="1" enabled="True" />
 				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="False" val1="*" />
-				<row val0="True" val1="DirectUIHWND" />
-				<row val0="True" val1="Windows.UI.Core.CoreWindow" />
-			</data>
-		</setting>
-		<setting name="{E3AC1830-9216-4DC9-AB7B-884F3B0E9A48}" type="2" value="0" />
-		<setting name="{0CC2421A-8395-402E-B303-80AE4D4658A4}" type="1" value="True" />
-		<setting name="{7E9D3E8B-DFF5-4737-A877-E94B6B932BCD}" type="1" value="True" />
-		<setting name="{6BA39D6A-88C9-49B1-A310-A31F46136DFB}" type="1" value="False" />
-		<setting name="{2FCB2EB2-336E-4FD4-96A3-8710A73ADDD8}" type="1" value="False" />
-		<setting name="{FE195F25-7DC0-457F-9336-71ED39243753}" type="5" value="126_0_0_0_97_113_115_111_1_0_0_0_4_0_0_0_114_0_111_0_111_0_116_0_1_0_0_0_9_0_0_0_102_0_111_0_114_0_109_0_97_0_116_0_107_0_101_0_121_0_1_0_0_0_38_0_0_0_123_0_66_0_65_0_55_0_52_0_53_0_49_0_54_0_57_0_45_0_70_0_51_0_52_0_68_0_45_0_52_0_55_0_49_0_48_0_45_0_66_0_51_0_55_0_70_0_45_0_68_0_53_0_69_0_70_0_69_0_56_0_65_0_53_0_49_0_51_0_51_0_57_0_125_0_1_0_0_0_16_0_0_0_112_0_110_0_103_0_99_0_111_0_110_0_102_0_105_0_103_0_117_0_114_0_97_0_116_0_105_0_111_0_110_0_2_0_0_0_16_0_0_0_99_0_111_0_109_0_112_0_114_0_101_0_115_0_115_0_105_0_111_0_110_0_108_0_101_0_118_0_101_0_108_0_0_0_0_0_4_0_0_0_10_0_0_0_105_0_110_0_116_0_101_0_114_0_108_0_97_0_99_0_101_0_100_0_5_0_0_0_0_0_0_0_0_0_" />
-		<setting name="{C32B04F8-59F6-4F95-8E50-12818E0DECC7}" type="6" rowIndex="3" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="pmLowest" />
-				<row val0="pmLower" />
-				<row val0="pmNormal" />
-				<row val0="pmHigher" />
-				<row val0="pmHighest" />
-			</data>
-		</setting>
-		<setting name="{3FC03B2F-1B76-433D-86AE-20B18B2CA600}" type="1" value="True" />
-		<setting name="{A4D0B1B0-14DA-4AFA-8AFC-E82D0400E7E9}" type="1" value="True" />
-		<setting name="CountProcessesOfAllUsers" type="1" value="True" />
-		<setting name="{949057FA-CBDC-4A23-BB7F-9A25DCAE8729}" type="6" rowIndex="1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Off" />
-				<row val0="Capture images" />
-			</data>
-		</setting>
-		<setting name="{EF07B18F-C1B0-489E-84EF-A6A0A578C45C}" type="6" rowIndex="0" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Top-level parent" />
-				<row val0="Desktop" />
-			</data>
-		</setting>
-		<setting name="{0DEF6033-13D4-4335-97E9-CC6F1FC04342}" type="1" value="True" />
-		<setting name="{DF56DCEA-130B-4D36-8893-5FDC090AFB17}" type="1" value="False" />
-		<setting name="CLRBridge_SelectedComponents" type="6" rowIndex="-1" colIndex="1">
-			<columns>
-				<column type="5" enabled="True" />
-				<column type="1" enabled="True" />
+				<column type="2" enabled="True" />
+				<column type="2" enabled="True" />
 			</columns>
 			<data />
 		</setting>
-		<setting name="{85CD048A-29FF-4ABF-95A6-B915AEA2C10D}" type="1" value="False" />
-		<setting name="{2044DC7F-423E-4668-8114-68D23AE97AD6}" type="2" value="50" />
-		<setting name="Recording_TestedAppsOnly" type="1" value="False" />
-		<setting name="{FB1CAF99-7FA6-447C-B963-D862CA8BFF89}" type="2" value="3000" />
-		<setting name="{3B76535B-58AD-456C-837E-091A5C480F6C}" type="1" value="True" />
-		<setting name="{3AE91BBD-F37D-40E6-B49D-D2F1EF68E285}" type="1" value="True" />
-		<setting name="{90FD1116-F071-44C8-AB72-F1916C2B3A1B}" type="1" value="False" />
-		<setting name="JavaFXOpenApp_ExposedCustomNodes" type="6" rowIndex="-1" colIndex="2">
-			<columns>
-				<column type="1" enabled="True" />
-				<column type="5" enabled="True" />
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{CE0B0B5B-F813-482E-BBEC-6E12A96D3B83}" type="1" value="False" />
-		<setting name="{D5773345-4407-4A8A-ACE6-0F0A9C8787C8}" type="1" value="False" />
-		<setting name="{C8F95D39-4AC0-4855-9D60-6E7E3BD87B30}" type="1" value="False" />
-		<setting name="{4FD668CC-C8C3-46B4-A220-8DDE5CD7A39F}" type="6" rowIndex="-1" colIndex="2">
-			<columns>
-				<column type="1" enabled="True" />
-				<column type="5" enabled="True" />
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="TextRecognizer_AcceptedProcesses" type="6" rowIndex="-1" colIndex="1">
-			<columns>
-				<column type="1" enabled="True" />
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{AF49D9D4-83CD-4BEA-BF27-8D70D88AC840}" type="1" value="False" />
-		<setting name="{6BE019A2-A836-4B31-84D9-F9DE78869D51}" type="6" rowIndex="0" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Tree" />
-				<row val0="Flat" />
-			</data>
-		</setting>
-		<setting name="{F7C29680-06BB-4F85-B0E3-C06AE2282A66}" type="1" value="True" />
-		<setting name="{596CA0D0-27CB-40D3-BAA5-BC1CECFF25AC}" type="6" rowIndex="-1" colIndex="2">
-			<columns>
-				<column type="1" enabled="True" />
-				<column type="5" enabled="True" />
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{0BD6AE2E-E5D9-4AD0-9BF3-2483D329B22A}" type="1" value="True" />
-		<setting name="JavaBridge_ClassPaths" type="6" rowIndex="-1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{3FC2A7B4-F4AF-4807-8D37-C3EE096DD330}" type="2" value="1024" />
-		<setting name="{9EB8E8E6-D2F2-4A8A-ADFB-492E8C0EAFEF}" type="2" value="10000" />
-		<setting name="{1DB8307D-FA4B-43E7-8E11-9F8F41ABD7E9}" type="1" value="True" />
-		<setting name="{47A56F4F-F2D3-4697-BEC8-632B29D5A344}" type="6" rowIndex="11" colIndex="1">
+		<setting name="OpenApps_ActivateSystemProcesses" type="1" value="False" />
+		<setting name="OpenApps_DbgAgent_AdvancedExceptionHandling" type="1" value="True" />
+		<setting name="OpenApps_DbgAgent_CombineClassDefinitions" type="1" value="False" />
+		<setting name="OpenApps_DbgAgent_EnableDebugAgent" type="1" value="True" />
+		<setting name="OpenApps_DbgAgent_StringLengthLimit" type="2" value="1024" />
+		<setting name="OpenApps_DbgAgent_UseStaticLibs" type="1" value="True" />
+		<setting name="OpenApps_EnableMultipleNamesForObjects" type="1" value="False" />
+		<setting name="OpenApps_MethodInvokeTimeout" type="2" value="3000" />
+		<setting name="OpenApps_MSAA_ListOfAcceptedWindows" type="6" rowIndex="11" colIndex="1">
 			<columns>
 				<column type="1" enabled="True" />
 				<column type="5" enabled="True" />
@@ -215,102 +204,8 @@
 				<row val0="True" val1="XTPPopupBar" />
 			</data>
 		</setting>
-		<setting name="TextRecognizer_AcceptedWindows" type="6" rowIndex="-1" colIndex="1">
-			<columns>
-				<column type="1" enabled="True" />
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{15C8845F-53E4-4045-9800-74766ABC4B34}" type="2" value="0" />
-		<setting name="{18FD096E-E6B8-4D3D-9619-71670FC81D48}" type="1" value="False" />
-		<setting name="{3EDDD87D-14FB-46FB-9609-CEDE76C0CED7}" type="1" value="False" />
-		<setting name="{45AE3709-5569-4F74-BD85-C222C71981ED}" type="1" value="True" />
-		<setting name="DraggingDelay" type="2" value="5" />
-		<setting name="ObjectMapping_Objects" type="6" rowIndex="-1" colIndex="3">
-			<columns>
-				<column type="5" enabled="True" />
-				<column type="5" enabled="True" />
-				<column type="2" enabled="True" />
-				<column type="2" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{A892B59C-EC27-4ABB-8305-4F885C9BC8CA}" type="6" rowIndex="1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Depth-first" />
-				<row val0="Breadth-first" />
-			</data>
-		</setting>
-		<setting name="{24DB98D6-5EF8-47BF-977E-C2FD2C5F5FB3}" type="5" value="Log" />
-		<setting name="{3BAA9083-AE46-48CE-BFF4-A656DECF8E2F}" type="1" value="False" />
-		<setting name="{3E8BAA4F-EA09-4DD1-BD8E-DA765C8CF39B}" type="1" value="True" />
-		<setting name="{BE6D588C-BDC7-42E0-8BAE-3E3D8B0F7E83}" type="1" value="True" />
-		<setting name="{F544BC81-7A86-4230-B1FC-1B685211A0B4}" type="5" value="Format: PNG; Compression level: 4" />
-		<setting name="JavaOpenApp_DoNotRecognizeChildSWTAsParent" type="1" value="False" />
-		<setting name="{94ACE9B9-2204-49E3-89A5-87766C9A615E}" type="6" rowIndex="-1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{98C6A210-59EF-4CD6-AA7E-B41953DEC74A}" type="1" value="False" />
-		<setting name="{BF9B6482-CEA1-4402-BA61-9702404F1F12}" type="1" value="True" />
-		<setting name="{C3267834-69E4-4CD8-B16A-B60A9BB8A3B4}" type="1" value="False" />
-		<setting name="{1398B0BE-92B7-4650-A467-751B8FAAB738}" type="6" rowIndex="0" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Update existing frames and capture new frames, if needed" />
-				<row val0="Update existing frames only" />
-			</data>
-		</setting>
-		<setting name="ApplicationHangingProcessFilterMode" type="6" rowIndex="4" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Use all processes" />
-				<row val0="Use only tested applications" />
-				<row val0="Use only selected processes" />
-				<row val0="Ignore selected processes" />
-				<row val0="Ignore all processes" />
-			</data>
-		</setting>
-		<setting name="ApplicationHangingProcessList" type="6" rowIndex="-1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="{3A4F97B3-D3D3-41E5-BE37-C419B02D488A}" type="6" rowIndex="-1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-				<column type="5" enabled="True" />
-				<column type="2" enabled="True" />
-				<column type="2" enabled="True" />
-				<column type="5" enabled="True" />
-				<column type="1" enabled="True" />
-			</columns>
-			<data />
-		</setting>
-		<setting name="ApplicationHangingTimeout" type="2" value="30000" />
-		<setting name="CLRBridge_PreferredApartmentModel" type="6" rowIndex="0" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="Does not matter" />
-				<row val0="Single-threaded apartment" />
-				<row val0="Multi-threaded apartment" />
-			</data>
-		</setting>
-		<setting name="{C371F52C-2F81-459B-8A40-380AAA4FB590}" type="1" value="True" />
-		<setting name="{EF65967B-5D67-41D0-9E90-1E07D7ECE759}" type="6" rowIndex="9" colIndex="0">
+		<setting name="OpenApps_MSAA_TreeModel" type="1" value="False" />
+		<setting name="OpenApps_PriorityOfObjects" type="6" rowIndex="9" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
@@ -327,20 +222,7 @@
 				<row val0="NativeMSAA" />
 			</data>
 		</setting>
-		<setting name="KeyPressingDelay" type="2" value="0" />
-		<setting name="{AE3F26D8-A5BD-4172-9F50-F2B9D1D03611}" type="1" value="True" />
-		<setting name="CLRBridge_PreferredArchitecture" type="6" rowIndex="1" colIndex="0">
-			<columns>
-				<column type="5" enabled="True" />
-			</columns>
-			<data>
-				<row val0="The same as the operating system" />
-				<row val0="32-bit" />
-				<row val0="64-bit" />
-			</data>
-		</setting>
-		<setting name="JavaFXOpenApp_DoNotRecognizeJavaFXStageAsAWTComponent" type="1" value="True" />
-		<setting name="{890C6D5A-4706-498E-A6EA-CA765851BB97}" type="6" rowIndex="0" colIndex="0">
+		<setting name="OpenApps_ProcessFilter_ProcessFilterMode" type="6" rowIndex="0" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
@@ -351,16 +233,152 @@
 				<row val0="Ignore selected processes" />
 			</data>
 		</setting>
-		<setting name="{E5242A20-9B70-4540-AEFD-7012791D3284}" type="1" value="True" />
-		<setting name="JavaBridge_Classes" type="6" rowIndex="-1" colIndex="0">
+		<setting name="OpenApps_ProcessFilter_ProcessList" type="6" rowIndex="-1" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
 			<data />
 		</setting>
-		<setting name="{D80391D4-892F-4CEC-865E-B7FACB3FAC84}" type="2" value="10" />
-		<setting name="MouseMovementDelay" type="2" value="0" />
-		<setting name="{A383BA1A-68CF-40AE-9FCD-B3E554E9ADD7}" type="6" rowIndex="1" colIndex="0">
+		<setting name="OpenApps_UIA_ListOfAcceptedWindows" type="6" rowIndex="2" colIndex="1">
+			<columns>
+				<column type="1" enabled="True" />
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="False" val1="*" />
+				<row val0="True" val1="DirectUIHWND" />
+				<row val0="True" val1="Windows.UI.Core.CoreWindow" />
+			</data>
+		</setting>
+		<setting name="OpenApps_UseNativeObjectNames" type="1" value="True" />
+		<setting name="OpenApps_WPF_CompositeControls" type="6" rowIndex="-1" colIndex="2">
+			<columns>
+				<column type="1" enabled="True" />
+				<column type="5" enabled="True" />
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="OpenApps_WPF_ItemsTemplates" type="6" rowIndex="-1" colIndex="2">
+			<columns>
+				<column type="1" enabled="True" />
+				<column type="5" enabled="True" />
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="OpenApps_WPF_SimplifiedWPFObjectTree" type="1" value="False" />
+		<setting name="PerformanceCounters_List" type="6" rowIndex="-1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+				<column type="5" enabled="True" />
+				<column type="2" enabled="True" />
+				<column type="2" enabled="True" />
+				<column type="5" enabled="True" />
+				<column type="1" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="Playback_ErrHandling_OnError" type="6" rowIndex="1" colIndex="1">
+			<columns>
+				<column type="5" enabled="True" />
+				<column type="2" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Continue running" val1="0" />
+				<row val0="Stop project" val1="1" />
+				<row val0="Stop test item" val1="2" />
+			</data>
+		</setting>
+		<setting name="Playback_ErrHandling_OnObjectRecognitionError" type="6" rowIndex="0" colIndex="1">
+			<columns>
+				<column type="5" enabled="True" />
+				<column type="2" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Continue running" val1="0" />
+				<row val0="Stop project" val1="1" />
+				<row val0="Stop test item" val1="2" />
+			</data>
+		</setting>
+		<setting name="Playback_ErrHandling_OnWarning" type="6" rowIndex="0" colIndex="1">
+			<columns>
+				<column type="5" enabled="True" />
+				<column type="2" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Continue running" val1="0" />
+				<row val0="Stop project" val1="1" />
+				<row val0="Stop test item" val1="2" />
+			</data>
+		</setting>
+		<setting name="Playback_ErrHandling_ShowErrorDialog" type="1" value="True" />
+		<setting name="Playback_Log_AutosaveInterval" type="2" value="0" />
+		<setting name="Playback_Log_EventCount" type="2" value="0" />
+		<setting name="Playback_Log_PostImageOnError" type="1" value="True" />
+		<setting name="Playback_ObjectSearchStrategy" type="6" rowIndex="1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Depth-first" />
+				<row val0="Breadth-first" />
+			</data>
+		</setting>
+		<setting name="Playback_OverlappingWindow_IgnoreOverlappingWindow" type="1" value="False" />
+		<setting name="Playback_Runtime_AutoWaitTimeout" type="2" value="10000" />
+		<setting name="Playback_Runtime_DelayBetweenEvents" type="2" value="50" />
+		<setting name="Playback_Runtime_DisableMouse" type="1" value="False" />
+		<setting name="Playback_Runtime_MinimizeBeforePlayback" type="1" value="False" />
+		<setting name="Playback_Runtime_UseCaseSensitiveParameters" type="1" value="False" />
+		<setting name="Playback_StopOnError" type="1" value="True" />
+		<setting name="Playback_StopOnObjectRecognitionError" type="1" value="False" />
+		<setting name="Playback_StopOnWarning" type="1" value="False" />
+		<setting name="Playback_UnexpectedWndHandling_ClickOnFocusedControl" type="1" value="True" />
+		<setting name="Playback_UnexpectedWndHandling_IgnoreUnexpectedWindow" type="1" value="False" />
+		<setting name="Playback_UnexpectedWndHandling_PressEnter" type="1" value="True" />
+		<setting name="Playback_UnexpectedWndHandling_PressEsc" type="1" value="True" />
+		<setting name="Playback_UnexpectedWndHandling_SendCloseCommand" type="1" value="True" />
+		<setting name="Playback_UnexpectedWndHandling_StopExecution" type="1" value="False" />
+		<setting name="Recording_TestedAppsOnly" type="1" value="False" />
+		<setting name="RecreateActiveXObjects" type="1" value="False" />
+		<setting name="TextRecognizer_AcceptedProcesses" type="6" rowIndex="-1" colIndex="1">
+			<columns>
+				<column type="1" enabled="True" />
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="TextRecognizer_AcceptedWindows" type="6" rowIndex="-1" colIndex="1">
+			<columns>
+				<column type="1" enabled="True" />
+				<column type="5" enabled="True" />
+			</columns>
+			<data />
+		</setting>
+		<setting name="Visualizer_AutoUpdate" type="1" value="False" />
+		<setting name="Visualizer_AutoUpdateMode" type="6" rowIndex="0" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Update existing frames and capture new frames, if needed" />
+				<row val0="Update existing frames only" />
+			</data>
+		</setting>
+		<setting name="Visualizer_BindToSCC" type="1" value="True" />
+		<setting name="Visualizer_CaptureStyle" type="6" rowIndex="0" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Top-level parent" />
+				<row val0="Desktop" />
+			</data>
+		</setting>
+		<setting name="Visualizer_DeleteAll" type="1" value="True" />
+		<setting name="Visualizer_PlaybackCaptureProperties" type="1" value="False" />
+		<setting name="Visualizer_PlaybackCollectMode" type="6" rowIndex="1" colIndex="0">
 			<columns>
 				<column type="5" enabled="True" />
 			</columns>
@@ -369,6 +387,18 @@
 				<row val0="Capture images" />
 			</data>
 		</setting>
+		<setting name="Visualizer_RecordingCaptureProperties" type="1" value="False" />
+		<setting name="Visualizer_RecordingCollectMode" type="6" rowIndex="1" colIndex="0">
+			<columns>
+				<column type="5" enabled="True" />
+			</columns>
+			<data>
+				<row val0="Off" />
+				<row val0="Capture images" />
+			</data>
+		</setting>
+		<setting name="Visualizer_UseDuringPlayback" type="1" value="True" />
+		<setting name="Visualizer_UseDuringRecording" type="1" value="True" />
 	</settings>
 	<analysis key="{E7E087AF-B8D9-4B5D-B823-05ED3EC619A4}" />
 	<scc key="{00000000-0000-0000-0000-000000000000}" name="">

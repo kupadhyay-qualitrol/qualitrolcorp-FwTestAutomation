@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="summary">
+			<Node name="total">
+				<Prp name="total (sum)" type="I" value="24"/>
+			</Node>
+			<Node name="executed">
+				<Prp name="total (sum)" type="I" value="7"/>
+			</Node>
+			<Node name="failed">
+				<Prp name="total (sum)" type="I" value="4"/>
+			</Node>
+			<Node name="passed">
+				<Prp name="total (sum)" type="I" value="3"/>
+			</Node>
+			<Node name="warning">
+				<Prp name="total (sum)" type="I" value="0"/>
+			</Node>
+			<Prp name="start date" type="D" value="43671.6629859375"/>
+			<Prp name="stop date" type="D" value="43671.7607741782"/>
+			<Prp name="log status" type="I" value="0"/>
+			<Prp name="host" type="S" value="QTRL-553ZRN2"/>
+			<Prp name="user" type="S" value="kupadhyay"/>
+			<Prp name="test" type="S" value="Cashel_AutomatedTest"/>
+		</Node>
+		<Node name="log data">
+			<Node name="row2">
+				<Node name="messages"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="status" type="I" value="0"/>
+				<Prp name="start time" type="D" value="43671.6833758218"/>
+				<Prp name="end time" type="D" value="43671.7047128588"/>
+				<Prp name="details" type="S" value="{5AF3F511-3A49-464D-9D15-A5C78397A85E}"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest &lt; Iteration 2 &gt;"/>
+				<Prp name="index" type="I" value="2"/>
+			</Node>
+			<Node name="row0">
+				<Node name="messages"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="status" type="I" value="0"/>
+				<Prp name="start time" type="D" value="43671.6629859375"/>
+				<Prp name="end time" type="D" value="43671.6630351042"/>
+				<Prp name="details" type="S" value="{426B72A3-6C87-4426-BEDA-99FD935965B6}"/>
+				<Prp name="name" type="S" value="LaunchPQStandaloneApplication"/>
+				<Prp name="index" type="I" value="0"/>
+			</Node>
+			<Node name="row1">
+				<Node name="messages"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="status" type="I" value="0"/>
+				<Prp name="start time" type="D" value="43671.6630354167"/>
+				<Prp name="end time" type="D" value="43671.6833755324"/>
+				<Prp name="details" type="S" value="{E26D33F1-23AA-411A-B900-EFA4B444CE11}"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest &lt; Iteration 1 &gt;"/>
+				<Prp name="index" type="I" value="1"/>
+			</Node>
+			<Node name="row6">
+				<Node name="messages"/>
+				<Prp name="end time" type="D" value="43671.7607741782"/>
+				<Prp name="index" type="I" value="6"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest &lt; Iteration 6 &gt;"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="start time" type="D" value="43671.7604388079"/>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="details" type="S" value="{9D9BF5B2-1258-454B-9A3D-53B1BD94C5F6}"/>
+			</Node>
+			<Node name="row5">
+				<Node name="messages"/>
+				<Prp name="end time" type="D" value="43671.7604386574"/>
+				<Prp name="index" type="I" value="5"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest &lt; Iteration 5 &gt;"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="start time" type="D" value="43671.7388653009"/>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="details" type="S" value="{8626B11B-AE0B-4815-9B12-1D4D7263386E}"/>
+			</Node>
+			<Node name="row4">
+				<Node name="messages"/>
+				<Prp name="end time" type="D" value="43671.7388651389"/>
+				<Prp name="index" type="I" value="4"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest &lt; Iteration 4 &gt;"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="start time" type="D" value="43671.7253114236"/>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="details" type="S" value="{E91CE54B-8229-492E-A215-3787E9B541A0}"/>
+			</Node>
+			<Node name="row3">
+				<Node name="messages"/>
+				<Prp name="end time" type="D" value="43671.7253112384"/>
+				<Prp name="index" type="I" value="3"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest &lt; Iteration 3 &gt;"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="start time" type="D" value="43671.7047130093"/>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="details" type="S" value="{2A2A8703-8840-4B0C-904B-F740EE184ECB}"/>
+			</Node>
+		</Node>
+		<Prp name="hassummary" type="B" value="-1"/>
+	</Node>
+</Nodes>

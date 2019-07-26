@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="log data">
+			<Node name="row1">
+				<Node name="messages">
+					<Node name="row0">
+						<Prp name="index" type="I" value="0"/>
+						<Prp name="time" type="D" value="43671.5975449884"/>
+						<Prp name="priority" type="I" value="300"/>
+						<Prp name="message" type="S" value="The execution process was interrupted."/>
+						<Prp name="type" type="I" value="2"/>
+						<Prp name="extended message" type="S" value=""/>
+					</Node>
+				</Node>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="name" type="S" value="Project Log messages"/>
+				<Prp name="start time" type="D" value="43671.5975449884"/>
+				<Prp name="details" type="S" value=""/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="end time" type="D" value="43671.597545"/>
+				<Prp name="testdata item" type="B" value="0"/>
+			</Node>
+			<Node name="row0">
+				<Node name="messages"/>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="index" type="I" value="0"/>
+				<Prp name="name" type="S" value="Script Test Log [PQStandalone_AutomatedTest\PQStandalone_Test]"/>
+				<Prp name="start time" type="D" value="43671.5910171412"/>
+				<Prp name="details" type="S" value="{FB4639C6-546E-4D38-9A4A-73FF9BD13F9D}"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="end time" type="D" value="43671.5975449884"/>
+				<Prp name="testdata item" type="B" value="0"/>
+			</Node>
+		</Node>
+		<Prp name="hassummary" type="B" value="0"/>
+	</Node>
+</Nodes>

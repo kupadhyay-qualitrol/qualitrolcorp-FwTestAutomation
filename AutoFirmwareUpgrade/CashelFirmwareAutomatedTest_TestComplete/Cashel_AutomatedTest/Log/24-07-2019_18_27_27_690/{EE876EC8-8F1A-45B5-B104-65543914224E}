@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="summary">
+			<Node name="total">
+				<Prp name="total (sum)" type="I" value="3"/>
+			</Node>
+			<Node name="passed">
+				<Prp name="total (sum)" type="I" value="1"/>
+			</Node>
+			<Node name="warning">
+				<Prp name="total (sum)" type="I" value="0"/>
+			</Node>
+			<Node name="failed">
+				<Prp name="total (sum)" type="I" value="1"/>
+			</Node>
+			<Node name="executed">
+				<Prp name="total (sum)" type="I" value="2"/>
+			</Node>
+			<Prp name="start date" type="D" value="43670.7690818866"/>
+			<Prp name="host" type="S" value="QTRL-553ZRN2"/>
+			<Prp name="user" type="S" value="kupadhyay"/>
+			<Prp name="test" type="S" value="Cashel_AutomatedTest"/>
+			<Prp name="stop date" type="D" value="43670.7710424421"/>
+			<Prp name="log status" type="I" value="0"/>
+		</Node>
+		<Node name="log data">
+			<Node name="row1">
+				<Node name="messages"/>
+				<Prp name="details" type="S" value="{CF06E7ED-264F-49F1-A7EA-724C81F0C861}"/>
+				<Prp name="status" type="I" value="2"/>
+				<Prp name="index" type="I" value="1"/>
+				<Prp name="name" type="S" value="RunPQStandaloneTest"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="start time" type="D" value="43670.7691585069"/>
+				<Prp name="end time" type="D" value="43670.7710424421"/>
+			</Node>
+			<Node name="row0">
+				<Node name="messages"/>
+				<Prp name="details" type="S" value="{97CC36A3-46D7-4AB1-BC34-BA0452F291B3}"/>
+				<Prp name="status" type="I" value="0"/>
+				<Prp name="index" type="I" value="0"/>
+				<Prp name="name" type="S" value="LaunchPQStandaloneApplication"/>
+				<Prp name="ownerid" type="I" value="-1"/>
+				<Prp name="testdata item" type="B" value="-1"/>
+				<Prp name="start time" type="D" value="43670.7690818866"/>
+				<Prp name="end time" type="D" value="43670.7691583565"/>
+			</Node>
+		</Node>
+		<Prp name="hassummary" type="B" value="-1"/>
+	</Node>
+</Nodes>

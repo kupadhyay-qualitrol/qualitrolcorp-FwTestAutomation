@@ -1,14 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="12.0" key="{4ECBC927-9D74-4C3C-A7C0-DA1A4C227BD5}">
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="14.0" key="{4ECBC927-9D74-4C3C-A7C0-DA1A4C227BD5}">
 	<children>
 		<child name="Carrick_AutomatedTest" key="{15F17E4F-6FED-4E2C-9A95-5651E1E832BD}" type="Project" typeId="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}" pluginName="">
 			<data path="Carrick_AutomatedTest\Carrick_AutomatedTest.mds" />
 		</child>
-		<child name="Cashel_AutomatedTest" key="{B085ACA4-B8C9-4BC6-B87A-01A164634A82}" type="Project" typeId="{362A8EE5-675E-43A9-869D-06ECE80B0CB4}" pluginName="">
-			<data path="Cashel_AutomatedTest\Cashel_AutomatedTest.mds" />
-		</child>
+		<child name="Cashel_AutomatedTest" key="{B085ACA4-B8C9-4BC6-B87A-01A164634A82}" path="Cashel_AutomatedTest\Cashel_AutomatedTest.mds" />
 	</children>
-	<folders />
 	<testItems key="{DF795F88-778D-491B-8478-85C2705E2C5F}">
 		<children>
 			<testItem key="{15F17E4F-6FED-4E2C-9A95-5651E1E832BD}" enabled="True" timeout="0" stopOnError="True" description="" />
@@ -22,5 +19,7 @@
 	<scc key="{C900492B-D218-429C-9AA0-264B7D78CA88}" name="Git Plugin">
 		<data />
 	</scc>
-	<extender key="{1A3FC97E-9A66-4716-B166-35D10B4146E0}" />
+	<extender key="{1A3FC97E-9A66-4716-B166-35D10B4146E0}">
+		<CrossBrowserTesting Enable="True" />
+	</extender>
 </Root>

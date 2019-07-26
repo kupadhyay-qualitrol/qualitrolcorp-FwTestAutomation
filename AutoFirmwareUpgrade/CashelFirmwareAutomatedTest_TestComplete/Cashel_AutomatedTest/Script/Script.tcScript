@@ -1,23 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Root signature="{9252F941-DB23-4FCA-AA50-858B33BB4A19}" version="11.40">
 	<children>
-		<child name="PQStandalone_AutomatedTest" key="{945D175E-39EC-4CA6-827D-6C14403DF63B}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
-			<data path="PQStandalone_AutomatedTest.svb" />
-		</child>
-		<child name="Startup" key="{A301776E-275F-4346-9DC7-5C6076DD431A}" type="Script Unit" typeId="{291CAE9C-4D20-4F33-8B5F-D48B587F3D65}" pluginName="Script">
-			<data path="..\..\Carrick_AutomatedTest\Script\Startup.svb" />
-		</child>
+		<folder name="General">
+			<child name="CommonMethod" key="{DFDD20DD-A84B-4722-BC32-B42A8B914C71}" path="C:\Users\kupadhyay\Documents\My Received Files\CommonMethod.svb" />
+			<child name="Startup" key="{73E349D0-0CF2-4AAD-8CE9-8D0D11D3CB9A}" path="C:\Users\kupadhyay\Documents\My Received Files\Startup.svb" />
+		</folder>
+		<folder name="PQStandalone">
+			<child name="PQStandalone_AutomatedTest" key="{945D175E-39EC-4CA6-827D-6C14403DF63B}" path="PQStandalone_AutomatedTest.svb" />
+		</folder>
 	</children>
-	<folders>
-		<folder caption="General" description="A logical folder that is used to organize project items and elements." moniker="">
-			<references>
-				<ref key="{A301776E-275F-4346-9DC7-5C6076DD431A}" />
-			</references>
-		</folder>
-		<folder caption="PQStandalone" description="A logical folder that is used to organize project items and elements." moniker="">
-			<references>
-				<ref key="{945D175E-39EC-4CA6-827D-6C14403DF63B}" />
-			</references>
-		</folder>
-	</folders>
 </Root>
