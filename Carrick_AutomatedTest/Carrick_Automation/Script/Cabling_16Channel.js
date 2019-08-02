@@ -282,36 +282,36 @@ function TestIDMECabling3U3I3I3I3I()
   TestCablingIDME(DataSetFolderPath,"3U3I3I3I3I",TestLog)
 }
 
-function TestIDMECabling3U3I3I3I3I3I()
+//function TestIDMECabling3U3I3I3I3I3I()
+//{
+//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I3I3I Cabling")
+//  TestCablingIDME(DataSetFolderPath,"3U3I3I3I3I3I",TestLog)
+//}
+
+function TestIDMECabling1U3I()
 {
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I3I3I Cabling")
-  TestCablingIDME(DataSetFolderPath,"3U3I3I3I3I3I",TestLog)
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"1U3I",TestLog)
 }
 
-//function TestCabling1U3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U3I",TestLog)
-//}
-//
-//function TestCabling1U3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U3I3I",TestLog)
-//}
-//
-//function TestCabling1U3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U3I3I3I",TestLog)
-//}
-//
-//function TestCabling1U3I3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U3I3I3I3I",TestLog)
-//}
-//
+function TestCabling1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I",TestLog)
+}
+
+function TestCabling1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I3I",TestLog)
+}
+
+function TestCabling1U3I3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I3I Cabling")
+  TestCabling(DataSetFolderPath,"1U3I3I3I3I",TestLog)
+}
+
 //function TestCabling1U3I3I3I3I3I()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I3I3I Cabling")
