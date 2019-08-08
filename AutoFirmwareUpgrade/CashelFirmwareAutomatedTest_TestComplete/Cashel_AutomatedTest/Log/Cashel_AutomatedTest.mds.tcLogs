@@ -174,6 +174,150 @@
 				<Prp name="relpath" type="S" value="26-07-2019_17_51_40_554\Description.tcLog"/>
 				<Prp name="status" type="I" value="3"/>
 			</Node>
+			<Node name="log idx=0017">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.6176686574"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{C44FB337-862E-4508-BE3B-86A5C14BF765}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_14_49_26_572\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0018">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.6204699074"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{0FBBA1DE-575E-4D8F-A001-9E96C2365F33}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_14_53_28_600\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0019">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.6226633681"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{6BFC53BC-D338-4313-8497-C32C04C27F76}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_14_56_38_115\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0020">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.6355432523"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{B9E41F43-8CF9-4987-8B8B-436071555D77}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_15_15_10_937\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0021">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.675617338"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{5664B9C7-EF2C-4EC0-A4FA-5974BAE88D65}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_16_12_53_338\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0022">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.8800094676"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{214F1948-3392-48AB-8B19-4136D1FBFE1B}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_21_07_12_818\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0023">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43679.8822959838"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{BA70CADE-12E5-421C-9C02-BEDCEA426305}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="02-08-2019_21_10_30_373\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0024">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43680.8908265625"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{F5AF0F3C-D8EB-4D1B-A4DC-9D97DFAA2E53}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="03-08-2019_21_22_47_415\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0025">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43680.9067454282"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{364FC179-BC58-4E86-8850-7B12BC1CB38A}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="03-08-2019_21_45_42_805\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0026">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43682.4657130903"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{9F61CB74-F995-4685-BB59-D678C635328A}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="05-08-2019_11_10_37_612\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0027">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43684.6635826157"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{AF7B3E75-D0A9-4BF7-83E5-64F6B504C982}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="07-08-2019_15_55_33_538\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0028">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43684.7362773148"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{94C56880-3C92-404E-B7CE-3DA0E96A3336}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="07-08-2019_17_40_14_360\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0029">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43684.7425759606"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{EE131041-70AE-4365-8BB2-CC78233D40B5}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="07-08-2019_17_49_18_563\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0030">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43684.7454323495"/>
+				<Prp name="description" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="key" type="S" value="{324FEB2B-221B-46EB-8E62-64355CC7795E}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="07-08-2019_17_53_25_355\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0031">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43684.7479589005"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{C8A92762-FC64-483A-A154-AA777C6D9218}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="07-08-2019_17_57_03_649\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0032">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43684.7486723843"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{F0B5361B-ECFE-43AA-BF4F-F5885ACC35C9}"/>
+				<Prp name="nameofroot" type="S" value="Cashel_AutomatedTest"/>
+				<Prp name="relpath" type="S" value="07-08-2019_17_58_05_294\Description.tcLog"/>
+				<Prp name="status" type="I" value="1"/>
+			</Node>
 		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="11.0"/>

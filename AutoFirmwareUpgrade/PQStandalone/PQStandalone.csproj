@@ -86,13 +86,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TestData\PQStandalone_Ckt_ParamOnly\2M3U.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="TestData\PQStandaloneInjectionfile\120V_2A_Harmonic.hou" />
     <None Include="TestData\PQStandaloneInjectionfile\60V_1A_Harmonic.hou" />
     <None Include="TestData\PQStandaloneInjectionfile\70V_1A_Harmonic.hou" />
     <None Include="TestData\PQStandaloneInjectionfile\80V_1A_Harmonic.hou" />
+    <None Include="TestData\PQStandalone_Ckt_ParamOnly\2M3U.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="TestData\PQStandalone_Ckt_ParamOnly\2M3U3I.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

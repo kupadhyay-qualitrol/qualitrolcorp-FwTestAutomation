@@ -93,7 +93,7 @@ namespace PQStandalone
             {
                 DeviceInformation.glb_deviceType = 18;
                 Read_WriteExcel.xlapp = new Application();
-                string DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestData\PQStandalone_Ckt_ParamOnly\";
+                string DataSetFolderPath = System.IO.Directory.GetParent(DeviceInformation.BaseDirectoryPath).ToString() + @"\TestData\PQStandalone_SA_ParamOnly\";
                 InfovarStartTest = ReportGeneration.extent.StartTest("Configure PQ param for "+CablingType+" Cabling");
                 Config_Cabling.TestCabling(webdriver, deviceIP, InfovarStartTest, CablingType, DataSetFolderPath, false,false);
                 Config_Cabling.ConfigurePQData(deviceIP, webdriver, InfovarStartTest, CablingType, PQDuration, PQDurationUnit);

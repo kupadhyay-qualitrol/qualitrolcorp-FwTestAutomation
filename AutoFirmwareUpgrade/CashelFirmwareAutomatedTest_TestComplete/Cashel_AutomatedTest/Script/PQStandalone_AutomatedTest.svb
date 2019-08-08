@@ -23,7 +23,7 @@ Function PQStandalone_Test()
   DataSetFileName="C:\TestDataTC\PQStandalone.xlsx"
 
   Call Omicron_HarmonicInjection(Startup.fn_DataSheet(DataSetFileName,"OmicronFilePath"))
-  
+    
   Aliases.PQStandalone.PQStandaloneData.Edtbx_DeviceIP.SetText(Startup.fn_DataSheet(DataSetFileName,"DeviceIP")) 'Sets the IP in the exe
   
   Aliases.PQStandalone.PQStandaloneData.Edtbx_CablingType.SetText(Startup.fn_DataSheet(DataSetFileName,"Cabling")) 'Sets the cabling in the exe
