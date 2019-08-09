@@ -24,7 +24,7 @@ var TestLog
 var DeviceStatus
 var Busbar1_Name ="Busbar 1"
 var Busbar2_Name ="Busbar 2"
-var counter
+var Counter
 
 function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
 {
@@ -79,9 +79,8 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
     //Step5. Click on Analog Inputs
     AssertClass.IsTrue(ConfigEditorPage.ClickOnAnalogInputs(),"Clicked on Analog Inputs")
     
-    //Step6. Set Channel Name
-    //Step6.1 Get RowCount
-    var deviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
+    //Step6 Get RowCount
+    var noOfChannels = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
  
     //Step7. Click on Circuits ConfiguBusbar1ration
     AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits") 
@@ -92,8 +91,8 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
       AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnDeletePresentCircuit())
     }
     
-    //Step8.3 Configure Circuit
-    Circuit_Configuration.GetCircuitConfiguration(dataSheetName,"Cabling",deviceType)
+    //Step8.2 Configure Circuit
+    Circuit_Configuration.GetCircuitConfiguration(dataSheetName,"Cabling",noOfChannels)
     
     //Configure Busbar1
     if(Circuit_Configuration.Busbar1.length>0)
@@ -140,14 +139,14 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
     //Step10. Wait for Device to go in reboot
-    counter =0
+    Counter =0
     do
     {
       DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
-      counter=counter+1
+      Counter=Counter+1
       aqUtils.Delay(1000)
     }
-    while (DeviceStatus=="Success" && counter<=100)
+    while (DeviceStatus=="Success" && Counter<=100)
     
     //Step11. Check if Device is up
     do
@@ -156,19 +155,19 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
     }
     while (DeviceStatus!="Success")
 
-    counter =0
+    Counter =0
     do
     {
       DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
       if(DeviceStatus=="Success")
       {
-        counter =counter+1
+        Counter =Counter+1
       }
       aqUtils.Delay(1000)
     }
-    while (counter<=30)
+    while (Counter<=30)
     
-    //Step16. Validate from Tabindex
+    //Step12. Validate from Tabindex
     AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
     
     if(CablingName=="NOCIRCUIT")
@@ -212,17 +211,16 @@ function SetAnalogChannelNameIDME()
       Log.Message("Device exist in the tree topology.")
     }
     
-    //Step4. Retrieve Configuration
+    //Step1. Retrieve Configuration
     AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
-    //Step1. Click on Analog Inputs
+    //Step2. Click on Analog Inputs
     AssertClass.IsTrue(ConfigEditorPage.ClickOnAnalogInputs(),"Clicked on Analog Inputs")
     
-    //Step2. Set Channel Name
-    //Step2.1 Get RowCount
-    var DeviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
+    //Step3.1 Get RowCount
+    var noOfChannels = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
     
     //Step3.2 Check Channel name & Set it if it is different from DataSheet
-    for (let AnalogRows=0 ; AnalogRows< DeviceType;AnalogRows++)
+    for (let AnalogRows=0 ; AnalogRows< noOfChannels;AnalogRows++)
     {
       var DataSheetChannelName =CommonMethod.ReadDataFromExcel(datasheetname,"label","Cabling",AnalogRows)
     
@@ -235,12 +233,12 @@ function SetAnalogChannelNameIDME()
         
     if(channelNameChangeCounter>=0)
     {
-      //Step9. Send to Device
+      //Step4. Send to Device
       AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     }
     else
     {
-      //Step9. Click on Close
+      //Step5. Click on Close
       AssertClass.IsTrue(ConfigEditorPage.ClickOnClose(),"Clicked on Close")
     }
 }
@@ -254,7 +252,6 @@ function TestIDMECablingNOCIRCUIT()
 function TestIDMECabling3U()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
-  //TestCablingIDME(DataSetFolderPath,"NOCIRCUIT",TestLog)
   TestCablingIDME(DataSetFolderPath,"3U",TestLog)
 }
 
