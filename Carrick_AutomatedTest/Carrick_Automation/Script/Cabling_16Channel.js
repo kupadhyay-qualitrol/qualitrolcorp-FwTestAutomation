@@ -46,9 +46,9 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
       case "3U":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"3U_13I.cal"),"Uploading Calibration File")    
         break
-//      case "2M3U":
-//        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"6U_12I.cal"),"Uploading Calibration File")    
-//        break
+      case "2M3U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"6U_10I.cal"),"Uploading Calibration File")    
+        break
 //      case "4U":
 //        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"4U_14I.cal"),"Uploading Calibration File")    
 //        break
@@ -303,85 +303,60 @@ function TestCablingIDME1U3I3I3I3I()
   TestCablingIDME(DataSetFolderPath,"1U3I3I3I3I",TestLog)
 }
 
-//function TestCabling2M3U()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U Cabling")
-//  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
-//  TestCabling(DataSetFolderPath,"2M3U",TestLog)
-//}
-//
-//function TestCabling2M3U3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M3U3I",TestLog)
-//}
-//
-//function TestCabling2M3U3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M3U3I3I",TestLog)
-//}
-//
-//function TestCabling2M3U3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M3U3I3I3I",TestLog)
-//}
-//
-//function TestCabling2M3U3I3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M3U3I3I3I3I",TestLog)
-//}
-//
-//function TestCabling1U1U3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U1U3I3I",TestLog)
-//}
-//
-//function TestCabling1U1U3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U1U3I3I3I",TestLog)
-//}
-//
-//function TestCabling1U1U3I3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"1U1U3I3I3I3I",TestLog)
-//}
-//
-////function TestCabling1U3U3I() //Not Supported in iQ+. Firmware Supports this
-////{
-////  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U3U3I Cabling")
-////  TestCabling(DataSetFolderPath,"1U3U3I",TestLog)
-////}
-//
-//function TestCabling3U1U3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U1U3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"3U1U3I3I3I",TestLog)
-//}
-//
-//function TestCabling3U1U3I3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U1U3I3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"3U1U3I3I3I3I",TestLog)
-//}
-//
-//function TestCabling3U3I1U3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I Cabling")
-//  TestCabling(DataSetFolderPath,"3U3I1U3I",TestLog)
-//}
-//
-//function TestCabling3U3I1U3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"3U3I1U3I3I",TestLog)
-//}
-//
+function TestCablingIDME2M3U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U Cabling")
+  //TestCablingIDME(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCablingIDME(DataSetFolderPath,"2M3U",TestLog)
+}
+
+function TestCablingIDME2M3U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M3U3I",TestLog)
+}
+
+function TestCablingIDME2M3U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M3U3I3I",TestLog)
+}
+
+function TestCablingIDME2M3U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M3U3I3I3I",TestLog)
+}
+function TestCablingIDME1U1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"1U1U3I3I",TestLog)
+}
+
+function TestCablingIDME1U1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"1U1U3I3I3I",TestLog)
+}
+
+function TestCablingIDME3U1U3I3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U1U3I3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"3U1U3I3I3I",TestLog)
+}
+
+function TestCablingIDME3U3I1U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"3U3I1U3I",TestLog)
+}
+
+function TestCablingIDME3U3I1U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"3U3I1U3I3I",TestLog)
+}
+
 //function TestCabling3U3I1U3I3I3I()
 //{
 // TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I1U3I3I3I Cabling")
