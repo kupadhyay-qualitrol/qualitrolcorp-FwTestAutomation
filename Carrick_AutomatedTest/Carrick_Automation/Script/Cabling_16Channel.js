@@ -306,7 +306,6 @@ function TestCablingIDME1U3I3I3I3I()
 function TestCablingIDME2M3U()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M3U Cabling")
-  //TestCablingIDME(DataSetFolderPath,"NOCIRCUIT",TestLog)
   TestCablingIDME(DataSetFolderPath,"2M3U",TestLog)
 }
 
