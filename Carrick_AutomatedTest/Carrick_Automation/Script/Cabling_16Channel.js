@@ -387,22 +387,22 @@ function TestCablingIDME4U3I3I3I3I()
   TestCablingIDME(DataSetFolderPath,"4U3I3I3I3I",TestLog)
 }
 
-function TestCabling4U4I()
+function TestCablingIDME4U4I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U4I Cabling")
-  TestCabling(DataSetFolderPath,"4U4I",TestLog)
+  TestCablingIDME(DataSetFolderPath,"4U4I",TestLog)
 }
 
-function TestCabling4U4I4I()
+function TestCablingIDME4U4I4I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U4I4I Cabling")
-  TestCabling(DataSetFolderPath,"4U4I4I",TestLog)
+  TestCablingIDME(DataSetFolderPath,"4U4I4I",TestLog)
 }
 
-function TestCabling4U4I4I4I()
+function TestCablingIDME4U4I4I4I()
 {
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U4I4I4I Cabling")
-  TestCabling(DataSetFolderPath,"4U4I4I4I",TestLog)
+  TestCablingIDME(DataSetFolderPath,"4U4I4I4I",TestLog)
 }
 
 //function TestCabling2M4U()
