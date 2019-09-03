@@ -10,7 +10,7 @@
 	<config language="{90F89436-9452-4F95-9882-6B5210079F13}" />
 	<testItems key="{F5C3AC8F-E7CD-49DA-A415-EFF8D5A099AF}" version="14">
 		<children>
-			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -805,7 +805,7 @@
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="Test IDME3U/1U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME3U/1U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -846,7 +846,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="2M3U" key="{BD4031CF-5DA8-405C-89E4-8FFA5930677E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -887,7 +887,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="4U" key="{1242E9F8-01AC-4074-98C5-0C3AC9FD5A75}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
