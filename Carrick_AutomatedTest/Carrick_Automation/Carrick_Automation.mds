@@ -10,7 +10,7 @@
 	<config language="{90F89436-9452-4F95-9882-6B5210079F13}" />
 	<testItems key="{F5C3AC8F-E7CD-49DA-A415-EFF8D5A099AF}" version="14">
 		<children>
-			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -73,11 +73,11 @@
 					<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="True" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters>
 									<param0 name="Isupgrade" type="3" localVarName="" varType="11" value="False" />
 								</testParameters>
@@ -787,6 +787,12 @@
 			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
+					<testItem name="Initialization_1" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
+						<testParameters>
+							<param0 name="deviceIP" type="3" localVarName="" varType="8" value="10.75.58.66" />
+						</testParameters>
+						<children />
+					</testItem>
 					<testItem name="LoginIQ+" key="{793EBB06-A01F-481E-ACE7-973ABEAA3721}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
@@ -799,7 +805,7 @@
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="Test IDME3U/1U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME3U/1U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -840,7 +846,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="2M3U" key="{BD4031CF-5DA8-405C-89E4-8FFA5930677E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -881,7 +887,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="4U" key="{1242E9F8-01AC-4074-98C5-0C3AC9FD5A75}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -917,6 +923,35 @@
 								<children />
 							</testItem>
 						</children>
+					</testItem>
+					<testItem name="Test IDME2M4U Cabling " key="{C995F1A6-65BD-45DF-83A7-E77BAA618D08}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="2M4U" key="{ABD5C5B6-3FBF-43E7-98AC-B2A9FBDC30DF}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="2M4U3I" key="{8804C50F-C24E-4A40-812E-80D9307099F6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="2M4U3I3I" key="{411DEBD7-E652-4652-B262-37526C6B3466}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="2M4U4I" key="{4250E226-43A5-4290-813F-A15AD98C85F2}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="2M4U4I4I" key="{AA57998F-C87E-4C9A-A07B-5F20A2269880}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="Test IDME4U3U Cabling" key="{5FB6BCFC-930D-4629-AB02-9988624E5BEB}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
 					</testItem>
 					<testItem name="TestIDMENOCIRCUIT" key="{5D5553E3-FBDA-44D9-9D5B-5C293E23597F}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECablingNOCIRCUIT" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
