@@ -949,10 +949,6 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U3U Cabling" key="{5FB6BCFC-930D-4629-AB02-9988624E5BEB}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
-						<testParameters />
-						<children />
-					</testItem>
 					<testItem name="TestIDMENOCIRCUIT" key="{5D5553E3-FBDA-44D9-9D5B-5C293E23597F}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECablingNOCIRCUIT" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
