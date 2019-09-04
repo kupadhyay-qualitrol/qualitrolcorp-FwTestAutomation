@@ -56,7 +56,7 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"8U_8I.cal"),"Uploading Calibration File")    
         break
 //      case "4U3U":
-//        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"7U_9I.cal"),"Uploading Calibration File")    
+//        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"7U_11I.cal"),"Uploading Calibration File")    
 //        break
     }    
     //Step2. Check if iQ+ is running or not
@@ -436,29 +436,29 @@ function TestCablingIDME2M4U4I4I()
   TestCablingIDME(DataSetFolderPath,"2M4U4I4I",TestLog)
 }
 //
-//function TestCablingIDME4U3U()
+//function TestCabling4U3U()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U Cabling")
-//  TestCablingIDME(DataSetFolderPath,"NOCIRCUIT",TestLog)
-//  TestCablingIDME(DataSetFolderPath,"4U3U",TestLog)
+//  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
+//  TestCabling(DataSetFolderPath,"4U3U",TestLog)
 //}
 //
-//function TestCablingIDME4U3U3I()
+//function TestCabling4U3U3I()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I Cabling")
-//  TestCablingIDME(DataSetFolderPath,"4U3U3I",TestLog)
+//  TestCabling(DataSetFolderPath,"4U3U3I",TestLog)
 //}
 //
-//function TestCablingIDME4U3U3I3I()
+//function TestCabling4U3U3I3I()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I Cabling")
-//  TestCablingIDME(DataSetFolderPath,"4U3U3I3I",TestLog)
+//  TestCabling(DataSetFolderPath,"4U3U3I3I",TestLog)
 //}
 //
-//function TestCablingIDME4U3U3I3I3I()
+//function TestCabling4U3U3I3I3I()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I3I Cabling")
-//  TestCablingIDME(DataSetFolderPath,"4U3U3I3I3I",TestLog)
+//  TestCabling(DataSetFolderPath,"4U3U3I3I3I",TestLog)
 //}
 //
 //function TestCabling3U4U()
@@ -479,16 +479,16 @@ function TestCablingIDME2M4U4I4I()
 //  TestCabling(DataSetFolderPath,"3U4U3I3I3I",TestLog)
 //}
 //
-//function TestCablingIDME4U3U4I()
+//function TestCabling4U3U4I()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I Cabling")
-//  TestCablingIDME(DataSetFolderPath,"4U3U4I",TestLog)
+//  TestCabling(DataSetFolderPath,"4U3U4I",TestLog)
 //}
 //
-//function TestCablingIDME4U3U4I3I()
+//function TestCabling4U3U4I3I()
 //{
 //  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I3I Cabling")
-//  TestCablingIDME(DataSetFolderPath,"4U3U4I3I",TestLog)
+//  TestCabling(DataSetFolderPath,"4U3U4I3I",TestLog)
 //}
 //
 //function TestCabling4U3U4I4I3I()
