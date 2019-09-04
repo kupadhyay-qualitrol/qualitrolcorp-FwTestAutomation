@@ -52,9 +52,9 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
       case "4U":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"4U_12I.cal"),"Uploading Calibration File")    
         break
-//      case "2M4U":
-//        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"8U_10I.cal"),"Uploading Calibration File")    
-//        break
+      case "2M4U":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"8U_8I.cal"),"Uploading Calibration File")    
+        break
 //      case "4U3U":
 //        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"7U_11I.cal"),"Uploading Calibration File")    
 //        break
@@ -405,42 +405,36 @@ function TestCablingIDME4U4I4I4I()
   TestCablingIDME(DataSetFolderPath,"4U4I4I4I",TestLog)
 }
 
-//function TestCabling2M4U()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U Cabling")
-//  TestCabling(DataSetFolderPath,"NOCIRCUIT",TestLog)
-//  TestCabling(DataSetFolderPath,"2M4U",TestLog)
-//}
-//
-//function TestCabling2M4U3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M4U3I",TestLog)
-//}
-//
-//function TestCabling2M4U3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M4U3I3I",TestLog)
-//}
-//
-//function TestCabling2M4U3I3I3I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I3I3I Cabling")
-//  TestCabling(DataSetFolderPath,"2M4U3I3I3I",TestLog)
-//}
-//
-//function TestCabling2M4U4I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U4I Cabling")
-//  TestCabling(DataSetFolderPath,"2M4U4I",TestLog)
-//}
-//
-//function TestCabling2M4U4I4I()
-//{
-//  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U4I4I Cabling")
-//  TestCabling(DataSetFolderPath,"2M4U4I4I",TestLog)
-//}
+function TestCablingIDME2M4U()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U Cabling")
+  TestCablingIDME(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TestCablingIDME(DataSetFolderPath,"2M4U",TestLog)
+}
+
+function TestCablingIDME2M4U3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M4U3I",TestLog)
+}
+
+function TestCablingIDME2M4U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U3I3I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M4U3I3I",TestLog)
+}
+
+function TestCablingIDME2M4U4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U4I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M4U4I",TestLog)
+}
+
+function TestCablingIDME2M4U4I4I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 2M4U4I4I Cabling")
+  TestCablingIDME(DataSetFolderPath,"2M4U4I4I",TestLog)
+}
 //
 //function TestCabling4U3U()
 //{
