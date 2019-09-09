@@ -949,6 +949,59 @@
 							</testItem>
 						</children>
 					</testItem>
+					<testItem name="Test IDME4U3U Cabling" key="{A2E709F2-8B4E-4D69-A040-3854C93F9678}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="4U3U" key="{40737B79-13CD-49F8-A784-C13DBE7E408E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U3U3I" key="{80D66C2B-E78F-419C-8465-54F272D3D606}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U3U3I3I" key="{88880C3E-C1C2-4F14-A442-B9CC7D6B3184}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U3U3I3I3I" key="{B47B6B17-7867-4BF4-9C0A-90436899C56A}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U3U4I" key="{7158674B-EEEF-4C6E-BDE5-1DE5169EB878}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U3U4I3I" key="{60987B5A-71F0-4ABA-B359-56A52C2F3FBF}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U4I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U4U" key="{04810EF7-18A5-4C61-8AF1-0652BC614CDD}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U4U3I" key="{C01B76B1-F1A1-40D5-8895-0E148B9CBC01}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="3U4U3I3I3I" key="{6F3D5267-BD80-4B3B-9953-67268821ABDA}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U1U3I3I" key="{3B1E930B-D1F4-49EB-9544-777EE4BE7437}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U1U3I3I3I" key="{4738660D-1530-4292-9ACD-521326FD4E3E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+							<testItem name="4U3I1U3I3I" key="{BC3CC8DA-8D46-4624-8B91-151B61D5CAAB}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters />
+								<children />
+							</testItem>
+						</children>
+					</testItem>
 					<testItem name="TestIDMENOCIRCUIT" key="{5D5553E3-FBDA-44D9-9D5B-5C293E23597F}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECablingNOCIRCUIT" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
