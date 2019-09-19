@@ -775,6 +775,64 @@
 															</Child>
 														</Children>
 													</Child>
+													<Child Name="CleanMemory" Key="{ED444749-B8FB-454D-B7EE-2AE11E86CCA2}" ParallelWalk="True">
+														<Image FileName="1573471688" Left="3" Top="26" Right="442" Bottom="352" />
+														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="CleanMemory" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="cmbtnExecute" Key="{E695078D-3B52-45CD-ABBC-EA15656668B4}" ParallelWalk="True">
+																<Image FileName="1573471688" Left="224" Top="319" Right="324" Bottom="345" />
+																<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="cmbtnExecute" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+															<Child Name="grpAll" Key="{C307B96B-E6E7-4106-A160-CFE07DACEE85}" ParallelWalk="True">
+																<Image FileName="-403786422" Left="12" Top="28" Right="430" Bottom="313" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="grpAll" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="grpTriggeredEvents" Key="{597CF112-2975-482E-B1DD-2230F38924A4}" ParallelWalk="True">
+																		<Image FileName="-403786422" Left="21" Top="154" Right="420" Bottom="251" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="grpTriggeredEvents" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="CMchkDDR" Key="{EDA08A20-93CD-4B2A-B1A9-8176A68C2B8E}" ParallelWalk="True">
+																				<Image FileName="-403786422" Left="253" Top="178" Right="339" Bottom="195" />
+																				<TypeInfo Item0="{2AF2134D-3EF8-4A6B-AAA1-69AC5D7965C1}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="CMchkDDR" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																		</Children>
+																	</Child>
+																</Children>
+															</Child>
+															<Child Name="cmbtnCancel" Key="{1C36CA6A-9ACC-4B28-B8A1-40088843FA66}" ParallelWalk="True">
+																<Image FileName="1573471688" Left="330" Top="319" Right="430" Bottom="345" />
+																<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="cmbtnCancel" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+														</Children>
+													</Child>
 												</Children>
 											</Child>
 										</Children>
@@ -963,7 +1021,7 @@
 													</Property>
 												</Properties>
 												<Children>
-													<Child Name="z18ca7bd_d0dd_45c5_aaa4_cd1a4c88d6a7" Key="{699F1455-1E5B-455C-926F-20EE85249887}" ParallelWalk="True">
+													<Child Name="DFRDirectory" Key="{699F1455-1E5B-455C-926F-20EE85249887}" ParallelWalk="True">
 														<Properties>
 															<Property Name="WinFormsControlName">
 																<Value PropertyType="0" Value="*" Type="5" />
@@ -1009,6 +1067,35 @@
 																				<Value PropertyType="0" Value="DIRLSTVWbtnDownloadDataNow" Type="5" />
 																			</Property>
 																		</Properties>
+																	</Child>
+																	<Child Name="PQDIRLSTVWgrpContainer" Key="{510FAC48-3E08-45F9-B389-2D0641465007}" ParallelWalk="True">
+																		<Image FileName="613023505" Left="15" Top="32" Right="646" Bottom="310" />
+																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="PQDIRLSTVWgrpContainer" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="PQDIRLSTVWdtpStartTime" Key="{1AE54511-B36E-4D08-B3AE-171873AFAE93}" ParallelWalk="True">
+																				<Image FileName="613023505" Left="31" Top="278" Right="183" Bottom="298" />
+																				<TypeInfo Item0="{E600A530-00D9-4CD9-95C2-96FFB8399703}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="PQDIRLSTVWdtpStartTime" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																			<Child Name="PQDIRLSTVWdtpEndTime" Key="{08EEA486-0390-44B1-88D1-BF9760ABF7C1}" ParallelWalk="True">
+																				<Image FileName="-397494821" Left="201" Top="278" Right="347" Bottom="298" />
+																				<TypeInfo Item0="{E600A530-00D9-4CD9-95C2-96FFB8399703}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="PQDIRLSTVWdtpEndTime" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																		</Children>
 																	</Child>
 																</Children>
 															</Child>
@@ -1095,6 +1182,20 @@
 										<Value PropertyType="0" Value="iQ+" Type="5" />
 									</Property>
 								</Properties>
+								<Children>
+									<Child Name="btnYes" Key="{FA044B1E-84CF-401F-8EF0-3E1438052E75}" ParallelWalk="True">
+										<Image FileName="-2130663327" Left="167" Top="114" Right="242" Bottom="137" />
+										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="&amp;Yes" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
 							</Child>
 							<Child Name="MainForm" Key="{2D0B49CE-34F3-4DE9-BB35-3C3A59E798F4}" ParallelWalk="True">
 								<TypeInfo Item0="{F0E621CE-ADA0-4F8B-BA90-4FE1EFBBA346}" />
@@ -2622,6 +2723,25 @@
 																												<Properties>
 																													<Property Name="WinFormsControlName">
 																														<Value PropertyType="0" Value="llblRemoveProtocol" Type="5" />
+																													</Property>
+																												</Properties>
+																											</Child>
+																										</Children>
+																									</Child>
+																									<Child Name="ucDdrChannels" Key="{81E5347E-B151-44B6-93FC-B7008FB601C1}" ParallelWalk="True">
+																										<Image FileName="-236772727" Left="197" Top="81" Right="1020" Bottom="562" />
+																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ucDdrChannels" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="cmbSamplingRate" Key="{8891CA3D-F3EC-4029-AAE6-6F19F3A5CD36}" ParallelWalk="True">
+																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="cmbSamplingRate" Type="5" />
 																													</Property>
 																												</Properties>
 																											</Child>
@@ -4163,6 +4283,15 @@
 							<Child Name="STbtnOK" Owner="{B8CF4AC2-9CFD-475C-AFCE-5864EAA85143}" />
 							<Child Name="STbtnCancel" Owner="{C711DF4B-0DC3-4AAC-A1FF-AA4012A66D1F}" />
 						</Child>
+						<Child Name="CleanMemory" Owner="{ED444749-B8FB-454D-B7EE-2AE11E86CCA2}">
+							<Child Name="cmbtnExecute" Owner="{E695078D-3B52-45CD-ABBC-EA15656668B4}" />
+							<Child Name="grpAll" Owner="{C307B96B-E6E7-4106-A160-CFE07DACEE85}">
+								<Child Name="grpTriggeredEvents" Owner="{597CF112-2975-482E-B1DD-2230F38924A4}">
+									<Child Name="CMchkDDR" Owner="{EDA08A20-93CD-4B2A-B1A9-8176A68C2B8E}" />
+								</Child>
+							</Child>
+							<Child Name="cmbtnCancel" Owner="{1C36CA6A-9ACC-4B28-B8A1-40088843FA66}" />
+						</Child>
 					</Child>
 				</Child>
 			</Child>
@@ -4200,6 +4329,10 @@
 								</Child>
 								<Child Name="DIRLSTVWbtnCancel" Owner="{FCEF519E-D2AC-4035-AD3E-0B821AEE897B}" />
 								<Child Name="DIRLSTVWbtnDownloadDataNow" Owner="{36250516-A3CF-4ABF-898C-3F67BA59DE8C}" />
+								<Child Name="PQDIRLSTVWgrpContainer" Owner="{510FAC48-3E08-45F9-B389-2D0641465007}">
+									<Child Name="PQDIRLSTVWdtpStartTime" Owner="{1AE54511-B36E-4D08-B3AE-171873AFAE93}" />
+									<Child Name="PQDIRLSTVWdtpEndTime" Owner="{08EEA486-0390-44B1-88D1-BF9760ABF7C1}" />
+								</Child>
 							</Child>
 							<Child Name="DeviceStatusView" Owner="{7C051F68-79D1-478D-A9CA-FA9C73F5532D}">
 								<Child Name="txtDeviceStatus" Owner="{AAEA7C03-6E1B-41AE-A15E-2BB1039A808C}" />
@@ -4215,7 +4348,9 @@
 				</Child>
 				<Child Name="ustStatusbar" Owner="{73233703-5FD4-483B-B77E-79C059B4F699}" />
 			</Child>
-			<Child Name="dlgIQ" Owner="{A0E377D2-DFEC-44FE-9279-BAEF235577EE}" />
+			<Child Name="dlgIQ" Owner="{A0E377D2-DFEC-44FE-9279-BAEF235577EE}">
+				<Child Name="btnYes" Owner="{FA044B1E-84CF-401F-8EF0-3E1438052E75}" />
+			</Child>
 			<Child Name="MainForm" Owner="{2D0B49CE-34F3-4DE9-BB35-3C3A59E798F4}">
 				<Child Name="mainMenu" Owner="{7FD29B43-A035-41F7-BE21-86E13CE6717F}" />
 			</Child>
@@ -4417,6 +4552,9 @@
 													</Child>
 													<Child Name="llblAddProtocol" Owner="{D091521A-F58E-45B2-847A-2AC5460514B5}" />
 													<Child Name="llblRemoveProtocol" Owner="{C0A0618D-7EBE-4516-8DDB-9FD287C66792}" />
+												</Child>
+												<Child Name="ucDdrChannels" Owner="{81E5347E-B151-44B6-93FC-B7008FB601C1}">
+													<Child Name="cmbSamplingRate" Owner="{8891CA3D-F3EC-4029-AAE6-6F19F3A5CD36}" />
 												</Child>
 											</Child>
 										</Child>
