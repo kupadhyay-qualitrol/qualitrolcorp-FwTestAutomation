@@ -15,27 +15,27 @@ function CompareDateTimeDDRC(retryCount)
     DataRetrievalPage.ClickOnDeviceStatusView()
     Log.Message("Clicked on Devcie status view")
     aqUtils.Delay(2000)
-    var DeviceDateTime = DataRetrievalPage.GetDeviceActualDateTime();
-    Log.Message(DeviceDateTime)
+    var deviceDateTime = DataRetrievalPage.GetDeviceActualDateTime();
+    Log.Message(deviceDateTime)
     aqUtils.Delay(1000)
     DataRetrievalPage.CloseDeviceStatus
     aqUtils.Delay(1000)
     DataRetrievalPage.ClickOnDDRCDirectory()
     Log.Message("Clicked on DDRC Directory")
     aqUtils.Delay(2000)
-    var DDRCStartTime = DataRetrievalPage.GetDDRCStartTime();
-    Log.Message(DDRCStartTime)
+    var startTimeDDRC = DataRetrievalPage.GetDDRCStartTime();
+    Log.Message(startTimeDDRC)
     DataRetrievalPage.CloseDFRDirectory()
-    var DateTimeDifference = (aqConvert.StrToDateTime(DeviceDateTime)-aqConvert.StrToDateTime(DDRCStartTime));
-    var DifferenceInMinutes = DateTimeDifference/60000;
-    Log.Message("The difference in Minutes is "+ DifferenceInMinutes);
-    if (DifferenceInMinutes<5)
+    var dateTimeDifference = (aqConvert.StrToDateTime(deviceDateTime)-aqConvert.StrToDateTime(startTimeDDRC));
+    var differenceInMinutes = dateTimeDifference/60000;
+    Log.Message("The difference in Minutes is "+ differenceInMinutes);
+    if (differenceInMinutes<5)
     {
       Log.Message("New record has been started to form")
       return true
       break
     }
-    else if(DifferenceInMinutes>5)
+    else if(differenceInMinutes>5)
     {
       Log.Message("Checking for the Start time again")
     }

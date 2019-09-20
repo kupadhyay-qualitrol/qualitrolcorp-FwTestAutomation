@@ -632,13 +632,13 @@ function CheckDDRCDirectoryOpen(retryCount1)
 
 function GetDDRCStartTime()
 {
-  var StartDateTime
+  var startDateTime
   if (DDRCDirectory.Exists)
   {
     Log.Message("DDRC directory displayed")    
-    StartDateTime = Box_Start_Time.get_Value().ToString();
-    Log.Message("DDRC Start date and time is "+StartDateTime) 
-    return StartDateTime 
+    startDateTime = Box_Start_Time.get_Value().ToString();
+    Log.Message("DDRC Start date and time is "+startDateTime) 
+    return startDateTime 
   }
   else
   {
@@ -703,9 +703,9 @@ function SetDDRCStartTime()
   if (DDRCDirectory.Exists)
   {
     Log.Message("DDRC directory displayed")  
-    var CurrentSystemDateTime = aqDateTime.Now(); 
-    var StartDateTimeDDRC = aqDateTime.AddMinutes(CurrentSystemDateTime, -2)
-    StartDateTime = Box_Start_Time.set_Value(StartDateTimeDDRC)
+    var currentSystemDateTime = aqDateTime.Now(); 
+    var startDateTimeDDRC = aqDateTime.AddMinutes(currentSystemDateTime, -2)
+    StartDateTime = Box_Start_Time.set_Value(startDateTimeDDRC)
     Log.Message("DDRC Start date and time is set as "+StartDateTime) 
     return true
   }
