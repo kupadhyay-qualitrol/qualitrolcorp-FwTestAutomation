@@ -34,7 +34,6 @@ var Box_Start_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.T
 var Box_End_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpEndTime
 var Btn_DDRCCancel = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
 //
-var retryGlobal;
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
 function ClickOnFRManualTrigger()
 {
@@ -296,7 +295,7 @@ function GetDeviceCurrentDateTime()
   SetDateTime = aqDateTime.AddDays(CurrentDateTime,-1)
   NewDateTime = aqConvert.DateTimeToFormatStr(SetDateTime, "%d/%m/%Y %H:%M");
   
-  Log.Message("Device SaqConvertet Date time is"+NewDateTime)
+  Log.Message("Device Set Date time is"+NewDateTime)
   CloseDeviceStatus.ClickButton();
   return NewDateTime;
   
@@ -606,10 +605,10 @@ function ClickOnDDRCDirectory()
    }
 }
 
-function CheckDDRCDirectoryOpen(retryCount1)
+function CheckDDRCDirectoryOpen(retryCount)
 {
   var recordRetryCount = 0
-  for(recordRetryCount=0;recordRetryCount<retryCount1;recordRetryCount++)
+  for(recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
   {
    if(CommonMethod.CheckActivityLog("Directory list displayed successfully for device"))
    {
@@ -632,11 +631,10 @@ function CheckDDRCDirectoryOpen(retryCount1)
 
 function GetDDRCStartTime()
 {
-  var startDateTime
   if (DDRCDirectory.Exists)
   {
     Log.Message("DDRC directory displayed")    
-    startDateTime = Box_Start_Time.get_Value().ToString();
+    var startDateTime = Box_Start_Time.get_Value().ToString();
     Log.Message("DDRC Start date and time is "+startDateTime) 
     return startDateTime 
   }
@@ -705,8 +703,8 @@ function SetDDRCStartTime()
     Log.Message("DDRC directory displayed")  
     var currentSystemDateTime = aqDateTime.Now(); 
     var startDateTimeDDRC = aqDateTime.AddMinutes(currentSystemDateTime, -2)
-    StartDateTime = Box_Start_Time.set_Value(startDateTimeDDRC)
-    Log.Message("DDRC Start date and time is set as "+StartDateTime) 
+    var startDateTime = Box_Start_Time.set_Value(startDateTimeDDRC)
+    Log.Message("DDRC Start date and time is set as "+startDateTime) 
     return true
   }
   else

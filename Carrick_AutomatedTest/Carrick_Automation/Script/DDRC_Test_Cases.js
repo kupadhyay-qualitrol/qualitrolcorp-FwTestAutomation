@@ -8,7 +8,7 @@
 //USEUNIT DeviceTopologyPage
 //USEUNIT GeneralPage
 
-function DDRCRecordingDownload(DeviceType,DeviceName,DeviceSerialNo,DeviceIPAdd,StorageRate,retryCount,retryCount1)
+function DDRCRecordingDownload(deviceType,deviceName,deviceSerialNo,deviceIPAdd,storageRate,retryCountDateTime,retryCountDDRCOpen)
 {
   try
   {
@@ -18,10 +18,10 @@ function DDRCRecordingDownload(DeviceType,DeviceName,DeviceSerialNo,DeviceIPAdd,
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
     
     //Step2.Check whether device exists or not in the topology.    
-    if(DeviceTopologyPage.ClickonDevice(DeviceType,DeviceName)!=true)
+    if(DeviceTopologyPage.ClickonDevice(deviceType,deviceName)!=true)
     {
-      GeneralPage.CreateDevice(DeviceType,DeviceName,DeviceSerialNo,DeviceIPAdd)
-      DeviceTopologyPage.ClickonDevice(DeviceType,DeviceName)      
+      GeneralPage.CreateDevice(deviceType,deviceName,deviceSerialNo,deviceIPAdd)
+      DeviceTopologyPage.ClickonDevice(deviceType,deviceName)      
     }
     else
     {
@@ -38,19 +38,19 @@ function DDRCRecordingDownload(DeviceType,DeviceName,DeviceSerialNo,DeviceIPAdd,
     AssertClass.IsTrue(ConfigEditorPage.ClickOnDDRCChannels(),"Clicked on DDRC Channles")
     
     //Step.6 Set Storage rate 
-    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.SetStorageRate(StorageRate))
+    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.SetStorageRate(storageRate))
     
     //Step.7 Send to device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
     //Step.8 Compare Device time and DDRC Start time
-    AssertClass.IsTrue(DDRC_Methods.CompareDateTimeDDRC(retryCount),"Device time and DDRC time compared and new record started to form")
+    AssertClass.IsTrue(DDRC_Methods.CompareDateTimeDDRC(retryCountDateTime),"Device time and DDRC time compared and new record started to form")
     
     //Step.9 Click on DDRC button
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"Clicked on DDRC Directory")
     
     //Step.9.1 Check if DDRC Directroy opens or not
-    AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCount1),"DDRC directory pane open and displayed")
+    AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCountDDRCOpen),"DDRC directory pane open and displayed")
     
     //Step.10 Set Start date and time for DDRC
     AssertClass.IsTrue(DataRetrievalPage.SetDDRCStartTime(),"DDRC start time set as 2 minutes before of current system date and time")
