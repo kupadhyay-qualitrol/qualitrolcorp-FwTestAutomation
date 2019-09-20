@@ -640,7 +640,7 @@ function GetDDRCStartTime()
   }
   else
   {
-    Log.Message("DDRC directory displayed")    
+    Log.Message("DDRC directory not displayed")    
   }
 }
 function ClickOnCleanMemory()

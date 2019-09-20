@@ -21,9 +21,12 @@ function CompareDateTimeDDRC(retryCount)
     DataRetrievalPage.CloseDeviceStatus
     aqUtils.Delay(1000)
     DataRetrievalPage.ClickOnDDRCDirectory()
+    DataRetrievalPage.CheckDDRCDirectoryOpen(retryCount)
     Log.Message("Clicked on DDRC Directory")
     aqUtils.Delay(2000)
     var startTimeDDRC = DataRetrievalPage.GetDDRCStartTime();
+    if(startTimeDDRC!=null)
+    {
     Log.Message(startTimeDDRC)
     DataRetrievalPage.CloseDFRDirectory()
     var dateTimeDifference = (aqConvert.StrToDateTime(deviceDateTime)-aqConvert.StrToDateTime(startTimeDDRC));
@@ -41,8 +44,14 @@ function CompareDateTimeDDRC(retryCount)
     }
     else
     {
-      return false
       Log.Message("Not able to found the new Record")
+      return false
+    }
+    }
+    else
+    {
+      Log.Message("Not able to get DDRC Start time")
+      return false
     }
   }
 }
