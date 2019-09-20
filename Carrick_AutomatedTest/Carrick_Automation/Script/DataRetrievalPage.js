@@ -23,8 +23,17 @@ var Btn_SetTimeCancel =Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.
 var Edtbx_NoOfManualDFR= Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.ManualTriggerView.MNLTRGgrpContainer.nudNoManualTrigger.UpDownEdit
 var Btn_CloseGooseWindow = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.GooseStatusView.GSVgrpContainer.GSVbtnClose
 var GooseStatusView = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.GooseStatusView
+var DDRCDirectory = Aliases.iQ_Plus.SDPContainer
+var Dlg_Box_CleanMemory = Aliases.iQ_Plus.ModalDialogContainer
+var CleanMemory_ConfirmBox = Aliases.iQ_Plus.dlgIQ
+var Btn_DDRCDirectory_DownloadNow = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnDownloadDataNow
+var Btn_Yes_CleanMemory_ConfirmBox = Aliases.iQ_Plus.dlgIQ.btnYes
+var Btn_CleanMemoryPopUP_Execute = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CleanMemory.cmbtnExecute
+var ChckBox_DDRC_CleanMemory = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CleanMemory.grpAll.grpTriggeredEvents.CMchkDDR
+var Box_Start_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpStartTime
+var Box_End_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpEndTime
+var Btn_DDRCCancel = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
 //
-
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
 function ClickOnFRManualTrigger()
 {
@@ -573,5 +582,166 @@ function CloseGooseStatusWindow()
   {
     Log.Message("Not able to find Goose Status window")
     return false
+  }
+}
+
+function ClickOnDDRCDirectory()
+{
+   if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+   {
+     //Clear Session Log
+     SessionLogPage.ClearLog()
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
+     aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|DD&R-C (Slow Scan) Directory")
+     Log.Message("Clicked on DDDRC (Slow Scan) Directory")
+     return true
+    }
+   else
+   {
+     Log.Message("Unable to click on DDRC Directory")
+     return false
+   }
+}
+
+function CheckDDRCDirectoryOpen(retryCount)
+{
+  var recordRetryCount = 0
+  for(recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
+  {
+   if(CommonMethod.CheckActivityLog("Directory list displayed successfully for device"))
+   {
+     Log.Message("DDRC directory list displayed successfully") 
+     return true 
+     break
+   }
+   else(CommonMethod.CheckActivityLog("DDR-C (Slow Scan) directory list not found"))
+   {
+     Log.Message("Trying to click on DDRC directory button again")
+     ClickOnDDRCDirectory();
+   }
+  }
+  if(recordRetryCount>=4)
+  {
+    Log.Message("DDRC recording is not started")
+    return false
+  }
+}
+
+function GetDDRCStartTime()
+{
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("DDRC directory displayed")    
+    var startDateTime = Box_Start_Time.get_Value().ToString();
+    Log.Message("DDRC Start date and time is "+startDateTime) 
+    return startDateTime 
+  }
+  else
+  {
+    Log.Message("DDRC directory displayed")    
+  }
+}
+function ClickOnCleanMemory()
+{
+  SessionLogPage.ClearLog()
+  CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+  CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test")
+  aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+  CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Device Diagnostic/&Test|Clean Memor&y")
+  Log.Message("Clicked on Clean Memory Option")
+  if(Btn_CleanMemoryPopUP_Execute.Exists)
+  {
+    Log.Message("Clean Memory Dialog Opens")  
+    return true
+  }
+  else
+  {
+    Log.Message("Clean Memory Dialog Unable to Open")  
+    return false
+  }
+}
+
+function CheckDDRCCheckBox()
+{
+  if(Dlg_Box_CleanMemory.Exists)
+  {
+    ChckBox_DDRC_CleanMemory.wState = cbChecked;
+    Log.Message("Checked DDRC check box")
+    return true
+  }
+  else
+  {
+    Log.Message("Not able to check the DDRC checked box")
+    return false
+  }
+}
+function ClickOnExecuteButton()
+{
+  if(Dlg_Box_CleanMemory.Exists)
+  {
+    Btn_CleanMemoryPopUP_Execute.ClickButton();
+    if (CleanMemory_ConfirmBox.Exists)
+    {
+      Btn_Yes_CleanMemory_ConfirmBox.ClickButton()
+    }    
+    Log.Message("Clicked on Execute button")
+    return true
+  }
+  else
+  {
+    Log.Message("Not able to click Execute button")
+    return false
+  }
+}
+
+function SetDDRCStartTime()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("DDRC directory displayed")  
+    var currentSystemDateTime = aqDateTime.Now(); 
+    var startDateTimeDDRC = aqDateTime.AddMinutes(currentSystemDateTime, -2)
+    var startDateTime = Box_Start_Time.set_Value(startDateTimeDDRC)
+    Log.Message("DDRC Start date and time is set as "+startDateTime) 
+    return true
+  }
+  else
+  {
+    Log.Message("DDRC directory displayed")   
+    return false 
+  }
+}
+
+function ClickOnDDRCDownloadNowButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("DDRC directory displayed")  
+    Btn_DDRCDirectory_DownloadNow.ClickButton();
+    Log.Message("DDRC Download Now button clicked") 
+    CommonMethod.CheckActivityLog("DDR-C (Slow Scan) records saved successfully for device")
+    return true
+  }
+  else
+  {
+    Log.Message("DDRC directory not displayed")   
+    return false 
+  }
+}
+function ClickOnDDRCCancelButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("DDRC directory displayed")  
+    Btn_DDRCCancel.ClickButton();
+    Log.Message("DDRC Cancel button clicked") 
+    return true
+  }
+  else
+  {
+    Log.Message("DDRC directory not displayed")   
+    return false 
   }
 }

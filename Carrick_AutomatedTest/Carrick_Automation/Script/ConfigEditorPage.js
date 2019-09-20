@@ -228,3 +228,18 @@ function ClickOnProtocols()
     return false
   }
 }
+//This method is used to click on DDRC Channels in Config Editor
+function ClickOnDDRCChannels()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Fault Recording|DDR Channels")
+    Log.Message("Clicked on DDRC Channels")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}
