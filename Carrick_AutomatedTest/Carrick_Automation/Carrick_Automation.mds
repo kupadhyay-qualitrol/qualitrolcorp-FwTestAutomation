@@ -114,7 +114,7 @@
 									<testItem name="3U" key="{50389EF4-8C5B-4A0B-AABD-5CAA3FC82C30}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
-											<testItem name="IEC Browser Connection testing BTC-792" key="{900689D1-4EB1-4D8A-AB50-3DAE39AC14D2}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="IEC Browser Connection testing BTC-792" key="{900689D1-4EB1-4D8A-AB50-3DAE39AC14D2}" group="False" enabled="False" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters />
 												<children />
 											</testItem>
@@ -135,7 +135,7 @@
 									<testItem name="3U3I" key="{7458F75C-EC53-4FE8-8612-CEA11AD9082B}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
-											<testItem name="IEC Browser Connection testing BTC-792" key="{13AAFC4A-F4BE-4C7E-9F20-2F3CB9E64A88}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="IEC Browser Connection testing BTC-792" key="{13AAFC4A-F4BE-4C7E-9F20-2F3CB9E64A88}" group="False" enabled="False" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters />
 												<children />
 											</testItem>
@@ -834,11 +834,37 @@
 						<children>
 							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
-								<children />
+								<children>
+									<testItem name="DDRC Recording Download_1" key="{F27B3934-EA9E-4C7B-90E8-268CB17EFE4E}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownload" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+										<testParameters>
+											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
+											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="414638044" />
+											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
+											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
+											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+										</testParameters>
+										<children />
+									</testItem>
+								</children>
 							</testItem>
 							<testItem name="3U3I" key="{CF543998-C508-4873-9655-4D253CEDBBB6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
-								<children />
+								<children>
+									<testItem name="DDRC Recording Download_1_1" key="{8E46D011-4437-416F-8B7B-3EEF33145E70}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownload" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+										<testParameters>
+											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
+											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="414638044" />
+											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
+											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
+											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+										</testParameters>
+										<children />
+									</testItem>
+								</children>
 							</testItem>
 							<testItem name="3U3I3I" key="{24DF3437-EE4C-4AE3-848E-F87FE6DE7763}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
