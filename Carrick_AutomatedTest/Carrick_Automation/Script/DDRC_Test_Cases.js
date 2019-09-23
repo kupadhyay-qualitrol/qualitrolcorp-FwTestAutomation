@@ -29,6 +29,7 @@ function DDRCRecordingDownload(deviceType,deviceName,deviceSerialNo,deviceIPAdd,
     }
     //Step.3 Clean memory of DDRC
     DDRC_Methods.CleanMemoryDDRC()
+    aqUtils.Delay(3000)//Applying delay so that clean memory window get closed
     Log.Message("Clean the DDRC records from the data")
     
     //Step.4 Retrieve Configuration
