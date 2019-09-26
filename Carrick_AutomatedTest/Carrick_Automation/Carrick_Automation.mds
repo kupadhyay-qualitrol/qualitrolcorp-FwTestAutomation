@@ -10,7 +10,7 @@
 	<config language="{90F89436-9452-4F95-9882-6B5210079F13}" />
 	<testItems key="{F5C3AC8F-E7CD-49DA-A415-EFF8D5A099AF}" version="14">
 		<children>
-			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="RegressionTest" key="{25E63E54-6FA5-43E3-A1A0-C1B938BA349D}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -114,7 +114,7 @@
 									<testItem name="3U" key="{50389EF4-8C5B-4A0B-AABD-5CAA3FC82C30}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
-											<testItem name="IEC Browser Connection testing BTC-792" key="{900689D1-4EB1-4D8A-AB50-3DAE39AC14D2}" group="False" enabled="False" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="IEC Browser Connection testing BTC-792" key="{900689D1-4EB1-4D8A-AB50-3DAE39AC14D2}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters />
 												<children />
 											</testItem>
