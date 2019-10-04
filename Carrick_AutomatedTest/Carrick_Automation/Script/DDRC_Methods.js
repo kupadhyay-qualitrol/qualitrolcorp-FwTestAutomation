@@ -67,3 +67,14 @@ function CleanMemoryDDRC()
   AssertClass.IsTrue(DataRetrievalPage.ClickOnExecuteButton(),"Clicked on Execute button")
   CommonMethod.CheckActivityLog("Device memory cleaned successfully for selected data types")
 }
+function SelectRMSChannelCircuitQuantities()
+{
+  ConfigEditor_FaultRecording_DDRCChannels.GetTabCounts()
+  for (count=0; count < Tab_Count; count++)
+  {
+    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.ClickOnTab(count),"Clicked on tab");
+    
+    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.AddRMSQuantities(),"RMS Quantities added to selected quantities from available quantities")
+    
+  }
+}
