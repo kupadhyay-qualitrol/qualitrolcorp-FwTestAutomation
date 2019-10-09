@@ -84,10 +84,9 @@ function GetTabCounts()
 {
   if(Pane_DDRC_Channels.Visible)
   {
-    var Active_Tab = Tab_Available.ActiveTab.get_TabControl().get_Tabs()
-    Tab_Count = Active_Tab.VisibleTabsCount
+    var active_Tab = Tab_Available.ActiveTab.get_TabControl().get_Tabs()
+    Tab_Count = active_Tab.VisibleTabsCount
     Log.Message("Visible tab count are" + Tab_Count)
-    return Tab_Count
   }
 }
 //This function used for adding RMS quantities from available quantities
@@ -95,16 +94,16 @@ function AddRMSQuantities()
 {  
   if(Pane_DDRC_Channels.Visible)
   {
-    var Available_quantities = Tab_Available.ultraTabSharedControlsPage1.lstAvailable.frmClient.lstQuantities.lvQuantities
-    var item_list = Available_quantities.wItemList;
-    var sap = Available_quantities.wListSeparator;
+    var available_Quantities = Tab_Available.ultraTabSharedControlsPage1.lstAvailable.frmClient.lstQuantities.lvQuantities
+    var item_List = available_Quantities.wItemList;
+    var sap = available_Quantities.wListSeparator;
     aqString.ListSeparator = sap; 
-    for (i = 0; i < aqString.GetListLength(item_list); i++)
+    for (i = 0; i < aqString.GetListLength(item_List); i++)
     {
-      var temp = aqString.GetListItem(item_list, i);
+      var temp = aqString.GetListItem(item_List, i);
       if(aqString.StrMatches("RMS", temp))
       {
-        Available_quantities.ClickItem(temp);
+        available_Quantities.ClickItem(temp);
         Btn_Add_Quantities.Click();
       }
     }
@@ -122,8 +121,8 @@ function ClickOnTab(Index)
 {
   if(Pane_DDRC_Channels.Visible)
   {
-    var Item_Index = Tab_Available.get_VisibleTabs().get_Item(Index)
-    Tab_Available.set_SelectedTab(Item_Index)
+    var item_Index = Tab_Available.get_VisibleTabs().get_Item(Index)
+    Tab_Available.set_SelectedTab(item_Index)
     Log.Message("Tab has been selected")
     return true
   }
@@ -136,12 +135,12 @@ function ClickOnTab(Index)
 //This function is used for checking DDRT check box in selected quantities
 function CheckDDRTCheckBoxSelectedQuantities()
 {
-  var Selected_Quantities_Item_Count = Tab_Selected.wRowCount
-  Log.Message("Count is" + Selected_Quantities_Item_Count)
-  for (Item_Count = 0; Item_Count < Selected_Quantities_Item_Count; Item_Count++)
+  var selected_Quantities_Item_Count = Tab_Selected.wRowCount
+  Log.Message("Count is" + selected_Quantities_Item_Count)
+  for (item_Count = 0; item_Count < selected_Quantities_Item_Count; item_Count++)
   {
-     Tab_Selected.ClickCell(Item_Count,1)
-     Log.Message("DDRC check box clicked for RMS quantity"+ Item_Count)
+     Tab_Selected.ClickCell(item_Count,1)
+     Log.Message("DDRC check box clicked for RMS quantity"+ item_Count)
   }
 }
 //This function is used for Taking all the selected quantities back to available quantities
