@@ -285,7 +285,6 @@ function ClickOnDeviceStatusView()
 function GetDeviceCurrentDateTime()
 {
   var aString = "CURRENTDATE = ";
- 
   var CurrentDateTimePos = aqString.Find(DeviceStatusView.text.OleValue,aString)
   Log.Message(CurrentDateTimePos) 
   var CurrentDateTime=aqString.SubString(DeviceStatusView.text.OleValue,aqConvert.StrToInt(CurrentDateTimePos)+13,19)
@@ -696,15 +695,15 @@ function ClickOnExecuteButton()
   }
 }
 
-function SetDDRCStartTime()
+function UpdateDDRCStartTime()
 { 
   if (DDRCDirectory.Exists)
   {
-    Log.Message("DDRC directory displayed")  
-    var currentSystemDateTime = aqDateTime.Now(); 
+    Log.Message("New date time is" + NewDateTime)
+    var currentSystemDateTime = aqDateTime.AddDays(NewDateTime,1)
     var startDateTimeDDRC = aqDateTime.AddMinutes(currentSystemDateTime, -2)
     var startDateTime = Box_Start_Time.set_Value(startDateTimeDDRC)
-    Log.Message("DDRC Start date and time is set as "+startDateTime) 
+    Log.Message("DDRC Start date and time is set as "+ startDateTimeDDRC) 
     return true
   }
   else
@@ -721,8 +720,14 @@ function ClickOnDDRCDownloadNowButton()
     Log.Message("DDRC directory displayed")  
     Btn_DDRCDirectory_DownloadNow.ClickButton();
     Log.Message("DDRC Download Now button clicked") 
-    CommonMethod.CheckActivityLog("DDR-C (Slow Scan) records saved successfully for device")
-    return true
+    if(CommonMethod.CheckActivityLog("DDR-C (Slow Scan) records saved successfully for device"))
+    {
+     return true
+    }
+    else if(CommonMethod.CheckActivityLog("DDR-C (Slow Scan) data not available on device."))
+    {
+     return false 
+    }
   }
   else
   {

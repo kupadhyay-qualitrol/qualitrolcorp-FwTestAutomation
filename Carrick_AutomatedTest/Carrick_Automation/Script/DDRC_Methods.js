@@ -69,12 +69,33 @@ function CleanMemoryDDRC()
 }
 function SelectRMSChannelCircuitQuantities()
 {
+  ConfigEditor_FaultRecording_DDRCChannels.ClickOnRemoveAllButton()
+  Log.Message("All the selected quantities are moved to Available quantities")
   ConfigEditor_FaultRecording_DDRCChannels.GetTabCounts()
   for (count=0; count < Tab_Count; count++)
   {
     AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.ClickOnTab(count),"Clicked on tab");
     
-    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.AddRMSQuantities(),"RMS Quantities added to selected quantities from available quantities")
-    
+    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.AddRMSQuantities(),"RMS Quantities added to selected quantities from available quantities")    
   }
+}
+
+function SetDDRCStartTime()
+{
+  //Step.1 Close DDRC Directory
+  AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"DDRC Directroy get closed")
+  
+  //Step.2 Open Device Status view
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Device status view window opens")
+  
+  //Step.3 Get the current date time of device.
+  DataRetrievalPage.GetDeviceCurrentDateTime()
+  
+  //Step.4 Open DDRC Directory
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"DDRC Directory opens")
+  
+  //Step.5 Now set the time in DDRC Start time field.
+  AssertClass.IsTrue(DataRetrievalPage.UpdateDDRCStartTime(),"DDRC start time has been set as per the current device time.")
+  
+  Log.Message("DDRC start time set as 2 minutes before of current system date and time")
 }
