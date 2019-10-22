@@ -724,7 +724,7 @@ function ClickOnDDRCDownloadNowButton()
     {
      return true
     }
-    else(CommonMethod.CheckActivityLog("DDR-C (Slow Scan) data not available on device."))
+    else if(CommonMethod.CheckActivityLog("DDR-C (Slow Scan) data not available on device."))
     {
      return false 
     }

@@ -73,7 +73,7 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
 {
   try
   {
-   Log.Message("Test to check for the DDRC recording started or not and download DDRC record") 
+   Log.Message("Test to check for the DDRC recording started or not and download DDRC record with quantities") 
    
     //Step1. Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
@@ -97,7 +97,7 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
     AssertClass.IsTrue(DeviceManagementPage.ClickonRetrieveConfig(),"Clicked on Retrieve Config")
     
     //Step.5 Click on DDRC Channnels
-    AssertClass.IsTrue(ConfigEditorPage.ClickOnDDRCChannels(),"Clicked on DDRC Channles")
+    AssertClass.IsTrue(ConfigEditorPage.ClickOnDDRCChannels(),"Clicked on DDRC Channels")
     
     //Step.6 Set Storage rate 
     AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.SetStorageRate(storageRate),"Storage rate has been set")
@@ -117,7 +117,7 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
     //Step.11 Click on DDRC button
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"Clicked on DDRC Directory")
     
-    //Step.12 Check if DDRC Directroy opens or not
+    //Step.12 Check if DDRC Directory opens or not
     AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCountDDRCOpen),"DDRC directory pane open and displayed")
     
     //Step.13 Set Start date and time for DDRC
@@ -127,11 +127,11 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
     
     //Step.15 Close DDRC directory
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directroy closed")
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
   }
     catch(ex)
   {
     Log.Error(ex.stack)
-    Log.Error("Fail:-Test to check for the DDRC recording started or not and download DDRC record")
+    Log.Error("Fail:-Test to check for the DDRC recording started or not and download DDRC record with quantities")
   }
 }
