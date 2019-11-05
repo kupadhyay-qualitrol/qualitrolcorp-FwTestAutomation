@@ -14,7 +14,7 @@
 				<testParameters />
 				<children />
 			</testItem>
-			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="22" timeout="0" stopOnError="0" stopOnException="2" description="">
+			<testItem name="RunPQStandaloneTest" key="{C304A716-A481-4561-9568-9A7063EB75EC}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}PQStandalone_Test" count="44" timeout="0" stopOnError="0" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
