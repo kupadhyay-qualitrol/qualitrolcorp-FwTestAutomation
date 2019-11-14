@@ -6,6 +6,7 @@
 //USEUNIT CommonMethod
 //USEUNIT FavoritesPage
 //USEUNIT PDPPage
+//USEUNIT RMSDataValidationExePage
 //USEUNIT ConfigEditor_FaultRecording_DDRCChannels
 
 function CompareDateTimeDDRC(retryCount)
@@ -98,4 +99,29 @@ function SetDDRCStartTime()
   AssertClass.IsTrue(DataRetrievalPage.UpdateDDRCStartTime(),"DDRC start time has been set as per the current device time.")
   
   Log.Message("DDRC start time set as 2 minutes before of current system date and time")
+}
+
+function ValidateCSSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
+{
+  //Step.1 Export CSV data for DDRC Record
+    var SysUserName = CommonMethod.GetSystemUsername()
+    var DDRCRecordPath ="C:\\Users\\"+SysUserName+"\\Desktop\\DDRCRecord\\"
+    if (aqFileSystem.Exists(DDRCRecordPath))
+    {
+      AssertClass.IsTrue(PDPPage.ExportTOCSVDDRC())    
+    }
+    else
+    {
+      aqFileSystem.CreateFolder(DDRCRecordPath)
+      AssertClass.IsTrue(PDPPage.ExportTOCSVDDRC())
+    }
+    AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process
+  
+  //Step.2 Launch RMS data validation application
+    AssertClass.IsTrue(RMSDataValidationExePage.LaunchRMSValidationApplication(), "RMS data validation app has been launched")
+  
+  //Step.3 Validate RMS data for DDRC
+    var DDRCStoredPath = DDRCRecordPath+aqFileSystem.FindFiles(DDRCRecordPath, "*.csv").Item(0).Name
+    var RMSDDRCValidationStatus= RMSDataValidationExePage.ValidateRMSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
+    AssertClass.CompareString("PASS", RMSValidationStatus,"Checking RMS Validation" )
 }
