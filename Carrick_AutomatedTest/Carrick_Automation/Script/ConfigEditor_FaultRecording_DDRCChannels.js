@@ -4,8 +4,8 @@
 var Tab_Count
 var Drp_Dwn_Storage_Rate = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.cmbSamplingRate
 var Pane_DDRC_Channels = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane
-var Box_Pre_Fault = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.frmDdrtDuration.txtPrefault
-var Box_Post_Fault = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.frmDdrtDuration.txtPostfault
+//var Box_Pre_Fault = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.frmDdrtDuration.txtPrefault
+//var Box_Post_Fault = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.frmDdrtDuration.txtPostfault
 var Chk_Box_DDRC_Group1 = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.qtGroupBox1.chkGroup1
 var Chk_Box_DDRC_Group2 = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.qtGroupBox1.chkGroup2
 var Tab_Available = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucDdrChannels.tabAvailable
@@ -30,23 +30,23 @@ function SetStorageRate(StorageRate)
   }
 }
 
-//This function is to set Pre-Fault and Post-Fault for DDRC channels
-function SetPreFaultPostFault(prefault,postfault)
-{
-  if(Pane_DDRC_Channels.Visible)
-  {
-    Box_Pre_Fault.set_Text(prefault);
-    Log.Message("Pre Fault has been set for DDRC channels")
-    Box_Post_Fault.set_Text(postfault);
-    Log.Message("Post Fault has been set for DDRC channels")
-    return true
-  }
-  else
-  {
-    Log.Message("DDRC Channels pane is not displaying")
-    return false
-  }
-}
+////This function is to set Pre-Fault and Post-Fault for DDRC channels
+//function SetPreFaultPostFault(prefault,postfault)
+//{
+//  if(Pane_DDRC_Channels.Visible)
+//  {
+//    Box_Pre_Fault.set_Text(prefault);
+//    Log.Message("Pre Fault has been set for DDRC channels")
+//    Box_Post_Fault.set_Text(postfault);
+//    Log.Message("Post Fault has been set for DDRC channels")
+//    return true
+//  }
+//  else
+//  {
+//    Log.Message("DDRC Channels pane is not displaying")
+//    return false
+//  }
+//}
 //This Function is to check DDRC and DDRT
 function CheckDDRCDDRTCheckBox() 
 {

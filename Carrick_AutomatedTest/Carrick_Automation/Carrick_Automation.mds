@@ -1345,6 +1345,29 @@
 								<testParameters />
 								<children />
 							</testItem>
+							<testItem name="DDRC Recording Download_With_Quantity_1" key="{F573AEB5-11B1-4BEF-8E82-EFB157E646D0}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
+									<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
+									<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
+									<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
+									<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
+									<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+									<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+									<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDFRInjection.qcm" />
+								</testParameters>
+								<children />
+							</testItem>
+							<testItem name="ProjectTestItem1_2" key="{78FBCCEC-EEC5-42B6-91FB-51994ADDE142}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+									<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+									<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+									<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
+								</testParameters>
+								<children />
+							</testItem>
 							<testItem name="EndReport" key="{D901B23E-0B55-421D-A59F-3F56908FA5AE}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children />

@@ -123,5 +123,5 @@ function ValidateCSSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,Vo
   //Step.3 Validate RMS data for DDRC
     var DDRCStoredPath = DDRCRecordPath+aqFileSystem.FindFiles(DDRCRecordPath, "*.csv").Item(0).Name
     var RMSDDRCValidationStatus= RMSDataValidationExePage.ValidateRMSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
-    AssertClass.CompareString("PASS", RMSValidationStatus,"Checking RMS Validation" )
+    AssertClass.CompareString("PASS", RMSDDRCValidationStatus,"Checking RMS Validation" )
 }
