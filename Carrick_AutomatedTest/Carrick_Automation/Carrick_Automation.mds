@@ -32,7 +32,7 @@
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="CommsConfig" key="{9936F72A-12B5-48E0-AFC2-06338C77A476}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{8B9E04B0-E7D2-4F55-B9DB-71544FB61962}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
@@ -108,7 +108,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Test 3U/1U Cabling Configuration" key="{5FB736B3-AD5A-452E-B81E-C9A444B9A778}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 3U/1U Cabling Configuration" key="{5FB736B3-AD5A-452E-B81E-C9A444B9A778}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="3U" key="{50389EF4-8C5B-4A0B-AABD-5CAA3FC82C30}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -375,7 +375,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 2M3U/1U1U Cabling Configuration" key="{EB8B50B8-51C5-49B6-B97B-2F9335B14188}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 2M3U/1U1U Cabling Configuration" key="{EB8B50B8-51C5-49B6-B97B-2F9335B14188}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="2M3U" key="{E0F1DC43-BC4A-4901-92EC-675D44127759}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -710,7 +710,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 4U/1U Cabling Configuration" key="{07C0F1AB-2816-4A83-AA89-B5192EB2F623}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 4U/1U Cabling Configuration" key="{07C0F1AB-2816-4A83-AA89-B5192EB2F623}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="4U" key="{2F78CD37-BF70-4348-B1CE-2D3D0954CF2C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -891,7 +891,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 2M4U Cabling Configuration" key="{550A2CF2-3E3F-461D-9614-008B6EA2DFE6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 2M4U Cabling Configuration" key="{550A2CF2-3E3F-461D-9614-008B6EA2DFE6}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="2M4U" key="{35436166-5D19-49C7-B8DD-88A8C1FADEC7}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -1038,7 +1038,7 @@
 												<testParameters />
 												<children />
 											</testItem>
-											<testItem name="DDRC Recording Download_With_Quantity" key="{3DF352D2-538B-472E-B6D8-23E4118B3BCF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="DDRC Recording Download_With_Quantity" key="{9B4A4AE2-03DD-47FC-966E-36E95D61829B}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -1047,13 +1047,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{8B599291-C1BE-418A-AE07-5CAC91BE1A9C}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3U3I" key="{7D6A1D12-E547-418F-BC3D-2990A6F5C528}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3U3I" key="{7D6A1D12-E547-418F-BC3D-2990A6F5C528}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{B06B81E1-EBD6-483F-9532-73BFB9CD740C}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1069,13 +1079,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{61EF32DF-D4B3-47D8-BF20-5F4482D6B450}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3U3I3I" key="{1FEE4E9F-8C70-4B9F-B4DD-426B1B160492}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3U3I3I" key="{1FEE4E9F-8C70-4B9F-B4DD-426B1B160492}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{F7C7C519-D3FE-439B-B69D-61D5448869A7}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1091,13 +1111,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{B8572DB2-E712-4F82-950E-5692E0B864A7}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3U3I3I3I" key="{85A124F8-C60B-4A9A-BCF0-209F09BF96A6}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3U3I3I3I" key="{85A124F8-C60B-4A9A-BCF0-209F09BF96A6}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{77262F0A-5F31-4073-B853-34ACC4ED28E0}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1113,13 +1143,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{D7B2EB2A-14C3-44B0-8E80-732833548CB3}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U4U" key="{701020FD-35A2-40B1-A0E5-3279587B005B}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U4U" key="{701020FD-35A2-40B1-A0E5-3279587B005B}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{70BC4924-111F-4009-BB83-60D5DDD0C157}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1135,13 +1175,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{19EECA62-F264-4518-BC10-5594C78B8F1C}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U4U3I" key="{9AD557A4-5830-42AC-B45B-262A553580CA}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U4U3I" key="{9AD557A4-5830-42AC-B45B-262A553580CA}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{B5034917-899F-44E5-83A5-44920847C7FE}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1157,13 +1207,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{67C77747-DBDC-43CF-90FF-A1E9BC6CD827}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U4U3I3I3I" key="{6E7F720D-7392-46BF-B14A-97FA68899F5C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U4U3I3I3I" key="{6E7F720D-7392-46BF-B14A-97FA68899F5C}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{73F1D397-AA22-4EEA-B3DC-924DC259301A}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1179,13 +1239,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{B8D14146-980B-4DDA-B915-609AD345C9F4}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3U4I" key="{DC1CBFF7-A01B-47DF-A03E-7A528E419912}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U4I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3U4I" key="{DC1CBFF7-A01B-47DF-A03E-7A528E419912}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U4I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{9B02F28A-9269-47A5-92E6-7CC740321767}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1201,13 +1271,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{004F0E62-AE45-4C47-8913-ABE9D1D2FC2E}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3U4I3I" key="{B1D7BEBE-39B2-413A-9748-8997EA661FDF}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U4I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3U4I3I" key="{B1D7BEBE-39B2-413A-9748-8997EA661FDF}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U4I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{4995B5B9-0C11-4EB9-B786-6127F233168F}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1223,13 +1303,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{ABE722C7-8B81-4A05-9DB0-308212CAB412}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3U4I4I3I" key="{95940EAC-B6B4-4D48-8E12-10B49995D5C3}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U4I4I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3U4I4I3I" key="{95940EAC-B6B4-4D48-8E12-10B49995D5C3}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U4I4I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{0253211C-4B13-4432-B144-DEDAEA7CA3CB}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1245,13 +1335,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{6D25BB5B-AC5B-4CE2-BF0E-558034D2B2B0}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U4U3I3I4I" key="{9BA681E0-6DF0-4E9B-AE5B-096F5F5C207E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I3I4I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U4U3I3I4I" key="{9BA681E0-6DF0-4E9B-AE5B-096F5F5C207E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I3I4I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{881382A1-A42F-42DF-B481-A34DED13852F}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1267,13 +1367,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{9DAF0A9F-B9DC-4D55-BBFE-FA681D2B7F98}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U1U3I3I" key="{11948AA8-B9EB-459F-A69D-7D371E395AF6}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U1U3I3I" key="{11948AA8-B9EB-459F-A69D-7D371E395AF6}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{17BEA5B0-C03D-4ADD-BB52-B8D9081A8D82}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1289,13 +1399,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{772843AC-ED53-41C2-9D7C-8C1C0C607270}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U1U3I3I3I" key="{EC4DBECD-15B6-48EA-B831-D74E397E816D}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U1U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U1U3I3I3I" key="{EC4DBECD-15B6-48EA-B831-D74E397E816D}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U1U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{914B3F94-E420-499E-8610-13C9A20AA4C0}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1311,13 +1431,23 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{A0530B84-C0CC-429D-B6B5-581C963BA962}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="4U3I1U3I3I" key="{13C1F05E-5B5B-4264-93DC-B037207CE68B}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3I1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="4U3I1U3I3I" key="{13C1F05E-5B5B-4264-93DC-B037207CE68B}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3I1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{03F6E1E5-3DE3-4BD2-9A0A-9D2C84051DD6}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1333,7 +1463,17 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+											<testItem name="Validate DDRC" key="{DA045272-8CDF-4706-B251-E1F09600D8D9}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
+													<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+													<param2 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+													<param3 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
+													<param4 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1345,7 +1485,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="DDRC Recording Download_With_Quantity_1" key="{F573AEB5-11B1-4BEF-8E82-EFB157E646D0}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="DDRC Recording Download_With_Quantity" key="{F573AEB5-11B1-4BEF-8E82-EFB157E646D0}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters>
 									<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 									<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -1354,11 +1494,11 @@
 									<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 									<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 									<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-									<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDFRInjection.qcm" />
+									<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 								</testParameters>
 								<children />
 							</testItem>
-							<testItem name="ProjectTestItem1_2" key="{78FBCCEC-EEC5-42B6-91FB-51994ADDE142}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="Validate DDRC" key="{78FBCCEC-EEC5-42B6-91FB-51994ADDE142}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters>
 									<param0 name="DDRCStoredPath" type="3" localVarName="" varType="8" value="C:\Users\kupadhyay\Desktop\DDRCRecord\" />
 									<param1 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
@@ -1378,7 +1518,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="MaxDFR" key="{22AD86D0-6BC7-492C-B5A7-DCD998391FDE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="MaxDFR" key="{22AD86D0-6BC7-492C-B5A7-DCD998391FDE}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{D0E051E5-3D5E-423F-B131-C0CF3A7DF657}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
@@ -1439,7 +1579,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
