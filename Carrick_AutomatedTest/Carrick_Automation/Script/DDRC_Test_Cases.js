@@ -77,7 +77,7 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
    Log.Message("Test to check for the DDRC recording started or not and download DDRC record with quantities") 
    
     //Step.0 Inject voltage and current using omicron
-    OmicronQuickCMCPage.InjectVoltCurrent(fileName)
+    OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+fileName)
    
     //Step1. Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
