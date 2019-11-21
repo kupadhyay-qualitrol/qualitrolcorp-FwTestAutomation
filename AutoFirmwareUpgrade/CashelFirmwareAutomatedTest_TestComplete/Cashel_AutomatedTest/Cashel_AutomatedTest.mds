@@ -10,7 +10,7 @@
 	<config language="{897793E3-73F3-4895-A956-3D41D3A24A45}" />
 	<testItems key="{D6A2D64E-F034-4624-9B6D-EF17B9363F56}" version="14">
 		<children>
-			<testItem name="LaunchPQStandaloneApplication" key="{13F5DD9E-55C9-4BC5-A22F-5CDDE933D673}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}LaunchPQStandaloneApp" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="LaunchPQStandaloneApplication" key="{13F5DD9E-55C9-4BC5-A22F-5CDDE933D673}" group="False" enabled="True" testMoniker="{945D175E-39EC-4CA6-827D-6C14403DF63B}LaunchPQStandaloneApp" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 				<testParameters />
 				<children />
 			</testItem>
