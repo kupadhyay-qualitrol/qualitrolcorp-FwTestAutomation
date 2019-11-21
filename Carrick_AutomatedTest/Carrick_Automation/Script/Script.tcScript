@@ -44,6 +44,7 @@
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />
 			<child name="CommonMethod" key="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}" path="CommonMethod.js" />
 			<child name="IECBrowserCommonMethod" key="{AB3A8F15-256D-498B-9AB8-EA8F6FBFBEED}" path="IECBrowserCommonMethod.js" />
+			<child name="AutoTestCommonMethod" key="{9295F0EB-8461-48A1-B1C4-406C4AC44A0C}" path="AutoTestCommonMethod.js" />
 		</folder>
 		<folder name="Functional_Methods">
 			<child name="DFR_Methods" key="{CBA3C61F-3082-4C8A-BA3F-B7F074C57C2C}" path="DFR_Methods.js" />

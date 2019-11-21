@@ -76,5 +76,17 @@
 			<testData />
 			<data />
 		</child>
+		<child key="{8AF9610C-FC32-4D14-8DBB-B1FE9AA0A4D7}">
+			<config nodeName="AutoTest_00_TestShell" autorunOnRecording="False" enabled="True" count="1" useFeaturedRuntimeObject="True" userChangeName="False">
+				<runModeParams activeRunMode="Simple">
+					<param name="RunAs" parameters="" workFolder="" userName="" password="" domain="" />
+					<param name="Profile" parameters="" workFolder="" useProject="False" projectFileName="" overrideProfiler="False" profilerName="" profileRunMode="Silent" AQtimeVersion="0" forceRunMode="False" />
+					<param name="Debug" parameters="" workFolder="" />
+					<param name="Simple" fileName="AutoTest.00.TestShell.exe" filePath="D:\Automation\2.0.0.36\" parameters="" workFolder="" />
+				</runModeParams>
+			</config>
+			<testData />
+			<data />
+		</child>
 	</children>
 </Root>
