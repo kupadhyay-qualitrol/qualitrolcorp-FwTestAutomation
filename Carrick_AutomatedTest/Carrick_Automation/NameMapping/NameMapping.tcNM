@@ -4153,12 +4153,311 @@
 																		<Value PropertyType="0" Value="groupBoxSettings" Type="5" />
 																	</Property>
 																</Properties>
+																<Children>
+																	<Child Name="btnModifySettings" Key="{311A261A-7AA4-4C5A-83C3-E7C8AEAB5EA9}" ParallelWalk="True">
+																		<Image FileName="1511376629" Left="263" Top="122" Right="325" Bottom="145" />
+																		<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="btnModifySettings" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+															<Child Name="groupBoxTest" Key="{ED09F986-6B7A-440F-A676-384FA79343EF}" ParallelWalk="True">
+																<Image FileName="1295991079" Left="12" Top="153" Right="335" Bottom="388" />
+																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="groupBoxTest" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="tableLayoutPanelTestbuttons" Key="{F8F47C03-305B-4D8B-B380-B546A170C2CC}" ParallelWalk="True">
+																		<Image FileName="1295991079" Left="15" Top="169" Right="332" Bottom="385" />
+																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="tableLayoutPanelTestbuttons" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="btn01ReadDevice0" Key="{2F53B782-4645-47A2-8564-B0234481DD21}" ParallelWalk="True">
+																				<Image FileName="1295991079" Left="16" Top="170" Right="172" Bottom="195" />
+																				<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="btn01ReadDevice0" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																		</Children>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="SplitterPanel2" Key="{1EA5C420-9649-45F6-A12C-D21F6342DB8F}" ParallelWalk="True">
+												<Image FileName="-1801967219" Left="342" Top="31" Right="1069" Bottom="641" />
+												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+												<Properties>
+													<Property Name="ClrFullClassName">
+														<Value PropertyType="0" Value="System.Windows.Forms.SplitterPanel" Type="5" />
+													</Property>
+													<Property Name="WndCaption">
+														<Value PropertyType="0" Value="" Type="5" />
+													</Property>
+													<Property Name="Index">
+														<Value PropertyType="0" Value="2" Type="0" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="tabControl" Key="{4F33C941-5800-4517-90B5-57A6F48D9B42}" ParallelWalk="True">
+														<Image FileName="-1801967219" Left="342" Top="31" Right="1069" Bottom="641" />
+														<TypeInfo Item0="{6E33BE11-31AF-4A4B-B6BD-243307ADA947}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="tabControl" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="tabPageText" Key="{49857BEB-866B-4451-B087-0A0056E760FD}" ParallelWalk="True">
+																<Image FileName="-1801967219" Left="346" Top="35" Right="1065" Bottom="619" />
+																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																<Properties>
+																	<Property Name="WinFormsControlName">
+																		<Value PropertyType="0" Value="tabPageText" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="tbxTestTextResults" Key="{59F54CEA-CAB1-40BC-AF5C-4C0C9DA7D8B8}" ParallelWalk="True">
+																		<Image FileName="-1801967219" Left="349" Top="38" Right="1062" Bottom="616" />
+																		<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="tbxTestTextResults" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
 															</Child>
 														</Children>
 													</Child>
 												</Children>
 											</Child>
 										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="TestSettingsDiag" Key="{1E7F8663-4446-4801-91F6-234B8BD9A444}" ParallelWalk="True">
+								<Image FileName="-799267864" Left="0" Top="0" Right="655" Bottom="432" />
+								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="TestSettingsDiag" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="testSettingsControl" Key="{B8F59AD5-6280-4C59-BDB0-8D7A03185979}" ParallelWalk="True">
+										<Image FileName="-799267864" Left="8" Top="31" Right="647" Bottom="424" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="testSettingsControl" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="groupBoxSettings" Key="{7D32A945-FFF3-41AE-B970-A9CF01F13E1B}" ParallelWalk="True">
+												<Image FileName="-799267864" Left="11" Top="35" Right="644" Bottom="295" />
+												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="groupBoxSettings" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="btnDeviceConfigSheet" Key="{4F9B4CE2-AB00-4865-B0CD-055AC3304956}" ParallelWalk="True">
+														<Image FileName="-799267864" Left="17" Top="71" Right="42" Bottom="94" />
+														<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="btnDeviceConfigSheet" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="btnOutputFolder" Key="{210DB674-8C1D-4A06-83EB-0BC532EE37E5}" ParallelWalk="True">
+														<Image FileName="-1418778692" Left="17" Top="116" Right="42" Bottom="139" />
+														<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+														<Properties>
+															<Property Name="WinFormsControlName">
+																<Value PropertyType="0" Value="btnOutputFolder" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="btnApply" Key="{C5AF7E3A-4D54-4527-9F62-87667F954F5E}" ParallelWalk="True">
+												<Image FileName="-700637429" Left="573" Top="386" Right="635" Bottom="413" />
+												<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="btnApply" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="dlgOpenFile" Key="{37E3F3A9-260D-4E28-8EA3-A5E1BF3CEA6F}" ParallelWalk="True">
+								<Image FileName="-2010268814" Left="0" Top="0" Right="366" Bottom="130" />
+								<TypeInfo Item0="{769679BD-9B41-471B-BBCD-353528935F33}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Open File" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="Open_File" Key="{24773F5E-C958-4FFB-9AD9-F529C3C3FEEA}" ParallelWalk="True">
+										<Image FileName="-2010268814" Left="3" Top="26" Right="363" Bottom="127" />
+										<TypeInfo Item0="{FB702C91-610B-4A60-817A-EEA9982752E0}" />
+										<Properties>
+											<Property Name="FrameworkId">
+												<Value PropertyType="0" Value="DirectUI" Type="5" />
+											</Property>
+											<Property Name="ClassName">
+												<Value PropertyType="0" Value="TaskDialog" Type="5" />
+											</Property>
+											<Property Name="LocalizedControlType">
+												<Value PropertyType="0" Value="pane" Type="5" />
+											</Property>
+											<Property Name="ObjectIdentifier">
+												<Value PropertyType="0" Value="Open_File" Type="5" />
+											</Property>
+											<Property Name="ObjectGroupIndex">
+												<Value PropertyType="0" Value="1" Type="0" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="CtrlNotifySink" Key="{3309196E-0715-49E0-84A6-9FDC7DC3EBA0}" ParallelWalk="True">
+												<Image FileName="-2010268814" Left="285" Top="95" Right="353" Bottom="118" />
+												<TypeInfo Item0="{ABB30AB2-9D0E-4922-BD6B-D1DAC97CBA8D}" />
+												<Properties>
+													<Property Name="WndClass">
+														<Value PropertyType="0" Value="CtrlNotifySink" Type="5" />
+													</Property>
+													<Property Name="Index">
+														<Value PropertyType="0" Value="7" Type="0" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="btnOK" Key="{16E92D8B-D675-44E1-B3CC-0B3D4C2B878F}" ParallelWalk="True">
+														<Image FileName="-2010268814" Left="285" Top="95" Right="353" Bottom="118" />
+														<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
+														<Properties>
+															<Property Name="WndClass">
+																<Value PropertyType="0" Value="Button" Type="5" />
+															</Property>
+															<Property Name="WndCaption">
+																<Value PropertyType="0" Value="OK" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="dlgOpenADeviceConfigurationSheet" Key="{DEE35C8E-A6B7-4378-98B0-F7FBAA4DF42A}" ParallelWalk="True">
+								<Image FileName="-1846299415" Left="0" Top="0" Right="960" Bottom="540" />
+								<TypeInfo Item0="{C759719F-357F-4B73-B180-0DB286E5C06F}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value PropertyType="0" Value="#32770" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="Open a Device Configuration Sheet" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="cbxFileName" Key="{8E6F130F-D514-44A7-97B2-DF2A3A680D3E}" ParallelWalk="True">
+										<Image FileName="-1846299415" Left="197" Top="465" Right="735" Bottom="489" />
+										<TypeInfo Item0="{84424348-66CC-44D5-8FD4-332BBF648A04}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="ComboBoxEx32" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="ComboBox" Key="{A947D999-0A2C-4E39-8DAE-F4043D36E468}" ParallelWalk="True">
+												<Image FileName="-1846299415" Left="197" Top="465" Right="735" Bottom="489" />
+												<TypeInfo Item0="{84424348-66CC-44D5-8FD4-332BBF648A04}" />
+												<Properties>
+													<Property Name="WndClass">
+														<Value PropertyType="0" Value="ComboBox" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="Edit" Key="{DFA7AECD-077C-40C4-844B-0AC5021C7F3F}" ParallelWalk="True">
+														<Image FileName="-1846299415" Left="201" Top="470" Right="715" Bottom="485" />
+														<TypeInfo Item0="{ABC89E00-4706-4129-9490-8D989EA902FA}" />
+														<Properties>
+															<Property Name="WndClass">
+																<Value PropertyType="0" Value="Edit" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="btnOpen" Key="{6EA21EBA-33E7-4570-A7D3-FED32BEB9488}" ParallelWalk="True">
+										<Image FileName="-273442621" Left="747" Top="494" Right="835" Bottom="520" />
+										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="&amp;Open" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="ValidationResultsForm" Key="{54C3491D-D586-45D8-8EC0-4564FD2E5936}" ParallelWalk="True">
+								<Image FileName="-1085735363" Left="0" Top="0" Right="552" Bottom="285" />
+								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="ValidationResultsForm" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="checkBoxConfirm" Key="{F6C914CB-EEC8-4DA1-B075-C16FD65EA780}" ParallelWalk="True">
+										<Image FileName="-1085735363" Left="97" Top="227" Right="296" Bottom="251" />
+										<TypeInfo Item0="{BCCDC67D-ABA7-4E38-A6E3-E66D9C613DAC}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="checkBoxConfirm" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="buttonPassed" Key="{8D1248D1-8E7D-40B8-B9F2-96122507B586}" ParallelWalk="True">
+										<Image FileName="-1085735363" Left="365" Top="212" Right="483" Bottom="265" />
+										<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="buttonPassed" Type="5" />
+											</Property>
+										</Properties>
 									</Child>
 								</Children>
 							</Child>
@@ -4808,10 +5107,52 @@
 				<Child Name="splitContainer1" Owner="{F2BCC929-1543-4501-8C51-F1A6E24088F9}">
 					<Child Name="SplitterPanel" Owner="{FA74F89D-822D-46F6-99C1-D4946415A411}">
 						<Child Name="testPanel" Owner="{5218337F-2E6E-4CD9-A7A2-4CE089655E4E}">
-							<Child Name="groupBoxSettings" Owner="{A25142BE-70AF-4170-B60B-ACDB346AB0A4}" />
+							<Child Name="groupBoxSettings" Owner="{A25142BE-70AF-4170-B60B-ACDB346AB0A4}">
+								<Child Name="btnModifySettings" Owner="{311A261A-7AA4-4C5A-83C3-E7C8AEAB5EA9}" />
+							</Child>
+							<Child Name="groupBoxTest" Owner="{ED09F986-6B7A-440F-A676-384FA79343EF}">
+								<Child Name="tableLayoutPanelTestbuttons" Owner="{F8F47C03-305B-4D8B-B380-B546A170C2CC}">
+									<Child Name="btn01ReadDevice0" Owner="{2F53B782-4645-47A2-8564-B0234481DD21}" />
+								</Child>
+							</Child>
+						</Child>
+					</Child>
+					<Child Name="SplitterPanel2" Owner="{1EA5C420-9649-45F6-A12C-D21F6342DB8F}">
+						<Child Name="tabControl" Owner="{4F33C941-5800-4517-90B5-57A6F48D9B42}">
+							<Child Name="tabPageText" Owner="{49857BEB-866B-4451-B087-0A0056E760FD}">
+								<Child Name="tbxTestTextResults" Owner="{59F54CEA-CAB1-40BC-AF5C-4C0C9DA7D8B8}" />
+							</Child>
 						</Child>
 					</Child>
 				</Child>
+			</Child>
+			<Child Name="TestSettingsDiag" Owner="{1E7F8663-4446-4801-91F6-234B8BD9A444}">
+				<Child Name="testSettingsControl" Owner="{B8F59AD5-6280-4C59-BDB0-8D7A03185979}">
+					<Child Name="groupBoxSettings" Owner="{7D32A945-FFF3-41AE-B970-A9CF01F13E1B}">
+						<Child Name="btnDeviceConfigSheet" Owner="{4F9B4CE2-AB00-4865-B0CD-055AC3304956}" />
+						<Child Name="btnOutputFolder" Owner="{210DB674-8C1D-4A06-83EB-0BC532EE37E5}" />
+					</Child>
+					<Child Name="btnApply" Owner="{C5AF7E3A-4D54-4527-9F62-87667F954F5E}" />
+				</Child>
+			</Child>
+			<Child Name="dlgOpenFile" Owner="{37E3F3A9-260D-4E28-8EA3-A5E1BF3CEA6F}">
+				<Child Name="Open_File" Owner="{24773F5E-C958-4FFB-9AD9-F529C3C3FEEA}">
+					<Child Name="CtrlNotifySink" Owner="{3309196E-0715-49E0-84A6-9FDC7DC3EBA0}">
+						<Child Name="btnOK" Owner="{16E92D8B-D675-44E1-B3CC-0B3D4C2B878F}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="dlgOpenADeviceConfigurationSheet" Owner="{DEE35C8E-A6B7-4378-98B0-F7FBAA4DF42A}">
+				<Child Name="cbxFileName" Owner="{8E6F130F-D514-44A7-97B2-DF2A3A680D3E}">
+					<Child Name="ComboBox" Owner="{A947D999-0A2C-4E39-8DAE-F4043D36E468}">
+						<Child Name="Edit" Owner="{DFA7AECD-077C-40C4-844B-0AC5021C7F3F}" />
+					</Child>
+				</Child>
+				<Child Name="btnOpen" Owner="{6EA21EBA-33E7-4570-A7D3-FED32BEB9488}" />
+			</Child>
+			<Child Name="ValidationResultsForm" Owner="{54C3491D-D586-45D8-8EC0-4564FD2E5936}">
+				<Child Name="checkBoxConfirm" Owner="{F6C914CB-EEC8-4DA1-B075-C16FD65EA780}" />
+				<Child Name="buttonPassed" Owner="{8D1248D1-8E7D-40B8-B9F2-96122507B586}" />
 			</Child>
 		</Child>
 	</LogicalNodes>

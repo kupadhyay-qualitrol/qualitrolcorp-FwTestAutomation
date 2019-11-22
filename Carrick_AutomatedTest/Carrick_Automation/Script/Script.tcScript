@@ -12,6 +12,7 @@
 			<child name="IECBrowser_Test_Cases" key="{0567AFC5-96F0-4E3B-9A32-C363E754303A}" path="IECBrowser_Test_Cases.js" />
 			<child name="Cabling_16Channel" key="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}" path="Cabling_16Channel.js" />
 			<child name="DDRC_Test_Cases" key="{8901AF99-3D85-4D32-99BB-724EF17B632C}" path="DDRC_Test_Cases.js" />
+			<child name="AutoTest_TestCases" key="{5DFE2F61-59A5-4574-BCB6-B0F3D1EB793A}" path="AutoTest_TestCases.js" />
 		</folder>
 		<folder name="POM">
 			<child name="LoginPage" key="{A381FA1F-53C0-488D-B0A7-A1C5075B2252}" path="LoginPage.js" />
@@ -39,6 +40,7 @@
 			<child name="IECBrowserPage" key="{B4B30C51-70EB-4E60-8CD9-988F538B24C5}" path="IECBrowserPage.js" />
 			<child name="ConfigEditor_Protocols" key="{DEF80D06-D6E4-4593-8EB8-BCE21E15FCA6}" path="ConfigEditor_Protocols.js" />
 			<child name="ConfigEditor_FaultRecording_DDRCChannels" key="{E427D1D0-0593-433E-8822-1681912A83F8}" path="ConfigEditor_FaultRecording_DDRCChannels.js" />
+			<child name="AutoTest_TestsPage" key="{C132A50D-1158-4B0E-B63A-D053B777A491}" path="AutoTest_TestsPage.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />
@@ -59,6 +61,7 @@
 			<child name="IECBrowser_Methods" key="{A9025138-3A97-4BC3-ADEA-AEDBF212CD04}" path="IECBrowser_Methods.js" />
 			<child name="Protocols_Method" key="{37E37903-9BCC-4642-8335-99F6AFCD097D}" path="Protocols_Method.js" />
 			<child name="DDRC_Methods" key="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}" path="DDRC_Methods.js" />
+			<child name="AutoTestSetup_Methods" key="{1D9B71D8-097B-4CD6-AE38-A3BF08D0C11A}" path="AutoTestSetup_Methods.js" />
 		</folder>
 		<folder name="Firmware_WebPage_Scripts">
 			<child name="SeleniumWebdriver" key="{F2297E8F-46DC-4619-8326-192ABA9A3935}" path="SeleniumWebdriver.js" />
