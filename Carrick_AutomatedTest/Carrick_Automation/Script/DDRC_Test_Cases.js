@@ -132,6 +132,9 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
     
     //Step.15 Close DDRC directory
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
+    
+    //Step.16 Close Omicron CMC file
+    AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
   }
     catch(ex)
   {
