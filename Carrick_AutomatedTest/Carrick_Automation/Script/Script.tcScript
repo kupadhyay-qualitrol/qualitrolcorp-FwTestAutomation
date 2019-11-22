@@ -12,6 +12,7 @@
 			<child name="IECBrowser_Test_Cases" key="{0567AFC5-96F0-4E3B-9A32-C363E754303A}" path="IECBrowser_Test_Cases.js" />
 			<child name="Cabling_16Channel" key="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}" path="Cabling_16Channel.js" />
 			<child name="DDRC_Test_Cases" key="{8901AF99-3D85-4D32-99BB-724EF17B632C}" path="DDRC_Test_Cases.js" />
+			<child name="RMS_Data_Validation_Cablings" key="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}" path="RMS_Data_Validation_Cablings.js" />
 		</folder>
 		<folder name="POM">
 			<child name="LoginPage" key="{A381FA1F-53C0-488D-B0A7-A1C5075B2252}" path="LoginPage.js" />

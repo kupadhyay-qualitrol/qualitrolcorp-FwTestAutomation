@@ -101,7 +101,7 @@ function SetDDRCStartTime()
   Log.Message("DDRC start time set as 2 minutes before of current system date and time")
 }
 
-function ValidateCSSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
+function ValidateCSSData(RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
 {
   //Step.1 Export CSV data for DDRC Record
     var SysUserName = CommonMethod.GetSystemUsername()
@@ -124,4 +124,7 @@ function ValidateCSSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,Vo
     var DDRCStoredPath = DDRCRecordPath+aqFileSystem.FindFiles(DDRCRecordPath, "*.csv").Item(0).Name
     var RMSDDRCValidationStatus= RMSDataValidationExePage.ValidateRMSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
     AssertClass.CompareString("PASS", RMSDDRCValidationStatus,"Checking RMS Validation" )
+    
+  //Step.4 Delete the downloaded file
+    aqFileSystem.DeleteFile(DDRCStoredPath)
 }

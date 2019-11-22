@@ -71,8 +71,7 @@ function CompareString(Expected,Actual,LogMessage)
       }
       else
       {
-        Log.Message("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)      
-        throw ("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)
+        Log.Message("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)
       }
     }
     else

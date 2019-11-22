@@ -39,7 +39,7 @@ namespace Tabindex_Data.soh
         {
             get
             {
-                return webDriver.FindElement(By.XPath("//*[@id='TabView1']/div[1]/a[1]"));
+                return webDriver.FindElement(By.XPath("//*[@id='TabView1']/div[1]/a[3]"));
             }
         }
 
@@ -47,7 +47,7 @@ namespace Tabindex_Data.soh
         {
             get
             {
-                return webDriver.FindElement(By.XPath("//*[@id='TabView1']/div[2]/div[1]/iframe"));
+                return webDriver.FindElement(By.XPath("//*[@id='TabView1']/div[2]/div[3]/iframe"));
 
             }
         }
