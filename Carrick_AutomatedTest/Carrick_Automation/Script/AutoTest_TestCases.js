@@ -6,6 +6,7 @@
 
 function ReadDeviceConfigTest(){
   
+  Log.Message("Started TC:-Test Read Device Config")
   //Step-1 Setup Test Settings for AutoTest tool 
   AutoTestSetup_Methods.Setup_auto_Test()
   

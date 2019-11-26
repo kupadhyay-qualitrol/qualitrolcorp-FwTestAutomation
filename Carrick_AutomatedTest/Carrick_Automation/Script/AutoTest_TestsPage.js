@@ -16,9 +16,10 @@ function Read_Device_Config_Test () {
   if (ReadDeviceConfigButton.Exists) {
    ReadDeviceConfigButton.Click()
    Log.Message("Read Device Config test button is clicked")
-   aqUtils.Delay(30000)
+   aqUtils.Delay(100000)
    CheckBoxConfirm.Click()
    PassButton.Click()
+
   }
 
   else {
@@ -28,11 +29,10 @@ function Read_Device_Config_Test () {
   if (TestResult.Exists){
    var result = TestResult.get_Text();
    Log.Message(result)
-   Log.Message("Read Device Testcase Passed")
   }
   
   else {
-    Log.Error("Read Device Testcase Failed")
+    Log.Error("Read Device Config Testcase Failed")
   }
  
 }
