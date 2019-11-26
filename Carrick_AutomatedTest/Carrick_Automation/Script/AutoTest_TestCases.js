@@ -2,7 +2,7 @@
 
 //USEUNIT AutoTestSetup_Methods
 //USEUNIT AutoTest_TestsPage
-
+//USEUNIT AssertClass
 
 function ReadDeviceConfigTest(){
   
@@ -12,8 +12,7 @@ function ReadDeviceConfigTest(){
   
   //Step-2 Perform Read Device Cofig Test
   Log.Message("Verify that Read Device Config test is performed")
-  AutoTest_TestsPage.Read_Device_Config_Test()
-  
+  AssertClass.IsTrue(AutoTest_TestsPage.Read_Device_Config_Test(),"Read Device Config button is clicked")
 
 }
 

@@ -19,11 +19,12 @@ function Read_Device_Config_Test () {
    aqUtils.Delay(100000)
    CheckBoxConfirm.Click()
    PassButton.Click()
-
+   return true
   }
 
   else {
-   Log.Error("Read Device Config test button is not visible")    
+   Log.Error("Read Device Config test button is not visible")   
+   return false 
   }
   
   if (TestResult.Exists){
@@ -33,6 +34,7 @@ function Read_Device_Config_Test () {
   
   else {
     Log.Error("Read Device Config Testcase Failed")
+    return false
   }
  
 }
