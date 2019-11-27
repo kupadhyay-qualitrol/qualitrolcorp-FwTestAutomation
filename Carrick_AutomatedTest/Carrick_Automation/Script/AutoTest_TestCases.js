@@ -12,7 +12,7 @@ function ReadDeviceConfigTest(){
   
   //Step-2 Perform Read Device Cofig Test
   Log.Message("Verify that Read Device Config test is performed")
-  AssertClass.IsTrue(AutoTest_TestsPage.Read_Device_Config_Test(),"Read Device Config button is clicked")
+  AssertClass.IsTrue(AutoTest_TestsPage.Read_Device_Config_Test(),"Read Device Config Test button is clicked")
 
 }
 
