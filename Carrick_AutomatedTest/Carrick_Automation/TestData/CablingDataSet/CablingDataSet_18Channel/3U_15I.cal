@@ -1,5 +1,5 @@
 Calibration data for Cashel SN 409026540
-Generated on 14/06/2018 at 08:30:12 GMT
+Generated on 28/11/2019 at 08:44:53 GMT
 System frequency 50
 AFEConfiguration BOTH
 Analog channel, Hi gain offset, Low gain offset, High gain factor, Low gain factor, Channel type,   User group,  FSD
@@ -17,7 +17,7 @@ Analog channel, Hi gain offset, Low gain offset, High gain factor, Low gain fact
       11,           +00000,         +00000,        0.0000301596,      0.0000301596,       Current 10 AC,      12,       11
       12,           +00000,         +00000,        0.0001507980,      0.0001507980,       Current 50 AC,      13,       56
       13,           +00000,         +00000,        0.0001507980,      0.0001507980,       Current 50 AC,      14,       56
-      14,           +00000,         +00000,        0.0001507980,      0.0001507980,       Current 50 AC,      15,       56
-      15,           +00000,         +00000,        0.0001507980,      0.0001507980,       Current 50 AC,      16,       56
-      16,           +00000,         +00000,        0.0001507980,      0.0001507980,       Current 50 AC,      17,       56
-      17,           +00000,         +00000,        0.0001507980,      0.0001507980,       Current 50 AC,      18,       56
+      14,           +00000,         +00000,        1.0000000000,      1.0000000000,   Undefined Channel,      15,    370716
+      15,           +00000,         +00000,        1.0000000000,      1.0000000000,   Undefined Channel,      16,    370716
+      16,           +00000,         +00000,        1.0000000000,      1.0000000000,   Undefined Channel,      17,    370716
+      17,           +00000,         +00000,        1.0000000000,      1.0000000000,   Undefined Channel,      18,    370716
