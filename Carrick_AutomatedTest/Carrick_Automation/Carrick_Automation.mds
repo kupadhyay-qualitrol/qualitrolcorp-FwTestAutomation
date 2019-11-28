@@ -53,7 +53,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="TimeZone" key="{214F7030-6597-4591-BD7C-435A0E018280}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="TimeZone" key="{214F7030-6597-4591-BD7C-435A0E018280}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{90D84BF4-664D-4E02-93E7-5C4F193BC132}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="2" stopOnException="2" description="Login iQ Plus">
@@ -165,7 +165,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U3I3I" key="{9B6AABAB-2ECA-4074-927A-B40342899A1A}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I" key="{9B6AABAB-2ECA-4074-927A-B40342899A1A}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{CD548D6F-9B85-4E1D-91B9-09A503645071}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -186,7 +186,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U3I3I3I" key="{1EE5BD37-4C39-4B3C-A3C0-84C5CF7256ED}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I3I" key="{1EE5BD37-4C39-4B3C-A3C0-84C5CF7256ED}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{19791E6D-4751-40F2-8026-B359F2AEDC5E}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -207,7 +207,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U3I3I3I3I" key="{27A06635-A81F-4F84-BB09-CF1CDA126C2E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I3I3I" key="{27A06635-A81F-4F84-BB09-CF1CDA126C2E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{8FC83C41-C49A-47BA-8448-DAA172A71E1C}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -228,7 +228,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="3U3I3I3I3I3I" key="{E24BDF8B-7824-4661-891D-603A97F49FEE}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="3U3I3I3I3I3I" key="{E24BDF8B-7824-4661-891D-603A97F49FEE}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U3I3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{72A88B68-A7EC-427B-841B-F0A107BEC220}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -249,7 +249,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="1U3I" key="{037737D9-E9D8-4063-995E-51C904951C58}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I" key="{037737D9-E9D8-4063-995E-51C904951C58}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{A5E9E42D-C00B-4128-994E-23CE7E3AAC34}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -270,7 +270,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="1U3I3I" key="{F15B0090-A9A5-47A2-9628-D1BB3A608AE8}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I" key="{F15B0090-A9A5-47A2-9628-D1BB3A608AE8}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{1CF7BFB5-FE4E-43D9-8D7B-AD28518832AD}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -291,7 +291,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="1U3I3I3I" key="{604901B2-4E90-454A-8795-6A3E62F3F143}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I3I" key="{604901B2-4E90-454A-8795-6A3E62F3F143}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{ACFB9BB6-EF02-451C-BF9B-18D3AEEE14C2}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -312,7 +312,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="1U3I3I3I3I" key="{0E3AEA50-206D-4E64-BC2D-AE46FCA4BDAF}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I3I3I" key="{0E3AEA50-206D-4E64-BC2D-AE46FCA4BDAF}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{423F5D41-56C7-4C6C-9E2C-77902E1F9088}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -333,7 +333,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="1U3I3I3I3I3I" key="{5A2B5E4D-C912-4E6B-B40D-92325825E808}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="1U3I3I3I3I3I" key="{5A2B5E4D-C912-4E6B-B40D-92325825E808}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling1U3I3I3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{670D2470-CFD0-48D8-8882-0C8BE8EC0259}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -356,7 +356,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 2M3U/1U1U Cabling Configuration" key="{EB8B50B8-51C5-49B6-B97B-2F9335B14188}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 2M3U/1U1U Cabling Configuration" key="{EB8B50B8-51C5-49B6-B97B-2F9335B14188}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="2M3U" key="{E0F1DC43-BC4A-4901-92EC-675D44127759}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -676,7 +676,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 4U/1U Cabling Configuration" key="{07C0F1AB-2816-4A83-AA89-B5192EB2F623}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 4U/1U Cabling Configuration" key="{07C0F1AB-2816-4A83-AA89-B5192EB2F623}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="4U" key="{2F78CD37-BF70-4348-B1CE-2D3D0954CF2C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -852,7 +852,7 @@
 							<testItem name="Test 2M4U Cabling Configuration" key="{550A2CF2-3E3F-461D-9614-008B6EA2DFE6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
-									<testItem name="2M4U" key="{35436166-5D19-49C7-B8DD-88A8C1FADEC7}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M4U" key="{35436166-5D19-49C7-B8DD-88A8C1FADEC7}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{5A611D63-7C36-4FAD-AA07-21443E54846A}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -873,7 +873,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="2M4U3I" key="{A1D3ACB6-D6E1-4C80-AA04-4B192157CDA2}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M4U3I" key="{A1D3ACB6-D6E1-4C80-AA04-4B192157CDA2}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{51190738-A2A3-4182-BA28-FBDFFADAA488}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -894,7 +894,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="2M4U3I3I" key="{9D9A1723-CFFA-40F5-ABB4-F1A769E1D910}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M4U3I3I" key="{9D9A1723-CFFA-40F5-ABB4-F1A769E1D910}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{A22CFD90-CBC3-4012-A53C-B0D0CF940473}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -915,7 +915,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="2M4U3I3I3I" key="{8E784569-815F-4C2F-8008-46EF81924868}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M4U3I3I3I" key="{8E784569-815F-4C2F-8008-46EF81924868}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{8501078D-C418-4F45-BF2F-AD703FCF2E05}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -957,7 +957,7 @@
 											</testItem>
 										</children>
 									</testItem>
-									<testItem name="2M4U4I4I" key="{8C84B23B-88C5-4913-852B-FA271FC0DC1E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U4I4I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="2M4U4I4I" key="{8C84B23B-88C5-4913-852B-FA271FC0DC1E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling2M4U4I4I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>
 											<testItem name="IEC Browser Connection testing BTC-792" key="{F22A0827-1629-4CD5-9634-9E38CB2F9AA3}" group="False" enabled="True" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -980,7 +980,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="Test 4U3U" key="{35FD313B-1252-4272-B17E-23E50ADBF0F8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Test 4U3U" key="{35FD313B-1252-4272-B17E-23E50ADBF0F8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="4U3U" key="{3D9CB0B2-2F50-41B2-83EF-4D6CFD85D6D6}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling4U3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -1293,7 +1293,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="MaxDFR" key="{22AD86D0-6BC7-492C-B5A7-DCD998391FDE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="MaxDFR" key="{22AD86D0-6BC7-492C-B5A7-DCD998391FDE}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{D0E051E5-3D5E-423F-B131-C0CF3A7DF657}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
@@ -1354,7 +1354,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -1381,7 +1381,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+			<testItem name="IECBrowser_COMTRADE_Download" key="{264AE921-CD07-4E1C-BA51-967A272A67E8}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Ed1" key="{ADE834F9-F979-4B4E-83AB-E8FD5B52A6D0}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
