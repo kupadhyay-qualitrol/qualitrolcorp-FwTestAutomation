@@ -15,48 +15,48 @@
 //USEUNIT IECBrowser_Test_Cases
 //USEUNIT Cabling_18Channel
 
-var DataSetFolderPath = Project.ConfigPath +"TestData\\CablingDataSet\\RMS_Data_Validation_Cablings\\"
-var DeviceIP ="10.75.58.51"
-var CashelType ="IDM+18"
-var DeviceName ="IND_DAU_51"
-var DeviceSerialNo ="409026540"
-var DriverInstance
-var TestLog
-var DeviceStatus
-var Busbar1_Name ="Busbar 1"
-var Busbar2_Name ="Busbar 2"
+var DATASETFOLDERPATH = Project.ConfigPath +"TestData\\CablingDataSet\\RMS_Data_Validation_Cablings\\"
+var DEVICEIP ="10.75.58.51"
+var CASHELTYPE ="IDM+18"
+var DEVICENAME ="IND_DAU_51"
+var DEVICESERIALNO ="409026540"
+var DRIVEINSTANCE
+var TESTLOG
+var DEVICESTATUS
+var BUSBAR1_NAME ="Busbar 1"
+var BUSBAR2_NAME ="Busbar 2"
 var COUNTER
 
 
-function RMSValidation(DatasetFolderPath,CablingName,TestLog)
+function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
 {
   try
   {
     Log.Message("Started TC:-Test to check " +CablingName+ " Cabling")
-    var dataSheetName = DataSetFolderPath+ CablingName + ".xlsx"
-    DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
+    var dataSheetName = DATASETFOLDERPATH+ CablingName + ".xlsx"
+    DRIVEINSTANCE=SeleniumWebdriver.InitialiseWebdriver(DEVICEIP)
     
     do
     {
-      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
+      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
     }
-    while (DeviceStatus!="Success")
+    while (DEVICESTATUS!="Success")
     
     //Step1. Upload Calibration
     switch (CablingName)
     {    
       case "3U":
-        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"Default.cal"),"Uploading Calibration File")//Default calibration isn uploading because we are not going to change calibration file in this function    
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"Default.cal"),"Uploading Calibration File")//Default calibration isn uploading because we are not going to change calibration file in this function    
         break
     }    
     //Step2. Check if iQ+ is running or not
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
     
     //Step3.Check whether device exists or not in the topology.    
-    if(DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)!=true)
+    if(DeviceTopologyPage.ClickonDevice(CASHELTYPE,DEVICENAME)!=true)
     {
-      GeneralPage.CreateDevice(CashelType,DeviceName,DeviceSerialNo,DeviceIP)
-      DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)      
+      GeneralPage.CreateDevice(CASHELTYPE,DEVICENAME,DEVICESERIALNO,DEVICEIP)
+      DeviceTopologyPage.ClickonDevice(CASHELTYPE,DEVICENAME)      
     }
     else
     {
@@ -89,40 +89,40 @@ function RMSValidation(DatasetFolderPath,CablingName,TestLog)
     if(Circuit_Configuration.Busbar1.length>0)
     {
       AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
-      if(ConfigEditor_Circuits.GetBusbar_Name(0)!= Busbar1_Name)
+      if(ConfigEditor_Circuits.GetBusbar_Name(0)!= BUSBAR1_NAME)
       {
         if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(0))
         {
           AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(0)),"Switched Busbar")  
         }
       
-        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar1_Name),"Setting Busbar 1")
+        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(BUSBAR1_NAME),"Setting Busbar 1")
       }
-      if (ConfigEditor_Circuits.GetBusbar_Name(1)!= Busbar2_Name)
+      if (ConfigEditor_Circuits.GetBusbar_Name(1)!= BUSBAR2_NAME)
       {
         if(ConfigEditor_Circuits.GetGroupName()!=ConfigEditor_Circuits.GetBusbar_Name(1))
         {
           AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(GetBusbar_Name(1)),"Switched Busbar")  
         }   
-        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(Busbar2_Name),"Setting Busbar 2")      
+        AssertClass.IsTrue(ConfigEditor_Circuits.SetGroupName(BUSBAR2_NAME),"Setting Busbar 2")      
       }
 
-      AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar1_Name),"Switched to Busbar 1")
+      AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(BUSBAR1_NAME),"Switched to Busbar 1")
 
          
       AssertClass.IsTrue(Circuit_Configuration.SetBusbar1(),"Setting Busbar 1")
     
       //Configure Busbar 1 Feeders
-      Circuit_Configuration.ConfigureBB1Feeder(Busbar1_Name)
+      Circuit_Configuration.ConfigureBB1Feeder(BUSBAR1_NAME)
       //Configure Busbar2
       if(Circuit_Configuration.Busbar2.length>0)
       {
         AssertClass.IsTrue(ConfigEditor_Circuits.ClickOnAddNewCircuit(),"Clicked on Add New Circuit")
-        AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(Busbar2_Name),"Switched to Busbar 2") 
+        AssertClass.IsTrue(ConfigEditor_Circuits.SwitchBusbar(BUSBAR2_NAME),"Switched to Busbar 2") 
               
         AssertClass.IsTrue(Circuit_Configuration.SetBusbar2(),"Setting Busbar 2")    
         //Configure Busbar2 Feeder
-        Circuit_Configuration.ConfigureBB2Feeder(Busbar2_Name)
+        Circuit_Configuration.ConfigureBB2Feeder(BUSBAR2_NAME)
       }
     }
     
@@ -133,24 +133,24 @@ function RMSValidation(DatasetFolderPath,CablingName,TestLog)
     COUNTER =0
     do
     {
-      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
+      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
       COUNTER=COUNTER+1
       aqUtils.Delay(1000)
     }
-    while (DeviceStatus=="Success" && COUNTER<=100)
+    while (DEVICESTATUS=="Success" && COUNTER<=100)
     
     //Step11. Check if Device is up
     do
     {
-      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
+      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
     }
-    while (DeviceStatus!="Success")
+    while (DEVICESTATUS!="Success")
 
     COUNTER =0
     do
     {
-      DeviceStatus=CommonMethod.GetDeviceStatusOnPing(DeviceIP)
-      if(DeviceStatus=="Success")
+      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
+      if(DEVICESTATUS=="Success")
       {
         COUNTER =COUNTER+1
       }
@@ -159,11 +159,11 @@ function RMSValidation(DatasetFolderPath,CablingName,TestLog)
     while (COUNTER<=30)
     
     //Step12. Validate from Tabindex
-    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName,FwVersion))   
+    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DRIVEINSTANCE,TESTLOG,DEVICEIP,DATASETFOLDERPATH,CablingName,FwVersion))   
     
     if(CablingName=="NOCIRCUIT")
     {
-      AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DeviceIP,DriverInstance,DataSetFolderPath+"Default.cal"),"Uploading Calibration File")    
+      AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"Default.cal"),"Uploading Calibration File")    
     }//No circuit is kept here because when we upload calibration file we have to make circuit as NoCircuit so that device won't get bad configuration.
     Log.Message("Pass:- Test to check Cabling:-"+CablingName)  
   }
@@ -180,7 +180,7 @@ function RMSValidation(DatasetFolderPath,CablingName,TestLog)
 
 function StartReport()
 {
-  SeleniumWebdriver.StartReport(DeviceIP)
+  SeleniumWebdriver.StartReport(DEVICEIP)
 }
 
 function EndReport()
@@ -190,12 +190,12 @@ function EndReport()
 
 function SetAnalogChannelName()
 {
-    var datasheetname = DataSetFolderPath+ "NOCIRCUIT.xlsx"
+    var datasheetname = DATASETFOLDERPATH+ "NOCIRCUIT.xlsx"
     var channelNameChangeCounter =0
-    if(DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)!=true)
+    if(DeviceTopologyPage.ClickonDevice(CASHELTYPE,DEVICENAME)!=true)
     {
-      GeneralPage.CreateDevice(CashelType,DeviceName,DeviceSerialNo,DeviceIP)
-      DeviceTopologyPage.ClickonDevice(CashelType,DeviceName)      
+      GeneralPage.CreateDevice(CASHELTYPE,DEVICENAME,DEVICESERIALNO,DEVICEIP)
+      DeviceTopologyPage.ClickonDevice(CASHELTYPE,DEVICENAME)      
     }
     else
     {
@@ -212,13 +212,13 @@ function SetAnalogChannelName()
     var deviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
     
     //Step3. Check Channel name & Set it if it is different from DataSheet
-    for (let AnalogRows=0 ; AnalogRows< deviceType;AnalogRows++)
+    for (let analogRows=0 ; analogRows< deviceType;analogRows++)
     {
-      var DataSheetChannelName =CommonMethod.ReadDataFromExcel(datasheetname,"label","Cabling",AnalogRows)
+      var dataSheetChannelName =CommonMethod.ReadDataFromExcel(datasheetname,"label","Cabling",analogRows)
     
-      if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(AnalogRows)!= DataSheetChannelName)
+      if(ConfigEditor_DeviceOverview_AnalogInputs.GetChannelName(analogRows)!= dataSheetChannelName)
       {
-        AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(AnalogRows,DataSheetChannelName),"Sets the channel name for row:- "+AnalogRows)
+        AssertClass.IsTrue(ConfigEditor_DeviceOverview_AnalogInputs.SetChannelName(analogRows,dataSheetChannelName),"Sets the channel name for row:- "+analogRows)
         channelNameChangeCounter=channelNameChangeCounter+1
       }
     }
@@ -237,19 +237,19 @@ function SetAnalogChannelName()
 
 function RMSValidationNOCIRCUIT()
 {
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test NOCIRCUIT Cabling")
-  RMSValidation(DataSetFolderPath,"NOCIRCUIT",TestLog)
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test NOCIRCUIT Cabling")
+  RMSValidation(DATASETFOLDERPATH,"NOCIRCUIT",TESTLOG)
 }
 
 function RMSValidation3U()
 {
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
-  RMSValidation(DataSetFolderPath,"NOCIRCUIT",TestLog)
-  RMSValidation(DataSetFolderPath,"3U",TestLog)
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
+  RMSValidation(DATASETFOLDERPATH,"NOCIRCUIT",TESTLOG)
+  RMSValidation(DATASETFOLDERPATH,"3U",TESTLOG)
 }
 
 function RMSValidation3U3I()
 {
-  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U3I Cabling")
-  RMSValidation(DataSetFolderPath,"3U3I",TestLog)
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I Cabling")
+  RMSValidation(DATASETFOLDERPATH,"3U3I",TESTLOG)
 }
