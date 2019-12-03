@@ -2355,12 +2355,12 @@
 								</testParameters>
 								<children />
 							</testItem>
-							<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters>
-									<param0 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
-									<param1 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
-									<param2 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
-									<param3 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+									<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+									<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
 								</testParameters>
 								<children />
 							</testItem>
@@ -2382,12 +2382,12 @@
 								</testParameters>
 								<children />
 							</testItem>
-							<testItem name="Validate CSS" key="{C87F0AA9-4EEC-4521-B757-C829BF698913}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="Validate CSS" key="{C87F0AA9-4EEC-4521-B757-C829BF698913}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters>
-									<param0 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
-									<param1 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
-									<param2 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
-									<param3 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+									<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+									<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
 								</testParameters>
 								<children />
 							</testItem>
@@ -2410,12 +2410,12 @@
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="Validate DDRC" key="{C28467F5-068C-4C35-92EB-087C212A18D4}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}ValidateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="Validate DDRC" key="{C28467F5-068C-4C35-92EB-087C212A18D4}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters>
-							<param0 name="RMSInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
-							<param1 name="RMSInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
-							<param2 name="VoltageTolerance" type="3" localVarName="" varType="3" value="1" />
-							<param3 name="CurrentTolerance" type="3" localVarName="" varType="3" value="1" />
+							<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+							<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+							<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+							<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
 						</testParameters>
 						<children />
 					</testItem>

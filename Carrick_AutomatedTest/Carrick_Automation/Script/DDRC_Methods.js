@@ -101,30 +101,27 @@ function SetDDRCStartTime()
   Log.Message("DDRC start time set as 2 minutes before of current system date and time")
 }
 
-function ValidateCSSData(RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
+function validateCSSData(rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
 {
   //Step.1 Export CSV data for DDRC Record
-    var SysUserName = CommonMethod.GetSystemUsername()
-    var DDRCRecordPath ="C:\\Users\\"+SysUserName+"\\Desktop\\DDRCRecord\\"
-    if (aqFileSystem.Exists(DDRCRecordPath))
+    var sysUserName = CommonMethod.GetSystemUsername()
+    var ddrcRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\DDRCRecord\\"
+    if (!aqFileSystem.Exists(ddrcRecordPath))
     {
-      AssertClass.IsTrue(PDPPage.ExportTOCSVDDRC())    
+      aqFileSystem.CreateFolder(ddrcRecordPath) 
     }
-    else
-    {
-      aqFileSystem.CreateFolder(DDRCRecordPath)
-      AssertClass.IsTrue(PDPPage.ExportTOCSVDDRC())
-    }
+    AssertClass.IsTrue(PDPPage.ExportTOCSVDDRC())
+ 
     AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process
   
   //Step.2 Launch RMS data validation application
     AssertClass.IsTrue(RMSDataValidationExePage.LaunchRMSValidationApplication(), "RMS data validation app has been launched")
   
   //Step.3 Validate RMS data for DDRC
-    var DDRCStoredPath = DDRCRecordPath+aqFileSystem.FindFiles(DDRCRecordPath, "*.csv").Item(0).Name
-    var RMSDDRCValidationStatus= RMSDataValidationExePage.ValidateRMSData(DDRCStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
-    AssertClass.CompareString("PASS", RMSDDRCValidationStatus,"Checking RMS Validation" )
+    var ddrcStoredPath = ddrcRecordPath+aqFileSystem.FindFiles(ddrcRecordPath, "*.csv").Item(0).Name
+    var rmsDDRCValidationStatus= RMSDataValidationExePage.ValidateRMSData(ddrcStoredPath,RMSInjectedVoltage,RMSInjectedCurrent,VoltageTolerance,CurrentTolerance)
+    AssertClass.CompareString("PASS", rmsDDRCValidationStatus,"Checking RMS Validation" )
     
   //Step.4 Delete the downloaded file
-    aqFileSystem.DeleteFile(DDRCStoredPath)
+    aqFileSystem.DeleteFile(ddrcStoredPath)
 }
