@@ -38,7 +38,7 @@ function RMSValidation(cablingName)
     
     do
     {
-      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
+      DEVICESTATUS=CommonMethod.GetDeviceStatusOnPing(DEVICEIP)
     }
     while (DEVICESTATUS!="Success")
     
