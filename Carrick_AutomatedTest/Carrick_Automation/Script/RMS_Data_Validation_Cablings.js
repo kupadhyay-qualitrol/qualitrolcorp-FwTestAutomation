@@ -28,12 +28,12 @@ var BUSBAR2_NAME ="Busbar 2"
 var COUNTER
 
 
-function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
+function RMSValidation(cablingName)
 {
   try
   {
-    Log.Message("Started TC:-Test to check " +CablingName+ " Cabling")
-    var dataSheetName = DATASETFOLDERPATH+ CablingName + ".xlsx"
+    Log.Message("Started TC:-Test to check " +cablingName+ " Cabling")
+    var dataSheetName = DATASETFOLDERPATH+ cablingName + ".xlsx"
     DRIVEINSTANCE=SeleniumWebdriver.InitialiseWebdriver(DEVICEIP)
     
     do
@@ -43,7 +43,7 @@ function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
     while (DEVICESTATUS!="Success")
     
     //Step1. Upload Calibration
-    switch (CablingName)
+    switch (cablingName)
     {    
       case "3U":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"Default.cal"),"Uploading Calibration File")//Default calibration isn uploading because we are not going to change calibration file in this function    
@@ -69,11 +69,10 @@ function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
     //Step5. Click on Analog Inputs
     AssertClass.IsTrue(ConfigEditorPage.ClickOnAnalogInputs(),"Clicked on Analog Inputs")
     
-    //Step6. Set Channel Name
-    //Step6.1 Get RowCount
+    //Step6. Get Channel Count
     var deviceType = ConfigEditor_DeviceOverview_AnalogInputs.GetChannelCount()
  
-    //Step7. Click on Circuits ConfiguBusbar1ration
+    //Step7. Click on Circuits
     AssertClass.IsTrue(ConfigEditorPage.ClickOnCircuits(),"Clicked on Circuits") 
     
     //Step8.1 Delete all circuits    
@@ -133,7 +132,7 @@ function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
     COUNTER =0
     do
     {
-      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
+      DEVICESTATUS=CommonMethod.GetDeviceStatusOnPing(DEVICEIP)
       COUNTER=COUNTER+1
       aqUtils.Delay(1000)
     }
@@ -142,14 +141,14 @@ function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
     //Step11. Check if Device is up
     do
     {
-      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
+      DEVICESTATUS=CommonMethod.GetDeviceStatusOnPing(DEVICEIP)
     }
     while (DEVICESTATUS!="Success")
 
     COUNTER =0
     do
     {
-      DEVICESTATUS=CommonMethod.GetDEVICESTATUSOnPing(DEVICEIP)
+      DEVICESTATUS=CommonMethod.GetDeviceStatusOnPing(DEVICEIP)
       if(DEVICESTATUS=="Success")
       {
         COUNTER =COUNTER+1
@@ -159,18 +158,18 @@ function RMSValidation(DATASETFOLDERPATH,CablingName,TESTLOG)
     while (COUNTER<=30)
     
     //Step12. Validate from Tabindex
-    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DRIVEINSTANCE,TESTLOG,DEVICEIP,DATASETFOLDERPATH,CablingName,FwVersion))   
+    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DRIVEINSTANCE,TESTLOG,DEVICEIP,DATASETFOLDERPATH,cablingName,FwVersion))   
     
-    if(CablingName=="NOCIRCUIT")
+    if(cablingName=="NOCIRCUIT")
     {
       AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"Default.cal"),"Uploading Calibration File")    
     }//No circuit is kept here because when we upload calibration file we have to make circuit as NoCircuit so that device won't get bad configuration.
-    Log.Message("Pass:- Test to check Cabling:-"+CablingName)  
+    Log.Message("Pass:- Test to check Cabling:-"+cablingName)  
   }
   catch (ex)
   {
     Log.Message(ex.stack)    
-    Log.Error("Fail:-Test to check Cabling:-"+CablingName)
+    Log.Error("Fail:-Test to check Cabling:-"+cablingName)
   }
   finally
   {
@@ -238,18 +237,18 @@ function SetAnalogChannelName()
 function RMSValidationNOCIRCUIT()
 {
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test NOCIRCUIT Cabling")
-  RMSValidation(DATASETFOLDERPATH,"NOCIRCUIT",TESTLOG)
+  RMSValidation("NOCIRCUIT")
 }
 
 function RMSValidation3U()
 {
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U Cabling")
-  RMSValidation(DATASETFOLDERPATH,"NOCIRCUIT",TESTLOG)
-  RMSValidation(DATASETFOLDERPATH,"3U",TESTLOG)
+  RMSValidation("NOCIRCUIT")
+  RMSValidation("3U")
 }
 
 function RMSValidation3U3I()
 {
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I Cabling")
-  RMSValidation(DATASETFOLDERPATH,"3U3I",TESTLOG)
+  RMSValidation("3U3I")
 }
