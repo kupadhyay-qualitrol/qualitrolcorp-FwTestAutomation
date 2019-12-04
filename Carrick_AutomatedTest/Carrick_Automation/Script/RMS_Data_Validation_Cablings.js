@@ -252,3 +252,14 @@ function RMSValidation3U3I()
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I Cabling")
   RMSValidation("3U3I")
 }
+function RMSValidation3U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I Cabling")
+  RMSValidation("3U3I3I")
+}
+
+function RMSValidation3U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I Cabling")
+  RMSValidation("3U3I3I3I")
+}
