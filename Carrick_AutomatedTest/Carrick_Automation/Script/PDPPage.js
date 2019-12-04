@@ -241,7 +241,7 @@ function ExportTOCDF(Path)
   if (PDPContainerWorkspace.Exists)
   {
     Log.Message("PDP window is visible")
-    ultraGrid.ClickCellR(0, "Triggered Parameter Info")
+    ultraGrid.ClickCellR(0, "Start Date & Time")
     LLPlayer.KeyDown(VK_DOWN,500)
     LLPlayer.KeyDown(VK_RIGHT,1000)
     LLPlayer.KeyDown(VK_RETURN,1000)
@@ -262,7 +262,7 @@ function ExportTOCSV()
   if (PDPContainerWorkspace.Exists)
   {
     Log.Message("PDP window is visible")
-    ultraGrid.ClickCellR(0, "Triggered Parameter Info")
+    ultraGrid.ClickCellR(0, "Start Date & Time")
     LLPlayer.KeyDown(VK_DOWN,1000)
     LLPlayer.KeyDown(VK_DOWN,1000)
     LLPlayer.KeyDown(VK_DOWN,1000)
@@ -285,7 +285,7 @@ function ExportMultipleTOCDF(Path,Index_number)
   if (PDPContainerWorkspace.Exists)
   {
     Log.Message("PDP window is visible")
-    ultraGrid.ClickCellR(Index_number, "Triggered Parameter Info")
+    ultraGrid.ClickCellR(Index_number, "Start Date & Time")
     LLPlayer.KeyDown(VK_DOWN,500)
     LLPlayer.KeyDown(VK_RIGHT,1000)
     LLPlayer.KeyDown(VK_RETURN,1000)
@@ -306,7 +306,7 @@ function ExportMultipleTOCSV(Index_number)
   if (PDPContainerWorkspace.Exists)
   {
     Log.Message("PDP window is visible")
-    ultraGrid.ClickCellR(Index_number, "Triggered Parameter Info")
+    ultraGrid.ClickCellR(Index_number, "Start Date & Time")
     LLPlayer.KeyDown(VK_DOWN,1000)
     LLPlayer.KeyDown(VK_DOWN,1000)
     LLPlayer.KeyDown(VK_DOWN,1000)
@@ -361,3 +361,29 @@ function GetTriggerPriority(PDPRowNo)
     return null
   }
 }
+//This method is used to Export the record to CSV for DDRC
+function ExportTOCSVDDRC()
+{
+  if (PDPContainerWorkspace.Exists)
+  {
+    Log.Message("PDP window is visible")
+    ultraGrid.ClickCellR(0, "Start Date & Time")
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_DOWN,1000)
+    LLPlayer.KeyDown(VK_RETURN,1000)
+    aqUtils.Delay(2000)
+    Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.ClickItem("|Desktop|DDRCRecord")
+    Aliases.iQ_Plus.dlgBrowseForFolder.btnOK.ClickButton()
+    CommonMethod.CheckActivityLog("Exported Successfully")    
+    return true
+  }
+  else
+  {
+    Log.Message("PDP window is not visible")
+    return false
+  }
+}
+  
+  
+  

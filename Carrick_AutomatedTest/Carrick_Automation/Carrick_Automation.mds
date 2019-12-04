@@ -16,11 +16,11 @@
 					<testItem name="Upgrade_iQ_Plus" key="{95B12A22-13E9-480A-A9D7-FA79FAEC3E87}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Upgrade" key="{D136D67B-22B4-4340-966B-6E68023867FA}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}UpgradeiQ_Plus" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
+							<testItem name="Upgrade" key="{D136D67B-22B4-4340-966B-6E68023867FA}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}UpgradeiQ_Plus" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Close_iQ_Plus" key="{72F6ACB8-9338-401D-A68F-06D57D533EBB}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Close_iQ_Plus" key="{72F6ACB8-9338-401D-A68F-06D57D533EBB}" group="False" enabled="False" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -73,11 +73,11 @@
 					<testItem name="Install/Uninstall_IQ_Plus" key="{99E13282-A934-440A-BA7D-D2AE4DD0BA53}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="True" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Uninstall_IQ_Plus" key="{BB2EA400-9F14-4786-AE1B-784D348A1830}" group="False" enabled="False" testMoniker="{EC149534-946D-4719-9EF5-22A614F0EB15}Uninstall_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="True" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+							<testItem name="Install_iQ_Plus" key="{83FEA789-5892-4E0D-ADEB-D3B05220AA63}" group="False" enabled="False" testMoniker="{36CF6109-A286-4FD9-AD73-C005E25C987C}Install_iQ_Plus" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 								<testParameters>
 									<param0 name="Isupgrade" type="3" localVarName="" varType="11" value="False" />
 								</testParameters>
@@ -127,6 +127,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDFRInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -139,19 +140,7 @@
 												<testParameters />
 												<children />
 											</testItem>
-											<testItem name="DDRC Recording Download" key="{EE985149-527E-41CF-9728-977815D538EF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownload" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
-												<testParameters>
-													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
-													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
-													<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
-													<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
-													<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
-													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
-													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-												</testParameters>
-												<children />
-											</testItem>
-											<testItem name="DDRC Recording Download_With_Quantity" key="{1ACFBD90-08FA-4449-98B1-3044A88B4D97}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="DDRC Recording Download_With_Quantity" key="{FA7E913D-5FE3-4D7A-81BA-E59460D2A3BF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -160,6 +149,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDFRInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -181,6 +171,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -202,6 +193,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -223,6 +215,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -244,6 +237,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -265,6 +259,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -286,6 +281,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -307,6 +303,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -328,6 +325,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -349,6 +347,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -375,6 +374,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -396,6 +396,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -417,6 +418,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -438,6 +440,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -459,6 +462,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -480,6 +484,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -501,6 +506,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -522,6 +528,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -543,6 +550,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -564,6 +572,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -585,6 +594,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -606,6 +616,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -627,6 +638,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -648,6 +660,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -669,6 +682,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -695,6 +709,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -716,6 +731,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -737,6 +753,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -758,6 +775,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -779,6 +797,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -800,6 +819,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -821,6 +841,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -842,6 +863,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -868,6 +890,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -889,6 +912,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -910,6 +934,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -931,6 +956,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -952,6 +978,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -973,6 +1000,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -990,7 +1018,7 @@
 												<testParameters />
 												<children />
 											</testItem>
-											<testItem name="DDRC Recording Download_With_Quantity" key="{3DF352D2-538B-472E-B6D8-23E4118B3BCF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="DDRC Recording Download_With_Quantity" key="{9B4A4AE2-03DD-47FC-966E-36E95D61829B}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -999,6 +1027,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1020,6 +1049,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1041,6 +1071,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1062,6 +1093,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1083,6 +1115,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1104,6 +1137,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1125,6 +1159,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1146,6 +1181,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1167,6 +1203,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1188,6 +1225,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1209,6 +1247,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1230,6 +1269,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1251,6 +1291,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1272,6 +1313,7 @@
 													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
 													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="D:\Belfast\GitSourceCode\FwTestAutomation\Carrick_AutomatedTest\Carrick_Automation\TestData\ManualDDRCInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1480,6 +1522,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1497,6 +1540,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1514,6 +1558,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1531,6 +1576,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1548,6 +1594,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1565,6 +1612,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1582,6 +1630,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1599,6 +1648,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1616,6 +1666,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1638,6 +1689,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1655,6 +1707,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1672,6 +1725,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1689,6 +1743,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1706,6 +1761,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1723,6 +1779,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1740,6 +1797,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1757,6 +1815,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1774,6 +1833,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1796,6 +1856,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1813,6 +1874,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1830,6 +1892,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1847,6 +1910,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1864,6 +1928,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1881,6 +1946,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1898,6 +1964,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1915,6 +1982,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1937,6 +2005,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1954,6 +2023,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1971,6 +2041,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1988,6 +2059,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2005,6 +2077,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2027,6 +2100,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2044,6 +2118,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2061,6 +2136,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2078,6 +2154,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2095,6 +2172,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2112,6 +2190,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2129,6 +2208,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2146,6 +2226,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2163,6 +2244,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2180,6 +2262,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2197,6 +2280,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2214,6 +2298,7 @@
 											<param4 name="storageRate" type="3" localVarName="" varType="5" value="12.5" />
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -2230,6 +2315,115 @@
 						<children />
 					</testItem>
 					<testItem name="CLoseIQPlus" key="{7A527B63-B181-440A-9BF3-726CA48B6F5E}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+				</children>
+			</testItem>
+			<testItem name="RMS Data Validation For Cablings" key="{6A90A5FF-359F-4472-9CE3-6F359A89CB9C}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+				<testParameters />
+				<children>
+					<testItem name="Login" key="{D4CF5458-598A-4724-B7B2-E934266B858E}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="StartReport" key="{4FF696D0-A939-445D-87B2-B765963C599E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}StartReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="SetAnalogChannelName" key="{4851A51B-04CC-44CB-B798-90E746747877}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="3U" key="{620A7F88-D210-42A7-BFA5-197965D626DA}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="DDRC Recording Download_With_Quantity" key="{63710127-0FAC-4F13-B2A8-BB52F6CE6CA1}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
+									<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
+									<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
+									<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
+									<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
+									<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+									<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+									<param7 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualDDRCInjection.qcm" />
+								</testParameters>
+								<children />
+							</testItem>
+							<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+									<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+									<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
+								</testParameters>
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="3U3I" key="{FEADF808-5F39-45C8-B3E1-B2D278B8D34D}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters />
+						<children>
+							<testItem name="DDRC Recording Download_With_Quantity" key="{B1BAF365-3AC2-4DB5-9D46-5A22B9954566}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
+									<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
+									<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
+									<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
+									<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
+									<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+									<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+									<param7 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualDDRCInjection.qcm" />
+								</testParameters>
+								<children />
+							</testItem>
+							<testItem name="Validate CSS" key="{C87F0AA9-4EEC-4521-B757-C829BF698913}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters>
+									<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+									<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+									<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+									<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
+								</testParameters>
+								<children />
+							</testItem>
+						</children>
+					</testItem>
+					<testItem name="TestNOCIRCUIT" key="{473A0D9E-0EC5-4691-8C3D-8C9D9CF92D7E}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidationNOCIRCUIT" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="DDRC Recording Download_With_Quantity" key="{345E3B50-E7B3-443A-B656-7B1418EB8A87}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters>
+							<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
+							<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
+							<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
+							<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
+							<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
+							<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+							<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+							<param7 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualDDRCInjection.qcm" />
+						</testParameters>
+						<children />
+					</testItem>
+					<testItem name="Validate DDRC" key="{C28467F5-068C-4C35-92EB-087C212A18D4}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters>
+							<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+							<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+							<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+							<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
+						</testParameters>
+						<children />
+					</testItem>
+					<testItem name="EndReport" key="{2B02ECEE-6BF8-4C72-BB95-ED6667BAD7AD}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="Close iQ_Plus" key="{6CDA96BD-9CA4-4EF5-B475-AE4A62B6E326}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Close iQ Plus">
 						<testParameters />
 						<children />
 					</testItem>

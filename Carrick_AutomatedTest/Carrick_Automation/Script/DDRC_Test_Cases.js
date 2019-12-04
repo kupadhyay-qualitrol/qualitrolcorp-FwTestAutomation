@@ -6,6 +6,7 @@
 //USEUNIT ConfigEditor_FaultRecording_DDRCChannels
 //USEUNIT DDRC_Methods
 //USEUNIT DeviceTopologyPage
+//USEUNIT OmicronQuickCMCPage
 //USEUNIT GeneralPage
 
 function DDRCRecordingDownload(deviceType,deviceName,deviceSerialNo,deviceIPAdd,storageRate,retryCountDateTime,retryCountDDRCOpen)
@@ -69,11 +70,14 @@ function DDRCRecordingDownload(deviceType,deviceName,deviceSerialNo,deviceIPAdd,
   }
 }
 
-function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,storageRate,retryCountDateTime,retryCountDDRCOpen)
+function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,storageRate,retryCountDateTime,retryCountDDRCOpen,fileName)
 {
   try
   {
    Log.Message("Test to check for the DDRC recording started or not and download DDRC record with quantities") 
+   
+    //Step.0 Inject voltage and current using omicron
+    OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+fileName)
    
     //Step1. Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
@@ -128,6 +132,9 @@ function DDRCRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialN
     
     //Step.15 Close DDRC directory
     AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
+    
+    //Step.16 Close Omicron CMC file
+    AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
   }
     catch(ex)
   {
