@@ -263,3 +263,26 @@ function RMSValidation3U3I3I3I()
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I Cabling")
   RMSValidation("3U3I3I3I")
 }
+function RMSValidation4U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U Cabling")
+  RMSValidation("4U")
+}
+
+function RMSValidation4U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I Cabling")
+  RMSValidation("4U3I")
+}
+
+function RMSValidation4U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I Cabling")
+  RMSValidation("4U3I3I")
+}
+
+function RMSValidation4U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I3I Cabling")
+  RMSValidation("4U3I3I3I")
+}
