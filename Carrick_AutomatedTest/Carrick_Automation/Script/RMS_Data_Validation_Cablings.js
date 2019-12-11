@@ -286,3 +286,80 @@ function RMSValidation4U3I3I3I()
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I3I Cabling")
   RMSValidation("4U3I3I3I")
 }
+function RMSValidation2M3U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U Cabling")
+  RMSValidation("2M3U")
+}
+
+function RMSValidation2M3U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I Cabling")
+  RMSValidation("2M3U3I")
+}
+
+function RMSValidation2M3U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I Cabling")
+  RMSValidation("2M3U3I3I")
+}
+
+function RMSValidation2M3U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I Cabling")
+  RMSValidation("2M3U3I3I3I")
+}
+function RMSValidation3U4U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U Cabling")
+  RMSValidation3U4U("3U4U")
+}
+
+function RMSValidation3U4U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I Cabling")
+  RMSValidation(DataSetFolderPath,"3U4U3I",TESTLOG)
+}
+function RMSValidation4U4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U4I Cabling")
+  RMSValidation(DataSetFolderPath,"4U4I",TESTLOG)
+}
+function RMSValidation4U3U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U Cabling")
+  RMSValidation("4U3U")
+}
+
+function RMSValidation4U3U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I Cabling")
+  RMSValidation("4U3U3I")
+}
+
+function RMSValidation4U3U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I Cabling")
+  RMSValidation("4U3U3I3I")
+}
+function RMSValidation4U4I4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U4I4I Cabling")
+  RMSValidation("4U4I4I")
+}
+function RMSValidation4U3U4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I Cabling")
+  RMSValidation("4U3U4I")
+}
+
+function RMSValidation4U3U4I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I3I Cabling")
+  RMSValidation("4U3U4I3I")
+}
+function RMSValidation4U3U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I3I Cabling")
+  RMSValidation("4U3U3I3I3I")
+}
