@@ -243,3 +243,37 @@ function ClickOnDDRCChannels()
     return false
   }
 }
+
+//This method is used to click on PQ 10 min in Config Editor
+function clickPq10Min()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Power Quality|Continuous Recording|10 Min")
+    Log.Message("Clicked on PQ 10 Min")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}
+
+
+
+//This method is used to click on PQ free interval in Config Editor
+function clickPqFreeInterval()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Power Quality|Continuous Recording|Free Interval")
+    Log.Message("Clicked on PQ 10 Min")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}
