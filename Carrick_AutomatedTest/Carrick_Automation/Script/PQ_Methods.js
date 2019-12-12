@@ -7,7 +7,7 @@
 //USEUNIT FavoritesPage
 //USEUNIT PDPPage
 //USEUNIT RMSDataValidationExePage
-//USEUNIT ConfigEditor_FaultRecording_DDRCChannels
+//USEUNIT ConfigEditor_PQ
 
 function CompareDateTimePQ(retryCount)
 {
@@ -68,11 +68,24 @@ function CleanMemoryPQ()
   AssertClass.IsTrue(DataRetrievalPage.ClickOnExecuteButton(),"Clicked on Execute button")
   CommonMethod.CheckActivityLog("Device memory cleaned successfully for selected data types")
 }
-function SelectRMSChannelCircuitQuantities()
+function SelectRMSChannelCircuitQuantitiesForPq10Min()
 {
   ConfigEditor_PQ.clickOnRemoveAllButtonForPq10Min()
   Log.Message("All the selected quantities are moved to Available quantities")
-  ConfigEditor_FaultRecording_DDRCChannels.GetTabCounts()
+  ConfigEditor_PQ.GetTabCountsPq10Min()
+  for (count=0; count < TABCOUNT; count++)
+  {
+    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPq10Min(count),"Clicked on tab");
+    
+    AssertClass.IsTrue(ConfigEditor_PQ.AddRMSQuantitiesPq10Min,"RMS Quantities added to selected quantities from available quantities")    
+  }
+}
+
+function SelectRMSChannelCircuitQuantitiesForPQFreeInterval()
+{
+  ConfigEditor_PQ.clickOnRemoveAllButtonForPq10Min()
+  Log.Message("All the selected quantities are moved to Available quantities")
+  ConfigEditor_PQ.GetTabCounts()
   for (count=0; count < Tab_Count; count++)
   {
     AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.ClickOnTab(count),"Clicked on tab");
@@ -80,6 +93,8 @@ function SelectRMSChannelCircuitQuantities()
     AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.AddRMSQuantities(),"RMS Quantities added to selected quantities from available quantities")    
   }
 }
+
+
 
 function SetDDRCStartTime()
 {

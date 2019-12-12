@@ -3,14 +3,14 @@
 //USEUNIT DeviceManagementPage
 //USEUNIT AssertClass
 //USEUNIT ConfigEditorPage
-//USEUNIT ConfigEditor_FaultRecording_DDRCChannels
+//USEUNIT ConfigEditor_PQ
 //USEUNIT PQ_Methods
 //USEUNIT DeviceTopologyPage
 //USEUNIT OmicronQuickCMCPage
 //USEUNIT GeneralPage
 
 
-function pqRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,storageRate,retryCountDateTime,retryCountPQOpen,fileName)
+function pqRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPQOpen,fileName)
 {
   try
   {
@@ -43,37 +43,47 @@ function pqRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,
     //Step.5 Click on PQ 10 Min
     AssertClass.IsTrue(ConfigEditorPage.clickPq10Min(),"Clicked on PQ 10 Min")
     
-    //Step.6 Set Storage rate 
-    AssertClass.IsTrue(ConfigEditor_FaultRecording_DDRCChannels.SetStorageRate(storageRate),"Storage rate has been set")
+    //Step.7 Select RMS values from the Available quantities for PQ 10 min
+    PQ_Methods.SelectRMSChannelCircuitQuantitiesForPq10Min()
     
-    //Step.7 Select RMS values from the Available quantities
-    PQ_Methods.SelectRMSChannelCircuitQuantities()
-    
-    //Step.8 Check the DDRT check box
-    ConfigEditor_FaultRecording_DDRCChannels.CheckDDRTCheckBoxSelectedQuantities()
+    //Step.8 Select RMS values from the Available quantities for PQ Free Interval
+    //PQ_Methods.SelectRMSChannelCircuitQuantitiesForPqFreeInterval()
     
     //Step.9 Send to device
-    AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
+    //AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
-    //Step.10 Compare Device time and DDRC Start time
-    AssertClass.IsTrue(DDRC_Methods.CompareDateTimeDDRC(retryCountDateTime),"Device time and DDRC time compared and new record started to form")
+    //Step.10 Configure Favorite for PQ 10 Min
     
-    //Step.11 Click on DDRC button
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"Clicked on DDRC Directory")
+    //Step.11 Configure Favorite for PQ Free Interval
     
-    //Step.12 Check if DDRC Directory opens or not
-    AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCountDDRCOpen),"DDRC directory pane open and displayed")
+    //Step.12 Compare Device time and PQ 10 Min Start time
+    //AssertClass.IsTrue(DDRC_Methods.CompareDateTimeDDRC(retryCountDateTime),"Device time and DDRC time compared and new record started to form")
     
-    //Step.13 Set Start date and time for DDRC
-    DDRC_Methods.SetDDRCStartTime()
+    //Step.13 Click on PQ 10 Min directory button
+    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"Clicked on DDRC Directory")
     
-    //Step.14 Download DDRC record
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
+    //Step.14 Check if PQ 10 Min Directory opens or not
+    //AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCountDDRCOpen),"DDRC directory pane open and displayed")
     
-    //Step.15 Close DDRC directory
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
+    //Step.15 Set Start date and time for PQ Free Interval
+    //DDRC_Methods.SetDDRCStartTime()
     
-    //Step.16 Close Omicron CMC file
+    //Step.16 Download PQ 10 Min data
+    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
+    
+    //Step.17 Close PQ 10 Min directory
+    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
+    
+    //Step.18 Set Start date and time for DDRC
+    //DDRC_Methods.SetDDRCStartTime()
+    
+    //Step.19 Download PQ Free Interval data
+    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
+    
+    //Step.20 Close PQ Free Interval directory
+    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
+    
+    //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
   }
     catch(ex)
