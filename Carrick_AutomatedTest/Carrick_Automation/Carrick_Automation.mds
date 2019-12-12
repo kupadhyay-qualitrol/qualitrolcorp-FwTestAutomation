@@ -85,7 +85,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{4DE1FBC5-D7E7-47CE-AD88-D1A598F1CC1A}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
@@ -1342,27 +1342,27 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-727" key="{2BA887D3-A6DF-471B-8103-AE959C1DA118}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_727" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length">
+							<testItem name="CAM-727" key="{2BA887D3-A6DF-471B-8103-AE959C1DA118}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_727" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the GUI(Text/Editbox) of iQ+ for Maximum DFR record length">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
+							<testItem name="CAM-728" key="{645385CB-EC28-4668-9D40-D1EA16B10565}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_728" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that DFR record length value get saved to database.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
+							<testItem name="CAM-689" key="{88B49DD4-DE53-4048-8219-CE8A48F31AFB}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_689" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that user tries to set minimum DFR record length equal to Prefault time">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="0" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
+							<testItem name="CAM-686_687_688" key="{07AB51AA-5729-434A-9624-8D16669EC996}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_686_687_688" count="3" timeout="0" stopOnError="0" stopOnException="2" description="Test to check limit DFR record length feature when Manual trigger(Pre+Post fault time) is equal to Maximum record length">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
+							<testItem name="CAM-690" key="{B5ACEB63-6945-4AB0-8B01-AB07E55B9384}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_690" count="5" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that minimum and maximum limit for DFR record length with non-Transco licenses">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-725" key="{BDDE28E1-CBC1-45AC-9424-F3F091094B8D}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_725" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that user tries to input DFR record length value less/greater than minimum/maximum value">
+							<testItem name="CAM-725" key="{BDDE28E1-CBC1-45AC-9424-F3F091094B8D}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_725" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check that user tries to input DFR record length value less/greater than minimum/maximum value">
 								<testParameters />
 								<children />
 							</testItem>
@@ -1370,23 +1370,23 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-734" key="{C429B42C-4E2E-433E-BF64-FA09EBA24F5E}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_734" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length when Trigger comes at end of first record.">
+							<testItem name="CAM-734" key="{C429B42C-4E2E-433E-BF64-FA09EBA24F5E}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_734" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length when Trigger comes at end of first record.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-732" key="{4B40CB5E-D336-42BC-A378-0D049DFB03D2}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_732" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with continuous FR Trigger within oplimit.">
+							<testItem name="CAM-732" key="{4B40CB5E-D336-42BC-A378-0D049DFB03D2}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_732" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with continuous FR Trigger within oplimit.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-763" key="{53C4DC15-388A-4306-8382-88CE32EC4B21}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms.">
+							<testItem name="CAM-763" key="{53C4DC15-388A-4306-8382-88CE32EC4B21}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_763" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with prefault =500ms and Max length =800ms.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
+							<testItem name="CAM-739" key="{500C7A8C-5C08-498C-81F0-C38217289227}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_739" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Test to check the import/export functionality for DFR record length.">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="True" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
+							<testItem name="CAM-736" key="{1E3ABB7C-E31E-4812-82EB-6032B2A5640F}" group="False" enabled="False" testMoniker="{7C25FE62-CD8C-40B2-835B-B95199D45DE5}CAM_736" count="2" timeout="0" stopOnError="0" stopOnException="2" description="Test to check DFR record length with Cross Trigger">
 								<testParameters />
 								<children />
 							</testItem>
@@ -1396,7 +1396,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="ManualDFR" key="{84B7B3B0-D678-4F39-80D9-BB44EC8F21DC}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{C682527F-6714-4528-B8A0-61B2EC98F9DA}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
@@ -2366,7 +2366,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="3U3I" key="{FEADF808-5F39-45C8-B3E1-B2D278B8D34D}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="3U3I" key="{FEADF808-5F39-45C8-B3E1-B2D278B8D34D}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{B1BAF365-3AC2-4DB5-9D46-5A22B9954566}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2393,7 +2393,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="3U3I3I" key="{176CA08E-8A43-4EEF-B76D-9A27DCC5ADB8}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="3U3I3I" key="{176CA08E-8A43-4EEF-B76D-9A27DCC5ADB8}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{A51E990D-D199-4BA9-9FEF-928ED24DB329}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2420,7 +2420,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="3U3I3I3I" key="{EFB1466C-E7A9-4C41-8863-96E63E3BE5E9}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="3U3I3I3I" key="{EFB1466C-E7A9-4C41-8863-96E63E3BE5E9}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{B217DFA1-4E61-4A20-8EDD-C1F6429579FF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2447,7 +2447,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="4U" key="{4A5BA76C-EA40-48AB-9827-1B75910DF79D}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="4U" key="{4A5BA76C-EA40-48AB-9827-1B75910DF79D}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{619AAA86-FE51-4341-A930-605310EE97B0}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2474,7 +2474,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="4U3I" key="{4D6E390C-B148-4BF3-B1B0-A813D34D854F}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="4U3I" key="{4D6E390C-B148-4BF3-B1B0-A813D34D854F}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{1FD02CB1-B9C1-43DC-910F-6FDD45606848}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2501,7 +2501,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="4U3I3I" key="{A82FF864-355D-4408-BACD-DF03680FE38F}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="4U3I3I" key="{A82FF864-355D-4408-BACD-DF03680FE38F}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{E5AE86BF-3D51-46DA-A5FC-D258B30F11E5}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2528,7 +2528,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="4U3I3I3I" key="{C37194DA-A551-477F-92E9-D81535F7816B}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="4U3I3I3I" key="{C37194DA-A551-477F-92E9-D81535F7816B}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="DDRC Recording Download_With_Quantity" key="{41C62866-0373-4F7A-BBF1-BE04F42599F0}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
