@@ -96,7 +96,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="GetFirmwareVersion" key="{8929C17B-3111-4982-A534-DC15BFF0558E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="GetFirmwareVersion" key="{8929C17B-3111-4982-A534-DC15BFF0558E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
@@ -2331,7 +2331,7 @@
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
