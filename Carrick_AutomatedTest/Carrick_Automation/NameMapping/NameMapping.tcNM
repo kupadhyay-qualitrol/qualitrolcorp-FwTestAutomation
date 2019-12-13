@@ -2820,6 +2820,15 @@
 																																					</Child>
 																																				</Children>
 																																			</Child>
+																																			<Child Name="btnAddSelected" Key="{A3028E5B-4302-4A6A-B994-2D0858D32919}" ParallelWalk="True">
+																																				<Image FileName="1666769418" Left="586" Top="321" Right="626" Bottom="344" />
+																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																				<Properties>
+																																					<Property Name="WinFormsControlName">
+																																						<Value PropertyType="0" Value="btnAddSelected" Type="5" />
+																																					</Property>
+																																				</Properties>
+																																			</Child>
 																																		</Children>
 																																	</Child>
 																																</Children>
@@ -4696,6 +4705,7 @@
 																	<Child Name="lstAvailable" Owner="{E8C57304-8EB7-4423-AB9F-B5E9414ACB91}">
 																		<Child Name="lvQuantities" Owner="{F928D0E9-D7DE-4A8B-87F8-B1545115658A}" />
 																	</Child>
+																	<Child Name="btnAddSelected" Owner="{A3028E5B-4302-4A6A-B994-2D0858D32919}" />
 																</Child>
 															</Child>
 														</Child>

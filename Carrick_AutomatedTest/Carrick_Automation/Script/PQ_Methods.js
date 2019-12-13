@@ -70,14 +70,13 @@ function CleanMemoryPQ()
 }
 function SelectRMSChannelCircuitQuantitiesForPq10Min()
 {
-  ConfigEditor_PQ.clickOnRemoveAllButtonForPq10Min()
-  Log.Message("All the selected quantities are moved to Available quantities")
   ConfigEditor_PQ.GetTabCountsPq10Min()
   for (count=0; count < TABCOUNT; count++)
   {
-    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPq10Min(count),"Clicked on tab");
-    
-    AssertClass.IsTrue(ConfigEditor_PQ.AddRMSQuantitiesPq10Min,"RMS Quantities added to selected quantities from available quantities")    
+    ConfigEditor_PQ.clickOnRemoveAllButtonForPq10Min()
+    Log.Message("All the selected quantities are moved to Available quantities")
+    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPq10Min(count),"Clicked on tab")
+    ConfigEditor_PQ.AddRMSQuantitiesPq10Min    
   }
 }
 
