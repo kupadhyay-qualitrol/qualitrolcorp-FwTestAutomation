@@ -99,5 +99,4 @@ function RunSeqFile(FileName)
   AssertClass.IsTrue(LaunchStateSeq(),"Launching the State Seq application")
   AssertClass.IsTrue(OpenTestDataFile(FileName),"Open the TestData File")
   AssertClass.IsTrue(ClickOnStartContinue(),"Started Injection")
-  AssertClass.IsTrue(CloseStateSeq(),"State seq file is closed")
 }
