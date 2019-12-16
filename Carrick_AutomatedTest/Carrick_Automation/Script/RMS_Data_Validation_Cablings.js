@@ -49,7 +49,7 @@ function RMSValidation(cablingName)
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"Default.cal"),"Uploading Calibration File")//Default calibration isn uploading because we are not going to change calibration file in this function    
         break
       case "1U3I":
-        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"PartialCircuit.cal"),"Uploading Calibration File")//Default calibration isn uploading because we are not going to change calibration file in this function    
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"PartialCircuit.cal"),"Uploading Calibration File")//New calibration is uploading because we have to change calibration file for Partial cabling in this function    
         break 
     }    
     //Step2. Check if iQ+ is running or not
