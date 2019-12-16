@@ -315,7 +315,7 @@ function RMSValidation2M3U3I3I3I()
 function RMSValidation3U4U()
 {
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U Cabling")
-  RMSValidation3U4U("3U4U")
+  RMSValidation("3U4U")
 }
 
 function RMSValidation3U4U3I()

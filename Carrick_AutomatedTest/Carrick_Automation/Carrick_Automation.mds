@@ -2342,33 +2342,6 @@
 					<testItem name="3U Default Cabling" key="{F7A81A94-0FA8-4AAC-8B3A-E7C5700E64AE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="3U3I" key="{FEADF808-5F39-45C8-B3E1-B2D278B8D34D}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
-								<testParameters />
-								<children>
-									<testItem name="DDRC Recording Download_With_Quantity" key="{B1BAF365-3AC2-4DB5-9D46-5A22B9954566}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
-										<testParameters>
-											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
-											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
-											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
-											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
-											<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
-											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
-											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
-											<param7 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualDDRCInjection.qcm" />
-										</testParameters>
-										<children />
-									</testItem>
-									<testItem name="Validate CSS" key="{C87F0AA9-4EEC-4521-B757-C829BF698913}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
-										<testParameters>
-											<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
-											<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
-											<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
-											<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
-										</testParameters>
-										<children />
-									</testItem>
-								</children>
-							</testItem>
 							<testItem name="3U" key="{620A7F88-D210-42A7-BFA5-197965D626DA}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children>
@@ -2386,6 +2359,33 @@
 										<children />
 									</testItem>
 									<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+										<testParameters>
+											<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
+											<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
+											<param2 name="voltageTolerance" type="3" localVarName="" varType="3" value="1" />
+											<param3 name="currentTolerance" type="3" localVarName="" varType="3" value="1" />
+										</testParameters>
+										<children />
+									</testItem>
+								</children>
+							</testItem>
+							<testItem name="3U3I" key="{FEADF808-5F39-45C8-B3E1-B2D278B8D34D}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+								<testParameters />
+								<children>
+									<testItem name="DDRC Recording Download_With_Quantity" key="{B1BAF365-3AC2-4DB5-9D46-5A22B9954566}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+										<testParameters>
+											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
+											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
+											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
+											<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
+											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+											<param7 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualDDRCInjection.qcm" />
+										</testParameters>
+										<children />
+									</testItem>
+									<testItem name="Validate CSS" key="{C87F0AA9-4EEC-4521-B757-C829BF698913}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
 											<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
