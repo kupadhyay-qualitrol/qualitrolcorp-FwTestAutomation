@@ -51,6 +51,9 @@ function RMSValidation(cablingName)
       case "1U3I":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"PartialCircuit.cal"),"Uploading Calibration File")//New calibration is uploading because we have to change calibration file for Partial cabling in this function    
         break 
+      case "1U1U3I3I":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"DoublePartial.cal"),"Uploading Calibration File")//New calibration is uploading because we have to change calibration file for Double Partial cabling in this function    
+        break 
     }    
     //Step2. Check if iQ+ is running or not
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
@@ -407,12 +410,8 @@ function RMSValidation1U3I3I3I()
 function RMSValidation1U1U3I3I()
 {
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I Cabling")
+  RMSValidation("NOCIRCUIT")
   RMSValidation("1U1U3I3I")
-}
-function RMSValidation1U1U3I3I3I()
-{
-  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I Cabling")
-  RMSValidation("1U1U3I3I3I")
 }
 function RMSValidation4U1U3I3I()
 {
