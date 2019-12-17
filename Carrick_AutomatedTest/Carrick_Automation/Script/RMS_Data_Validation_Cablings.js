@@ -48,6 +48,9 @@ function RMSValidation(cablingName)
       case "3U":
         AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"Default.cal"),"Uploading Calibration File")//Default calibration isn uploading because we are not going to change calibration file in this function    
         break
+      case "1U3I":
+        AssertClass.IsTrue(Firmware_Mfgindex_Methods.UploadCalibration(DEVICEIP,DRIVEINSTANCE,DATASETFOLDERPATH+"PartialCircuit.cal"),"Uploading Calibration File")//New calibration is uploading because we have to change calibration file for Partial cabling in this function    
+        break 
     }    
     //Step2. Check if iQ+ is running or not
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
@@ -251,4 +254,183 @@ function RMSValidation3U3I()
 {
   TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I Cabling")
   RMSValidation("3U3I")
+}
+function RMSValidation3U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I Cabling")
+  RMSValidation("3U3I3I")
+}
+
+function RMSValidation3U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U3I3I3I Cabling")
+  RMSValidation("3U3I3I3I")
+}
+function RMSValidation4U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U Cabling")
+  RMSValidation("4U")
+}
+
+function RMSValidation4U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I Cabling")
+  RMSValidation("4U3I")
+}
+
+function RMSValidation4U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I Cabling")
+  RMSValidation("4U3I3I")
+}
+
+function RMSValidation4U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3I3I3I Cabling")
+  RMSValidation("4U3I3I3I")
+}
+function RMSValidation2M3U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U Cabling")
+  RMSValidation("2M3U")
+}
+
+function RMSValidation2M3U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I Cabling")
+  RMSValidation("2M3U3I")
+}
+
+function RMSValidation2M3U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I Cabling")
+  RMSValidation("2M3U3I3I")
+}
+
+function RMSValidation2M3U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 2M3U3I3I3I Cabling")
+  RMSValidation("2M3U3I3I3I")
+}
+function RMSValidation3U4U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U Cabling")
+  RMSValidation("3U4U")
+}
+
+function RMSValidation3U4U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I Cabling")
+  RMSValidation("3U4U3I")
+}
+function RMSValidation4U4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U4I Cabling")
+  RMSValidation("4U4I")
+}
+function RMSValidation4U3U()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U Cabling")
+  RMSValidation("4U3U")
+}
+
+function RMSValidation4U3U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I Cabling")
+  RMSValidation("4U3U3I")
+}
+
+function RMSValidation4U3U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I Cabling")
+  RMSValidation("4U3U3I3I")
+}
+function RMSValidation4U4I4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U4I4I Cabling")
+  RMSValidation("4U4I4I")
+}
+function RMSValidation4U3U4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I Cabling")
+  RMSValidation("4U3U4I")
+}
+
+function RMSValidation4U3U4I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U4I3I Cabling")
+  RMSValidation("4U3U4I3I")
+}
+function RMSValidation4U3U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U3U3I3I3I Cabling")
+  RMSValidation("4U3U3I3I3I")
+}
+function RMSValidation3U4U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I Cabling")
+  RMSValidation("3U4U3I3I")
+}
+function RMSValidation3U4U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I3I Cabling")
+  RMSValidation("3U4U3I3I3I")
+}
+function RMSValidation3U4U3I4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I4I Cabling")
+  RMSValidation("3U4U3I4I")
+}
+function RMSValidation3U4U3I3I4I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I4I Cabling")
+  RMSValidation("3U4U3I3I4I")
+}
+
+function RMSValidation1U3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U3I Cabling")
+  RMSValidation("NOCIRCUIT")
+  RMSValidation("1U3I")
+}
+function RMSValidation1U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I Cabling")
+  RMSValidation("1U3I3I")
+}
+
+function RMSValidation1U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U3I3I3I Cabling")
+  RMSValidation("1U3I3I3I")
+}
+function RMSValidation1U1U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I Cabling")
+  RMSValidation("1U1U3I3I")
+}
+function RMSValidation1U1U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U1U3I3I3I Cabling")
+  RMSValidation("1U1U3I3I3I")
+}
+function RMSValidation4U1U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U1U3I3I Cabling")
+  RMSValidation("4U1U3I3I")
+}
+function RMSValidation4U1U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 4U1U3I3I3I Cabling")
+  RMSValidation("4U1U3I3I3I")
+}
+function RMSValidation1U4U3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U4U3I3I Cabling")
+  RMSValidation("1U4U3I3I")
+}
+function RMSValidation1U4U3I3I3I()
+{
+  TESTLOG = SeleniumWebdriver.StartTestCaseReport("Test 1U4U3I3I3I Cabling")
+  RMSValidation("1U4U3I3I3I")
 }
