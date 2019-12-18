@@ -9,21 +9,50 @@
 //USEUNIT RMSDataValidationExePage
 //USEUNIT ConfigEditor_PQ
 
-function CompareDateTimePQ(retryCount)
+function cleanMemoryPqFreeInterval()
+{
+  //Step.1 Clicked on Clean Memory
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnCleanMemory(),"Clicked on Clean Memory")
+  
+  //Step.2 Check the PQ Free Interval checked box
+  AssertClass.IsTrue(DataRetrievalPage.checkPqFreeIntervalCheckBox(),"Checked the PQ Free Interval check box")
+  
+  //Step.3 Click on Execute button
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnExecuteButton(),"Clicked on Execute button")
+  CommonMethod.CheckActivityLog("Device memory cleaned successfully for selected data types")
+}
+
+
+
+function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
+{
+  ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
+  Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
+  ConfigEditor_PQ.GetTabCountsPqFreeInterval()
+  for (count=0; count < PQFREEINTERVAL_TABCOUNT; count++)
+  {
+    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPqFreeInterval(count),"Clicked on tab")
+    
+    AssertClass.IsTrue(ConfigEditor_PQ.AddRMSQuantitiesPqFreeInterval(),"RMS Quantities added to selected quantities from available quantities")    
+  }
+}
+
+
+function compareDateTimePq(retryCount)
 {
   for(let recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
   {
     DataRetrievalPage.ClickOnDeviceStatusView()
-    Log.Message("Clicked on Devcie status view")
+    Log.Message("Clicked on Device status view")
     aqUtils.Delay(2000)
     var deviceDateTime = DataRetrievalPage.GetDeviceActualDateTime();
     Log.Message(deviceDateTime)
     aqUtils.Delay(1000)
     DataRetrievalPage.CloseDeviceStatus
     aqUtils.Delay(1000)
-    DataRetrievalPage.ClickOnDDRCDirectory()
-    DataRetrievalPage.CheckDDRCDirectoryOpen(retryCount)
-    Log.Message("Clicked on DDRC Directory")
+    DataRetrievalPage.clickOnPqFreeIntervalDirectory()
+    DataRetrievalPage.checkPqFreeIntervalDirectoryOpen(retryCount)
+    Log.Message("Clicked on PQ Free interval Directory")
     aqUtils.Delay(2000)
     var startTimeDDRC = DataRetrievalPage.GetDDRCStartTime();
     if(startTimeDDRC!=null)
@@ -51,58 +80,8 @@ function CompareDateTimePQ(retryCount)
     }
     else
     {
-      Log.Message("Not able to get DDRC Start time")
+      Log.Message("Not able to get PQ Free Interval Start time")
       return false
     }
   }
-}
-
-
-
-
-//function SelectRMSChannelCircuitQuantitiesForPq10Min()
-//{
-//  ConfigEditor_PQ.GetTabCountsPq10Min()
-//  for (count=0; count < TABCOUNT; count++)
-//  {
-//    ConfigEditor_PQ.clickOnRemoveAllButtonForPq10Min()
-//    Log.Message("All the selected quantities are moved to Available quantities")
-//    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPq10Min(count),"Clicked on tab")
-//    ConfigEditor_PQ.AddRMSQuantitiesPq10Min()    
-//  }
-//}
-
-function SelectRMSChannelCircuitQuantitiesForPQFreeInterval()
-{
-  ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
-  Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
-  ConfigEditor_PQ.GetTabCountsPqFreeInterval()
-  for (count=0; count < PQFREEINTERVAL_TABCOUNT; count++)
-  {
-    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPqFreeInterval(count),"Clicked on tab")
-    
-    AssertClass.IsTrue(ConfigEditor_PQ.AddRMSQuantitiesPqFreeInterval(),"RMS Quantities added to selected quantities from available quantities")    
-  }
-}
-
-
-
-function SetDDRCStartTime()
-{
-  //Step.1 Close DDRC Directory
-  AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"DDRC Directroy get closed")
-  
-  //Step.2 Open Device Status view
-  AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Device status view window opens")
-  
-  //Step.3 Get the current date time of device.
-  DataRetrievalPage.GetDeviceCurrentDateTime()
-  
-  //Step.4 Open DDRC Directory
-  AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"DDRC Directory opens")
-  
-  //Step.5 Now set the time in DDRC Start time field.
-  AssertClass.IsTrue(DataRetrievalPage.UpdateDDRCStartTime(),"DDRC start time has been set as per the current device time.")
-  
-  Log.Message("DDRC start time set as 2 minutes before of current system date and time")
 }

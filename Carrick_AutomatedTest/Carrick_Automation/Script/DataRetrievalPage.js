@@ -768,3 +768,47 @@ function ClickOnDDRCCancelButton()
     return false 
   }
 }
+
+function clickOnPqFreeIntervalDirectory()
+{
+   if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+   {
+     //Clear Session Log
+     SessionLogPage.ClearLog()
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
+     aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|PQ Free Interval Directory")
+     Log.Message("Clicked on PQ Free Interval Directory")
+     return true
+    }
+   else
+   {
+     Log.Message("Unable to click on DDRC Directory")
+     return false
+   }
+}
+
+function checkPqFreeIntervalDirectoryOpen(retryCount)
+{
+  var recordRetryCount = 0
+  for(recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
+  {
+   if(CommonMethod.CheckActivityLog("Directory list displayed successfully for device"))
+   {
+     Log.Message("PQ Free Interval directory list displayed successfully") 
+     return true 
+     break
+   }
+   else(CommonMethod.CheckActivityLog("PQ Freee Interval directory list not found"))
+   {
+     Log.Message("Trying to click on PQ Free Interval directory button again")
+     ClickOnDDRCDirectory();
+   }
+  }
+  if(recordRetryCount>=4)
+  {
+    Log.Message("PQ Free Interval recording is not started")
+    return false
+  }
+}

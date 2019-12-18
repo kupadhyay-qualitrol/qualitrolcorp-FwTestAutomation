@@ -44,33 +44,35 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(ConfigEditorPage.clickPqFreeInterval(),"Clicked on PQ Free Interval")
     
     //Step.7 Select RMS values from the Available quantities for PQ Free Inerval
-    PQ_Methods.SelectRMSChannelCircuitQuantitiesForPQFreeInterval()
+    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval()
     
     
     //Step.8 Send to device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
     
-    //Step.9 Configure Favorite for PQ Free Interval
     
-    //Step.12 Compare Device time and PQ Free Interval
-    //AssertClass.IsTrue(DDRC_Methods.CompareDateTimeDDRC(retryCountDateTime),"Device time and DDRC time compared and new record started to form")
+    //Step.9 Compare Device time and PQ Start time
+    AssertClass.IsTrue(PQ_Methods.compareDateTimePq(retryCountDateTime),"Device time and PQ Free Interval time compared and new record started to form")
+    
+    //Step.10 Click on PQ Free Interval button
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"Clicked on PQ Free Interval Directory")
+    
+    //Step.10.1 Check if PQ Free Interval Directroy opens or not
+    AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCountDDRCOpen),"PQ Free Interval directory pane open and displayed")
+    
+    //Step.11 Set Start date and time for DDRC
+    AssertClass.IsTrue(DDRC_Methods.SetDDRCStartTime(),"DDRC start time set as 2 minutes before of current system date and time")
+    
+    //Step.12 Download DDRC record
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
+    
+    //Step.13 Close DDRC directory
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directroy closed")
+ 
     
     
-    //Step.15 Set Start date and time for PQ Free Interval
-    //DDRC_Methods.SetDDRCStartTime()
+    //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
     
-    //Step.16 Download PQ Free Interval
-    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
-    
-    //Step.17 Close PQ Free Interval directory
-    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
-    
-    
-    //Step.19 Download PQ Free Interval data
-    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
-    
-    //Step.20 Close PQ Free Interval directory
-    //AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directory closed")
     
     //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
