@@ -1143,6 +1143,28 @@
 											</testItem>
 										</children>
 									</testItem>
+									<testItem name="3U4U3I3I" key="{EDE6C6E3-D75C-4BD9-92B3-56D689DCF551}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+										<testParameters />
+										<children>
+											<testItem name="IEC Browser Connection testing BTC-792" key="{D8852F6F-8E59-4F20-97B5-F44AF7CD3BB9}" group="False" enabled="False" testMoniker="{0567AFC5-96F0-4E3B-9A32-C363E754303A}BTC_792" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+												<testParameters />
+												<children />
+											</testItem>
+											<testItem name="DDRC Recording Download_With_Quantity_1" key="{387BF65E-5909-43C0-B5FB-B218C543ED63}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+												<testParameters>
+													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
+													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
+													<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="409026540" />
+													<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
+													<param4 name="storageRate" type="3" localVarName="" varType="5" value="25" />
+													<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+													<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
+													<param7 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualDDRCInjection.qcm" />
+												</testParameters>
+												<children />
+											</testItem>
+										</children>
+									</testItem>
 									<testItem name="3U4U3I3I3I" key="{6E7F720D-7392-46BF-B14A-97FA68899F5C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}TestCabling3U4U3I3I3I" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters />
 										<children>

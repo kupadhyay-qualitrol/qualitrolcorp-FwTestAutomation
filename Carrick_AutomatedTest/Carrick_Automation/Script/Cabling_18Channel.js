@@ -547,6 +547,11 @@ function TestCabling3U4U3I()
   TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I Cabling")
   TestCabling(DataSetFolderPath,"3U4U3I",TestLog)
 }
+function TestCabling3U4U3I3I()
+{
+  TestLog = SeleniumWebdriver.StartTestCaseReport("Test 3U4U3I3I Cabling")
+  TestCabling(DataSetFolderPath,"3U4U3I3I",TestLog)
+}
 
 function TestCabling3U4U3I3I3I()
 {
