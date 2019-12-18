@@ -29,7 +29,7 @@ function clickOnRemoveAllButtonForPqFreeIntervalMin()
 
 
 //This function used for getting the tab counts from PQ Free Interval Page
-function GetTabCountsPqFreeInterval()
+function getTabCountsPqFreeInterval()
 {
   if(PANE_PQFREEINTERVAL_CHANNELS.Visible)
   {
@@ -41,7 +41,7 @@ function GetTabCountsPqFreeInterval()
 
 
 //This function is used for selecting the tabs in PQ Free Interval Page
-function ClickOnTabPqFreeInterval(Index)
+function clickOnTabPqFreeInterval(Index)
 {
   if(PANE_PQFREEINTERVAL_CHANNELS.Visible)
   { 
@@ -60,7 +60,7 @@ function ClickOnTabPqFreeInterval(Index)
 
 
 //This function used for adding RMS quantities from available quantities in PQ Free Interval Page
-function AddRMSQuantitiesPqFreeInterval()
+function addRMSQuantitiesPqFreeInterval()
 {   
   if(PANE_PQFREEINTERVAL_CHANNELS.Visible)
   {     

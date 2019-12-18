@@ -28,12 +28,12 @@ function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
 {
   ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
   Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
-  ConfigEditor_PQ.GetTabCountsPqFreeInterval()
+  ConfigEditor_PQ.getTabCountsPqFreeInterval()
   for (count=0; count < PQFREEINTERVAL_TABCOUNT; count++)
   {
-    AssertClass.IsTrue(ConfigEditor_PQ.ClickOnTabPqFreeInterval(count),"Clicked on tab")
+    AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
     
-    AssertClass.IsTrue(ConfigEditor_PQ.AddRMSQuantitiesPqFreeInterval(),"RMS Quantities added to selected quantities from available quantities")    
+    AssertClass.IsTrue(ConfigEditor_PQ.addRMSQuantitiesPqFreeInterval(),"RMS Quantities added to selected quantities from available quantities")    
   }
 }
 
