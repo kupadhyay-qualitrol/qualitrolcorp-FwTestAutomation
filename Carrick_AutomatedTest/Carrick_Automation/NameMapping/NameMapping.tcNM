@@ -815,6 +815,26 @@
 																			</Child>
 																		</Children>
 																	</Child>
+																	<Child Name="grpPQData" Key="{612A7CAA-81D6-4503-9A0B-0463F439DD14}" ParallelWalk="True">
+																		<Image FileName="1646715769" Left="21" Top="49" Right="420" Bottom="148" />
+																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																		<Properties>
+																			<Property Name="WinFormsControlName">
+																				<Value PropertyType="0" Value="grpPQData" Type="5" />
+																			</Property>
+																		</Properties>
+																		<Children>
+																			<Child Name="CMchkPQFreeInterval" Key="{AAABD8FC-AC3B-4BBB-AD1C-BED27CF4E9BF}" ParallelWalk="True">
+																				<Image FileName="1646715769" Left="41" Top="96" Right="144" Bottom="113" />
+																				<TypeInfo Item0="{BCCDC67D-ABA7-4E38-A6E3-E66D9C613DAC}" />
+																				<Properties>
+																					<Property Name="WinFormsControlName">
+																						<Value PropertyType="0" Value="CMchkPQFreeInterval" Type="5" />
+																					</Property>
+																				</Properties>
+																			</Child>
+																		</Children>
+																	</Child>
 																</Children>
 															</Child>
 															<Child Name="cmbtnCancel" Key="{1C36CA6A-9ACC-4B28-B8A1-40088843FA66}" ParallelWalk="True">
@@ -2839,6 +2859,99 @@
 																											</Child>
 																										</Children>
 																									</Child>
+																									<Child Name="ucPqContinuousFreeInterval" Key="{DC6B6097-A951-4B95-91E3-578E426156C2}" ParallelWalk="True">
+																										<Image FileName="1097719116" Left="197" Top="81" Right="1020" Bottom="562" />
+																										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																										<Properties>
+																											<Property Name="WinFormsControlName">
+																												<Value PropertyType="0" Value="ucPqContinuousFreeInterval" Type="5" />
+																											</Property>
+																										</Properties>
+																										<Children>
+																											<Child Name="tabContinuous" Key="{810F3BFA-519E-420A-86DF-2A3B0AFC8CEB}" ParallelWalk="True">
+																												<Image FileName="1097719116" Left="197" Top="139" Right="1020" Bottom="562" />
+																												<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																												<Properties>
+																													<Property Name="WinFormsControlName">
+																														<Value PropertyType="0" Value="tabContinuous" Type="5" />
+																													</Property>
+																												</Properties>
+																												<Children>
+																													<Child Name="pg" Key="{1177A2AD-B4E3-4D5D-ABD2-C875BD6416E2}" ParallelWalk="True">
+																														<Image FileName="1863644826" Left="198" Top="162" Right="1019" Bottom="561" />
+																														<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																														<Properties>
+																															<Property Name="WinFormsControlName">
+																																<Value PropertyType="0" Value="pg" Type="5" />
+																															</Property>
+																														</Properties>
+																														<Children>
+																															<Child Name="pqQuantities" Key="{CEA5B2AB-14EF-4668-A05E-4EBDA44C804C}" ParallelWalk="True">
+																																<Image FileName="1863644826" Left="198" Top="162" Right="1019" Bottom="561" />
+																																<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																<Properties>
+																																	<Property Name="WinFormsControlName">
+																																		<Value PropertyType="0" Value="pqQuantities" Type="5" />
+																																	</Property>
+																																</Properties>
+																																<Children>
+																																	<Child Name="frmPanel" Key="{88B56617-CF9A-4692-BA81-40076252FB3F}" ParallelWalk="True">
+																																		<Image FileName="1863644826" Left="198" Top="190" Right="1019" Bottom="561" />
+																																		<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																		<Properties>
+																																			<Property Name="WinFormsControlName">
+																																				<Value PropertyType="0" Value="frmPanel" Type="5" />
+																																			</Property>
+																																		</Properties>
+																																		<Children>
+																																			<Child Name="btnRemoveAll" Key="{D0919BC9-D8EE-4EC8-A760-688779658233}" ParallelWalk="True">
+																																				<Image FileName="1863644826" Left="586" Top="436" Right="626" Bottom="459" />
+																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																				<Properties>
+																																					<Property Name="WinFormsControlName">
+																																						<Value PropertyType="0" Value="btnRemoveAll" Type="5" />
+																																					</Property>
+																																				</Properties>
+																																			</Child>
+																																			<Child Name="lstAvailable" Key="{0D9BB8A1-7F1F-4859-8F30-C9A1F0CD8F78}" ParallelWalk="True">
+																																				<Image FileName="-1891577826" Left="201" Top="208" Right="579" Bottom="559" />
+																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																				<Properties>
+																																					<Property Name="WinFormsControlName">
+																																						<Value PropertyType="0" Value="lstAvailable" Type="5" />
+																																					</Property>
+																																				</Properties>
+																																				<Children>
+																																					<Child Name="lvQuantities" Key="{6F407DEA-9744-487C-A938-06757132244A}" ParallelWalk="True">
+																																						<Image FileName="-1891577826" Left="201" Top="208" Right="579" Bottom="524" />
+																																						<TypeInfo Item0="{518207D3-86C6-4102-9294-5A73C2F7017A}" />
+																																						<Properties>
+																																							<Property Name="WinFormsControlName">
+																																								<Value PropertyType="0" Value="lvQuantities" Type="5" />
+																																							</Property>
+																																						</Properties>
+																																					</Child>
+																																				</Children>
+																																			</Child>
+																																			<Child Name="btnAddSelected" Key="{19249462-D77E-4CF9-B099-225945F3E84E}" ParallelWalk="True">
+																																				<Image FileName="1478655881" Left="586" Top="350" Right="626" Bottom="373" />
+																																				<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+																																				<Properties>
+																																					<Property Name="WinFormsControlName">
+																																						<Value PropertyType="0" Value="btnAddSelected" Type="5" />
+																																					</Property>
+																																				</Properties>
+																																			</Child>
+																																		</Children>
+																																	</Child>
+																																</Children>
+																															</Child>
+																														</Children>
+																													</Child>
+																												</Children>
+																											</Child>
+																										</Children>
+																									</Child>
 																								</Children>
 																							</Child>
 																						</Children>
@@ -4406,6 +4519,9 @@
 								<Child Name="grpTriggeredEvents" Owner="{597CF112-2975-482E-B1DD-2230F38924A4}">
 									<Child Name="CMchkDDR" Owner="{EDA08A20-93CD-4B2A-B1A9-8176A68C2B8E}" />
 								</Child>
+								<Child Name="grpPQData" Owner="{612A7CAA-81D6-4503-9A0B-0463F439DD14}">
+									<Child Name="CMchkPQFreeInterval" Owner="{AAABD8FC-AC3B-4BBB-AD1C-BED27CF4E9BF}" />
+								</Child>
 							</Child>
 							<Child Name="cmbtnCancel" Owner="{1C36CA6A-9ACC-4B28-B8A1-40088843FA66}" />
 						</Child>
@@ -4706,6 +4822,21 @@
 																		<Child Name="lvQuantities" Owner="{F928D0E9-D7DE-4A8B-87F8-B1545115658A}" />
 																	</Child>
 																	<Child Name="btnAddSelected" Owner="{A3028E5B-4302-4A6A-B994-2D0858D32919}" />
+																</Child>
+															</Child>
+														</Child>
+													</Child>
+												</Child>
+												<Child Name="ucPqContinuousFreeInterval" Owner="{DC6B6097-A951-4B95-91E3-578E426156C2}">
+													<Child Name="tabContinuous" Owner="{810F3BFA-519E-420A-86DF-2A3B0AFC8CEB}">
+														<Child Name="pg" Owner="{1177A2AD-B4E3-4D5D-ABD2-C875BD6416E2}">
+															<Child Name="pqQuantities" Owner="{CEA5B2AB-14EF-4668-A05E-4EBDA44C804C}">
+																<Child Name="frmPanel" Owner="{88B56617-CF9A-4692-BA81-40076252FB3F}">
+																	<Child Name="btnRemoveAll" Owner="{D0919BC9-D8EE-4EC8-A760-688779658233}" />
+																	<Child Name="lstAvailable" Owner="{0D9BB8A1-7F1F-4859-8F30-C9A1F0CD8F78}">
+																		<Child Name="lvQuantities" Owner="{6F407DEA-9744-487C-A938-06757132244A}" />
+																	</Child>
+																	<Child Name="btnAddSelected" Owner="{19249462-D77E-4CF9-B099-225945F3E84E}" />
 																</Child>
 															</Child>
 														</Child>

@@ -33,6 +33,7 @@ var ChckBox_DDRC_CleanMemory = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlCo
 var Box_Start_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpStartTime
 var Box_End_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpEndTime
 var Btn_DDRCCancel = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
+var CHECKBOX_PQFREEINTERVAL_CLEANMEMORY = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CleanMemory.grpAll.grpPQData.CMchkPQFreeInterval
 //
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
 function ClickOnFRManualTrigger()
@@ -676,6 +677,23 @@ function CheckDDRCCheckBox()
     return false
   }
 }
+
+function checkPqFreeIntervalCheckBox()
+{
+  if(Dlg_Box_CleanMemory.Exists)
+  {
+    CHECKBOX_PQFREEINTERVAL_CLEANMEMORY.wState = cbChecked;
+    Log.Message("Checked PQ Free Interval check box")
+    return true
+  }
+  else
+  {
+    Log.Message("Not able to check the PQ Free Interval check box")
+    return false
+  }
+}
+
+
 function ClickOnExecuteButton()
 {
   if(Dlg_Box_CleanMemory.Exists)
