@@ -10,7 +10,7 @@
 //USEUNIT GeneralPage
 
 
-function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPQOpen,fileName)
+function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,fileName)
 {
   try
   {
@@ -55,19 +55,19 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(PQ_Methods.compareDateTimePq(retryCountDateTime),"Device time and PQ Free Interval time compared and new record started to form")
     
     //Step.10 Click on PQ Free Interval button
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDirectory(),"Clicked on PQ Free Interval Directory")
+    AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalDirectory(),"Clicked on PQ Free Interval Directory")
     
     //Step.10.1 Check if PQ Free Interval Directroy opens or not
-    AssertClass.IsTrue(DataRetrievalPage.CheckDDRCDirectoryOpen(retryCountDDRCOpen),"PQ Free Interval directory pane open and displayed")
+    AssertClass.IsTrue(DataRetrievalPage.checkPqFreeIntervalDirectoryOpen(retryCountPqOpen),"PQ Free Interval directory pane open and displayed")
     
-    //Step.11 Set Start date and time for DDRC
-    AssertClass.IsTrue(DDRC_Methods.SetDDRCStartTime(),"DDRC start time set as 2 minutes before of current system date and time")
+    //Step.11 Set Start date and time for PQ Free Interval
+    AssertClass.IsTrue(PQ_Methods.setPqFreeIntervalStartTime(),"PQ Free Interval start time set as 2 minutes before of current system date and time")
     
     //Step.12 Download DDRC record
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded DDRC Record")
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded PQ Free Interval Record")
     
     //Step.13 Close DDRC directory
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"DDRC directroy closed")
+    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"PQ Free Interval directroy closed")
  
     
     

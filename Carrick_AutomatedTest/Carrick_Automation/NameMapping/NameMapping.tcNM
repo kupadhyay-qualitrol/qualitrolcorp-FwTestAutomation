@@ -2944,6 +2944,15 @@
 																																			</Child>
 																																		</Children>
 																																	</Child>
+																																	<Child Name="zucPqContinuous_Toolbars_Dock_Area_Top" Key="{1EEE4CE4-B733-469C-B7A6-7D8F37A83C6E}" ParallelWalk="True">
+																																		<Image FileName="-2034185015" Left="198" Top="162" Right="1019" Bottom="190" />
+																																		<TypeInfo Item0="{A7CA1F92-6C10-4ACC-8D97-A85B90154832}" />
+																																		<Properties>
+																																			<Property Name="WinFormsControlName">
+																																				<Value PropertyType="0" Value="_ucPqContinuous_Toolbars_Dock_Area_Top" Type="5" />
+																																			</Property>
+																																		</Properties>
+																																	</Child>
 																																</Children>
 																															</Child>
 																														</Children>
@@ -4838,6 +4847,7 @@
 																	</Child>
 																	<Child Name="btnAddSelected" Owner="{19249462-D77E-4CF9-B099-225945F3E84E}" />
 																</Child>
+																<Child Name="zucPqContinuous_Toolbars_Dock_Area_Top" Owner="{1EEE4CE4-B733-469C-B7A6-7D8F37A83C6E}" />
 															</Child>
 														</Child>
 													</Child>

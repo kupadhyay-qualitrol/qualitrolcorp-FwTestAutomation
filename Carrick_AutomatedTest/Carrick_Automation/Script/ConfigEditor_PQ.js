@@ -10,6 +10,8 @@ var PANE_PQFREEINTERVAL_CHANNELS = Aliases.iQ_Plus.Form.Confgiuration.ConfigEdit
 var BTN_REMOVE_ALL_SELECTED_QUANTITIES_PQFREEINTERVAL = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucPqContinuousFreeInterval.tabContinuous.pg.pqQuantities.frmPanel.btnRemoveAll
 var AVAILABLE_QUANTITIES_PQFREEINTERVAL = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucPqContinuousFreeInterval.tabContinuous.pg.pqQuantities.frmPanel.lstAvailable.lvQuantities
 var BTN_ADD_QUANTITIES_PQFREEINTERVAL = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucPqContinuousFreeInterval.tabContinuous.pg.pqQuantities.frmPanel.btnAddSelected
+var TAB_QUANTITIES_PQFREEINTERVAL = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane.frmContainer.ucPqContinuousFreeInterval.tabContinuous.pg.pqQuantities.zucPqContinuous_Toolbars_Dock_Area_Top
+var PANE_CONFIG_PQFREEINTERVAL = Aliases.iQ_Plus.Form.Confgiuration.ConfigEditor.pnlPaddingControl.gbxBorder.scContainer.SplitterPanel2.grpConfigPane
 
 //This function is used for Taking all the selected quantities back to available quantities for PQ Free Interval Page
 function clickOnRemoveAllButtonForPqFreeIntervalMin()
@@ -76,6 +78,25 @@ function addRMSQuantitiesPqFreeInterval()
         BTN_ADD_QUANTITIES_PQFREEINTERVAL.Click()
       }
     }
+    for (i = 0; i < aqString.GetListLength(item_List); i++)
+    {
+      var temp = aqString.GetListItem(item_List, i)
+      if(aqString.StrMatches("H01", temp))
+      {
+        AVAILABLE_QUANTITIES_PQFREEINTERVAL.ClickItem(temp)
+        BTN_ADD_QUANTITIES_PQFREEINTERVAL.Click()
+      }
+    }
+    
+    for (i = 0; i < aqString.GetListLength(item_List); i++)
+    {
+      var temp = aqString.GetListItem(item_List, i)
+      if(aqString.StrMatches("IH01", temp))
+      {
+        AVAILABLE_QUANTITIES_PQFREEINTERVAL.ClickItem(temp)
+        BTN_ADD_QUANTITIES_PQFREEINTERVAL.Click()
+      }
+    }
     Log.Message("PQ Free Interval RMS Quantities added") 
     return true
   }
@@ -85,7 +106,21 @@ function addRMSQuantitiesPqFreeInterval()
   }
 }
 
+//This function is used to click on Harmonics and Intra Harmonics on PQ Free Interval Page
+function clickOnHarmonicsIntraharmonicsTabPqFreeInterval() {
+ if(TAB_QUANTITIES_PQFREEINTERVAL.Exists)  {
+    TAB_QUANTITIES_PQFREEINTERVAL.wItems.Item('tbFilters').Items.Item("Harmonic").Click()
+    TAB_QUANTITIES_PQFREEINTERVAL.wItems.Item('tbFilters').Items.Item("InterHarmonic").Click()
+    return true
+ }
 
+  else
+  {
+    Log.Message("Unable to find Harmonic")
+    return false
+  }
+  
+}
 
 
 

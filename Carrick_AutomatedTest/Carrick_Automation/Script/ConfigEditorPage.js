@@ -267,8 +267,8 @@ function clickPqFreeInterval()
 {
   if(Item_ConfigTree.Exists)
   {
-    Item_ConfigTree.ClickItem("Power Quality|Continuous Recording|Free Interval")
-    Log.Message("Clicked on PQ 10 Min")
+    Item_ConfigTree.ClickItem("Power Quality|Continous Recording|Free Interval")
+    Log.Message("Clicked on PQ Free Interval Page")
     return true
   }
   else

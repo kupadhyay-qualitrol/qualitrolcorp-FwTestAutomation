@@ -643,6 +643,27 @@ function GetDDRCStartTime()
     Log.Message("DDRC directory not displayed")    
   }
 }
+
+
+function getPqFreeIntervalStartTime()
+{
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ Free Interval directory displayed")    
+    var startDateTime = Box_Start_Time.get_Value().ToString();
+    Log.Message("PQ Free Interval Start date and time is "+startDateTime) 
+    return startDateTime 
+  }
+  else
+  {
+    Log.Message("PQ Free Interval directory not displayed")    
+  }
+}
+
+
+
+
+
 function ClickOnCleanMemory()
 {
   SessionLogPage.ClearLog()
@@ -778,13 +799,13 @@ function clickOnPqFreeIntervalDirectory()
      CommonMethod.RibbonToolbar.ClickItem("Device &Management")
      CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
      aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
-     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|PQ Free Interval Directory")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|PQ &Free Interval Directory")
      Log.Message("Clicked on PQ Free Interval Directory")
      return true
     }
    else
    {
-     Log.Message("Unable to click on DDRC Directory")
+     Log.Message("Unable to click on PQ Free Interval Directory")
      return false
    }
 }
