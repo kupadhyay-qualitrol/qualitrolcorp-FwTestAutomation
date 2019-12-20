@@ -9,6 +9,23 @@
 //USEUNIT RMSDataValidationExePage
 //USEUNIT ConfigEditor_PQ
 
+//Variables
+var TOPOLOGY_DEFAULTFAVORITES = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.DAFAVuexpbarFavorites
+var NEW_FAVORITE = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item("utFavoriteToolbar").Items.Item(1)
+var PQ_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CRCSTgrpCRStyles.CRCSTrboPQWaveform
+var PQ_FREEINTERVAL_RADIOBUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTgrpTimeInterval.CRPQPCSTpnlCRPQDataType.CRPQPCSTrdbtnFreeInterval
+var VRMS_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamFirst.CRPQPCSTgrpCRPQParametersFirst.CRPQPCSTchkURMS
+var IRMS_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamFirst.CRPQPCSTgrpCRPQParametersFirst.CRPQPCSTchkIRMS
+var MORE_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTbtnMoreHide
+var RMS_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTchkStandaloneRMS
+var HARMONIC_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTchkStandaloneHarmonics
+var INTERHARMONIC_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTchkStandaloneInterHarmonics
+var FAVORITE_NAME_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.DACSTBgbOptions.DACSTBtxtFavoriteName
+var SAVE_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.DACSTBgbSelection.DACSTBbtnSave
+var HARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneHarmonics
+var INTERHARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneInterHarmonics
+//
+
 function cleanMemoryPqFreeInterval()
 {
   //Step.1 Clicked on Clean Memory
@@ -106,4 +123,51 @@ function setPqFreeIntervalStartTime()
   AssertClass.IsTrue(DataRetrievalPage.UpdateDDRCStartTime(),"PQ Free Interval start time has been set as per the current device time.")
   
   Log.Message("DDRC start time set as 2 minutes before of current system date and time")
+}
+
+function checkForPqFreeIntervalFavorite()
+{ 
+  
+  CommonMethod.RibbonToolbar.wItems.Item(3).Click()
+  CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
+  try 
+  {
+  if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval")=="PQ Free Interval")
+  {
+    TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
+    Log.Message("PQ Free Interval Favorite Data Opened")
+  }
+    
+  
+  else {
+    Log.Message("Configuring new Favorite for PQ Free Interval")
+    NEW_FAVORITE.Click()
+    aqUtils.Delay(2000)
+    PQ_BUTTON.Click()
+    PQ_FREEINTERVAL_RADIOBUTTON.Click()
+    VRMS_CHECKBOX.Click()
+    IRMS_CHECKBOX.Click()
+    MORE_BUTTON.Click()
+    MORE_BUTTON.Click()
+    aqUtils.Delay(2000)
+    RMS_CHECKBOX.Click()
+    HARMONIC_CHECKBOX.Click()
+    HARMONIC_TEXTFIELD.SetText("1")
+    INTERHARMONIC_CHECKBOX.Click()
+    INTERHARMONIC_TEXTFIELD.SetText("1")
+    FAVORITE_NAME_TEXTFIELD.SetText("PQ Free Interval")
+    aqUtils.Delay(2000)
+    SAVE_BUTTON.Click()
+    Log.Message("PQ Free Interval new Favorite has been configured")
+    aqUtils.Delay(2000)
+    TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
+    Log.Message("PQ Free Interval Data Opened")
+    }
+  }
+  catch(ex)
+  {
+    Log.Error(ex.stack)
+    Log.Error("Fail:-Test to check for the PQ Free Interval Favorite")
+  }
+  
 }

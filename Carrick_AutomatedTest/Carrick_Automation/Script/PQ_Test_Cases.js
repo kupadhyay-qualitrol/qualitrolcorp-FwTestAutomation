@@ -69,12 +69,10 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     //Step.13 Close DDRC directory
     AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalCloseButton(),"PQ Free Interval directroy closed")
  
-    
-    
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
+    AssertClass.IsTrue(PQ_Methods.checkForPqFreeIntervalFavorite(),"Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval")
     
-    
-    //Step.15 Open Downloaded PQ Free Interval data and Export
+    //Step.15 Export PQ Free Interval Data
     
     //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
