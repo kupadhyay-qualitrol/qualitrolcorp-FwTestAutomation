@@ -64,15 +64,17 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(PQ_Methods.setPqFreeIntervalStartTime(),"PQ Free Interval start time set as 2 minutes before of current system date and time")
     
     //Step.12 Download DDRC record
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCDownloadNowButton(),"Downloaded PQ Free Interval Record")
+    AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalDownloadNowButton(),"Downloaded PQ Free Interval Record")
     
     //Step.13 Close DDRC directory
-    AssertClass.IsTrue(DataRetrievalPage.ClickOnDDRCCancelButton(),"PQ Free Interval directroy closed")
+    AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalCloseButton(),"PQ Free Interval directroy closed")
  
     
     
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
     
+    
+    //Step.15 Open Downloaded PQ Free Interval data and Export
     
     //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")

@@ -833,3 +833,43 @@ function checkPqFreeIntervalDirectoryOpen(retryCount)
     return false
   }
 }
+
+function clickOnPqFreeIntervalDownloadNowButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ Free Interval directory displayed")  
+    Btn_DDRCDirectory_DownloadNow.ClickButton();
+    Log.Message("PQ Free Interval Download Now button clicked") 
+    if(CommonMethod.CheckActivityLog("PQ data download process completed for device"))
+    {
+     return true
+    }
+    else if(CommonMethod.CheckActivityLog("PQ data not available on device."))
+    {
+     return false 
+    }
+  }
+  else
+  {
+    Log.Message("PQ Free Interval directory not displayed")   
+    return false 
+  }
+}
+
+function clickOnPqFreeIntervalCloseButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ Free Interval directory displayed")  
+    Btn_DDRCCancel.ClickButton();
+    Log.Message("PQ Free Interval Close button clicked") 
+    return true
+  }
+  else
+  {
+    Log.Message("PQ Free Interval directory not displayed")   
+    return false 
+  }
+}
+
