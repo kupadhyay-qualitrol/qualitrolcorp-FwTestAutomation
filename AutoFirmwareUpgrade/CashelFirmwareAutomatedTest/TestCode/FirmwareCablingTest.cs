@@ -17,6 +17,7 @@ using RelevantCodes.ExtentReports;
 using System.Resources;
 using System.Xml;
 using CashelFirmware.GlobalVariables;
+using System.Text;
 
 namespace CashelFirmware.NunitTests
 {
@@ -340,7 +341,7 @@ namespace CashelFirmware.NunitTests
             TestLog.Log(LogStatus.Info, "Ended Executing "+Cabling+" Cabling Test"); 
         }
 
-        public bool ValidateCabling(IWebDriver webdriver, string deviceIP, ExtentTest TestLog, string Cabling, string DataSetFolderPath,double FwVersion)
+        public bool ValidateCabling_old(IWebDriver webdriver, string deviceIP, ExtentTest TestLog, string Cabling, string DataSetFolderPath,double FwVersion)
         {
             Tabindex_Configuration_dfr Tabindex_Configuration_dfr = new Tabindex_Configuration_dfr(webdriver);
             Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
@@ -455,7 +456,157 @@ namespace CashelFirmware.NunitTests
                 }
             }
             return true;
-         }
+        }
+        static void AreEqual(object expected, object actual, string errorMessage)
+        {
+            if (!object.Equals(expected, actual))
+            {
+                errorMessages.AppendLine(errorMessage);                
+            }
+        }
+        static void IsTrue(bool condition, string errorMessage)
+        {
+            if (!condition)
+            {
+                errorMessages.AppendLine(errorMessage);
+                
+            }
+        }
+
+        static StringBuilder errorMessages = new StringBuilder();
+
+        public bool ValidateCabling(IWebDriver webdriver, string deviceIP, ExtentTest TestLog, string Cabling, string DataSetFolderPath, double FwVersion)
+        {
+            Tabindex_Data_pmp Tabindex_Data_pmp = new Tabindex_Data_pmp(webdriver);
+            Tabindex_Data_soh Tabindex_Data_soh = new Tabindex_Data_soh(webdriver);
+            errorMessages.Clear();
+            DataSetFileNameWithPath = DataSetFolderPath + Cabling + ".xlsx";
+
+            AreEqual("Data", Tabindex_Data_soh.OpenTabIndexPage(deviceIP), "Failed to open TabIndex page");
+            TestLog.Log(LogStatus.Pass, "Success:-Device is up.Opened Tabindex page");
+
+            IsTrue(Tabindex_Data_soh.Item_Data_Click(), "Unbale to click on data button");
+            TestLog.Log(LogStatus.Pass, "Success:-Click on data button");
+
+            IsTrue(Tabindex_Data_pmp.SwitchFrame_FromParent_Topmp_item(), "Unbale to SwitchFrame_FromParent_Topmp_item");
+            TestLog.Log(LogStatus.Pass, "Success:-SwitchFrame_FromParent_Topmp_item");
+
+            IsTrue(Tabindex_Data_pmp.Item_pmp_Click(), "Unable to click on pmp in topology");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on pmp in topology");
+
+            IsTrue(Tabindex_Data_pmp.SwitchFrame_Frompmp_Todata(), "Unable to switch frame from pmp to pmp data");
+            TestLog.Log(LogStatus.Pass, "Success:-Switch frame from pmp to pmp data");
+
+            IsTrue(Tabindex_Data_pmp.Item_pmp_data_Click(), "Unable to clicked on pmp data");
+            TestLog.Log(LogStatus.Pass, "Success:-Clicked on pmp data");
+
+            AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_FRCABLING").ToString()), Tabindex_Data_pmp.Get_FRCabling(), "Incorrect FR Cabling");
+
+            TestLog.Log(LogStatus.Pass, "Success:-Validated FR Cabling and found it correct:- " + Tabindex_Data_pmp.Get_FRCabling());
+
+            if (FwVersion >= 4.16)
+            {
+                AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_CABLING").ToString(), 0, resourceManager.GetString("EXCELDATA_PQCABLING").ToString()), Tabindex_Data_pmp.Get_PQCabling(), "Incorrect PQ Cabling");
+                TestLog.Log(LogStatus.Pass, "Success:-Validated PQ Cabling and found it correct:- " + Tabindex_Data_pmp.Get_PQCabling());
+
+
+                IsTrue(Tabindex_Data_pmp.Item_dsp1_channels_map_Click(), "Unable to Clicked on dsp1 channel map");
+                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 channel map");
+
+                for (int dspchannelmap1 = 0; dspchannelmap1 < 12; dspchannelmap1++)
+                {
+                    string cheenalMap = Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1);
+
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap1, resourceManager.GetString("EXCELDATA_Channel_Number_DSP1").ToString()), cheenalMap, "DSP 1 Channel Map for Channel:- " + dspchannelmap1 + " is " + cheenalMap);
+
+                    TestLog.Log(LogStatus.Info, "DSP 1 Channel Map for Channel:- " + dspchannelmap1 + " is " + Tabindex_Data_pmp.Get_DSP1_channel_map(dspchannelmap1));
+                }
+                TestLog.Log(LogStatus.Pass, "Success:-Validated dsp1 channel mapping and it is correct");
+
+                Assert.IsTrue(Tabindex_Data_pmp.Item_dsp2_channels_map_Click());
+                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp2 channel map");
+
+                for (int dspchannelmap2 = 0; dspchannelmap2 < 12; dspchannelmap2++)
+                {
+                    string cheenalMap = Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2);
+
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSPCHANNEL").ToString(), dspchannelmap2, resourceManager.GetString("EXCELDATA_Channel_Number_DSP2").ToString()), cheenalMap, "DSP 2 Channel Map for Channel:- " + dspchannelmap2 + " is " + cheenalMap);
+
+                    TestLog.Log(LogStatus.Info, "DSP 2 Channel Map for Channel:- " + dspchannelmap2 + " is " + Tabindex_Data_pmp.Get_DSP2_channel_map(dspchannelmap2));
+                }
+                TestLog.Log(LogStatus.Pass, "Success:-Validated dsp2 channel mapping and it is correct");
+
+                //Validate Busbar Feeder map
+
+                IsTrue(Tabindex_Data_pmp.Item_pmp_data_busbar_feeder_map_Click(), "Clicked on Busbar Feeder map");
+                TestLog.Log(LogStatus.Pass, "Success:-Clicked on Busbar Feeder Map");
+
+                int[] busbar_map = new int[] { (int)busbarfeedermap.bb0_chnl_strt, (int)busbarfeedermap.bb1_chnl_strt };
+                int[] feeder_map = new int[] { (int)busbarfeedermap.F0_chnl_strt, (int)busbarfeedermap.F1_chnl_strt, (int)busbarfeedermap.F2_chnl_strt, (int)busbarfeedermap.F3_chnl_strt, (int)busbarfeedermap.F4_chnl_strt };
+
+                for (int busbarmap = 0; busbarmap < 2; busbarmap++)
+                {
+                    IsTrue(Tabindex_Data_pmp.Item_pmp_data_busbar_Click(busbarmap), "Unable to click on busbar_" + busbarmap);
+
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on busbar_" + busbarmap);
+
+                    for (int channel = 0; channel < 4; channel++)
+                    {
+                        string busbar_feeder_map = Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel);
+
+                        AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), channel + busbar_map[busbarmap], resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), busbar_feeder_map, "Checking busbar:- " + busbarmap + " channel :-" + channel + " value is " + busbar_feeder_map);
+
+                        TestLog.Log(LogStatus.Pass, "Success:-Checking busbar: -" + busbarmap + " channel: -" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_busbar(busbarmap, channel));
+                    }
+
+                    string channelCount = Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap);
+
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), busbar_map[busbarmap] + 4, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), channelCount, "Checking the busbar " + busbarmap + " channel count" + channelCount);
+
+                    TestLog.Log(LogStatus.Pass, "Success:-The busbar " + busbarmap + " channel count is " + Tabindex_Data_pmp.Get_pmp_data_busbar_channel_count(busbarmap));
+                }
+
+                for (int feedermap = 0; feedermap < 5; feedermap++)
+                {
+                    IsTrue(Tabindex_Data_pmp.Item_pmp_data_feeder_Click(feedermap), "Unable to click on Feeder_" + feedermap);
+                    TestLog.Log(LogStatus.Pass, "Success:-Clicked on Feeder_" + feedermap);
+
+                    for (int channel = 0; channel < 4; channel++)
+                    {
+                        AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), channel + feeder_map[feedermap], resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel), "Checking feeder:- " + feedermap + " channel :-" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel));
+                        TestLog.Log(LogStatus.Pass, "Success:-Checking feeder: -" + feedermap + " channel: -" + channel + " value is " + Tabindex_Data_pmp.Get_busbar_feeder_map_feeder(feedermap, channel));
+                    }
+
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), feeder_map[feedermap] + 4, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap), "Checking the feeder " + feedermap + " channel count" + Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap));
+                    TestLog.Log(LogStatus.Pass, "Success:-The feeder " + feedermap + " channel count is " + Tabindex_Data_pmp.Get_pmp_data_feeder_channel_count(feedermap));
+
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_BUSBAR_FEEDER_MAP").ToString(), feeder_map[feedermap] + 5, resourceManager.GetString("EXCELDATA_BUSBAR_FEEDER_CHANNELNUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap), "Checking the feeder " + feedermap + " associated busbar is " + Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap));
+                    TestLog.Log(LogStatus.Pass, "Success:-The feeder " + feedermap + " associated busbar is " + Tabindex_Data_pmp.Get_pmp_data_feeder_assoc_busbar(feedermap));
+
+                }
+
+                //Validate DSP_FEEDER_MAP
+
+                IsTrue(Tabindex_Data_pmp.Item_pmp_data_dsp1_feeder_map_Click(), "Unable to clicke on dsp1 feeder map");
+                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp1 feeder map");
+
+                for (int dspfeeder = 0; dspfeeder < 3; dspfeeder++)
+                {
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSP_FEEDER_MAP").ToString(), dspfeeder, resourceManager.GetString("EXCELDATA_DSP_FEEDER_NUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder), "Checking dsp1 feeder :-" + Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder));
+                    TestLog.Log(LogStatus.Pass, "Success:-Dsp1 feeder number:- " + dspfeeder + ": " + Tabindex_Data_pmp.Get_pmp_data_dsp1_feeder_map_dsp(dspfeeder));
+                }
+
+                IsTrue(Tabindex_Data_pmp.Item_pmp_data_dsp2_feeder_map_Click(), "Unable to clicked on dsp2 feeder map");
+                TestLog.Log(LogStatus.Pass, "Success:-Clicked on dsp2 feeder map");
+
+                for (int dspfeeder = 0; dspfeeder < 3; dspfeeder++)
+                {
+                    AreEqual(Read_WriteExcel.ReadExcel(DataSetFileNameWithPath, resourceManager.GetString("EXCELDATA_SHEETNAME_DSP_FEEDER_MAP").ToString(), dspfeeder + 3, resourceManager.GetString("EXCELDATA_DSP_FEEDER_NUMBER").ToString()), Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder), "Checking dsp2 feeder :-" + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
+                    TestLog.Log(LogStatus.Pass, "Success:-Dsp2 feeder number:- " + dspfeeder + ": " + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
+                }
+            }
+            return errorMessages.Length < 0;
+        }
 
         /// <summary>
         /// Upload Calibration file in the device
