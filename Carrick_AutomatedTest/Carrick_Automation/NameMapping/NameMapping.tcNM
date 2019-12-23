@@ -3769,6 +3769,81 @@
 									</Child>
 								</Children>
 							</Child>
+							<Child Name="ToolStripDropDownMenu2" Key="{20CFD96E-923C-46C9-BEBA-E77BC29A8C0A}" ParallelWalk="True">
+								<Image FileName="-61127528" Left="0" Top="0" Right="243" Bottom="398" />
+								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
+								<Properties>
+									<Property Name="ClrFullClassName">
+										<Value PropertyType="0" Value="System.Windows.Forms.ToolStripDropDownMenu" Type="5" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value PropertyType="0" Value="" Type="5" />
+									</Property>
+									<Property Name="Index">
+										<Value PropertyType="0" Value="2" Type="0" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="WFVfrmExportToCSV" Key="{057291F4-3E1B-4334-ACED-EC0D859863D3}" ParallelWalk="True">
+								<Image FileName="-791536901" Left="0" Top="0" Right="373" Bottom="355" />
+								<TypeInfo Item0="{1E9C4156-9226-4743-A6E8-E7B60BDFF793}" />
+								<Properties>
+									<Property Name="WinFormsControlName">
+										<Value PropertyType="0" Value="WFVfrmExportToCSV" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="WFVgbxExportCSV" Key="{9D272E43-CA4C-4BF1-B750-72EBB9C85BFB}" ParallelWalk="True">
+										<Image FileName="-791536901" Left="16" Top="43" Right="357" Bottom="138" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="WFVgbxExportCSV" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="WFVrbtnAllDataPoints" Key="{597A1FEE-C903-40F0-B7EE-D33CDDB65E83}" ParallelWalk="True">
+												<Image FileName="-791536901" Left="25" Top="68" Right="225" Bottom="85" />
+												<TypeInfo Item0="{696042E5-7B0E-47BD-85E1-36CA40E86D88}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="WFVrbtnAllDataPoints" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="WFVgbxSelectPath" Key="{439A7B9E-7735-4BF3-9802-B86778B247C0}" ParallelWalk="True">
+										<Image FileName="-749411392" Left="16" Top="210" Right="357" Bottom="272" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="WFVgbxSelectPath" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="WFVtxtSelectPath" Key="{A9B04461-2E23-407F-ABF4-75CA2CF1CA96}" ParallelWalk="True">
+												<Image FileName="-749411392" Left="25" Top="235" Right="264" Bottom="255" />
+												<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="WFVtxtSelectPath" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="WFVbtnOK" Key="{84CD610A-BE63-4B02-8A8B-733B55DA0EEF}" ParallelWalk="True">
+										<Image FileName="2052314996" Left="154" Top="293" Right="251" Bottom="316" />
+										<TypeInfo Item0="{D041AD73-7AC3-4B10-B07A-DCB82FA61BB9}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="WFVbtnOK" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
 						</Children>
 					</Child>
 					<Child Name="setup" Key="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}" ParallelWalk="True">
@@ -5358,6 +5433,16 @@
 			<Child Name="SelectProtocol" Owner="{6A648DD7-049A-4315-9303-FDF4AB274210}">
 				<Child Name="cmbProtocol" Owner="{C4873E62-6C64-416F-A7C2-E540186D0AA0}" />
 				<Child Name="btnSelect" Owner="{CB6228F3-D644-4C54-8ADA-11C2B7FE95DB}" />
+			</Child>
+			<Child Name="ToolStripDropDownMenu2" Owner="{20CFD96E-923C-46C9-BEBA-E77BC29A8C0A}" />
+			<Child Name="WFVfrmExportToCSV" Owner="{057291F4-3E1B-4334-ACED-EC0D859863D3}">
+				<Child Name="WFVgbxExportCSV" Owner="{9D272E43-CA4C-4BF1-B750-72EBB9C85BFB}">
+					<Child Name="WFVrbtnAllDataPoints" Owner="{597A1FEE-C903-40F0-B7EE-D33CDDB65E83}" />
+				</Child>
+				<Child Name="WFVgbxSelectPath" Owner="{439A7B9E-7735-4BF3-9802-B86778B247C0}">
+					<Child Name="WFVtxtSelectPath" Owner="{A9B04461-2E23-407F-ABF4-75CA2CF1CA96}" />
+				</Child>
+				<Child Name="WFVbtnOK" Owner="{84CD610A-BE63-4B02-8A8B-733B55DA0EEF}" />
 			</Child>
 		</Child>
 		<Child Name="setup" Owner="{75702FB6-C159-47DE-8FE9-DC0E2889AE93}">

@@ -10,7 +10,7 @@
 //USEUNIT GeneralPage
 
 
-function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,fileName)
+function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,filePath)
 {
   try
   {
@@ -73,6 +73,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(PQ_Methods.checkForPqFreeIntervalFavorite(),"Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval")
     
     //Step.15 Export PQ Free Interval Data
+    AssertClass.IsTrue(PQ_Methods.exportToCsvPqFreeIntervalData(filePath), "PQ Free Interval Data is exported to CSV")
     
     //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")

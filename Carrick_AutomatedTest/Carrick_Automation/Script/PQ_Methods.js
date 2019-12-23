@@ -24,6 +24,13 @@ var FAVORITE_NAME_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlCon
 var SAVE_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.DACSTBgbSelection.DACSTBbtnSave
 var HARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneHarmonics
 var INTERHARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneInterHarmonics
+var WAVEFORM_VIEWER_MAINMENU = Aliases.iQ_Plus.MainForm
+//var DROPDOWN_FILE_MENU_EXPORT = Aliases.iQ_Plus.ToolStripDropDownMenu2
+//var EXPORT_TO_CSV_BUTTON = Aliases.iQ_Plus.ToolStripDropDownMenu
+var ALL_DATA_POINTS_RADIO_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxExportCSV.WFVrbtnAllDataPoints
+var SELECT_PATH_TO_EXPORT =Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxSelectPath.WFVtxtSelectPath
+var SELECT_PATH_OK_BUTTON = Aliases.iQ_Plus.dlgBrowseForFolder.btnOK
+var EXPORT_TO_CSV_OK_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVbtnOK
 //
 
 function cleanMemoryPqFreeInterval()
@@ -132,7 +139,7 @@ function checkForPqFreeIntervalFavorite()
   CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
   try 
   {
-  if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval")=="PQ Free Interval")
+  if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval")==="PQ Free Interval")
   {
     TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
     Log.Message("PQ Free Interval Favorite Data Opened")
@@ -170,4 +177,29 @@ function checkForPqFreeIntervalFavorite()
     Log.Error("Fail:-Test to check for the PQ Free Interval Favorite")
   }
   
+}
+
+
+function exportToCsvPqFreeIntervalData()
+{
+//  var sysUserName = CommonMethod.GetSystemUsername()
+//  var pqRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeIntervalData\\"
+
+  WAVEFORM_VIEWER_MAINMENU.Keys("~{F}")
+  for(i=0; i<10 ; i++)
+  {
+  LLPlayer.KeyDown(VK_DOWN,1000)  
+  }
+  
+  LLPlayer.KeyDown(VK_RETURN,1000)
+  
+  for(i=0; i<3 ; i++)
+  {
+  LLPlayer.KeyDown(VK_DOWN,1000)  
+  }
+  LLPlayer.KeyDown(VK_RETURN,1000)
+  ALL_DATA_POINTS_RADIO_BUTTON.Click()
+  SELECT_PATH_TO_EXPORT.Click()
+  SELECT_PATH_OK_BUTTON.Click()
+  EXPORT_TO_CSV_OK_BUTTON.Click()
 }
