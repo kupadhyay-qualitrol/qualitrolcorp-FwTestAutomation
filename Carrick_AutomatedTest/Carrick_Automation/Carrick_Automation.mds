@@ -3281,15 +3281,14 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="PQ Free Interval Download" key="{2D4B57DE-F074-47DD-9428-2EA5FB50D2A0}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="PQ Free Interval Download" key="{2D4B57DE-F074-47DD-9428-2EA5FB50D2A0}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 				<testParameters>
-					<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+ 18" />
+					<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 					<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_50" />
 					<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="342167760" />
 					<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.50" />
-					<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="1" />
-					<param5 name="retryCountPQOpen" type="3" localVarName="" varType="3" value="1" />
-					<param6 name="fileName" type="3" localVarName="" varType="8" value="" />
+					<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+					<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
 				</testParameters>
 				<children />
 			</testItem>

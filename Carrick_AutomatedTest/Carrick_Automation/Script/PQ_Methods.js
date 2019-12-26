@@ -9,32 +9,6 @@
 //USEUNIT RMSDataValidationExePage
 //USEUNIT ConfigEditor_PQ
 
-//Variables
-var TOPOLOGY_DEFAULTFAVORITES = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.DAFAVuexpbarFavorites
-var NEW_FAVORITE = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item("utFavoriteToolbar").Items.Item(1)
-var PQ_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CRCSTgrpCRStyles.CRCSTrboPQWaveform
-var PQ_FREEINTERVAL_RADIOBUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTgrpTimeInterval.CRPQPCSTpnlCRPQDataType.CRPQPCSTrdbtnFreeInterval
-var VRMS_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamFirst.CRPQPCSTgrpCRPQParametersFirst.CRPQPCSTchkURMS
-var IRMS_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamFirst.CRPQPCSTgrpCRPQParametersFirst.CRPQPCSTchkIRMS
-var MORE_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTbtnMoreHide
-var RMS_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTchkStandaloneRMS
-var HARMONIC_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTchkStandaloneHarmonics
-var INTERHARMONIC_CHECKBOX = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTchkStandaloneInterHarmonics
-var FAVORITE_NAME_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.DACSTBgbOptions.DACSTBtxtFavoriteName
-var SAVE_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.DACSTBgbSelection.DACSTBbtnSave
-var HARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneHarmonics
-var INTERHARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneInterHarmonics
-var WAVEFORM_VIEWER_MAINMENU = Aliases.iQ_Plus.MainForm
-var ALL_DATA_POINTS_RADIO_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxExportCSV.WFVrbtnAllDataPoints
-var SELECT_PATH_TO_EXPORT =Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxSelectPath.WFVtxtSelectPath
-var SELECT_PATH_OK_BUTTON = Aliases.iQ_Plus.dlgBrowseForFolder.btnOK
-var EXPORT_TO_CSV_OK_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVbtnOK
-var SYNCHRONIZE_DATE_TIME = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item(0).Items.Item(5)
-var START_DATE_TO_ONE = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item(0).Items.Item(1)
-var SELECT_FOLDER_CANCEL_BUTTON = Aliases.iQ_Plus.dlgBrowseForFolder.btnCancel
-var EXPORT_TO_CSV_CANCEL_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVbtnCancel
-//                   
-
 function cleanMemoryPqFreeInterval()
 {
   //Step.1 Clicked on Clean Memory
@@ -56,13 +30,13 @@ function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
     ConfigEditor_PQ.getTabCountsPqFreeInterval()
   for (count=0; count < PQFREEINTERVAL_TABCOUNT; count++)
   {
-    
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
     ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
     Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
-    AssertClass.IsTrue(ConfigEditor_PQ.addRMSQuantitiesPqFreeInterval(),"RMS Quantities added to selected quantities from available quantities")    
-    AssertClass.IsTrue(ConfigEditor_PQ.addRMSQuantitiesPqFreeInterval(),"Harmonic and IntraHarmonic quantities added to selected quantities from available quantities")
+    AssertClass.IsTrue(ConfigEditor_PQ.addRMSQuantitiesPqFreeInterval(),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
+       
   }
+  Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
 }
 
 
@@ -130,7 +104,6 @@ function setPqFreeIntervalStartTime()
   
   //Step.5 Now set the time in PQ Free Interval Start time field.
   AssertClass.IsTrue(DataRetrievalPage.UpdateDDRCStartTime(),"PQ Free Interval start time has been set as per the current device time.")
-  
   Log.Message("PQ Free Interval start time set as 2 minutes before of current system date and time")
 }
 
@@ -145,33 +118,16 @@ function checkForPqFreeIntervalFavorite()
    if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
    {
     Log.Message("PQ Free Interval Favorite Exists")
+    return true
    }
     
   
   else {
-    Log.Message("Configuring new Favorite for PQ Free Interval")
-    NEW_FAVORITE.Click()
-    aqUtils.Delay(2000)
-    PQ_BUTTON.Click()
-    PQ_FREEINTERVAL_RADIOBUTTON.Click()
-    VRMS_CHECKBOX.Click()
-    IRMS_CHECKBOX.Click()
-    MORE_BUTTON.Click()
-    MORE_BUTTON.Click()
-    aqUtils.Delay(2000)
-    RMS_CHECKBOX.Click()
-    HARMONIC_CHECKBOX.Click()
-    HARMONIC_TEXTFIELD.SetText("1")
-    INTERHARMONIC_CHECKBOX.Click()
-    INTERHARMONIC_TEXTFIELD.SetText("1")
-    FAVORITE_NAME_TEXTFIELD.SetText("PQ Free Interval")
-    aqUtils.Delay(2000)
-    SAVE_BUTTON.Click()
-    Log.Message("PQ Free Interval new Favorite has been configured")
-    aqUtils.Delay(2000)
-    
+    AssertClass.IsTrue(ConfigEditor_PQ.createNewFavoriteForPqFreeInterval(), "Create new favorite for PQ Free Interval")
+    Log.Message("Configured new Favorite for PQ Free Interval")    
     }
   }
+  
   catch(ex)
   {
     Log.Error(ex.stack)
@@ -183,41 +139,18 @@ function checkForPqFreeIntervalFavorite()
 
 function exportToCsvPqFreeIntervalData()
 { 
-  //Synchronize date and time for time interval
-  SYNCHRONIZE_DATE_TIME.Click()
-  START_DATE_TO_ONE.Click()
+
+ try {
   
-  //Click on PQ Free Interval Favorite
-  TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
-  Log.Message("PQ Free Interval Data Opened")
-  aqUtils.Delay(7000)
-  
-  var sysUserName = CommonMethod.GetSystemUsername()
-  var folderName ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeInterval\\"
-  //Check if export folder available or not if not then create folder
-  if(aqFileSystem.Exists(folderName)== false)
-  {
-    aqFileSystem.CreateFolder(folderName)
+  ConfigEditor_PQ.exportPqFreeIntervalDataToCsv()
+  Log.Message("PQ Free Interval Data is exported to CSV")
   }
   
-  //Export PQ Free Interval data to CSV
-  WAVEFORM_VIEWER_MAINMENU.Keys("~{F}")
-  for(i=0; i<10 ; i++)
+  catch(ex)
   {
-  LLPlayer.KeyDown(VK_DOWN,1000)  
+    Log.Error(ex.stack)
+    Log.Error("Fail:-Test to export PQ Free Interval Data to CSV")
   }
-  
-  LLPlayer.KeyDown(VK_RETURN,1000)
-  
-  for(i=0; i<3 ; i++)
-  {
-  LLPlayer.KeyDown(VK_DOWN,1000)  
-  }
-  LLPlayer.KeyDown(VK_RETURN,1000)
-  ALL_DATA_POINTS_RADIO_BUTTON.Click()
-  SELECT_PATH_TO_EXPORT.Click()
-  var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQFreeInterval")
-  selectFolderToExport.Click()
-  SELECT_PATH_OK_BUTTON.Click()
-  EXPORT_TO_CSV_OK_BUTTON.Click()
+   
+   
 }

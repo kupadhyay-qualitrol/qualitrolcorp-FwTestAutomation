@@ -35,7 +35,6 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     
     //Step.3 Clean memory of PQ Free Interval
     PQ_Methods.cleanMemoryPqFreeInterval()
-    aqUtils.Delay(3000)//Applying delay so that clean memory window get closed
     Log.Message("Clean the PQ Free Interval records from the device data")
     
     //Step.4 Retrieve Configuration
@@ -45,7 +44,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(ConfigEditorPage.clickPqFreeInterval(),"Clicked on PQ Free Interval")
     
     //Step.7 Select RMS values from the Available quantities for PQ Free Inerval
-    AssertClass.IsTrue(PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval(),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
+    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval()
     
     //Step.8 Send to device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
@@ -60,7 +59,8 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(DataRetrievalPage.checkPqFreeIntervalDirectoryOpen(retryCountPqOpen),"PQ Free Interval directory pane open and displayed")
     
     //Step.11 Set Start date and time for PQ Free Interval
-    AssertClass.IsTrue(PQ_Methods.setPqFreeIntervalStartTime(),"PQ Free Interval start time set as 2 minutes before of current system date and time")
+    PQ_Methods.setPqFreeIntervalStartTime()
+    Log.Message("PQ Free Interval Start Time has been set")
     
     //Step.12 Download PQ Free Interval record
     AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalDownloadNowButton(),"Downloaded PQ Free Interval Record")
@@ -69,10 +69,11 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalCloseButton(),"PQ Free Interval directroy closed")
     
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
-    AssertClass.IsTrue(PQ_Methods.checkForPqFreeIntervalFavorite(),"Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval")
+    PQ_Methods.checkForPqFreeIntervalFavorite()
     
     //Step.15 Export PQ Free Interval Data
-    AssertClass.IsTrue(PQ_Methods.exportToCsvPqFreeIntervalData(), "PQ Free Interval Data is exported to CSV")
+    PQ_Methods.exportToCsvPqFreeIntervalData()
+    Log.Message("PQ Free Interval Data has been exported")
     
     //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
@@ -81,6 +82,6 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     catch(ex)
   {
     Log.Error(ex.stack)
-    Log.Error("Fail:-Test to check for the PQ recording for 10 min and free interval started or not and download PQ record with quantities")
+    Log.Error("Fail:-Test to check for the PQ recording for free interval started or not and download PQ record with quantities")
   }
 }
