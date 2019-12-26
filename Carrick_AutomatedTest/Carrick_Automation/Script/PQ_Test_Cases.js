@@ -10,7 +10,7 @@
 //USEUNIT GeneralPage
 
 
-function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,filePath)
+function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen)
 {
   try
   {
@@ -32,6 +32,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     {
       Log.Message("Device exist in the tree topology.")
     }
+    
     //Step.3 Clean memory of PQ Free Interval
     PQ_Methods.cleanMemoryPqFreeInterval()
     aqUtils.Delay(3000)//Applying delay so that clean memory window get closed
@@ -44,12 +45,10 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(ConfigEditorPage.clickPqFreeInterval(),"Clicked on PQ Free Interval")
     
     //Step.7 Select RMS values from the Available quantities for PQ Free Inerval
-    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval()
-    
+    AssertClass.IsTrue(PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval(),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
     
     //Step.8 Send to device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
-    
     
     //Step.9 Compare Device time and PQ Start time
     AssertClass.IsTrue(PQ_Methods.compareDateTimePq(retryCountDateTime),"Device time and PQ Free Interval time compared and new record started to form")
@@ -63,20 +62,21 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     //Step.11 Set Start date and time for PQ Free Interval
     AssertClass.IsTrue(PQ_Methods.setPqFreeIntervalStartTime(),"PQ Free Interval start time set as 2 minutes before of current system date and time")
     
-    //Step.12 Download DDRC record
+    //Step.12 Download PQ Free Interval record
     AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalDownloadNowButton(),"Downloaded PQ Free Interval Record")
     
-    //Step.13 Close DDRC directory
+    //Step.13 Close PQ Free Interval directory
     AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalCloseButton(),"PQ Free Interval directroy closed")
- 
+    
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
     AssertClass.IsTrue(PQ_Methods.checkForPqFreeIntervalFavorite(),"Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval")
     
     //Step.15 Export PQ Free Interval Data
-    AssertClass.IsTrue(PQ_Methods.exportToCsvPqFreeIntervalData(filePath), "PQ Free Interval Data is exported to CSV")
+    AssertClass.IsTrue(PQ_Methods.exportToCsvPqFreeIntervalData(), "PQ Free Interval Data is exported to CSV")
     
     //Step.21 Close Omicron CMC file
     //AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
+    
   }
     catch(ex)
   {

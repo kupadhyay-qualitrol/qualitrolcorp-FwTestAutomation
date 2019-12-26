@@ -25,13 +25,15 @@ var SAVE_BUTTON = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.Model
 var HARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneHarmonics
 var INTERHARMONIC_TEXTFIELD = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CustomizeCR.pnlCustomizeBase.CustomizeFavoritesStyleWorkspace.CustomizePQWaveform.CRPQPCSTpnlContainer.CRPQPCSTtbctrlParametersContainer.CRPQPCSTtbpgParamThird.CRPQPCSTgrpCRPQParametersThird.CRPQPCSTtxtStandaloneInterHarmonics
 var WAVEFORM_VIEWER_MAINMENU = Aliases.iQ_Plus.MainForm
-//var DROPDOWN_FILE_MENU_EXPORT = Aliases.iQ_Plus.ToolStripDropDownMenu2
-//var EXPORT_TO_CSV_BUTTON = Aliases.iQ_Plus.ToolStripDropDownMenu
 var ALL_DATA_POINTS_RADIO_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxExportCSV.WFVrbtnAllDataPoints
 var SELECT_PATH_TO_EXPORT =Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxSelectPath.WFVtxtSelectPath
 var SELECT_PATH_OK_BUTTON = Aliases.iQ_Plus.dlgBrowseForFolder.btnOK
 var EXPORT_TO_CSV_OK_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVbtnOK
-//
+var SYNCHRONIZE_DATE_TIME = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item(0).Items.Item(5)
+var START_DATE_TO_ONE = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item(0).Items.Item(1)
+var SELECT_FOLDER_CANCEL_BUTTON = Aliases.iQ_Plus.dlgBrowseForFolder.btnCancel
+var EXPORT_TO_CSV_CANCEL_BUTTON = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVbtnCancel
+//                   
 
 function cleanMemoryPqFreeInterval()
 {
@@ -123,27 +125,27 @@ function setPqFreeIntervalStartTime()
   //Step.3 Get the current date time of device.
   DataRetrievalPage.GetDeviceCurrentDateTime()
   
-  //Step.4 Open DDRC Directory
+  //Step.4 Open PQ Free Interval Directory
   AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalDirectory(),"PQ Free Interval Directory opens")
   
-  //Step.5 Now set the time in DDRC Start time field.
+  //Step.5 Now set the time in PQ Free Interval Start time field.
   AssertClass.IsTrue(DataRetrievalPage.UpdateDDRCStartTime(),"PQ Free Interval start time has been set as per the current device time.")
   
-  Log.Message("DDRC start time set as 2 minutes before of current system date and time")
+  Log.Message("PQ Free Interval start time set as 2 minutes before of current system date and time")
 }
 
 function checkForPqFreeIntervalFavorite()
 { 
-  
+  //Navigate to Favorites under Conitnouous Recording for PQ Free Interval
   CommonMethod.RibbonToolbar.wItems.Item(3).Click()
   CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
+  
   try 
   {
-  if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval")==="PQ Free Interval")
-  {
-    TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
-    Log.Message("PQ Free Interval Favorite Data Opened")
-  }
+   if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
+   {
+    Log.Message("PQ Free Interval Favorite Exists")
+   }
     
   
   else {
@@ -167,8 +169,7 @@ function checkForPqFreeIntervalFavorite()
     SAVE_BUTTON.Click()
     Log.Message("PQ Free Interval new Favorite has been configured")
     aqUtils.Delay(2000)
-    TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
-    Log.Message("PQ Free Interval Data Opened")
+    
     }
   }
   catch(ex)
@@ -181,10 +182,25 @@ function checkForPqFreeIntervalFavorite()
 
 
 function exportToCsvPqFreeIntervalData()
-{
-//  var sysUserName = CommonMethod.GetSystemUsername()
-//  var pqRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeIntervalData\\"
-
+{ 
+  //Synchronize date and time for time interval
+  SYNCHRONIZE_DATE_TIME.Click()
+  START_DATE_TO_ONE.Click()
+  
+  //Click on PQ Free Interval Favorite
+  TOPOLOGY_DEFAULTFAVORITES.ClickItem("Default Favorites", "PQ Free Interval")
+  Log.Message("PQ Free Interval Data Opened")
+  aqUtils.Delay(7000)
+  
+  var sysUserName = CommonMethod.GetSystemUsername()
+  var folderName ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeInterval\\"
+  //Check if export folder available or not if not then create folder
+  if(aqFileSystem.Exists(folderName)== false)
+  {
+    aqFileSystem.CreateFolder(folderName)
+  }
+  
+  //Export PQ Free Interval data to CSV
   WAVEFORM_VIEWER_MAINMENU.Keys("~{F}")
   for(i=0; i<10 ; i++)
   {
@@ -200,6 +216,8 @@ function exportToCsvPqFreeIntervalData()
   LLPlayer.KeyDown(VK_RETURN,1000)
   ALL_DATA_POINTS_RADIO_BUTTON.Click()
   SELECT_PATH_TO_EXPORT.Click()
+  var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQFreeInterval")
+  selectFolderToExport.Click()
   SELECT_PATH_OK_BUTTON.Click()
   EXPORT_TO_CSV_OK_BUTTON.Click()
 }
