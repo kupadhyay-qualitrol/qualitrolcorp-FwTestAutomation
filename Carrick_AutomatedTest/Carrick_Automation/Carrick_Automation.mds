@@ -96,11 +96,11 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="GetFirmwareVersion" key="{8929C17B-3111-4982-A534-DC15BFF0558E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="GetFirmwareVersion" key="{8929C17B-3111-4982-A534-DC15BFF0558E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Enable Protocol" key="{54596F92-E184-47F4-B078-73AE1CCE8766}" group="False" enabled="True" testMoniker="{37E37903-9BCC-4642-8335-99F6AFCD097D}EnableProtocols" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Enables protocol">
+							<testItem name="Enable Protocol" key="{54596F92-E184-47F4-B078-73AE1CCE8766}" group="False" enabled="False" testMoniker="{37E37903-9BCC-4642-8335-99F6AFCD097D}EnableProtocols" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Enables protocol">
 								<testParameters />
 								<children />
 							</testItem>
@@ -131,7 +131,7 @@
 												</testParameters>
 												<children />
 											</testItem>
-											<testItem name="PQ Free Interval Download_1" key="{2BE5979F-491E-4143-8CF1-C8B51EC45260}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+											<testItem name="PQ Free Interval Download" key="{2BE5979F-491E-4143-8CF1-C8B51EC45260}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -165,7 +165,7 @@
 												</testParameters>
 												<children />
 											</testItem>
-											<testItem name="PQ Free Interval Download_2" key="{7BE1EAFE-0507-48BD-91B9-7EB25D241120}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+											<testItem name="PQ Free Interval Download" key="{7BE1EAFE-0507-48BD-91B9-7EB25D241120}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -1510,7 +1510,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Initialization" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
@@ -1537,7 +1537,7 @@
 							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
-									<testItem name="DDRC Recording Download_With_Quantities" key="{F27B3934-EA9E-4C7B-90E8-268CB17EFE4E}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+									<testItem name="DDRC Recording Download_With_Quantities" key="{F27B3934-EA9E-4C7B-90E8-268CB17EFE4E}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
@@ -1547,6 +1547,18 @@
 											<param5 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param6 name="retryCountDDRCOpen" type="3" localVarName="" varType="3" value="5" />
 											<param7 name="fileName" type="3" localVarName="" varType="0" value="" />
+										</testParameters>
+										<children />
+									</testItem>
+									<testItem name="PQ Free Interval Download" key="{9D6DF89E-AF4C-4AC7-AEA1-5C0EABEC4817}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+										<testParameters>
+											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
+											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
+											<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+											<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
+											<param6 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualPQInjection.qcm" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1555,7 +1567,7 @@
 							<testItem name="3U3I" key="{CF543998-C508-4873-9655-4D253CEDBBB6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
-									<testItem name="DDRC Recording Download_With_Quantities" key="{2AABF415-2E6E-43A1-99E6-8FE381ABEDDC}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+									<testItem name="DDRC Recording Download_With_Quantities" key="{2AABF415-2E6E-43A1-99E6-8FE381ABEDDC}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
@@ -1568,9 +1580,21 @@
 										</testParameters>
 										<children />
 									</testItem>
+									<testItem name="PQ Free Interval Download" key="{6DF762C5-450F-4804-A5F6-E3FBF41C9679}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+										<testParameters>
+											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
+											<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
+											<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
+											<param6 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualPQInjection.qcm" />
+										</testParameters>
+										<children />
+									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I3I" key="{24DF3437-EE4C-4AE3-848E-F87FE6DE7763}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I3I" key="{24DF3437-EE4C-4AE3-848E-F87FE6DE7763}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{ECB3152B-A138-4483-86BC-0512AFEB934D}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1588,7 +1612,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I3I3I" key="{16072FDD-775F-43C5-9CBA-792C28BD50E6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I3I3I" key="{16072FDD-775F-43C5-9CBA-792C28BD50E6}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{E30560B5-F952-4C11-A384-145B43ED04AD}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1606,7 +1630,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I3I3I3I" key="{6FC08BCF-93A9-4C99-8F78-A4C120D71729}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I3I3I3I" key="{6FC08BCF-93A9-4C99-8F78-A4C120D71729}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{6D4938EE-FE43-485A-8C0E-D16191E6ABEE}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1624,7 +1648,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I" key="{E961C580-3C95-43E2-9A06-4F254ADEEF37}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I" key="{E961C580-3C95-43E2-9A06-4F254ADEEF37}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{EED5C01E-A837-43BC-838C-95C2B79AC497}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1642,7 +1666,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I3I" key="{BEE9932E-C139-4684-8B23-5FEF265C69C1}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I3I" key="{BEE9932E-C139-4684-8B23-5FEF265C69C1}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{DF208A0E-C710-43EB-91A4-B283076166A1}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1660,7 +1684,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I3I3I" key="{B0FCDEED-2F8A-4A42-96D2-4FC83C1B9010}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I3I3I" key="{B0FCDEED-2F8A-4A42-96D2-4FC83C1B9010}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{E7A8E8AD-F468-4EC8-8DA8-75ADF7546287}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1678,7 +1702,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I3I3I3I" key="{C9DC45E9-102C-40F4-9583-F7EBA67A16F2}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I3I3I3I" key="{C9DC45E9-102C-40F4-9583-F7EBA67A16F2}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{CD53A145-3FCC-478A-B452-E4C6413C8CC4}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1698,7 +1722,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="2M3U" key="{BD4031CF-5DA8-405C-89E4-8FFA5930677E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -1865,7 +1889,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="4U" key="{1242E9F8-01AC-4074-98C5-0C3AC9FD5A75}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2014,7 +2038,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME2M4U Cabling " key="{C995F1A6-65BD-45DF-83A7-E77BAA618D08}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME2M4U Cabling " key="{C995F1A6-65BD-45DF-83A7-E77BAA618D08}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="2M4U" key="{ABD5C5B6-3FBF-43E7-98AC-B2A9FBDC30DF}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2109,7 +2133,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U3U Cabling" key="{A2E709F2-8B4E-4D69-A040-3854C93F9678}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME4U3U Cabling" key="{A2E709F2-8B4E-4D69-A040-3854C93F9678}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="4U3U" key="{40737B79-13CD-49F8-A784-C13DBE7E408E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3304,18 +3328,6 @@
 						<children />
 					</testItem>
 				</children>
-			</testItem>
-			<testItem name="PQ Free Interval Download" key="{2D4B57DE-F074-47DD-9428-2EA5FB50D2A0}" group="False" enabled="False" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
-				<testParameters>
-					<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
-					<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_50" />
-					<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="342167760" />
-					<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.50" />
-					<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
-					<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
-					<param6 name="fileName" type="3" localVarName="" varType="0" value="" />
-				</testParameters>
-				<children />
 			</testItem>
 		</children>
 	</testItems>

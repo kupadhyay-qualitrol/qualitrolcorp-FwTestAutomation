@@ -840,7 +840,7 @@ function clickOnPqFreeIntervalDownloadNowButton()
   {
     Log.Message("PQ Free Interval directory displayed")  
     Btn_DDRCDirectory_DownloadNow.ClickButton();
-    Log.Message("PQ Free Interval Download Now button clicked") 
+    Log.Message("Downloaded PQ Free Interval Record") 
     if(CommonMethod.CheckActivityLog("PQ data download process completed for device"))
     {
      return true
