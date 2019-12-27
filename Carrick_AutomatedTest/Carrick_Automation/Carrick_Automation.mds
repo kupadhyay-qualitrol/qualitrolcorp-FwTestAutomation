@@ -1554,7 +1554,7 @@
 										<testParameters>
 											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
-											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="414638044" />
 											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
 											<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
@@ -1584,7 +1584,7 @@
 										<testParameters>
 											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
-											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="414638044" />
 											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
 											<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
