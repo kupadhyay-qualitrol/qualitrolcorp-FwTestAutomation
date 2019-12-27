@@ -28,13 +28,13 @@ function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
 {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnHarmonicsIntraharmonicsTabPqFreeInterval(),"Clicked on Harmonics and Intra Harmonics tab") 
     ConfigEditor_PQ.getTabCountsPqFreeInterval()
-  for (count=0; count < PQFREEINTERVAL_TABCOUNT; count++)
+  for (count=0; count < TABCOUNT_PQFREEINTERVAL; count++)
   {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
     ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
     Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
     AssertClass.IsTrue(ConfigEditor_PQ.addRMSQuantitiesPqFreeInterval(),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
-       
+    AssertClass.IsTrue(ConfigEditor_PQ.addHarmonicIntraHarmonicPqFreeInterval(),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
   }
   Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
 }
@@ -110,7 +110,7 @@ function setPqFreeIntervalStartTime()
 function checkForPqFreeIntervalFavorite()
 { 
   //Navigate to Favorites under Conitnouous Recording for PQ Free Interval
-  CommonMethod.RibbonToolbar.wItems.Item(3).Click()
+  CommonMethod.RibbonToolbar.wItems.Item("&Data Analysis").Click()
   CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
   
   try 
@@ -122,10 +122,11 @@ function checkForPqFreeIntervalFavorite()
    }
     
   
-  else {
+   else 
+   {
     AssertClass.IsTrue(ConfigEditor_PQ.createNewFavoriteForPqFreeInterval(), "Create new favorite for PQ Free Interval")
     Log.Message("Configured new Favorite for PQ Free Interval")    
-    }
+   }
   }
   
   catch(ex)

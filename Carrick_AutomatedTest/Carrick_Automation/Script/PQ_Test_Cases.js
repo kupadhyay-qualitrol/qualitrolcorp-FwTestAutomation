@@ -16,9 +16,6 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
   {
    Log.Message("Test to check for the PQ recording for free interval started or not and download PQ record with quantities") 
    
-    //Step.0 Inject voltage and current using omicron
-    OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+fileName)
-   
     //Step1. Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
     
@@ -74,9 +71,6 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     //Step.15 Export PQ Free Interval Data
     PQ_Methods.exportToCsvPqFreeIntervalData()
     Log.Message("PQ Free Interval Data has been exported")
-    
-    //Step.16 Close Omicron CMC file
-    AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
     
   }
     catch(ex)
