@@ -28,7 +28,7 @@ function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
 {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnHarmonicsIntraharmonicsTabPqFreeInterval(),"Clicked on Harmonics and Intra Harmonics tab") 
     ConfigEditor_PQ.getTabCountsPqFreeInterval()
-  for (count=0; count < TABCOUNT_PQFREEINTERVAL; count++)
+  for (count=0; count < TABCOUNT; count++)
   {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
     ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
@@ -115,7 +115,7 @@ function checkForPqFreeIntervalFavorite()
   
   try 
   {
-   if(TOPOLOGY_DEFAULTFAVORITES.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
+   if(DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
    {
     Log.Message("PQ Free Interval Favorite Exists")
     return true
