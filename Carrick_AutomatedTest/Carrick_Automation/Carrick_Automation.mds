@@ -139,7 +139,6 @@
 													<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
 													<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
-													<param6 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualPQInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -173,7 +172,6 @@
 													<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.51" />
 													<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 													<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
-													<param6 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualPQInjection.qcm" />
 												</testParameters>
 												<children />
 											</testItem>
@@ -1558,7 +1556,6 @@
 											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
 											<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
-											<param6 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualPQInjection.qcm" />
 										</testParameters>
 										<children />
 									</testItem>
@@ -1588,7 +1585,6 @@
 											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
 											<param4 name="retryCountDateTime" type="3" localVarName="" varType="3" value="5" />
 											<param5 name="retryCountPqOpen" type="3" localVarName="" varType="3" value="5" />
-											<param6 name="fileName" type="3" localVarName="" varType="8" value="TestData\ManualPQInjection.qcm" />
 										</testParameters>
 										<children />
 									</testItem>
