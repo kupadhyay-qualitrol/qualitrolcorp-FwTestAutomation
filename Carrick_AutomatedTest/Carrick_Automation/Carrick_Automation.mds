@@ -1579,7 +1579,7 @@
 									</testItem>
 									<testItem name="PQ Free Interval Download" key="{6DF762C5-450F-4804-A5F6-E3FBF41C9679}" group="False" enabled="True" testMoniker="{40B886BC-1AB1-4C60-AAEA-65D623D9418F}pqFreeIntervalRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters>
-											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
+											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM-E" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IDC-DAU-66" />
 											<param2 name="deviceSerialNo" type="3" localVarName="" varType="8" value="414638044" />
 											<param3 name="deviceIPAdd" type="3" localVarName="" varType="8" value="10.75.58.66" />
