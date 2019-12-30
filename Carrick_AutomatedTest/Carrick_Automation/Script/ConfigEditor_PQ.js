@@ -219,5 +219,6 @@ function exportPqFreeIntervalDataToCsv()
   OKBTN_PATH_SELECTION.Click()
   OKBTN_EXPORT_TO_CSV.Click()
   Log.Message("Export data in CSV format")
+  MAINMENU_WAVEFORM_VIEWER.Close()
 }
 

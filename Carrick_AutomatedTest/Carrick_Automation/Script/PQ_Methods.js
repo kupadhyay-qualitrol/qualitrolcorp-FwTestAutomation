@@ -145,7 +145,6 @@ function exportToCsvPqFreeIntervalData()
   
   ConfigEditor_PQ.exportPqFreeIntervalDataToCsv()
   Log.Message("PQ Free Interval Data is exported to CSV")
-  CommonMethod.closeExcel()
   }
   
   catch(ex)
