@@ -425,3 +425,20 @@ function GetiQPlusInstallInfo()
   }
   return versionInfo
 }
+
+//This Function is used to close excel process
+function closeExcel()
+{
+  // Obtains the notepad.exe process
+  var p = Sys.Process("EXCEL");
+  // Closes the process
+  p.Close();
+  // Checks whether the process is closed
+  if (p.Exists)
+  {
+    Log.Warning(p.ProcessName + " seems to hang, terminating.");
+    p.SaveDumpToLog()
+    // Terminates the process
+    p.Terminate();
+  }
+}
