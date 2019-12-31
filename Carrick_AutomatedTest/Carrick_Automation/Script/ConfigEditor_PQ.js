@@ -184,9 +184,11 @@ function createNewFavoriteForPqFreeInterval()
 function exportPqFreeIntervalDataToCsv() 
 {
   //Synchronize date and time for time interval
-  SYNCHRONIZE_DATE_TIME.Click()
-  START_DATE_TO_ONE.Click()
-  
+  if(SYNCHRONIZE_DATE_TIME && START_DATE_TO_ONE)
+  {
+   SYNCHRONIZE_DATE_TIME.Click()
+   START_DATE_TO_ONE.Click()
+  }
   //Click on PQ Free Interval Favorite
   DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
   Log.Message("PQ Free Interval Data Opened")
