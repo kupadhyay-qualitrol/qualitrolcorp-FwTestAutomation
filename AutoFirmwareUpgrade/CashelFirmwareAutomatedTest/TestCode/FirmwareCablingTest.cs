@@ -605,7 +605,7 @@ namespace CashelFirmware.NunitTests
                     TestLog.Log(LogStatus.Pass, "Success:-Dsp2 feeder number:- " + dspfeeder + ": " + Tabindex_Data_pmp.Get_pmp_data_dsp2_feeder_map_dsp(dspfeeder));
                 }
             }
-            return errorMessages.Length < 0;
+            return errorMessages.Length <= 0;
         }
 
         /// <summary>
