@@ -184,10 +184,9 @@ function createNewFavoriteForPqFreeInterval()
 function exportPqFreeIntervalDataToCsv() 
 {
   //Synchronize date and time for time interval
-  if(SYNCHRONIZE_DATE_TIME && START_DATE_TO_ONE)
+  if(SYNCHRONIZE_DATE_TIME.Text == "Synchronizes End Date Time to Current Date Time")
   {
    SYNCHRONIZE_DATE_TIME.Click()
-   START_DATE_TO_ONE.Click()
   }
   //Click on PQ Free Interval Favorite
   DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
