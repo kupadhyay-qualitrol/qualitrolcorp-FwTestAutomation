@@ -183,7 +183,7 @@ function createNewFavoriteForPqFreeInterval()
 //This function will export PQ Free Interval Data to CSV
 function exportPqFreeIntervalDataToCsv() 
 {
-   
+   aqUtils.Delay(5000)
   //Synchronize date and time for time interval
   if((SYNCHRONIZE_DATE_TIME.Text == "Synchronizes End Date Time to Current Date Time") == true)
   {
