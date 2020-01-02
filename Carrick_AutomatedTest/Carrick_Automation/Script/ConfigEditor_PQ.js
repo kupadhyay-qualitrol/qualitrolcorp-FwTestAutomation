@@ -32,6 +32,7 @@ var START_DATE_TO_ONE = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWin
 var DEFAULT_FAV = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.DAFAVuexpbarFavorites
 var DLG_BX_IQPLUS = Aliases.iQ_Plus.dlgIQ
 var BTN_YES_DLG_BX_IQPLUS = Aliases.iQ_Plus.dlgIQ.btnYes
+var BTN_OK_DLG_BX_IQPLUS = Aliases.iQ_Plus.dlgIQ.btnOK
 //
 
 
@@ -183,13 +184,6 @@ function createNewFavoriteForPqFreeInterval()
 //This function will export PQ Free Interval Data to CSV
 function exportPqFreeIntervalDataToCsv() 
 {
-   aqUtils.Delay(5000)
-  //Synchronize date and time for time interval
-  if((SYNCHRONIZE_DATE_TIME.Text == "Synchronizes End Date Time to Current Date Time") == true)
-  {
-   SYNCHRONIZE_DATE_TIME.Click()
-   START_DATE_TO_ONE.Click()
-  }
   //Click on PQ Free Interval Favorite
   DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
   Log.Message("PQ Free Interval Data Opened")
@@ -225,7 +219,16 @@ function exportPqFreeIntervalDataToCsv()
   OKBTN_EXPORT_TO_CSV.Click()
   if (DLG_BX_IQPLUS.Exists)
   {
-    BTN_YES_DLG_BX_IQPLUS.Click()
+    if(BTN_YES_DLG_BX_IQPLUS.Exists)
+    {
+     BTN_YES_DLG_BX_IQPLUS.Click()
+    } 
+    
+    if(BTN_OK_DLG_BX_IQPLUS.Exists)
+    {
+      BTN_OK_DLG_BX_IQPLUS.Click()
+    }
+  
   }
   Log.Message("Export data in CSV format")
   MAINMENU_WAVEFORM_VIEWER.Close()

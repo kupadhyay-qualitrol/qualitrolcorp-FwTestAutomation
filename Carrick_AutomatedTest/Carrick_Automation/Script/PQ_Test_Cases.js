@@ -65,6 +65,9 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     //Step.13 Close PQ Free Interval directory
     AssertClass.IsTrue(DataRetrievalPage.clickOnPqFreeIntervalCloseButton(),"PQ Free Interval directroy closed")
     
+    //Step.13a Set time interval for PQ Free Interval data exort to CSV
+    PQ_Methods.setTimeIntervalForPqDataExport()
+    
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
     PQ_Methods.checkForPqFreeIntervalFavorite()
     

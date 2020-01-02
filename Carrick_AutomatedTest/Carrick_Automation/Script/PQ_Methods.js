@@ -137,10 +137,39 @@ function checkForPqFreeIntervalFavorite()
   
 }
 
+function setTimeIntervalForPqDataExport()
+{ 
+  
+  try {
+
+  DataRetrievalPage.ClickOnDeviceStatusView()
+  Log.Message("Clicked on Device status view")
+  aqUtils.Delay(2000)
+  var deviceDateTime = DataRetrievalPage.GetDeviceActualDateTime();
+  Log.Message(deviceDateTime)
+  aqUtils.Delay(2000)
+  var getEndDateTime = aqConvert.StrToDateTime(deviceDateTime)
+  Log.Message(getEndDateTime)
+  var getStartDateTime = aqDateTime.AddHours(getEndDateTime, -1);
+  var startDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
+  var endDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout2.TICdtpEndTime
+  startDateTime.set_Value(getStartDateTime)
+  endDateTime.set_Value(getEndDateTime)
+  }
+  
+  catch(ex)
+  {
+    Log.Error(ex.stack)
+    Log.Error("Fail:-Test to set time interval for PQ data") 
+  }
+}
+
 
 function exportToCsvPqFreeIntervalData()
 { 
-
+  
+ var startDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
+ var endDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout2.TICdtpEndTime
  try {
   
   ConfigEditor_PQ.exportPqFreeIntervalDataToCsv()

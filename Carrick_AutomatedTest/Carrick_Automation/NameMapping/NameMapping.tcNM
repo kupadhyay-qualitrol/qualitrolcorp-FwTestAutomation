@@ -1583,6 +1583,18 @@
 											</Property>
 										</Properties>
 									</Child>
+									<Child Name="btnOK" Key="{59DA357A-A1D3-49A4-81C0-D193F5826366}" ParallelWalk="True">
+										<Image FileName="-1990528247" Left="150" Top="114" Right="225" Bottom="137" />
+										<TypeInfo Item0="{8CA16DCA-CF23-458D-90CE-FFB026F80AD0}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value PropertyType="0" Value="OK" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
 								</Children>
 							</Child>
 							<Child Name="MainForm" Key="{2D0B49CE-34F3-4DE9-BB35-3C3A59E798F4}" ParallelWalk="True">
@@ -5142,6 +5154,7 @@
 			</Child>
 			<Child Name="dlgIQ" Owner="{A0E377D2-DFEC-44FE-9279-BAEF235577EE}">
 				<Child Name="btnYes" Owner="{FA044B1E-84CF-401F-8EF0-3E1438052E75}" />
+				<Child Name="btnOK" Owner="{59DA357A-A1D3-49A4-81C0-D193F5826366}" />
 			</Child>
 			<Child Name="MainForm" Owner="{2D0B49CE-34F3-4DE9-BB35-3C3A59E798F4}">
 				<Child Name="mainMenu" Owner="{7FD29B43-A035-41F7-BE21-86E13CE6717F}" />
