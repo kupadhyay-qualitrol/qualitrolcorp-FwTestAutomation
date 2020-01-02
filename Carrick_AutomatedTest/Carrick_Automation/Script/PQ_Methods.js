@@ -167,9 +167,7 @@ function setTimeIntervalForPqDataExport()
 
 function exportToCsvPqFreeIntervalData()
 { 
-  
- var startDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
- var endDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout2.TICdtpEndTime
+
  try {
   
   ConfigEditor_PQ.exportPqFreeIntervalDataToCsv()
