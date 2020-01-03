@@ -33,6 +33,7 @@ var ChckBox_DDRC_CleanMemory = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlCo
 var Box_Start_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpStartTime
 var Box_End_Time = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.PQDIRLSTVWgrpContainer.PQDIRLSTVWdtpEndTime
 var Btn_DDRCCancel = Aliases.iQ_Plus.SDPContainer.SDPCTRtsctrSDPToolsContainer.ToolStripContentPanel.DFRDirectory.DirectoryListView.DIRLSTVWbtnCancel
+var CHECKBOX_PQFREEINTERVAL_CLEANMEMORY = Aliases.iQ_Plus.ModalDialogContainer.MDLGCTRpnlContainer.ModelDialogContainerWorkspace.CleanMemory.grpAll.grpPQData.CMchkPQFreeInterval
 //
 //This method click on FR Manual Trigger under Device & Diagnostic Test in Data Retrieval pane
 function ClickOnFRManualTrigger()
@@ -642,6 +643,28 @@ function GetDDRCStartTime()
     Log.Message("DDRC directory not displayed")    
   }
 }
+
+
+function getPqFreeIntervalStartTime()
+{
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ Free Interval directory displayed")    
+    var startDateTime = Box_Start_Time.get_Value().ToString();
+    Log.Message("PQ Free Interval Start date and time is "+startDateTime) 
+    return startDateTime 
+  }
+  else
+  {
+    Log.Message("PQ Free Interval directory not displayed")
+    return null    
+  }
+}
+
+
+
+
+
 function ClickOnCleanMemory()
 {
   SessionLogPage.ClearLog()
@@ -676,6 +699,23 @@ function CheckDDRCCheckBox()
     return false
   }
 }
+
+function checkPqFreeIntervalCheckBox()
+{
+  if(Dlg_Box_CleanMemory.Exists)
+  {
+    CHECKBOX_PQFREEINTERVAL_CLEANMEMORY.wState = cbChecked;
+    Log.Message("Checked PQ Free Interval check box")
+    return true
+  }
+  else
+  {
+    Log.Message("Not able to check the PQ Free Interval check box")
+    return false
+  }
+}
+
+
 function ClickOnExecuteButton()
 {
   if(Dlg_Box_CleanMemory.Exists)
@@ -750,3 +790,91 @@ function ClickOnDDRCCancelButton()
     return false 
   }
 }
+
+function clickOnPqFreeIntervalDirectory()
+{
+   if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+   {
+     //Clear Session Log
+     SessionLogPage.ClearLog()
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
+     aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|PQ &Free Interval Directory")
+     Log.Message("Clicked on PQ Free Interval Directory")
+     return true
+    }
+   else
+   {
+     Log.Message("Unable to click on PQ Free Interval Directory")
+     return false
+   }
+}
+
+function checkPqFreeIntervalDirectoryOpen(retryCount)
+{
+  var recordRetryCount = 0
+  for(recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
+  {
+   if(CommonMethod.CheckActivityLog("Directory list displayed successfully for device"))
+   {
+     Log.Message("PQ Free Interval directory list displayed successfully") 
+     return true
+   }
+   else(CommonMethod.CheckActivityLog("PQ Freee Interval directory list not found"))
+   {
+     Log.Message("Trying to click on PQ Free Interval directory button again")
+     clickOnPqFreeIntervalDirectory();
+   }
+  }
+  if(recordRetryCount>=4)
+  {
+    Log.Message("PQ Free Interval recording is not started")
+    return false
+  }
+}
+
+function clickOnPqFreeIntervalDownloadNowButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ Free Interval directory displayed")
+    
+    //Click on PQ free interval download now button  
+    Btn_DDRCDirectory_DownloadNow.ClickButton();
+    Log.Message("Downloaded PQ Free Interval Record")
+     
+    if(CommonMethod.CheckActivityLog("PQ data download process completed for device"))
+    {
+     return true
+    }
+    else if(CommonMethod.CheckActivityLog("PQ data not available on device."))
+    {
+     return false 
+    }
+  }
+  else
+  {
+    Log.Message("PQ Free Interval directory not displayed")   
+    return false 
+  }
+}
+
+function clickOnPqFreeIntervalCloseButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ Free Interval directory displayed")
+    
+    //Click on Cancel button of PQ Free interval Directory  
+    Btn_DDRCCancel.ClickButton();
+    Log.Message("PQ Free Interval Close button clicked") 
+    return true
+  }
+  else
+  {
+    Log.Message("PQ Free Interval directory not displayed")   
+    return false 
+  }
+}
+
