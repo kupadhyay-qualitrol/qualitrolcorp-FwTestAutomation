@@ -37,7 +37,7 @@ var BTN_OK_DLG_BX_IQPLUS = Aliases.iQ_Plus.dlgIQ.btnOK
 
 
 //This function is used for Taking all the selected quantities back to available quantities for PQ Free Interval Page
-function clickOnRemoveAllButtonForPqFreeIntervalMin()
+function clickOnRemoveAllButtonForPqFreeInterval()
 {
   if(PANE_CHANNELS.Visible)
   {
@@ -84,18 +84,18 @@ function clickOnTabPqFreeInterval(Index)
 
 
 
-//This function used for adding RMS quantities from available quantities in PQ Free Interval Page
-function addRMSQuantitiesPqFreeInterval()
+//This function used for adding quantities from available quantities in PQ Free Interval Page
+function addQuantitiesPqFreeInterval(getString)
 {   
   if(PANE_CHANNELS.Visible)
   {     
     var item_List = AVAILABLE_QUANTITIES.wItemList
     var sap = AVAILABLE_QUANTITIES.wListSeparator
     aqString.ListSeparator = sap
-    for (i = 0; i < aqString.GetListLength(item_List); i++)
+    for (counter = 0; counter < aqString.GetListLength(item_List); counter++)
     {
-      var availableQuantities = aqString.GetListItem(item_List, i)
-      if(aqString.StrMatches("RMS", availableQuantities))
+      var availableQuantities = aqString.GetListItem(item_List, counter)
+      if(aqString.StrMatches(getString, availableQuantities))
       {
         AVAILABLE_QUANTITIES.ClickItem(availableQuantities)
         BTN_ADD_QUANTITIES.Click()
@@ -104,36 +104,9 @@ function addRMSQuantitiesPqFreeInterval()
     return true
   }
   else
-  {    Log.Message("PQ Free Interval Min quantities not available")
+  {    Log.Message("PQ Free Interval quantities not available")
     return false
   }
-}
-
-//This function used for adding Harmonic and IntraHarmonic in PQ Free Interval Page
-function addHarmonicIntraHarmonicPqFreeInterval(){
-  if(PANE_CHANNELS.Visible)
-  {     
-    var item_List = AVAILABLE_QUANTITIES.wItemList
-    var sap = AVAILABLE_QUANTITIES.wListSeparator
-    aqString.ListSeparator = sap
-    
-    for (i = 0; i < aqString.GetListLength(item_List); i++)
-    {
-      var availableQuantities = aqString.GetListItem(item_List, i)
-      if(aqString.StrMatches("H01", availableQuantities))
-      {
-        AVAILABLE_QUANTITIES.ClickItem(availableQuantities)
-        BTN_ADD_QUANTITIES.Click()
-      }
-    }
-    Log.Message("Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval") 
-    return true
-  }
-  else
-  {    Log.Message("Harmonic and IntraHarmonic quantities not available for PQ Free Interval")
-    return false
-  }
-
 }
 
 
@@ -199,18 +172,23 @@ function exportPqFreeIntervalDataToCsv()
   
   //Export PQ Free Interval data to CSV
   MAINMENU_WAVEFORM_VIEWER.Keys("~{F}")
-  for(i=0; i<10 ; i++)
+  
+  //Navigate to Export button and click Export button
+  for(counter=0; counter<10 ; counter++)
   {
   LLPlayer.KeyDown(VK_DOWN,1000)  
   }
   
   LLPlayer.KeyDown(VK_RETURN,1000)
   
-  for(i=0; i<3 ; i++)
+  //Navigate to CSV button and click CSV button
+  for(counter=0; counter<3 ; counter++)
   {
   LLPlayer.KeyDown(VK_DOWN,1000)  
   }
   LLPlayer.KeyDown(VK_RETURN,1000)
+  
+  //Set all data points and export PQ free interval data to csv
   RADIOBTN_ALL_DATA_POINTS.Click()
   EXPORT_PATH_SELECTION.Click()
   var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQFreeInterval")

@@ -656,7 +656,8 @@ function getPqFreeIntervalStartTime()
   }
   else
   {
-    Log.Message("PQ Free Interval directory not displayed")    
+    Log.Message("PQ Free Interval directory not displayed")
+    return null    
   }
 }
 
@@ -818,13 +819,12 @@ function checkPqFreeIntervalDirectoryOpen(retryCount)
    if(CommonMethod.CheckActivityLog("Directory list displayed successfully for device"))
    {
      Log.Message("PQ Free Interval directory list displayed successfully") 
-     return true 
-     break
+     return true
    }
    else(CommonMethod.CheckActivityLog("PQ Freee Interval directory list not found"))
    {
      Log.Message("Trying to click on PQ Free Interval directory button again")
-     ClickOnDDRCDirectory();
+     clickOnPqFreeIntervalDirectory();
    }
   }
   if(recordRetryCount>=4)
@@ -838,9 +838,12 @@ function clickOnPqFreeIntervalDownloadNowButton()
 { 
   if (DDRCDirectory.Exists)
   {
-    Log.Message("PQ Free Interval directory displayed")  
+    Log.Message("PQ Free Interval directory displayed")
+    
+    //Click on PQ free interval download now button  
     Btn_DDRCDirectory_DownloadNow.ClickButton();
-    Log.Message("Downloaded PQ Free Interval Record") 
+    Log.Message("Downloaded PQ Free Interval Record")
+     
     if(CommonMethod.CheckActivityLog("PQ data download process completed for device"))
     {
      return true
@@ -861,7 +864,9 @@ function clickOnPqFreeIntervalCloseButton()
 { 
   if (DDRCDirectory.Exists)
   {
-    Log.Message("PQ Free Interval directory displayed")  
+    Log.Message("PQ Free Interval directory displayed")
+    
+    //Click on Cancel button of PQ Free interval Directory  
     Btn_DDRCCancel.ClickButton();
     Log.Message("PQ Free Interval Close button clicked") 
     return true

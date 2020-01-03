@@ -1,4 +1,4 @@
-﻿/*This file contains generic methods related to DDRC which can be used directly in Test Cases*/
+﻿/*This file contains generic methods related to PQ which can be used directly in Test Cases*/
 
 //USEUNIT DataRetrievalPage
 //USEUNIT AssertClass
@@ -31,10 +31,10 @@ function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
   for (count=0; count < TABCOUNT; count++)
   {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
-    ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeIntervalMin()
+    ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeInterval()
     Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
-    AssertClass.IsTrue(ConfigEditor_PQ.addRMSQuantitiesPqFreeInterval(),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
-    AssertClass.IsTrue(ConfigEditor_PQ.addHarmonicIntraHarmonicPqFreeInterval(),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
+    AssertClass.IsTrue(ConfigEditor_PQ.addQuantitiesPqFreeInterval("RMS"),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
+    AssertClass.IsTrue(ConfigEditor_PQ.addQuantitiesPqFreeInterval("H01"),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
   }
   Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
 }
@@ -68,7 +68,6 @@ function compareDateTimePq(retryCount)
     {
       Log.Message("New record has been started to form")
       return true
-      break
     }
     else if(differenceInMinutes>5)
     {
