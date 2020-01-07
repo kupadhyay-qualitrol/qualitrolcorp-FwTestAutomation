@@ -31,7 +31,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     }
     
     //Step.3 Clean memory of PQ Free Interval
-    PQ_Methods.cleanMemoryPqFreeInterval()
+    PQ_Methods.cleanMemoryPq()
     Log.Message("Clean the PQ Free Interval records from the device data")
     
     //Step.4 Retrieve Configuration
@@ -41,7 +41,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(ConfigEditorPage.clickPqFreeInterval(),"Clicked on PQ Free Interval")
     
     //Step.7 Select RMS values from the Available quantities for PQ Free Inerval
-    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval()
+    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQ()
     
     //Step.8 Send to device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")

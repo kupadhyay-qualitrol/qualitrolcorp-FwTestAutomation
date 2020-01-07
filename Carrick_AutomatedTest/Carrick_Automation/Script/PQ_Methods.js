@@ -8,8 +8,9 @@
 //USEUNIT PDPPage
 //USEUNIT RMSDataValidationExePage
 //USEUNIT ConfigEditor_PQ
+//USEUNIT ConfigEditor_PQ_10Mins
 
-function cleanMemoryPqFreeInterval()
+function cleanMemoryPq()
 {
   //Step.1 Clicked on Clean Memory
   AssertClass.IsTrue(DataRetrievalPage.ClickOnCleanMemory(),"Clicked on Clean Memory")
@@ -17,26 +18,43 @@ function cleanMemoryPqFreeInterval()
   //Step.2 Check the PQ Free Interval checked box
   AssertClass.IsTrue(DataRetrievalPage.checkPqFreeIntervalCheckBox(),"Checked the PQ Free Interval check box")
   
-  //Step.3 Click on Execute button
+  //Step.3 Check the PQ 10min checked box
+  AssertClass.IsTrue(DataRetrievalPage.checkPq10MinCheckBox(),"Checked the PQ 10min check box")
+  
+  //Step.4 Click on Execute button
   AssertClass.IsTrue(DataRetrievalPage.ClickOnExecuteButton(),"Clicked on Execute button")
   CommonMethod.CheckActivityLog("Device memory cleaned successfully for selected data types")
 }
 
-
-
-function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
+function selectRMSChannelCircuitQuantitiesForPQ()
 {
+  if(ConfigEditor_PQ.PANE_CONFIG.WndCaption=="Free Interval")
+  {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnHarmonicsIntraharmonicsTabPqFreeInterval(),"Clicked on Harmonics and Intra Harmonics tab") 
     ConfigEditor_PQ.getTabCountsPqFreeInterval()
-  for (count=0; count < TABCOUNT; count++)
-  {
+    for (count=0; count < TABCOUNT; count++)
+    {
     AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
     ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeInterval()
     Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
     AssertClass.IsTrue(ConfigEditor_PQ.addQuantitiesPqFreeInterval("RMS"),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
     AssertClass.IsTrue(ConfigEditor_PQ.addQuantitiesPqFreeInterval("H01"),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
+    }
+    Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval")
   }
-  Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
+  else if(ConfigEditor_PQ.PANE_CONFIG.WndCaption=="PQ 10 Min")
+  {
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.clickOnAllTabsPQ10Min(),"Clicked on Harmonics and Intra Harmonics tab") 
+    var tabcount = ConfigEditor_PQ_10Mins.getTabCountsPq10Min()
+    for (count=0; count < tabcount; count++)
+    {
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.clickOnAllTabsPQ10Min(),"Clicked on tab")
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.clickOnRemoveAllButton(),"All Selected quantities are removed from the selected quantities")
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.addQuantitiesPq10Min("RMS"),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.addQuantitiesPq10Min("H01"),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
+    }
+    Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
+  }
 }
 
 
