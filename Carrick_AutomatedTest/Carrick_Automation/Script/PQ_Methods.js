@@ -9,6 +9,8 @@
 //USEUNIT RMSDataValidationExePage
 //USEUNIT ConfigEditor_PQ
 //USEUNIT ConfigEditor_PQ_10Mins
+//USEUNIT DataAnalysisPage
+//USEUNIT Continuous_Recording_Customization_Page
 
 function cleanMemoryPq()
 {
@@ -198,4 +200,26 @@ function exportToCsvPqFreeIntervalData()
   }
    
    
+}
+
+function createPQ10MinFavorite()
+{
+  //Step.1 Click on PQ standalone Favorite
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.clickOnPQStandaloneFavorite(),"PQ Standalone Favorite tab clicked")
+  
+  //Step.2 Select 10 min radio button
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.select10MinRadioBtn(),"Selected 10min radio button")
+  
+  //Step.3 Add RMS quantities in Favorite
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.checkVRMSAndIRMSCheckBox(),"VRMS & IRMS quantities checked")
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.clickOnMoreButton(),"More button clicked")
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.clickOnMoreButton(),"More button clicked")
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.checkRMSCheckBox(),"RMS quantities checked")
+  
+  //Step.4 Set Favorite name for PQ 10 min
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.add10MinFavoriteName(),"PQ10Min favorite name added")
+  
+  //Step.5 Save the favorite
+  AssertClass.IsTrue(Continuous_Recording_Customization_Page.clickOnSavePQButton(),"PQ favorite saved")
+    
 }
