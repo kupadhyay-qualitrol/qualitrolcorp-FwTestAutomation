@@ -167,7 +167,7 @@ function setTimeIntervalForPqDataExport()
   aqUtils.Delay(2000)
   var getEndDateTime = aqConvert.StrToDateTime(deviceDateTime)
   Log.Message(getEndDateTime)
-  var getStartDateTime = aqDateTime.AddHours(getEndDateTime, -1);
+  var getStartDateTime = aqDateTime.AddMinutes(getEndDateTime, -10);
   var startDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
   var endDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout2.TICdtpEndTime
   startDateTime.set_Value(getStartDateTime)
@@ -198,4 +198,29 @@ function exportToCsvPqFreeIntervalData()
   }
    
    
+}
+
+function validatePqData(rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
+{
+  //Step.1 Export CSV data for PQ Record
+    var sysUserName = CommonMethod.GetSystemUsername()
+    var pqRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeInterval\\"
+    if (!aqFileSystem.Exists(pqRecordPath))
+    {
+      aqFileSystem.CreateFolder(pqRecordPath) 
+    }
+    AssertClass.IsTrue(ConfigEditor_PQ.exportPqFreeIntervalDataToCsv())
+ 
+    AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process
+  
+  //Step.2 Launch RMS data validation application
+    AssertClass.IsTrue(RMSDataValidationExePage.LaunchRMSValidationApplication(), "RMS data validation app has been launched")
+  
+  //Step.3 Validate RMS data for PQ
+    var pqStoredPath = pqRecordPath+aqFileSystem.FindFiles(pqRecordPath, "*.csv").Item(0).Name
+    var rmsPQValidationStatus= RMSDataValidationExePage.ValidateRMSData(pqStoredPath,rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
+    AssertClass.CompareString("PASS", rmsPQValidationStatus,"Checking RMS Validation" )
+    
+  //Step.4 Delete the downloaded file
+    aqFileSystem.DeleteFile(pqStoredPath)
 }
