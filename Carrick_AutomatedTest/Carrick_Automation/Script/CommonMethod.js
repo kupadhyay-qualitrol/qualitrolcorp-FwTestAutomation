@@ -434,6 +434,6 @@ function delayPQ10Min ()
   }
   while(!(aqDateTime.GetMinutes(aqDateTime.Now()) % 10 == 0));
   Log.Message("Time is matched with multiple of 10")
-  // Now putting hardocded delay for generating PQ10 min records
+  // Now putting hardcoded delay for generating PQ10 min records
   aqUtils.Delay(1200000)
 }
