@@ -16,7 +16,7 @@ namespace RMSDataValidation
             InitializeComponent();
             StartButton.Enabled = false;
         }
-        
+
         private void StartButton_Click(object sender, EventArgs e)
         {
             _stopWatch.Reset();
@@ -41,11 +41,29 @@ namespace RMSDataValidation
                     string filePath = FilePathTextBox.Text.ToString();
                     double voltage = Double.Parse(VoltageTextBox.Text);
                     double current = Double.Parse(CurrentTextBox.Text);
-                    double voltageTolerance = Double.Parse(VoltageToleranceTextBox.Text);
-                    double currentTolerance = Double.Parse(CurrentToleranceTextBox.Text);
+                    double voltageTolerance;
+                    Double.TryParse(VoltageToleranceTextBox.Text, out voltageTolerance);
+                    double currentTolerance;
+                    Double.TryParse(CurrentToleranceTextBox.Text, out currentTolerance);
 
-                    RMSValidator.RMSValidator local = new RMSValidator.RMSValidator(filePath, voltage, current, voltageTolerance, currentTolerance);
-                    isValidationPass = local.Validate();
+                    RMSValidator.RMSValidator validation = new RMSValidator.RMSValidator(filePath, voltage, current, voltageTolerance, currentTolerance);
+
+                    if (string.IsNullOrEmpty(Type.Text))
+                    {
+                        validation.Validate();
+                    }
+                    else
+                    {
+                        switch (Type.Text.ToUpper())
+                        {
+                            case "PQ":
+                                isValidationPass = validation.PQValidate();
+                                break;
+                            default:
+                                isValidationPass = validation.Validate();
+                                break;
+                        }
+                    }
                 }
                 finally
                 {
@@ -70,9 +88,9 @@ namespace RMSDataValidation
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            TimeLabel.Text = (_stopWatch.ElapsedMilliseconds/1000).ToString();
+            TimeLabel.Text = (_stopWatch.ElapsedMilliseconds / 1000).ToString();
         }
-        
+
         void UpdateStatus(string value)
         {
             if (value == "In Progress")
@@ -83,11 +101,11 @@ namespace RMSDataValidation
             else
             {
                 _stopWatch.Stop();
-                _timer.Stop();                
+                _timer.Stop();
             }
 
             ValidationResultLabel.Text = value;
-        }        
+        }
 
         void ChangeState(bool value)
         {

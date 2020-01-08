@@ -161,6 +161,92 @@ namespace RMSValidator
             return isValidated;
         }
 
+        public bool PQValidate()
+        {
+            bool isValidated = true;
+
+            double voltageHighRange = _injectedNominalVoltage + _voltageTolerance;
+            double voltageLowRange = _injectedNominalVoltage - _voltageTolerance;
+            double currentHighRange = _injectedNominalCurrent + _currentTolerance;
+            double currentLowRange = _injectedNominalCurrent - _currentTolerance;
+
+            try
+            {
+                List<string> listRows = new List<string>();
+
+                using (var reader = new StreamReader(File.OpenRead(_fileLocation)))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        listRows.Add(reader.ReadLine());
+                    }
+                }
+
+                int totalRecordCount = listRows.Count;
+
+                //Create DataColumns
+                string[] channelType = listRows[5].Split(',');
+                string[] channelNames = listRows[6].Split(',');
+
+                int multiplier = 1;
+
+                for (int rowcounter = 7; rowcounter < totalRecordCount; rowcounter++)
+                {
+                    string[] rowValues = listRows[rowcounter].Split(',');
+                    double rowValue;
+
+                    for (short counter = 1; counter < channelType.Length; counter++)
+                    {
+                        multiplier = (channelType[counter].ToUpper().Contains("MA") || channelType[counter].ToUpper().Contains("MV")) ? 1000 : 1;
+
+                        //Check if channel name contains the RMS and AVG
+                        if (channelNames[counter].ToUpper().Contains("RMS") && channelNames[counter].ToUpper().Contains("AVG"))
+                        {
+                            if (channelNames[counter].ToUpper().Contains("VOLTAGE"))
+                            {
+                                //put logic here for voltage validation
+                                if (double.TryParse(rowValues[counter], out rowValue))
+                                {
+                                    if (rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier)
+                                    {
+                                        throw new ValidationFailedException();
+                                    }
+                                }
+                            }
+                            else if (channelNames[counter].ToUpper().Contains("CURRENT"))
+                            {
+
+                                //put logic here for current validation
+                                if (double.TryParse(rowValues[counter], out rowValue))
+                                {
+                                    if (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier)
+                                    {
+                                        throw new ValidationFailedException();
+                                    }
+                                }
+                            }
+                            else //For Standalone channels
+                            {
+                                if (double.TryParse(rowValues[counter], out rowValue))
+                                {
+                                    if ((rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier) && (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier))
+                                    {
+                                        throw new ValidationFailedException();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (ValidationFailedException)
+            {
+                isValidated = false;
+            }            
+
+            return isValidated;
+        }
+
         #endregion
     }
 }
