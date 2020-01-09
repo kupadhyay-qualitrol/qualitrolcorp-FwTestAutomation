@@ -201,7 +201,7 @@ function exportToCsvPqFreeIntervalData()
 
 function validatePqData(rmsInjectedVoltage,validationType,rmsInjectedCurrent,voltageTolerance,currentTolerance)
 {
-  //Step.1 Export CSV data for PQ Record
+  //Step.1 Find CSV data for PQ Record
     var sysUserName = CommonMethod.GetSystemUsername()
     var pqRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\PQ\\"
 
@@ -213,10 +213,7 @@ function validatePqData(rmsInjectedVoltage,validationType,rmsInjectedCurrent,vol
     var rmsPQValidationStatus= RMSDataValidationExePage.validatePqRmsData(pqStoredPath,validationType,rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
     AssertClass.CompareString("PASS", rmsPQValidationStatus ,"Checking PQ RMS Validation" )
     //AssertClass.IsTrue(rmsPQValidationStatus, "PASS")
-
-    var rmsPQValidationStatus= RMSDataValidationExePage.ValidateRMSData(pqStoredPath,rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
-    AssertClass.CompareString("PASS", rmsPQValidationStatus,"Checking RMS Validation" )
     
   //Step.4 Delete the downloaded file
-    aqFileSystem.DeleteFile(pqStoredPath)
+    //aqFileSystem.DeleteFile(pqStoredPath)
 }
