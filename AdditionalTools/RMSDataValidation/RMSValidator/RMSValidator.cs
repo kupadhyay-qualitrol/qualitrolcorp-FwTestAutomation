@@ -18,6 +18,16 @@ namespace RMSValidator
         readonly int _sampleDataForRMSCalc = 1024;
         DataTable _analogData = new DataTable();
 
+        const string RMS = "RMS";
+        const string AVERAGE = "AVG";
+        const string NOT_A_NUMBER = "NAN";
+        const string VOLTAGE = "VOLTAGE";
+        const string CURRENT = "CURRENT";
+        const string MILLIAMPERE = "MA";
+        const string MILLIVOLT = "MV";
+        const string NOT_A_NUMBER_ERROR_MESSAGE = "Failed because of NaN";
+        const char DELIMITER = ',';
+
         #endregion
 
         #region Constructor
@@ -161,6 +171,98 @@ namespace RMSValidator
             return isValidated;
         }
 
+        public bool PQValidate(out string errorMessage)
+        {
+            bool isValidated = true;
+            errorMessage = string.Empty;
+
+            double voltageHighRange = _injectedNominalVoltage + _voltageTolerance;
+            double voltageLowRange = _injectedNominalVoltage - _voltageTolerance;
+            double currentHighRange = _injectedNominalCurrent + _currentTolerance;
+            double currentLowRange = _injectedNominalCurrent - _currentTolerance;
+
+            try
+            {
+                List<string> listRows = new List<string>();
+
+                using (var reader = new StreamReader(File.OpenRead(_fileLocation)))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        listRows.Add(reader.ReadLine());
+                    }
+                    reader.Close();
+                }
+
+                int totalRecordCount = listRows.Count;
+
+                //Create DataColumns
+                string[] channelType = listRows[5].Split(DELIMITER);
+                string[] channelNames = listRows[6].Split(DELIMITER);
+
+                int multiplier = 1;
+
+                for (int rowcounter = 7; rowcounter < totalRecordCount; rowcounter++)
+                {
+                    string[] rowValues = listRows[rowcounter].Split(DELIMITER);
+                    double rowValue;
+
+                    for (short counter = 1; counter < channelType.Length; counter++)
+                    {
+                        multiplier = (channelType[counter].ToUpper().Contains(MILLIAMPERE) || channelType[counter].ToUpper().Contains(MILLIVOLT)) ? 1000 : 1;
+
+                        //Check if channel name contains the RMS and AVG
+                        if (channelNames[counter].ToUpper().Contains(RMS) && channelNames[counter].ToUpper().Contains(AVERAGE))
+                        {
+                            if (rowValues[counter].ToUpper() != NOT_A_NUMBER)
+                            {
+                                rowValue = double.Parse(rowValues[counter]);
+
+                                if (channelNames[counter].ToUpper().Contains(VOLTAGE))
+                                {
+                                    if (rowValue > voltageHighRange * multiplier || rowValue < voltageLowRange * multiplier)
+                                    {
+                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
+                                    }
+
+                                }
+                                else if (channelNames[counter].ToUpper().Contains(CURRENT))
+                                {
+                                    if (rowValue > currentHighRange * multiplier || rowValue < currentLowRange * multiplier)
+                                    {
+                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
+                                    }
+
+                                }
+                                else
+                                {  //For Standalone channels
+                                    if ((rowValue > voltageHighRange * multiplier || rowValue < voltageLowRange * multiplier) && (rowValue > currentHighRange * multiplier || rowValue < currentLowRange * multiplier))
+                                    {
+                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                throw new ValidationFailedException(NOT_A_NUMBER_ERROR_MESSAGE);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (ValidationFailedException ex)
+            {
+                isValidated = false;
+                errorMessage = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                isValidated = false;
+                errorMessage = ex.Message;
+            }
+
+            return isValidated;
+        }
         #endregion
     }
 }
