@@ -19,7 +19,7 @@ namespace RMSValidator
         DataTable _analogData = new DataTable();
 
         const string RMS = "RMS";
-        const string AVERAGRE = "AVG";        
+        const string AVERAGE = "AVG";
         const string NOT_A_NUMBER = "NAN";
         const string VOLTAGE = "VOLTAGE";
         const string CURRENT = "CURRENT";
@@ -89,7 +89,7 @@ namespace RMSValidator
                     while (!reader.EndOfStream)
                     {
                         listRows.Add(reader.ReadLine());
-                    }                    
+                    }
                 }
 
                 //Create DataColumns
@@ -212,7 +212,7 @@ namespace RMSValidator
                         multiplier = (channelType[counter].ToUpper().Contains(MILLIAMPERE) || channelType[counter].ToUpper().Contains(MILLIVOLT)) ? 1000 : 1;
 
                         //Check if channel name contains the RMS and AVG
-                        if (channelNames[counter].ToUpper().Contains(RMS) && channelNames[counter].ToUpper().Contains(AVERAGRE))
+                        if (channelNames[counter].ToUpper().Contains(RMS) && channelNames[counter].ToUpper().Contains(AVERAGE))
                         {
                             if (rowValues[counter].ToUpper() != NOT_A_NUMBER)
                             {
@@ -220,34 +220,32 @@ namespace RMSValidator
 
                                 if (channelNames[counter].ToUpper().Contains(VOLTAGE))
                                 {
-                                    //put logic here for voltage validation
-                                    if (rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier)
+                                    if (rowValue > voltageHighRange * multiplier || rowValue < voltageLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException(FAIL_MESSAGE);
+                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
                                     }
 
                                 }
                                 else if (channelNames[counter].ToUpper().Contains(CURRENT))
                                 {
-                                    //put logic here for current validation
-                                    if (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier)
+                                    if (rowValue > currentHighRange * multiplier || rowValue < currentLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException(FAIL_MESSAGE);
+                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
                                     }
 
                                 }
-                                else //For Standalone channels
-                                {
-                                    if ((rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier) && (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier))
+                                else
+                                {  //For Standalone channels
+                                    if ((rowValue > voltageHighRange * multiplier || rowValue < voltageLowRange * multiplier) && (rowValue > currentHighRange * multiplier || rowValue < currentLowRange * multiplier))
                                     {
-                                        throw new ValidationFailedException(FAIL_MESSAGE);
+                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
                                     }
                                 }
                             }
                             else
                             {
                                 throw new ValidationFailedException(NOT_A_NUMBER_ERROR_MESSAGE);
-                            }                            
+                            }
                         }
                     }
                 }
