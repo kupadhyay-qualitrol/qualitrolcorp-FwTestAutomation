@@ -44,6 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Type = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.ErrorMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +112,7 @@
             // 
             this.ValidationResultLabel.AutoSize = true;
             this.ValidationResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ValidationResultLabel.Location = new System.Drawing.Point(304, 75);
             this.ValidationResultLabel.Name = "ValidationResultLabel";
             this.ValidationResultLabel.Size = new System.Drawing.Size(62, 20);
             this.ValidationResultLabel.TabIndex = 7;
@@ -153,6 +155,7 @@
             // 
             this.TimeLabel.AutoSize = true;
             this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.Location = new System.Drawing.Point(430, 43);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(0, 20);
             this.TimeLabel.TabIndex = 25;
@@ -162,6 +165,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(304, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 20);
             this.label6.TabIndex = 26;
@@ -184,13 +188,23 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Type";
             // 
+            // ErrorMessage
             // 
+            this.ErrorMessage.AutoSize = true;
+            this.ErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorMessage.Location = new System.Drawing.Point(304, 105);
+            this.ErrorMessage.Name = "ErrorMessage";
+            this.ErrorMessage.Size = new System.Drawing.Size(81, 20);
+            this.ErrorMessage.TabIndex = 29;
+            this.ErrorMessage.Text = "Message";
+            this.ErrorMessage.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // RMSDataValidation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 186);
+            this.Controls.Add(this.ErrorMessage);
             this.Controls.Add(this.Type);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -234,6 +248,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Type;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ErrorMessage;
     }
 }
 
