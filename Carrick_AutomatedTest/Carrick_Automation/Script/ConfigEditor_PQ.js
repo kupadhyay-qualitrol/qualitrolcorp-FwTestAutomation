@@ -161,7 +161,7 @@ function exportPqFreeIntervalDataToCsv()
   aqUtils.Delay(7000)
   
   var sysUserName = CommonMethod.GetSystemUsername()
-  var folderName ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeInterval\\"
+  var folderName ="C:\\Users\\"+sysUserName+"\\Desktop\\PQ\\"
   //Check if export folder available or not if not then create folder
   if(aqFileSystem.Exists(folderName)== false)
   {

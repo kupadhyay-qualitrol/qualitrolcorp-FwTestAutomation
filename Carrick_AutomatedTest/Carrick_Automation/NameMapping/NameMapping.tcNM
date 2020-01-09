@@ -848,7 +848,6 @@
 																				</Properties>
 																			</Child>
 																			<Child Name="CMchkPQ10Min" Key="{57EA5E4F-3937-49D0-9751-F9C451326B80}" ParallelWalk="True">
-																				<Image FileName="-1021985825" Left="41" Top="74" Right="117" Bottom="91" />
 																				<TypeInfo Item0="{BCCDC67D-ABA7-4E38-A6E3-E66D9C613DAC}" />
 																				<Properties>
 																					<Property Name="WinFormsControlName">
@@ -1151,7 +1150,6 @@
 																												</Properties>
 																											</Child>
 																											<Child Name="CRPQPCSTrdbtn10Minute" Key="{62C5E2FB-DFDB-41DB-B35E-D48CF148F1F4}" ParallelWalk="True">
-																												<Image FileName="-1428385917" Left="129" Top="44" Right="201" Bottom="61" />
 																												<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
 																												<Properties>
 																													<Property Name="WinFormsControlName">
@@ -1164,7 +1162,6 @@
 																								</Children>
 																							</Child>
 																							<Child Name="CRPQPCSTgrpAll" Key="{9A3C6213-0F5C-4927-B320-0DE9C4A08157}" ParallelWalk="True">
-																								<Image FileName="352091828" Left="454" Top="33" Right="567" Bottom="102" />
 																								<Properties>
 																									<Property Name="WinFormsControlName">
 																										<Value PropertyType="0" Value="CRPQPCSTgrpAll" Type="5" />
@@ -1172,7 +1169,6 @@
 																								</Properties>
 																								<Children>
 																									<Child Name="CRPQPCSTchkMax" Key="{23FE3B3E-9432-43A2-A668-0B482B0B6F44}" ParallelWalk="True">
-																										<Image FileName="1154232629" Left="539" Top="82" Right="554" Bottom="96" />
 																										<TypeInfo Item0="{2AF2134D-3EF8-4A6B-AAA1-69AC5D7965C1}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1181,7 +1177,6 @@
 																										</Properties>
 																									</Child>
 																									<Child Name="CRPQPCSTchkMin" Key="{F001F2B9-2280-444C-BB7A-110410B8C406}" ParallelWalk="True">
-																										<Image FileName="352091828" Left="503" Top="82" Right="518" Bottom="96" />
 																										<TypeInfo Item0="{2AF2134D-3EF8-4A6B-AAA1-69AC5D7965C1}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1192,7 +1187,6 @@
 																								</Children>
 																							</Child>
 																							<Child Name="CRPQPCSTgrpUI" Key="{6231109C-0BAE-4790-9D8D-02F09C870231}" ParallelWalk="True">
-																								<Image FileName="-760916153" Left="569" Top="33" Right="636" Bottom="102" />
 																								<Properties>
 																									<Property Name="WinFormsControlName">
 																										<Value PropertyType="0" Value="CRPQPCSTgrpUI" Type="5" />
@@ -1200,7 +1194,6 @@
 																								</Properties>
 																								<Children>
 																									<Child Name="CRPQPCSTchkU" Key="{EB12C602-8828-4850-BFC7-FA816A4B18CC}" ParallelWalk="True">
-																										<Image FileName="-760916153" Left="580" Top="82" Right="595" Bottom="96" />
 																										<TypeInfo Item0="{2AF2134D-3EF8-4A6B-AAA1-69AC5D7965C1}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1209,7 +1202,6 @@
 																										</Properties>
 																									</Child>
 																									<Child Name="CRPQPCSTchkI" Key="{1ABD3716-A6B3-4112-9E70-8EA41FB1D694}" ParallelWalk="True">
-																										<Image FileName="-2108200929" Left="612" Top="82" Right="627" Bottom="96" />
 																										<TypeInfo Item0="{2AF2134D-3EF8-4A6B-AAA1-69AC5D7965C1}" />
 																										<Properties>
 																											<Property Name="WinFormsControlName">
@@ -1260,7 +1252,6 @@
 																				</Properties>
 																			</Child>
 																			<Child Name="DACSTBbtnCancel" Key="{982728BD-8651-4FCC-BBAB-680FB7019973}" ParallelWalk="True">
-																				<Image FileName="-538320108" Left="682" Top="526" Right="792" Bottom="551" />
 																				<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
 																				<Properties>
 																					<Property Name="WinFormsControlName">
@@ -3303,7 +3294,6 @@
 																																		</Children>
 																																	</Child>
 																																	<Child Name="zucPqContinuous_Toolbars_Dock_Area_Top" Key="{C4398BFC-62E5-493C-9FFA-3A2666A6B817}" ParallelWalk="True">
-																																		<Image FileName="915270936" Left="198" Top="104" Right="1019" Bottom="132" />
 																																		<TypeInfo Item0="{1D1CBE15-805B-4EDB-B68A-ABED496530FF}" />
 																																		<Properties>
 																																			<Property Name="WinFormsControlName">
@@ -4464,6 +4454,24 @@
 											</Property>
 										</Properties>
 									</Child>
+									<Child Name="Type" Key="{13F20E84-E650-4498-ABF7-199E164E9B86}" ParallelWalk="True">
+										<Image FileName="-1080593253" Left="76" Top="74" Right="124" Bottom="94" />
+										<TypeInfo Item0="{081E75E0-9FB5-4AD9-90DA-6DDC2D6D10B2}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="Type" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="ErrorMessage" Key="{B96057FD-B831-4569-9BB0-D39D9BC32702}" ParallelWalk="True">
+										<Image FileName="-1080593253" Left="312" Top="136" Right="393" Bottom="156" />
+										<TypeInfo Item0="{75842500-2145-4400-80C9-44B74B0D9120}" />
+										<Properties>
+											<Property Name="WinFormsControlName">
+												<Value PropertyType="0" Value="ErrorMessage" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
 								</Children>
 							</Child>
 						</Children>
@@ -5617,6 +5625,8 @@
 				<Child Name="StartButton" Owner="{BDC94778-4B2D-443C-84DE-C92E6ECACD45}" />
 				<Child Name="VoltageToleranceTextBox" Owner="{AF0F1508-F7C2-4F3A-85EB-7AE326330211}" />
 				<Child Name="CurrentToleranceTextBox" Owner="{C1B71482-E548-48A3-A282-DC3057F5715A}" />
+				<Child Name="Type" Owner="{13F20E84-E650-4498-ABF7-199E164E9B86}" />
+				<Child Name="ErrorMessage" Owner="{B96057FD-B831-4569-9BB0-D39D9BC32702}" />
 			</Child>
 		</Child>
 		<Child Name="QuickCMC" Owner="{8B93D1BE-BBB7-4D44-B31A-D019EFFABBC3}">

@@ -7,7 +7,8 @@ var Btn_Start = Aliases.RMSDataValidation.RMSDataValidation.StartButton
 var lbl_Status = Aliases.RMSDataValidation.RMSDataValidation.ValidationResultLabel
 var Edtbx_VoltageTolerance= Aliases.RMSDataValidation.RMSDataValidation.VoltageToleranceTextBox
 var Edtbx_CurrentTolerance= Aliases.RMSDataValidation.RMSDataValidation.CurrentToleranceTextBox
-
+var EDTBX_TYPE = Aliases.RMSDataValidation.RMSDataValidation.Type
+var LBL_MESSAGE = Aliases.RMSDataValidation.RMSDataValidation.ErrorMessage
 //This function is used to set Filepath in RMSValidation exe
 function SetFilePath(FilePathWithName)
 {
@@ -21,6 +22,22 @@ function SetFilePath(FilePathWithName)
   {
     Log.Message("FilePath is null")
     return false
+  }
+}
+
+//This fucntion is used to set validation type in RMSValidation exe
+function setType(validationType)
+{
+  if(validationType!=null)
+  {
+    EDTBX_TYPE.SetText(validationType)
+    Log.Message("Set the validation type to :-"+validationType)
+    return true
+  }
+  else
+  {
+   Log.Message("validation type is null")
+   return false 
   }
 }
 
@@ -172,4 +189,35 @@ function CloseRMSValidationApplication()
   {
     Log.Message("RMSValidation application is not running")
   }
+}
+
+
+function validatePqRmsData(rmsDataFileNameWithPath,validationType,rmsInjectedVolatge,rmsInjectedCurrent,voltagTolerance,currentTolerance)
+{
+ if(rmsDataFileNameWithPath!=null&& validationType!=null && rmsInjectedVolatge!=null && rmsInjectedCurrent!=null && voltagTolerance!=null && currentTolerance!=null)
+ {
+   SetFilePath(rmsDataFileNameWithPath)
+   setType(validationType)
+   SetRMSVoltage(rmsInjectedVolatge)
+   SetRMSCurrent(rmsInjectedCurrent)
+   SetVoltageTolerance(voltagTolerance)
+   SetCurrentTolerance(currentTolerance)
+   ClickStart()
+   do
+   {
+    aqUtils.Delay(2000) 
+   }
+   while(!Btn_Start.Enabled)
+   var status =lbl_Status.Text.OleValue
+   var message = LBL_MESSAGE.Text.OleValue
+   Log.Message("TC: Test to check PQ data validation is " +status+ " and message is " +message)
+   CloseRMSValidationApplication()
+   return status
+ }
+ else
+ {
+   Log.Message("Arguments is/are null")
+   CloseRMSValidationApplication()
+   return null
+ }
 }

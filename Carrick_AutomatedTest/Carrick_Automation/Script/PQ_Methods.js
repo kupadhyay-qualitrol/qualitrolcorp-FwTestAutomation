@@ -135,17 +135,15 @@ function checkForPqFreeIntervalFavorite()
    if(DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
    {
     Log.Message("PQ Free Interval Favorite Exists")
-    return true
+    return true 
    }
-    
-  
    else 
    {
-    AssertClass.IsTrue(ConfigEditor_PQ.createNewFavoriteForPqFreeInterval(), "Create new favorite for PQ Free Interval")
+    ConfigEditor_PQ.createNewFavoriteForPqFreeInterval()
     Log.Message("Configured new Favorite for PQ Free Interval")    
+    return true 
    }
-  }
-  
+  }  
   catch(ex)
   {
     Log.Error(ex.stack)
@@ -200,27 +198,27 @@ function exportToCsvPqFreeIntervalData()
    
 }
 
-function validatePqData(rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
+function validatePqData(rmsInjectedVoltage,validationType,rmsInjectedCurrent,voltageTolerance,currentTolerance)
 {
   //Step.1 Export CSV data for PQ Record
     var sysUserName = CommonMethod.GetSystemUsername()
-    var pqRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeInterval\\"
-    if (!aqFileSystem.Exists(pqRecordPath))
-    {
-      aqFileSystem.CreateFolder(pqRecordPath) 
-    }
-    AssertClass.IsTrue(ConfigEditor_PQ.exportPqFreeIntervalDataToCsv())
- 
-    AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process
-  
+    var pqRecordPath ="C:\\Users\\"+sysUserName+"\\Desktop\\PQ\\"
+//    if (!aqFileSystem.Exists(pqRecordPath))
+//    {
+//      aqFileSystem.CreateFolder(pqRecordPath) 
+//    }
+//    AssertClass.IsTrue(ConfigEditor_PQ.exportPqFreeIntervalDataToCsv())
+// 
+//    AssertClass.IsTrue(CommonMethod.KillProcess("EXCEL")) //This method is used to kill the process
+//  
   //Step.2 Launch RMS data validation application
     AssertClass.IsTrue(RMSDataValidationExePage.LaunchRMSValidationApplication(), "RMS data validation app has been launched")
   
   //Step.3 Validate RMS data for PQ
     var pqStoredPath = pqRecordPath+aqFileSystem.FindFiles(pqRecordPath, "*.csv").Item(0).Name
-    var rmsPQValidationStatus= RMSDataValidationExePage.ValidateRMSData(pqStoredPath,rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
-    AssertClass.CompareString("PASS", rmsPQValidationStatus,"Checking RMS Validation" )
-    
+    var rmsPQValidationStatus= RMSDataValidationExePage.validatePqRmsData(pqStoredPath,validationType,rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
+    AssertClass.CompareString("PASS", rmsPQValidationStatus ,"Checking PQ RMS Validation" )
+    //AssertClass.IsTrue(rmsPQValidationStatus, "PASS")
   //Step.4 Delete the downloaded file
-    aqFileSystem.DeleteFile(pqStoredPath)
+    //aqFileSystem.DeleteFile(pqStoredPath)
 }
