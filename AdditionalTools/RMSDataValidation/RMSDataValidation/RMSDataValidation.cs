@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RMSValidator;
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
@@ -11,6 +12,10 @@ namespace RMSDataValidation
         delegate void Mainthread(bool value);
         Stopwatch _stopWatch = new Stopwatch();
         System.Windows.Forms.Timer _timer = new System.Windows.Forms.Timer();
+
+        const string INPROGRESS_MESSAGE = "In Progress";
+        const string POWER_QUALITY = "PQ";
+
         public RMSDataValidation()
         {
             InitializeComponent();
@@ -36,7 +41,7 @@ namespace RMSDataValidation
                     if (this.InvokeRequired)
                     {
                         UpdateStatusDelegate updateStatusDelegate = new UpdateStatusDelegate(UpdateStatus);
-                        this.Invoke(updateStatusDelegate, new object[] { "In Progress", "" });
+                        this.Invoke(updateStatusDelegate, new object[] { INPROGRESS_MESSAGE, string.Empty});
                     }
 
                     string filePath = FilePathTextBox.Text.ToString();
@@ -57,7 +62,7 @@ namespace RMSDataValidation
                     {
                         switch (Type.Text.ToUpper())
                         {
-                            case "PQ":
+                            case POWER_QUALITY:
                                 isValidationPass = validation.PQValidate(out errorMessage);
                                 break;
                             default:
@@ -77,7 +82,7 @@ namespace RMSDataValidation
             Thread OnCompletion = new Thread(() =>
             {
                 manualResetEvent.WaitOne();
-                string result = isValidationPass ? "PASS" : "FAIL";
+                string result = isValidationPass ? Constants.PASS_MESSAGE : Constants.FAIL_MESSAGE;
                 string error = errorMessage;
                 if (this.InvokeRequired)
                 {
@@ -95,7 +100,7 @@ namespace RMSDataValidation
 
         void UpdateStatus(string progress, string errorMessage)
         {
-            if (progress == "In Progress")
+            if (progress == INPROGRESS_MESSAGE)
             {
                 _stopWatch.Start();
                 _timer.Start();

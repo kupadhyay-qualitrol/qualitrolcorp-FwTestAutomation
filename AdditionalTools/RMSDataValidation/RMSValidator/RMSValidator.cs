@@ -18,6 +18,15 @@ namespace RMSValidator
         readonly int _sampleDataForRMSCalc = 1024;
         DataTable _analogData = new DataTable();
 
+        const string RMS = "RMS";
+        const string AVERAGRE = "AVG";        
+        const string NOT_A_NUMBER = "NAN";
+        const string VOLTAGE = "VOLTAGE";
+        const string CURRENT = "CURRENT";
+        const string MILLIAMPERE = "MA";
+        const string MILLIVOLT = "MV";
+        const char DELIMITER = ',';
+
         #endregion
 
         #region Constructor
@@ -187,42 +196,42 @@ namespace RMSValidator
                 int totalRecordCount = listRows.Count;
 
                 //Create DataColumns
-                string[] channelType = listRows[5].Split(',');
-                string[] channelNames = listRows[6].Split(',');
+                string[] channelType = listRows[5].Split(DELIMITER);
+                string[] channelNames = listRows[6].Split(DELIMITER);
 
                 int multiplier = 1;
 
                 for (int rowcounter = 7; rowcounter < totalRecordCount; rowcounter++)
                 {
-                    string[] rowValues = listRows[rowcounter].Split(',');
+                    string[] rowValues = listRows[rowcounter].Split(DELIMITER);
                     double rowValue;
 
                     for (short counter = 1; counter < channelType.Length; counter++)
                     {
-                        multiplier = (channelType[counter].ToUpper().Contains("MA") || channelType[counter].ToUpper().Contains("MV")) ? 1000 : 1;
+                        multiplier = (channelType[counter].ToUpper().Contains(MILLIAMPERE) || channelType[counter].ToUpper().Contains(MILLIVOLT)) ? 1000 : 1;
 
                         //Check if channel name contains the RMS and AVG
-                        if (channelNames[counter].ToUpper().Contains("RMS") && channelNames[counter].ToUpper().Contains("AVG"))
+                        if (channelNames[counter].ToUpper().Contains(RMS) && channelNames[counter].ToUpper().Contains(AVERAGRE))
                         {
-                            if (rowValues[counter].ToUpper() != "NAN")
+                            if (rowValues[counter].ToUpper() != NOT_A_NUMBER)
                             {
                                 rowValue = double.Parse(rowValues[counter]);
 
-                                if (channelNames[counter].ToUpper().Contains("VOLTAGE"))
+                                if (channelNames[counter].ToUpper().Contains(VOLTAGE))
                                 {
                                     //put logic here for voltage validation
                                     if (rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException("FAIL");
+                                        throw new ValidationFailedException(FAIL_MESSAGE);
                                     }
 
                                 }
-                                else if (channelNames[counter].ToUpper().Contains("CURRENT"))
+                                else if (channelNames[counter].ToUpper().Contains(CURRENT))
                                 {
                                     //put logic here for current validation
                                     if (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException("FAIL");
+                                        throw new ValidationFailedException(FAIL_MESSAGE);
                                     }
 
                                 }
@@ -230,13 +239,13 @@ namespace RMSValidator
                                 {
                                     if ((rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier) && (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier))
                                     {
-                                        throw new ValidationFailedException("FAIL");
+                                        throw new ValidationFailedException(FAIL_MESSAGE);
                                     }
                                 }
                             }
                             else
                             {
-                                throw new ValidationFailedException("FAIL beacuse of NAN");
+                                throw new ValidationFailedException(NOT_A_NUMBER_ERROR_MESSAGE);
                             }                            
                         }
                     }
