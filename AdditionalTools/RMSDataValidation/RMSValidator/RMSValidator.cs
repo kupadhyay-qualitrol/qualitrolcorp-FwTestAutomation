@@ -25,6 +25,7 @@ namespace RMSValidator
         const string CURRENT = "CURRENT";
         const string MILLIAMPERE = "MA";
         const string MILLIVOLT = "MV";
+        const string NOT_A_NUMBER_ERROR_MESSAGE = "Failed because of NaN";
         const char DELIMITER = ',';
 
         #endregion
