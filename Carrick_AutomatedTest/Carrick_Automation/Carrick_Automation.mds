@@ -26,7 +26,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Initialization" key="{D01B0748-F5F7-4990-97C4-C1318DECA89C}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
+					<testItem name="Initialization" key="{D01B0748-F5F7-4990-97C4-C1318DECA89C}" group="False" enabled="False" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
 						<testParameters>
 							<param0 name="deviceIP" type="3" localVarName="" varType="8" value="10.75.58.51" />
 						</testParameters>
@@ -2083,13 +2083,17 @@
 			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Initialization" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
+					<testItem name="Initialization" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="False" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
 						<testParameters>
 							<param0 name="deviceIP" type="3" localVarName="" varType="8" value="10.75.58.66" />
 						</testParameters>
 						<children />
 					</testItem>
 					<testItem name="LoginIQ+" key="{793EBB06-A01F-481E-ACE7-973ABEAA3721}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+						<testParameters />
+						<children />
+					</testItem>
+					<testItem name="GetFirmwareVersionIDME" key="{94D8D17A-E8A3-4E02-AADA-6D9F3861F6FB}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}GetFwVersionIDME" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>

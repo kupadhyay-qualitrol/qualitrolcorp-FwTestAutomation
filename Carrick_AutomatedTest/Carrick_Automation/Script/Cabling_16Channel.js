@@ -26,6 +26,16 @@ var Busbar1_Name ="Busbar 1"
 var Busbar2_Name ="Busbar 2"
 var Counter
 
+function GetFwVersionIDME()
+{
+  DriverInstance=SeleniumWebdriver.InitialiseWebdriver(DeviceIP)
+  TestLog = SeleniumWebdriver.StartTestCaseReport("GetFirmware Version")
+  FwVersion = dotNET.CashelFirmware_NunitTests.FirmwareInformation.GetFirmwareVersion(DeviceIP,DriverInstance,TestLog)
+  Log.Message("Firmwaere Versiion is:- "+ FwVersion)
+  SeleniumWebdriver.TearDown()
+}
+
+
 function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
 {
   try
