@@ -7,7 +7,7 @@ namespace RMSDataValidation
 {
     public partial class RMSDataValidation : Form
     {
-        delegate void UpdateStatusDelegate(string value);
+        delegate void UpdateStatusDelegate(string progress, string errorMessage);
         delegate void Mainthread(bool value);
         Stopwatch _stopWatch = new Stopwatch();
         System.Windows.Forms.Timer _timer = new System.Windows.Forms.Timer();
@@ -27,6 +27,7 @@ namespace RMSDataValidation
 
             ChangeState(false);
             bool isValidationPass = false;
+            string errorMessage = string.Empty;
             ManualResetEvent manualResetEvent = new ManualResetEvent(false);
             Thread work = new Thread(() =>
             {
@@ -35,7 +36,7 @@ namespace RMSDataValidation
                     if (this.InvokeRequired)
                     {
                         UpdateStatusDelegate updateStatusDelegate = new UpdateStatusDelegate(UpdateStatus);
-                        this.Invoke(updateStatusDelegate, "In Progress");
+                        this.Invoke(updateStatusDelegate, new object[] { "In Progress", "" });
                     }
 
                     string filePath = FilePathTextBox.Text.ToString();
@@ -57,7 +58,7 @@ namespace RMSDataValidation
                         switch (Type.Text.ToUpper())
                         {
                             case "PQ":
-                                isValidationPass = validation.PQValidate();
+                                isValidationPass = validation.PQValidate(out errorMessage);
                                 break;
                             default:
                                 isValidationPass = validation.Validate();
@@ -77,10 +78,11 @@ namespace RMSDataValidation
             {
                 manualResetEvent.WaitOne();
                 string result = isValidationPass ? "PASS" : "FAIL";
+                string error = errorMessage;
                 if (this.InvokeRequired)
                 {
                     UpdateStatusDelegate updateStatusDelegate = new UpdateStatusDelegate(UpdateStatus);
-                    this.Invoke(updateStatusDelegate, result);
+                    this.Invoke(updateStatusDelegate, new object[] { result, error });
                 }
                 ChangeState(true);
             });
@@ -91,9 +93,9 @@ namespace RMSDataValidation
             TimeLabel.Text = (_stopWatch.ElapsedMilliseconds / 1000).ToString();
         }
 
-        void UpdateStatus(string value)
+        void UpdateStatus(string progress, string errorMessage)
         {
-            if (value == "In Progress")
+            if (progress == "In Progress")
             {
                 _stopWatch.Start();
                 _timer.Start();
@@ -104,7 +106,8 @@ namespace RMSDataValidation
                 _timer.Stop();
             }
 
-            ValidationResultLabel.Text = value;
+            ValidationResultLabel.Text = progress;
+            ErrorMessage.Text = errorMessage;
         }
 
         void ChangeState(bool value)

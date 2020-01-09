@@ -79,7 +79,7 @@ namespace RMSValidator
                     while (!reader.EndOfStream)
                     {
                         listRows.Add(reader.ReadLine());
-                    }
+                    }                    
                 }
 
                 //Create DataColumns
@@ -161,9 +161,10 @@ namespace RMSValidator
             return isValidated;
         }
 
-        public bool PQValidate()
+        public bool PQValidate(out string errorMessage)
         {
             bool isValidated = true;
+            errorMessage = string.Empty;
 
             double voltageHighRange = _injectedNominalVoltage + _voltageTolerance;
             double voltageLowRange = _injectedNominalVoltage - _voltageTolerance;
@@ -180,6 +181,7 @@ namespace RMSValidator
                     {
                         listRows.Add(reader.ReadLine());
                     }
+                    reader.Close();
                 }
 
                 int totalRecordCount = listRows.Count;
@@ -202,51 +204,57 @@ namespace RMSValidator
                         //Check if channel name contains the RMS and AVG
                         if (channelNames[counter].ToUpper().Contains("RMS") && channelNames[counter].ToUpper().Contains("AVG"))
                         {
-                            if (channelNames[counter].ToUpper().Contains("VOLTAGE"))
+                            if (rowValues[counter].ToUpper() != "NAN")
                             {
-                                //put logic here for voltage validation
-                                if (double.TryParse(rowValues[counter], out rowValue))
+                                rowValue = double.Parse(rowValues[counter]);
+
+                                if (channelNames[counter].ToUpper().Contains("VOLTAGE"))
                                 {
+                                    //put logic here for voltage validation
                                     if (rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException();
+                                        throw new ValidationFailedException("FAIL");
                                     }
-                                }
-                            }
-                            else if (channelNames[counter].ToUpper().Contains("CURRENT"))
-                            {
 
-                                //put logic here for current validation
-                                if (double.TryParse(rowValues[counter], out rowValue))
+                                }
+                                else if (channelNames[counter].ToUpper().Contains("CURRENT"))
                                 {
+                                    //put logic here for current validation
                                     if (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException();
+                                        throw new ValidationFailedException("FAIL");
                                     }
+
                                 }
-                            }
-                            else //For Standalone channels
-                            {
-                                if (double.TryParse(rowValues[counter], out rowValue))
+                                else //For Standalone channels
                                 {
                                     if ((rowValue >= voltageHighRange * multiplier || rowValue <= voltageLowRange * multiplier) && (rowValue >= currentHighRange * multiplier || rowValue <= currentLowRange * multiplier))
                                     {
-                                        throw new ValidationFailedException();
+                                        throw new ValidationFailedException("FAIL");
                                     }
                                 }
                             }
+                            else
+                            {
+                                throw new ValidationFailedException("FAIL beacuse of NAN");
+                            }                            
                         }
                     }
                 }
             }
-            catch (ValidationFailedException)
+            catch (ValidationFailedException ex)
             {
                 isValidated = false;
-            }            
+                errorMessage = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                isValidated = false;
+                errorMessage = ex.Message;
+            }
 
             return isValidated;
         }
-
         #endregion
     }
 }

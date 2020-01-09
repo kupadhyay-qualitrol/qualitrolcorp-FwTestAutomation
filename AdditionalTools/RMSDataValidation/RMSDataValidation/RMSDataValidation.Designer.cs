@@ -111,7 +111,6 @@
             // 
             this.ValidationResultLabel.AutoSize = true;
             this.ValidationResultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValidationResultLabel.Location = new System.Drawing.Point(404, 142);
             this.ValidationResultLabel.Name = "ValidationResultLabel";
             this.ValidationResultLabel.Size = new System.Drawing.Size(62, 20);
             this.ValidationResultLabel.TabIndex = 7;
@@ -154,7 +153,6 @@
             // 
             this.TimeLabel.AutoSize = true;
             this.TimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLabel.Location = new System.Drawing.Point(475, 110);
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(0, 20);
             this.TimeLabel.TabIndex = 25;
@@ -164,7 +162,6 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(349, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 20);
             this.label6.TabIndex = 26;
@@ -186,6 +183,8 @@
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 28;
             this.label7.Text = "Type";
+            // 
+            // 
             // 
             // RMSDataValidation
             // 
