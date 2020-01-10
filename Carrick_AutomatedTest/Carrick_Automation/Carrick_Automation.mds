@@ -85,7 +85,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="Cabling Configuration" key="{C163A5AA-3411-4379-B120-C973F77AC8C9}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children>
 							<testItem name="Login" key="{4DE1FBC5-D7E7-47CE-AD88-D1A598F1CC1A}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
@@ -2093,11 +2093,11 @@
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="GetFirmwareVersionIDME" key="{94D8D17A-E8A3-4E02-AADA-6D9F3861F6FB}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}GetFwVersionIDME" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="StartReportIDME" key="{BD1C7B78-69DA-4900-B53B-F06472B0A0C3}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}StartReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="StartReportIDME" key="{BD1C7B78-69DA-4900-B53B-F06472B0A0C3}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}StartReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="GetFirmwareVersionIDME" key="{94D8D17A-E8A3-4E02-AADA-6D9F3861F6FB}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}GetFwVersionIDME" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
