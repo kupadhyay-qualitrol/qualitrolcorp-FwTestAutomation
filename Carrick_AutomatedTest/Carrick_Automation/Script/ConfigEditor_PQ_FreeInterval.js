@@ -1,6 +1,7 @@
 ﻿/*This page contains methods and objectes related to PQ 10 min and Free interval Page*/
 
 //USEUNIT CommonMethod
+//USEUNIT FavoritesPage
 
 //Variables
 var TABCOUNT

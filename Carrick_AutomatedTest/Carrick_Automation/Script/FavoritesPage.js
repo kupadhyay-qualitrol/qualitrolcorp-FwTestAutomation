@@ -1,7 +1,7 @@
-﻿/*This file contains methods and object variables related favorites*/
-//USEUNIT AssertClass
+﻿//USEUNIT AssertClass
 //USEUNIT CommonMethod
-//USEUNIT ConfigEditor_PQ
+//USEUNIT ConfigEditor_PQ_FreeInterval
+/*This file contains methods and object variables related favorites*/
 //Variables
 var Topology_DefaultFavorites =Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.DAFAVuexpbarFavorites
 var TOOLS_FAVORITES = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.zUserControlBase_Toolbars_Dock_Area_Top

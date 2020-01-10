@@ -1,14 +1,14 @@
-﻿//USEUNIT CommonMethod
+﻿//USEUNIT AssertClass
+//USEUNIT CommonMethod
+//USEUNIT ConfigEditor_PQ_FreeInterval
+//USEUNIT ConfigEditorPage
 //USEUNIT DataRetrievalPage
 //USEUNIT DeviceManagementPage
-//USEUNIT AssertClass
-//USEUNIT ConfigEditorPage
-//USEUNIT ConfigEditor_PQ
-//USEUNIT PQ_Methods
 //USEUNIT DeviceTopologyPage
-//USEUNIT OmicronQuickCMCPage
-//USEUNIT GeneralPage
 //USEUNIT FavoritesPage
+//USEUNIT GeneralPage
+//USEUNIT OmicronQuickCMCPage
+//USEUNIT PQ_Methods
 
 function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,fileName)
 {
@@ -72,10 +72,10 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     PQ_Methods.setTimeIntervalForPqDataExport()
     
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
-     FavoritesPage.checkForPqFavorite("PQ Free Interval")
+    FavoritesPage.checkForPqFavorite("PQ Free Interval")
     
     //Step.15 Export PQ Free Interval Data
-   PQ_Methods.exportToCsvPqFreeIntervalData()
+    PQ_Methods.exportToCsvPqFreeIntervalData()
     Log.Message("PQ Free Interval Data has been exported")
     
     //Step.16 Close Omicron CMC file
