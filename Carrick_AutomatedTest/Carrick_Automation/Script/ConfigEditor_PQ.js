@@ -156,16 +156,8 @@ function createNewFavoriteForPqFreeInterval()
 function exportPqFreeIntervalDataToCsv() 
 {
   //Click on PQ Free Interval Favorite
-  if (DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
-  {
-    DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
-  }
   
-  else 
-  {
-    DEFAULT_FAV.ClickItem("My Favorites", "PQ Free Interval")
-  }
-  
+  DEFAULT_FAV.ClickItem(GROUPNAME, "PQ Free Interval")  
   Log.Message("PQ Free Interval Data Opened")
   aqUtils.Delay(7000)
   

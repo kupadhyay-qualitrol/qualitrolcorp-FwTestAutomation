@@ -124,50 +124,7 @@ function setPqFreeIntervalStartTime()
   Log.Message("PQ Free Interval start time set as 2 minutes before of current system date and time")
 }
 
-function checkForPqFreeIntervalFavorite()
-{ 
-  //Navigate to Favorites under Conitnouous Recording for PQ Free Interval
-  CommonMethod.RibbonToolbar.wItems.Item("&Data Analysis").Click()
-  CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
-  
-  try 
-  { 
-    var defaultFavoriteItemCount = DEFAULT_FAV.wItemCount("Default Favorites")
-    var myFavoriteItemCount = DEFAULT_FAV.wItemCount("My Favorites")
-    var defaultFavoriteItems = []
-    var myFavoriteItems = []
-    for (counter=0;counter<defaultFavoriteItemCount;counter++)
-    {
-       defaultFavoriteItems = DEFAULT_FAV.wItem(0, counter)
-    }
-    
-    for (counter=0;counter<myFavoriteItemCount;counter++)
-    {
-       myFavoriteItems = DEFAULT_FAV.wItem(1, counter)
-    }
-    
-    
-    if(defaultFavoriteItems.includes("PQ Free Interval")|| myFavoriteItems.includes("PQ Free Interval"))
-    {
-      Log.Message("PQ Free Interval Favorite Exists")
-      return true
-    }
-    
-    else
-    {
-      ConfigEditor_PQ.createNewFavoriteForPqFreeInterval()
-      Log.Message("Configured new Favorite for PQ Free Interval")    
-      return true 
-    }
-    
-  }  
-  catch(ex)
-  {
-    Log.Error(ex.stack)
-    Log.Error("Fail:-Test to check for the PQ Free Interval Favorite")
-  }
-  
-}
+
 
 function setTimeIntervalForPqDataExport()
 { 

@@ -8,7 +8,7 @@
 //USEUNIT DeviceTopologyPage
 //USEUNIT OmicronQuickCMCPage
 //USEUNIT GeneralPage
-
+//USEUNIT FavoritesPage
 
 function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,fileName)
 {
@@ -72,10 +72,10 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     PQ_Methods.setTimeIntervalForPqDataExport()
     
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
-    PQ_Methods.checkForPqFreeIntervalFavorite()
+     FavoritesPage.checkForPqFavorite("PQ Free Interval")
     
     //Step.15 Export PQ Free Interval Data
-    PQ_Methods.exportToCsvPqFreeIntervalData()
+   PQ_Methods.exportToCsvPqFreeIntervalData()
     Log.Message("PQ Free Interval Data has been exported")
     
     //Step.16 Close Omicron CMC file
