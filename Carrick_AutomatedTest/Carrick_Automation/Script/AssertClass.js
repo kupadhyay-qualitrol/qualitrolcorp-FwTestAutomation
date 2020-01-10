@@ -70,8 +70,8 @@ function CompareString(Expected,Actual,LogMessage)
         Log.Message("Strings are Same.Message:- "+LogMessage)    
       }
       else
-      {
-        Log.Message("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)
+      { 
+        Log.Error("Results didn't match.Expected:- "+Expected+" .Actual:- "+Actual+" .Message:- "+LogMessage)
       }
     }
     else
