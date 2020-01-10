@@ -213,7 +213,6 @@ function validatePqData(rmsInjectedVoltage,validationType,rmsInjectedCurrent,vol
     var pqStoredPath = pqRecordPath+aqFileSystem.FindFiles(pqRecordPath, "*.csv").Item(0).Name
     var rmsPQValidationStatus= RMSDataValidationExePage.validatePqRmsData(pqStoredPath,validationType,rmsInjectedVoltage,rmsInjectedCurrent,voltageTolerance,currentTolerance)
     AssertClass.CompareString("PASS", rmsPQValidationStatus ,"Checking PQ RMS Validation" )
-    //AssertClass.IsTrue(rmsPQValidationStatus, "PASS")
     
   //Step.4 Delete the downloaded file
     aqFileSystem.DeleteFile(pqStoredPath)
