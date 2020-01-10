@@ -156,7 +156,16 @@ function createNewFavoriteForPqFreeInterval()
 function exportPqFreeIntervalDataToCsv() 
 {
   //Click on PQ Free Interval Favorite
-  DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
+  if (DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
+  {
+    DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
+  }
+  
+  else 
+  {
+    DEFAULT_FAV.ClickItem("My Favorites", "PQ Free Interval")
+  }
+  
   Log.Message("PQ Free Interval Data Opened")
   aqUtils.Delay(7000)
   
@@ -189,7 +198,7 @@ function exportPqFreeIntervalDataToCsv()
   //Set all data points and export PQ free interval data to csv
   RADIOBTN_ALL_DATA_POINTS.Click()
   EXPORT_PATH_SELECTION.Click()
-  var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQFreeInterval")
+  var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQ")
   selectFolderToExport.Click()
   OKBTN_PATH_SELECTION.Click()
   OKBTN_EXPORT_TO_CSV.Click()

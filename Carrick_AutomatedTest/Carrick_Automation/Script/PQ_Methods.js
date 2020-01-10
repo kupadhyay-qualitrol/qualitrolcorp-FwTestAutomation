@@ -132,7 +132,7 @@ function checkForPqFreeIntervalFavorite()
   
   try 
   {
-   if(DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
+   if(DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval" || DEFAULT_FAV.wItem("My Favorites", "PQ Free Interval") == "PQ Free Interval")
    {
     Log.Message("PQ Free Interval Favorite Exists")
     return true 
@@ -215,5 +215,5 @@ function validatePqData(rmsInjectedVoltage,validationType,rmsInjectedCurrent,vol
     //AssertClass.IsTrue(rmsPQValidationStatus, "PASS")
     
   //Step.4 Delete the downloaded file
-    //aqFileSystem.DeleteFile(pqStoredPath)
+    aqFileSystem.DeleteFile(pqStoredPath)
 }
