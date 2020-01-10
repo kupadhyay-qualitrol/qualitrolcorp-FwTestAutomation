@@ -25,6 +25,7 @@ var DeviceStatus
 var Busbar1_Name ="Busbar 1"
 var Busbar2_Name ="Busbar 2"
 var Counter
+var FwVersion
 
 function GetFwVersionIDME()
 {
@@ -178,7 +179,7 @@ function TestCablingIDME(DatasetFolderPath,CablingName,TestLog)
     while (Counter<=30)
     
     //Step12. Validate from Tabindex
-    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName))   
+    AssertClass.IsTrue(Firmware_Tabindex_Methods.ValidateCabling(DriverInstance,TestLog,DeviceIP,DataSetFolderPath,CablingName,FwVersion))   
     
     if(CablingName=="NOCIRCUIT")
     {
