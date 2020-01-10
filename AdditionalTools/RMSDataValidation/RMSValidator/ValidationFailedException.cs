@@ -8,5 +8,13 @@ namespace RMSValidator
 {
     class ValidationFailedException : Exception
     {
+        public ValidationFailedException()
+        {
+
+        }
+        public ValidationFailedException(string errorMessage) : base(errorMessage)
+        {
+
+        }
     }
 }

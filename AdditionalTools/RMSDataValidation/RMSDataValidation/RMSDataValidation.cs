@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RMSValidator;
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
@@ -7,16 +8,20 @@ namespace RMSDataValidation
 {
     public partial class RMSDataValidation : Form
     {
-        delegate void UpdateStatusDelegate(string value);
+        delegate void UpdateStatusDelegate(string progress, string errorMessage);
         delegate void Mainthread(bool value);
         Stopwatch _stopWatch = new Stopwatch();
         System.Windows.Forms.Timer _timer = new System.Windows.Forms.Timer();
+
+        const string INPROGRESS_MESSAGE = "In Progress";
+        const string POWER_QUALITY = "PQ";
+
         public RMSDataValidation()
         {
             InitializeComponent();
             StartButton.Enabled = false;
         }
-        
+
         private void StartButton_Click(object sender, EventArgs e)
         {
             _stopWatch.Reset();
@@ -27,6 +32,7 @@ namespace RMSDataValidation
 
             ChangeState(false);
             bool isValidationPass = false;
+            string errorMessage = string.Empty;
             ManualResetEvent manualResetEvent = new ManualResetEvent(false);
             Thread work = new Thread(() =>
             {
@@ -35,17 +41,35 @@ namespace RMSDataValidation
                     if (this.InvokeRequired)
                     {
                         UpdateStatusDelegate updateStatusDelegate = new UpdateStatusDelegate(UpdateStatus);
-                        this.Invoke(updateStatusDelegate, "In Progress");
+                        this.Invoke(updateStatusDelegate, new object[] { INPROGRESS_MESSAGE, string.Empty});
                     }
 
                     string filePath = FilePathTextBox.Text.ToString();
                     double voltage = Double.Parse(VoltageTextBox.Text);
                     double current = Double.Parse(CurrentTextBox.Text);
-                    double voltageTolerance = Double.Parse(VoltageToleranceTextBox.Text);
-                    double currentTolerance = Double.Parse(CurrentToleranceTextBox.Text);
+                    double voltageTolerance;
+                    Double.TryParse(VoltageToleranceTextBox.Text, out voltageTolerance);
+                    double currentTolerance;
+                    Double.TryParse(CurrentToleranceTextBox.Text, out currentTolerance);
 
-                    RMSValidator.RMSValidator local = new RMSValidator.RMSValidator(filePath, voltage, current, voltageTolerance, currentTolerance);
-                    isValidationPass = local.Validate();
+                    RMSValidator.RMSValidator validation = new RMSValidator.RMSValidator(filePath, voltage, current, voltageTolerance, currentTolerance);
+
+                    if (string.IsNullOrEmpty(Type.Text))
+                    {
+                        validation.Validate();
+                    }
+                    else
+                    {
+                        switch (Type.Text.ToUpper())
+                        {
+                            case POWER_QUALITY:
+                                isValidationPass = validation.PQValidate(out errorMessage);
+                                break;
+                            default:
+                                isValidationPass = validation.Validate();
+                                break;
+                        }
+                    }
                 }
                 finally
                 {
@@ -58,11 +82,12 @@ namespace RMSDataValidation
             Thread OnCompletion = new Thread(() =>
             {
                 manualResetEvent.WaitOne();
-                string result = isValidationPass ? "PASS" : "FAIL";
+                string result = isValidationPass ? Constants.PASS_MESSAGE : Constants.FAIL_MESSAGE;
+                string error = errorMessage;
                 if (this.InvokeRequired)
                 {
                     UpdateStatusDelegate updateStatusDelegate = new UpdateStatusDelegate(UpdateStatus);
-                    this.Invoke(updateStatusDelegate, result);
+                    this.Invoke(updateStatusDelegate, new object[] { result, error });
                 }
                 ChangeState(true);
             });
@@ -70,12 +95,12 @@ namespace RMSDataValidation
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            TimeLabel.Text = (_stopWatch.ElapsedMilliseconds/1000).ToString();
+            TimeLabel.Text = (_stopWatch.ElapsedMilliseconds / 1000).ToString();
         }
-        
-        void UpdateStatus(string value)
+
+        void UpdateStatus(string progress, string errorMessage)
         {
-            if (value == "In Progress")
+            if (progress == INPROGRESS_MESSAGE)
             {
                 _stopWatch.Start();
                 _timer.Start();
@@ -83,11 +108,12 @@ namespace RMSDataValidation
             else
             {
                 _stopWatch.Stop();
-                _timer.Stop();                
+                _timer.Stop();
             }
 
-            ValidationResultLabel.Text = value;
-        }        
+            ValidationResultLabel.Text = progress;
+            ErrorMessage.Text = errorMessage;
+        }
 
         void ChangeState(bool value)
         {
