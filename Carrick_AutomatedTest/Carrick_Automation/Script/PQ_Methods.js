@@ -131,7 +131,8 @@ function checkForPqFreeIntervalFavorite()
   CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
   
   try 
-  {
+  { var x = DEFAULT_FAV.wItemCount("Default Favorites")
+    Log.Message(x)
    if(DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval" || DEFAULT_FAV.wItem("My Favorites", "PQ Free Interval") == "PQ Free Interval")
    {
     Log.Message("PQ Free Interval Favorite Exists")
