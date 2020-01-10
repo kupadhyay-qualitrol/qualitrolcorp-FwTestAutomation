@@ -20,17 +20,18 @@ namespace RMSDataValidation
         {
             InitializeComponent();
             StartButton.Enabled = false;
+            _timer.Tick += Timer_Tick;
+            _timer.Interval = 1000;
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
             _stopWatch.Reset();
             _stopWatch.Start();
-
-            _timer.Tick += Timer_Tick;
-            _timer.Interval = 1000;
-
+                       
             ChangeState(false);
+            ValidationResultLabel.Text = INPROGRESS_MESSAGE;
+
             bool isValidationPass = false;
             string errorMessage = string.Empty;
             ManualResetEvent manualResetEvent = new ManualResetEvent(false);
@@ -38,12 +39,6 @@ namespace RMSDataValidation
             {
                 try
                 {
-                    if (this.InvokeRequired)
-                    {
-                        UpdateStatusDelegate updateStatusDelegate = new UpdateStatusDelegate(UpdateStatus);
-                        this.Invoke(updateStatusDelegate, new object[] { INPROGRESS_MESSAGE, string.Empty});
-                    }
-
                     string filePath = FilePathTextBox.Text.ToString();
                     double voltage = Double.Parse(VoltageTextBox.Text);
                     double current = Double.Parse(CurrentTextBox.Text);
@@ -53,23 +48,10 @@ namespace RMSDataValidation
                     Double.TryParse(CurrentToleranceTextBox.Text, out currentTolerance);
 
                     RMSValidator.RMSValidator validation = new RMSValidator.RMSValidator(filePath, voltage, current, voltageTolerance, currentTolerance);
-
-                    if (string.IsNullOrEmpty(Type.Text))
-                    {
-                        validation.Validate();
-                    }
+                    if (!string.IsNullOrEmpty(Type.Text) && string.Compare(Type.Text, POWER_QUALITY, true) == 0)                    
+                        isValidationPass = validation.PQValidate(out errorMessage);
                     else
-                    {
-                        switch (Type.Text.ToUpper())
-                        {
-                            case POWER_QUALITY:
-                                isValidationPass = validation.PQValidate(out errorMessage);
-                                break;
-                            default:
-                                isValidationPass = validation.Validate();
-                                break;
-                        }
-                    }
+                        isValidationPass = validation.Validate();                    
                 }
                 finally
                 {
@@ -100,17 +82,8 @@ namespace RMSDataValidation
 
         void UpdateStatus(string progress, string errorMessage)
         {
-            if (progress == INPROGRESS_MESSAGE)
-            {
-                _stopWatch.Start();
-                _timer.Start();
-            }
-            else
-            {
-                _stopWatch.Stop();
-                _timer.Stop();
-            }
-
+            _stopWatch.Stop();
+            _timer.Stop();
             ValidationResultLabel.Text = progress;
             ErrorMessage.Text = errorMessage;
         }
@@ -130,6 +103,7 @@ namespace RMSDataValidation
                 CurrentTextBox.Enabled = value;
                 VoltageToleranceTextBox.Enabled = value;
                 CurrentToleranceTextBox.Enabled = value;
+                Type.Enabled = value;
             }
         }
 
@@ -154,7 +128,6 @@ namespace RMSDataValidation
                     }
                 }
             }
-
             StartButton.Enabled = isValidated;
         }
     }

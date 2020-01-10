@@ -27,6 +27,9 @@ namespace RMSValidator
         const string MILLIVOLT = "MV";
         const string NOT_A_NUMBER_ERROR_MESSAGE = "Failed because of NaN";
         const char DELIMITER = ',';
+        const string VOLTAGE_OUT_OF_RANGE = "Voltage value is out of range";
+        const string CURRENT_OUT_OF_RANGE = "Current value is out of range";
+        const string VALUE_OUT_OF_RANGE = "Value is out of range";
 
         #endregion
 
@@ -34,27 +37,15 @@ namespace RMSValidator
 
         public RMSValidator(string fileToValidate, double InjectedNominalVoltage, double InjectedNominalCurrent, double VoltageTolerance, double CurrentTolerance)
         {
-            Initilaize(fileToValidate, InjectedNominalVoltage, InjectedNominalCurrent);
-            this._voltageTolerance = VoltageTolerance;
-            this._currentTolerance = CurrentTolerance;
-        }
-
-        public RMSValidator(string fileToValidate, double InjectedNominalVoltage, double InjectedNominalCurrent)
-        {
-            Initilaize(fileToValidate, InjectedNominalVoltage, InjectedNominalCurrent);
-        }
-
-        #endregion
-
-        #region Private Methods
-
-        private void Initilaize(string fileToValidate, double InjectedNominalVoltage, double InjectedNominalCurrent)
-        {
             _fileLocation = fileToValidate;
             _injectedNominalVoltage = InjectedNominalVoltage;
             _injectedNominalCurrent = InjectedNominalCurrent;
-
+            _voltageTolerance = VoltageTolerance;
+            _currentTolerance = CurrentTolerance;
         }
+        #endregion
+
+        #region Private Methods        
 
         private float CalculateRMS(int rowCounter, int columnsCounter)
         {
@@ -183,68 +174,59 @@ namespace RMSValidator
 
             try
             {
-                List<string> listRows = new List<string>();
+                string[] rows = File.ReadAllLines(_fileLocation);
+                int totalRecordCount = rows.Length;
 
-                using (var reader = new StreamReader(File.OpenRead(_fileLocation)))
-                {
-                    while (!reader.EndOfStream)
-                    {
-                        listRows.Add(reader.ReadLine());
-                    }
-                    reader.Close();
-                }
-
-                int totalRecordCount = listRows.Count;
-
-                //Create DataColumns
-                string[] channelType = listRows[5].Split(DELIMITER);
-                string[] channelNames = listRows[6].Split(DELIMITER);
+                string[] channelType = rows[5].Split(DELIMITER);
+                string[] channelNames = rows[6].Split(DELIMITER);
 
                 int multiplier = 1;
 
                 for (int rowcounter = 7; rowcounter < totalRecordCount; rowcounter++)
                 {
-                    string[] rowValues = listRows[rowcounter].Split(DELIMITER);
+                    string[] rowValues = rows[rowcounter].Split(DELIMITER);
                     double rowValue;
-
+                    string channleName;
                     for (short counter = 1; counter < channelType.Length; counter++)
                     {
                         multiplier = (channelType[counter].ToUpper().Contains(MILLIAMPERE) || channelType[counter].ToUpper().Contains(MILLIVOLT)) ? 1000 : 1;
 
+                        channleName = channelNames[counter];
                         //Check if channel name contains the RMS and AVG
-                        if (channelNames[counter].ToUpper().Contains(RMS) && channelNames[counter].ToUpper().Contains(AVERAGE))
+                        if (channleName.ToUpper().Contains(RMS) && channleName.ToUpper().Contains(AVERAGE))
                         {
                             if (rowValues[counter].ToUpper() != NOT_A_NUMBER)
                             {
                                 rowValue = double.Parse(rowValues[counter]);
 
-                                if (channelNames[counter].ToUpper().Contains(VOLTAGE))
+                                if (channleName.ToUpper().Contains(VOLTAGE))
                                 {
                                     if (rowValue > voltageHighRange * multiplier || rowValue < voltageLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
+                                        throw new ValidationFailedException(string.Format("{0} for {1}", new object[] { VOLTAGE_OUT_OF_RANGE, channleName }));
                                     }
 
                                 }
-                                else if (channelNames[counter].ToUpper().Contains(CURRENT))
+                                else if (channleName.ToUpper().Contains(CURRENT))
                                 {
                                     if (rowValue > currentHighRange * multiplier || rowValue < currentLowRange * multiplier)
                                     {
-                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
+                                        throw new ValidationFailedException(string.Format("{0} for {1}", new object[] { CURRENT_OUT_OF_RANGE, channleName }));
                                     }
 
                                 }
                                 else
-                                {  //For Standalone channels
+                                {
+                                    //For Standalone channels
                                     if ((rowValue > voltageHighRange * multiplier || rowValue < voltageLowRange * multiplier) && (rowValue > currentHighRange * multiplier || rowValue < currentLowRange * multiplier))
                                     {
-                                        throw new ValidationFailedException(Constants.FAIL_MESSAGE);
+                                        throw new ValidationFailedException(string.Format("{0} for {1}", new object[] { VALUE_OUT_OF_RANGE, channleName }));
                                     }
                                 }
                             }
                             else
                             {
-                                throw new ValidationFailedException(NOT_A_NUMBER_ERROR_MESSAGE);
+                                throw new ValidationFailedException(string.Format("{0} for {1}", new object[] { NOT_A_NUMBER_ERROR_MESSAGE, channleName }));
                             }
                         }
                     }
