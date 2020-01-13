@@ -45,7 +45,7 @@ function findGroupName(favoriteName)
     var groupName
     for (counter=0;counter<defaultFavoriteItemCount;counter++)
     {
-     defaultFavoriteItems  = DEFAULT_FAV.wItem(0, counter)
+     defaultFavoriteItems [counter]  = DEFAULT_FAV.wItem(0, counter)
     } 
     if(defaultFavoriteItems.includes(favoriteName))
     {
@@ -55,7 +55,7 @@ function findGroupName(favoriteName)
     }       
     for (counter=0;counter<myFavoriteItemCount;counter++)
     {
-      myFavoriteItems = DEFAULT_FAV.wItem(1, counter)
+      myFavoriteItems [counter] = DEFAULT_FAV.wItem(1, counter)
     }
      if(myFavoriteItems.includes(favoriteName))    
       {
