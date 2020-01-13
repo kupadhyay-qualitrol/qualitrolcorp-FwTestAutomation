@@ -19,12 +19,12 @@ function clickOnRemoveAllButton()
   if(PANE_CHANNELS.Visible)
   {
     BTN_REMOVE_ALL_SELECTED_QUANTITIES.Click()
-    Log.Message("All the selected quantities are removed in PQ Free Interval Page")
+    Log.Message("All the selected quantities are removed in PQ 10Min Page")
     return true
   }
   else
   {
-    Log.Message("PQ Free Interval Channels pane is not displaying")
+    Log.Message("PQ 10Min Channels pane is not displaying")
     return false
   } 
 }
@@ -49,12 +49,12 @@ function clickOnTabPq10Min(Index)
   { 
     var item_Index = PANE_CHANNELS.activeTab_2.get_TabControl().get_Tabs().get_Item(Index)
     PANE_CHANNELS.activeTab_2.get_TabControl().set_SelectedTab(item_Index)
-    Log.Message("Tab has been selected in PQ Free Interval Page")
+    Log.Message("Tab has been selected in PQ 10Min Page")
     return true
   }
   else
   {
-    Log.Message("PQ Free Interval panel is not visible")
+    Log.Message("PQ 10Min panel is not visible")
     return false
   }
 }
@@ -66,12 +66,12 @@ function addQuantitiesPq10Min(quantities)
 {   
   if(PANE_CHANNELS.Visible)
   {     
-    var item_List = AVAILABLE_QUANTITIES.wItemList
+    var itemList = AVAILABLE_QUANTITIES.wItemList
     var sap = AVAILABLE_QUANTITIES.wListSeparator
     aqString.ListSeparator = sap
-    for (counter = 0; counter < aqString.GetListLength(item_List); counter++)
+    for (counter = 0; counter < aqString.GetListLength(itemList); counter++)
     {
-      var availableQuantities = aqString.GetListItem(item_List, counter)
+      var availableQuantities = aqString.GetListItem(itemList, counter)
       if(aqString.StrMatches(quantities, availableQuantities))
       {
         AVAILABLE_QUANTITIES.ClickItem(availableQuantities)
