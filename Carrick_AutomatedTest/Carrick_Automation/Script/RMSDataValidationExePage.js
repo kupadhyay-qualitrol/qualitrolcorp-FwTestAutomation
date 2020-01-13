@@ -121,7 +121,7 @@ function ClickStart()
   }
 }
 
-function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedCurrent,VoltagTolerance,CurrentTolerance)
+function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedCurrent,VoltagTolerance,CurrentTolerance,validationType)
 {
  if(RMSDataFileNameWithPath!=null&& RMSInjectedVolatge!=null && RMSInjectedCurrent!=null && VoltagTolerance!=null && CurrentTolerance!=null)
  {
@@ -130,6 +130,7 @@ function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedC
    SetRMSCurrent(RMSInjectedCurrent)
    SetVoltageTolerance(VoltagTolerance)
    SetCurrentTolerance(CurrentTolerance)
+   setType(validationType)
    ClickStart()
    do
    {
@@ -137,6 +138,8 @@ function ValidateRMSData(RMSDataFileNameWithPath,RMSInjectedVolatge,RMSInjectedC
    }
    while(!Btn_Start.Enabled)
    var status =lbl_Status.Text.OleValue
+   var message = LBL_MESSAGE.Text.OleValue
+   Log.Message("TC: Test to check PQ data validation is " +status+ " and message is " +message)
    CloseRMSValidationApplication()
    return status
  }
@@ -192,32 +195,32 @@ function CloseRMSValidationApplication()
 }
 
 
-function validatePqRmsData(rmsDataFileNameWithPath,validationType,rmsInjectedVolatge,rmsInjectedCurrent,voltagTolerance,currentTolerance)
-{
- if(rmsDataFileNameWithPath!=null&& validationType!=null && rmsInjectedVolatge!=null && rmsInjectedCurrent!=null && voltagTolerance!=null && currentTolerance!=null)
- {
-   SetFilePath(rmsDataFileNameWithPath)
-   setType(validationType)
-   SetRMSVoltage(rmsInjectedVolatge)
-   SetRMSCurrent(rmsInjectedCurrent)
-   SetVoltageTolerance(voltagTolerance)
-   SetCurrentTolerance(currentTolerance)
-   ClickStart()
-   do
-   {
-    aqUtils.Delay(2000) 
-   }
-   while(!Btn_Start.Enabled)
-   var status =lbl_Status.Text.OleValue
-   var message = LBL_MESSAGE.Text.OleValue
-   Log.Message("TC: Test to check PQ data validation is " +status+ " and message is " +message)
-   CloseRMSValidationApplication()
-   return status
- }
- else
- {
-   Log.Message("Arguments is/are null")
-   CloseRMSValidationApplication()
-   return null
- }
-}
+//function validatePqRmsData(rmsDataFileNameWithPath,validationType,rmsInjectedVolatge,rmsInjectedCurrent,voltagTolerance,currentTolerance)
+//{
+// if(rmsDataFileNameWithPath!=null&& validationType!=null && rmsInjectedVolatge!=null && rmsInjectedCurrent!=null && voltagTolerance!=null && currentTolerance!=null)
+// {
+//   SetFilePath(rmsDataFileNameWithPath)
+//   setType(validationType)
+//   SetRMSVoltage(rmsInjectedVolatge)
+//   SetRMSCurrent(rmsInjectedCurrent)
+//   SetVoltageTolerance(voltagTolerance)
+//   SetCurrentTolerance(currentTolerance)
+//   ClickStart()
+//   do
+//   {
+//    aqUtils.Delay(2000) 
+//   }
+//   while(!Btn_Start.Enabled)
+//   var status =lbl_Status.Text.OleValue
+//   var message = LBL_MESSAGE.Text.OleValue
+//   Log.Message("TC: Test to check PQ data validation is " +status+ " and message is " +message)
+//   CloseRMSValidationApplication()
+//   return status
+// }
+// else
+// {
+//   Log.Message("Arguments is/are null")
+//   CloseRMSValidationApplication()
+//   return null
+// }
+//}
