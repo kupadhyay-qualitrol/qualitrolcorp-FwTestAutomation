@@ -262,3 +262,18 @@ function clickPqFreeInterval()
     return false
   }
 }
+//This method is used to click on PQ 10 min in Config Editor
+function clickPq10Min()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Power Quality|Continous Recording|10 Min")
+    Log.Message("Clicked on PQ 10Min Page")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}

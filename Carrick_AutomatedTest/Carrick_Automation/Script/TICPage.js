@@ -1,4 +1,5 @@
 ﻿//USEUNIT CommonMethod
+//USEUNIT DataRetrievalPage
 
 //Variables
 var StartDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2;
@@ -70,5 +71,40 @@ function GetTICEndDateTime()
   {
     Log.Message("Time Interval pane is not visible on Screen")
     return null
+  }
+}
+
+//This function is used to set time for start date and time
+function setStartDateTimeInTimeInterval()
+{
+  var currentDateTime = aqDateTime.Now()
+  var updatedPQ10MinDateTime = aqDateTime.AddMinutes(currentDateTime, 30)
+  if(StartDateTime.Visible)
+  {
+    DateTimePicker.set_Value(updatedPQ10MinDateTime)
+    Log.Message("Set start date time for 30 min early")
+    return true
+  }
+  else
+  {
+    Log.Message("Time Interval window is not visible") 
+    return false
+  }
+  
+}
+//This function is used to set End date time
+function setEndDateTimeInTimeInterval()
+{
+  var currentDateTimeEnd = aqDateTime.Now()
+  if(StartDateTime.Visible)
+  {
+    Edtbx_EndDateTime.set_Value(currentDateTimeEnd)
+    Log.Message("Set end date time to"+ currentDateTimeEnd)
+    return true
+  }
+  else
+  {
+    Log.Message("Time Interval window is not visible") 
+    return false
   }
 }

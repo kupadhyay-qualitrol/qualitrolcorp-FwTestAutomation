@@ -45,6 +45,7 @@
 			<child name="ConfigEditor_PQ_10Mins" key="{05CB2D7E-148F-47BD-A6A2-2888898488A1}" path="ConfigEditor_PQ_10Mins.js" />
 			<child name="DataAnalysisPage" key="{5D4DA1C1-EC87-447A-8174-BBD38B694A62}" path="DataAnalysisPage.js" />
 			<child name="Continuous_Recording_Customization_Page" key="{21FDD9AB-1517-4C64-9D93-AA883898F800}" path="Continuous_Recording_Customization_Page.js" />
+			<child name="PQ_Waveform_Viewer_Page" key="{82DD0965-628B-47CE-A32A-D9DB072C708A}" path="PQ_Waveform_Viewer_Page.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />

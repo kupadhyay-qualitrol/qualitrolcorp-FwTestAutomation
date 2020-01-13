@@ -661,6 +661,21 @@ function getPqFreeIntervalStartTime()
     return null    
   }
 }
+function getPq10MinStartTime()
+{
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ 10 Min directory displayed")    
+    var startDateTime = Box_Start_Time.get_Value().ToString();
+    Log.Message("PQ 10Min Start date and time is "+startDateTime) 
+    return startDateTime 
+  }
+  else
+  {
+    Log.Message("PQ 10Min directory not displayed")
+    return null    
+  }
+}
 
 function ClickOnCleanMemory()
 {
@@ -764,7 +779,22 @@ function UpdateDDRCStartTime()
     return false 
   }
 }
-
+function UpdatePQStartTime()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("New date time is" + NewDateTime)
+    var startDateTimePQ = aqDateTime.AddMinutes(NewDateTime, -20)
+    var startDateTime = Box_Start_Time.set_Value(startDateTimePQ)
+    Log.Message("PQ 10 Min Start date and time is set as "+ startDateTimePQ) 
+    return true
+  }
+  else
+  {
+    Log.Message("PQ10Min directory not displayed")   
+    return false 
+  }
+}
 function ClickOnDDRCDownloadNowButton()
 { 
   if (DDRCDirectory.Exists)
@@ -872,16 +902,24 @@ function clickOnPqFreeIntervalDownloadNowButton()
   }
 }
 
-function clickOnPqFreeIntervalCloseButton()
+function clickOnPq10MinDownloadNowButton()
 { 
   if (DDRCDirectory.Exists)
   {
-    Log.Message("PQ Free Interval directory displayed")
+    Log.Message("PQ 10 min directory displayed")
     
-    //Click on Cancel button of PQ Free interval Directory  
-    Btn_DDRCCancel.ClickButton();
-    Log.Message("PQ Free Interval Close button clicked") 
-    return true
+    //Click on PQ free interval download now button  
+    Btn_DDRCDirectory_DownloadNow.ClickButton();
+    Log.Message("Downloaded PQ 10 min Record")
+     
+    if(CommonMethod.CheckActivityLog("PQ data download process completed for device"))
+    {
+     return true
+    }
+    else if(CommonMethod.CheckActivityLog("PQ data not available on device."))
+    {
+     return false 
+    }
   }
   else
   {
@@ -890,3 +928,63 @@ function clickOnPqFreeIntervalCloseButton()
   }
 }
 
+function clickOnPqFreeIntervalCloseButton()
+{ 
+  if (DDRCDirectory.Exists)
+  {
+    Log.Message("PQ directory displayed")
+    
+    //Click on Cancel button of PQ Free interval Directory  
+    Btn_DDRCCancel.ClickButton();
+    Log.Message("PQ Close button clicked") 
+    return true
+  }
+  else
+  {
+    Log.Message("PQ directory not displayed")   
+    return false 
+  }
+}
+function clickOnPQ10MinDirectory()
+{
+  if(CommonMethod.RibbonToolbar.wItems.Item("Device &Management").Text=="Device &Management") 
+   {
+     //Clear Session Log
+     SessionLogPage.ClearLog()
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management")
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory")
+     aqObject.CheckProperty(Aliases.iQ_Plus.DropDownForm.PopupMenuControlTrusted, "Enabled", cmpEqual, true)
+     CommonMethod.RibbonToolbar.ClickItem("Device &Management|Data Retrieval|Displa&y Device Directory|&PQ 10 Min Directory")
+     Log.Message("Clicked on PQ 10 Min Directory")
+     return true
+    }
+   else
+   {
+     Log.Message("Unable to click on PQ 10 Min Directory")
+     return false
+   }
+}
+
+function CheckPQ10MinDirectoryOpen(retryCount)
+{
+  var recordRetryCount = 0
+  for(recordRetryCount=0;recordRetryCount<retryCount;recordRetryCount++)
+  {
+   if(CommonMethod.CheckActivityLog("PQ directory list downloaded from device"))
+   {
+     Log.Message("PQ10Min directory list displayed successfully") 
+     return true 
+     break
+   }
+   else(CommonMethod.CheckActivityLog("Data is not available in the device"))
+   {
+     Log.Message("Trying to click on DDRC directory button again")
+     clickOnPQ10MinDirectory();
+   }
+  }
+  if(recordRetryCount>=4)
+  {
+    Log.Message("PQ10min recording is not started")
+    return false
+  }
+}

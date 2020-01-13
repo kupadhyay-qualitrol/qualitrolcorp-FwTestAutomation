@@ -118,7 +118,7 @@
 												<testParameters />
 												<children />
 											</testItem>
-											<testItem name="DDRC Recording Download_With_Quantity" key="{F67B9015-1233-415C-AC7A-06DB9F31AEEF}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="DDRC Recording Download_With_Quantity" key="{F67B9015-1233-415C-AC7A-06DB9F31AEEF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -2080,7 +2080,7 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
 					<testItem name="Initialization" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="False" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
@@ -2089,15 +2089,15 @@
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="LoginIQ+" key="{793EBB06-A01F-481E-ACE7-973ABEAA3721}" group="False" enabled="False" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="LoginIQ+" key="{793EBB06-A01F-481E-ACE7-973ABEAA3721}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="StartReportIDME" key="{BD1C7B78-69DA-4900-B53B-F06472B0A0C3}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}StartReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="StartReportIDME" key="{BD1C7B78-69DA-4900-B53B-F06472B0A0C3}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}StartReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="SetAnalogChannelNameIDME" key="{17FC0237-E921-41CE-BBEE-6F7FFE8EA4AE}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}SetAnalogChannelNameIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="SetAnalogChannelNameIDME" key="{17FC0237-E921-41CE-BBEE-6F7FFE8EA4AE}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}SetAnalogChannelNameIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -3373,46 +3373,46 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="TestIDMENOCIRCUIT" key="{5D5553E3-FBDA-44D9-9D5B-5C293E23597F}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECablingNOCIRCUIT" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="TestIDMENOCIRCUIT" key="{5D5553E3-FBDA-44D9-9D5B-5C293E23597F}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECablingNOCIRCUIT" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="EndReportIDME" key="{6C6FD177-008E-450E-8835-FA593682E546}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}EndReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="EndReportIDME" key="{6C6FD177-008E-450E-8835-FA593682E546}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}EndReportIDME" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="CLoseIQPlus" key="{7A527B63-B181-440A-9BF3-726CA48B6F5E}" group="False" enabled="False" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="CLoseIQPlus" key="{7A527B63-B181-440A-9BF3-726CA48B6F5E}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="RMS Data Validation For Cablings" key="{6A90A5FF-359F-4472-9CE3-6F359A89CB9C}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="RMS Data Validation For Cablings" key="{6A90A5FF-359F-4472-9CE3-6F359A89CB9C}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Login" key="{D4CF5458-598A-4724-B7B2-E934266B858E}" group="False" enabled="False" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
+					<testItem name="Login" key="{D4CF5458-598A-4724-B7B2-E934266B858E}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="StartReport" key="{4FF696D0-A939-445D-87B2-B765963C599E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}StartReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="StartReport" key="{4FF696D0-A939-445D-87B2-B765963C599E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}StartReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="SetAnalogChannelName" key="{4851A51B-04CC-44CB-B798-90E746747877}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="SetAnalogChannelName" key="{4851A51B-04CC-44CB-B798-90E746747877}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="3U Default Cabling" key="{F7A81A94-0FA8-4AAC-8B3A-E7C5700E64AE}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="3U Default Cabling" key="{F7A81A94-0FA8-4AAC-8B3A-E7C5700E64AE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="3U" key="{620A7F88-D210-42A7-BFA5-197965D626DA}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="3U" key="{620A7F88-D210-42A7-BFA5-197965D626DA}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children>
-									<testItem name="DDRC Recording Download_With_Quantity" key="{63710127-0FAC-4F13-B2A8-BB52F6CE6CA1}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+									<testItem name="DDRC Recording Download_With_Quantity" key="{63710127-0FAC-4F13-B2A8-BB52F6CE6CA1}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -3425,7 +3425,7 @@
 										</testParameters>
 										<children />
 									</testItem>
-									<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="False" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
 											<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
@@ -4312,7 +4312,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="TestNOCIRCUIT" key="{473A0D9E-0EC5-4691-8C3D-8C9D9CF92D7E}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidationNOCIRCUIT" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="TestNOCIRCUIT" key="{473A0D9E-0EC5-4691-8C3D-8C9D9CF92D7E}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidationNOCIRCUIT" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -4338,15 +4338,21 @@
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="EndReport" key="{2B02ECEE-6BF8-4C72-BB95-ED6667BAD7AD}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="EndReport" key="{2B02ECEE-6BF8-4C72-BB95-ED6667BAD7AD}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="Close iQ_Plus" key="{6CDA96BD-9CA4-4EF5-B475-AE4A62B6E326}" group="False" enabled="False" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Close iQ Plus">
+					<testItem name="Close iQ_Plus" key="{6CDA96BD-9CA4-4EF5-B475-AE4A62B6E326}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Close iQ Plus">
 						<testParameters />
 						<children />
 					</testItem>
 				</children>
+			</testItem>
+			<testItem name="ProjectTestItem1" key="{EC78E870-5167-4469-9878-EEB3D25DDAC5}" group="False" enabled="True" testMoniker="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}checkForPqFavorite" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+				<testParameters>
+					<param0 name="favoriteName" type="3" localVarName="" varType="8" value="PQ10Min" />
+				</testParameters>
+				<children />
 			</testItem>
 		</children>
 	</testItems>

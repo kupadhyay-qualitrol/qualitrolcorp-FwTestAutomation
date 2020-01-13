@@ -11,6 +11,7 @@
 //USEUNIT ConfigEditor_PQ_10Mins
 //USEUNIT DataAnalysisPage
 //USEUNIT Continuous_Recording_Customization_Page
+//USEUNIT PQ_Waveform_Viewer_Page
 
 function cleanMemoryPq()
 {
@@ -126,6 +127,26 @@ function setPqFreeIntervalStartTime()
   Log.Message("PQ Free Interval start time set as 2 minutes before of current system date and time")
 }
 
+function setPq10MinStartTime()
+{
+  //Step.1 Close PQ Free Interval Directory
+  AssertClass.IsTrue(DataRetrievalPage.CloseDFRDirectory(),"PQ Free Interval Directroy get closed")
+  
+  //Step.2 Open Device Status view
+  AssertClass.IsTrue(DataRetrievalPage.ClickOnDeviceStatusView(),"Device status view window opens")
+  
+  //Step.3 Get the current date time of device.
+  DataRetrievalPage.GetDeviceCurrentDateTime()
+  
+  //Step.4 Open PQ Free Interval Directory
+  AssertClass.IsTrue(DataRetrievalPage.clickOnPQ10MinDirectory(),"PQ 10 min Directory opens")
+  
+  //Step.5 Now set the time in PQ Free Interval Start time field.
+  AssertClass.IsTrue(DataRetrievalPage.UpdatePQStartTime(),"PQ 10 min start time has been set as per the current device time.")
+  Log.Message("PQ 10 min start time set as 30 minutes before of current system date and time")
+}
+
+
 function checkForPqFreeIntervalFavorite()
 { 
   //Navigate to Favorites under Conitnouous Recording for PQ Free Interval
@@ -222,4 +243,29 @@ function createPQ10MinFavorite()
   //Step.5 Save the favorite
   AssertClass.IsTrue(Continuous_Recording_Customization_Page.clickOnSavePQButton(),"PQ favorite saved")
     
+}
+
+function exportPQ10MinCSVData()
+{
+  //Step.1 validate folder is created or not
+  var sysUserName = CommonMethod.GetSystemUsername()
+  var pQFolder ="C:\\Users\\"+sysUserName+"\\Desktop\\PQ\\"
+  if (!aqFileSystem.Exists(pQFolder))
+    {
+      aqFileSystem.CreateFolder(pQFolder) 
+    }
+  //Step.2 Click on Export to CSV button
+  AssertClass.IsTrue(PQ_Waveform_Viewer_Page.clickOnExportToCSVButton(),"Export to CSV button clicked")
+  
+  //Step.3 Click on Select all channels radio button.
+  AssertClass.IsTrue(PQ_Waveform_Viewer_Page.clickOnAllPointsRadioChannel(),"All points channel radio button selected")
+  
+  //Step.4 Click on browser button.
+  AssertClass.IsTrue(PQ_Waveform_Viewer_Page.clickOnBrowse(), "Browse button clicked")
+  
+  //Step.5 Click on PQ folder
+  AssertClass.IsTrue(PQ_Waveform_Viewer_Page.selectPQFolder(),"PQ folder selected")
+  
+  //Step.6 Click on Ok button of Export
+  AssertClass.IsTrue(PQ_Waveform_Viewer_Page.clickOnExportOkButton(),"Ok button clicked and data is exported for PQ10Min")
 }

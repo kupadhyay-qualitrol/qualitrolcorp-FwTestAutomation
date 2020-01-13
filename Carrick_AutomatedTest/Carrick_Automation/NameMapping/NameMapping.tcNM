@@ -3901,6 +3901,15 @@
 													</Property>
 												</Properties>
 											</Child>
+											<Child Name="WFVbtnBrowsePath" Key="{862EE0B5-C197-4FC7-B1EA-CB34B6F902B1}" ParallelWalk="True">
+												<Image FileName="394995869" Left="270" Top="232" Right="352" Bottom="255" />
+												<TypeInfo Item0="{9B058D4A-820B-4D44-8FCB-41998C3CB1DD}" />
+												<Properties>
+													<Property Name="WinFormsControlName">
+														<Value PropertyType="0" Value="WFVbtnBrowsePath" Type="5" />
+													</Property>
+												</Properties>
+											</Child>
 										</Children>
 									</Child>
 									<Child Name="WFVbtnOK" Key="{84CD610A-BE63-4B02-8A8B-733B55DA0EEF}" ParallelWalk="True">
@@ -5534,6 +5543,7 @@
 				</Child>
 				<Child Name="WFVgbxSelectPath" Owner="{439A7B9E-7735-4BF3-9802-B86778B247C0}">
 					<Child Name="WFVtxtSelectPath" Owner="{A9B04461-2E23-407F-ABF4-75CA2CF1CA96}" />
+					<Child Name="WFVbtnBrowsePath" Owner="{862EE0B5-C197-4FC7-B1EA-CB34B6F902B1}" />
 				</Child>
 				<Child Name="WFVbtnOK" Owner="{84CD610A-BE63-4B02-8A8B-733B55DA0EEF}" />
 				<Child Name="WFVbtnCancel" Owner="{46AA90F7-D25D-4F94-9129-649DE0052BF2}" />
