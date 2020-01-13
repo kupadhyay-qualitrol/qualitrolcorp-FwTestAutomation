@@ -31,8 +31,8 @@ function selectRMSChannelCircuitQuantitiesForPQ()
   if(ConfigEditor_PQ_FreeInterval.PANE_CONFIG.WndCaption=="Free Interval")
   {
     AssertClass.IsTrue(ConfigEditor_PQ_FreeInterval.clickOnHarmonicsIntraharmonicsTabPqFreeInterval(),"Clicked on Harmonics and Intra Harmonics tab") 
-    ConfigEditor_PQ_FreeInterval.getTabCountsPqFreeInterval()
-    for (count=0; count < TABCOUNT; count++)
+    var tabcount = ConfigEditor_PQ_FreeInterval.getTabCountsPqFreeInterval()
+    for (count=0; count < tabcount; count++)
     {
     AssertClass.IsTrue(ConfigEditor_PQ_FreeInterval.clickOnTabPqFreeInterval(count),"Clicked on tab")
     ConfigEditor_PQ_FreeInterval.clickOnRemoveAllButtonForPqFreeInterval()

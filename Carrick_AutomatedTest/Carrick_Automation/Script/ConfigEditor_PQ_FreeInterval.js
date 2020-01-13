@@ -60,6 +60,7 @@ function getTabCountsPqFreeInterval()
     var activeTab = PANE_CHANNELS.activeTab_2.get_TabControl().get_Tabs()
     TABCOUNT = activeTab.VisibleTabsCount
     Log.Message("Visible tab count are " + TABCOUNT)
+    return TABCOUNT
   }
 }
 
