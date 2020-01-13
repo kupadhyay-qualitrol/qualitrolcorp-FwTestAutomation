@@ -100,7 +100,7 @@
 								<testParameters />
 								<children />
 							</testItem>
-							<testItem name="Enable Protocol" key="{54596F92-E184-47F4-B078-73AE1CCE8766}" group="False" enabled="True" testMoniker="{37E37903-9BCC-4642-8335-99F6AFCD097D}EnableProtocols" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Enables protocol">
+							<testItem name="Enable Protocol" key="{54596F92-E184-47F4-B078-73AE1CCE8766}" group="False" enabled="False" testMoniker="{37E37903-9BCC-4642-8335-99F6AFCD097D}EnableProtocols" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Enables protocol">
 								<testParameters />
 								<children />
 							</testItem>
@@ -118,7 +118,7 @@
 												<testParameters />
 												<children />
 											</testItem>
-											<testItem name="DDRC Recording Download_With_Quantity" key="{F67B9015-1233-415C-AC7A-06DB9F31AEEF}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+											<testItem name="DDRC Recording Download_With_Quantity" key="{F67B9015-1233-415C-AC7A-06DB9F31AEEF}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 												<testParameters>
 													<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 													<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -2083,7 +2083,7 @@
 			<testItem name="IDME Cabling" key="{1DF171B7-5491-401F-B78C-DE893058CD64}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Initialization" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="False" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
+					<testItem name="Initialization" key="{CDE705FA-AFA2-4C57-B20E-2396D100C7DE}" group="False" enabled="True" testMoniker="{5AEC7EAC-7518-4653-902A-4441AE890E1D}CleanDevice" count="1" timeout="0" stopOnError="1" stopOnException="2" description="">
 						<testParameters>
 							<param0 name="deviceIP" type="3" localVarName="" varType="8" value="10.75.58.66" />
 						</testParameters>
@@ -2101,10 +2101,10 @@
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="Test IDME3U/1U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME3U/1U Cabling" key="{FF8B54AD-9EC0-46B6-9E28-4AB5ED362F57}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U" key="{692626F9-7F0A-4D14-A7A2-6B46B8A5E001}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{F27B3934-EA9E-4C7B-90E8-268CB17EFE4E}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2133,7 +2133,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I" key="{CF543998-C508-4873-9655-4D253CEDBBB6}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I" key="{CF543998-C508-4873-9655-4D253CEDBBB6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{2AABF415-2E6E-43A1-99E6-8FE381ABEDDC}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2162,7 +2162,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I3I" key="{24DF3437-EE4C-4AE3-848E-F87FE6DE7763}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I3I" key="{24DF3437-EE4C-4AE3-848E-F87FE6DE7763}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{ECB3152B-A138-4483-86BC-0512AFEB934D}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2191,7 +2191,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I3I3I" key="{16072FDD-775F-43C5-9CBA-792C28BD50E6}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I3I3I" key="{16072FDD-775F-43C5-9CBA-792C28BD50E6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{E30560B5-F952-4C11-A384-145B43ED04AD}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2220,7 +2220,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I3I3I3I" key="{6FC08BCF-93A9-4C99-8F78-A4C120D71729}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I3I3I3I" key="{6FC08BCF-93A9-4C99-8F78-A4C120D71729}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling3U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{6D4938EE-FE43-485A-8C0E-D16191E6ABEE}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2249,7 +2249,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I" key="{E961C580-3C95-43E2-9A06-4F254ADEEF37}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I" key="{E961C580-3C95-43E2-9A06-4F254ADEEF37}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{EED5C01E-A837-43BC-838C-95C2B79AC497}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2278,7 +2278,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I3I" key="{BEE9932E-C139-4684-8B23-5FEF265C69C1}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I3I" key="{BEE9932E-C139-4684-8B23-5FEF265C69C1}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{DF208A0E-C710-43EB-91A4-B283076166A1}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2307,7 +2307,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I3I3I" key="{B0FCDEED-2F8A-4A42-96D2-4FC83C1B9010}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I3I3I" key="{B0FCDEED-2F8A-4A42-96D2-4FC83C1B9010}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestIDMECabling1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{E7A8E8AD-F468-4EC8-8DA8-75ADF7546287}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2336,7 +2336,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U3I3I3I3I" key="{C9DC45E9-102C-40F4-9583-F7EBA67A16F2}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U3I3I3I3I" key="{C9DC45E9-102C-40F4-9583-F7EBA67A16F2}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{CD53A145-3FCC-478A-B452-E4C6413C8CC4}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2367,10 +2367,10 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME2M3U/1U1U Cabling" key="{E64FED9F-3B8A-4F9F-82BF-EF5ACCCC8486}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="2M3U" key="{BD4031CF-5DA8-405C-89E4-8FFA5930677E}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M3U" key="{BD4031CF-5DA8-405C-89E4-8FFA5930677E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{5D9C8B14-0CA2-43B8-8375-0BD946F0D2A5}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2399,7 +2399,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M3U3I" key="{448CF810-1794-435B-9CB3-A20666218C94}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M3U3I" key="{448CF810-1794-435B-9CB3-A20666218C94}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{1C4A1849-9FDE-45F4-9DF9-06870E4EEEFF}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2428,7 +2428,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M3U3I3I" key="{1EF974D7-C698-4AA8-A6CA-167E2604BF82}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M3U3I3I" key="{1EF974D7-C698-4AA8-A6CA-167E2604BF82}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{7000AC08-7EB0-4B36-A259-FD769FBC2C60}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2457,7 +2457,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M3U3I3I3I" key="{1F6BFCF4-9E7C-4D51-A6B1-D547D73E3D63}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M3U3I3I3I" key="{1F6BFCF4-9E7C-4D51-A6B1-D547D73E3D63}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{D7DAF732-1BFD-4E90-9A83-7817936CCFA8}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2486,7 +2486,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U1U3I3I" key="{A6272AF5-017B-4C1A-A6B8-146636425AD4}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U1U3I3I" key="{A6272AF5-017B-4C1A-A6B8-146636425AD4}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{CE839F3A-D1F5-4512-A907-9FD084B5BE18}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2515,7 +2515,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="1U1U3I3I3I" key="{2C846D81-F62E-42DB-BF74-1A20101C1978}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="1U1U3I3I3I" key="{2C846D81-F62E-42DB-BF74-1A20101C1978}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME1U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{93723576-0994-4BCF-9FE5-A622F1F8EFEF}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2544,7 +2544,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U1U3I3I3I" key="{0D3EEF05-35AE-4FAF-AA51-B954E6E330A3}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U1U3I3I3I" key="{0D3EEF05-35AE-4FAF-AA51-B954E6E330A3}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{31C3CD8E-3B07-4A37-B56B-B885D5CC314F}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2573,7 +2573,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I1U3I" key="{439CD856-3601-42AF-A489-B0FEC800A544}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U3I1U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I1U3I" key="{439CD856-3601-42AF-A489-B0FEC800A544}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U3I1U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{392763A1-7A4E-4835-B85D-222EB5775888}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2602,7 +2602,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U3I1U3I3I" key="{19B7A3BC-94EB-430A-9DB3-C8D0C4BB46DB}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U3I1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U3I1U3I3I" key="{19B7A3BC-94EB-430A-9DB3-C8D0C4BB46DB}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U3I1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{EE6805E6-4A7B-42FB-95E2-2CE5C4C1C5BC}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2633,10 +2633,10 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME4U/1U Cabling" key="{08B2D840-F329-4FC3-ABD8-975DCDD7B5C6}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="4U" key="{1242E9F8-01AC-4074-98C5-0C3AC9FD5A75}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U" key="{1242E9F8-01AC-4074-98C5-0C3AC9FD5A75}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{DAAF3EBD-CDDE-469D-A1B5-C08FF27C634B}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2665,7 +2665,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3I" key="{121DFD6F-1583-48E6-B1C9-C1E41ED34D30}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3I" key="{121DFD6F-1583-48E6-B1C9-C1E41ED34D30}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{A15BD914-861B-4254-A733-8948E574932D}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2694,7 +2694,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3I3I" key="{ED8DB29C-6DA9-4644-94AB-5703445BA61D}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3I3I" key="{ED8DB29C-6DA9-4644-94AB-5703445BA61D}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{B0288B09-73F4-4B8C-90B9-9F3988C7D8CD}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2723,7 +2723,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3I3I3I" key="{DC25A862-CDC5-421A-B6C3-721949418EF9}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3I3I3I" key="{DC25A862-CDC5-421A-B6C3-721949418EF9}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{9F56E01F-3C90-4DC9-B6CF-AB7A8DD5AC79}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2752,7 +2752,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3I3I3I3I" key="{2E1C8789-124B-429C-9518-360B7D32AF47}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3I3I3I3I" key="{2E1C8789-124B-429C-9518-360B7D32AF47}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{39E03E0D-CC48-4636-BFD2-B64E338C77EC}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2781,7 +2781,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U4I" key="{C937860F-C5BD-4F1F-B1AD-DEAB8667DB19}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U4I" key="{C937860F-C5BD-4F1F-B1AD-DEAB8667DB19}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{E1EF0EB7-CC7A-42F7-98F1-3328CEBF160B}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2810,7 +2810,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U4I4I" key="{A5733E8F-EEC5-4852-9376-3ECF361FEB60}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U4I4I" key="{A5733E8F-EEC5-4852-9376-3ECF361FEB60}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{D7ACB498-72CB-4DF9-9F66-F6C073C75151}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2839,7 +2839,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U4I4I4I" key="{E669CBD2-A4E3-4606-9559-46327AE40EC5}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U4I4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U4I4I4I" key="{E669CBD2-A4E3-4606-9559-46327AE40EC5}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U4I4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{FBB21E7B-60B2-4BEF-83C7-A51EC0EB6261}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2870,10 +2870,10 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME2M4U Cabling " key="{C995F1A6-65BD-45DF-83A7-E77BAA618D08}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME2M4U Cabling " key="{C995F1A6-65BD-45DF-83A7-E77BAA618D08}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="2M4U" key="{ABD5C5B6-3FBF-43E7-98AC-B2A9FBDC30DF}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M4U" key="{ABD5C5B6-3FBF-43E7-98AC-B2A9FBDC30DF}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{A1326092-6E24-4A39-A699-9B50FE7261FB}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2902,7 +2902,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M4U3I" key="{8804C50F-C24E-4A40-812E-80D9307099F6}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M4U3I" key="{8804C50F-C24E-4A40-812E-80D9307099F6}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{6F93DB36-29A5-419D-9776-1959645FCA91}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2931,7 +2931,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M4U3I3I" key="{411DEBD7-E652-4652-B262-37526C6B3466}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M4U3I3I" key="{411DEBD7-E652-4652-B262-37526C6B3466}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{C1FBBAC2-B6BE-475A-BCAE-254387CEA045}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2960,7 +2960,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M4U4I" key="{4250E226-43A5-4290-813F-A15AD98C85F2}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M4U4I" key="{4250E226-43A5-4290-813F-A15AD98C85F2}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{B2F36BFE-A9D5-4B69-AFA5-DB84AE3FC246}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -2989,7 +2989,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="2M4U4I4I" key="{AA57998F-C87E-4C9A-A07B-5F20A2269880}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="2M4U4I4I" key="{AA57998F-C87E-4C9A-A07B-5F20A2269880}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME2M4U4I4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{851205FF-B96D-41F5-A344-D8C57269BB43}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3020,10 +3020,10 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="Test IDME4U3U Cabling" key="{A2E709F2-8B4E-4D69-A040-3854C93F9678}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="Test IDME4U3U Cabling" key="{A2E709F2-8B4E-4D69-A040-3854C93F9678}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="4U3U" key="{40737B79-13CD-49F8-A784-C13DBE7E408E}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3U" key="{40737B79-13CD-49F8-A784-C13DBE7E408E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{2DCE0ADE-224B-4EC5-8B6B-21A2A588F78B}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3052,7 +3052,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3U3I" key="{80D66C2B-E78F-419C-8465-54F272D3D606}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3U3I" key="{80D66C2B-E78F-419C-8465-54F272D3D606}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{519B8DE1-BE8E-4EDC-B10E-4E459A847C79}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3081,7 +3081,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3U3I3I" key="{88880C3E-C1C2-4F14-A442-B9CC7D6B3184}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3U3I3I" key="{88880C3E-C1C2-4F14-A442-B9CC7D6B3184}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{7F3FB22E-A9DC-46FE-B68D-0EAE1D270785}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3110,7 +3110,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3U3I3I3I" key="{B47B6B17-7867-4BF4-9C0A-90436899C56A}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3U3I3I3I" key="{B47B6B17-7867-4BF4-9C0A-90436899C56A}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{095CB938-D2AB-4A7B-B2FD-B0DED03E9A88}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3139,7 +3139,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3U4I" key="{7158674B-EEEF-4C6E-BDE5-1DE5169EB878}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3U4I" key="{7158674B-EEEF-4C6E-BDE5-1DE5169EB878}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U4I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{6E0B3B6F-A981-4FF8-9251-D060DD0DB4D2}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3168,7 +3168,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3U4I3I" key="{60987B5A-71F0-4ABA-B359-56A52C2F3FBF}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U4I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3U4I3I" key="{60987B5A-71F0-4ABA-B359-56A52C2F3FBF}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3U4I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{C8437AAF-4CA7-4144-B035-BE3407DB2135}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3197,7 +3197,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U4U" key="{04810EF7-18A5-4C61-8AF1-0652BC614CDD}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U4U" key="{04810EF7-18A5-4C61-8AF1-0652BC614CDD}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{8CB07C7D-EEB5-4E2F-9B6E-7D61E7EE2C2D}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3226,7 +3226,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U4U3I" key="{C01B76B1-F1A1-40D5-8895-0E148B9CBC01}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U4U3I" key="{C01B76B1-F1A1-40D5-8895-0E148B9CBC01}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{26D4FA27-DD63-4D6C-8B94-FD7306E3AC2C}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3255,7 +3255,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="3U4U3I3I3I" key="{6F3D5267-BD80-4B3B-9953-67268821ABDA}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="3U4U3I3I3I" key="{6F3D5267-BD80-4B3B-9953-67268821ABDA}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME3U4U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{65769493-616F-47EE-960A-7E47B7DAB064}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3284,7 +3284,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U1U3I3I" key="{3B1E930B-D1F4-49EB-9544-777EE4BE7437}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U1U3I3I" key="{3B1E930B-D1F4-49EB-9544-777EE4BE7437}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{91EE5574-39FA-412F-968F-53CF51B9B13A}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3313,7 +3313,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U1U3I3I3I" key="{4738660D-1530-4292-9ACD-521326FD4E3E}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U1U3I3I3I" key="{4738660D-1530-4292-9ACD-521326FD4E3E}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U1U3I3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{9BCB9235-8C24-4594-9C44-3D24AAC02C88}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3342,7 +3342,7 @@
 									</testItem>
 								</children>
 							</testItem>
-							<testItem name="4U3I1U3I3I" key="{BC3CC8DA-8D46-4624-8B91-151B61D5CAAB}" group="False" enabled="False" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+							<testItem name="4U3I1U3I3I" key="{BC3CC8DA-8D46-4624-8B91-151B61D5CAAB}" group="False" enabled="True" testMoniker="{054DCFAD-C095-48C9-813D-4CAFD4D5D984}TestCablingIDME4U3I1U3I3I" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 								<testParameters />
 								<children>
 									<testItem name="DDRC Recording Download_With_Quantities" key="{2F75471E-990E-44A5-87AC-C231CD490647}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
@@ -3387,32 +3387,32 @@
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="RMS Data Validation For Cablings" key="{6A90A5FF-359F-4472-9CE3-6F359A89CB9C}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="RMS Data Validation For Cablings" key="{6A90A5FF-359F-4472-9CE3-6F359A89CB9C}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters />
 				<children>
-					<testItem name="Login" key="{D4CF5458-598A-4724-B7B2-E934266B858E}" group="False" enabled="True" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
+					<testItem name="Login" key="{D4CF5458-598A-4724-B7B2-E934266B858E}" group="False" enabled="False" testMoniker="{7203FC4B-789C-49BC-B57E-625C7E067244}Login_iQ" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Login iQ Plus">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="StartReport" key="{4FF696D0-A939-445D-87B2-B765963C599E}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}StartReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="StartReport" key="{4FF696D0-A939-445D-87B2-B765963C599E}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}StartReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="GetFirmwareVersion" key="{753462BB-393D-41DD-B5B5-0550815D6F6C}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}GetFwVersion" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="SetAnalogChannelName" key="{4851A51B-04CC-44CB-B798-90E746747877}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
+					<testItem name="SetAnalogChannelName" key="{4851A51B-04CC-44CB-B798-90E746747877}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}SetAnalogChannelName" count="1" timeout="0" stopOnError="2" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="3U Default Cabling" key="{F7A81A94-0FA8-4AAC-8B3A-E7C5700E64AE}" group="True" enabled="True" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+					<testItem name="3U Default Cabling" key="{F7A81A94-0FA8-4AAC-8B3A-E7C5700E64AE}" group="True" enabled="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 						<testParameters />
 						<children>
-							<testItem name="3U" key="{620A7F88-D210-42A7-BFA5-197965D626DA}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+							<testItem name="3U" key="{620A7F88-D210-42A7-BFA5-197965D626DA}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidation3U" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 								<testParameters />
 								<children>
-									<testItem name="DDRC Recording Download_With_Quantity" key="{63710127-0FAC-4F13-B2A8-BB52F6CE6CA1}" group="False" enabled="True" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+									<testItem name="DDRC Recording Download_With_Quantity" key="{63710127-0FAC-4F13-B2A8-BB52F6CE6CA1}" group="False" enabled="False" testMoniker="{8901AF99-3D85-4D32-99BB-724EF17B632C}DDRCRecordingDownloadWithQuantities" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="deviceType" type="3" localVarName="" varType="8" value="IDM+18" />
 											<param1 name="deviceName" type="3" localVarName="" varType="8" value="IND_DAU_51" />
@@ -3425,7 +3425,7 @@
 										</testParameters>
 										<children />
 									</testItem>
-									<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="True" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+									<testItem name="Validate CSS" key="{BE9D7370-AFE4-4D51-AF70-14A93FA7D7F6}" group="False" enabled="False" testMoniker="{96843C8C-AEF1-4D89-8D5C-1E0016DD62DF}validateCSSData" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 										<testParameters>
 											<param0 name="rmsInjectedVoltage" type="3" localVarName="" varType="3" value="60" />
 											<param1 name="rmsInjectedCurrent" type="3" localVarName="" varType="3" value="1" />
@@ -4312,7 +4312,7 @@
 							</testItem>
 						</children>
 					</testItem>
-					<testItem name="TestNOCIRCUIT" key="{473A0D9E-0EC5-4691-8C3D-8C9D9CF92D7E}" group="False" enabled="True" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidationNOCIRCUIT" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="TestNOCIRCUIT" key="{473A0D9E-0EC5-4691-8C3D-8C9D9CF92D7E}" group="False" enabled="False" testMoniker="{FE0B36FD-C615-42B6-9A11-FBC8DBF2A75B}RMSValidationNOCIRCUIT" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
@@ -4338,17 +4338,17 @@
 						</testParameters>
 						<children />
 					</testItem>
-					<testItem name="EndReport" key="{2B02ECEE-6BF8-4C72-BB95-ED6667BAD7AD}" group="False" enabled="True" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
+					<testItem name="EndReport" key="{2B02ECEE-6BF8-4C72-BB95-ED6667BAD7AD}" group="False" enabled="False" testMoniker="{95952818-0B7B-4203-AC0E-3D62F32D7A95}EndReport" count="1" timeout="0" stopOnError="0" stopOnException="2" description="">
 						<testParameters />
 						<children />
 					</testItem>
-					<testItem name="Close iQ_Plus" key="{6CDA96BD-9CA4-4EF5-B475-AE4A62B6E326}" group="False" enabled="True" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Close iQ Plus">
+					<testItem name="Close iQ_Plus" key="{6CDA96BD-9CA4-4EF5-B475-AE4A62B6E326}" group="False" enabled="False" testMoniker="{09E27EFC-DF81-45DE-A2DE-980B2C578B69}Close_iQ_Plus" count="1" timeout="0" stopOnError="0" stopOnException="2" description="Close iQ Plus">
 						<testParameters />
 						<children />
 					</testItem>
 				</children>
 			</testItem>
-			<testItem name="ProjectTestItem1" key="{EC78E870-5167-4469-9878-EEB3D25DDAC5}" group="False" enabled="True" testMoniker="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}checkForPqFavorite" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
+			<testItem name="ProjectTestItem1" key="{EC78E870-5167-4469-9878-EEB3D25DDAC5}" group="False" enabled="False" testMoniker="{32781EF1-82B3-4CC9-A8DF-2E428FECAD75}checkForPqFavorite" count="1" timeout="0" stopOnError="3" stopOnException="2" description="">
 				<testParameters>
 					<param0 name="favoriteName" type="3" localVarName="" varType="8" value="PQ10Min" />
 				</testParameters>
