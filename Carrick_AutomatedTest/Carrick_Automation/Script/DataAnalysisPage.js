@@ -14,5 +14,6 @@ function clickOnContnuousRecording()
   else
   {
     Log.Message("ToolBar dock is not visible")
+    return false
   }
 }

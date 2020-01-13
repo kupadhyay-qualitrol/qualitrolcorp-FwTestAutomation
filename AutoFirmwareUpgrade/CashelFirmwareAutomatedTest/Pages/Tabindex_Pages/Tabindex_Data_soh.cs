@@ -39,7 +39,8 @@ namespace Tabindex_Data.soh
         {
             get
             {
-                return webDriver.FindElement(By.XPath("//*[@id='TabView1']/div[1]/a[3]"));
+                //return webDriver.FindElement(By.XPath("//*[@id='TabView1']/div[1]/a[3]"));
+                return webDriver.FindElement(By.XPath("//a[contains(text(),'soh')]"));                 
             }
         }
 
