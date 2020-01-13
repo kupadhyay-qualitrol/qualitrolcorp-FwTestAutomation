@@ -243,3 +243,22 @@ function ClickOnDDRCChannels()
     return false
   }
 }
+
+
+
+
+//This method is used to click on PQ free interval in Config Editor
+function clickPqFreeInterval()
+{
+  if(Item_ConfigTree.Exists)
+  {
+    Item_ConfigTree.ClickItem("Power Quality|Continous Recording|Free Interval")
+    Log.Message("Clicked on PQ Free Interval Page")
+    return true
+  }
+  else
+  {
+    Log.Message("Unable to find Config Editor")
+    return false
+  }
+}

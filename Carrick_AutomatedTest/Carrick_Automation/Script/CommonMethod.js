@@ -425,3 +425,15 @@ function GetiQPlusInstallInfo()
   }
   return versionInfo
 }
+
+function delayPQ10Min ()
+{
+  do 
+  {
+    aqUtils.Delay(1000)
+  }
+  while(!(aqDateTime.GetMinutes(aqDateTime.Now()) % 10 == 0));
+  Log.Message("Time is matched with multiple of 10")
+  // Now putting hardocded delay for generating PQ10 min records
+  aqUtils.Delay(1200000)
+}
