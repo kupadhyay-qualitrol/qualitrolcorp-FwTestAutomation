@@ -1,20 +1,23 @@
-﻿//USEUNIT CommonMethod
+﻿//USEUNIT AssertClass
+//USEUNIT CommonMethod
+//USEUNIT ConfigEditor_PQ_FreeInterval
+//USEUNIT ConfigEditorPage
 //USEUNIT DataRetrievalPage
 //USEUNIT DeviceManagementPage
-//USEUNIT AssertClass
-//USEUNIT ConfigEditorPage
-//USEUNIT ConfigEditor_PQ
-//USEUNIT PQ_Methods
 //USEUNIT DeviceTopologyPage
-//USEUNIT OmicronQuickCMCPage
+//USEUNIT FavoritesPage
 //USEUNIT GeneralPage
+//USEUNIT OmicronQuickCMCPage
+//USEUNIT PQ_Methods
 
-
-function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen)
+function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,deviceSerialNo,deviceIPAdd,retryCountDateTime,retryCountPqOpen,fileName)
 {
   try
   {
    Log.Message("Test to check for the PQ recording for free interval started or not and download PQ record with quantities") 
+   
+    //Step.0 Inject voltage and current using omicron
+    OmicronQuickCMCPage.InjectVoltCurrent(Project.ConfigPath+fileName)
    
     //Step1. Check if iQ-Plus is running or not.
     AssertClass.IsTrue(CommonMethod.IsExist("iQ-Plus"),"Checking if iQ+ is running or not")
@@ -31,7 +34,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     }
     
     //Step.3 Clean memory of PQ Free Interval
-    PQ_Methods.cleanMemoryPqFreeInterval()
+    PQ_Methods.cleanMemoryPq()
     Log.Message("Clean the PQ Free Interval records from the device data")
     
     //Step.4 Retrieve Configuration
@@ -41,7 +44,7 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     AssertClass.IsTrue(ConfigEditorPage.clickPqFreeInterval(),"Clicked on PQ Free Interval")
     
     //Step.7 Select RMS values from the Available quantities for PQ Free Inerval
-    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQFreeInterval()
+    PQ_Methods.selectRMSChannelCircuitQuantitiesForPQ()
     
     //Step.8 Send to device
     AssertClass.IsTrue(ConfigEditorPage.ClickSendToDevice(),"Clicked on Send to Device")
@@ -69,11 +72,14 @@ function pqFreeIntervalRecordingDownloadWithQuantities(deviceType,deviceName,dev
     PQ_Methods.setTimeIntervalForPqDataExport()
     
     //Step.14 Check if PQ Free Interval Favorite is available if not then Configure Favorite for PQ Free Interval
-    PQ_Methods.checkForPqFreeIntervalFavorite()
+    FavoritesPage.checkForPqFavorite("PQ Free Interval")
     
     //Step.15 Export PQ Free Interval Data
     PQ_Methods.exportToCsvPqFreeIntervalData()
     Log.Message("PQ Free Interval Data has been exported")
+    
+    //Step.16 Close Omicron CMC file
+    AssertClass.IsTrue(OmicronQuickCMCPage.CloseQuickCMC(),"Quick CMC got closed")
     
   }
     catch(ex)

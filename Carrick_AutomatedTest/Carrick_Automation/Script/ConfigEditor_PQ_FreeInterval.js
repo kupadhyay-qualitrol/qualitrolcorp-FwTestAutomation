@@ -1,6 +1,7 @@
 ﻿/*This page contains methods and objectes related to PQ 10 min and Free interval Page*/
 
 //USEUNIT CommonMethod
+//USEUNIT FavoritesPage
 
 //Variables
 var TABCOUNT
@@ -27,8 +28,6 @@ var RADIOBTN_ALL_DATA_POINTS = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxExportCSV
 var EXPORT_PATH_SELECTION =Aliases.iQ_Plus.WFVfrmExportToCSV.WFVgbxSelectPath.WFVtxtSelectPath
 var OKBTN_PATH_SELECTION = Aliases.iQ_Plus.dlgBrowseForFolder.btnOK
 var OKBTN_EXPORT_TO_CSV = Aliases.iQ_Plus.WFVfrmExportToCSV.WFVbtnOK
-var SYNCHRONIZE_DATE_TIME = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item("Time Interval Control Toolbar").Items.Item("Synchronizes End Date Time to Current Date Time")
-var START_DATE_TO_ONE = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.zUserControlBase_Toolbars_Dock_Area_Top.wItems.Item("Time Interval Control Toolbar").Items.Item(1)
 var DEFAULT_FAV = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow4.Favorites.DAFavoriteView.DAFAVuexpbarFavorites
 var DLG_BX_IQPLUS = Aliases.iQ_Plus.dlgIQ
 var BTN_YES_DLG_BX_IQPLUS = Aliases.iQ_Plus.dlgIQ.btnYes
@@ -61,6 +60,7 @@ function getTabCountsPqFreeInterval()
     var activeTab = PANE_CHANNELS.activeTab_2.get_TabControl().get_Tabs()
     TABCOUNT = activeTab.VisibleTabsCount
     Log.Message("Visible tab count are " + TABCOUNT)
+    return TABCOUNT
   }
 }
 
@@ -158,12 +158,13 @@ function createNewFavoriteForPqFreeInterval()
 function exportPqFreeIntervalDataToCsv() 
 {
   //Click on PQ Free Interval Favorite
-  DEFAULT_FAV.ClickItem("Default Favorites", "PQ Free Interval")
+  
+  DEFAULT_FAV.ClickItem(GROUPNAME, "PQ Free Interval")  
   Log.Message("PQ Free Interval Data Opened")
   aqUtils.Delay(7000)
   
   var sysUserName = CommonMethod.GetSystemUsername()
-  var folderName ="C:\\Users\\"+sysUserName+"\\Desktop\\PQFreeInterval\\"
+  var folderName ="C:\\Users\\"+sysUserName+"\\Desktop\\PQ\\"
   //Check if export folder available or not if not then create folder
   if(aqFileSystem.Exists(folderName)== false)
   {
@@ -191,7 +192,7 @@ function exportPqFreeIntervalDataToCsv()
   //Set all data points and export PQ free interval data to csv
   RADIOBTN_ALL_DATA_POINTS.Click()
   EXPORT_PATH_SELECTION.Click()
-  var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQFreeInterval")
+  var selectFolderToExport = Aliases.iQ_Plus.dlgBrowseForFolder.SHBrowseForFolderShellNameSpaceControl.TreeView.wItems.Item(0).Items.Item("PQ")
   selectFolderToExport.Click()
   OKBTN_PATH_SELECTION.Click()
   OKBTN_EXPORT_TO_CSV.Click()
@@ -211,4 +212,3 @@ function exportPqFreeIntervalDataToCsv()
   Log.Message("Export data in CSV format")
   MAINMENU_WAVEFORM_VIEWER.Close()
 }
-

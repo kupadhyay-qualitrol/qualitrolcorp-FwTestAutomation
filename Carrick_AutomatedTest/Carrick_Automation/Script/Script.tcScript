@@ -41,7 +41,7 @@
 			<child name="IECBrowserPage" key="{B4B30C51-70EB-4E60-8CD9-988F538B24C5}" path="IECBrowserPage.js" />
 			<child name="ConfigEditor_Protocols" key="{DEF80D06-D6E4-4593-8EB8-BCE21E15FCA6}" path="ConfigEditor_Protocols.js" />
 			<child name="ConfigEditor_FaultRecording_DDRCChannels" key="{E427D1D0-0593-433E-8822-1681912A83F8}" path="ConfigEditor_FaultRecording_DDRCChannels.js" />
-			<child name="ConfigEditor_PQ" key="{614DA891-2FA5-4736-B40C-01AC99BCF820}" path="ConfigEditor_PQ.js" />
+			<child name="ConfigEditor_PQ_FreeInterval" key="{614DA891-2FA5-4736-B40C-01AC99BCF820}" path="ConfigEditor_PQ_FreeInterval.js" />
 		</folder>
 		<folder name="CustomLibrary">
 			<child name="AssertClass" key="{A937F6D6-2816-42A7-8AC5-F2448B84B421}" path="AssertClass.js" />

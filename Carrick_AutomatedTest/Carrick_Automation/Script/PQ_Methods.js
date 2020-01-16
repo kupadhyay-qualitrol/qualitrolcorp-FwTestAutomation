@@ -1,15 +1,16 @@
-﻿/*This file contains generic methods related to PQ which can be used directly in Test Cases*/
-
-//USEUNIT DataRetrievalPage
-//USEUNIT AssertClass
-//USEUNIT TICPage
+﻿﻿//USEUNIT AssertClass
 //USEUNIT CommonMethod
+//USEUNIT ConfigEditor_PQ_10Mins
+//USEUNIT ConfigEditor_PQ_FreeInterval
+//USEUNIT DataRetrievalPage
 //USEUNIT FavoritesPage
 //USEUNIT PDPPage
 //USEUNIT RMSDataValidationExePage
-//USEUNIT ConfigEditor_PQ
+//USEUNIT TICPage
+/*This file contains generic methods related to PQ which can be used directly in Test Cases*/
 
-function cleanMemoryPqFreeInterval()
+
+function cleanMemoryPq()
 {
   //Step.1 Clicked on Clean Memory
   AssertClass.IsTrue(DataRetrievalPage.ClickOnCleanMemory(),"Clicked on Clean Memory")
@@ -17,26 +18,43 @@ function cleanMemoryPqFreeInterval()
   //Step.2 Check the PQ Free Interval checked box
   AssertClass.IsTrue(DataRetrievalPage.checkPqFreeIntervalCheckBox(),"Checked the PQ Free Interval check box")
   
-  //Step.3 Click on Execute button
+  //Step.3 Check the PQ 10min checked box
+  AssertClass.IsTrue(DataRetrievalPage.checkPq10MinCheckBox(),"Checked the PQ 10min check box")
+  
+  //Step.4 Click on Execute button
   AssertClass.IsTrue(DataRetrievalPage.ClickOnExecuteButton(),"Clicked on Execute button")
   CommonMethod.CheckActivityLog("Device memory cleaned successfully for selected data types")
 }
 
-
-
-function selectRMSChannelCircuitQuantitiesForPQFreeInterval()
+function selectRMSChannelCircuitQuantitiesForPQ()
 {
-    AssertClass.IsTrue(ConfigEditor_PQ.clickOnHarmonicsIntraharmonicsTabPqFreeInterval(),"Clicked on Harmonics and Intra Harmonics tab") 
-    ConfigEditor_PQ.getTabCountsPqFreeInterval()
-  for (count=0; count < TABCOUNT; count++)
+  if(ConfigEditor_PQ_FreeInterval.PANE_CONFIG.WndCaption=="Free Interval")
   {
-    AssertClass.IsTrue(ConfigEditor_PQ.clickOnTabPqFreeInterval(count),"Clicked on tab")
-    ConfigEditor_PQ.clickOnRemoveAllButtonForPqFreeInterval()
+    AssertClass.IsTrue(ConfigEditor_PQ_FreeInterval.clickOnHarmonicsIntraharmonicsTabPqFreeInterval(),"Clicked on Harmonics and Intra Harmonics tab") 
+    var tabcount = ConfigEditor_PQ_FreeInterval.getTabCountsPqFreeInterval()
+    for (count=0; count < tabcount; count++)
+    {
+    AssertClass.IsTrue(ConfigEditor_PQ_FreeInterval.clickOnTabPqFreeInterval(count),"Clicked on tab")
+    ConfigEditor_PQ_FreeInterval.clickOnRemoveAllButtonForPqFreeInterval()
     Log.Message("All the selected quantities are moved to Available quantities in PQ Free Interval Page")
-    AssertClass.IsTrue(ConfigEditor_PQ.addQuantitiesPqFreeInterval("RMS"),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
-    AssertClass.IsTrue(ConfigEditor_PQ.addQuantitiesPqFreeInterval("H01"),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
+    AssertClass.IsTrue(ConfigEditor_PQ_FreeInterval.addQuantitiesPqFreeInterval("RMS"),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
+    AssertClass.IsTrue(ConfigEditor_PQ_FreeInterval.addQuantitiesPqFreeInterval("H01"),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
+    }
+    Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval")
   }
-  Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
+  else if(ConfigEditor_PQ_FreeInterval.PANE_CONFIG.WndCaption=="PQ 10 Min")
+  {
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.clickOnAllTabsPQ10Min(),"Clicked on Harmonics and Intra Harmonics tab") 
+    var tabcount = ConfigEditor_PQ_10Mins.getTabCountsPq10Min()
+    for (count=0; count < tabcount; count++)
+    {
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.clickOnAllTabsPQ10Min(),"Clicked on tab")
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.clickOnRemoveAllButton(),"All Selected quantities are removed from the selected quantities")
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.addQuantitiesPq10Min("RMS"),"RMS Channel Cirtcuit Quantities added for PQ Free Interval")
+    AssertClass.IsTrue(ConfigEditor_PQ_10Mins.addQuantitiesPq10Min("H01"),"Harmonic and IntraHarmonic Channel Cirtcuit Quantities added for PQ Free Interval")   
+    }
+    Log.Message("RMS Channel Cirtcuit Quantities added for PQ Free Interval") 
+  }
 }
 
 
@@ -106,35 +124,7 @@ function setPqFreeIntervalStartTime()
   Log.Message("PQ Free Interval start time set as 2 minutes before of current system date and time")
 }
 
-function checkForPqFreeIntervalFavorite()
-{ 
-  //Navigate to Favorites under Conitnouous Recording for PQ Free Interval
-  CommonMethod.RibbonToolbar.wItems.Item("&Data Analysis").Click()
-  CommonMethod.RibbonToolbar.ClickItem("&Data Analysis|Data Analysis Views|&Continuous Recording")
-  
-  try 
-  {
-   if(DEFAULT_FAV.wItem("Default Favorites", "PQ Free Interval") == "PQ Free Interval")
-   {
-    Log.Message("PQ Free Interval Favorite Exists")
-    return true
-   }
-    
-  
-   else 
-   {
-    AssertClass.IsTrue(ConfigEditor_PQ.createNewFavoriteForPqFreeInterval(), "Create new favorite for PQ Free Interval")
-    Log.Message("Configured new Favorite for PQ Free Interval")    
-   }
-  }
-  
-  catch(ex)
-  {
-    Log.Error(ex.stack)
-    Log.Error("Fail:-Test to check for the PQ Free Interval Favorite")
-  }
-  
-}
+
 
 function setTimeIntervalForPqDataExport()
 { 
@@ -149,7 +139,7 @@ function setTimeIntervalForPqDataExport()
   aqUtils.Delay(2000)
   var getEndDateTime = aqConvert.StrToDateTime(deviceDateTime)
   Log.Message(getEndDateTime)
-  var getStartDateTime = aqDateTime.AddHours(getEndDateTime, -1);
+  var getStartDateTime = aqDateTime.AddMinutes(getEndDateTime, -10);
   var startDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout1.TICdtpStartTime
   var endDateTime = Aliases.iQ_Plus.ShellForm.windowDockingArea2.dockableWindow2.TimeInterval.TimeIntervalControl.UserControlBase_Fill_Panel.TICtplInnerMostLayout2.TICdtpEndTime
   startDateTime.set_Value(getStartDateTime)
@@ -169,7 +159,7 @@ function exportToCsvPqFreeIntervalData()
 
  try {
   
-  ConfigEditor_PQ.exportPqFreeIntervalDataToCsv()
+  ConfigEditor_PQ_FreeInterval.exportPqFreeIntervalDataToCsv()
   Log.Message("PQ Free Interval Data is exported to CSV")
   }
   
